@@ -47,9 +47,9 @@ for k = 1 : 1 : n
  end %i = 1 : 1 : array_length
  if(dot_on_the_line == 1)
    inside_outside_array(k) = 2; %agent on the line
- elseif(imag_inside < -3)
+ elseif(imag_inside < -0.5)
    inside_outside_array(k) = 1; %agent in the shape
- elseif(imag_inside > -1)
+ elseif(imag_inside > -0.5)
    inside_outside_array(k) = 0; %agent out of shape
  else
    inside_outside_array(k) = 0; %agent out of shape

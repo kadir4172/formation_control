@@ -73,7 +73,7 @@ P = zeros(2,2,n);
 calculate_forces_flag = 0;
 force_matrix = zeros(2,5,n);
 inside_outside_array = zeros(n,1);
-shape_buffer = 0.7;
+shape_buffer = 0.1;
 
 %ka = 4* 10^(-3);
 ka = 80;

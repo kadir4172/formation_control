@@ -12,6 +12,7 @@ yp(array_length + 1) = yp(1);
 
 z = [xp' yp'];
 
+shape_buffer = evalin('base', 'shape_buffer');
 plot(formation_x, formation_y)
 hold on
 
@@ -42,10 +43,10 @@ shape_center_imag = shape_center_imag / array_length
 %[x_dot,y_dot] = ginput(1) %get mouse click input
 %nokta = complex(x_dot,y_dot);
 
-shape_buffer = 0.7;  %buffer zone for shape boundary
+shape_buffer = 1.5;  %buffer zone for shape boundary
 
-for k = linspace(-50,50,100)
-  for l = linspace(-50,50,100)
+for k = linspace(-100,100,200)
+  for l = linspace(-100,100,200)
     nokta = complex(k,l);
     real_inside = 0;
     imag_inside= 0;
@@ -76,9 +77,9 @@ for k = linspace(-50,50,100)
       if(dot_on_the_line == 1)
           plot(k,l,'k*');
           %dot_on_the_line = 0;
-      elseif(imag_inside < -3)
+      elseif(imag_inside < -0.5)
           plot(k,l,'go');
-      elseif(imag_inside > -1)
+      elseif(imag_inside > -0.5)
           plot(k,l,'rx');
       end
       hold on
