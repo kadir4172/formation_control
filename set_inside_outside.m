@@ -6,6 +6,8 @@
     formation_x = evalin('base', 'formation_x');
     formation_y = evalin('base', 'formation_y');
     
+    shape_buffer = evalin('base', 'shape_buffer');
+    
     xp = formation_x;
     yp = formation_y;
 
@@ -15,7 +17,7 @@
 
     z = [xp' yp'];
     
-    shape_buffer = 0.7;  %buffer zone for shape boundary
+   
 for k = 1 : 1 : n
   nokta = complex(X(k),Y(k));
   real_inside = 0;

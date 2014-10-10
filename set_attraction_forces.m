@@ -21,8 +21,8 @@
         force_matrix(1,1,i) = force_matrix(1,1,i) + (formation_x(j) - X(i));
         force_matrix(2,1,i) = force_matrix(2,1,i) + (formation_y(j) - Y(i));
       end
-        force_matrix(1,1,i) = force_matrix(1,1,i) * ka;
-        force_matrix(2,1,i) = force_matrix(2,1,i) * ka;
+        force_matrix(1,1,i) = (force_matrix(1,1,i) * ka) / array_length;
+        force_matrix(2,1,i) = (force_matrix(2,1,i) * ka) / array_length;
     end
   end
   

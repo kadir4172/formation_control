@@ -73,12 +73,13 @@ P = zeros(2,2,n);
 calculate_forces_flag = 0;
 force_matrix = zeros(2,5,n);
 inside_outside_array = zeros(n,1);
+shape_buffer = 0.7;
 
 %ka = 4* 10^(-3);
-ka = 1.5;
-kr = 8000;
-kf = 1000;
-km = 4000;
+ka = 80;
+kr = 6000;
+kf = 2000;
+km = 5000;
 
 %==========================%
 %zone tanimlamalari
@@ -112,6 +113,7 @@ for i = 1 : 1 : n
 end
 
 axis([-100,100,-100,100])
+hold on
 %set(h,'XDataSource','X');
 %set(h,'YDataSource','Y');
 %set(h,'CDataSource','color');
@@ -119,7 +121,7 @@ axis([-100,100,-100,100])
 
 %==========================%
 %formation seklini plot edelim
-figure
+%figure
 j = plot(formation_x, formation_y);
 set(j,'XDataSource','formation_x');
 set(j,'YDataSource','formation_y');

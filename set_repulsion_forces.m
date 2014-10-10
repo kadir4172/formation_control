@@ -3,6 +3,9 @@
   X  = evalin('base', 'X');
   Y  = evalin('base', 'Y');
   
+  Xdot  = evalin('base', 'Xdot');
+  Ydot  = evalin('base', 'Ydot');
+  
   formation_x = evalin('base', 'formation_x');
   formation_y = evalin('base', 'formation_y');
   
@@ -25,6 +28,21 @@
       end
         force_matrix(1,2,i) = force_matrix(1,2,i) * kr;
         force_matrix(2,2,i) = force_matrix(2,2,i) * kr;
+        
+        F_rep = [force_matrix(1,2,i) force_matrix(2,2,i)];
+        Vel   = [Xdot(i) Ydot(i)];
+        
+        if(norm(Vel) > 0.4)
+        u_frep = F_rep / (norm(F_rep));
+        u_vel  = Vel   / norm(Vel);
+        
+        f = u_frep - u_vel;
+        f = f .* norm(F_rep);
+        f = f .* (norm(Vel)/2);
+        
+        force_matrix(1,2,i) = f(1);
+        force_matrix(2,2,i) = f(2);
+        end
     end
   end
   
