@@ -35,8 +35,8 @@ force_matrix = evalin('base','force_matrix');
 %X_accelmeas = rand(n,1) * 0.5  -0.25 ;
 %Y_accelmeas = rand(n,1) * 0.5  -0.25 ;
 
-X_accelmeas = force_matrix(1,5,:) /10000;
-Y_accelmeas = force_matrix(2,5,:) /10000;
+X_accelmeas = force_matrix(1,7,:) /10000;
+Y_accelmeas = force_matrix(2,7,:) /10000;
 
 for i = 1 : 1 : n
   X_vector_old = [X(i); Xdot(i)];
@@ -95,6 +95,7 @@ calculate_forces_flag = evalin('base', 'calculate_forces_flag');
       %pozisyon propogate bittikten sonra artificial force lari hesaplayalim
     set_inside_outside     %agentlari shape in icinde mi disindami hesaplayalim
     set_attraction_forces  %seklin disindayken cekici kuvvetleri hesapla
+    set_attraction2_forces %sinirdan gecemeyen agentlar icin aktif hale gelecek ekstra force
     set_repulsion_forces   %seklin icindeyken itici kuvvetleri hesapla
     set_intermember_forces %memberlarin kendi aralarinda olusturdugu itki kuvvetlerini hesapla
     set_friction_forces    %agentlar icin surtunme kuvvetlerini hesapla

@@ -71,7 +71,7 @@ P = zeros(2,2,n);
 
 %Artificial forces for individual members
 calculate_forces_flag = 0;
-force_matrix = zeros(2,5,n);
+force_matrix = zeros(2,7,n);
 inside_outside_array = zeros(n,1);
 shape_buffer = 0.1;
 
@@ -80,6 +80,7 @@ ka = 80;
 kr = 6000;
 kf = 2000;
 km = 5000;
+ka2 = 50000;
 
 %==========================%
 %zone tanimlamalari
