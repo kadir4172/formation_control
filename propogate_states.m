@@ -11,6 +11,8 @@ accel_noise = 2;
 n = evalin('base', 'n');
 g = evalin('base', 'g');
 
+mrec_active = evalin('base', 'mrec_active');
+ 
 if isempty(Q)
     Q = [(accel_noise*(dt^2))/2 0;0 accel_noise*dt];
 end
@@ -35,8 +37,13 @@ force_matrix = evalin('base','force_matrix');
 %X_accelmeas = rand(n,1) * 0.5  -0.25 ;
 %Y_accelmeas = rand(n,1) * 0.5  -0.25 ;
 
-X_accelmeas = force_matrix(1,7,:) /10000;
-Y_accelmeas = force_matrix(2,7,:) /10000;
+if(mrec_active == 1)
+  X_accelmeas = zeros(n,1);
+  Y_accelmeas = zeros(n,1);
+else
+  X_accelmeas = force_matrix(1,7,:) /10000;
+  Y_accelmeas = force_matrix(2,7,:) /10000;
+end
 
 for i = 1 : 1 : n
   X_vector_old = [X(i); Xdot(i)];
@@ -101,6 +108,8 @@ calculate_forces_flag = evalin('base', 'calculate_forces_flag');
     set_friction_forces    %agentlar icin surtunme kuvvetlerini hesapla
     set_total_force        %tum force bilesenlerini toplayalim
     
+    mrec_update
+    mrec_propogate
   end
 end
 

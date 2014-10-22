@@ -6,12 +6,13 @@ est_propogate_period = 0.5;
 est_update_period    = 10;
 
 %n tane agent i random generate et
-n = 100;
+n = 50;
 [X, Y]  = generate_MAS(n);
 Xdot    = zeros(n,1);
 Ydot    = zeros(n,1);
 Xdotdot = zeros(n,1);
 Ydotdot = zeros(n,1);
+farthest_agent_index = zeros(2,1);
 
 %rank increment
 rank_increment = 1;
@@ -75,12 +76,27 @@ force_matrix = zeros(2,7,n);
 inside_outside_array = zeros(n,1);
 shape_buffer = 0.1;
 
-%ka = 4* 10^(-3);
 ka = 80;
 kr = 6000;
 kf = 2000;
 km = 5000;
 ka2 = 50000;
+%Artificial forces for individual members
+
+%mrec variable definitions
+mrec_mean = zeros(2,1);
+mrec_E1 = [0 1 ; 1 0 ];
+mrec_E2 = [1 0 ; 0 -1];
+mrec_E3 = [0 -1; 1 0 ];
+mrec_R  = zeros(2,2);
+mrec_theta = 0;
+mrec_s1 = 0;
+mrec_s2 = 0;
+mrec_active = 0;
+mrec_theta_dot = 0;
+mrec_mean_dot  = 0;
+mrec_s_dot     = 0;
+%mrec variable definitions
 
 %==========================%
 %zone tanimlamalari
