@@ -13,8 +13,8 @@ Ydot    = zeros(n,1);
 Xdotdot = zeros(n,1);
 Ydotdot = zeros(n,1);
 farthest_agent_index = zeros(2,1);
-agents_zone = ones(n,1);
-
+%agents_zone = ones(n,1);
+agents_zone = rand(n,1) * 2;
 %rank increment
 rank_increment = 1;
 
@@ -148,6 +148,19 @@ hold on
 %set(h,'YDataSource','Y');
 %set(h,'CDataSource','color');
 %==========================%
+
+
+
+%==========================%
+%Agentlari agent zone lari ile plot edelim
+k = scatter(X, Y, agents_zone*100);
+set(k,'XDataSource','X');
+set(k,'YDataSource','Y');
+
+
+%==========================%
+
+
 
 %==========================%
 %formation seklini plot edelim

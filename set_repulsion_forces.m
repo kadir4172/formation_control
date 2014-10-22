@@ -16,15 +16,17 @@
   kr = evalin('base', 'kr');
  
   n = evalin('base', 'n');
-  
+  agents_zone = evalin('base', 'agents_zone');
 
   force_matrix(:,2,:) = 0 ; % repulsive force sutununu sifirlayalim
   for i = 1 : 1 : n
     if(inside_outside_array(i) ~= 0) %eger agent, shape disarisinda degilse hesaplansin
       for j = 1 : 1 : array_length
         distance_to_point = norm([(formation_x(j) - X(i))  (formation_y(j) - Y(i))]);
-        force_matrix(1,2,i) = force_matrix(1,2,i) + ((X(i) - formation_x(j)) / (distance_to_point)^3);
-        force_matrix(2,2,i) = force_matrix(2,2,i) + ((Y(i) - formation_y(j)) / (distance_to_point)^3);
+        %force_matrix(1,2,i) = force_matrix(1,2,i) + ((X(i) - formation_x(j)) / (distance_to_point)^3);
+        %force_matrix(2,2,i) = force_matrix(2,2,i) + ((Y(i) - formation_y(j)) / (distance_to_point)^3);
+        force_matrix(1,2,i) = force_matrix(1,2,i) + (((X(i) - formation_x(j)) / (distance_to_point)) / (distance_to_point - agents_zone(i))^2);
+        force_matrix(2,2,i) = force_matrix(2,2,i) + (((Y(i) - formation_y(j)) / (distance_to_point)) / (distance_to_point - agents_zone(i))^2);
       end
         force_matrix(1,2,i) = force_matrix(1,2,i) * kr;
         force_matrix(2,2,i) = force_matrix(2,2,i) * kr;
