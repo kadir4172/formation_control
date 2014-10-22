@@ -13,6 +13,7 @@ Ydot    = zeros(n,1);
 Xdotdot = zeros(n,1);
 Ydotdot = zeros(n,1);
 farthest_agent_index = zeros(2,1);
+agents_zone = ones(n,1);
 
 %rank increment
 rank_increment = 1;
@@ -63,6 +64,17 @@ formation_center = 0;
 %formation noktalari arasindaki mesafe
 pen_length = 0.01;
 
+%obstacle verileri
+obstacle_1_x = 0;
+obstacle_1_y = 0;
+obstacle_2_x = 0;
+obstacle_2_y = 0;
+obstacle_3_x = 0;
+obstacle_3_y = 0;
+obstacle_number = 0;
+obstacle_global = 0;
+set_obstacles;
+
 %formation bilgisini bir kez alalim TODO:daha sonra surekli dinamik
 %yapilmali
 pen;
@@ -76,10 +88,11 @@ force_matrix = zeros(2,7,n);
 inside_outside_array = zeros(n,1);
 shape_buffer = 0.1;
 
-ka = 80;
+ka = 20;
 kr = 6000;
 kf = 2000;
 km = 5000;
+ko = 5000;
 ka2 = 50000;
 %Artificial forces for individual members
 
@@ -145,6 +158,14 @@ set(j,'YDataSource','formation_y');
 axis([-100,100,-100,100])
 %==========================%
 
+%==========================%
+%obstacle lari plot edelim
+
+%figure
+plot(obstacle_1_x, obstacle_1_y);
+plot(obstacle_2_x, obstacle_2_y);
+plot(obstacle_3_x, obstacle_3_y);
+%==========================%
 
 linkdata on
 %tum agentler in ilk konumunu ciz ve linkdata enable et

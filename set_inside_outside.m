@@ -54,8 +54,7 @@ for k = 1 : 1 : n
  else
    inside_outside_array(k) = 0; %agent out of shape
  end
-
-  
+ 
 %real_inside
 %imag_inside
 end %for k = 1 : 1 : n

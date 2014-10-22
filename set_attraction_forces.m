@@ -13,6 +13,7 @@
   ka  = evalin('base', 'ka');
  
   n = evalin('base', 'n');
+  max_attraction_force = 1500;
   
   force_matrix(:,1,:) = 0 ; % attractive force sutununu sifirlayalim
   for i = 1 : 1 : n
@@ -23,6 +24,16 @@
       end
         force_matrix(1,1,i) = (force_matrix(1,1,i) * ka) / array_length;
         force_matrix(2,1,i) = (force_matrix(2,1,i) * ka) / array_length;
+     
+         
+      if (abs(force_matrix(1,1,i)) > max_attraction_force)
+        force_matrix(1,1,i) = max_attraction_force * (force_matrix(1,1,i)/abs(force_matrix(1,1,i)));
+      end
+      
+      if (abs(force_matrix(2,1,i)) > max_attraction_force)
+        force_matrix(2,1,i) = max_attraction_force * (force_matrix(2,1,i)/abs(force_matrix(2,1,i)));
+      end
+      
     end
   end
   
