@@ -82,8 +82,14 @@ assignin('base', 'P', P);
   for i = 1 : 1 :n
     set(g(i),'Position',[X(i),Y(i),0]);
   end
-
-
+  
+%update center mass of the swarm
+  pos_array = [X' ; Y'];
+  mean  = sum(pos_array,2) ./ n;
+  assignin('base', 'mrec_mean', mean);
+%update center mass of the swarm
+  
+  
 %update distance to agents matrix  
 dist_to_agents = zeros(n,n);
 for i = 1 : 1 : n
@@ -101,6 +107,8 @@ calculate_forces_flag = evalin('base', 'calculate_forces_flag');
   
       %pozisyon propogate bittikten sonra artificial force lari hesaplayalim
     set_inside_outside     %agentlari shape in icinde mi disindami hesaplayalim
+    check_x_swarm          %X_swarm kosullari saglaniyor mu diye bakalim
+    check_density          %sekil icerisine giren agentlarin total volume larini bulalim
     set_attraction_forces  %seklin disindayken cekici kuvvetleri hesapla
     set_attraction2_forces %sinirdan gecemeyen agentlar icin aktif hale gelecek ekstra force
     set_repulsion_forces   %seklin icindeyken itici kuvvetleri hesapla
@@ -108,6 +116,7 @@ calculate_forces_flag = evalin('base', 'calculate_forces_flag');
     set_friction_forces    %agentlar icin surtunme kuvvetlerini hesapla
     set_obstacle_forces    %agentlar icin obstacle lar tarafindan uretilen sanal kuvvetleri hesapla
     set_total_force        %tum force bilesenlerini toplayalim
+    
     
     mrec_update
     mrec_propogate

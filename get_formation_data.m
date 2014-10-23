@@ -28,6 +28,7 @@ assignin('base', 'formation_y', formation_y);
 
 get_formation_center  %cizilen ve islenen formationin merkezini bulalim
 get_formation_length  %cizilen ve islenen formationin uzunlugunu bulalim
+get_formation_area    %cizilen ve islenen formationin alanini bulalim
 
 calculate_forces_flag  = 1;
 assignin('base', 'calculate_forces_flag', calculate_forces_flag);

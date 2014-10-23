@@ -7,6 +7,8 @@
   E3  = evalin('base', 'mrec_E3');
   farthest_agent_index  = evalin('base', 'farthest_agent_index');
   
+  mean  = evalin('base', 'mrec_mean');
+  
   if(mrec_active == 1)
     %theta calculation
     if(farthest_agent_index(2) == 1)
@@ -25,7 +27,7 @@
   end
   pos_array = [X' ; Y'];
   
-  mean  = sum(pos_array,2) ./ n;
+  %mean  = sum(pos_array,2) ./ n;
   
   R = [cos(theta) -sin(theta); sin(theta) cos(theta)];
   
@@ -43,7 +45,7 @@
   s2 = s2 / (2 * (n-1));
 
   
-  assignin('base', 'mrec_mean', mean);
+  %assignin('base', 'mrec_mean', mean);
   assignin('base', 'mrec_theta', theta);
   assignin('base', 'mrec_R', R);
   assignin('base', 'mrec_s1', s1);

@@ -5,7 +5,7 @@ clear
 est_propogate_period = 0.5;
 est_update_period    = 10;
 
-%n tane agent i random generate et
+%n tane agent i ve state lerini generate edelim
 n = 50;
 [X, Y]  = generate_MAS(n);
 Xdot    = zeros(n,1);
@@ -13,8 +13,13 @@ Ydot    = zeros(n,1);
 Xdotdot = zeros(n,1);
 Ydotdot = zeros(n,1);
 farthest_agent_index = zeros(2,1);
-%agents_zone = ones(n,1);
-agents_zone = rand(n,1) * 2;
+agents_radius = rand(n,1) * 3;  % 0 -3cm arasi yaricapli agentlar yaratalim
+conversion_index = 5.641; % [matlab] / [cm]
+agents_radius_matlab = conversion_index .* agents_radius;
+agents_zone_matlab = pi .* (agents_radius_matlab.^2);
+agents_zone = pi .* (agents_radius.^2);
+total_agent_volume = sum(agents_zone);
+total_agent_inside_volume = 0;
 %rank increment
 rank_increment = 1;
 
@@ -60,6 +65,9 @@ formation_y = 0;
 %formation a iliskin datalar
 formation_length = 0;
 formation_center = 0;
+formation_area   = 0;
+formation_density = 0;
+desired_density = 0.150;
 
 %formation noktalari arasindaki mesafe
 pen_length = 0.01;
@@ -84,6 +92,7 @@ P = zeros(2,2,n);
 
 %Artificial forces for individual members
 calculate_forces_flag = 0;
+x_swarm_flag = 0;
 force_matrix = zeros(2,7,n);
 inside_outside_array = zeros(n,1);
 shape_buffer = 0.1;
@@ -91,7 +100,7 @@ shape_buffer = 0.1;
 ka = 20;
 kr = 6000;
 kf = 2000;
-km = 5000;
+km = 6000;
 ko = 5000;
 ka2 = 50000;
 %Artificial forces for individual members
@@ -153,7 +162,7 @@ hold on
 
 %==========================%
 %Agentlari agent zone lari ile plot edelim
-k = scatter(X, Y, agents_zone*100);
+k = scatter(X, Y, agents_zone_matlab);
 set(k,'XDataSource','X');
 set(k,'YDataSource','Y');
 
