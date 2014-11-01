@@ -50,8 +50,10 @@ else
   X_accelmeas = force_matrix(1,7,:) /10000;
   Y_accelmeas = force_matrix(2,7,:) /10000;
   X_accelmeas_noisy(1,1,:) = rand(n,1) * 0.01 - 0.005;
+  %X_accelmeas_noisy(1,1,:) = zeros(n,1);
   X_accelmeas_noisy = X_accelmeas_noisy + force_matrix(1,7,:) /10000;
   Y_accelmeas_noisy(1,1,:) = rand(n,1) * 0.01 - 0.005;
+  %Y_accelmeas_noisy(1,1,:) = zeros(n,1);
   Y_accelmeas_noisy = Y_accelmeas_noisy + force_matrix(2,7,:) /10000;
 end
 

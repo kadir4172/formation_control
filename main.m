@@ -142,7 +142,7 @@ field2 = 'sayac';   value2 = 1;
 propogate_states_loop;
 
 %update_states_loop timer ini baslatalim
-update_states_loop;
+%update_states_loop;
 %==========================%
 
 %==========================%
@@ -169,9 +169,9 @@ hold on
 
 %==========================%
 %Agentlari agent zone lari ile plot edelim
-k = scatter(X, Y, agents_zone_matlab);
-set(k,'XDataSource','X');
-set(k,'YDataSource','Y');
+%k = scatter(X, Y, agents_zone_matlab);
+%set(k,'XDataSource','X');
+%set(k,'YDataSource','Y');
 
 
 %==========================%

@@ -22,13 +22,6 @@ PA_index = evalin('base', 'PA_index');
 %toplam beacon sayisi
 PA_number = evalin('base', 'PA_number');
 
-%dist_to_beacon_real matrisini olusturalim
-for i = 1 : 1 : n
-  for j = 1 : 1 : PA_number
-    dist_to_beacon_real(i,j) = norm([(X_real(i) - X_real(PA_index(j))) (Y_real(i) - Y_real(PA_index(j)))]);
-  end
-end
-
 %update distance to agents_real matrix  
 dist_to_agents_real = zeros(n,n);
 for i = 1 : 1 : n

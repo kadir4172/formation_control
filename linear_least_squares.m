@@ -35,26 +35,26 @@ end
 
 if(rank(A) == 2) % A is full column rank matrix, direct solution or minimum norm solution is available
   if(length(beacon_array) == 3) % A is full column 2*2 matrix, direct solution available
-    pos = inv(A) * B';
+    pos = pinv(A) * B';
     pos(1) = pos(1) + X_real(beacon_array(1));
     pos(2) = pos(2) + Y_real(beacon_array(1));
     x = pos(1);
     y = pos(2);
   else % A is full column and a unique minimum norm solution is available
-    pos = inv((A')*A) * A' * B'; 
+    pos = pinv((A') * A) * A' * B'; 
     pos(1) = pos(1) + X_real(beacon_array(1));
     pos(2) = pos(2) + Y_real(beacon_array(1));
     x = pos(1);
     y = pos(2);
   end
 elseif(rank(A) == 1) % columns of A is linear dependent and minimum norm solution will be derived with non linear least squares
-    pos = pinv(A' * A) * A'* B';
+    pos = pinv((A') * A) * A' * B';
     pos(1) = pos(1) + X_real(beacon_array(1));
     pos(2) = pos(2) + Y_real(beacon_array(1));
     x = pos(1);
     y = pos(2);
     theta = [x y]';
-    [x y] = nonlinear_least_squares(agent_index, theta, beacon_array);    
+    %[x y] = nonlinear_least_squares(agent_index, theta, beacon_array);    
 end
 
 %{

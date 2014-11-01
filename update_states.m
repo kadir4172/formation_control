@@ -30,44 +30,120 @@ update_neighbor_matrix();
 
 X  = evalin('base', 'X');
 Y  = evalin('base', 'Y');
+X_real  = evalin('base', 'X_real');
+Y_real  = evalin('base', 'Y_real');
 Xdot  = evalin('base', 'Xdot');
 Ydot  = evalin('base', 'Ydot');
 neighbor_matrix = evalin('base', 'neighbor_matrix');
 route_table = evalin('base', 'route_table');
 n = evalin('base', 'n');
 P = evalin('base', 'P');
-
+PA_index  = evalin('base', 'PA_index');
 %check_lost_agents scripti ile lost agentlarin timer i calistirilsin
 if(~skip_first_poll)
   check_lost_agents;
 end
-%local trilateration ile pozisyon bilgilerini guncelleyelim
-max_rank = max(route_table(:,2));
 
-for r = 2 : 1 : max_rank
-  for i = 1 : 1 : n
-    %eger agent loss durumda degilse trilateration yapalim
-    if(neighbor_matrix(i,(n+2)) == 0 )
-        if(route_table(i,2) == r)
-          %[X_meas(i), Y_meas(i)] = linear_least_squares([X(neighbor_matrix(i,1)) Y(neighbor_matrix(i,1))], [X(neighbor_matrix(i,2)) Y(neighbor_matrix(i,2))], [X(neighbor_matrix(i,3)) Y(neighbor_matrix(i,3))], neighbor_distance(i,1),neighbor_distance(i,2),neighbor_distance(i,3));
-          %[X_meas(i), Y_meas(i)] = nonlinear_least_squares([X(neighbor_matrix(i,1)) Y(neighbor_matrix(i,1))], [X(neighbor_matrix(i,2)) Y(neighbor_matrix(i,2))], [X(neighbor_matrix(i,3)) Y(neighbor_matrix(i,3))], neighbor_distance(i,1),neighbor_distance(i,2),neighbor_distance(i,3), [X_meas(i); Y_meas(i)]);
-          counter = neighbor_matrix(i,(n+1));
-          beacon_array = neighbor_matrix(i,(1:counter));
-          [X_meas(i), Y_meas(i)] = linear_least_squares(i, beacon_array);
-          X_meas(i) = X(i);
-          Y_meas(i) = Y(i);
+
+%local trilateration ile pozisyon bilgilerini guncelleyelim
+for i = 1 : 1 : n
+  if(neighbor_matrix(i,(n+2)) == 0 ) %eger agent loss durumda degilse trilateration yapalim
+    if(route_table(i,2) == 2)
+      beacon_index = PA_index(route_table(i,3));
+      virtual_point1 = [X_real(beacon_index) (Y_real(beacon_index)+5)];
+      virtual_point2 = [(X_real(beacon_index)+5) Y_real(beacon_index)];
+        
+      r1 = norm([(X_real(i) - X_real(beacon_index)) (Y_real(i) - Y_real(beacon_index))]);
+      r2 = norm([(X_real(i) - virtual_point1(1)) (Y_real(i) - virtual_point1(2))]);
+      r3 = norm([(X_real(i) - virtual_point2(1)) (Y_real(i) - virtual_point2(2))]);
+        
+      b1 = (r1^2 - r2^2 + 25)/2;
+      b2 = (r1^2 - r3^2 + 25)/2;
+        
+      %A = eye(2) .* 5;
+      A = [0 5; 5 0];
+      B = [b1 b2]';
+        
+      pos = inv(A) * B;
+     %xval = X(i)
+      X_meas = pos(1) + X_real(beacon_index);
+      Y_meas = pos(2) + Y_real(beacon_index);
           
-          %[v b] = linear_least_squares(14,[2 3 5])
-        elseif (route_table(i,2) == 1) %beaconlari trilateration a sokmayalim
-          X_meas(i) = X(i);
-          Y_meas(i) = Y(i);       
-        end
-    else % lost agentlari da trilateration a sokmayalim
-        X_meas(i) = X(i);
-        Y_meas(i) = Y(i);
+      X_vector = [X(i); Xdot(i)];
+      Y_vector = [Y(i); Ydot(i)];
+  
+      x = X_meas - H * X_vector;
+      y = Y_meas - H * Y_vector;
+  
+      S = H * P(:,:,i) * H' + R;
+      K = (P(:,:,i) * H') ./ S;
+  
+      X_vector = X_vector + K * x;
+      Y_vector = Y_vector + K * y;
+  
+      P(:,:,i) = P(:,:,i) - K * H * P(:,:,i);
+  
+      X(i)= X_vector(1);
+      Xdot(i) = X_vector(2);
+  
+      Y(i)= Y_vector(1);
+      Ydot(i) = Y_vector(2);
+            
+    elseif (route_table(i,2) == 1) %beaconlari trilateration a sokmayalim
+              %nothing to do with beacons
     end
+  else % lost agentlari da trilateration a sokmayalim
+       %nothing to do with lost agents
   end
 end
+
+assignin('base', 'X', X); % elde ettigimiz degerleri base workspace e yazalim, buyuk rankli olanlar yeni degerleri kullansin
+assignin('base', 'Y', Y);
+
+max_rank = max(route_table(:,2));
+
+for r = 3 : 1 : max_rank
+  for i = 1 : 1 : n
+    if(neighbor_matrix(i,(n+2)) == 0 ) %eger agent loss durumda degilse trilateration yapalim
+      if(route_table(i,2) == r)
+        counter = neighbor_matrix(i,(n+1));
+        beacon_array = neighbor_matrix(i,(1:counter));
+        [X_meas, Y_meas] = linear_least_squares(i, beacon_array);
+        %X_meas = X(i);
+        %Y_meas = Y(i);
+        X_vector = [X(i); Xdot(i)];
+        Y_vector = [Y(i); Ydot(i)];
+  
+        x = X_meas - H * X_vector;
+        y = Y_meas - H * Y_vector;
+  
+        S = H * P(:,:,i) * H' + R;
+        K = (P(:,:,i) * H') ./ S;
+  
+        X_vector = X_vector + K * x;
+        Y_vector = Y_vector + K * y;
+  
+        P(:,:,i) = P(:,:,i) - K * H * P(:,:,i);
+  
+        X(i)= X_vector(1);
+        Xdot(i) = X_vector(2);
+  
+        Y(i)= Y_vector(1);
+        Ydot(i) = Y_vector(2);
+      elseif (route_table(i,2) == 1) %beaconlari trilateration a sokmayalim
+          %nothing to do with beacons
+      end
+    else % lost agentlari da trilateration a sokmayalim
+        %nothing to do with lost agents
+    end
+  end
+  assignin('base', 'X', X); % elde ettigimiz degerleri base workspace e yazalim, buyuk rankli olanlar yeni degerleri kullansin
+  assignin('base', 'Y', Y);
+end
+
+%assignin('base', 'Xdot', Xdot); %pozisyon bilgilerini elde ettikce update etmistik, hiz verilerini topluca base workspace e yazalim
+%assignin('base', 'Ydot', Ydot);
+%{
 %local trilateration ile elde ettigimiz pozisyon bilgilerini state
 %estimation a sokalim
 for i = 1 : 1 : n
@@ -91,13 +167,13 @@ for i = 1 : 1 : n
   Y(i)= Y_vector(1);
   Ydot(i) = Y_vector(2);
 end
-
+%}
 scale = route_table(:,2).^3 * 5;
 color = route_table(:,3);
 
 
-assignin('base', 'X', X);
-assignin('base', 'Y', Y);
+%assignin('base', 'X', X);
+%assignin('base', 'Y', Y);
 
 assignin('base', 'scale', scale);
 assignin('base', 'color', color);
