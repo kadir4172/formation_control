@@ -50,16 +50,13 @@ for r = 2 : 1 : max_rank
     %eger agent loss durumda degilse trilateration yapalim
     if(neighbor_matrix(i,4) == 0 )
         if(route_table(i,2) == r)
-        %X_old = X(i)
-        %Y_old = Y(i)
-        [X_meas(i), Y_meas(i)] = linear_least_squares([X(neighbor_matrix(i,1)) Y(neighbor_matrix(i,1))], [X(neighbor_matrix(i,2)) Y(neighbor_matrix(i,2))], [X(neighbor_matrix(i,3)) Y(neighbor_matrix(i,3))], neighbor_distance(i,1),neighbor_distance(i,2),neighbor_distance(i,3));
-        
-        [X_meas(i), Y_meas(i)] = nonlinear_least_squares([X(neighbor_matrix(i,1)) Y(neighbor_matrix(i,1))], [X(neighbor_matrix(i,2)) Y(neighbor_matrix(i,2))], [X(neighbor_matrix(i,3)) Y(neighbor_matrix(i,3))], neighbor_distance(i,1),neighbor_distance(i,2),neighbor_distance(i,3), [X_meas(i); Y_meas(i)]);
-        %X_yeni = X(i)
-        %Y_yeni = Y(i)
+          %[X_meas(i), Y_meas(i)] = linear_least_squares([X(neighbor_matrix(i,1)) Y(neighbor_matrix(i,1))], [X(neighbor_matrix(i,2)) Y(neighbor_matrix(i,2))], [X(neighbor_matrix(i,3)) Y(neighbor_matrix(i,3))], neighbor_distance(i,1),neighbor_distance(i,2),neighbor_distance(i,3));
+          %[X_meas(i), Y_meas(i)] = nonlinear_least_squares([X(neighbor_matrix(i,1)) Y(neighbor_matrix(i,1))], [X(neighbor_matrix(i,2)) Y(neighbor_matrix(i,2))], [X(neighbor_matrix(i,3)) Y(neighbor_matrix(i,3))], neighbor_distance(i,1),neighbor_distance(i,2),neighbor_distance(i,3), [X_meas(i); Y_meas(i)]);
+          X_meas(i) = X(i);
+          Y_meas(i) = Y(i);
         elseif (route_table(i,2) == 1) %beaconlari trilateration a sokmayalim
-        X_meas(i) = X(i);
-        Y_meas(i) = Y(i);       
+          X_meas(i) = X(i);
+          Y_meas(i) = Y(i);       
         end
     else % lost agentlari da trilateration a sokmayalim
         X_meas(i) = X(i);
@@ -67,7 +64,6 @@ for r = 2 : 1 : max_rank
     end
   end
 end
-
 %local trilateration ile elde ettigimiz pozisyon bilgilerini state
 %estimation a sokalim
 for i = 1 : 1 : n

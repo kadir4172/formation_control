@@ -8,10 +8,17 @@ est_update_period    = 10;
 %n tane agent i ve state lerini generate edelim
 n = 50;
 [X, Y]  = generate_MAS(n);
+X_real = X;
+Y_real = Y;
 Xdot    = zeros(n,1);
 Ydot    = zeros(n,1);
 Xdotdot = zeros(n,1);
 Ydotdot = zeros(n,1);
+Xdot_real    = zeros(n,1);
+Ydot_real    = zeros(n,1);
+Xdotdot_real = zeros(n,1);
+Ydotdot_real = zeros(n,1);
+
 farthest_agent_index = zeros(2,1);
 agents_radius = rand(n,1) * 3;  % 0 -3cm arasi yaricapli agentlar yaratalim
 conversion_index = 5.641; % [matlab] / [cm]
@@ -30,7 +37,7 @@ route_table = ones(n,3);
 dist_to_agents = zeros(n,n);
 
 %neighborhood matrisi olusturalim
-neighbor_matrix = zeros(n,4);
+neighbor_matrix = zeros(n,n+2);
 neighbor_distance = zeros(n,3);
 
 %lost_agent_matrix tanimi
@@ -135,7 +142,7 @@ field2 = 'sayac';   value2 = 1;
 propogate_states_loop;
 
 %update_states_loop timer ini baslatalim
-%update_states_loop;
+update_states_loop;
 %==========================%
 
 %==========================%
