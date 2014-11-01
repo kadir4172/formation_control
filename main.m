@@ -47,7 +47,7 @@ lost_agent_matrix = zeros(n,2);
 agent_coverage = 20;
 
 %agent sayisinin %10 u kadar PA ayarla
-PA_number = round(n/10);
+PA_number = round(n/5);
 PA_index  = round(rand(PA_number,1) * n);
 
 % indeksi 0 olanlarin indeksini bir arttir
@@ -142,7 +142,7 @@ field2 = 'sayac';   value2 = 1;
 propogate_states_loop;
 
 %update_states_loop timer ini baslatalim
-%update_states_loop;
+update_states_loop;
 %==========================%
 
 %==========================%
@@ -156,6 +156,10 @@ figure
 %agent indexleri gosterecek text object leri yaratalim
 for i = 1 : 1 : n
   g(i) = text(X(i),Y(i), int2str(i));%, 'VerticalAlignment','up','HorizontalAlignment','center');
+end
+
+for i = 1 : 1 : n
+  m(i) = text(X_real(i),Y_real(i), int2str(i));%, 'VerticalAlignment','up','HorizontalAlignment','center');
 end
 
 axis([-100,100,-100,100])

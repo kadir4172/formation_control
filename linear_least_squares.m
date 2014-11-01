@@ -25,7 +25,8 @@ Y = evalin('base', 'Y');
 %r2 = norm([(t(1)-b2(1)) (t(2)-b2(2))]) + error(2);
 %r3 = norm([(t(1)-b3(1)) (t(2)-b3(2))]) + error(3);
 r1 = norm([(X_real(agent_index) - X_real(beacon_array(1))) (Y_real(agent_index) - Y_real(beacon_array(1)))]);
-for i = 2 : 1 : length(beacon_array)
+%for i = 2 : 1 : length(beacon_array)
+for i = 2 : 1 : 3
   A((i-1),1) = X(beacon_array(i)) - X(beacon_array(1));  % A matrisinin elemanlari X-Y degerleri ile hesaplandi, gercek degerler ile degil
   A((i-1),2) = Y(beacon_array(i)) - Y(beacon_array(1));
   r      = norm([(X_real(agent_index) - X_real(beacon_array(i))) (Y_real(agent_index) - Y_real(beacon_array(i)))]);
@@ -35,7 +36,8 @@ end
 
 if(rank(A) == 2) % A is full column rank matrix, direct solution or minimum norm solution is available
   if(length(beacon_array) == 3) % A is full column 2*2 matrix, direct solution available
-    pos = pinv(A) * B';
+    %pos = pinv(A) * B';
+    pos = pinv((A') * A) * A' * B'; 
     pos(1) = pos(1) + X_real(beacon_array(1));
     pos(2) = pos(2) + Y_real(beacon_array(1));
     x = pos(1);
