@@ -2,7 +2,7 @@ lost_agent_matrix = evalin('base','lost_agent_matrix');
 %g = evalin('base', 'g');
 
 for i  = 1 : 1 : n
- if (neighbor_matrix(i,4))
+ if (neighbor_matrix(i,n+2))
      text = 'Lost Agent';
      lost_agent_matrix(i,1) = lost_agent_matrix(i,1) + 1;
      if (lost_agent_matrix(i,1) > 3)

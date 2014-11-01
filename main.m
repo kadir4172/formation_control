@@ -38,7 +38,7 @@ dist_to_agents = zeros(n,n);
 
 %neighborhood matrisi olusturalim
 neighbor_matrix = zeros(n,n+2);
-neighbor_distance = zeros(n,3);
+
 
 %lost_agent_matrix tanimi
 lost_agent_matrix = zeros(n,2);

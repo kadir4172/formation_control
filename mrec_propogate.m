@@ -55,6 +55,8 @@
     assignin('base', 'mrec_s_dot', s_dot);
     assignin('base', 'Xdot', velocity(1,:));
     assignin('base', 'Ydot', velocity(2,:));
+    assignin('base', 'Xdot_real', velocity(1,:));
+    assignin('base', 'Ydot_real', velocity(2,:));
     reorientate_shape
   end
 

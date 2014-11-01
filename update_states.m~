@@ -52,8 +52,8 @@ for r = 2 : 1 : max_rank
           %[X_meas(i), Y_meas(i)] = linear_least_squares([X(neighbor_matrix(i,1)) Y(neighbor_matrix(i,1))], [X(neighbor_matrix(i,2)) Y(neighbor_matrix(i,2))], [X(neighbor_matrix(i,3)) Y(neighbor_matrix(i,3))], neighbor_distance(i,1),neighbor_distance(i,2),neighbor_distance(i,3));
           %[X_meas(i), Y_meas(i)] = nonlinear_least_squares([X(neighbor_matrix(i,1)) Y(neighbor_matrix(i,1))], [X(neighbor_matrix(i,2)) Y(neighbor_matrix(i,2))], [X(neighbor_matrix(i,3)) Y(neighbor_matrix(i,3))], neighbor_distance(i,1),neighbor_distance(i,2),neighbor_distance(i,3), [X_meas(i); Y_meas(i)]);
           counter = neighbor_matrix(i,(n+1));
-          beacon_array = neighbor_matrix(i,(1:counter));
-          [X_meas(i), Y_meas(i)] = linear_least_squares(i, beacon_array);
+          beacon_array = neighbor_matrix(i,(1:counter))
+          %[X_meas(i), Y_meas(i)] = linear_least_squares(i,
           X_meas(i) = X(i);
           Y_meas(i) = Y(i);
           

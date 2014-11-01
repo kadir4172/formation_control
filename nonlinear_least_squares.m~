@@ -6,7 +6,7 @@ for i = 1 : 1 : length(beacon_array)
   X(i) = X(beacon_array(i));
   Y(i) = Y(beacon_array(i));
   R(i) = norm([(X_real(agent_index) - X_real(beacon_array(i))) (Y_real(agent_index) - Y_real(beacon_array(i)))]);
-  F(i) = norm([(theta(1) - X(i)) (theta(2) - Y(i))]);
+  F(i) = norm([(X(agent_index) - X(beacon_array(i))) (Y(agent_index) - Y(beacon_array(i)))]);
 end    
 %x1 = b1(1);
 %y1 = b1(2);
@@ -43,14 +43,11 @@ A = zeros(2,1);
   end
 
   theta = theta - pinv(B) * A;
- 
-  for i = 1 : 1 : length(beacon_array)
-    F(i) = norm([(theta(1) - X(i)) (theta(2) - Y(i))]);
-  end    
-%f1 = norm([(theta(1)-X(1)) (theta(2)-Y(1))]) -R(1);
-%f2 = norm([(theta(1)-X(2)) (theta(2)-Y(2))]) -R(2);
-%f3 = norm([(theta(1)-X(3)) (theta(2)-Y(3))]) -R(3);
-%F = [f1 f2 f3];
+  
+f1 = norm([(theta(1)-X(1)) (theta(2)-Y(1))]) -R(1);
+f2 = norm([(theta(1)-X(2)) (theta(2)-Y(2))]) -R(2);
+f3 = norm([(theta(1)-X(3)) (theta(2)-Y(3))]) -R(3);
+F = [f1 f2 f3];
 end
 x = theta(1);
 y = theta(2);

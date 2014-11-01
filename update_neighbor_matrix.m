@@ -11,7 +11,7 @@ X_real  = evalin('base', 'X_real');
 Y_real  = evalin('base', 'Y_real');
 
 neighbor_matrix = evalin('base', 'neighbor_matrix');
-neighbor_distance = evalin('base', 'neighbor_distance');
+%neighbor_distance = evalin('base', 'neighbor_distance');
 
 %route_table listesi
 route_table = evalin('base', 'route_table');
@@ -59,8 +59,8 @@ for i = 1 : 1 : n
         for l = 1 : 1 : length(rank_array)
           neighbor_index_dummy(l) = neighbor_index(indices(l)); 
         end
-        neighbor_index = neighbor_index_dummy
-        rank_array = b
+        neighbor_index = neighbor_index_dummy;
+        rank_array = b;
         sayac = 1;
         for k = 1 : 1 : length(rank_array)
           if(route_table(i,2) > rank_array(k))  % eger agent in ranki komsusununkinden buyukse
@@ -87,9 +87,7 @@ for i = 1 : 1 : n
         
     end
 end
-neighbor_matrix
 assignin('base', 'neighbor_matrix'  , neighbor_matrix)  ;
-assignin('base', 'neighbor_distance', neighbor_distance);
 
 end
 
