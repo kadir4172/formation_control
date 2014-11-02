@@ -9,7 +9,8 @@ persistent B;
 dt = evalin('base', 'est_propogate_period');
 accel_noise = 2;
 n = evalin('base', 'n');
-g = evalin('base', 'g');
+%g = evalin('base', 'g');
+%m = evalin('base', 'm');
 
 mrec_active = evalin('base', 'mrec_active');
  
@@ -50,11 +51,11 @@ if(mrec_active == 1)
 else
   X_accelmeas = force_matrix(1,7,:) /10000;
   Y_accelmeas = force_matrix(2,7,:) /10000;
-  X_accelmeas_noisy(1,1,:) = rand(n,1) * 0.25 - 0.125;
+  X_accelmeas_noisy(1,1,:) = rand(n,1) * 0.050 - 0.0250;
   X_accelmeas_noisy(1,1,PA_index) = 0;              % PA larin ivmeleri gurultusuz olsun
   %X_accelmeas_noisy(1,1,:) = zeros(n,1);
   X_accelmeas_noisy = X_accelmeas_noisy + force_matrix(1,7,:) /10000;
-  Y_accelmeas_noisy(1,1,:) = rand(n,1) * 0.25 - 0.125;
+  Y_accelmeas_noisy(1,1,:) = rand(n,1) * 0.050 - 0.0250;
   Y_accelmeas_noisy(1,1,PA_index) = 0;              % PA larin ivmeleri gurultusuz olsun
   %Y_accelmeas_noisy(1,1,:) = zeros(n,1);
   Y_accelmeas_noisy = Y_accelmeas_noisy + force_matrix(2,7,:) /10000;
@@ -108,9 +109,13 @@ assignin('base', 'Xdotdot_real', X_accelmeas);
 assignin('base', 'Ydotdot_real', Y_accelmeas);
 assignin('base', 'P', P);
 
-  for i = 1 : 1 :n
-    set(g(i),'Position',[X(i),Y(i),0]);
-  end
+  %for i = 1 : 1 :n
+    %set(g(i),'Position',[X(i),Y(i),0]);
+  %end
+  
+  %for i = 1 : 1 :n
+    %set(m(i),'Position',[X_real(i),Y_real(i),0]);
+  %end
   
 %update center mass of the swarm
   pos_array = [X' ; Y'];

@@ -27,7 +27,6 @@ update_route_table( );
 %update_neighbor_matrix matrisini guncelleyelim
 update_neighbor_matrix();
 
-
 X  = evalin('base', 'X');
 Y  = evalin('base', 'Y');
 X_real  = evalin('base', 'X_real');
@@ -39,11 +38,11 @@ route_table = evalin('base', 'route_table');
 n = evalin('base', 'n');
 P = evalin('base', 'P');
 PA_index  = evalin('base', 'PA_index');
+
 %check_lost_agents scripti ile lost agentlarin timer i calistirilsin
 if(~skip_first_poll)
   check_lost_agents;
 end
-
 
 %local trilateration ile pozisyon bilgilerini guncelleyelim
 for i = 1 : 1 : n
@@ -143,37 +142,9 @@ end
 
 %assignin('base', 'Xdot', Xdot); %pozisyon bilgilerini elde ettikce update etmistik, hiz verilerini topluca base workspace e yazalim
 %assignin('base', 'Ydot', Ydot);
-%{
-%local trilateration ile elde ettigimiz pozisyon bilgilerini state
-%estimation a sokalim
-for i = 1 : 1 : n
-  X_vector = [X(i); Xdot(i)];
-  Y_vector = [Y(i); Ydot(i)];
-  
-  x = X_meas(i) - H * X_vector;
-  y = Y_meas(i) - H * Y_vector;
-  
-  S = H * P(:,:,i) * H' + R;
-  K = (P(:,:,i) * H') ./ S;
-  
-  X_vector = X_vector + K * x;
-  Y_vector = Y_vector + K * y;
-  
-  P(:,:,i) = P(:,:,i) - K * H * P(:,:,i);
-  
-  X(i)= X_vector(1);
-  Xdot(i) = X_vector(2);
-  
-  Y(i)= Y_vector(1);
-  Ydot(i) = Y_vector(2);
-end
-%}
+
 scale = route_table(:,2).^3 * 5;
 color = route_table(:,3);
-
-
-%assignin('base', 'X', X);
-%assignin('base', 'Y', Y);
 
 assignin('base', 'scale', scale);
 assignin('base', 'color', color);

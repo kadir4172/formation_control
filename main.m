@@ -3,7 +3,7 @@ clear
 
 %loop periodlari(saniye cinsinden)
 est_propogate_period = 0.5;
-est_update_period    = 10;
+est_update_period    = 5;
 
 %n tane agent i ve state lerini generate edelim
 n = 50;
@@ -107,7 +107,7 @@ shape_buffer = 0.1;
 ka = 20;
 kr = 6000;
 kf = 2000;
-km = 6000;
+km = 7000;
 ko = 5000;
 ka2 = 50000;
 %Artificial forces for individual members
@@ -154,13 +154,13 @@ figure
 %h = scatter(X, Y);
 
 %agent indexleri gosterecek text object leri yaratalim
-for i = 1 : 1 : n
-  g(i) = text(X(i),Y(i), int2str(i));%, 'VerticalAlignment','up','HorizontalAlignment','center');
-end
+%for i = 1 : 1 : n
+ % g(i) = text(X(i),Y(i), int2str(i));
+%end
 
-for i = 1 : 1 : n
-  m(i) = text(X_real(i),Y_real(i), int2str(i));%, 'VerticalAlignment','up','HorizontalAlignment','center');
-end
+%for i = 1 : 1 : n
+ % m(i) = text(X_real(i),Y_real(i),int2str(i),'color','r');
+%end
 
 axis([-100,100,-100,100])
 hold on
@@ -172,12 +172,17 @@ hold on
 
 
 %==========================%
-%Agentlari agent zone lari ile plot edelim
-%k = scatter(X, Y, agents_zone_matlab);
-%set(k,'XDataSource','X');
-%set(k,'YDataSource','Y');
+%Agentlari agent zone lari ile plot edelim (estimated pozisyonlar)
+k = scatter(X, Y, agents_zone_matlab);
+set(k,'XDataSource','X');
+set(k,'YDataSource','Y');
+%==========================%
 
-
+%==========================%
+%Agentlari agent zone lari ile plot edelim (gercek pozisyonlar)
+l = scatter(X_real, Y_real, agents_zone_matlab,'r');
+set(l,'XDataSource','X_real');
+set(l,'YDataSource','Y_real');
 %==========================%
 
 
