@@ -140,6 +140,22 @@ for r = 3 : 1 : max_rank
   assignin('base', 'Y', Y);
 end
 
+for i = 1 : 1 : n
+  error_matrix(i,1) = route_table(i,2);
+  error_matrix(i,2) = norm([(X_real(i) - X(i)) (Y_real(i) - Y(i))]);
+end
+
+for i = 1 : 1 : max_rank
+  ind = find(error_matrix(:,1) == i);
+  total(i) = sum(error_matrix(ind,2)) / length(ind)
+end
+
+assignin('base', 'total', total);
+figure
+plot(total)
+xlabel('Rank Value')
+ylabel('Error Rate')
+title('Rank vs Error')
 %assignin('base', 'Xdot', Xdot); %pozisyon bilgilerini elde ettikce update etmistik, hiz verilerini topluca base workspace e yazalim
 %assignin('base', 'Ydot', Ydot);
 

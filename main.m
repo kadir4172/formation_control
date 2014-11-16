@@ -39,6 +39,8 @@ dist_to_agents = zeros(n,n);
 %neighborhood matrisi olusturalim
 neighbor_matrix = zeros(n,n+2);
 
+%rank_vs_error icin total tanimi
+total = 0 ;
 
 %lost_agent_matrix tanimi
 lost_agent_matrix = zeros(n,2);
