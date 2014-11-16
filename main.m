@@ -6,7 +6,7 @@ est_propogate_period = 0.5;
 est_update_period    = 5;
 
 %n tane agent i ve state lerini generate edelim
-n = 50;
+n = 100;
 [X, Y]  = generate_MAS(n);
 X_real = X;
 Y_real = Y;
@@ -147,10 +147,10 @@ update_states_loop;
 
 %==========================%
 %scatter plot ile zone lar renk ve rank lar boyut olacak sekilde cizelim
-scale = route_table(:,2).^3 * 5;
+scale = route_table(:,2).^3 * 20;
 color = route_table(:,3);
 figure
-%h = scatter(X, Y,scale, color, 'fill');
+h = scatter(X_real, Y_real,scale, color, 'fill');
 %h = scatter(X, Y);
 
 %agent indexleri gosterecek text object leri yaratalim
@@ -164,25 +164,25 @@ figure
 
 axis([-100,100,-100,100])
 hold on
-%set(h,'XDataSource','X');
-%set(h,'YDataSource','Y');
-%set(h,'CDataSource','color');
+set(h,'XDataSource','X_real');
+set(h,'YDataSource','Y_real');
+set(h,'CDataSource','color');
 %==========================%
 
 
 
 %==========================%
 %Agentlari agent zone lari ile plot edelim (estimated pozisyonlar)
-k = scatter(X, Y, agents_zone_matlab);
-set(k,'XDataSource','X');
-set(k,'YDataSource','Y');
+%k = scatter(X, Y, agents_zone_matlab);
+%set(k,'XDataSource','X');
+%set(k,'YDataSource','Y');
 %==========================%
 
 %==========================%
 %Agentlari agent zone lari ile plot edelim (gercek pozisyonlar)
-l = scatter(X_real, Y_real, agents_zone_matlab,'r');
-set(l,'XDataSource','X_real');
-set(l,'YDataSource','Y_real');
+%l = scatter(X_real, Y_real, agents_zone_matlab,'r');
+%set(l,'XDataSource','X_real');
+%set(l,'YDataSource','Y_real');
 %==========================%
 
 
@@ -193,16 +193,16 @@ set(l,'YDataSource','Y_real');
 j = plot(formation_x, formation_y);
 set(j,'XDataSource','formation_x');
 set(j,'YDataSource','formation_y');
-axis([-100,100,-100,100])
+%axis([-100,100,-100,100])
 %==========================%
 
 %==========================%
 %obstacle lari plot edelim
 
 %figure
-plot(obstacle_1_x, obstacle_1_y);
-plot(obstacle_2_x, obstacle_2_y);
-plot(obstacle_3_x, obstacle_3_y);
+%plot(obstacle_1_x, obstacle_1_y);
+%plot(obstacle_2_x, obstacle_2_y);
+%plot(obstacle_3_x, obstacle_3_y);
 %==========================%
 
 linkdata on
