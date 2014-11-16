@@ -14,7 +14,7 @@ end
 
 %R degeri trilateration process indeki hata oranidir
 if isempty(R)
-    R = 3 ; 
+    R = 500 ; 
 end
 
 if isempty(S)

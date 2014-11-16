@@ -3,7 +3,7 @@ clear
 
 %loop periodlari(saniye cinsinden)
 est_propogate_period = 0.5;
-est_update_period    = 5;
+est_update_period    = 3;
 
 %n tane agent i ve state lerini generate edelim
 n = 50;
@@ -20,7 +20,8 @@ Xdotdot_real = zeros(n,1);
 Ydotdot_real = zeros(n,1);
 
 farthest_agent_index = zeros(2,1);
-agents_radius = rand(n,1) * 3;  % 0 -3cm arasi yaricapli agentlar yaratalim
+%agents_radius = rand(n,1) * 3;  % 0 -3cm arasi yaricapli agentlar yaratalim
+agents_radius = ones(n,1) * 1.5;  
 conversion_index = 5.641; % [matlab] / [cm]
 agents_radius_matlab = conversion_index .* agents_radius;
 agents_zone_matlab = pi .* (agents_radius_matlab.^2);
@@ -154,9 +155,9 @@ figure
 %h = scatter(X, Y);
 
 %agent indexleri gosterecek text object leri yaratalim
-%for i = 1 : 1 : n
- % g(i) = text(X(i),Y(i), int2str(i));
-%end
+for i = 1 : 1 : n
+  g(i) = text(X(i),Y(i), '');
+end
 
 %for i = 1 : 1 : n
  % m(i) = text(X_real(i),Y_real(i),int2str(i),'color','r');
@@ -190,9 +191,9 @@ set(l,'YDataSource','Y_real');
 %==========================%
 %formation seklini plot edelim
 %figure
-j = plot(formation_x, formation_y);
-set(j,'XDataSource','formation_x');
-set(j,'YDataSource','formation_y');
+%j = plot(formation_x, formation_y);
+%set(j,'XDataSource','formation_x');
+%set(j,'YDataSource','formation_y');
 axis([-100,100,-100,100])
 %==========================%
 
@@ -200,9 +201,9 @@ axis([-100,100,-100,100])
 %obstacle lari plot edelim
 
 %figure
-plot(obstacle_1_x, obstacle_1_y);
-plot(obstacle_2_x, obstacle_2_y);
-plot(obstacle_3_x, obstacle_3_y);
+%plot(obstacle_1_x, obstacle_1_y);
+%plot(obstacle_2_x, obstacle_2_y);
+%plot(obstacle_3_x, obstacle_3_y);
 %==========================%
 
 linkdata on
