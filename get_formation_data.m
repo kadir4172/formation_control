@@ -5,9 +5,11 @@ pen_length = evalin('base', 'pen_length');
 formation_x = evalin('base', 'formation_x');
 formation_y = evalin('base', 'formation_y');
 
+
 %formation_x/y genliklerini +/-100 arasina tasiyalim
 formation_x = formation_x * 200 - 100;
 formation_y = formation_y * 200 - 100;
+
 
 array_length = length(formation_x);
 distance = norm ([(formation_x(1) - formation_x(array_length)) (formation_y(1) - formation_y(array_length))]);
@@ -22,6 +24,10 @@ extra_dot_number = floor(distance / max_distance);
      formation_y(array_length + i) = formation_y(array_length) + (((formation_y(1) - formation_y(array_length)) * (pen_length * i * 100)) / distance);
   end
 end
+
+formation_gain = 0.3;
+formation_x = formation_x * formation_gain;
+formation_y = formation_y * formation_gain;
 
 assignin('base', 'formation_x', formation_x);
 assignin('base', 'formation_y', formation_y);

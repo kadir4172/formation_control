@@ -3,6 +3,7 @@
 
 inside_outside_array = evalin('base', 'inside_outside_array');
 n = evalin('base', 'n');
+km = evalin('base', 'km');
 agents_zone = evalin('base', 'agents_zone');
 formation_area = evalin('base', 'formation_area');
 desired_density = evalin('base', 'desired_density');
@@ -17,12 +18,12 @@ for i = 1 : 1 : n
 end
 
 density = total / formation_area;
-km = 6000;                     % give default value first
+%km = 6000;                     % give default value first
 if(density > desired_density)  % if shape is full then increase km for better formation
-  km = 10000;
+  km = 6000;
 else
   if((agents_inside / n) > 0.9) % if shape is not full but there is no agents left, increase km harder for better formation
-    km = 15000;
+    km = 6000;
   end
 end
 

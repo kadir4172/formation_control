@@ -1,12 +1,18 @@
 clc
-clear
+clear all
+
+%gazebo entegrasyonu icin udp portarini acalim
+u = udp('127.0.0.1', 5052, 'LocalPort', 5051);
+u.InputBufferSize = 5096;
+u.OutputBufferSize = 5096;
+%gazebo entegrasyonu icin udp portarini acalim
 
 %loop periodlari(saniye cinsinden)
 est_propogate_period = 0.5;
 est_update_period    = 5;
 
 %n tane agent i ve state lerini generate edelim
-n = 50;
+n = 5; % n bes kalsin
 [X, Y]  = generate_MAS(n);
 X_real = X;
 Y_real = Y;
@@ -18,10 +24,23 @@ Xdot_real    = zeros(n,1);
 Ydot_real    = zeros(n,1);
 Xdotdot_real = zeros(n,1);
 Ydotdot_real = zeros(n,1);
+feedback_matrix = [];
+
+
+%agent sayisinin %10 u kadar PA ayarla
+PA_number = round(n/5);
+PA_index  = round(rand(PA_number,1) * n);
+
+udp_receive
+X = X_real;
+Y = Y_real;
+Xdot = Xdot_real;
+Ydot = Ydot_real;
+Xdotdot = Xdotdot_real;
+Ydotdot = Ydotdot_real;
 
 farthest_agent_index = zeros(2,1);
-agents_radius = rand(n,1) * 3;  % 0 -3cm arasi yaricapli agentlar yaratalim
-conversion_index = 5.641; % [matlab] / [cm]
+conversion_index = 13.641; % [matlab] / [cm]
 agents_radius_matlab = conversion_index .* agents_radius;
 agents_zone_matlab = pi .* (agents_radius_matlab.^2);
 agents_zone = pi .* (agents_radius.^2);
@@ -46,9 +65,7 @@ lost_agent_matrix = zeros(n,2);
 %agent_covarage tanimlayalim
 agent_coverage = 20;
 
-%agent sayisinin %10 u kadar PA ayarla
-PA_number = round(n/5);
-PA_index  = round(rand(PA_number,1) * n);
+
 
 % indeksi 0 olanlarin indeksini bir arttir
 ind = find(~PA_index);
@@ -104,11 +121,11 @@ force_matrix = zeros(2,7,n);
 inside_outside_array = zeros(n,1);
 shape_buffer = 0.1;
 
-ka = 20;
-kr = 6000;
-kf = 2000;
-km = 7000;
-ko = 5000;
+ka = 2000;
+kr = 600;
+kf = 0;
+km = 700
+ko = 500;
 ka2 = 50000;
 %Artificial forces for individual members
 
@@ -162,7 +179,7 @@ figure
  % m(i) = text(X_real(i),Y_real(i),int2str(i),'color','r');
 %end
 
-axis([-100,100,-100,100])
+axis([-30,30,-30,30])
 hold on
 %set(h,'XDataSource','X');
 %set(h,'YDataSource','Y');
@@ -173,9 +190,9 @@ hold on
 
 %==========================%
 %Agentlari agent zone lari ile plot edelim (estimated pozisyonlar)
-k = scatter(X, Y, agents_zone_matlab);
-set(k,'XDataSource','X');
-set(k,'YDataSource','Y');
+%k = scatter(X, Y, agents_zone_matlab);
+%set(k,'XDataSource','X');
+%set(k,'YDataSource','Y');
 %==========================%
 
 %==========================%
@@ -193,7 +210,7 @@ set(l,'YDataSource','Y_real');
 j = plot(formation_x, formation_y);
 set(j,'XDataSource','formation_x');
 set(j,'YDataSource','formation_y');
-axis([-100,100,-100,100])
+axis([-30,30,-30,30])
 %==========================%
 
 %==========================%

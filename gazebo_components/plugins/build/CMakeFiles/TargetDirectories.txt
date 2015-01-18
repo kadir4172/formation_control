@@ -1,0 +1,2 @@
+/home/kadir/matlab_work/FormationControl/gazebo_components/plugins/build/CMakeFiles/model_plugin.dir
+/home/kadir/matlab_work/FormationControl/gazebo_components/plugins/build/CMakeFiles/world_publisher.dir

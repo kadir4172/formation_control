@@ -8,7 +8,7 @@
 
   force_matrix = evalin('base', 'force_matrix');
   
-  km  = evalin('base', 'km');
+  km  = evalin('base', 'km')
  
   n = evalin('base', 'n');
   

@@ -1,0 +1,90 @@
+#include <gazebo/transport/transport.hh>
+#include <gazebo/msgs/msgs.hh>
+#include <gazebo/gazebo.hh>
+#include <boost/bind.hpp>
+#include <gazebo/gazebo.hh>
+#include <gazebo/physics/physics.hh>
+#include <gazebo/common/common.hh>
+#include <stdio.h>
+#include <iostream>
+#include <gazebo/msgs/msgs.hh>
+#include <gazebo/transport/transport.hh>
+#include <iostream>
+
+namespace gazebo
+{
+  class ModelPush : public ModelPlugin
+  {
+    public: void Load(physics::ModelPtr _parent, sdf::ElementPtr /*_sdf*/)
+    {
+      // Store the pointer to the model
+      this->model = _parent;
+      model_id = this->model->GetId();
+
+      // Listen to the update event. This event is broadcast every
+      // simulation iteration.
+      this->updateConnection = event::Events::ConnectWorldUpdateBegin(
+          boost::bind(&ModelPush::OnUpdate, this, _1));
+
+
+
+     this->receiver= transport::NodePtr(new transport::Node());
+     this->receiver->Init( this->model->GetWorld()->GetName() );
+     this->sub = this->receiver->Subscribe("~/ref_velocities", &ModelPush::cb, this);
+     }
+  
+    // Called by the world update start event
+    public: void OnUpdate(const common::UpdateInfo & /*_info*/)  /// burada her update de ref_velocities ile alinan hiz setpoint i LQR ile uygulanacak
+    {
+     //position = this->model->GetLink("link")->GetWorldCoGPose();
+     velocity = this->model->GetLink("link")->GetWorldCoGLinearVel();
+     double velocity_err_x = ref_vel_north - velocity.x;
+     double velocity_err_y = ref_vel_east  - velocity.y;
+     
+     double force_x = velocity_err_x * 1.7 + (velocity_err_x - old_velocity_err_x) * 1.0;
+     double force_y = velocity_err_y * 1.7 + (velocity_err_y - old_velocity_err_y) * 1.0;
+    
+     this->model->GetLink("link")->AddForceAtRelativePosition(math::Vector3(force_x,force_y,0), math::Vector3(0,0,0));
+     //this->model->SetLinearVel(math::Vector3(this->ref_vel_north,this->ref_vel_east,0));
+     this->old_velocity_err_x = velocity_err_x;
+     this->old_velocity_err_y = velocity_err_y;
+    }    
+
+    // Pointer to the model
+    private: physics::ModelPtr model;
+    private: math::Pose position;
+    private: math::Vector3 force;
+    private: math::Vector3 velocity;
+    private: double old_velocity_err_x;
+    private: double old_velocity_err_y;
+    private: math::Vector3 accel;
+    private: math::Vector3 velocity_body;
+    private: math::Vector3 euler_angles;
+    //private: physics::LinkPtr  link_ptr;
+    private: double DCM[3][3];
+    private: double counter ;
+    private: double flag    ;
+    private: double roll ;
+    private: double pitch;
+    private: double yaw  ;
+    private: double ref_vel_north;
+    private: double ref_vel_east ;
+        // Pointer to the update event connection
+    private: event::ConnectionPtr updateConnection;
+    private: transport::SubscriberPtr sub ;
+    private: transport::NodePtr receiver;
+    private: unsigned int model_id;
+
+    public: void cb(ConstPosePtr &_msg)
+    {
+      if(_msg->orientation().w() == model_id){
+        //std::cout << _msg->orientation().z();    //dump model id to monitor
+        this->ref_vel_north = _msg->orientation().x();
+        this->ref_vel_east  = _msg->orientation().y();
+      }
+    }
+
+  };
+  // Register this plugin with the simulator
+  GZ_REGISTER_MODEL_PLUGIN(ModelPush)
+}

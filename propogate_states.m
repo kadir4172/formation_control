@@ -8,7 +8,6 @@ persistent B;
 %Q matrisleri icin gerekli bilesenler
 dt = evalin('base', 'est_propogate_period');
 accel_noise = 2;
-n = evalin('base', 'n');
 %g = evalin('base', 'g');
 %m = evalin('base', 'm');
 
@@ -26,6 +25,8 @@ if isempty(B)
     B = [dt^2/2; dt];
 end
 
+udp_receive
+n = evalin('base', 'n');
 X  = evalin('base', 'X');
 Y  = evalin('base', 'Y');
 Xdot  = evalin('base', 'Xdot');
@@ -34,6 +35,8 @@ X_real  = evalin('base', 'X_real');
 Y_real  = evalin('base', 'Y_real');
 Xdot_real  = evalin('base', 'Xdot_real');
 Ydot_real  = evalin('base', 'Ydot_real');
+Xdotdot  = evalin('base', 'Xdotdot');
+Ydotdot  = evalin('base', 'Ydotdot');
 P = evalin('base','P');
 PA_index = evalin('base','PA_index');
 
@@ -49,24 +52,24 @@ if(mrec_active == 1)
   X_accelmeas_noisy = zeros(n,1);
   Y_accelmeas_noisy = zeros(n,1);
 else
-  X_accelmeas = force_matrix(1,7,:) /10000;
-  Y_accelmeas = force_matrix(2,7,:) /10000;
-  X_accelmeas_noisy(1,1,:) = rand(n,1) * 0.050 - 0.0250;
-  X_accelmeas_noisy(1,1,PA_index) = 0;              % PA larin ivmeleri gurultusuz olsun
+  %X_accelmeas = force_matrix(1,7,:) /10000;
+  %Y_accelmeas = force_matrix(2,7,:) /10000;
+  %X_accelmeas_noisy(1,1,:) = rand(n,1) * 0.050 - 0.0250;
+  %X_accelmeas_noisy(1,1,PA_index) = 0;              % PA larin ivmeleri gurultusuz olsun
   %X_accelmeas_noisy(1,1,:) = zeros(n,1);
-  X_accelmeas_noisy = X_accelmeas_noisy + force_matrix(1,7,:) /10000;
-  Y_accelmeas_noisy(1,1,:) = rand(n,1) * 0.050 - 0.0250;
-  Y_accelmeas_noisy(1,1,PA_index) = 0;              % PA larin ivmeleri gurultusuz olsun
+  %X_accelmeas_noisy = X_accelmeas_noisy + force_matrix(1,7,:) /10000;
+  %Y_accelmeas_noisy(1,1,:) = rand(n,1) * 0.050 - 0.0250;
+  %Y_accelmeas_noisy(1,1,PA_index) = 0;              % PA larin ivmeleri gurultusuz olsun
   %Y_accelmeas_noisy(1,1,:) = zeros(n,1);
-  Y_accelmeas_noisy = Y_accelmeas_noisy + force_matrix(2,7,:) /10000;
+  %Y_accelmeas_noisy = Y_accelmeas_noisy + force_matrix(2,7,:) /10000;
 end
 
 for i = 1 : 1 : n
   X_vector_old = [X(i); Xdot(i)];
   Y_vector_old = [Y(i); Ydot(i)];  
 
-  X_vector = F * X_vector_old + B * X_accelmeas_noisy(i);
-  Y_vector = F * Y_vector_old + B * Y_accelmeas_noisy(i);
+  X_vector = F * X_vector_old + B * Xdotdot(i);
+  Y_vector = F * Y_vector_old + B * Ydotdot(i);
   
   P(:,:,i) = F * P(:,:,i) * F' + Q;
 
@@ -79,6 +82,7 @@ for i = 1 : 1 : n
     
 end
 
+%{
 for i = 1 : 1 : n
   X_real_vector_old = [X_real(i); Xdot_real(i)];
   Y_real_vector_old = [Y_real(i); Ydot_real(i)];  
@@ -94,19 +98,11 @@ for i = 1 : 1 : n
   Ydot_real(i) = Y_real_vector(2);
     
 end
-
-assignin('base', 'X', X);
-assignin('base', 'Y', Y);
-assignin('base', 'Xdot', Xdot);
-assignin('base', 'Ydot', Ydot);
-assignin('base', 'Xdotdot', X_accelmeas_noisy);
-assignin('base', 'Ydotdot', Y_accelmeas_noisy);
-assignin('base', 'X_real', X_real);
-assignin('base', 'Y_real', Y_real);
-assignin('base', 'Xdot_real', Xdot_real);
-assignin('base', 'Ydot_real', Ydot_real);
-assignin('base', 'Xdotdot_real', X_accelmeas);
-assignin('base', 'Ydotdot_real', Y_accelmeas);
+%}
+assignin('base', 'X', X_real);
+assignin('base', 'Y', Y_real);
+assignin('base', 'Xdot', Xdot_real);
+assignin('base', 'Ydot', Ydot_real);
 assignin('base', 'P', P);
 
   %for i = 1 : 1 :n
@@ -141,7 +137,7 @@ calculate_forces_flag = evalin('base', 'calculate_forces_flag');
   
       %pozisyon propogate bittikten sonra artificial force lari hesaplayalim
     set_inside_outside     %agentlari shape in icinde mi disindami hesaplayalim
-    check_x_swarm          %X_swarm kosullari saglaniyor mu diye bakalim
+    %check_x_swarm          %X_swarm kosullari saglaniyor mu diye bakalim
     check_density          %sekil icerisine giren agentlarin total volume larini bulalim
     set_attraction_forces  %seklin disindayken cekici kuvvetleri hesapla
     set_attraction2_forces %sinirdan gecemeyen agentlar icin aktif hale gelecek ekstra force
@@ -151,7 +147,7 @@ calculate_forces_flag = evalin('base', 'calculate_forces_flag');
     set_obstacle_forces    %agentlar icin obstacle lar tarafindan uretilen sanal kuvvetleri hesapla
     set_total_force        %tum force bilesenlerini toplayalim
     
-    
+    udp_send
     mrec_update
     mrec_propogate
   end
