@@ -16,6 +16,7 @@
 #include <string.h>
 #include <netdb.h> 
 
+#define asdf 1234
 
 #define BUFLEN 1024
 #define PORT 5052
