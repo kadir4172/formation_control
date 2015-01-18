@@ -22,8 +22,8 @@ namespace gazebo
       model_id = this->model->GetId();
       this->model_name = this->model->GetName();
       if(this->model_name.at(0) == '1'){
-        this->kp = 2.1;
-        this->kd = 1.0;     
+        this->kp = 2.3;
+        this->kd = 1.1;     
       }
       else if(this->model_name.at(0) == '2'){
         this->kp = 1.4;

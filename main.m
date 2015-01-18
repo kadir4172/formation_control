@@ -124,9 +124,9 @@ shape_buffer = 0.1;
 ka = 2000;
 kr = 600;
 kf = 0;
-km = 700
-ko = 500;
-ka2 = 50000;
+km = 700;
+ko = 800;
+ka2 = 70000;
 %Artificial forces for individual members
 
 %mrec variable definitions

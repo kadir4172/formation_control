@@ -7,8 +7,8 @@ feedback_matrix = evalin('base', 'feedback_matrix');
 gazebo_index_array = (feedback_matrix(:,7) - mod(feedback_matrix(:,7),10)) / 10;
 string_to_send = [];
 for i = 1 : 1 : n
-   str1 = num2str(force_matrix(1,7,i)/600,5);
-   str2 = num2str(force_matrix(2,7,i)/600,5);
+   str1 = num2str(force_matrix(1,7,i)/500,5);
+   str2 = num2str(force_matrix(2,7,i)/500,5);
    str3 = num2str(i,5);
    str4 = num2str(gazebo_index_array(i),5);
    str5 = ' '; 
@@ -22,12 +22,7 @@ fwrite(u,string_to_send);
 fclose(u);
 
 
-ka = 25000;
-kr = 1000;
-kf = 0;
-km = 800;
-ko = 800;
-ka2 = 70000;
+
 
 assignin('base', 'ka', ka);
 assignin('base', 'kr', kr);
