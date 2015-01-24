@@ -4,26 +4,43 @@ function [] = propogate_states(  )
 persistent Q;
 persistent F;
 persistent B;
-
+persistent sim_time_old;
 %Q matrisleri icin gerekli bilesenler
-dt = evalin('base', 'est_propogate_period');
+%dt = evalin('base', 'est_propogate_period');
 accel_noise = 2;
 %g = evalin('base', 'g');
 %m = evalin('base', 'm');
 
 mrec_active = evalin('base', 'mrec_active');
- 
+
+
+sim_time = evalin('base', 'sim_time');
+if isempty(sim_time_old)
+    sim_time_old = sim_time;
+end 
+dt = sim_time - sim_time_old;
+
+if (dt == 0)
+  dt = 0.25;
+end
+
+assignin('base', 'dt', dt);
+sim_time_old = sim_time;
+
 if isempty(Q)
     Q = [(accel_noise*(dt^2))/2 0;0 accel_noise*dt];
 end
+Q = [(accel_noise*(dt^2))/2 0;0 accel_noise*dt];
 
 if isempty(F)
     F = [1 dt; 0 1];
 end
+F = [1 dt; 0 1];
 
 if isempty(B)
     B = [dt^2/2; dt];
 end
+B = [dt^2/2; dt];
 
 udp_receive
 n = evalin('base', 'n');
@@ -39,6 +56,7 @@ Xdotdot  = evalin('base', 'Xdotdot');
 Ydotdot  = evalin('base', 'Ydotdot');
 P = evalin('base','P');
 PA_index = evalin('base','PA_index');
+use_real_positions = evalin('base','use_real_positions');
 
 force_matrix = evalin('base','force_matrix');
 
@@ -99,10 +117,17 @@ for i = 1 : 1 : n
     
 end
 %}
-assignin('base', 'X', X_real);
-assignin('base', 'Y', Y_real);
-assignin('base', 'Xdot', Xdot_real);
-assignin('base', 'Ydot', Ydot_real);
+if(use_real_positions == 0)
+  assignin('base', 'X', X);
+  assignin('base', 'Y', Y);
+  assignin('base', 'Xdot', Xdot);
+  assignin('base', 'Ydot', Ydot);
+else
+  assignin('base', 'X', X_real);
+  assignin('base', 'Y', Y_real);
+  assignin('base', 'Xdot', Xdot_real);
+  assignin('base', 'Ydot', Ydot_real);
+end    
 assignin('base', 'P', P);
 
   %for i = 1 : 1 :n
@@ -137,7 +162,7 @@ calculate_forces_flag = evalin('base', 'calculate_forces_flag');
   
       %pozisyon propogate bittikten sonra artificial force lari hesaplayalim
     set_inside_outside     %agentlari shape in icinde mi disindami hesaplayalim
-    %check_x_swarm          %X_swarm kosullari saglaniyor mu diye bakalim
+    check_x_swarm          %X_swarm kosullari saglaniyor mu diye bakalim
     check_density          %sekil icerisine giren agentlarin total volume larini bulalim
     set_attraction_forces  %seklin disindayken cekici kuvvetleri hesapla
     set_attraction2_forces %sinirdan gecemeyen agentlar icin aktif hale gelecek ekstra force

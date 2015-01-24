@@ -1,6 +1,9 @@
 n = evalin('base', 'n');
 u = evalin('base', 'u');
-dt = evalin('base', 'est_propogate_period');
+dt = evalin('base', 'dt');
+if dt == 0
+    dt = 0.25;
+end
 Xdot_real  = evalin('base', 'Xdot_real');
 Ydot_real  = evalin('base', 'Ydot_real');
 X  = evalin('base', 'X');
@@ -21,37 +24,60 @@ b_space = isspace(b);
 counter = 0;
 dump_buffer = [];
 data_line = zeros(1,5);
+
+wait_for_time = 0;
 for i = 1 : 1 : length(a)
   if(a_space(i) == 0)
       dump_buffer = [dump_buffer a(i)];
   else
       if(~isempty(dump_buffer))
-        counter = counter + 1;
-        data_line(counter) = str2double(dump_buffer);  
+        if(wait_for_time == 1)
+            time = str2double(dump_buffer);
+            wait_for_time = 0;
+        else
+          if(~strcmp(dump_buffer,'Time:'))  
+            counter = counter + 1;
+            data_line(counter) = str2double(dump_buffer);  
+          else
+            wait_for_time = 1;  
+          end
+        end
         dump_buffer = [];
-      end
       if(counter == 7)
         feedback_matrix(data_line(6),:) = data_line;
         counter = 0;
       end
+      end
   end
 end
 
+
+wait_for_time = 0;
 for i = 1 : 1 : length(b)
   if(b_space(i) == 0)
       dump_buffer = [dump_buffer b(i)];
   else
       if(~isempty(dump_buffer))
-        counter = counter + 1;
-        data_line(counter) = str2double(dump_buffer);  
+        if(wait_for_time == 1)
+            time = str2double(dump_buffer);
+            wait_for_time = 0;
+        else
+          if(~strcmp(dump_buffer,'Time:'))  
+            counter = counter + 1;
+            data_line(counter) = str2double(dump_buffer);  
+          else
+            wait_for_time = 1;  
+          end
+        end
         dump_buffer = [];
-      end
       if(counter == 7)
         feedback_matrix(data_line(6),:) = data_line;
         counter = 0;
       end
+      end
   end
 end
+
 feedback_matrix;
 n_new = length(feedback_matrix);
 
@@ -62,8 +88,8 @@ Xdot_real_old = [Xdot_real; zeros(n_new-n,1)];
 Ydot_real_old = [Ydot_real; zeros(n_new-n,1)];
 Xdot_real = feedback_matrix(:,4);
 Ydot_real = feedback_matrix(:,5);
-X_accel_meas = (Xdot_real - Xdot_real_old) * dt ;
-Y_accel_meas = (Ydot_real - Ydot_real_old) * dt ;
+X_accel_meas = (Xdot_real - Xdot_real_old) / dt ;
+Y_accel_meas = (Ydot_real - Ydot_real_old) / dt ;
 
 
 %X_accelmeas_noisy(1,1,:) = rand(n,1) * 0.050 - 0.0250;
@@ -76,6 +102,8 @@ Y_accelmeas_noisy = rand(n_new,1) * 0.050 - 0.0250;
 %Y_accelmeas_noisy(1,1,PA_index) = 0;              % PA larin ivmeleri gurultusuz olsun
 Y_accelmeas_noisy(PA_index) = 0;              % PA larin ivmeleri gurultusuz olsun
 Y_accelmeas_noisy = Y_accelmeas_noisy + Y_accel_meas;
+%X_accel_meas
+%X_accelmeas_noisy;
 
 dimension_array = mod(feedback_matrix(:,7),10); %10
 agents_radius(find(dimension_array==1))  = 0.6;
@@ -107,7 +135,7 @@ if(n_new ~= n)
     %}
   end
 end
-
+%X_accelmeas_noisy = ones(length(X_accelmeas_noisy),1) * 2;
 
 assignin('base', 'n', n_new);
 assignin('base', 'agents_radius', agents_radius);
@@ -120,3 +148,4 @@ assignin('base', 'Ydotdot_real', Y_accel_meas);
 assignin('base', 'Xdotdot', X_accelmeas_noisy);
 assignin('base', 'Ydotdot', Y_accelmeas_noisy);
 assignin('base', 'feedback_matrix', feedback_matrix);
+assignin('base', 'sim_time', time);

@@ -25,7 +25,8 @@ Ydot_real    = zeros(n,1);
 Xdotdot_real = zeros(n,1);
 Ydotdot_real = zeros(n,1);
 feedback_matrix = [];
-
+dt = 0;
+use_real_positions = 1;
 
 %agent sayisinin %10 u kadar PA ayarla
 PA_number = round(n/5);
@@ -190,9 +191,11 @@ hold on
 
 %==========================%
 %Agentlari agent zone lari ile plot edelim (estimated pozisyonlar)
-%k = scatter(X, Y, agents_zone_matlab);
-%set(k,'XDataSource','X');
-%set(k,'YDataSource','Y');
+if(use_real_positions == 0)
+  k = scatter(X, Y, agents_zone_matlab);
+  set(k,'XDataSource','X');
+  set(k,'YDataSource','Y');
+end
 %==========================%
 
 %==========================%
