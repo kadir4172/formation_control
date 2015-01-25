@@ -45,8 +45,8 @@ class World_Publisher : public WorldPlugin
      int *robot_type_array = new int[number_of_agents] ;
      this->world = _parent;
 
-    _parent->InsertModelFile("model://sun");
-    _parent->InsertModelFile("model://ground_plane");
+    //_parent->InsertModelFile("model://sun");
+    //_parent->InsertModelFile("model://ground_plane");
 
 //INSERT MODELS
       transport::NodePtr node(new transport::Node());

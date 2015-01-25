@@ -1,0 +1,23 @@
+#!/bin/bash
+# declare STRING variable
+STRING="Update Script is working on!"
+#print variable on a screen
+echo $STRING
+
+cd ~
+gdal_translate   -of GTiff -co "tfw=yes" -a_ullr -20037508.3427892 20036051.9193368 20037508.3427892 -20036051.9193368 -a_srs "EPSG:3857"  ./Desktop/olur.png  ./Desktop/deneme23.tif
+
+
+gdalwarp -ts 150 150 ./Desktop/deneme23.tif  ./Desktop/test.dem
+
+sudo cp ./Desktop/test.dem  ./gazebo/media/dem/
+
+sudo chmod a+rw ./gazebo/media/dem/test.dem
+
+sudo rm ./Desktop/deneme23.tif
+#sudo rm ./Desktop/deneme12.jpg
+sudo rm ./Desktop/deneme23.tfw
+sudo rm ./Desktop/test.dem
+
+STRING="Map is ready to use!"
+echo $STRING
