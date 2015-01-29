@@ -25,9 +25,10 @@ extra_dot_number = floor(distance / max_distance);
   end
 end
 
-formation_gain = 0.3;
+formation_gain = 0.35;
 formation_x = formation_x * formation_gain;
 formation_y = formation_y * formation_gain;
+
 
 assignin('base', 'formation_x', formation_x);
 assignin('base', 'formation_y', formation_y);

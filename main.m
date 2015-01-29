@@ -98,6 +98,7 @@ desired_density = 0.150;
 pen_length = 0.01;
 
 %obstacle verileri
+get_new_obstacles = 0;
 obstacle_1_x = 0;
 obstacle_1_y = 0;
 obstacle_2_x = 0;
@@ -180,7 +181,7 @@ figure
  % m(i) = text(X_real(i),Y_real(i),int2str(i),'color','r');
 %end
 
-axis([-30,30,-30,30])
+axis([-35,35,-35,35])
 hold on
 %set(h,'XDataSource','X');
 %set(h,'YDataSource','Y');
@@ -213,7 +214,7 @@ set(l,'YDataSource','Y_real');
 j = plot(formation_x, formation_y);
 set(j,'XDataSource','formation_x');
 set(j,'YDataSource','formation_y');
-axis([-30,30,-30,30])
+axis([-35,35,-35,35])
 %==========================%
 
 %==========================%

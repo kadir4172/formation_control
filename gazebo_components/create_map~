@@ -1,5 +1,4 @@
 #!/bin/bash
-# masaustune olur.png hazirla ve scripti calistir
 # declare STRING variable
 STRING="Update Script is working on!"
 #print variable on a screen

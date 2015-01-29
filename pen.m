@@ -10,6 +10,7 @@ function [x_pen y_pen time] = f
 global estat_pulsacio
 global x_pen y_pen
 global time
+get_new_obstacles = evalin('base', 'get_new_obstacles');
 himatge = findobj('tag','PEN');
 if (isempty(himatge))
     estat_pulsacio = 0;
@@ -64,6 +65,10 @@ if (isempty(himatge))
         
 else
     figure(himatge);
+end
+if(get_new_obstacles == 1)
+    
+  get_picture;
 end
 % #########################################################################
 
@@ -188,7 +193,10 @@ if estat_pulsacio % sol buton basili ise
     end
     
     if ((x ~= x_pen(end)) || (y ~= y_pen(end))) %en son alinan datadan farkli bir dataysa
-        pen_length = evalin('base', 'pen_length');
+        
+          pen_length = evalin('base', 'pen_length');
+     
+               
         distance = norm([(x-x_pen(end)) (y-y_pen(end))]);
         if (distance > pen_length)
          temp_x = x_pen(end) + (((x - x_pen(end)) * pen_length) / distance);
@@ -239,11 +247,10 @@ end
 % x_pen, y_pen are the current point locations
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-assignin('base', 'formation_x', x_pen);
-assignin('base', 'formation_y', y_pen);
+  assignin('base', 'formation_x', x_pen);
+  assignin('base', 'formation_y', y_pen);
 
 
-%test = 3
 set(findobj('Tag','TEXT'),'String',[' ' num2str(num_blocks) ' inputs processed']);
 
 %user input dan aldigimiz ham veriyi biraz isleyip filtreleyelim
