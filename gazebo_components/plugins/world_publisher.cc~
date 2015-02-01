@@ -45,8 +45,8 @@ class World_Publisher : public WorldPlugin
      int *robot_type_array = new int[number_of_agents] ;
      this->world = _parent;
 
-    _parent->InsertModelFile("model://sun");
-    _parent->InsertModelFile("model://ground_plane");
+    //_parent->InsertModelFile("model://sun");
+    //_parent->InsertModelFile("model://ground_plane");
 
 //INSERT MODELS
       transport::NodePtr node(new transport::Node());
@@ -99,7 +99,7 @@ class World_Publisher : public WorldPlugin
           init_positions[dummy_index2] = new double[2];
           init_positions[dummy_index2][1] = rand() % rand_amplitude + rand_amplitude/2 + 2 * i * this->max_collision_of_agents; 
           init_positions[dummy_index2][2] = rand() % rand_amplitude + rand_amplitude/2 + 2 * j * this->max_collision_of_agents; 
-          msgs::Set(msg.mutable_pose(), math::Pose(math::Vector3((int)(init_positions[dummy_index2][1]) ,(int)(init_positions[dummy_index2][2]), 0), math::Quaternion(0, 0, 0)));
+          msgs::Set(msg.mutable_pose(), math::Pose(math::Vector3((int)(init_positions[dummy_index2][1]) -4 ,(int)(init_positions[dummy_index2][2]), 0.3), math::Quaternion(0, 0, 0)));
           worldPub->Publish(msg);
         }
       }

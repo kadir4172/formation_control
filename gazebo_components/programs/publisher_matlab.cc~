@@ -16,9 +16,8 @@
 #include <string.h>
 #include <netdb.h> 
 
-#define asdf 1234
 
-#define BUFLEN 1024
+#define BUFLEN 2048
 #define PORT 5052
 
 
@@ -72,7 +71,7 @@ int main(int _argc, char **_argv)
     {
         if (recvfrom(sockfd, buf, BUFLEN, 0, (struct sockaddr*)&cli_addr, &slen)==-1)
             err("recvfrom()");
-            printf("Received packet from %s:%d\nData: %s\n\n", inet_ntoa(cli_addr.sin_addr), ntohs(cli_addr.sin_port), buf);
+            //printf("Received packet from %s:%d\nData: %s\n\n", inet_ntoa(cli_addr.sin_addr), ntohs(cli_addr.sin_port), buf);
             Parse_Buffer(buf);  //matlab tarafindan her paket geldiginde parse edip topic olarak yayinlayalim
             memset(buf,0,sizeof(buf));
     }
@@ -84,7 +83,7 @@ void Parse_Buffer(char* buf){
     int i = 0;
     int counter = 0;
     char *str = buf;
-    char c[512];
+    char c[1024];
     memset(c,0,sizeof(c));
     float f[4] = {0};
     while (str[i])
@@ -104,6 +103,7 @@ void Parse_Buffer(char* buf){
           gazebo::msgs::Pose data_msg;
           gazebo::msgs::Set(&data_msg, data);
           pub->Publish(data_msg);
+          //printf("Yollanan %f %f %f %f \n", f[1], f[2], f[3], f[4]);
           counter = 0;
         }
         i++;

@@ -23,18 +23,18 @@ namespace gazebo
       this->model_name = this->model->GetName();
       if(this->model_name.at(0) == '1'){
         this->kp = 2.3;
-        this->kd = 1.5;  
-        this->ki = 0.0005;   
+        this->kd = 1.1;  
+        this->ki = 1.0;   
       }
       else if(this->model_name.at(0) == '2'){
         this->kp = 1.4;
-        this->kd = 1.2;
-        this->ki = 0.0004;     
+        this->kd = 0.8;
+        this->ki = 1.0;     
       } 
       else{
         this->kp = 1.0;
-        this->kd = 0.9;
-        this->ki = 0.0003;     
+        this->kd = 0.6;
+        this->ki = 1.0;     
       }
       // Listen to the update event. This event is broadcast every
       // simulation iteration.
@@ -55,9 +55,9 @@ namespace gazebo
      velocity = this->model->GetLink("link")->GetWorldCoGLinearVel();
      double velocity_err_x = ref_vel_north - velocity.x;
      double velocity_err_y = ref_vel_east  - velocity.y;
-
-     double force_x = velocity_err_x * this->kp + (velocity_err_x - old_velocity_err_x) * this->kd + this -> sum_velocity_err_x * this->ki;
-     double force_y = velocity_err_y * this->kp + (velocity_err_y - old_velocity_err_y) * this->kd + this -> sum_velocity_err_y * this->ki;
+     sadfsadgf
+     double force_x = velocity_err_x * this->kp + (velocity_err_x - old_velocity_err_x) * this->kd;
+     double force_y = velocity_err_y * this->kp + (velocity_err_y - old_velocity_err_y) * this->kd;
      this -> sum_velocity_err_x += velocity_err_x;
      this -> sum_velocity_err_y += velocity_err_y;
      this->model->GetLink("link")->AddForceAtRelativePosition(math::Vector3(force_x,force_y,0), math::Vector3(0,0,0));

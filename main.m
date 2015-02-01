@@ -127,7 +127,7 @@ ka = 2000;
 kr = 600;
 kf = 0;
 km = 700;
-ko = 800;
+ko = 1400;
 ka2 = 70000;
 %Artificial forces for individual members
 

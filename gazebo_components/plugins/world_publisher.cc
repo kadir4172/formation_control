@@ -99,7 +99,7 @@ class World_Publisher : public WorldPlugin
           init_positions[dummy_index2] = new double[2];
           init_positions[dummy_index2][1] = rand() % rand_amplitude + rand_amplitude/2 + 2 * i * this->max_collision_of_agents; 
           init_positions[dummy_index2][2] = rand() % rand_amplitude + rand_amplitude/2 + 2 * j * this->max_collision_of_agents; 
-          msgs::Set(msg.mutable_pose(), math::Pose(math::Vector3((int)(init_positions[dummy_index2][1]) ,(int)(init_positions[dummy_index2][2]), 0), math::Quaternion(0, 0, 0)));
+          msgs::Set(msg.mutable_pose(), math::Pose(math::Vector3((int)(init_positions[dummy_index2][1]) -4 ,(int)(init_positions[dummy_index2][2]), 1.3), math::Quaternion(0, 0, 0)));
           worldPub->Publish(msg);
         }
       }
