@@ -83,7 +83,7 @@
            <pose>0.25 0 0 0 0 0</pose>
             <geometry>
             <sphere>
-              <radius>0.1</radius>
+              <radius>0.15</radius>
             </sphere>
           </geometry>
 
@@ -103,7 +103,7 @@
            <pose>0.25 0 0 0 0 0</pose>
           <geometry>
                <sphere>
-              <radius>0.1</radius>
+              <radius>0.15</radius>
             </sphere>
           </geometry>
         </visual>
@@ -113,7 +113,7 @@
            <pose>-0.25 0 0 0 0 0</pose>
             <geometry>
             <sphere>
-              <radius>0.1</radius>
+              <radius>0.15</radius>
             </sphere>
           </geometry>
 
@@ -133,7 +133,7 @@
            <pose>-0.25 0 0 0 0 0</pose>
           <geometry>
                <sphere>
-              <radius>0.1</radius>
+              <radius>0.15</radius>
             </sphere>
           </geometry>
         </visual>
@@ -143,7 +143,7 @@
            <pose>0 0.25 0 0 0 0</pose>
             <geometry>
             <sphere>
-              <radius>0.1</radius>
+              <radius>0.15</radius>
             </sphere>
           </geometry>
 
@@ -163,7 +163,7 @@
            <pose>0 0.25 0 0 0 0</pose>
           <geometry>
                <sphere>
-              <radius>0.1</radius>
+              <radius>0.15</radius>
             </sphere>
           </geometry>
         </visual>
@@ -172,7 +172,7 @@
            <pose>0 -0.25 0 0 0 0</pose>
             <geometry>
             <sphere>
-              <radius>0.1</radius>
+              <radius>0.15</radius>
             </sphere>
           </geometry>
 
@@ -192,7 +192,7 @@
            <pose>0 -0.25 0 0 0 0</pose>
           <geometry>
                <sphere>
-              <radius>0.1</radius>
+              <radius>0.15</radius>
             </sphere>
           </geometry>
         </visual>
