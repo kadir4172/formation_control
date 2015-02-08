@@ -126,7 +126,7 @@ shape_buffer = 0.1;
 ka = 2000;
 kr = 600;
 kf = 0;
-km = 700;
+km = 750;
 ko = 2500;
 ka2 = 70000;
 %Artificial forces for individual members

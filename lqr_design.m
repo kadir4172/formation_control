@@ -1,5 +1,5 @@
 ts1 = 1.950;  %hiz icin oturma suresi[sec]
-ts2 = 0.01;  %hiz hatasi integrali icin oturma suresi[sec]
+ts2 = 0.001;  %hiz hatasi integrali icin oturma suresi[sec]
 x1max = 1.6; %hiz icin beklenen maksimum deger[m/s]
 x2max = 4;   %hiz hatasi integrali icin beklenen maksimum deger[m]
 
@@ -15,7 +15,7 @@ R = param * r1;
 
 b= 0.2; % linear friction for all models [kg/s]
 %model 1
-m = 1.5; %mass of the model1 [kg]
+m = 0.8; %mass of the model1 [kg]
 A = [-b/m 0; 1 0];
 B = [1/m 0]';
 C = [1 0;0 1];
