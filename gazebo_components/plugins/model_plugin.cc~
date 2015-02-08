@@ -24,17 +24,17 @@ namespace gazebo
       if(this->model_name.at(0) == '1'){
         this->kp = 2.3;
         this->kd = 1.5;  
-        this->ki = 0.0004;   
+        this->ki = 0.0005;   
       }
       else if(this->model_name.at(0) == '2'){
         this->kp = 1.4;
         this->kd = 1.2;
-        this->ki = 0.0003;     
+        this->ki = 0.0004;     
       } 
       else{
         this->kp = 1.0;
         this->kd = 0.9;
-        this->ki = 0.0002;     
+        this->ki = 0.0003;     
       }
       // Listen to the update event. This event is broadcast every
       // simulation iteration.
