@@ -22,18 +22,18 @@ namespace gazebo
       model_id = this->model->GetId();
       this->model_name = this->model->GetName();
       if(this->model_name.at(0) == '1'){
-        this->k1 = 41.1277;
-        this->k2 = 948.0660; 
+        this->k1 = 29.6637;
+        this->k2 = 237.1708; 
         this->max_command = 10.0; 
       }
       else if(this->model_name.at(0) == '2'){
-        this->k1 = 41.6106;
-        this->k2 = 948.0660;
+        this->k1 = 25.3865;
+        this->k2 = 237.1708;
         this->max_command = 10.0;
       } 
       else{
-        this->k1 = 41.5092;
-        this->k2 = 948.0660;
+        this->k1 = 23.5092;
+        this->k2 = 237.0660;
         this->max_command = 10;
       }
       this->old_sim_time = 0.0;
