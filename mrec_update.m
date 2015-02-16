@@ -6,10 +6,10 @@
   E2  = evalin('base', 'mrec_E2');
   E3  = evalin('base', 'mrec_E3');
   farthest_agent_index  = evalin('base', 'farthest_agent_index');
-  
   mean  = evalin('base', 'mrec_mean');
   
   if(mrec_active == 1)
+  
     %theta calculation
     if(farthest_agent_index(2) == 1)
       for i = 1 : 1 : length(X)
@@ -19,6 +19,7 @@
       farthest_agent_index(1) = index;
       farthest_agent_index(2) = 0;
     end
+   
     theta = atan2 ((Y(farthest_agent_index(1)) - mean(2)),(X(farthest_agent_index(1)) - mean(1)));
     %theta calculation
   else
@@ -44,8 +45,12 @@
   s1 = s1 / (2 * (n-1));
   s2 = s2 / (2 * (n-1));
 
-  
-  %assignin('base', 'mrec_mean', mean);
+   
+  s1 = 5;
+  s2 = 5;
+  R = eye(2);
+  theta = 0;
+
   assignin('base', 'mrec_theta', theta);
   assignin('base', 'mrec_R', R);
   assignin('base', 'mrec_s1', s1);

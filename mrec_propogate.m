@@ -13,9 +13,9 @@
   s = s1 + s2; 
   %desired values
   mean_desired  = mean;
-  %mean_desired  = [5 20]';
-  s_desired     = s;
-  %s_desired     = 400;
+  %mean_desired  = [1 0]';
+  %s_desired     = s;
+  s_desired     = 400;
   theta_desired = theta;
   %theta_desired = 0.5;
   %desired values
@@ -25,13 +25,12 @@
   else
     mrec_active = 0; % no mrec request, go on with formation control
   end
-   
   if(mrec_active == 1)
       
     mean_dot  = k_mean  * (mean_desired - mean);
     theta_dot = k_theta * (theta_desired - theta);
     s_dot     = k_scale * (s_desired - s);  
-   
+
    
     %compute rotational velocities
     for i = 1 : 1 : n
@@ -45,21 +44,22 @@
       y_rotation = mean(2) + y_comp;
       rotational_velocity = [(x_rotation - X(i)) (y_rotation - Y(i))]';
       velocity(:,i)  =  mean_dot  + rotational_velocity + (((pos_array(:,i) - mean) * s_dot) / (2 * s));
-      
+      force_matrix(1,7,i) = velocity(1,i)*900;
+      force_matrix(2,7,i) = velocity(2,i)*900;
     end
     %compute rotational velocities  
-    
-     
     assignin('base', 'mrec_theta_dot', theta_dot);
     assignin('base', 'mrec_mean_dot', mean_dot);
     assignin('base', 'mrec_s_dot', s_dot);
     assignin('base', 'Xdot', velocity(1,:));
     assignin('base', 'Ydot', velocity(2,:));
-    assignin('base', 'Xdot_real', velocity(1,:));
-    assignin('base', 'Ydot_real', velocity(2,:));
+    assignin('base', 'Xdot_real', velocity(1,:)');
+    assignin('base', 'Ydot_real', velocity(2,:)');
     reorientate_shape
   end
 
   
+  assignin('base', 'force_matrix', force_matrix);
   assignin('base', 'mrec_active', mrec_active);
+  
   

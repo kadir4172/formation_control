@@ -20,6 +20,8 @@ if(s_dot ~= 0)
   for i = 1 : 1 : length(formation_x)
     formation_x(i) = (((formation_x(i) - mean(1)) *s_dot) / (2 * s)) * est_propogate_period + formation_x(i);
     formation_y(i) = (((formation_y(i) - mean(2)) *s_dot) / (2 * s)) * est_propogate_period + formation_y(i);
+    %formation_x(i) = 0;
+    %formation_y(i) = 0;
   end
 end
 
@@ -31,6 +33,8 @@ if(theta_dot ~= 0)
     [x_comp y_comp] = pol2cart(angle,distance);
     formation_x(i) = (mean(1) + x_comp - formation_x(i)) * est_propogate_period + formation_x(i);
     formation_y(i) = (mean(2) + y_comp - formation_y(i)) * est_propogate_period + formation_y(i);
+   %     formation_x(i) = 0;
+   % formation_y(i) = 0;
   end
 end
 
@@ -38,6 +42,8 @@ if(mean_dot ~= 0)
   for i = 1 : 1 : length(formation_x)
     formation_x(i) = formation_x(i) + mean_dot(1) * est_propogate_period;
     formation_y(i) = formation_y(i) + mean_dot(2) * est_propogate_period;
+    %    formation_x(i) = 0;
+    %formation_y(i) = 0;
   end
 end
 

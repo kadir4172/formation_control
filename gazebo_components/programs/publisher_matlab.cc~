@@ -24,6 +24,8 @@
 gazebo::transport::PublisherPtr pub;
 void Parse_Buffer(char*);
 
+
+
 void err(const char *str)
 {
     perror(str);
@@ -39,6 +41,7 @@ int main(int _argc, char **_argv)
     gazebo::transport::NodePtr node(new gazebo::transport::Node());
   
     struct sockaddr_in my_addr, cli_addr;
+ 
     int sockfd, i; 
     socklen_t slen=sizeof(cli_addr);
     char buf[BUFLEN];
@@ -86,24 +89,43 @@ void Parse_Buffer(char* buf){
     char c[1024];
     memset(c,0,sizeof(c));
     float f[4] = {0};
+    static bool wait_for_mrec = 0;
+  
+    char key[] = "mrec";
+    char b[]  = "mrec"   ;
+    float mrec_flag = 0.0;
     while (str[i])
       {
-        if (isspace(str[i])){ 
+       //strcpy(b,c);
+       if (isspace(str[i])){
+          if(wait_for_mrec == 1){
+            wait_for_mrec = 0; 
+            mrec_flag = std::atof(c);
+            memset(c,0,sizeof(c));
+            i++;
+            continue;         
+          }
+          if(strcmp (c,key)==0){
+            memset(c,0,sizeof(c));
+            wait_for_mrec = 1;   
+          }
+          else{
           f[counter] = std::atof(c);
           counter++; 
           memset(c,0,sizeof(c));
+          }
         }
         else      
           sprintf(c,"%s%c", c,str[i]);
       
         if(counter == 4){
           gazebo::math::Quaternion quat(f[3],f[0],f[1],f[2]); 
-          gazebo::math::Vector3 pos(0,0,0);
+          gazebo::math::Vector3 pos(mrec_flag,0,0);
           gazebo::math::Pose data(pos,quat);
           gazebo::msgs::Pose data_msg;
           gazebo::msgs::Set(&data_msg, data);
           pub->Publish(data_msg);
-          //printf("Yollanan %f %f %f %f \n", f[1], f[2], f[3], f[4]);
+          printf("Yollanan: %f %f %f %f \n", f[1], f[2], f[3], f[4]);
           counter = 0;
         }
         i++;

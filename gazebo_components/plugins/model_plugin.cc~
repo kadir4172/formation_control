@@ -32,8 +32,8 @@ namespace gazebo
         this->max_command = 10.0;
       } 
       else{
-        this->k1 = 23.5092;
-        this->k2 = 237.0660;
+        this->k1 = 23.4601;
+        this->k2 = 237.1708;
         this->max_command = 10;
       }
       this->old_sim_time = 0.0;
@@ -78,8 +78,15 @@ namespace gazebo
      double force_x = -cumulative_error_x * this->k2 - velocity.x * this->k1;
      double force_y = -cumulative_error_y * this->k2 - velocity.y * this->k1;
      
-     this->model->GetLink("link")->AddForceAtRelativePosition(math::Vector3(force_x,force_y,0), math::Vector3(0,0,0));
-     //this->model->SetLinearVel(math::Vector3(this->ref_vel_north,this->ref_vel_east,0));
+     if(this->mrec_active == 0){
+       this->model->GetLink("link")->AddForceAtRelativePosition(math::Vector3(force_x,force_y,0), math::Vector3(0,0,0));
+       //this->model->GetLink("link")->AddForceAtRelativePosition(math::Vector3(0,0,0), math::Vector3(0,0,0));
+     }
+     else{
+       position.pos.x += sampling_period * ref_vel_north;
+       position.pos.y += sampling_period * ref_vel_east ;
+       this->model->SetLinkWorldPose(position, this->model->GetLink("link"));
+     }
      this->old_sim_time = sim_time;
      this->old_force_x = (float)(force_x);
      this->old_force_y = (float)(force_y);
@@ -104,6 +111,7 @@ namespace gazebo
     private: double yaw  ;
     private: double ref_vel_north;
     private: double ref_vel_east ;
+    private: double mrec_active;
     
     //LQR variables
     private: float old_sim_time;
@@ -124,6 +132,7 @@ namespace gazebo
     private: transport::NodePtr receiver;
     private: unsigned int model_id;
     private: std::string model_name;
+   
 
 
 
@@ -133,6 +142,7 @@ namespace gazebo
         //std::cout << _msg->orientation().z();    //dump model id to monitor
         this->ref_vel_north = _msg->orientation().x();
         this->ref_vel_east  = _msg->orientation().y();
+        this->mrec_active   = _msg->position().x();
       }
     }
 

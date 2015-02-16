@@ -172,9 +172,10 @@ calculate_forces_flag = evalin('base', 'calculate_forces_flag');
     set_obstacle_forces    %agentlar icin obstacle lar tarafindan uretilen sanal kuvvetleri hesapla
     set_total_force        %tum force bilesenlerini toplayalim
     
-    udp_send
+  
     mrec_update
     mrec_propogate
+    udp_send
   end
 end
 
