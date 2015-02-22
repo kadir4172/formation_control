@@ -16,3 +16,7 @@ link_directories(${GAZEBO_LIBRARY_DIRS})
 add_executable(publisher_matlab publisher_matlab.cc)
 target_link_libraries(publisher_matlab  ${GAZEBO_LIBRARIES} ${Boost_LIBRARIES} ${PROTOBUF_LIBRARIES})
 
+add_executable(publisher_formation publisher_formation.cc)
+target_link_libraries(publisher_formation  ${GAZEBO_LIBRARIES} ${Boost_LIBRARIES} ${PROTOBUF_LIBRARIES})
+
+

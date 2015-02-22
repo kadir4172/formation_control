@@ -138,32 +138,36 @@ class World_Publisher : public WorldPlugin
     public: void OnUpdate(const common::UpdateInfo & /*_info*/)
     {
        int n = 0;
+       int counter = 0;
        memset(sendbuf,0,sizeof(sendbuf));
        this->model_list = this->world->GetModels();
-   
-      for( unsigned i = 1; i < model_list.size(); i++ ) {
+           for( unsigned i = 1; i < model_list.size(); i++ ) {
          //this->model = model_list[i]->GetParentModel();
          //this->sdf_element = model->GetSDF();
          //std::string type = sdf_element->GetValueString("type");
          std::string model_name = model_list[i]->GetName();
+
          int id_and_type = 0;
-         if(model_name.at(0) == '1')
-           id_and_type = model_list[i]->GetId() * 10 + 1;
-         else if (model_name.at(0) == '2')
-           id_and_type = model_list[i]->GetId() * 10 + 2;
-         else if (model_name.at(0) == '3')
-           id_and_type = model_list[i]->GetId() * 10 + 3;
+         if(model_name.at(0) != '4' && model_name.at(0) != '5'){
+           counter += 1;
+           if(model_name.at(0) == '1')
+             id_and_type = model_list[i]->GetId() * 10 + 1;
+           else if (model_name.at(0) == '2')
+             id_and_type = model_list[i]->GetId() * 10 + 2;
+           else if (model_name.at(0) == '3')
+             id_and_type = model_list[i]->GetId() * 10 + 3;
 
       
-         math::Vector3 pos =model_list[i]->GetWorldPose().pos;
-         math::Vector3 vel =model_list[i]->GetWorldLinearVel();  
-         sprintf(sendbuf,"%s %f %f %f %f %f %d %d \n",sendbuf,pos.x, pos.y, pos.z, vel.x, vel.y, i, id_and_type);
-         if(i == 25)  {
-           n = write(sockfd,sendbuf,strlen(sendbuf));
-           if (n < 0) {
-             //error("ERROR writing to socket");
+           math::Vector3 pos =model_list[i]->GetWorldPose().pos;
+           math::Vector3 vel =model_list[i]->GetWorldLinearVel();  
+           sprintf(sendbuf,"%s %f %f %f %f %f %d %d \n",sendbuf,pos.x, pos.y, pos.z, vel.x, vel.y, i, id_and_type);
+           if(counter == 25)  {
+             n = write(sockfd,sendbuf,strlen(sendbuf));
+             if (n < 0) {
+               //error("ERROR writing to socket");
+             }
+             memset(sendbuf,0,sizeof(sendbuf));
            }
-           memset(sendbuf,0,sizeof(sendbuf));
          }
       }
       sprintf(sendbuf,"%s %s %f \n", sendbuf,"Time:", this->world->GetSimTime().Float());

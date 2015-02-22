@@ -53,13 +53,48 @@ CMAKE_SOURCE_DIR = /home/kadir/matlab_work/FormationControl/gazebo_components/pr
 CMAKE_BINARY_DIR = /home/kadir/matlab_work/FormationControl/gazebo_components/programs/build
 
 #=============================================================================
+# Target rules for target CMakeFiles/publisher_formation.dir
+
+# All Build rule for target.
+CMakeFiles/publisher_formation.dir/all:
+	$(MAKE) -f CMakeFiles/publisher_formation.dir/build.make CMakeFiles/publisher_formation.dir/depend
+	$(MAKE) -f CMakeFiles/publisher_formation.dir/build.make CMakeFiles/publisher_formation.dir/build
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/kadir/matlab_work/FormationControl/gazebo_components/programs/build/CMakeFiles  1
+	@echo "Built target publisher_formation"
+.PHONY : CMakeFiles/publisher_formation.dir/all
+
+# Include target in all.
+all: CMakeFiles/publisher_formation.dir/all
+.PHONY : all
+
+# Build rule for subdir invocation for target.
+CMakeFiles/publisher_formation.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/kadir/matlab_work/FormationControl/gazebo_components/programs/build/CMakeFiles 1
+	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/publisher_formation.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/kadir/matlab_work/FormationControl/gazebo_components/programs/build/CMakeFiles 0
+.PHONY : CMakeFiles/publisher_formation.dir/rule
+
+# Convenience name for target.
+publisher_formation: CMakeFiles/publisher_formation.dir/rule
+.PHONY : publisher_formation
+
+# clean rule for target.
+CMakeFiles/publisher_formation.dir/clean:
+	$(MAKE) -f CMakeFiles/publisher_formation.dir/build.make CMakeFiles/publisher_formation.dir/clean
+.PHONY : CMakeFiles/publisher_formation.dir/clean
+
+# clean rule for target.
+clean: CMakeFiles/publisher_formation.dir/clean
+.PHONY : clean
+
+#=============================================================================
 # Target rules for target CMakeFiles/publisher_matlab.dir
 
 # All Build rule for target.
 CMakeFiles/publisher_matlab.dir/all:
 	$(MAKE) -f CMakeFiles/publisher_matlab.dir/build.make CMakeFiles/publisher_matlab.dir/depend
 	$(MAKE) -f CMakeFiles/publisher_matlab.dir/build.make CMakeFiles/publisher_matlab.dir/build
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/kadir/matlab_work/FormationControl/gazebo_components/programs/build/CMakeFiles  1
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/kadir/matlab_work/FormationControl/gazebo_components/programs/build/CMakeFiles  2
 	@echo "Built target publisher_matlab"
 .PHONY : CMakeFiles/publisher_matlab.dir/all
 

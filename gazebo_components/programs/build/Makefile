@@ -99,6 +99,19 @@ depend:
 .PHONY : depend
 
 #=============================================================================
+# Target rules for targets named publisher_formation
+
+# Build rule for target.
+publisher_formation: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 publisher_formation
+.PHONY : publisher_formation
+
+# fast build rule for target.
+publisher_formation/fast:
+	$(MAKE) -f CMakeFiles/publisher_formation.dir/build.make CMakeFiles/publisher_formation.dir/build
+.PHONY : publisher_formation/fast
+
+#=============================================================================
 # Target rules for targets named publisher_matlab
 
 # Build rule for target.
@@ -110,6 +123,30 @@ publisher_matlab: cmake_check_build_system
 publisher_matlab/fast:
 	$(MAKE) -f CMakeFiles/publisher_matlab.dir/build.make CMakeFiles/publisher_matlab.dir/build
 .PHONY : publisher_matlab/fast
+
+publisher_formation.o: publisher_formation.cc.o
+.PHONY : publisher_formation.o
+
+# target to build an object file
+publisher_formation.cc.o:
+	$(MAKE) -f CMakeFiles/publisher_formation.dir/build.make CMakeFiles/publisher_formation.dir/publisher_formation.cc.o
+.PHONY : publisher_formation.cc.o
+
+publisher_formation.i: publisher_formation.cc.i
+.PHONY : publisher_formation.i
+
+# target to preprocess a source file
+publisher_formation.cc.i:
+	$(MAKE) -f CMakeFiles/publisher_formation.dir/build.make CMakeFiles/publisher_formation.dir/publisher_formation.cc.i
+.PHONY : publisher_formation.cc.i
+
+publisher_formation.s: publisher_formation.cc.s
+.PHONY : publisher_formation.s
+
+# target to generate assembly for a file
+publisher_formation.cc.s:
+	$(MAKE) -f CMakeFiles/publisher_formation.dir/build.make CMakeFiles/publisher_formation.dir/publisher_formation.cc.s
+.PHONY : publisher_formation.cc.s
 
 publisher_matlab.o: publisher_matlab.cc.o
 .PHONY : publisher_matlab.o
@@ -142,8 +179,12 @@ help:
 	@echo "... clean"
 	@echo "... depend"
 	@echo "... edit_cache"
+	@echo "... publisher_formation"
 	@echo "... publisher_matlab"
 	@echo "... rebuild_cache"
+	@echo "... publisher_formation.o"
+	@echo "... publisher_formation.i"
+	@echo "... publisher_formation.s"
 	@echo "... publisher_matlab.o"
 	@echo "... publisher_matlab.i"
 	@echo "... publisher_matlab.s"

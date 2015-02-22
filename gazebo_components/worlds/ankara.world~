@@ -50,9 +50,22 @@
               <pos>0 0 -5</pos>
             </heightmap>
           </geometry>
+
+       <geometry>
+            <box>
+              <size>500.05 500.5 500.05 </size>
+            </box>
+          </geometry>
      </visual>
 
-
+<visual name="deneme">
+   
+            <geometry>
+            <box>
+              <size>500.05 500.5 500.05 </size>
+            </box>
+          </geometry>
+ </visual>
 
 
 

@@ -1,0 +1,28 @@
+<?xml version='1.0'?>
+<sdf version="1.4">
+
+<model name="5model5">
+<static>true</static>
+     <pose>0 0 -3.0 0 0 0</pose>
+      <link name="link">
+      
+        <visual name='horizontal_visual'>
+  <cast_shadows>false</cast_shadows>
+           <pose>0 0 0 0 0</pose>
+          <geometry>
+              <sphere>
+               <radius>0.15</radius>
+            </sphere>
+          </geometry>
+           <material>
+          <ambient>1 0 0 1</ambient>
+          <diffuse>1 0 0 1</diffuse>
+          <specular>0.1 0.1 0.1 1</specular>
+          <emissive>0 0 0 0</emissive>
+        </material>
+         </visual>
+ 
+      </link>
+
+    </model> 
+</sdf>

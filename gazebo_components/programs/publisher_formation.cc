@@ -17,11 +17,16 @@
 #include <netdb.h> 
 
 
-#define BUFLEN 2048
-#define PORT 5053
+#define BUFLEN 5096
+#define PORT 5054
 
 
-gazebo::transport::PublisherPtr pub;
+gazebo::transport::PublisherPtr pub_create;
+gazebo::transport::PublisherPtr pub_delete;
+
+gazebo::msgs::Factory msg_create;
+
+bool formation_sequence = FALSE;
 void Parse_Buffer(char*);
 
 
@@ -38,7 +43,8 @@ int main(int _argc, char **_argv)
     // Load gazebo
     gazebo::setupClient(_argc, _argv);
 
-    gazebo::transport::NodePtr node(new gazebo::transport::Node());
+    gazebo::transport::NodePtr node_create(new gazebo::transport::Node());
+    gazebo::transport::NodePtr node_delete(new gazebo::transport::Node());
   
     struct sockaddr_in my_addr, cli_addr;
  
@@ -59,22 +65,49 @@ int main(int _argc, char **_argv)
     else
       printf("Server : bind() successful\n");
 
-  // Start transport
+
+    // Start transport
     gazebo::transport::run();
 
-  // Create our node for communication
-    node->Init();
+    // Create our node for communication
+    node_create->Init();
+    node_delete->Init();
 
-  // Publish to a Gazebo topic
-    pub = node->Advertise<gazebo::msgs::Pose>("~/ref_velocities");
+    // Publish to a Gazebo topic (model yaratmak icin Factory topic e publish yapmaliyiz)
+    pub_create = node_create->Advertise<gazebo::msgs::Factory>("~/factory");
 
+    // Modeller' silmek icin request topic e publish yapmaliyiz
+    pub_delete = node_delete->Advertise<gazebo::msgs::Request>("~/request");
+
+
+   
+   
   // Wait for a subscriber to connect
     //pub->WaitForConnection();  //baglanti beklemeyelim
-    while(1)
+  
+  while(1)
     {
         if (recvfrom(sockfd, buf, BUFLEN, 0, (struct sockaddr*)&cli_addr, &slen)==-1)
             err("recvfrom()");
+            
+            if(formation_sequence == TRUE){
+              formation_sequence = FALSE;
+            }
+            else{
+              formation_sequence = TRUE;
+            }
+          
             //printf("Received packet from %s:%d\nData: %s\n\n", inet_ntoa(cli_addr.sin_addr), ntohs(cli_addr.sin_port), buf);
+            
+            gazebo::msgs::Request *msg_ptr;
+            msg_ptr = new gazebo::msgs::Request;
+            if(formation_sequence == TRUE)
+               msg_ptr = gazebo::msgs::CreateRequest("entity_delete","4model4"); 
+            else
+               msg_ptr = gazebo::msgs::CreateRequest("entity_delete","5model5"); 
+
+            pub_delete->Publish(*msg_ptr); //4 numarali agentlari (eski formation i silelim)
+            delete msg_ptr;
             Parse_Buffer(buf);  //matlab tarafindan her paket geldiginde parse edip topic olarak yayinlayalim
             memset(buf,0,sizeof(buf));
     }
@@ -88,47 +121,34 @@ void Parse_Buffer(char* buf){
     char *str = buf;
     char c[1024];
     memset(c,0,sizeof(c));
-    float f[4] = {0};
-    static bool wait_for_mrec = 0;
-  
-    char key[] = "mrec";
-    char b[]  = "mrec"   ;
-    float mrec_flag = 0.0;
+    float f[2] = {0};
+
+
     while (str[i])
       {
-       //strcpy(b,c);
        if (isspace(str[i])){
-          if(wait_for_mrec == 1){
-            wait_for_mrec = 0; 
-            mrec_flag = std::atof(c);
-            memset(c,0,sizeof(c));
-            i++;
-            continue;         
-          }
-          if(strcmp (c,key)==0){
-            memset(c,0,sizeof(c));
-            wait_for_mrec = 1;   
-          }
-          else{
           f[counter] = std::atof(c);
           counter++; 
           memset(c,0,sizeof(c));
-          }
-        }
-        else      
+       }
+        else{      
           sprintf(c,"%s%c", c,str[i]);
-      
-        if(counter == 4){
-          gazebo::math::Quaternion quat(f[3],f[0],f[1],f[2]); 
-          gazebo::math::Vector3 pos(mrec_flag,0,0);
-          gazebo::math::Pose data(pos,quat);
-          gazebo::msgs::Pose data_msg;
-          gazebo::msgs::Set(&data_msg, data);
-          pub->Publish(data_msg);
-          //printf("Yollanan: %f %f %f %f \n", f[1], f[2], f[3], f[4]);
+       }
+
+        if(counter == 2){
+          //printf("Yollanan: %f %f\n", f[0], f[1]);
+          if(formation_sequence == TRUE){
+            msg_create.set_sdf_filename("model://model5");
+          }
+         else{
+            msg_create.set_sdf_filename("model://model4");
+          }
+          gazebo::msgs::Set(msg_create.mutable_pose(), gazebo::math::Pose(gazebo::math::Vector3(f[0],f[1], 0), gazebo::math::Quaternion(0, 0, 0)));
+          pub_create->Publish(msg_create);
           counter = 0;
         }
         i++;
     }
     return;
 }
+

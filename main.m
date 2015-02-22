@@ -5,6 +5,10 @@ clear all
 u = udp('127.0.0.1', 5052, 'LocalPort', 5051);
 u.InputBufferSize = 5096;
 u.OutputBufferSize = 5096;
+
+y = udp('127.0.0.1', 5054, 'LocalPort', 5053);
+y.InputBufferSize = 5096*2;
+y.OutputBufferSize = 5096*2;
 %gazebo entegrasyonu icin udp portarini acalim
 
 %loop periodlari(saniye cinsinden)
@@ -93,7 +97,7 @@ formation_center = 0;
 formation_area   = 0;
 formation_density = 0;
 desired_density = 0.150;
-
+formation_sendto_gazebo = 0 ;
 %formation noktalari arasindaki mesafe
 pen_length = 0.01;
 
@@ -144,6 +148,9 @@ mrec_active = 0;
 mrec_theta_dot = 0;
 mrec_mean_dot  = 0;
 mrec_s_dot     = 0;
+mrec_theta_dif = 0;
+mrec_s_dif     = 0;
+mrec_mean_dif  = 0;
 %mrec variable definitions
 
 %==========================%
