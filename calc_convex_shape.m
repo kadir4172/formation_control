@@ -68,8 +68,23 @@ end
 
 L_lower_ind = L_lower_ind(2:(end -1));
 general_ind = [L_upper_ind L_lower_ind];
-conv_shape_x = list_x(general_ind);
-conv_shape_y = list_y(general_ind);
+conv_x = list_x(general_ind);
+conv_y = list_y(general_ind);
+
+[val,ind] = min(conv_y);
+
+conv_shape_x = [];
+conv_shape_y = [];
+for i = ind : -1 : 1
+    conv_shape_x  = [conv_shape_x conv_x(i)];
+    conv_shape_y  = [conv_shape_y conv_y(i)];
+end
+
+for i = length(conv_x) : -1 : (ind + 1)
+    conv_shape_x  = [conv_shape_x conv_x(i)];
+    conv_shape_y  = [conv_shape_y conv_y(i)];
+end
+    
 %{
 figure
 plot(list_x,list_y,'o')
