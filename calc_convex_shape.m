@@ -73,18 +73,32 @@ conv_y = list_y(general_ind);
 
 [val,ind] = min(conv_y);
 
-conv_shape_x = [];
-conv_shape_y = [];
+convex_shape_x = [];
+convex_shape_y = [];
 for i = ind : -1 : 1
-    conv_shape_x  = [conv_shape_x conv_x(i)];
-    conv_shape_y  = [conv_shape_y conv_y(i)];
+    convex_shape_x  = [convex_shape_x conv_x(i)];
+    convex_shape_y  = [convex_shape_y conv_y(i)];
 end
 
 for i = length(conv_x) : -1 : (ind + 1)
-    conv_shape_x  = [conv_shape_x conv_x(i)];
-    conv_shape_y  = [conv_shape_y conv_y(i)];
+    convex_shape_x  = [convex_shape_x conv_x(i)];
+    convex_shape_y  = [convex_shape_y conv_y(i)];
 end
-    
+
+conv_shape_x = [];
+conv_shape_y = [];
+for i = 1 : 1 : length(convex_shape_x)
+   index_next = i + 1;
+   if(index_next > length(convex_shape_x))
+     index_next = 1;
+   end
+   index = i;
+   distance = norm([(convex_shape_x(index) - convex_shape_x(index_next)) (convex_shape_y(index) - convex_shape_y(index_next)) ]);
+   if (distance > 1)
+       conv_shape_x = [conv_shape_x convex_shape_x(i)];
+       conv_shape_y = [conv_shape_y convex_shape_y(i)];
+   end
+end
 %{
 figure
 plot(list_x,list_y,'o')

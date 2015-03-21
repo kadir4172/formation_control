@@ -2,14 +2,14 @@ function [total_shape_x, total_shape_y] = calc_minkowski_sum( obstacle_x, obstac
 
 theta = 270;
 for i = 1 : 1 : 8
-  robot_x(i) = robot_radius * cosd(theta)
-  robot_y(i) = robot_radius * sind(theta)
+  robot_x(i) = robot_radius * cosd(theta);
+  robot_y(i) = robot_radius * sind(theta);
   theta = theta + 45 ;
 end
 
 
-n = length(obstacle_x)
-m = length(robot_x)
+n = length(obstacle_x);
+m = length(robot_x);
 
 k = 1;
 for i = 1 : 1 : n
