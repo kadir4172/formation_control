@@ -153,6 +153,9 @@ mrec_s_dif     = 0;
 mrec_mean_dif  = 0;
 %mrec variable definitions
 
+%oflline formation datalari
+X_offline = 0;
+Y_offline = 0;
 %==========================%
 %zone tanimlamalari
 field1 = 'matrix';  value1 = 0;

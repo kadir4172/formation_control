@@ -46,11 +46,12 @@ if(formation_sendto_gazebo == 1) % eger yeni formation sekli varsa ya da mrec de
   formation_sendto_gazebo = 0;
 end
 
-
+%{
 assignin('base', 'ka', ka);
 assignin('base', 'kr', kr);
 assignin('base', 'kf', kf);
 assignin('base', 'km', km);
 assignin('base', 'ko', ko);
 assignin('base', 'ka2', ka2);
+%}
 assignin('base', 'formation_sendto_gazebo', formation_sendto_gazebo);
