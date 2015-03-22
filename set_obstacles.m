@@ -32,3 +32,13 @@ assignin('base', 'obstacle_3_x', obstacle_3_x);
 assignin('base', 'obstacle_3_y', obstacle_3_y);
 assignin('base', 'obstacle_global', obstacle_global);
 assignin('base', 'obstacle_number', obstacle_number);
+
+
+motion_1_x = [-20.51 -20.51 -6.292 -6.292];
+motion_1_y = [10 24 24 10];
+
+motion_2_x = [-4.097 -4.097 -4.097 -11.51 -22.78 -25.27 -21.74 -9.205];
+motion_2_y = [-15.29 -10 -20 -32.16 -32.31 -23.52 -16.85 -10.23];
+
+motion_3_x = [18.7 30.13 24.78 10.59 10.59];
+motion_3_y = [12.75 1.297 -7.71 -7.71 12.75];
