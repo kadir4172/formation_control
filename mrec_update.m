@@ -10,7 +10,7 @@
   theta = evalin('base', 'mrec_theta');
   
 
-  farthest_agent_index(2) = 1;
+  farthest_agent_index(1) = 1;
   theta = atan2 ((Y(farthest_agent_index(1)) - mean(2)),(X(farthest_agent_index(1)) - mean(1)));
   
   
