@@ -7,8 +7,8 @@ Y  = evalin('base', 'Y_offline');
 F = [1 offline_dt; 0 1];
 
 for i = 1 : 1 : n
-  X_vector = [X(i);  offline_force_matrix(1,7,i)];
-  Y_vector = [Y(i);  offline_force_matrix(2,7,i)];  
+  X_vector = [X(i);  offline_force_matrix(1,7,i)/900];
+  Y_vector = [Y(i);  offline_force_matrix(2,7,i)/900];  
 
   X_vector = F * X_vector;
   Y_vector = F * Y_vector;
@@ -27,4 +27,4 @@ end
   assignin('base', 'Xdot_offline', Xdot);
   assignin('base', 'Ydot_offline', Ydot);
   
-  deneme = 18
+  

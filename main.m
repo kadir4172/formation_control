@@ -97,6 +97,7 @@ formation_center = 0;
 formation_area   = 0;
 formation_density = 0;
 desired_density = 0.150;
+desired_density_min = 0.07;
 formation_sendto_gazebo = 0 ;
 %formation noktalari arasindaki mesafe
 pen_length = 0.01;
@@ -111,6 +112,9 @@ obstacle_3_x = 0;
 obstacle_3_y = 0;
 obstacle_number = 0;
 obstacle_global = 0;
+shape_buffer = 0.1;
+grid_map = [];
+search_step = 1.5;
 set_obstacles;
 
 %formation bilgisini bir kez alalim TODO:daha sonra surekli dinamik
@@ -125,7 +129,7 @@ calculate_forces_flag = 0;
 x_swarm_flag = 0;
 force_matrix = zeros(2,7,n);
 inside_outside_array = zeros(n,1);
-shape_buffer = 0.1;
+
 
 ka = 2000;
 kr = 600;
@@ -155,19 +159,24 @@ mrec_mean_dif  = 0;
 %mrec variable definitions
 
 %oflline formation datalari
-X_offline = 0;
-Y_offline = 0;
+X_offline = X_real;
+Y_offline = Y_real;
 Xdot_offline = 0;
 Ydot_offline = 0;
 
-offline_ka = 2000;
-offline_kr = 600;
+offline_ka = 7000;
+offline_kr = 500;
 offline_km = 750;
+offline_ko = 900;
+offline_ka2 = 90000;
 
 offline_force_matrix = zeros(2,7,n);
 offline_inside_outside_array = zeros(n,1);
 
 offline_dt = 0;
+
+
+formation_ok = 0;
 %==========================%
 %zone tanimlamalari
 field1 = 'matrix';  value1 = 0;
@@ -247,6 +256,21 @@ plot(obstacle_1_x, obstacle_1_y);
 plot(obstacle_2_x, obstacle_2_y);
 plot(obstacle_3_x, obstacle_3_y);
 %==========================%
+
+%comment in to figure the startup offline formation order
+%{
+n = scatter(X_offline, Y_offline, agents_zone_matlab,'r');
+set(n,'XDataSource','X_offline');
+set(n,'YDataSource','Y_offline');
+
+m = plot(formation_x, formation_y);
+set(m,'XDataSource','formation_x');
+set(m,'YDataSource','formation_y');
+axis([-35,35,-35,35])
+%}
+%comment in to figure the startup offline formation order
+
+
 
 linkdata on
 %tum agentler in ilk konumunu ciz ve linkdata enable et

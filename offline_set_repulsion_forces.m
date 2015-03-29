@@ -48,4 +48,3 @@
   
  assignin('base', 'offline_force_matrix', offline_force_matrix);
 
-deneme = 16

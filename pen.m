@@ -254,6 +254,7 @@ end
 set(findobj('Tag','TEXT'),'String',[' ' num2str(num_blocks) ' inputs processed']);
 
 %user input dan aldigimiz ham veriyi biraz isleyip filtreleyelim
+
 get_formation_data
 
 

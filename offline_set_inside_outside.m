@@ -60,4 +60,3 @@ for k = 1 : 1 : n
 end %for k = 1 : 1 : n
 
 assignin('base', 'offline_inside_outside_array', offline_inside_outside_array);
-deneme = 14

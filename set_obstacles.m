@@ -1,4 +1,3 @@
-
 obstacle_1_x = [-7.4715   -8.1715   -8.8494   -9.2819   -9.9811  -10.6811  -11.3811  -12.0811  -12.7811  -13.3735  -13.9751 -14.5604  -15.1990  -15.8947  -16.4639  -16.8829  -17.3271  -17.7769  -18.0157  -18.2532  -18.4187  -18.4189 -18.4189  -18.5719  -18.6247  -18.6429  -18.6510  -18.6548  -18.6581  -18.3274  -17.9460  -17.5362  -16.9045 -16.2376  -15.5441  -14.8473  -14.1473  -13.4528  -12.8392  -12.3980  -11.8706  -11.5632  -11.3482  -10.8468 -10.1732   -9.4734   -8.7734   -8.1432   -7.5637   -6.9020   -6.3930   -5.8933   -5.8160   -5.7458   -5.7204 -5.8704   -6.0880   -6.2957   -6.5942   -6.9459   -7.2361];
 obstacle_1_y = [21.1805   21.1805   21.0060   20.4556   20.4228   20.4208   20.4206   20.4206   20.4206   20.7935   21.1514 21.5354   21.8221   21.8995   21.4921   20.9313   20.3903   19.8540   19.1960   18.5375   17.8573   17.1573 16.4573   15.7743   15.0762   14.3765   13.6765   12.9765   12.2765   11.6596   11.0726   10.5052   10.2036 9.9908   10.0859   10.1528   10.1622   10.2493   10.5862   11.1297   11.5899   12.2188   12.8850   13.3735 13.5638   13.5820   13.5821   13.8868   14.2794   14.5078   14.9883   15.4786   16.1743   16.8708   17.5703 18.2541   18.9194   19.5879   20.2210   20.8262   21.0218];
 
@@ -23,6 +22,12 @@ obstacle_3_y = obstacle_3_y * obstacle_gain;
 
 obstacle_number = 3;
 
+grid_map_in = evalin('base', 'grid_map'); % bos grid map i alalim
+grid_map_1 = test_inside_outside(obstacle_1_x , obstacle_1_y, grid_map_in); %obstaclerin icinde dogmayalim diye biraz daha genislettik
+grid_map_2 = test_inside_outside(obstacle_2_x , obstacle_2_y, grid_map_1); %obstaclerin icinde dogmayalim diye biraz daha genislettik
+grid_map = test_inside_outside(obstacle_3_x , obstacle_3_y, grid_map_2); %obstaclerin icinde dogmayalim diye biraz daha genislettik
+
+
 obstacle_global = [obstacle_1_x obstacle_2_x obstacle_3_x; obstacle_1_y obstacle_2_y obstacle_3_y];
 assignin('base', 'obstacle_1_x', obstacle_1_x);
 assignin('base', 'obstacle_1_y', obstacle_1_y);
@@ -32,6 +37,7 @@ assignin('base', 'obstacle_3_x', obstacle_3_x);
 assignin('base', 'obstacle_3_y', obstacle_3_y);
 assignin('base', 'obstacle_global', obstacle_global);
 assignin('base', 'obstacle_number', obstacle_number);
+assignin('base', 'grid_map', grid_map);
 
 
 motion_1_x = [-20.51 -20.51 -6.292 -6.292];

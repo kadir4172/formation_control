@@ -30,6 +30,7 @@ flushinput(u);
 fwrite(u,string_to_send);
 fclose(u);
 
+
 if(formation_sendto_gazebo == 1) % eger yeni formation sekli varsa ya da mrec den yeni bir sekil geliyorsa
   string_to_send = [];
   for i = 1 : 4 : length(formation_x)
@@ -38,7 +39,6 @@ if(formation_sendto_gazebo == 1) % eger yeni formation sekli varsa ya da mrec de
     string_to_send = [string_to_send, str1, ' ', str2, ' '];
   end
   string_to_send = strcat(string_to_send, ' \n');
-
   fopen(y); % 5053 u dinleyen publisher_formation la konusalim
   flushinput(y);
   fwrite(y,string_to_send);
