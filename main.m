@@ -135,6 +135,7 @@ ko = 2500;
 ka2 = 70000;
 %Artificial forces for individual members
 
+
 %mrec variable definitions
 mrec_mean = zeros(2,1);
 mrec_E1 = [0 1 ; 1 0 ];
@@ -156,6 +157,17 @@ mrec_mean_dif  = 0;
 %oflline formation datalari
 X_offline = 0;
 Y_offline = 0;
+Xdot_offline = 0;
+Ydot_offline = 0;
+
+offline_ka = 2000;
+offline_kr = 600;
+offline_km = 750;
+
+offline_force_matrix = zeros(2,7,n);
+offline_inside_outside_array = zeros(n,1);
+
+offline_dt = 0;
 %==========================%
 %zone tanimlamalari
 field1 = 'matrix';  value1 = 0;

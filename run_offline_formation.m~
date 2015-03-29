@@ -22,8 +22,7 @@ offline_set_intermember_forces;
 offline_set_attraction_forces;
 offline_set_repulsion_forces;
 offline_set_total_force;
-offline_dt = cputime - t
-assignin('base', 'offline_dt', offline_dt);
+
 run_offline_dynamics;
 
 %offline simulation isleri
