@@ -174,6 +174,9 @@ offline_force_matrix = zeros(2,7,n);
 offline_inside_outside_array = zeros(n,1);
 
 offline_dt = 0;
+GoalStatePos1= 0;
+GoalStatePos2= 0;
+GoalStatePos3= 0;
 
 
 formation_ok = 0;
