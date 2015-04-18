@@ -1,28 +1,29 @@
 clc
+n = evalin('base', 'n');
 offline_check_density;
 set_imaginary_agents; % offline_check_density ile sira degistirirsen formation_ok yi dogru handle et
 formation_ok = evalin('base', 'formation_ok');
 formation_ok
-if(formation_ok)
-  update_states_timer = evalin('base', 'update_states_timer');
+
+ update_states_timer = evalin('base', 'update_states_timer');
   pos_loop = evalin('base', 'pos_loop');
   stop(update_states_timer);
   stop(pos_loop);
   
-  n = evalin('base', 'n');
-
-  formation_x  = evalin('base', 'formation_x');
-  formation_y  = evalin('base', 'formation_y');
-  %agents_zone_matlab = evalin('base','agents_zone_matlab');
-  for i = 1 : 1 : n
+   for i = 1 : 1 : n
     force_matrix(1,7,i) = 0;
     force_matrix(2,7,i) = 0;
   end
   
 assignin('base', 'force_matrix', force_matrix);  % gercek dunyadaki hiz referanslarini sifirlayalim
 udp_send
-
-
+  
+if(formation_ok)
+  
+  formation_x  = evalin('base', 'formation_x');
+  formation_y  = evalin('base', 'formation_y');
+  %agents_zone_matlab = evalin('base','agents_zone_matlab');
+ 
 %offline simulation isleri
 
 
@@ -72,6 +73,10 @@ set(p,'YDataSource','formation_y');
    end
    assignin('base', 'X_offline', X_offline);
    assignin('base', 'Y_offline', Y_offline);
+    
+   
+  start(update_states_timer);
+  start(pos_loop);
 end
 %offline simulation isleri
 
