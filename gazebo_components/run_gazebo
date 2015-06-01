@@ -1,0 +1,20 @@
+#!/bin/bash
+# declare STRING variable
+STRING="Environment will be started!"
+#print variable on a screen
+echo $STRING
+
+#cd ./plugins/build
+#make
+#sudo cp ./libworld_publisher.so /home/kadir/gazebo/build/plugins
+#sudo cp ./libmodel_plugin.so /home/kadir/gazebo/build/plugins
+#STRING="Plugins are updated and copied into the related paths!"
+#echo $STRING
+
+#cd ../..
+#cd ./programs/build
+#make
+#STRING="Standalone programs are compiled and ready to run!"
+#echo $STRING
+
+GAZEBO_RESOURCE_PATH="$GAZEBO_RESOURCE_PATH:/home/kadir/gazebo" gazebo /home/kadir/gazebo/worlds/ankara.world
