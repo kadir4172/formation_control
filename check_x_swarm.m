@@ -38,7 +38,7 @@ if ((sigma > 0) & (delta > 0)) % X_Swarm condition is achieved then we will chec
   end
 else                           % X_Swarm condition cannot be achieved, so increase km to give more distances between agents
   x_swarm_flag = 0;
-  km = km + km_rate
+  %km = km + km_rate
 end
 assignin('base', 'x_swarm_flag', x_swarm_flag);
 assignin('base', 'km', km);

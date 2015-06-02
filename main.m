@@ -132,11 +132,15 @@ inside_outside_array = zeros(n,1);
 
 
 ka = 2000;
-kr = 600;
+kr = 0;
 kf = 0;
 km = 750;
-ko = 2500;
+ko = 5500;
 ka2 = 70000;
+kgoal1 = 10;
+kgoal2 = 200;
+max_force = 1000;
+max_goal_state_force = 4;
 %Artificial forces for individual members
 
 

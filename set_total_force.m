@@ -1,7 +1,6 @@
   force_matrix = evalin('base', 'force_matrix');
   n = evalin('base', 'n');
-  
-  max_force = 1000;
+  max_force = evalin('base', ' max_force');
 
   for i = 1 : 1 : n
     force_matrix(1,7,i) = force_matrix(1,1,i) + force_matrix(1,2,i) + force_matrix(1,3,i) - force_matrix(1,4,i) + force_matrix(1,5,i) + force_matrix(1,6,i);

@@ -171,6 +171,7 @@ calculate_forces_flag = evalin('base', 'calculate_forces_flag');
     set_friction_forces    %agentlar icin surtunme kuvvetlerini hesapla
     set_obstacle_forces    %agentlar icin obstacle lar tarafindan uretilen sanal kuvvetleri hesapla
     set_total_force        %tum force bilesenlerini toplayalim
+    set_goal_state_forces
     
     mrec_update
     mrec_propogate
