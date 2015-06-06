@@ -27,7 +27,7 @@ for k = 1 : 1 : n
     z_i = complex(z(i+1,1),z(i+1,2));
     denum = nokta - z_i;
     if (norm(denum) < shape_buffer)
-      dot_on_the_line = 1;
+       dot_on_the_line = 1;
       break
     end
     

@@ -2,7 +2,7 @@
   
   X  = evalin('base', 'X_offline');
   Y  = evalin('base', 'Y_offline');
-  
+     real_time_scale = evalin('base', 'real_time_scale');
   formation_x = evalin('base', 'formation_x');
   formation_y = evalin('base', 'formation_y');
   
@@ -16,11 +16,11 @@
   
   offline_force_matrix(:,5,:) = 0 ; % attractive force2 sutununu sifirlayalim
   for i = 1 : 1 : n
-    if(offline_inside_outside_array(i) ~= 1) %eger agent shape icerisinde degilse hesaplansin
+    if(offline_inside_outside_array(i) == 0) %eger agent shape icerisinde degilse hesaplansin
       for j = 1 : 1 : array_length
-        distance_to_point = norm([(formation_x(j) - X(i))  (formation_y(j) - Y(i))]);
-        offline_force_matrix(1,5,i) = offline_force_matrix(1,5,i) + ((formation_x(j) - X(i)) / (distance_to_point)^3);
-        offline_force_matrix(2,5,i) = offline_force_matrix(2,5,i) + ((formation_y(j) - Y(i)) / (distance_to_point)^3);
+        distance_to_point = norm([(formation_x(j) - X(i))  (formation_y(j) - Y(i))]) * real_time_scale;
+        offline_force_matrix(1,5,i) = offline_force_matrix(1,5,i) + ((formation_x(j) - X(i)) * real_time_scale / (distance_to_point)^3);
+        offline_force_matrix(2,5,i) = offline_force_matrix(2,5,i) + ((formation_y(j) - Y(i)) * real_time_scale / (distance_to_point)^3);
       end
         offline_force_matrix(1,5,i) = (offline_force_matrix(1,5,i) * offline_ka2) / array_length;
         offline_force_matrix(2,5,i) = (offline_force_matrix(2,5,i) * offline_ka2) / array_length;

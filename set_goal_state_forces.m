@@ -1,7 +1,7 @@
   GoalStatePos1  = evalin('base', 'GoalStatePos1');
   GoalStatePos2  = evalin('base', 'GoalStatePos2');
   GoalStatePos3  = evalin('base', 'GoalStatePos3');
-  
+  %real_time_scale = evalin('base', 'real_time_scale');
   kgoal1  = evalin('base', 'kgoal1');
   kgoal2  = evalin('base', 'kgoal2');
   max_goal_state_force = evalin('base', ' max_goal_state_force');
@@ -73,7 +73,7 @@
     %GoalStatesForces
     
     
-
+GoalStatesForces = GoalStatesForces .* real_time_scale;
     for i = 1 : 1 : n
         amplitude = GoalStatesForces(i,1)^2 + GoalStatesForces(i,2)^2 ;
         amplitude = amplitude^0.5;
@@ -89,16 +89,18 @@
         force_matrix(1,7,i) = force_matrix(1,7,i) - kgoal2 * GoalStatesForces(i,1) * gain ;
         force_matrix(2,7,i) = force_matrix(2,7,i) - kgoal2 * GoalStatesForces(i,2) * gain ;      
     end
-    end
-  
-
-     if (abs(force_matrix(1,7,i)) > max_force)
+    
+         if (abs(force_matrix(1,7,i)) > max_force)
       force_matrix(1,7,i) = max_force * (force_matrix(1,7,i)/abs(force_matrix(1,7,i)));
     end
     
     if (abs(force_matrix(2,7,i)) > max_force)
       force_matrix(2,7,i) = max_force * (force_matrix(2,7,i)/abs(force_matrix(2,7,i)));
     end
+    end
+  
+
+
   
  assignin('base', 'force_matrix', force_matrix);
     

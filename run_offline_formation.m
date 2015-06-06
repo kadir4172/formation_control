@@ -54,7 +54,8 @@ set(p,'YDataSource','formation_y');
    offline_set_repulsion_forces;
    %offline_set_obstacle_forces;
    offline_set_total_force;
-   offline_dt = (cputime - t) * 10;
+   %offline_dt = (cputime - t) * 10
+   offline_dt = 0.5;
    assignin('base', 'offline_dt', offline_dt);
    run_offline_dynamics;
   end
@@ -62,6 +63,7 @@ set(p,'YDataSource','formation_y');
    offline_inside_outside_array = evalin('base', 'offline_inside_outside_array');
    X_offline  = evalin('base', 'X_offline');
    Y_offline  = evalin('base', 'Y_offline');
+  
    for i = 1 : 1 : n
        if(offline_inside_outside_array(i) == 0)  %% offline sim sonucunda seklin icine sokulamadiysa en yakin sinira koyalim
          distance = [];
@@ -73,10 +75,11 @@ set(p,'YDataSource','formation_y');
          %i
          %formation_x
          %formation_y
-         X_offline(i) = formation_x(ind);  % sinirin uzerine koyalim
-         Y_offline(i) = formation_y(ind);        
+         %X_offline(i) = formation_x(ind);  % sinirin uzerine koyalim
+         %Y_offline(i) = formation_y(ind);        
        end
    end
+  
    assignin('base', 'X_offline', X_offline);
    assignin('base', 'Y_offline', Y_offline);
    

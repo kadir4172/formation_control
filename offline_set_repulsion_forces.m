@@ -8,6 +8,7 @@
   
   formation_x = evalin('base', 'formation_x');
   formation_y = evalin('base', 'formation_y');
+  real_time_scale = evalin('base', 'real_time_scale');
   
   array_length = length(formation_x);
   
@@ -20,11 +21,11 @@
 
   offline_force_matrix(:,2,:) = 0 ; % repulsive force sutununu sifirlayalim
   for i = 1 : 1 : n
-    if(offline_inside_outside_array(i) ~= 0) %eger agent, shape disarisinda degilse hesaplansin
+    if(offline_inside_outside_array(i) == 1) %eger agent, shape disarisinda degilse hesaplansin
       for j = 1 : 1 : array_length
-        distance_to_point = norm([(formation_x(j) - X(i))  (formation_y(j) - Y(i))]);
-        offline_force_matrix(1,2,i) = offline_force_matrix(1,2,i) + (((X(i) - formation_x(j)) / (distance_to_point)) / (distance_to_point - agents_radius(i))^2);
-        offline_force_matrix(2,2,i) = offline_force_matrix(2,2,i) + (((Y(i) - formation_y(j)) / (distance_to_point)) / (distance_to_point - agents_radius(i))^2);
+        distance_to_point = norm([(formation_x(j) - X(i))  (formation_y(j) - Y(i))]) * real_time_scale;
+        offline_force_matrix(1,2,i) = offline_force_matrix(1,2,i) + (((X(i) - formation_x(j)) / (distance_to_point)) / (distance_to_point - real_time_scale * agents_radius(i))^2);
+        offline_force_matrix(2,2,i) = offline_force_matrix(2,2,i) + (((Y(i) - formation_y(j)) / (distance_to_point)) / (distance_to_point - real_time_scale * agents_radius(i))^2);
       end
         offline_force_matrix(1,2,i) = offline_force_matrix(1,2,i) * offline_kr;
         offline_force_matrix(2,2,i) = offline_force_matrix(2,2,i) * offline_kr;

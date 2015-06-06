@@ -80,8 +80,8 @@ else if(use_real_positions == 0)
   %Y_accelmeas_noisy(1,1,PA_index) = 0;              % PA larin ivmeleri gurultusuz olsun
   %Y_accelmeas_noisy(1,1,:) = zeros(n,1);
   %Y_accelmeas_noisy = Y_accelmeas_noisy + force_matrix(2,7,:) /10000;
-  Xdot = force_matrix(1,7,:)./10000;
-  Ydot = force_matrix(2,7,:)./10000;
+  Xdot = force_matrix(1,7,:)./5000;
+  Ydot = force_matrix(2,7,:)./5000;
   Xdotdot = Xdot .* 0;
   Ydotdot = Ydot .* 0;
     end

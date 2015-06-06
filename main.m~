@@ -155,13 +155,13 @@ inside_outside_array = zeros(n,1);
 ka = 0;
 kr = 0.00001;
 kf = 0;
-km = 400 ;
+km = 350 ;
 ko = 0;
 ka2 = 0;
-kgoal1 = 700;
-kgoal2 = 1100;
+kgoal1 = 1000;
+kgoal2 = 1200;
 max_force = 100;
-max_goal_state_force = 2.5;
+max_goal_state_force = 3;
 %Artificial forces for individual members
 
 
@@ -190,8 +190,8 @@ Xdot_offline = X .*0;
 Ydot_offline = Y .*0;
 
 offline_ka = 10000;
-offline_kr = 12.0;
-offline_km =  1300;
+offline_kr = 30.0;
+offline_km =  750;
 offline_ko =  0;
 offline_ka2 = 90000;
 

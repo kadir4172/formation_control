@@ -1,7 +1,7 @@
   offline_force_matrix = evalin('base', 'offline_force_matrix');
   n = evalin('base', 'n');
-  
-  max_force = 100;
+  max_force = evalin('base', ' max_force');
+  max_force = max_force ;
 
   for i = 1 : 1 : n
     offline_force_matrix(1,7,i) = offline_force_matrix(1,1,i) + offline_force_matrix(1,2,i) + offline_force_matrix(1,3,i) - offline_force_matrix(1,4,i) + offline_force_matrix(1,5,i) + offline_force_matrix(1,6,i);
