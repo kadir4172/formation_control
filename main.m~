@@ -2,14 +2,19 @@ clc
 clear all
 
 %gazebo entegrasyonu icin udp portarini acalim
-u = udp('127.0.0.1', 5052, 'LocalPort', 5051);
-u.InputBufferSize = 5096;
-u.OutputBufferSize = 5096;
+%u = udp('127.0.0.1', 5052, 'LocalPort', 5051);
+%u.InputBufferSize = 5096;
+%u.OutputBufferSize = 5096;
 
-y = udp('127.0.0.1', 5054, 'LocalPort', 5053);
-y.InputBufferSize = 5096*2;
-y.OutputBufferSize = 5096*2;
+%y = udp('127.0.0.1', 5054, 'LocalPort', 5053);
+%y.InputBufferSize = 5096*2;
+%y.OutputBufferSize = 5096*2;
 %gazebo entegrasyonu icin udp portarini acalim
+
+%cam_receive ile kalkacak
+test_module = 1;
+%cam_receive ile kalkacak
+
 
 %loop periodlari(saniye cinsinden)
 est_propogate_period = 0.5;
@@ -30,20 +35,29 @@ Xdotdot_real = zeros(n,1);
 Ydotdot_real = zeros(n,1);
 feedback_matrix = [];
 dt = 0;
-use_real_positions = 1;
+use_real_positions = 0;
 
 %agent sayisinin %10 u kadar PA ayarla
 PA_number = round(n/5);
 PA_index  = round(rand(PA_number,1) * n);
 
-udp_receive
-X = X_real;
+%cam_receive
+%test_module
+%X = X_real;
+%Y = Y_real;
+%Xdot = Xdot_real;
+%Ydot = Ydot_real;
+%Xdotdot = Xdotdot_real;
+%Ydotdot = Ydotdot_real;
+X = 1 ?1 ;
 Y = Y_real;
 Xdot = Xdot_real;
 Ydot = Ydot_real;
 Xdotdot = Xdotdot_real;
 Ydotdot = Ydotdot_real;
+%test_module
 
+agents_radius = zeros(5,1) * 0.18;
 farthest_agent_index = zeros(2,1);
 conversion_index = 13.641; % [matlab] / [cm]
 agents_radius_matlab = conversion_index .* agents_radius;
@@ -132,11 +146,15 @@ inside_outside_array = zeros(n,1);
 
 
 ka = 2000;
-kr = 600;
+kr = 0;
 kf = 0;
 km = 750;
-ko = 2500;
+ko = 5500;
 ka2 = 70000;
+kgoal1 = 10;
+kgoal2 = 200;
+max_force = 1000;
+max_goal_state_force = 4;
 %Artificial forces for individual members
 
 
@@ -255,9 +273,9 @@ axis([-35,35,-35,35])
 %obstacle lari plot edelim
 
 %figure
-plot(obstacle_1_x, obstacle_1_y);
-plot(obstacle_2_x, obstacle_2_y);
-plot(obstacle_3_x, obstacle_3_y);
+plot(obstacle_1_x, obstacle_1_y, 'g');
+plot(obstacle_2_x, obstacle_2_y, 'g');
+plot(obstacle_3_x, obstacle_3_y, 'g');
 %==========================%
 
 %comment in to figure the startup offline formation order

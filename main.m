@@ -2,14 +2,19 @@ clc
 clear all
 
 %gazebo entegrasyonu icin udp portarini acalim
-u = udp('127.0.0.1', 5052, 'LocalPort', 5051);
-u.InputBufferSize = 5096;
-u.OutputBufferSize = 5096;
+%u = udp('127.0.0.1', 5052, 'LocalPort', 5051);
+%u.InputBufferSize = 5096;
+%u.OutputBufferSize = 5096;
 
-y = udp('127.0.0.1', 5054, 'LocalPort', 5053);
-y.InputBufferSize = 5096*2;
-y.OutputBufferSize = 5096*2;
+%y = udp('127.0.0.1', 5054, 'LocalPort', 5053);
+%y.InputBufferSize = 5096*2;
+%y.OutputBufferSize = 5096*2;
 %gazebo entegrasyonu icin udp portarini acalim
+
+%cam_receive ile kalkacak
+test_module = 1;
+%cam_receive ile kalkacak
+
 
 %loop periodlari(saniye cinsinden)
 est_propogate_period = 0.5;
@@ -30,20 +35,29 @@ Xdotdot_real = zeros(n,1);
 Ydotdot_real = zeros(n,1);
 feedback_matrix = [];
 dt = 0;
-use_real_positions = 1;
+use_real_positions = 0;
 
 %agent sayisinin %10 u kadar PA ayarla
 PA_number = round(n/5);
 PA_index  = round(rand(PA_number,1) * n);
 
-udp_receive
-X = X_real;
-Y = Y_real;
-Xdot = Xdot_real;
-Ydot = Ydot_real;
-Xdotdot = Xdotdot_real;
-Ydotdot = Ydotdot_real;
+%cam_receive
+%test_module
+%X = X_real;
+%Y = Y_real;
+%Xdot = Xdot_real;
+%Ydot = Ydot_real;
+%Xdotdot = Xdotdot_real;
+%Ydotdot = Ydotdot_real;
+X = (1 : 1 : n)';
+Y = (1 : 1 : n)';
+Xdot = 0;
+Ydot = 0;
+Xdotdot = 0;
+Ydotdot = 0;
+%test_module
 
+agents_radius = ones(5,1) * 0.18;
 farthest_agent_index = zeros(2,1);
 conversion_index = 13.641; % [matlab] / [cm]
 agents_radius_matlab = conversion_index .* agents_radius;
@@ -239,9 +253,11 @@ end
 
 %==========================%
 %Agentlari agent zone lari ile plot edelim (gercek pozisyonlar)
+if(use_real_positions == 1)
 l = scatter(X_real, Y_real, agents_zone_matlab,'r');
 set(l,'XDataSource','X_real');
 set(l,'YDataSource','Y_real');
+end
 %==========================%
 
 

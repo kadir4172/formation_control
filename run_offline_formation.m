@@ -18,7 +18,7 @@ formation_ok
   end
   
 assignin('base', 'force_matrix', force_matrix);  % gercek dunyadaki hiz referanslarini sifirlayalim
-udp_send
+%udp_send
   
 if(formation_ok)
   
