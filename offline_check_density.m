@@ -17,14 +17,12 @@ for i = 1 : 1 : n
     agents_inside = agents_inside + 1;
 end
 
-density = total / formation_area;
+density = total / formation_area
 
 
 if((desired_density_min < density) && (density < desired_density))
     formation_ok = 1;
 else
-    %test_module
-    formation_ok = 1;
-    %test_module
-end
+    formation_ok = 0;
+ end
 assignin('base', 'formation_ok', formation_ok);

@@ -19,7 +19,7 @@
        if(inside_outside_array(i) ~= 1) %eger agent shape icerisinde degilse hesaplansin
           km_to_use = km;
       else
-          km_to_use = km / 16;
+          km_to_use = km / 1;
       end
     for j = 1 : 1 : n
       if(i~=j)

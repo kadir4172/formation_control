@@ -80,8 +80,8 @@ else if(use_real_positions == 0)
   %Y_accelmeas_noisy(1,1,PA_index) = 0;              % PA larin ivmeleri gurultusuz olsun
   %Y_accelmeas_noisy(1,1,:) = zeros(n,1);
   %Y_accelmeas_noisy = Y_accelmeas_noisy + force_matrix(2,7,:) /10000;
-  Xdot = force_matrix(1,7,:)./900;
-  Ydot = force_matrix(2,7,:)./900;
+  Xdot = force_matrix(1,7,:)./10000;
+  Ydot = force_matrix(2,7,:)./10000;
   Xdotdot = Xdot .* 0;
   Ydotdot = Ydot .* 0;
     end
@@ -174,7 +174,7 @@ calculate_forces_flag = evalin('base', 'calculate_forces_flag');
     set_repulsion_forces   %seklin icindeyken itici kuvvetleri hesapla
     set_intermember_forces %memberlarin kendi aralarinda olusturdugu itki kuvvetlerini hesapla
     set_friction_forces    %agentlar icin surtunme kuvvetlerini hesapla
-    set_obstacle_forces    %agentlar icin obstacle lar tarafindan uretilen sanal kuvvetleri hesapla
+    %set_obstacle_forces    %agentlar icin obstacle lar tarafindan uretilen sanal kuvvetleri hesapla
     set_total_force        %tum force bilesenlerini toplayalim
     set_goal_state_forces
     

@@ -4,7 +4,8 @@ pen_length = evalin('base', 'pen_length');
 %ham formation_x/y verilerini alalim
 formation_x = evalin('base', 'formation_x');
 formation_y = evalin('base', 'formation_y');
-
+x_max = evalin('base', 'x_max');
+y_max = evalin('base', 'y_max');
 
 %formation_x/y genliklerini +/-100 arasina tasiyalim
 formation_x = formation_x * 200 - 100;
@@ -25,9 +26,10 @@ extra_dot_number = floor(distance / max_distance);
   end
 end
 
-formation_gain = 0.35;
-formation_x = formation_x * formation_gain;
-formation_y = formation_y * formation_gain;
+formation_gain_x = x_max/100;
+formation_gain_y = y_max/100;
+formation_x = formation_x * formation_gain_x;
+formation_y = formation_y * formation_gain_y;
 
 
 assignin('base', 'formation_x', formation_x);

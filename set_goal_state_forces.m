@@ -8,6 +8,12 @@
   max_force = evalin('base', ' max_force');
     
   n = evalin('base', 'n');
+  
+  radius1 = evalin('base', 'radius1');
+  radius2 = evalin('base', 'radius2');
+  radius3 = evalin('base', 'radius3');
+  
+  
   X  = evalin('base', 'X');
   Y  = evalin('base', 'Y');
   agents_radius = evalin('base','agents_radius');
@@ -25,12 +31,12 @@
   
   
     for i = 1 : 1 : n
-    if(agents_radius(i) == 0.18)
+    if(agents_radius(i) == radius1)
         cost_vector = (X(i)-GoalStatePos1(:,1)).^2 + (Y(i) - GoalStatePos1(:,2)).^2;
         cost_vector = cost_vector .^ 0.5;
         GoalStateCost1 = [GoalStateCost1; cost_vector'];
         GoalStateAgentId1 = [GoalStateAgentId1 i];
-    elseif(agents_radius(i) == 0.36)
+    elseif(agents_radius(i) == radius2)
         cost_vector = (X(i)-GoalStatePos2(:,1)).^2 + (Y(i) - GoalStatePos2(:,2)).^2;
         cost_vector = cost_vector .^ 0.5;
         GoalStateCost2 = [GoalStateCost2; cost_vector'];

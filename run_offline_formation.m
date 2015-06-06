@@ -1,6 +1,10 @@
 clc
 
 n = evalin('base', 'n');
+  radius1 = evalin('base', 'radius1');
+  radius2 = evalin('base', 'radius2');
+  radius3 = evalin('base', 'radius3');
+  
 agents_radius = evalin('base','agents_radius');
 offline_check_density;
 set_imaginary_agents; % offline_check_density ile sira degistirirsen formation_ok yi dogru handle et
@@ -41,14 +45,14 @@ set(p,'YDataSource','formation_y');
 %axis([-35,35,-35,35])
 %}
 
-  for i = 1 : 1 : 50
+  for i = 1 : 1 : 500
    t = cputime;
    offline_set_inside_outside;
    offline_set_intermember_forces;
    offline_set_attraction_forces;
    offline_set_attraction2_forces;
    offline_set_repulsion_forces;
-   offline_set_obstacle_forces;
+   %offline_set_obstacle_forces;
    offline_set_total_force;
    offline_dt = (cputime - t) * 10;
    assignin('base', 'offline_dt', offline_dt);
@@ -80,9 +84,9 @@ set(p,'YDataSource','formation_y');
    GoalStatePos2 = [];
    GoalStatePos3 = [];
    for i = 1 : 1 : n
-    if(agents_radius(i) == 0.18)
+    if(agents_radius(i) == radius1)
         GoalStatePos1 = [GoalStatePos1;[X_offline(i) Y_offline(i)]];
-    elseif(agents_radius(i) == 0.36)
+    elseif(agents_radius(i) == radius2)
         GoalStatePos2 = [GoalStatePos2;[X_offline(i) Y_offline(i)]];
     else
         GoalStatePos3 = [GoalStatePos3;[X_offline(i) Y_offline(i)]];

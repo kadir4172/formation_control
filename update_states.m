@@ -1,4 +1,5 @@
 function [ output_args ] = update_states( input_args )
+%{
 persistent H;
 persistent R;
 persistent S;
@@ -152,5 +153,6 @@ assignin('base', 'color', color);
 refreshdata
 
 skip_first_poll = 0;
+%}
 end
 

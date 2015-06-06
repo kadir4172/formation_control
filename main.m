@@ -49,17 +49,20 @@ PA_index  = round(rand(PA_number,1) * n);
 %Ydot = Ydot_real;
 %Xdotdot = Xdotdot_real;
 %Ydotdot = Ydotdot_real;
-X = (1 : 1 : n)';
-Y = (1 : 1 : n)';
+X = (0 : 1 : n-1)'./5;
+Y = (0 : 1 : n-1)'./5;
 Xdot = 0;
 Ydot = 0;
 Xdotdot = 0;
 Ydotdot = 0;
 %test_module
 
-agents_radius = ones(5,1) * 0.18;
+radius1 = 0.075;
+radius2 = 0.10;
+radius3 = 0.125;
+agents_radius = [radius3 radius2 radius2 radius1 radius1];
 farthest_agent_index = zeros(2,1);
-conversion_index = 13.641; % [matlab] / [cm]
+conversion_index = 360; % [matlab] / [cm]
 agents_radius_matlab = conversion_index .* agents_radius;
 agents_zone_matlab = pi .* (agents_radius_matlab.^2);
 agents_zone = pi .* (agents_radius.^2);
@@ -104,6 +107,8 @@ color = zeros(n,1);
 %formation data yaratalim
 formation_x = 0;
 formation_y = 0;
+x_max = 1.5;
+y_max = 1;
 
 %formation a iliskin datalar
 formation_length = 0;
@@ -128,7 +133,7 @@ obstacle_number = 0;
 obstacle_global = 0;
 shape_buffer = 0.1;
 grid_map = [];
-search_step = 1.5;
+search_step = 0.064;
 set_obstacles;
 
 %formation bilgisini bir kez alalim TODO:daha sonra surekli dinamik
@@ -145,16 +150,16 @@ force_matrix = zeros(2,7,n);
 inside_outside_array = zeros(n,1);
 
 
-ka = 2000;
+ka = 0;
 kr = 0;
 kf = 0;
-km = 750;
-ko = 5500;
-ka2 = 70000;
-kgoal1 = 10;
-kgoal2 = 200;
-max_force = 1000;
-max_goal_state_force = 4;
+km = 1;
+ko = 0;
+ka2 = 0;
+kgoal1 = 3000;
+kgoal2 = 3000;
+max_force = 100;
+max_goal_state_force = 0.10;
 %Artificial forces for individual members
 
 
@@ -176,17 +181,17 @@ mrec_s_dif     = 0;
 mrec_mean_dif  = 0;
 %mrec variable definitions
 
-%oflline formation datalari
-X_offline = X_real;
-Y_offline = Y_real;
-Xdot_offline = 0;
-Ydot_offline = 0;
+%offlline formation datalari
+X_offline = X;
+Y_offline = Y;
+Xdot_offline = X .*0;
+Ydot_offline = Y .*0;
 
-offline_ka = 7000;
+offline_ka = 700;
 offline_kr = 500;
 offline_km = 750;
-offline_ko = 900;
-offline_ka2 = 90000;
+offline_ko = 1;
+offline_ka2 = 900;
 
 offline_force_matrix = zeros(2,7,n);
 offline_inside_outside_array = zeros(n,1);
@@ -233,7 +238,7 @@ figure
  % m(i) = text(X_real(i),Y_real(i),int2str(i),'color','r');
 %end
 
-axis([-35,35,-35,35])
+axis([-1*x_max,x_max,-1*y_max,y_max])
 hold on
 %set(h,'XDataSource','X');
 %set(h,'YDataSource','Y');
@@ -268,28 +273,27 @@ end
 j = plot(formation_x, formation_y);
 set(j,'XDataSource','formation_x');
 set(j,'YDataSource','formation_y');
-axis([-35,35,-35,35])
+axis([-1*x_max,x_max,-1*y_max,y_max])
 %==========================%
 
 %==========================%
 %obstacle lari plot edelim
 
 %figure
-plot(obstacle_1_x, obstacle_1_y, 'g');
-plot(obstacle_2_x, obstacle_2_y, 'g');
-plot(obstacle_3_x, obstacle_3_y, 'g');
+%plot(obstacle_1_x, obstacle_1_y, 'g');
+%plot(obstacle_2_x, obstacle_2_y, 'g');
+%plot(obstacle_3_x, obstacle_3_y, 'g');
 %==========================%
 
 %comment in to figure the startup offline formation order
-%{
-n = scatter(X_offline, Y_offline, agents_zone_matlab,'r');
-set(n,'XDataSource','X_offline');
-set(n,'YDataSource','Y_offline');
 
+b = scatter(X_offline, Y_offline, agents_zone_matlab,'r');
+set(b,'XDataSource','X_offline');
+set(b,'YDataSource','Y_offline');
+%{
 m = plot(formation_x, formation_y);
 set(m,'XDataSource','formation_x');
 set(m,'YDataSource','formation_y');
-axis([-35,35,-35,35])
 %}
 %comment in to figure the startup offline formation order
 

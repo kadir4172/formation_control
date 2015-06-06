@@ -1,8 +1,8 @@
-function  grid_map  = test_inside_outside( formation_x, formation_y, grid_map_in)
+function  grid_map  = test_inside_outside( formation_x, formation_y, grid_map_in, x_max, y_max)
   %free map bolgesinde ise yani verilen seklin icersinde degilse 1 icindeyse 0 dondururu grid_map matrisinde  
     search_step = evalin('base', 'search_step');
     if(length(grid_map_in) == 0)
-        grid_map_in = ones(length(-35:search_step:35), length(-35:search_step:35));
+        grid_map_in = ones(length(-1*x_max:search_step:x_max), length(-1*y_max:search_step:y_max));
     end
     
     %grid_map = ones(length(-35:search_step:35), length(-35:search_step:35));
@@ -18,9 +18,9 @@ function  grid_map  = test_inside_outside( formation_x, formation_y, grid_map_in
     z = [xp' yp'];
     
  k_counter = 1;
- for k = -35 : search_step : 35
+ for k = -1*x_max:search_step:x_max
      j_counter = 1;
-     for j = -35 : search_step : 35
+     for j = -1*y_max:search_step:y_max
         nokta = complex(k,j);
         real_inside = 0;
         imag_inside= 0;
