@@ -90,13 +90,16 @@ GoalStatesForces = GoalStatesForces .* real_time_scale;
         force_matrix(2,7,i) = force_matrix(2,7,i) - kgoal2 * GoalStatesForces(i,2) * gain ;      
     end
     
-         if (abs(force_matrix(1,7,i)) > max_force)
-      force_matrix(1,7,i) = max_force * (force_matrix(1,7,i)/abs(force_matrix(1,7,i)));
+    amplitude = force_matrix(1,7,i)^2 + force_matrix(2,7,i)^2 ;
+    amplitude = sqrt(amplitude);
+    gain = 1;
+    if(amplitude > max_force)
+            gain = max_force / amplitude;
     end
-    
-    if (abs(force_matrix(2,7,i)) > max_force)
-      force_matrix(2,7,i) = max_force * (force_matrix(2,7,i)/abs(force_matrix(2,7,i)));
-    end
+ 
+   
+      force_matrix(1,7,i) = gain * force_matrix(1,7,i);
+      force_matrix(2,7,i) = gain * force_matrix(2,7,i);
     end
   
 

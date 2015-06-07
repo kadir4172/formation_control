@@ -6,7 +6,7 @@
     formation_x = evalin('base', 'formation_x');
     formation_y = evalin('base', 'formation_y');
     
-    shape_buffer = evalin('base', 'shape_buffer');
+    offline_shape_buffer = evalin('base', 'offline_shape_buffer');
     
     xp = formation_x;
     yp = formation_y;
@@ -26,7 +26,7 @@ for k = 1 : 1 : n
   for i = 1 : 1 : array_length
     z_i = complex(z(i+1,1),z(i+1,2));
     denum = nokta - z_i;
-    if (norm(denum) < shape_buffer)
+    if (norm(denum) < offline_shape_buffer)
       dot_on_the_line = 1;
       break
     end

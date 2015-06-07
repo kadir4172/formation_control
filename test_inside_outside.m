@@ -6,7 +6,7 @@ function  grid_map  = test_inside_outside( formation_x, formation_y, grid_map_in
     end
     
     %grid_map = ones(length(-35:search_step:35), length(-35:search_step:35));
-    shape_buffer = evalin('base', 'shape_buffer');
+    offline_shape_buffer = evalin('base', 'offline_shape_buffer');
     
     xp = formation_x;
     yp = formation_y;
@@ -28,7 +28,7 @@ function  grid_map  = test_inside_outside( formation_x, formation_y, grid_map_in
        for i = 1 : 1 : array_length
           z_i = complex(z(i+1,1),z(i+1,2));
           denum = nokta - z_i;
-          if (norm(denum) < shape_buffer)
+          if (norm(denum) < offline_shape_buffer)
             dot_on_the_line = 1;
           break
           end

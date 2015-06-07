@@ -181,7 +181,7 @@ calculate_forces_flag = evalin('base', 'calculate_forces_flag');
     mrec_update
     mrec_propogate
    
-    %uart_send
+    uart_send
   end
 end
 

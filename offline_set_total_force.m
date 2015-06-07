@@ -7,13 +7,18 @@
     offline_force_matrix(1,7,i) = offline_force_matrix(1,1,i) + offline_force_matrix(1,2,i) + offline_force_matrix(1,3,i) - offline_force_matrix(1,4,i) + offline_force_matrix(1,5,i) + offline_force_matrix(1,6,i);
     offline_force_matrix(2,7,i) = offline_force_matrix(2,1,i) + offline_force_matrix(2,2,i) + offline_force_matrix(2,3,i) - offline_force_matrix(2,4,i) + offline_force_matrix(2,5,i) + offline_force_matrix(2,6,i);
     
-    if (abs(offline_force_matrix(1,7,i)) > max_force)
-      offline_force_matrix(1,7,i) = max_force * (offline_force_matrix(1,7,i)/abs(offline_force_matrix(1,7,i)));
+    amplitude = offline_force_matrix(1,7,i)^2 + offline_force_matrix(2,7,i)^2 ;
+    amplitude = sqrt(amplitude);
+    gain = 1;
+    if(amplitude > max_force)
+            gain = max_force / amplitude;
     end
+ 
+   
+      offline_force_matrix(1,7,i) = gain * offline_force_matrix(1,7,i);
+      offline_force_matrix(2,7,i) = gain * offline_force_matrix(2,7,i);
     
-    if (abs(offline_force_matrix(2,7,i)) > max_force)
-      offline_force_matrix(2,7,i) = max_force * (offline_force_matrix(2,7,i)/abs(offline_force_matrix(2,7,i)));
-    end
+    
   end
   
   assignin('base', 'offline_force_matrix', offline_force_matrix);
