@@ -12,6 +12,7 @@ accel_noise = 2;
 %m = evalin('base', 'm');
 
 mrec_active = evalin('base', 'mrec_active');
+
 est_propogate_period    = evalin('base', 'est_propogate_period');
 
 %sim_time = evalin('base', 'sim_time');

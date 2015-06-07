@@ -13,6 +13,12 @@ real_time_scale = 4;
 %y.OutputBufferSize = 5096*2;
 %gazebo entegrasyonu icin udp portarini acalim
 
+%seri portu acalým
+s = serial('COM2', 'BaudRate', 9600, 'DataBits', 8 , 'StopBits', 1, 'Parity', 'none')
+fopen(s);
+%seri portu acalým
+
+
 %cam_receive ile kalkacak
 test_module = 1;
 %cam_receive ile kalkacak
