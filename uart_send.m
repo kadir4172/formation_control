@@ -1,6 +1,7 @@
 n = evalin('base', 'n');
 %u = evalin('base', 'u');
 %y = evalin('base', 'y');
+s = evalin('base', 's');
 force_matrix = evalin('base', 'force_matrix');
 max_force    = evalin('base', 'max_force');
 motor_ratio = 5000;
@@ -12,14 +13,14 @@ max_motor   = 14;
 %formation_y = evalin('base', 'formation_y');
 
 %gazebo_index_array = (feedback_matrix(:,7) - mod(feedback_matrix(:,7),10)) / 10;
-string_to_send = [];
+
 %string_to_send = strcat(string_to_send, 'mrec ');
 %str_mrec = num2str(mrec_active,1);
 %string_to_send = [string_to_send, ' ', str_mrec, ' '];
 Xdot = force_matrix(1,7,:)./motor_ratio;
 Ydot = force_matrix(2,7,:)./motor_ratio; %range : +-100 / 5000
 
-
+string_to_send = [char(85)];
 for i = 1 : 1 : n
    bearing = atan2(Ydot(i), Xdot(i))
    bearing_deg = bearing * 180 / pi;
@@ -71,14 +72,21 @@ for i = 1 : 1 : n
           
            
    
-   str1 = num2str(M1);
-   str2 = num2str(M2);
-   str3 = num2str(M3);
+   str1 = char(M1);
+   str2 = char(M2);
+   str3 = char(M3);
    string_to_send = [string_to_send, str1, str2, str3];
 end
+
+string_to_send = [string_to_send, ' \n'];
+formation_ok = evalin('base', 'formation_ok');
+
+
    
-   string_to_send = strcat(string_to_send, ' \n');
+   %string_to_send = strcat(string_to_send, num2str(10));
    assignin('base', 'string_to_send', string_to_send);
+   fprintf(s,'%s',string_to_send);
+   %settings = fgets(s)
 
 %fopen(u);
 %flushinput(u);

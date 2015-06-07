@@ -16,13 +16,13 @@ formation_ok
   stop(update_states_timer);
   stop(pos_loop);
   
-   for i = 1 : 1 : n
+  for i = 1 : 1 : n
     force_matrix(1,7,i) = 0;
     force_matrix(2,7,i) = 0;
   end
   
 assignin('base', 'force_matrix', force_matrix);  % gercek dunyadaki hiz referanslarini sifirlayalim
-%udp_send
+uart_send
   
 if(formation_ok)
   
