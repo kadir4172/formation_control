@@ -3,22 +3,13 @@ clear all
 
 real_time_scale = 4;
 
-%gazebo entegrasyonu icin udp portarini acalim
-%u = udp('127.0.0.1', 5052, 'LocalPort', 5051);
-%u.InputBufferSize = 5096;
-%u.OutputBufferSize = 5096;
-
-%y = udp('127.0.0.1', 5054, 'LocalPort', 5053);
-%y.InputBufferSize = 5096*2;
-%y.OutputBufferSize = 5096*2;
-%gazebo entegrasyonu icin udp portarini acalim
-
 %seri portu acalým
 s = serial('COM2', 'BaudRate', 9600, 'DataBits', 8 , 'StopBits', 1, 'Parity', 'none')
 fopen(s);
 %seri portu acalým
 
-
+start_cam_module;
+cam_data = zeros(20,1);
 %cam_receive ile kalkacak
 test_module = 1;
 %cam_receive ile kalkacak
@@ -41,6 +32,7 @@ Xdot_real    = zeros(n,1);
 Ydot_real    = zeros(n,1);
 Xdotdot_real = zeros(n,1);
 Ydotdot_real = zeros(n,1);
+heading_robots = zeros(n,1);
 feedback_matrix = [];
 dt = 0;
 use_real_positions = 0;

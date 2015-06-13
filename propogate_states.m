@@ -43,7 +43,7 @@ if isempty(B)
 end
 B = [dt^2/2; dt];
 
-%cam_receive
+cam_receive
 n = evalin('base', 'n');
 X  = evalin('base', 'X');
 Y  = evalin('base', 'Y');

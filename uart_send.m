@@ -4,6 +4,7 @@ n = evalin('base', 'n');
 s = evalin('base', 's');
 force_matrix = evalin('base', 'force_matrix');
 max_force    = evalin('base', 'max_force');
+heading_robots    = evalin('base', 'heading_robots');
 motor_ratio = 5000;
 max_motor   = 14;
 %feedback_matrix = evalin('base', 'feedback_matrix');

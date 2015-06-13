@@ -12,6 +12,11 @@ assignin('base', 'force_matrix', force_matrix);  % gercek dunyadaki hiz referans
 uart_send
 
 fclose(s);
+
+% Clearing Memory
+release(hVideoIn); % Release all memory and buffer used
+release(vidDevice);
+
 close all;
 clear all;
 %clc;
