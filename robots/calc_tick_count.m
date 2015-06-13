@@ -19,3 +19,6 @@ end
 
 motor1 = tick_count
 motor1_incremental = incremental
+
+motor2 = 255 - tick_count
+motor2_incremental = incremental
