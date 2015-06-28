@@ -26,3 +26,4 @@ else
     formation_ok = 0;
 end
 assignin('base', 'formation_ok', formation_ok);
+assignin('base', 'probable_density', density);

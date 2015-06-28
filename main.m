@@ -31,6 +31,7 @@ Ydotdot_real = zeros(n,1);
 feedback_matrix = [];
 dt = 0;
 use_real_positions = 1;
+use_fractals       = 1;
 
 %agent sayisinin %10 u kadar PA ayarla
 PA_number = round(n/5);
@@ -99,6 +100,7 @@ formation_density = 0;
 desired_density = 0.150;
 desired_density_min = 0.07;
 formation_sendto_gazebo = 0 ;
+probable_density = 0;
 %formation noktalari arasindaki mesafe
 pen_length = 0.01;
 
@@ -178,9 +180,14 @@ offline_force_matrix = zeros(2,7,n);
 offline_inside_outside_array = zeros(n,1);
 
 offline_dt = 0;
-GoalStatePos1= 0;
-GoalStatePos2= 0;
-GoalStatePos3= 0;
+GoalStatePos1 = 0;
+GoalStatePos2 = 0;
+GoalStatePos3 = 0;
+if(use_fractals)
+GoalStateFractalPos1 = 0;
+GoalStateFractalPos2 = 0;
+GoalStateFractalPos3 = 0;
+end
 
 
 formation_ok = 0;

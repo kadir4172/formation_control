@@ -39,6 +39,10 @@ get_formation_area    %cizilen ve islenen formationin alanini bulalim
 
 
 run_offline_formation
+use_fractals = evalin('base', 'use_fractals');
+if(use_fractals==1 && formation_ok==1)
+    Fractal
+end
 
 formation_sendto_gazebo = 1;
 assignin('base', 'formation_sendto_gazebo', formation_sendto_gazebo);
