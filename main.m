@@ -4,7 +4,7 @@ clear all
 real_time_scale = 4;
 
 %seri portu acalým
-s = serial('COM2', 'BaudRate', 9600, 'DataBits', 8 , 'StopBits', 1, 'Parity', 'none')
+s = serial('COM10', 'BaudRate', 9600, 'DataBits', 8 , 'StopBits', 1, 'Parity', 'none')
 fopen(s);
 %seri portu acalým
 
@@ -13,6 +13,14 @@ cam_data = zeros(20,1);
 %cam_receive ile kalkacak
 test_module = 1;
 %cam_receive ile kalkacak
+
+%cam calibration variables
+left_trim = 20;
+right_trim = 40;
+up_trim = 30;
+down_trim = 15;
+area_size = 0;
+%cam calibration variables
 
 
 %loop periodlari(saniye cinsinden)
@@ -107,8 +115,8 @@ color = zeros(n,1);
 %formation data yaratalim
 formation_x = 0;
 formation_y = 0;
-x_max = 1.5;
-y_max = 1;
+x_max = 1;
+y_max = 0.75;
 
 %formation a iliskin datalar
 formation_length = 0;

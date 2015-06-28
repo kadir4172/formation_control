@@ -19,4 +19,4 @@ release(vidDevice);
 
 close all;
 clear all;
-%clc;
+clc;

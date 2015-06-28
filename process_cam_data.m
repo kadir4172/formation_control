@@ -16,9 +16,19 @@ hblob = evalin('base', 'hblob');
 hshapeinsBox = evalin('base', 'hshapeinsBox');
 hVideoIn = evalin('base', 'hVideoIn');
 
+left_trim  = evalin('base', 'left_trim');
+right_trim  = evalin('base', 'right_trim');
+up_trim  = evalin('base', 'up_trim');
+down_trim  = evalin('base', 'down_trim');
+
     
     rgbFrame = step(vidDevice); % Acquire single frame
-        
+    %rgbFrame = rgbFrame(:,[1:640],:);
+    rgbFrame = rgbFrame((up_trim+1 : 480-down_trim), (left_trim+1:640-right_trim),:);
+    area_size = size(rgbFrame);
+    area_size = area_size(1:2);
+    assignin('base', 'area_size', area_size);
+    
     diffFrameRed = imsubtract(rgbFrame(:,:,1), rgb2gray(rgbFrame)); % Get red component of the image
     diffFrameRed = medfilt2(diffFrameRed, [3 3]); % Filter out the noise by using median filter
     binFrameRed = im2bw(diffFrameRed, redThresh); % Convert the image into binary image with the red objects as white
@@ -121,7 +131,7 @@ hVideoIn = evalin('base', 'hVideoIn');
    data_to_send;
    cam_data = data_to_send;
    assignin('base', 'cam_data', cam_data);
-   rgbFrame(1:80,1:90,:) = 0; % put a black region on the output stream
+   %rgbFrame(1:80,1:90,:) = 0; % put a black region on the output stream
 
     vidIn = step(hshapeinsBox, rgbFrame, bboxRed, single([1 0 0])); % Instert the red box
     vidIn = step(hshapeinsBox, vidIn, bboxYellow, single([1 1 0])); % Instert the yellow box
@@ -150,11 +160,11 @@ hVideoIn = evalin('base', 'hVideoIn');
         vidIn = step(htextinsCent, vidIn, [centXYellow centYYellow], [centXYellow-6 centYYellow-9]); 
     end
       
-    vidIn = step(htextinsRed, vidIn, uint8(length(bboxRed(:,1)))); % Count the number of red blobs
-    vidIn = step(htextinsGreen, vidIn, uint8(length(bboxGreen(:,1)))); % Count the number of green blobs
-    vidIn = step(htextinsBlue, vidIn, uint8(length(bboxBlue(:,1)))); % Count the number of blue blobs
-    vidIn = step(htextinsPink, vidIn, uint8(length(bboxPink(:,1)))); % Count the number of pink blobs
-    vidIn = step(htextinsYellow, vidIn, uint8(length(bboxYellow(:,1)))); % Count the number of yellow blobs
+    %vidIn = step(htextinsRed, vidIn, uint8(length(bboxRed(:,1)))); % Count the number of red blobs
+    %vidIn = step(htextinsGreen, vidIn, uint8(length(bboxGreen(:,1)))); % Count the number of green blobs
+    %vidIn = step(htextinsBlue, vidIn, uint8(length(bboxBlue(:,1)))); % Count the number of blue blobs
+    %vidIn = step(htextinsPink, vidIn, uint8(length(bboxPink(:,1)))); % Count the number of pink blobs
+    %vidIn = step(htextinsYellow, vidIn, uint8(length(bboxYellow(:,1)))); % Count the number of yellow blobs
    
     step(hVideoIn, vidIn); % Output video stream
     %nFrame = nFrame+1;
