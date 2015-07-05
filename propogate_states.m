@@ -70,7 +70,7 @@ if(mrec_active == 1)
   Y_accelmeas = zeros(n,1);
   X_accelmeas_noisy = zeros(n,1);
   Y_accelmeas_noisy = zeros(n,1);
-else if(use_real_positions == 0)
+elseif(use_real_positions == 0)
   %X_accelmeas = force_matrix(1,7,:) /10000;
   %Y_accelmeas = force_matrix(2,7,:) /10000;
   %X_accelmeas_noisy(1,1,:) = rand(n,1) * 0.050 - 0.0250;
@@ -85,9 +85,15 @@ else if(use_real_positions == 0)
   Ydot = force_matrix(2,7,:)./5000;
   Xdotdot = Xdot .* 0;
   Ydotdot = Ydot .* 0;
+elseif(use_real_positions == 1)
+  Xdot = Xdot_real;
+  Ydot = Ydot_real;
+  Xdotdot = Xdot .* 0;
+  Ydotdot = Ydot .* 0;
     end
 
 
+if(use_real_positions == 0)
 for i = 1 : 1 : n
   X_vector_old = [X(i); Xdot(:,:,i)];
   Y_vector_old = [Y(i); Ydot(:,:,i)];  
@@ -103,26 +109,10 @@ for i = 1 : 1 : n
   
   Y(i)= Y_vector(1);
   Ydot(i) = Y_vector(2);
-    
+end
 end
 
-%{
-for i = 1 : 1 : n
-  X_real_vector_old = [X_real(i); Xdot_real(i)];
-  Y_real_vector_old = [Y_real(i); Ydot_real(i)];  
 
-  X_real_vector = F * X_real_vector_old + B * X_accelmeas(i);
-  Y_real_vector = F * Y_real_vector_old + B * Y_accelmeas(i);
-  
-  X_real(i)    = X_real_vector(1);
-  Xdot_real(i) = X_real_vector(2);
-  
-  
-  Y_real(i)    = Y_real_vector(1);
-  Ydot_real(i) = Y_real_vector(2);
-    
-end
-%}
 if(use_real_positions == 0)
   assignin('base', 'X', X);
   assignin('base', 'Y', Y);

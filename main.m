@@ -29,6 +29,8 @@ est_update_period    = 5;
 
 %n tane agent i ve state lerini generate edelim
 n = 5; % n bes kalsin
+x_max = 1;
+y_max = 0.75;
 [X, Y]  = generate_MAS(n);
 X_real = X;
 Y_real = Y;
@@ -43,13 +45,13 @@ Ydotdot_real = zeros(n,1);
 heading_robots = zeros(n,1);
 feedback_matrix = [];
 dt = 0;
-use_real_positions = 0;
+use_real_positions = 1;
 
 %agent sayisinin %10 u kadar PA ayarla
 PA_number = round(n/5);
 PA_index  = round(rand(PA_number,1) * n);
 
-%cam_receive
+
 %test_module
 %X = X_real;
 %Y = Y_real;
@@ -57,12 +59,12 @@ PA_index  = round(rand(PA_number,1) * n);
 %Ydot = Ydot_real;
 %Xdotdot = Xdotdot_real;
 %Ydotdot = Ydotdot_real;
-X = (0 : 1 : n-1)'./5;
-Y = (0 : 1 : n-1)'./5;
-Xdot = 0;
-Ydot = 0;
-Xdotdot = 0;
-Ydotdot = 0;
+%X = (0 : 1 : n-1)'./5;
+%Y = (0 : 1 : n-1)'./5;
+%Xdot = 0;
+%Ydot = 0;
+%Xdotdot = 0;
+%Ydotdot = 0;
 %test_module
 
 radius1 = 0.075;
@@ -115,8 +117,7 @@ color = zeros(n,1);
 %formation data yaratalim
 formation_x = 0;
 formation_y = 0;
-x_max = 1;
-y_max = 0.75;
+
 
 %formation a iliskin datalar
 formation_length = 0;
@@ -210,6 +211,8 @@ GoalStatePos1= 0;
 GoalStatePos2= 0;
 GoalStatePos3= 0;
 
+cam_receive
+propogate_states
 
 formation_ok = 0;
 %==========================%

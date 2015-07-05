@@ -21,21 +21,33 @@ max_motor   = 14;
 Xdot = force_matrix(1,7,:)./motor_ratio;
 Ydot = force_matrix(2,7,:)./motor_ratio; %range : +-100 / 5000
 
+%Xdot = ones(n,1);
+%Ydot = ones(n,1);
 string_to_send = [char(85)];
+proximity_circle_radius = 0.010;
+Xdot
 for i = 1 : 1 : n
-   bearing = atan2(Ydot(i), Xdot(i))
+   if(abs(Xdot(:,:,i))<proximity_circle_radius)
+       Xdot(:,:,i) = 0;
+   end
+   if(abs(Ydot(:,:,i))<proximity_circle_radius)
+       Ydot(:,:,i) = 0;
+   end
+   bearing = atan2(Ydot(i), Xdot(i));
    bearing_deg = bearing * 180 / pi;
-   bearing_deg = bearing_deg + 180;
+   bearing_deg = bearing_deg + 360;
    bearing_deg = mod(bearing_deg, 360);
    
-   amplitude     = sqrt(Xdot(i)^2 + Ydot(i)^2)
-   saturated_amp = min((max_force/motor_ratio), max(0, amplitude))
+   bearing_deg = bearing_deg - heading_robots(i); %% robotun anlýk bas acýsýndan cýkartalým
    
+   amplitude     = sqrt(Xdot(i)^2 + Ydot(i)^2);
+   saturated_amp = min((max_force/motor_ratio), max(0, amplitude));
+
    velocity = saturated_amp * motor_ratio / max_force * max_motor;
-   M1  = round(velocity * cosd(270 - bearing_deg))
-   M2  = round(velocity * cosd(30  - bearing_deg))
-   M3  = round(velocity * cosd(150 - bearing_deg))
-   
+   M1  = round(velocity * cosd(270 - bearing_deg));
+   M2  = round(velocity * cosd(30  - bearing_deg));
+   M3  = round(velocity * cosd(150 - bearing_deg));
+
    if(abs(M1) > max_motor)
        M1 = max_motor * M1 / abs(M1);
    end
@@ -79,7 +91,7 @@ for i = 1 : 1 : n
    string_to_send = [string_to_send, str1, str2, str3];
 end
 
-string_to_send = [string_to_send, ' \n'];
+string_to_send = [string_to_send, ' \n']
 formation_ok = evalin('base', 'formation_ok');
 
 
