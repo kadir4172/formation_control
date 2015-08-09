@@ -7,8 +7,11 @@ stop(pos_loop);
     force_matrix(1,7,i) = 0;
     force_matrix(2,7,i) = 0;
   end
-  
+
+
 assignin('base', 'force_matrix', force_matrix);  % gercek dunyadaki hiz referanslarini sifirlayalim
+kill_active = 1 ;
+assignin('base', 'kill_active', kill_active);
 uart_send
 
 fclose(s);
@@ -19,4 +22,4 @@ release(vidDevice);
 
 close all;
 clear all;
-clc;
+%clc;

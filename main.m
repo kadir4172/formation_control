@@ -7,7 +7,7 @@ real_time_scale = 4;
 s = serial('COM10', 'BaudRate', 9600, 'DataBits', 8 , 'StopBits', 1, 'Parity', 'none')
 fopen(s);
 %seri portu acalým
-
+kill_active = 0;
 start_cam_module;
 cam_data = zeros(20,1);
 %cam_receive ile kalkacak
@@ -15,7 +15,7 @@ test_module = 1;
 %cam_receive ile kalkacak
 
 %cam calibration variables
-left_trim = 20;
+left_trim = 35;
 right_trim = 40;
 up_trim = 30;
 down_trim = 15;
@@ -45,7 +45,7 @@ Ydotdot_real = zeros(n,1);
 heading_robots = zeros(n,1);
 feedback_matrix = [];
 dt = 0;
-use_real_positions = 1;
+use_real_positions = 0;
 
 %agent sayisinin %10 u kadar PA ayarla
 PA_number = round(n/5);

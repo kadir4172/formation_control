@@ -2,6 +2,8 @@ n = evalin('base', 'n');
 %u = evalin('base', 'u');
 %y = evalin('base', 'y');
 s = evalin('base', 's');
+kill_active = evalin('base', 'kill_active');
+
 force_matrix = evalin('base', 'force_matrix');
 max_force    = evalin('base', 'max_force');
 heading_robots    = evalin('base', 'heading_robots');
@@ -18,14 +20,29 @@ max_motor   = 14;
 %string_to_send = strcat(string_to_send, 'mrec ');
 %str_mrec = num2str(mrec_active,1);
 %string_to_send = [string_to_send, ' ', str_mrec, ' '];
+
 Xdot = force_matrix(1,7,:)./motor_ratio;
 Ydot = force_matrix(2,7,:)./motor_ratio; %range : +-100 / 5000
+
+X = evalin('base', 'X');
+Y = evalin('base', 'Y');
+
+
+if(kill_active == 0)
+    for i = 1 : 1 : 5
+        %Xdot(:,:,i) = -1*X(i)*100./motor_ratio
+        %Ydot(:,:,i) = -1*Y(i)*100./motor_ratio
+        Xdot(:,:,i) = 0*100/motor_ratio;
+        Ydot(:,:,i) = 1*100/motor_ratio;
+    end
+end
+
 
 %Xdot = ones(n,1);
 %Ydot = ones(n,1);
 string_to_send = [char(85)];
 proximity_circle_radius = 0.010;
-Xdot
+
 for i = 1 : 1 : n
    if(abs(Xdot(:,:,i))<proximity_circle_radius)
        Xdot(:,:,i) = 0;

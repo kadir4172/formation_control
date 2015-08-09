@@ -41,13 +41,15 @@ down_trim  = evalin('base', 'down_trim');
     diffFrameBlue = medfilt2(diffFrameBlue, [3 3]); % Filter out the noise by using median filter
     binFrameBlue = im2bw(diffFrameBlue, blueThresh); % Convert the image into binary image with the blue objects as white
     
+    binFramePink   = xor(im2bw(diffFrameRed, redThresh) , im2bw(diffFrameRed, pinkThresh));
+    [centroidPink, bboxPink] = step(hblob, binFramePink); % Get the centroids and bounding boxes of the pink blobs
+    centroidPink = uint16(centroidPink); % Convert the centroids into Integer for further steps 
+    
     binFrameYellow = im2bw(diffFrameRed, yellowThresh1) & im2bw(diffFrameGreen, yellowThresh2);
     [centroidYellow, bboxYellow] = step(hblob, binFrameYellow); % Get the centroids and bounding boxes of the yellow blobs
     centroidYellow = uint16(centroidYellow); % Convert the centroids into Integer for further steps 
       
-    binFramePink   = xor(im2bw(diffFrameRed, redThresh) , im2bw(diffFrameRed, pinkThresh));
-    [centroidPink, bboxPink] = step(hblob, binFramePink); % Get the centroids and bounding boxes of the pink blobs
-    centroidPink = uint16(centroidPink); % Convert the centroids into Integer for further steps 
+
     
         
     [centroidRed, bboxRed] = step(hblob, binFrameRed); % Get the centroids and bounding boxes of the red blobs

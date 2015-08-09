@@ -56,9 +56,9 @@ hVideoIn = vision.VideoPlayer('Name', 'Final Video', ... % Output video player
 nFrame = 0; % Frame number initialization
 
 
-redThresh = 0.28; % Threshold for red detection
+redThresh = 0.30; % Threshold for red detection
 greenThresh = 0.10; % Threshold for green detection
-blueThresh = 0.2; % Threshold for blue detection
-yellowThresh1 = 0.009; %red   part
-yellowThresh2 = 0.009; %green part
-pinkThresh   = 0.16; %red   part
+blueThresh = 0.15; % Threshold for blue detection
+yellowThresh1 = 0.012; %red   part
+yellowThresh2 = 0.012; %green part
+pinkThresh   = 0.22; %red   part
