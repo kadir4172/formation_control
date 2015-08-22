@@ -1,0 +1,388 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Journal Article
+% LaTeX Template
+% Version 1.3 (9/9/13)
+%
+% This template has been downloaded from:
+% http://www.LaTeXTemplates.com
+%
+% Original author:
+% Frits Wenneker (http://www.howtotex.com)
+%
+% License:
+% CC BY-NC-SA 3.0 (http://creativecommons.org/licenses/by-nc-sa/3.0/)
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%----------------------------------------------------------------------------------------
+%	PACKAGES AND OTHER DOCUMENT CONFIGURATIONS
+%----------------------------------------------------------------------------------------
+
+\documentclass[twoside]{article}
+
+\usepackage[]{algorithm2e}
+\usepackage{lipsum} % Package to generate dummy text throughout this template
+\usepackage{amsmath}
+\usepackage{graphicx}
+\usepackage[export]{adjustbox}
+\usepackage[sc]{mathpazo} % Use the Palatino font
+\usepackage[T1]{fontenc} % Use 8-bit encoding that has 256 glyphs
+\linespread{1.05} % Line spacing - Palatino needs more space between lines
+\usepackage{microtype} % Slightly tweak font spacing for aesthetics
+
+
+\usepackage[noend]{algpseudocode}
+\usepackage[hmarginratio=1:1,top=32mm,columnsep=20pt]{geometry} % Document margins
+\usepackage{multicol} % Used for the two-column layout of the document
+\usepackage[hang, small,labelfont=bf,up,textfont=it,up]{caption} % Custom captions under/above floats in tables or figures
+\usepackage{booktabs} % Horizontal rules in tables
+\usepackage{float} % Required for tables and figures in the multi-column environment - they need to be placed in specific locations with the [H] (e.g. \begin{table}[H])
+\usepackage{hyperref} % For hyperlinks in the PDF
+
+\usepackage{lettrine} % The lettrine is the first enlarged letter at the beginning of the text
+\usepackage{paralist} % Used for the compactitem environment which makes bullet points with less space between them
+
+\usepackage{abstract} % Allows abstract customization
+\renewcommand{\abstractnamefont}{\normalfont\bfseries} % Set the "Abstract" text to bold
+\renewcommand{\abstracttextfont}{\normalfont\small\itshape} % Set the abstract itself to small italic text
+
+\usepackage{titlesec} % Allows customization of titles
+\renewcommand\thesection{\Roman{section}} % Roman numerals for the sections
+\renewcommand\thesubsection{\Roman{subsection}} % Roman numerals for subsections
+\titleformat{\section}[block]{\large\scshape\centering}{\thesection.}{1em}{} % Change the look of the section titles
+\titleformat{\subsection}[block]{\large}{\thesubsection.}{1em}{} % Change the look of the section titles
+
+\usepackage{fancyhdr} % Headers and footers
+\pagestyle{fancy} % All pages have headers and footers
+\fancyhead{} % Blank out the default header
+\fancyfoot{} % Blank out the default footer
+\fancyhead[C]{May 2015} % Custom header text
+\fancyfoot[RO,LE]{\thepage} % Custom footer text
+
+%----------------------------------------------------------------------------------------
+%	TITLE SECTION
+%----------------------------------------------------------------------------------------
+
+\title{\vspace{-15mm}\fontsize{24pt}{10pt}\selectfont\textbf{Formation Control with Mobile Robots}} % Article title
+
+\author{
+	\large
+	\textsc{Kadir Cimenci}\thanks{}\\[2mm] % Your name
+	\normalsize Middle East Technical University \\ % Your institution
+	\normalsize \href{mailto:kadircimenci@gmail.com}{kadircimenci@gmail.com} % Your email address
+	\vspace{-5mm}
+}
+\date{}
+
+
+\makeatletter
+\def\BState{\State\hskip-\ALG@thistlm}
+\makeatother
+
+%----------------------------------------------------------------------------------------
+
+\begin{document}
+	
+	\maketitle % Insert title
+	
+	\thispagestyle{fancy} % All pages have headers and footers
+	
+	%----------------------------------------------------------------------------------------
+	%	ABSTRACT
+	%----------------------------------------------------------------------------------------
+	
+	\begin{abstract}
+		
+	Bitirme calismasindaki tum denklemler buradadır
+		
+		
+	\end{abstract}
+	
+	%----------------------------------------------------------------------------------------
+	%	ARTICLE CONTENTS
+	%----------------------------------------------------------------------------------------
+	
+	\begin{multicols}{2} % Two-column layout throughout the main article text
+		
+		\section{Introduction}
+	
+	\begin{equation} % eq 1
+	A_i = {\frac{A}{{\zeta(c,N)(i+N)^c}}}
+	\end{equation}	
+	
+	where ${\zeta(c,N)}$ is the Hurwitz zeta function defined by 
+	\begin{equation}
+ \zeta(c,N) = \sum_{i=0}^{\infty}\left(\frac{1}{(i+N)^c}\right)
+	\end{equation}
+	This known to converge for $c>1$ and $N>0$. In view of equation 2 one can write
+	\begin{equation}
+    \sum_{i=0}^{\infty}A_i = \sum_{i = 0}^{\infty}\left(\frac{A}{\zeta(c,N)(i+N)^c}\right)
+	\end{equation}
+such that the sum of all areas $A_i$ is the total area $A$ to be filled, that is, if the algorithm does not halt then it is space-filling. 
+		
+
+
+
+\begin{equation} % eq 2
+\hat{r_i} = \sqrt{(x-x_i)^2 + (y-y_i)^2+ (z-z_i)^2}    \hspace{0.3cm}   (i=1,2,...,n)
+\end{equation}
+where $i$ denotes the beacon number and $n$ is the total number of beacons. We have $n$ number of constraints in the solution of the localization problem. In our work, we have implemented a two dimensional localization solution with the assumption of each agent in the swarm have the same vertical position in Earth centered coordinate system. With this assumption, the problem for the localization process can be reduced down to a $A.\vec{x} =\vec{b} $ type linear system problem and the constraints will be circle functions rather than spherical ones, presented with
+
+\begin{equation}
+  (x-x_i)^2 + (y - y_i)^2 = {r_i}^2
+\end{equation}
+
+Lets assume $\theta = (x,y)$ is representing the coordinates of an agent which is trying to localize itself, and $B1 = (x_1,y_1) ; B2 = (x_2,y_2) ; B3 = (x_3,y_3) ; ...  ; B_i = (x_i,y_i)$ are the agents with exactly known positions. 
+
+
+FOTOGRAF KONACAK
+
+If any beacon is considered as the reference beacon and named with an index of $r$, the distance equations can be provided as following 
+
+The distance between the target agent and any beacon $i$
+\begin{equation}
+  d_i(\theta) = \sqrt{\left((x - x_i)^2 + (y - y_i)^2\right)}
+\end{equation}
+
+The distance between the referance beacon and the other beacons
+
+\begin{equation}
+d_ir(\theta) = \sqrt{\left((x_i - x_r)^2 + (y_i - y_r)^2\right)}
+\end{equation}
+
+The distance between the target agent and the referance beacon
+
+\begin{equation}
+d_r(\theta) = \sqrt{\left((x - x_r)^2 + (y - y_r)^2\right)}
+\end{equation}
+
+Adding and subtracting $x_j, y_j$ and $z_j$ in (6) gives
+
+\begin{align*}
+d_i^2(\theta) = & (x - x_r + x_r - x_i)^2 + (y - y_r + y_r - y_i)^2 \\
+              = & (x - x_r)^2 + 2(x_r - x_i)(x - x_r) + (x_r-x_i)^2 \\ 
+              + & (y - y_r)^2 + 2(y_r - y_i)(y - y_r) + (y_r - y_i)^2 \\               
+\end{align*}
+
+
+This equation yields to
+
+\begin{align*}
+ 2((x_i - x_r)(x - x_r) + (y_i - y_r)(y - y_r)) = d_r^2(\theta) + d_{ir}^2 - d_i^2(\theta)
+\end{align*}
+
+this general statement is valid for each beacon with
+
+\begin{align*}
+  & (x_2 - x_1)(x - x_1) + (y_2 - y_1)(y - y_1) = \frac{1}{2} [d_r^2(\theta) + d_{2r}^2 - d_2^2(\theta)] \\
+  & (x_3 - x_1)(x - x_1) + (y_3 - y_1)(y - y_1) = \frac{1}{2} [d_r^2(\theta) + d_{3r}^2 - d_3^2(\theta)] \\
+  & ... \\
+  & (x_n - x_1)(x - x_1) + (y_n - y_1)(y - y_1) = \frac{1}{2} [d_r^2(\theta) + d_{nr}^2 - d_n^2(\theta)] \\
+\end{align*}
+
+if $b_{ir}$ is defined for each beacon as follows:
+
+\begin{equation}
+  b_{ir} := \frac{1}{2}[d_r^2(\theta) + d_{ir}^2 - d_i^2(\theta)]
+\end{equation}
+
+then the linearized system equations can be represented with $A\vec{x} = \vec{b}$ type equation where;
+
+\begin{equation}
+			A = \begin{bmatrix}
+			x_2 - x_r & y_2 - y_r\\
+			x_3 - x_r & y_3 - y_r\\
+			...       & ...      \\
+			x_n - x_r & y_n - y_r\\
+			\end{bmatrix}				
+\end{equation}
+
+\begin{equation}
+		x = \begin{bmatrix}
+		x - x_r\\
+		y - y_r\\
+		\end{bmatrix}
+\end{equation}
+
+\begin{equation}
+b = \begin{bmatrix}
+b_{21}\\
+b_{31}\\
+... \\
+b_{n1}\\
+\end{bmatrix}
+\end{equation}
+
+
+with the help of this mathematical manipulations, localization problem is reduced down to a $A\vec{x} = \vec{b}$ problem.
+There are some possible solutions to this type of equation regarding with the structure of matrix $A$ and vector $b$.
+
+SOLUTION TO Ax = b problem
+
+In a localization problem handled in two dimensional world, the $A$ matrix has $(n-1)$ rows and $2$ columns, where $'n'$ is the number of neighbor beacons. It is obvious that there is no solution when the number of neighbors lower than $3$ since the $A$ matrix will have $1$ or smaller number of lines. When the number of neighbor beacons are equal or greater than $3$
+we have three different solution types up to the structure of the linearized equations. 
+
+1) Unique solution
+If A matrix has the dimensions of $2x2$ and the rank of A matrix $'rank(A)'$ is equal to $2$, then the solution of $\vec{x}$ is unique with
+
+\begin{equation}
+  \hat{x} = A^{-1}\vec{b}
+\end{equation}
+  where $\hat{x}$ is the unique solution. 
+  
+  
+  2) Minimum Norm solution with pseudo inverse
+  
+  If $A$ matrix has the dimensions of $(n-1)x2$ where $n>3$ ,which means the number of neighbor beacons greater than $3$, and if columns of $A$ matrix form a linearly independent set (full column rank matrix) then the solution can be found with the projection of $\vec{b}$ over range space of $A$, $Proj_{R(A)}\vec{b}$ where
+  \begin{equation}
+  Proj_{R(A)}\vec{b} = A (A^TA)^{-1}A^T\vec{b}
+  \end{equation}
+  \begin{align*}
+  & A\vec{x} = Proj_{R(A)}\vec{b}\\
+  & \vec{A}\hat{x} = A(A^TA)^{-1}A^T\vec{b}
+  \end{align*}
+ 
+with the help of the above equation
+\begin{equation}
+  A(\hat{x} - (A^TA)^{-1}A^T\vec{b}) = 0
+\end{equation}
+
+then 
+\begin{equation}
+ \hat{x} = (A^TA)^{-1}A^T\vec{b}
+\end{equation}
+  
+  since $A$ matrix is full column rank matrix,
+  
+  \begin{align*}
+\mathcal{N}(\mathbf{A}) = \{0\} \hspace{0.3cm}  and  \hspace{0.3cm}  \mathcal{N}(\mathbf{A})^\perp =\mathbb{R} ^n 
+  \end{align*}
+  
+  then 
+  
+  \begin{equation}
+Proj_{ \mathcal{N}(\mathbf{A})^\perp}\hat{x} = \hat{x}
+  \end{equation}
+  
+  this concludes that $\hat{x}$ is the unique minimum norm solution to the $A\hat{x} = \vec{b}$ problem
+	
+	
+	3) Minimum norm solution with nonlinear least squares method
+	
+	If $A$ matrix has the dimensions of $2x2$ or $(n-1)x2$ with $n>3$ and if rank of $A$ matrix is equal to $1$, $rank(A) = 1$ then the solution to the $A\hat{x} = \vec{b}$ problem can be found iteratively with the help of nonlinear least squares method. Lets define the cost function to be minimized 	as the sum of the squares of the errors on the distances
+	
+	\begin{equation}
+    F(\theta) = \sum_{i=1}^{n} \left(f_i^2(x,y)\right)
+	\end{equation}
+	
+	with
+	
+	\begin{equation}
+   f_i(x,y) = \sqrt{(x-x_i)^2 + (y - y_i)^2} - r_i = f_i(\theta) 
+	\end{equation}
+
+There are various algorithms to minimize the sum of the square errors in literature, Newton iteration is used to find the optimal solution in this work.  Taking the partial derivatives of the cost function with respect to $x$ and $y$ gives 
+
+\begin{align*}
+\frac{\partial{F}}{\partial{\vec{x}}} = 2\sum_{i=1}^{n}f_i\frac{\partial{f_i(\theta)}}{\partial{x}} \\
+\frac{\partial{F}}{\partial{\vec{y}}} = 2\sum_{i=1}^{n}f_i\frac{\partial{f_i(\theta)}}{\partial{y}}
+\end{align*}
+
+The partial derivative matrix of the cost function is composed as;
+
+\begin{equation}
+\bigtriangledown{F(\theta)} = 2 
+\begin{bmatrix}
+f_1\frac{\partial{f_1(\theta)}}{\partial{x}} + f_2\frac{\partial{f_2(\theta)}}{\partial{x}} + ... + f_n\frac{\partial{f_n(\theta)}}{\partial{x}} \\
+f_1\frac{\partial{f_1(\theta)}}{\partial{y}} + f_2\frac{\partial{f_2(\theta)}}{\partial{y}} + ... + f_n\frac{\partial{f_n(\theta)}}{\partial{y}} \\
+\end{bmatrix}
+\end{equation}	
+	
+Components of this partial derivative matrix converges to zero while the cost function iteratively optimized to a minimum point. 
+\begin{equation}
+\bigtriangledown{F(\theta)} = 2J(\theta)^Tf(\theta) = 0
+\end{equation}
+
+where
+
+\begin{equation}
+J(\theta) = \begin{bmatrix}
+  \frac{\partial{f_1(\theta)}}{\partial{x}} & \frac{\partial{f_1(\theta)}}{\partial{y}} \\
+  \frac{\partial{f_2(\theta)}}{\partial{x}} & \frac{\partial{f_2(\theta)}}{\partial{y}} \\
+  ... & ... \\
+  \frac{\partial{f_n(\theta)}}{\partial{x}} & \frac{\partial{f_n(\theta)}}{\partial{y}} \\
+\end{bmatrix}
+\end{equation}
+
+and 
+\begin{equation}
+ f(\theta) = \begin{bmatrix}
+  f_1(\theta) \\
+  f_2(\theta) \\
+  ...         \\
+  f_n(\theta)
+ \end{bmatrix}
+\end{equation}
+	
+Using the vector $\vec{R}$	
+\begin{equation}
+ \vec{R} = \left(\begin{matrix}
+  x \\ y \\ z
+ \end{matrix}\right)
+\end{equation}
+
+To optimize the cost function, Newton iteration is implemented as follows;
+
+\begin{equation}
+ \vec{R}_{\{k+1\}} =  \vec{R}_{\{k\}} - (J^T_{\{k\}}J_{\{k\}})^{-1}J^T_{\{k\}}\vec{f}_{\{k\}}
+\end{equation}	
+	where $\vec{R}_{\{k\}}$ denotes the approximate solution at $k^{th}$ iteration. The explicit form of the equations can be derived  by implementing our constraint functions to the generic statements, as follows;
+	
+\begin{equation}
+  J^TJ = \left(\begin{matrix}
+ \sum_{i=1}^{n} \frac{(x-x_i)^2}{(f_i+r_i)^2} &  \sum_{i=1}^{n} \frac{(x-x_i)(y-y_i)}{(f_i+r_i)^2} \\
+  \sum_{i=1}^{n} \frac{(x-x_i)(y-y_i)}{(f_i+r_i)^2} &  \sum_{i=1}^{n} \frac{(y-y_i)^2}{(f_i+r_i)^2}
+  \end{matrix}\right)
+\end{equation}	
+
+and 
+
+\begin{equation}
+  J^T\vec{f} = \left(\begin{matrix}
+ \sum_{i=1}^{n}\frac{(x-x_i)f_i}{(f_i+r_i)} \\
+  \sum_{i=1}^{n}\frac{(y-y_i)f_i}{(f_i+r_i)}
+  \end{matrix}\right)
+\end{equation}
+	
+	
+	
+	
+	
+		\section{ornekler}
+			\begin{equation}
+			A_i = C_{free}(R_i,S) + C_{forb}(R_i,S)
+			\end{equation}	
+			
+			
+			
+			\begin{equation}
+			S_1 \oplus S_2 := \begin{Bmatrix}
+			p+q : p \subset S_1, q \subset S_2
+			\end{Bmatrix} 
+			\end{equation}
+			
+			\begin{equation}
+			F_{i,m,x} = k_m \sum_{j=1, j\neq{i}}^{n}\left({\frac{x_i - x_j}{{d_{ij}}} \frac{1}{\left(d_{ij} - d_o \right)^2} } \right)
+			\end{equation}
+			
+			\begin{equation}
+			X_i= \begin{bmatrix}
+			z_i\\
+			\dot{z_i}
+			\end{bmatrix}
+			\end{equation}
+	
+		
+	\end{multicols}
+	
+\end{document}
