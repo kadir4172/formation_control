@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-1.40.11 (MiKTeX 2.9) (preloaded format=pdflatex 2015.4.11)  23 AUG 2015 15:55
+This is pdfTeX, Version 3.1415926-1.40.11 (MiKTeX 2.9) (preloaded format=pdflatex 2015.4.11)  25 AUG 2015 21:26
 entering extended mode
 **Bitirme.tex
 ("C:\Users\Kadir\Desktop\Formation Control\formation_control\latex\Bitirme.tex"
@@ -804,24 +804,42 @@ Overfull \hbox (200.26414pt too wide) detected at line 622
 ML/zplm/m/it/10 z[]\OT1/zplm/m/n/10 ) = [] []
  []
 
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 680.
 [9]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 680.
+Overfull \hbox (3.647pt too wide) in paragraph at lines 684--684
+[] 
+ []
+
+
+Overfull \hbox (6.23448pt too wide) detected at line 690
+[]\OML/zplm/m/it/10 Area \OT1/zplm/m/n/10 = [] [] \OML/zplm/m/it/10 x[]\OT1/zpl
+m/m/n/10 (\OML/zplm/m/it/10 y[] \OMS/zplm/m/n/10   \OML/zplm/m/it/10 y[]\OT1/zp
+lm/m/n/10 ) \OMS/zplm/m/n/10   [] [] \OML/zplm/m/it/10 y[]\OT1/zplm/m/n/10 (\OM
+L/zplm/m/it/10 x[] \OMS/zplm/m/n/10   \OML/zplm/m/it/10 x[]\OT1/zplm/m/n/10 )
+ []
+
+[10]
+Overfull \hbox (14.22015pt too wide) in paragraph at lines 771--771
+[] 
+ []
+
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 813.
+[11]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 813.
 
 ("C:\Users\Kadir\Desktop\Formation Control\formation_control\latex\Bitirme.aux"
 )
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 680.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 813.
 Package rerunfilecheck Info: File `Bitirme.out' has not changed.
 (rerunfilecheck)             Checksum: 10E500203F178C26D37D930EEF4553D9;778.
  ) 
 Here is how much of TeX's memory you used:
- 12484 strings out of 494019
- 188438 string characters out of 3143882
- 437388 words of memory out of 3000000
- 15190 multiletter control sequences out of 15000+200000
- 70387 words of font info for 288 fonts, out of 3000000 for 9000
+ 12512 strings out of 494019
+ 188743 string characters out of 3143882
+ 437396 words of memory out of 3000000
+ 15191 multiletter control sequences out of 15000+200000
+ 70787 words of font info for 294 fonts, out of 3000000 for 9000
  714 hyphenation exceptions out of 8191
- 53i,13n,92p,1839b,515s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 53i,13n,92p,1839b,521s stack positions out of 5000i,500n,10000p,200000b,50000s
 {C:/Program Files (x86)/MiKTeX 2.9/fonts/enc/dvips/fontname/8r.enc}<C:/Progra
 m Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Program 
 Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Program Fi
@@ -834,9 +852,9 @@ fonts/type1/public/fpl/fplrc8a.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/typ
 e1/urw/palatino/uplb8a.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/urw/p
 alatino/uplr8a.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/urw/palatino/
 uplri8a.pfb>
-Output written on Bitirme.pdf (9 pages, 176863 bytes).
+Output written on Bitirme.pdf (11 pages, 190679 bytes).
 PDF statistics:
- 216 PDF objects out of 1000 (max. 8388607)
- 84 named destinations out of 1000 (max. 500000)
+ 245 PDF objects out of 1000 (max. 8388607)
+ 103 named destinations out of 1000 (max. 500000)
  47193 words of extra memory for PDF output out of 51595 (max. 10000000)
 
