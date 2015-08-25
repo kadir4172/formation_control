@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-1.40.11 (MiKTeX 2.9) (preloaded format=pdflatex 2015.4.11)  22 AUG 2015 17:56
+This is pdfTeX, Version 3.1415926-1.40.11 (MiKTeX 2.9) (preloaded format=pdflatex 2015.4.11)  23 AUG 2015 15:55
 entering extended mode
 **Bitirme.tex
 ("C:\Users\Kadir\Desktop\Formation Control\formation_control\latex\Bitirme.tex"
@@ -772,21 +772,54 @@ Overfull \hbox (82.35031pt too wide) detected at line 524
  []
 
 [7]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 564.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 564.
+Overfull \hbox (70.94748pt too wide) in paragraph at lines 577--577
+[] 
+ []
+
+[8]
+Overfull \hbox (4.7822pt too wide) detected at line 595
+[]\OML/zplm/m/it/10 n\OT1/zplm/m/n/10 (\OML/zplm/m/it/10 C\OT1/pplx/m/n/10 , \O
+ML/zplm/m/it/10 z[]\OT1/zplm/m/n/10 ) = []
+ []
+
+
+Overfull \hbox (0.88155pt too wide) detected at line 607
+[]\OML/zplm/m/it/10 u\OT1/zplm/m/n/10 (\OML/zplm/m/it/10 x\OT1/pplx/m/n/10 , \O
+ML/zplm/m/it/10 y\OT1/zplm/m/n/10 ) = \OML/zplm/m/it/10 real\OT1/zplm/m/n/10 (\
+OML/zplm/m/it/10 f\OT1/zplm/m/n/10 (\OML/zplm/m/it/10 z\OT1/zplm/m/n/10 )) \OML
+/zplm/m/it/10 and v\OT1/zplm/m/n/10 (\OML/zplm/m/it/10 x\OT1/pplx/m/n/10 , \OML
+/zplm/m/it/10 y\OT1/zplm/m/n/10 ) = \OML/zplm/m/it/10 imag\OT1/zplm/m/n/10 (\OM
+L/zplm/m/it/10 f\OT1/zplm/m/n/10 (\OML/zplm/m/it/10 z\OT1/zplm/m/n/10 ))
+ []
+
+
+Overfull \hbox (69.70383pt too wide) detected at line 616
+[]\OML/zplm/m/it/10 n\OT1/zplm/m/n/10 (\OML/zplm/m/it/10 C\OT1/pplx/m/n/10 , \O
+ML/zplm/m/it/10 z[]\OT1/zplm/m/n/10 ) = [] []
+ []
+
+
+Overfull \hbox (200.26414pt too wide) detected at line 622
+[]\OML/zplm/m/it/10 n\OT1/zplm/m/n/10 (\OML/zplm/m/it/10 C\OT1/pplx/m/n/10 , \O
+ML/zplm/m/it/10 z[]\OT1/zplm/m/n/10 ) = [] []
+ []
+
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 680.
+[9]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 680.
 
 ("C:\Users\Kadir\Desktop\Formation Control\formation_control\latex\Bitirme.aux"
 )
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 564.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 680.
 Package rerunfilecheck Info: File `Bitirme.out' has not changed.
-(rerunfilecheck)             Checksum: C53A913D4C780720C46CF30E1565D105;559.
+(rerunfilecheck)             Checksum: 10E500203F178C26D37D930EEF4553D9;778.
  ) 
 Here is how much of TeX's memory you used:
- 12449 strings out of 494019
- 188054 string characters out of 3143882
- 439388 words of memory out of 3000000
- 15187 multiletter control sequences out of 15000+200000
- 69718 words of font info for 279 fonts, out of 3000000 for 9000
+ 12484 strings out of 494019
+ 188438 string characters out of 3143882
+ 437388 words of memory out of 3000000
+ 15190 multiletter control sequences out of 15000+200000
+ 70387 words of font info for 288 fonts, out of 3000000 for 9000
  714 hyphenation exceptions out of 8191
  53i,13n,92p,1839b,515s stack positions out of 5000i,500n,10000p,200000b,50000s
 {C:/Program Files (x86)/MiKTeX 2.9/fonts/enc/dvips/fontname/8r.enc}<C:/Progra
@@ -801,9 +834,9 @@ fonts/type1/public/fpl/fplrc8a.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/typ
 e1/urw/palatino/uplb8a.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/urw/p
 alatino/uplr8a.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/urw/palatino/
 uplri8a.pfb>
-Output written on Bitirme.pdf (7 pages, 162406 bytes).
+Output written on Bitirme.pdf (9 pages, 176863 bytes).
 PDF statistics:
- 177 PDF objects out of 1000 (max. 8388607)
- 64 named destinations out of 1000 (max. 500000)
- 47169 words of extra memory for PDF output out of 51595 (max. 10000000)
+ 216 PDF objects out of 1000 (max. 8388607)
+ 84 named destinations out of 1000 (max. 500000)
+ 47193 words of extra memory for PDF output out of 51595 (max. 10000000)
 

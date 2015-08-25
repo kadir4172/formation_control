@@ -530,6 +530,120 @@ R_k = Max. Position Error on Trilateration Process
 		
 		
 		
+\section{FORMATION CONTROL}		
+  The details of the methodology for dynamical formation control with heterogenous mobile robots is presented in this chapter. Basically three different approaches as artificial forces method, bubble packing method and randomized fractals method are implemented. It is possible to classify these methods in two sub categories. Potential field based approaches implements artificial forces acting on agents to get inside and cover the desired formation shape homogenously by avoiding collisions between the agents. The resultant positions of the agents in the formation shape is not certain, it dynamically changes with the instantaneous positions and interactions of the agents with each other and environment. The other two methods , shape partitioning based approaches, share a common structural basis. In these approaches the complex formation shape is partitioned into goal states to cover the shape homogenously with the mobile robots. The assignment of the agents to these goal states is handled with special algorithms to optimize the overall energy consumpytion of the swarm. The difference between these two methods is the partitioning approach of the complex shape. 
+		
+		Method lari gosteren sekli buraya ekleyelim
+		
+		
+		\subsection{artificial forces method}
+		Artificial forces method implements some potential fields over each agent arised from the interactions between agents, formation shape and environment etc. The positions of the agents at the formation shape  are determined randomly with a local equilibrium point of the swarm in which every agent is at balance under the total force acting from the environment. There are basically three different kinds of artificial forces named intermember forces representing the forces created by the other agents in the swarm to achieve collision avoidance, the attractive forces representing the forces created by the desired formation shape to attract the agent into the shape and repulsive forces created by the formation shape to keep agent inside the shape. It is possible to augment these type of forces for specific tasks and objectives, e.g. obstacle forces created by the obstacles in the environment can be implemented to achieve obstacle avoidance.
+		Since the method to calculate the artificial forces involves contour integrals, it will be useful to give mathematical definition of contour integrals;
+		
+		Consider a curve $C$ which is a set of points $z = (x,y)$ in the complex plane defined by
+		\begin{equation}
+x = x(t),   \hspace{0.1cm} y = y(t),  \hspace{0.1cm} a\leq t \leq b
+		\end{equation}
+		where $x(t)$ and $y(t)$ are continuous functions of the real parametere t.  It is possible to write
+		
+		\begin{equation}
+z(t) = x(t)+iy(t),   \hspace{0.1cm} a\leq t \leq b
+		\end{equation}
+		
+		This curve is called smooth if $z(t)$ has continuous derivative $z'(t) \neq 0$ for all points along the curve, and it is called simple if it does not cross itself as mentioned;
+		\begin{equation}
+z(t_1) \neq z(t_2)   \hspace{0.1cm} whenever   \hspace{0.3cm} t_1\neq t_2
+		\end{equation}
+		On the other hand if  $z(a)=z(b)$ is the only intersection point, the curve is said to be simple closed curve. Regarding with these given definitions, an example for a  simple smooth closed curve is illustrated in Figure -xx
+		
+		Sunumdan simple closed curve buraya konacak
+		
+		Let $f(z)$ is a complex function in a domain $D$ in the complex pane and let $C$ be simple closed contour contained in $D$ with initial point $z_0$ and terminal point  $z$. It is possible to take the integral of $f(z)$ along the contour $C$
+		
+		\begin{equation}
+    \oint_C f(z) dz = \int_{a}^{b} f(z(t))\frac{dz(t)}{dt} dt
+		\end{equation}
+		where
+		\begin{equation}
+\frac{dz(t)}{dt} = \frac{dx(t)}{dt} + i\frac{dy(t)}{dt},   \hspace{0.1cm} a\leq t\leq b
+		\end{equation}
+		
+		To simplify this equation, one can wrtie $f(z) = u(x,y) + iv(x,y)$ and $dz = dx + idy$ into the statements,
+		
+		\begin{align*}
+\oint_C f(z)dz & = \oint_C u dx - v dy + i \oint_C u dy + v dx \\
+                        &= \int_{a}^{b}\left[u(x(t),y(t) )\frac{dx(t)}{dt} - v(x(t),y(t) )\frac{dy(t)}{dt}\right]dt\\
+                        & \hspace{0.4cm} + i\int_{a}^{b} \left[u(x(t),y(t) )\frac{dy(t)}{dt} + v(x(t),y(t) )\frac{dx(t)}{dt}\right]dt
+		\end{align*}
+		
+     \subsection{Artificial Forces and Utitilty Functions}
+		As it is mentioned in the Section-xx Objectives part, the formation shapes will be complex contours which cannot be identified analytically, but the definition for the artificial forces and utility functions are expressed in continuous contour integrals which requires the analytical expression of the curve on which the integral will be taken. To enable these type of calculations it is required to provide these statements in discrete domain to achieve calculations with complex closed curves.
+
+		1- Cauchy Winding Number
+		Cauchy winding number of a curve in the plane around a given point is the number of times that curve travels counterclockwise around the point. This number is used to switch on/off some of the artificial forces while the agent is inside or outside of the formation shape. Suppose $C$ is the complex closed curve which is a set of points $z=(x,y)$ in the complex plane  and $z_i$ is a point to check whether it is inside of the curve, then the Caucy winding number is :
+					
+		\begin{equation}
+ n(C,z_i) = \frac{1}{2\pi i}\oint_C \frac{dz}{z-z_i}
+ 		\end{equation}
+		
+		The winding number for agent $i$ in the swarm,
+\begin{equation}
+n(C,z_i) = \left\{ \begin{array}{rl}
+1 &\mbox{ when member i is inside C} \\
+0 &\mbox{ when member i is outside C}
+\end{array} \right.
+\end{equation}
+		To implement this statement in discrete domain 
+		\begin{equation}
+n(C,z_i) = \frac{1}{2\pi i} \oint_C f(z)dz
+		\end{equation}
+		where 
+		\begin{equation}
+f(z) = \frac{1}{z-z_i}
+		\end{equation}
+		Function of $f(z)$ can be partitioned into real and complex parts as:
+		\begin{equation}
+u(x,y) = real(f(z))  \hspace{0.2cm} and \hspace{0.2cm} v(x,y) = imag(f(z))
+		\end{equation}
+		
+		partitioning as it mentioned in equation -xx
+		\begin{equation}
+\oint_C f(z)dz  = \oint_C u dx - v dy + i \oint_C u dy + v dx 
+		\end{equation}
+		then
+		\begin{equation}
+n(C,z_i)  = \frac{1}{2\pi i} \left[\int_{a}^{b} \left(u\frac{dx}{dt} - v\frac{dy}{dt}\right)dt + i\int_{a}^{b}\left(u\frac{dy}{dt} + v\frac{dx}{dt}\right)dt\right]
+		\end{equation}
+		
+		This contour integral representation of this equation is
+		
+		\begin{equation}
+n(C,z_i)  = \frac{1}{2\pi i} \left[\sum_{k=1}^{K} \left(u(x_{k+1} - x_k ) - v(y_{k+1} -yx_k )\right) + i\sum_{k=1}^{K}\left(u(y_{k+1} - y_k ) + v(x_{k+1} - x_k )\right)dt\right]
+		\end{equation}
+		where
+		\begin{equation}
+z_k - z_{k-1} = z_{k+1} - z_k, \hspace{0.2cm}  \forall k ;  \hspace{0.2cm} when  \hspace{0.2cm} K \to\infty
+		\end{equation}
+
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
 		
 		
 		
