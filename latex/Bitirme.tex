@@ -29,7 +29,8 @@
 \usepackage[T1]{fontenc} % Use 8-bit encoding that has 256 glyphs
 \linespread{1.05} % Line spacing - Palatino needs more space between lines
 \usepackage{microtype} % Slightly tweak font spacing for aesthetics
-
+%\usepackage{quotchap}
+\usepackage{csquotes}
 
 \usepackage[noend]{algpseudocode}
 \usepackage[hmarginratio=1:1,top=32mm,columnsep=20pt]{geometry} % Document margins
@@ -102,7 +103,7 @@
 	%	ARTICLE CONTENTS
 	%----------------------------------------------------------------------------------------
 	
-	\begin{multicols}{2} % Two-column layout throughout the main article text
+%	\begin{multicols}{2} % Two-column layout throughout the main article text
 		
 		\section{Introduction}
 	
@@ -939,23 +940,308 @@ X_{sw_{max}} := max \norm{\frac{z_i - z_{cm}^i}{z_i - z_{cm}}}  \hspace{0.2cm} X
 			
 			
 			
+		\section{Shape Partitioning Methods}
+			
+			Shape partitioning methods have basically reduced down the formation control problem into two subproblems. The first part of the solution is to partition the desired formation shape into potential goal states according to the agent types to cover the desired formation shape homogenously. There are two different solutions to the shape partitioning problem are presented in this thesis work, bubble packing method and randomized fractals method. The second part of the solution is the decision process of the agents to select these goal states continuously to minimize the energy consumption of the swarm. During this decision process, the cost of reaching different goal states will be the main criteria for each agent. It is obvious that each agent will try to choose a goal state with minimum cost according to its position and the orientation in the environment. But the cases in which two or more agents are willing to reach the same goal point must be handled to optimize the overall utility of the swarm.
+			
+			\subsection{Determining the Potential Goal States}
+			\subsubsection{Bubble Packing Method}
+			
+			Bubble packing method is widely used in mesh generation problems. It basically depends on covering a curve, surface or a volume with a proper number of bubbles by packing them tightly which mimic a Voronoi diagram, from which a set of well-shaped Delaunay triangles and tetrahedra can be created by connecting the centers of the bubbles[27].  The algorithm places the bubbles with their initial conditions in the surface and apply them interbubble forces which imitates the Van der Waals forces between the moleculer bonds  to distrubute the bubbles homogenously. Here, the main idea is to generate a mesh for a surface with identical bubbles to mimic a regular Voronoi diagram with the vertices represented by the centers of these bubbles. On the other hand, adaptive population control  methods are developed to increase the number of bubbles to fill the gaps in the shape and to remove the excess bubbles which are overlapping with each other and the shape boundaries. 
+			 Since the numbers and the the radius of coverage circles which is defined at Section-xx for the agents are predetermined in our formation control problem, the general bubble meshing algorithm have to be adopted to meet the requirements in shape partitioning in formation control.  The basic approach is to represent the agents in the swarm as bubbles with the radius of  their coverage circles and create a mesh by using these bubbles. 
+			
+			I - Initial Placements of the Bubbles
+		  The initial bubble placements are important because it will greatly reduce the convergence time of the partitioning process. In this work, the bubbles are initiated close to the center of the formation shape randomly. The algorithm for initial bubble placements is provided as follows:
+		  
+
 			
 			
-			
-			
-			
-			
-			
-			
-			
-			
-			
-			
-			
-			
-			
+			\begin{algorithm}[H]
+				
+				\KwData{Set of Bubbles, Desired Formation Shape }
+				\KwResult{Initial Placements of the Bubbles }
+				Initialize free configuration space $C_{free}$ as the desired formation shape
+				
+				\For{<Bubbles of $i$>}
+				{		
+					*Calculate the free configuration space $C_{free}$ for bubble $i$\;
+					 *Put the Bubble $i$ to the closest point to  formation center  $z_c$  in the free configuration space $i$ \;
+					 *Add the agent $i$ into the desired formation shape as an obstacle \;
+				}
+				
+				
+				\caption{INITIALIZE$\_$BUBBLE$\_$POSITIOINS}
+			\end{algorithm}
+		
+		The term free configuration space $C_{free}$ will be analyzed in detail in Section -xx. An execution of the Algorithm-1 is illustrated in Figure -xx below.
+		
+		Giris formation shape ve bubble lar, cikista merkezde toplanmis bubblelar olan bir sekil koyalim
+		
+		II- Bubble Meshing Process 
+		
+		The bubbles are distributed homogenously with this process under two kinds of forces, interbubble forces and shape repulsive forces. The interbubble forces are proximity-based forces so that a system of bubbles is in equilibrium when bubbles are distributed over the whole formation shape. The implemented force equation is given
+		
+		\begin{equation}
+		f_i(l) = \left\{ \begin{array}{rl}
+		al^3 + bl^2 + cl + d &\mbox{ when 0 $\leq$ l $\leq$ $l_0$} \\
+		0                               &\mbox{ l > $l_0$}
+		\end{array} \right.
+		\end{equation}
+	where $l$ is the distance between the centers of the related bubbles. 
+	Makaleden interbubble force seklini alalim ya da biz cizelim
+	
+	The shape repulsive forces have the same characteristics with the repulsive artificial forces discussed in Section -xx. The representation of shape repulsive forces for the desired formation shape $C$ with the points of  $z_k = (x_k,y_k)$ the complex plane::
+	
+		
+			\begin{equation}
+			f_r(X_i) := \oint_C \left[\frac{\alpha X_i - z}{\norm{\alpha X_i - z}^3}\right] \norm{dz}
+			\end{equation}
+			where $k_r$ is the variable gain for the repulsive forces. The representation of the repulsive forces on agent $i$ on $z_i = (x_i, y_i)$ with the points of  $z_k = (x_k,y_k)$ of formation shape in the complex plane:
+	
+	The bubbles are distributed homogenously under the influence of these two forces when they get an equilibrium state in which the total net forces acting on individual bubbles reaches zero. The final equilibrium states of the bubbles determines the potential goal states of the agents in the swarm to cover the formation shape. 
+	
+	Buraya initial pozisyonlardan nihai pozisyona gelinmis goal state seklini gosteren bir resim koyalim. (Iteration lar ile)
+	
+			\subsubsection{Randomized Fractals Method}
+Randomized fractals method are used to cover surfaces or volumes randomly with fractals. The main idea is to fill the fractals with the areas determined by the rule of [26] :
+\begin{equation}
+  A_i = \frac{A}{\zeta(c,N)(i+N)^c}
+\end{equation}
+	where $A$ is the total are to cover and $A_i$ is the area of the $i^th$ fractal. The parameters of $c$ and $N$ can be chosen to implement different changes on the fractals areas with the increasing number of iterations with $c>1$ and $N>0$. Here  $\zeta$ is the Hurwitz function defiend by
+	\begin{equation}
+  \zeta(c,N) = \sum_{i=0}^{\infty} \frac{1}{(i+N)^c}
+	\end{equation}
+	It is possble to write, 
+	
+		\begin{equation}
+		\sum_{i=0}^{\infty}A_i = \sum_{i = 0}^{\infty}\left(\frac{A}{\zeta(c,N)(i+N)^c}\right)
+		\end{equation}
+	
+		which tells us the sum of the all areas $A_i$ is the total area of $A$ and the algorithm is space filling. This approach implements the fractals infinitely by reducing the areas in accordance with the Equation -xx to the desired formation shape randomly. 
+		Paperdan koymadigimiz bir sekil koyalim
+		
+		Since the areas and the number of the agents, which will be represented with their coverage circles, are predetermined in our work, it is possible to adopt this algorithm as follows:
+		
+					\begin{algorithm}[H]
+						
+						\KwData{Set of Coverage Circles, Desired Formation Shape }
+						\KwResult{Potential Goal States }
+						Initialize free configuration space $C_{free}$ as the desired formation shape
+						
+						\For{<Coverage Circles of $i$>}
+						{		
+							*Calculate the free configuration space $C_{free}$ for circle $i$\;
+						\eIf{$C_{free}  \neq Null$}{
+							*Put the circle $i$ randomly in $C_{free}$ \;
+								*Add the agent $i$ into the desired formation shape as an obstacle \;
+						}{
+						  *Break and warn the operator to increase the size of formation shape
+						}
+												
+						}												
+						
+						\caption{RANDOMIZED$\_$FRACTALS$\_$ALGORITHMS}
+					\end{algorithm}
+	
+	
+	\subsection{Mesh Quality Measurement}
+	Since we have two different solutions to the shape partitioning problem, it is useful to define a method to compare the performances of these algorithms. One of the criterion of mesh diagrams is topological mesh irregularity [27-29]. This parametere is defined by : 
+	\begin{equation}
+\epsilon _t = \frac{1}{n} \sum_{i = 0}^{n} |\gamma _i - D|
+	\end{equation}
+	where 
+	
+	
+			\begin{equation}
+			D = \left\{ \begin{array}{rl}
+			6                               &\mbox{ for triangles in Voronoi Diagram} \\
+			12                             &\mbox{ for tetrahedras in Voronoi Diagram}
+			\end{array} \right.
+			\end{equation}
+	
+	and $\gamma _i$ represents the degree, or the number of neighboring nodes connected to the $i^th$ interior node, and $n$ represents the total number of interior nodes, i.e. the number of bubbles or fractals. It is obvious that the topological mesh irregularity vanishes when all nodes have $D$ neighbors, but it is almost not possible in practical application. 
+	
+	Burada 3=5 komusus olan bir node u ucgen ya da tetra voronoi diagrami ile verelim
+	
+	Another metric to evaluate the quality or the performance of the mesh is the geometric irregularity defined as[27]:
+	\begin{equation}
+\epsilon _g = \frac{1}{m} \sum_{i = 0}^{m} (A-\frac{r_i}{R_i})
+	\end{equation}
+	where 
+		\begin{equation}
+		A = \left\{ \begin{array}{rl}
+		0.5                               &\mbox{ for triangles in Voronoi Diagram} \\
+		\sqrt{2/11}                   &\mbox{ for tetrahedras in Voronoi Diagram}
+		\end{array} \right.
+		\end{equation}
+		
+		and $m$ represents the number of nodes, $r_i$ is the radii of inscribed circle of Voronoi cell belonging to node $i$ and $R_i$ is the radii of the circumscribing circle of Voronoi cell belonging to node $i$
+	
+	Burada bir ucgen bir tetraheadral icindeki disindaki daIRELERLE  voronoi verelim
+	
+	
+	
+		\subsection{Decision Process on Goal States}
+	In the first part of the work,Section-xx Shape Partitioning, the formation control problem is reduced down to a problem in which every agent is expected to decide individually where to position in a given set of possible goal states $g_i \in G$ .  During this decision process, the cost of reaching different goal states will be the main criteria for each agent. Given goal states and cost values to these goal states, each agent must individually  decide where to position in the formation. This process must be held to optimize the utility of every agent with a collaboration. It is obvious that some of the agents may want to choose the same goal point to reach, so the swarm must reach a global consensus on target points and conflict cases must be handled. The main approach to provide a solution for this problem is to make each agent to calculate the costs of its own to the goal states and then create a global consensus with the other agents to minimize the overall energy consumption of the swarm while achieving a formation shape. 
+	In this work, the cost of reaching a goal state is defined with the minimum shortest path in the environment. A visibility graph based approach is used to calculate the shortest possible path to a goal states by taking into account the obstacles in the environment. The assignment process of the agents to the goal states which will be minimize the overall cost, is handled with the help of Munkres (Hungarian)  algorithm.
+	
+	\subsubsection{Free Configuration Space}
+		Since the shortest path is defined in the free configuration domain, each agent must calculate its free space by taking the obstacles in the environment into the account. 
+
+	Assume an environment with set of obstacles $S = \begin{Bmatrix}
+	P_1, P_2, .. P_t \end{Bmatrix}$. Configuration for agent $i$ can be described with the position of the center of its coverage circle with $R=\begin{Bmatrix}x_i, y_i\end{Bmatrix}$. Configuration space of $i$ th agent is the environment itself and represented by $C(R_i)$. This configuration space is composed of two subspaces; free configuration space and forbidden configuration space of agent $i$.
+	\begin{equation}
+	C(R_i) = C_{free}(R_i,S) + C_{forb}(R_i,S)
+	\end{equation}
+	The configuration space $C(R_i)$ of agent $i$ is the environment itself. If the forbidden space is calculated with Minkowski Sum method, free configuration space can be derived simply by extracting the forbidden space from the environment. Let a single obstacle is described with a point set of $S_1$ and the agent is described with a point set of $S_2$. The Minkowski sum of these two sets $S_1 \subset R^2$ and $S_2 \subset R^2$ can be calculated with the following,
+	\begin{equation}
+	S_1 \oplus S_2 := \begin{Bmatrix}
+	p+q : p \subset S_1, q \subset S_2
+	\end{Bmatrix} 
+	\end{equation}
+	where $p+q$ denotes the vector sum of the vectors $p$ and $q$.
+	
+	
+	\begin{figure}[H]
+		\caption{Forbidden Space Caused by an Obstacle}
+		\centering
+		\includegraphics[scale = 0.4]{Forbidden}
+	\end{figure}
+	Forbidden space for agent $i$, $C_{forb}(R_i, S)$ is the sum of the forbidden spaces calculated for each obstacle in the environment. 
+	
+	
+	\subsubsection{Visibility Graphs and Dijkstra$'$s Algorihtm}
+It is obvious that the shortest path between two points in the environment must lie on the free configuration space, $C_{free}$ for each agent. A constraint for the shortest path is given as follows[30] : 
+\begin{displayquote}
+The shortest path between $p_{start}$ and $p_{goal}$ among a set $S$ of augmented polygonal obstacles consists of the arcs of the visibility graph $\gamma_{vis}(S^*)$ where $S^* := S \cup \begin{Bmatrix}
+p_{start}, p_{goal}
+\end{Bmatrix}$
+\end{displayquote}
+A visibility graph,$\gamma_{vis}(S^*)$ , is a graph which is set of interior nodes representing the vertices of the set of obstacles, $S$, in the environment and edges which represents visible (which are not crossing and interior region of an obstacel) connections between these nodes. 
+
+Consider set of obstacles in the environment is augmented with the Minkowski Sums described in the Section-xx . Let these set of augmented polygonal obstacles represented with $S_i \subset S$. 
+	\begin{figure}[H]
+		\caption{Shorthest Path from an initial state to a goal state}
+		\centering
+		\includegraphics[scale = 0.4]{shortest}
+	\end{figure} 
+	Algorithm to calculate the visibility graph of $S^*$,
+	
+	\begin{algorithm}[H]
+		
+		\KwData{Set of Vertices Included in $S^*$ }
+		\KwResult{Visibility Graph of $S^*$ }
+		Initialize a graph $\gamma = (V,E)$ where $V$ is the set of al vertices of the polygons in $S$ and $E = \oslash$ 
+		
+		\For{<all vertices $v \subset V$>}
+		{		
+			W = VISIBLEVERTICES($v$,S)\;}
 		
 		
+		\caption{VISIBILITYGRAPH($S^*$)}
+	\end{algorithm}
+	where $VISIBLEVERTICES(v,S)$ algorithm checks whether line segments drawn from $v$ to all vertices in $S$ is intersecting an interior area of any obstacle in the environment. With the help of this $VISIBILITYGRAPH$ algorithm $SHORTESTPATH$ algorithm can be defined as follows.
+	
+	\begin{algorithm}[H]
+		
+		\KwData{A set $S$ of disjoint polygonal obstacles, and two points $p_{start}$ and $p_{goal}$ in
+			the free space.}
+		\KwResult{The shortest collision-free path connecting $p_{start}$ and $p_{goal}$}
+		1) Assign $\gamma$ = VISIBILITYGRAPH$(S^*)$
+		
+		2) Assign each arc $(v,w)$ in $\gamma_{vis}$ a weight, which is the Euclidian length of segment $vw$
+		
+		3) Use Dijkstra's algorithm to compute a shortest path between $p_{start}$ and $p_{goal}$ in $\gamma_{vis}$
+		
+		\caption{SHORTESTPATH}
+	\end{algorithm}
+	
+	Dijkstra$'$s algorithm computes the shortest path between two nodes in
+	graph with k arcs, each having a non-negative weight. It is a tree search algorithm and  used to calculate the shortest paths between nodes in a graphs, with the help of weighted edges between nodes. The time complexity of the original algorithm is $O(n^2)$ where $n$ is the number of the nodes in the graph. With the usage self balancing binary search tree, the algorithm requires $O(k+nlogn)$ time in the worst case. The algorithm for the Dijkstra's is given as follows:
+	
+		\begin{algorithm}[H]
+		\KwData{$\gamma_{vis}$ , $source$\_$ node$ }
+		\KwResult{Shortest Distance to Any Node from $source$\_$ node$ in $\gamma_{vis}$}
+       	
+		\For{<each vertex $v \subset \gamma_{vis}$>}
+		{		
+             Distance[v] := $\infty$ \;
+			  Previous[v] := $undefined$ \;
+		}
+		Distance[$source$\_$ node$] :=0  \;
+		Q:= The set of all vertices $v \subset \gamma_{vis}$ \;
+		\While{<Q $\neq$ null>}
+		{
+			u:= Node in Q with smallest distance to $source$\_$ node$\;
+			remove u from Q\;
+			\For{<each neighbor v of u>}
+			{
+				alt:= Distance[u] + Cost Between u and v nodes\;
+				\If{alt<Distance[v]}
+				{
+					Distance[v] :=alt\;
+					Previous[v] :=u\;
+					}
+				}
+			}
+			return Previous[];
+				
+			\caption{DIJKSTRA'S ALGORITHM}
+		\end{algorithm}
+		In algorithm above $Distance[x]$ function call, calculates the total cost from the $source$\_$ node$ to the $x$ vertex, and $Previous[x]$ function call, returns the previous node in optimal path from $source$\_$ node$ .
+	In our work, the weights of the edges in $\gamma_{vis}$ , are calculated with the Euler distance between nodes in the environment.  
+	
+	
+	\subsubsection{Collaborative Decision Process of Final Goal States}
+	
+In Section 2 and 3 possible routes and costs to the goal states are calculated with the help of Visibility Graphs and Dijkstra's algorithm  for each agent. It is obvious that each agent will try to choose a goal state with minimum cost according to its position and the orientation in the environment. But the cases in which two or more agents are willing to reach the same goal point must be handled by optimizing the overall utility of the swarm. To minimize to overall cost of whole swarm while achieving a formation shape, Hungarian algorithm which is a combinational optimization algorithm that solves this assignment problem is used. To implement this algorithm, a complete bipartite graph $G=(S,T,E)$ with $n \in S$ agents and $t \in T$ goal points is constructed.In this graph, each agent have a cost which is defined by the shortest path to the destination in the environment for different goal points. 
+	\begin{figure}[H]
+		\includegraphics[width=.4\textwidth,center]{bipartite}
+		\caption{Sample Bipartite Graph Used in Assignment Problem}
+	\end{figure}
+
+	A cost matrix  $C$ is defined to implement the Hungarian algorithm .  The dimensions of the cost matrix is $nxm$ in which each element represents the cost of assigning the goal state $m$ to the agent $n$.  Since we have equal number of agents and goal states, the cost matrix will be a square matrix with $nxn$ or $mxm$.  The algorithm for the assignment process as follows:
+	
+	
+	
+	\begin{algorithm}[H]
+		\KwData{Cost Matrix , $C$ }
+		\KwResult{Assignment Array of Agents to Goal States}
+	
+	     Label1  \;
+	     \For{Each Row, $R$, in $C$ }{
+	     	Find the smallest element and subtract it from every element
+	     	}
+	   Label 2  \; 
+	   \If{A Column,$K$, contains more than one zero}
+	   {Repeat Label1 for each column, $K$}
+   
+      Label 3  \; 
+      Select element in columns for which a distinct minimum weight has been determined and add to solution
+     
+     Label 4 \;
+     If it is not possible to reach the full solution, flag rows without solutions. Flag all columns in flagged rows that contain a zero. Flag all rows with a previously determined solution in previously flagged columns.
+     
+     Label 5 \;
+     From elements remaining in flagged rows and unflagged rows, determine the element which has smallest value and assign this value to $\gamma$. Subtract $\gamma$  from every unflagged element and add  $\gamma$ to every element that has been flagged twice.
+     
+     Label6 \;
+     Goto Label3 until full solution has been achieved.
+     
+     		\caption{HUNGARIAN ALGORITHM}
+		\end{algorithm}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 		
 		\section{ornekler}
 			\begin{equation}
@@ -982,6 +1268,6 @@ X_{sw_{max}} := max \norm{\frac{z_i - z_{cm}^i}{z_i - z_{cm}}}  \hspace{0.2cm} X
 			\end{equation}
 	
 		
-	\end{multicols}
+	%\end{multicols}
 	
 \end{document}

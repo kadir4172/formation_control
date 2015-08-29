@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-1.40.11 (MiKTeX 2.9) (preloaded format=pdflatex 2015.4.11)  26 AUG 2015 21:30
+This is pdfTeX, Version 3.1415926-1.40.11 (MiKTeX 2.9) (preloaded format=pdflatex 2015.8.29)  29 AUG 2015 20:28
 entering extended mode
 **Bitirme.tex
 ("C:\Users\Kadir\Desktop\Formation Control\formation_control\latex\Bitirme.tex"
@@ -248,6 +248,35 @@ Package microtype Info: Loading configuration file microtype.cfg.
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\microtype\microtype.cfg"
 File: microtype.cfg 2013/05/23 v2.5a microtype main configuration file (RS)
 ))
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\csquotes\csquotes.sty"
+Package: csquotes 2015/07/18 v5.1f context-sensitive quotations (JAW)
+
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\etoolbox\etoolbox.sty"
+Package: etoolbox 2015/08/02 v2.2a e-TeX tools for LaTeX (JAW)
+
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\misc\etex.sty"
+Package: etex 1998/03/26 v2.0 eTeX basic definition package (PEB)
+\et@xins=\count109
+)
+\etb@tempcnta=\count110
+)
+\csq@reset=\count111
+\csq@gtype=\count112
+\csq@glevel=\count113
+\csq@qlevel=\count114
+\csq@maxlvl=\count115
+\csq@tshold=\count116
+\csq@ltx@everypar=\toks23
+
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\csquotes\csquotes.def"
+File: csquotes.def 2015/07/18 v5.1f csquotes generic definitions (JAW)
+)
+Package csquotes Info: Trying to load configuration file 'csquotes.cfg'...
+Package csquotes Info: ... configuration file loaded successfully.
+
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\csquotes\csquotes.cfg"
+File: csquotes.cfg 
+))
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\algorithmicx\algpseudocode.sty"
 Package: algpseudocode 
 
@@ -255,15 +284,15 @@ Package: algpseudocode
 Package: algorithmicx 2005/04/27 v1.2 Algorithmicx
 
 Document Style algorithmicx 1.2 - a greatly improved `algorithmic' style
-\c@ALG@line=\count109
-\c@ALG@rem=\count110
-\c@ALG@nested=\count111
+\c@ALG@line=\count117
+\c@ALG@rem=\count118
+\c@ALG@nested=\count119
 \ALG@tlm=\skip63
 \ALG@thistlm=\skip64
-\c@ALG@Lnr=\count112
-\c@ALG@blocknr=\count113
-\c@ALG@storecount=\count114
-\c@ALG@tmpcounter=\count115
+\c@ALG@Lnr=\count120
+\c@ALG@blocknr=\count121
+\c@ALG@storecount=\count122
+\c@ALG@tmpcounter=\count123
 \ALG@tmplength=\skip65
 )
 Document Style - pseudocode environments for use with the `algorithmicx' style
@@ -281,9 +310,9 @@ Package ifvtex Info: VTeX not detected.
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\generic\ifxetex\ifxetex.sty"
 Package: ifxetex 2010/09/12 v0.6 Provides ifxetex conditional
 )
-\Gm@cnth=\count116
-\Gm@cntv=\count117
-\c@Gm@tempcnt=\count118
+\Gm@cnth=\count124
+\Gm@cntv=\count125
+\c@Gm@tempcnt=\count126
 \Gm@bindingoffset=\dimen131
 \Gm@wd@mp=\dimen132
 \Gm@odd@mp=\dimen133
@@ -292,19 +321,19 @@ Package: ifxetex 2010/09/12 v0.6 Provides ifxetex conditional
 \Gm@layoutheight=\dimen136
 \Gm@layouthoffset=\dimen137
 \Gm@layoutvoffset=\dimen138
-\Gm@dimlist=\toks23
+\Gm@dimlist=\toks24
 
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\geometry\geometry.cfg"))
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\tools\multicol.sty"
 Package: multicol 2008/12/05 v1.6h multicolumn formatting (FMi)
-\c@tracingmulticols=\count119
+\c@tracingmulticols=\count127
 \mult@box=\box38
 \multicol@leftmargin=\dimen139
-\c@unbalance=\count120
-\c@collectmore=\count121
-\doublecol@number=\count122
-\multicoltolerance=\count123
-\multicolpretolerance=\count124
+\c@unbalance=\count128
+\c@collectmore=\count129
+\doublecol@number=\count130
+\multicoltolerance=\count131
+\multicolpretolerance=\count132
 \full@width=\dimen140
 \page@free=\dimen141
 \premulticols=\dimen142
@@ -334,8 +363,8 @@ Package: multicol 2008/12/05 v1.6h multicolumn formatting (FMi)
 \@tempa=\box59
 \@tempa=\box60
 \@tempa=\box61
-\c@columnbadness=\count125
-\c@finalcolumnbadness=\count126
+\c@columnbadness=\count133
+\c@finalcolumnbadness=\count134
 \last@try=\dimen144
 \multicolovershoot=\dimen145
 \multicolundershoot=\dimen146
@@ -356,7 +385,7 @@ Package caption3 Info: TeX engine: e-TeX on input line 57.
 \caption@parindent=\dimen152
 \caption@hangindent=\dimen153
 )
-\c@ContinuedFloat=\count127
+\c@ContinuedFloat=\count135
 )
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\booktabs\booktabs.sty"
 Package: booktabs 2005/04/14 v1.61803 publication quality tables
@@ -370,20 +399,20 @@ Package: booktabs 2005/04/14 v1.61803 publication quality tables
 \cmidrulesep=\dimen161
 \cmidrulekern=\dimen162
 \defaultaddspace=\dimen163
-\@cmidla=\count128
-\@cmidlb=\count129
+\@cmidla=\count136
+\@cmidlb=\count137
 \@aboverulesep=\dimen164
 \@belowrulesep=\dimen165
-\@thisruleclass=\count130
-\@lastruleclass=\count131
+\@thisruleclass=\count138
+\@lastruleclass=\count139
 \@thisrulewidth=\dimen166
 )
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\float\float.sty"
 Package: float 2001/11/08 v1.3d Float enhancements (AL)
-\c@float@type=\count132
-\float@exts=\toks24
+\c@float@type=\count140
+\float@exts=\toks25
 \float@box=\box64
-\@float@everytoks=\toks25
+\@float@everytoks=\toks26
 \@floatcapt=\box65
 )
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\hyperref\hyperref.sty"
@@ -434,8 +463,8 @@ Package: letltxmacro 2008/06/24 v1.3 Let assignment for LaTeX macros (HO)
 Package: kvoptions 2010/02/22 v3.7 Keyval support for LaTeX options (HO)
 )
 \@linkdim=\dimen167
-\Hy@linkcounter=\count133
-\Hy@pagecounter=\count134
+\Hy@linkcounter=\count141
+\Hy@pagecounter=\count142
 
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\hyperref\pd1enc.def"
 File: pd1enc.def 2010/10/30 v6.81t Hyperref: PDFDocEncoding definition (HO)
@@ -443,7 +472,7 @@ File: pd1enc.def 2010/10/30 v6.81t Hyperref: PDFDocEncoding definition (HO)
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\generic\oberdiek\intcalc.sty"
 Package: intcalc 2007/09/27 v1.1 Expandable integer calculations (HO)
 )
-\Hy@SavedSpaceFactor=\count135
+\Hy@SavedSpaceFactor=\count143
 
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\00miktex\hyperref.cfg"
 File: hyperref.cfg 2002/06/06 v1.2 hyperref configuration of TeXLive
@@ -455,7 +484,7 @@ Package hyperref Info: Plain pages OFF on input line 3991.
 Package hyperref Info: Backreferencing OFF on input line 3996.
 Package hyperref Info: Implicit mode ON; LaTeX internals redefined.
 Package hyperref Info: Bookmarks ON on input line 4211.
-\c@Hy@tempcnt=\count136
+\c@Hy@tempcnt=\count144
 
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\ltxmisc\url.sty"
 \Urlmuskip=\muskip11
@@ -469,7 +498,7 @@ Package: bitset 2007/09/28 v1.0 Data type bit set (HO)
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\generic\oberdiek\bigintcalc.sty"
 Package: bigintcalc 2007/11/11 v1.1 Expandable big integer calculations (HO)
 ))
-\Fld@menulength=\count137
+\Fld@menulength=\count145
 \Field@Width=\dimen168
 \Fld@charsize=\dimen169
 Package hyperref Info: Hyper figures OFF on input line 5626.
@@ -485,9 +514,9 @@ LaTeX Info: Redefining \pageref on input line 5700.
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\generic\oberdiek\atbegshi.sty"
 Package: atbegshi 2010/03/25 v1.12 At begin shipout hook (HO)
 )
-\Hy@abspage=\count138
-\c@Item=\count139
-\c@Hfootnote=\count140
+\Hy@abspage=\count146
+\c@Item=\count147
+\c@Hfootnote=\count148
 )
 
 Package hyperref Message: Driver (autodetected): hpdftex.
@@ -497,10 +526,9 @@ File: hpdftex.def 2010/10/30 v6.81t Hyperref driver for pdfTeX
 
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\oberdiek\atveryend.sty"
 Package: atveryend 2010/03/24 v1.5 Hooks at very end of document (HO)
-Package atveryend Info: \enddocument detected (standard).
 )
-\Fld@listcount=\count141
-\c@bookmark@seq@number=\count142
+\Fld@listcount=\count149
+\c@bookmark@seq@number=\count150
 
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\oberdiek\rerunfilecheck.sty"
 Package: rerunfilecheck 2010/03/16 v1.6 Rerun checks for auxiliary files (HO)
@@ -515,16 +543,16 @@ Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 2
 )
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\lettrine\lettrine.sty"
 File: lettrine.sty 2015/02/16 v1.8 (Daniel Flipo)
-\c@DefaultLines=\count143
-\c@DefaultDepth=\count144
+\c@DefaultLines=\count151
+\c@DefaultDepth=\count152
 \DefaultFindent=\dimen170
 \DefaultNindent=\dimen171
 \DefaultSlope=\dimen172
 \DiscardVskip=\dimen173
 \L@lbox=\box66
 \L@tbox=\box67
-\c@L@lines=\count145
-\c@L@depth=\count146
+\c@L@lines=\count153
+\c@L@depth=\count154
 \L@Pindent=\dimen174
 \L@Findent=\dimen175
 \L@Nindent=\dimen176
@@ -546,7 +574,7 @@ Package: paralist 2013/06/09 v2.4 Extended list environments
 \plpartopsep=\skip70
 \plitemsep=\skip71
 \plparsep=\skip72
-\pl@lab=\toks26
+\pl@lab=\toks27
 )
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\abstract\abstract.sty"
 Package: abstract 2009/06/08 v1.2a configurable abstracts
@@ -563,7 +591,7 @@ Package: titlesec 2011/12/15 v2.10.0 Sectioning titles
 \aftertitleunit=\skip79
 \ttl@plus=\dimen186
 \ttl@minus=\dimen187
-\ttl@toksa=\toks27
+\ttl@toksa=\toks28
 \titlewidth=\dimen188
 \titlewidthlast=\dimen189
 \titlewidthfirst=\dimen190
@@ -582,41 +610,44 @@ File: block.tss 2011/12/15
 \f@ncyO@olf=\skip87
 \f@ncyO@orf=\skip88
 )
+Package csquotes Info: Checking for multilingual support...
+Package csquotes Info: ... none found.
+
 ("C:\Users\Kadir\Desktop\Formation Control\formation_control\latex\Bitirme.aux"
 )
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 84.
-LaTeX Font Info:    ... okay on input line 84.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 84.
-LaTeX Font Info:    ... okay on input line 84.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 84.
-LaTeX Font Info:    ... okay on input line 84.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 84.
-LaTeX Font Info:    ... okay on input line 84.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 84.
-LaTeX Font Info:    ... okay on input line 84.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 84.
-LaTeX Font Info:    ... okay on input line 84.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 84.
-LaTeX Font Info:    ... okay on input line 84.
-LaTeX Font Info:    Try loading font information for T1+pplx on input line 84.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 85.
+LaTeX Font Info:    ... okay on input line 85.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 85.
+LaTeX Font Info:    ... okay on input line 85.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 85.
+LaTeX Font Info:    ... okay on input line 85.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 85.
+LaTeX Font Info:    ... okay on input line 85.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 85.
+LaTeX Font Info:    ... okay on input line 85.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 85.
+LaTeX Font Info:    ... okay on input line 85.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 85.
+LaTeX Font Info:    ... okay on input line 85.
+LaTeX Font Info:    Try loading font information for T1+pplx on input line 85.
  ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\psnfss\t1pplx.fd"
 File: t1pplx.fd 2004/09/06 font definitions for T1/pplx.
 )
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\context\base\supp-pdf.mkii"
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count147
+\scratchcounter=\count155
 \scratchdimen=\dimen191
 \scratchbox=\box69
-\nofMPsegments=\count148
-\nofMParguments=\count149
-\everyMPshowfont=\toks28
-\MPscratchCnt=\count150
+\nofMPsegments=\count156
+\nofMParguments=\count157
+\everyMPshowfont=\toks29
+\MPscratchCnt=\count158
 \MPscratchDim=\dimen192
-\MPnumerator=\count151
-\makeMPintoPDFobject=\count152
-\everyMPtoPDFconversion=\toks29
+\MPnumerator=\count159
+\makeMPintoPDFobject=\count160
+\everyMPtoPDFconversion=\toks30
 )
-LaTeX Info: Redefining \microtypecontext on input line 84.
+LaTeX Info: Redefining \microtypecontext on input line 85.
 Package microtype Info: Generating PDF output.
 Package microtype Info: Character protrusion enabled (level 2).
 Package microtype Info: Using default protrusion set `alltext'.
@@ -669,7 +700,7 @@ Package caption Info: float package is loaded.
 Package caption Info: hyperref package is loaded.
 Package caption Info: End \AtBeginDocument code.
 \AtBeginShipoutBox=\box70
-Package hyperref Info: Link coloring OFF on input line 84.
+Package hyperref Info: Link coloring OFF on input line 85.
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\hyperref\nameref.sty"
 Package: nameref 2010/04/30 v2.40 Cross-referencing by name of section
 
@@ -679,42 +710,42 @@ Package: refcount 2008/08/11 v3.1 Data extraction from references (HO)
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\generic\oberdiek\gettitlestring.sty"
 Package: gettitlestring 2009/12/18 v1.3 Cleanup title references (HO)
 )
-\c@section@level=\count153
+\c@section@level=\count161
 )
-LaTeX Info: Redefining \ref on input line 84.
-LaTeX Info: Redefining \pageref on input line 84.
-LaTeX Info: Redefining \nameref on input line 84.
+LaTeX Info: Redefining \ref on input line 85.
+LaTeX Info: Redefining \pageref on input line 85.
+LaTeX Info: Redefining \nameref on input line 85.
 
 ("C:\Users\Kadir\Desktop\Formation Control\formation_control\latex\Bitirme.out"
 ) ("C:\Users\Kadir\Desktop\Formation Control\formation_control\latex\Bitirme.ou
 t")
 \@outlinefile=\write3
 LaTeX Font Info:    Font shape `T1/pplx/bx/n' in size <24> not available
-(Font)              Font shape `T1/pplx/b/n' tried instead on input line 87.
-LaTeX Font Info:    Try loading font information for OT1+pplx on input line 87.
+(Font)              Font shape `T1/pplx/b/n' tried instead on input line 88.
+LaTeX Font Info:    Try loading font information for OT1+pplx on input line 88.
 
  ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\psnfss\ot1pplx.fd"
 File: ot1pplx.fd 2004/09/06 font definitions for OT1/pplx.
 )
-LaTeX Font Info:    Try loading font information for OML+zplm on input line 87.
+LaTeX Font Info:    Try loading font information for OML+zplm on input line 88.
 
 
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\psnfss\omlzplm.fd"
 File: omlzplm.fd 2002/09/08 Fontinst v1.914 font definitions for OML/zplm.
 )
-LaTeX Font Info:    Try loading font information for OMS+zplm on input line 87.
+LaTeX Font Info:    Try loading font information for OMS+zplm on input line 88.
 
 
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\psnfss\omszplm.fd"
 File: omszplm.fd 2002/09/08 Fontinst v1.914 font definitions for OMS/zplm.
 )
-LaTeX Font Info:    Try loading font information for OMX+zplm on input line 87.
+LaTeX Font Info:    Try loading font information for OMX+zplm on input line 88.
 
 
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\psnfss\omxzplm.fd"
 File: omxzplm.fd 2002/09/08 Fontinst v1.914 font definitions for OMX/zplm.
 )
-LaTeX Font Info:    Try loading font information for OT1+zplm on input line 87.
+LaTeX Font Info:    Try loading font information for OT1+zplm on input line 88.
 
 
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\psnfss\ot1zplm.fd"
@@ -728,124 +759,69 @@ Package microtype Info: Character `029' is missing
 (microtype)             in font `T1/pplx/m/sc/12'.
 (microtype)             Ignoring protrusion settings for this character.
 LaTeX Font Info:    Font shape `T1/pplx/bx/n' in size <10> not available
-(Font)              Font shape `T1/pplx/b/n' tried instead on input line 94.
+(Font)              Font shape `T1/pplx/b/n' tried instead on input line 95.
+ [1{C:/ProgramData/MiKTeX/2.9/pdftex/config/pdftex.map}
 
-Overfull \hbox (34.91772pt too wide) detected at line 128
-[][] \OT1/zplm/m/n/10 = [] (\OML/zplm/m/it/10 i \OT1/zplm/m/n/10 = \OT1/pplx/m/
-n/10 1, 2, ..., \OML/zplm/m/it/10 n\OT1/zplm/m/n/10 )
- []
-
-
-Overfull \hbox (14.34698pt too wide) in paragraph at lines 165--165
-[] 
- []
-
-
-Overfull \hbox (62.88268pt too wide) in paragraph at lines 172--172
-[] 
- []
-
-
-Package multicol Warning: I moved some lines to the next page.
-(multicol)                Footnotes on page 1 might be wrong on input line 172.
-
-
-[1{C:/ProgramData/MiKTeX/2.9/pdftex/config/pdftex.map}
-
-]
-Overfull \hbox (72.55179pt too wide) in paragraph at lines 181--181
-[] 
- []
-
-LaTeX Font Info:    Try loading font information for U+fplmbb on input line 259
+] [2]
+LaTeX Font Info:    Try loading font information for U+fplmbb on input line 260
 .
+
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\psnfss\ufplmbb.fd"
 File: ufplmbb.fd 2003/10/30 Fontinst v1.914 font definitions for U/fplmbb.
-) [2]
-Overfull \hbox (2.45012pt too wide) detected at line 299
-[] \OMS/zplm/m/n/10 5 [] \OT1/zplm/m/n/10 = \OT1/pplx/m/n/10 2 []
- []
+) [3] [4]
+[5] [6] [7] [8] [9] [10] [11] [12] [13] [14] [15] [16] [17] [18] [19] [20]
+[21]
+LaTeX Font Info:    Font shape `T1/pplx/bx/n' in size <9> not available
+(Font)              Font shape `T1/pplx/b/n' tried instead on input line 1106.
+ <Forbidden.png, id=302, 222.8325pt x 249.93375pt>
+File: Forbidden.png Graphic file (type png)
+ <use Forbidden.png>
 
-[3] [4] [5] [6]
-Overfull \hbox (82.35031pt too wide) detected at line 524
-[]\OML/zplm/m/it/10 Q[] \OT1/zplm/m/n/10 = []
- []
-
-[7]
-Overfull \hbox (70.94748pt too wide) in paragraph at lines 577--577
-[] 
- []
-
-[8]
-Overfull \hbox (4.7822pt too wide) detected at line 595
-[]\OML/zplm/m/it/10 n\OT1/zplm/m/n/10 (\OML/zplm/m/it/10 C\OT1/pplx/m/n/10 , \O
-ML/zplm/m/it/10 z[]\OT1/zplm/m/n/10 ) = []
- []
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `math shift' on input line 1113.
 
 
-Overfull \hbox (0.88155pt too wide) detected at line 607
-[]\OML/zplm/m/it/10 u\OT1/zplm/m/n/10 (\OML/zplm/m/it/10 x\OT1/pplx/m/n/10 , \O
-ML/zplm/m/it/10 y\OT1/zplm/m/n/10 ) = \OML/zplm/m/it/10 real\OT1/zplm/m/n/10 (\
-OML/zplm/m/it/10 f\OT1/zplm/m/n/10 (\OML/zplm/m/it/10 z\OT1/zplm/m/n/10 )) \OML
-/zplm/m/it/10 and v\OT1/zplm/m/n/10 (\OML/zplm/m/it/10 x\OT1/pplx/m/n/10 , \OML
-/zplm/m/it/10 y\OT1/zplm/m/n/10 ) = \OML/zplm/m/it/10 imag\OT1/zplm/m/n/10 (\OM
-L/zplm/m/it/10 f\OT1/zplm/m/n/10 (\OML/zplm/m/it/10 z\OT1/zplm/m/n/10 ))
- []
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `math shift' on input line 1113.
 
+<shortest.png, id=303, 267.24844pt x 251.43938pt>
+File: shortest.png Graphic file (type png)
+ <use shortest.png>
+Underfull \vbox (badness 2680) has occurred while \output is active []
 
-Overfull \hbox (69.70383pt too wide) detected at line 616
-[]\OML/zplm/m/it/10 n\OT1/zplm/m/n/10 (\OML/zplm/m/it/10 C\OT1/pplx/m/n/10 , \O
-ML/zplm/m/it/10 z[]\OT1/zplm/m/n/10 ) = [] []
- []
+ [22 <C:/Users/Kadir/Desktop/Formation Control/formation_control/latex/Forbidde
+n.png (PNG copy)>]
+Underfull \vbox (badness 10000) has occurred while \output is active []
 
+ [23 <C:/Users/Kadir/Desktop/Formation Control/formation_control/latex/shortest
+.png (PNG copy)>] <bipartite.png, id=320, 213.04594pt x 359.84438pt>
+File: bipartite.png Graphic file (type png)
+ <use bipartite.png>
+Underfull \vbox (badness 10000) has occurred while \output is active []
 
-Overfull \hbox (200.26414pt too wide) detected at line 622
-[]\OML/zplm/m/it/10 n\OT1/zplm/m/n/10 (\OML/zplm/m/it/10 C\OT1/pplx/m/n/10 , \O
-ML/zplm/m/it/10 z[]\OT1/zplm/m/n/10 ) = [] []
- []
+ [24]
+Underfull \vbox (badness 10000) has occurred while \output is active []
 
-[9]
-Overfull \hbox (3.647pt too wide) in paragraph at lines 684--684
-[] 
- []
-
-
-Overfull \hbox (6.23448pt too wide) detected at line 690
-[]\OML/zplm/m/it/10 Area \OT1/zplm/m/n/10 = [] [] \OML/zplm/m/it/10 x[]\OT1/zpl
-m/m/n/10 (\OML/zplm/m/it/10 y[] \OMS/zplm/m/n/10   \OML/zplm/m/it/10 y[]\OT1/zp
-lm/m/n/10 ) \OMS/zplm/m/n/10   [] [] \OML/zplm/m/it/10 y[]\OT1/zplm/m/n/10 (\OM
-L/zplm/m/it/10 x[] \OMS/zplm/m/n/10   \OML/zplm/m/it/10 x[]\OT1/zplm/m/n/10 )
- []
-
-[10]
-Overfull \hbox (25.0752pt too wide) detected at line 794
-[]\OML/zplm/m/it/10 F[] \OT1/zplm/m/n/10 = \OML/zplm/m/it/10 k[] [] [][]
- []
-
-
-Overfull \hbox (18.79033pt too wide) in paragraph at lines 803--803
-[] 
- []
-
-[11] [12] [13]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 987.
- [14]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 987.
+ [25 <C:/Users/Kadir/Desktop/Formation Control/formation_control/latex/bipartit
+e.png (PNG copy)>]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 1273.
+ [26]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 1273.
 
 ("C:\Users\Kadir\Desktop\Formation Control\formation_control\latex\Bitirme.aux"
 )
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 987.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 1273.
 Package rerunfilecheck Info: File `Bitirme.out' has not changed.
-(rerunfilecheck)             Checksum: 59204895A0B83730250BEFF714C7A670;1002.
+(rerunfilecheck)             Checksum: 4D693FA15D47A642C4C6DB3B259719BD;1779.
  ) 
 Here is how much of TeX's memory you used:
- 12553 strings out of 494019
- 189198 string characters out of 3143882
- 437396 words of memory out of 3000000
- 15194 multiletter control sequences out of 15000+200000
- 71485 words of font info for 305 fonts, out of 3000000 for 9000
+ 13521 strings out of 494019
+ 203029 string characters out of 3143882
+ 451849 words of memory out of 3000000
+ 16087 multiletter control sequences out of 15000+200000
+ 76694 words of font info for 311 fonts, out of 3000000 for 9000
  714 hyphenation exceptions out of 8191
- 53i,13n,92p,1839b,523s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 53i,15n,92p,1839b,431s stack positions out of 5000i,500n,10000p,200000b,50000s
 {C:/Program Files (x86)/MiKTeX 2.9/fonts/enc/dvips/fontname/8r.enc}<C:/Progra
 m Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Program 
 Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Program Fi
@@ -858,9 +834,9 @@ fonts/type1/public/fpl/fplrc8a.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/typ
 e1/urw/palatino/uplb8a.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/urw/p
 alatino/uplr8a.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/urw/palatino/
 uplri8a.pfb>
-Output written on Bitirme.pdf (14 pages, 211157 bytes).
+Output written on Bitirme.pdf (26 pages, 330333 bytes).
 PDF statistics:
- 293 PDF objects out of 1000 (max. 8388607)
- 127 named destinations out of 1000 (max. 500000)
- 47217 words of extra memory for PDF output out of 51595 (max. 10000000)
+ 416 PDF objects out of 1000 (max. 8388607)
+ 174 named destinations out of 1000 (max. 500000)
+ 54472 words of extra memory for PDF output out of 61914 (max. 10000000)
 

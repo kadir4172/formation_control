@@ -11,4 +11,13 @@
 \BOOKMARK [2][-]{subsection.3.3}{Buffer Zone Implementation}{section.3}% 11
 \BOOKMARK [2][-]{subsection.3.4}{XSwarm Theory}{section.3}% 12
 \BOOKMARK [2][-]{subsection.3.5}{Implementation of X-Swarm Theory}{section.3}% 13
-\BOOKMARK [1][-]{section.4}{ornekler}{}% 14
+\BOOKMARK [1][-]{section.4}{Shape Partitioning Methods}{}% 14
+\BOOKMARK [2][-]{subsection.4.1}{Determining the Potential Goal States}{section.4}% 15
+\BOOKMARK [3][-]{subsubsection.4.1.1}{Bubble Packing Method}{subsection.4.1}% 16
+\BOOKMARK [3][-]{subsubsection.4.1.2}{Randomized Fractals Method}{subsection.4.1}% 17
+\BOOKMARK [2][-]{subsection.4.2}{Mesh Quality Measurement}{section.4}% 18
+\BOOKMARK [2][-]{subsection.4.3}{Decision Process on Goal States}{section.4}% 19
+\BOOKMARK [3][-]{subsubsection.4.3.1}{Free Configuration Space}{subsection.4.3}% 20
+\BOOKMARK [3][-]{subsubsection.4.3.2}{Visibility Graphs and Dijkstra's Algorihtm}{subsection.4.3}% 21
+\BOOKMARK [3][-]{subsubsection.4.3.3}{Collaborative Decision Process of Final Goal States}{subsection.4.3}% 22
+\BOOKMARK [1][-]{section.5}{ornekler}{}% 23
