@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-1.40.11 (MiKTeX 2.9) (preloaded format=pdflatex 2015.8.29)  29 AUG 2015 20:28
+This is pdfTeX, Version 3.1415926-1.40.11 (MiKTeX 2.9) (preloaded format=pdflatex 2015.8.29)  2 SEP 2015 21:25
 entering extended mode
 **Bitirme.tex
 ("C:\Users\Kadir\Desktop\Formation Control\formation_control\latex\Bitirme.tex"
@@ -804,19 +804,19 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [25 <C:/Users/Kadir/Desktop/Formation Control/formation_control/latex/bipartit
 e.png (PNG copy)>]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 1273.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 1277.
  [26]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 1273.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 1277.
 
 ("C:\Users\Kadir\Desktop\Formation Control\formation_control\latex\Bitirme.aux"
 )
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 1273.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 1277.
 Package rerunfilecheck Info: File `Bitirme.out' has not changed.
 (rerunfilecheck)             Checksum: 4D693FA15D47A642C4C6DB3B259719BD;1779.
  ) 
 Here is how much of TeX's memory you used:
- 13521 strings out of 494019
- 203029 string characters out of 3143882
+ 13522 strings out of 494019
+ 203043 string characters out of 3143882
  451849 words of memory out of 3000000
  16087 multiletter control sequences out of 15000+200000
  76694 words of font info for 311 fonts, out of 3000000 for 9000
@@ -834,9 +834,9 @@ fonts/type1/public/fpl/fplrc8a.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/typ
 e1/urw/palatino/uplb8a.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/urw/p
 alatino/uplr8a.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/urw/palatino/
 uplri8a.pfb>
-Output written on Bitirme.pdf (26 pages, 330333 bytes).
+Output written on Bitirme.pdf (26 pages, 330603 bytes).
 PDF statistics:
- 416 PDF objects out of 1000 (max. 8388607)
- 174 named destinations out of 1000 (max. 500000)
+ 418 PDF objects out of 1000 (max. 8388607)
+ 175 named destinations out of 1000 (max. 500000)
  54472 words of extra memory for PDF output out of 61914 (max. 10000000)
 
