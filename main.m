@@ -163,7 +163,8 @@ end
  % m(i) = text(X_real(i),Y_real(i),int2str(i),'color','r');
 %end
 
-axis([-100,100,-100,100])
+%axis([-100,100,-100,100])
+axis([-50,50,-50,50])
 hold on
 %set(h,'XDataSource','X');
 %set(h,'YDataSource','Y');
@@ -194,7 +195,10 @@ set(l,'YDataSource','Y_real');
 %j = plot(formation_x, formation_y);
 %set(j,'XDataSource','formation_x');
 %set(j,'YDataSource','formation_y');
-axis([-100,100,-100,100])
+axis([-50,50,-50,50])
+xlabel('X Coordinates[m]')
+ylabel('Y Coordinates[m]')
+title('Agents in the Environment')
 %==========================%
 
 %==========================%

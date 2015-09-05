@@ -4,6 +4,11 @@ function [] = propogate_states(  )
 persistent Q;
 persistent F;
 persistent B;
+persistent Error_State;
+
+if isempty(Error_State)
+    Error_State = [];
+end
 
 %Q matrisleri icin gerekli bilesenler
 dt = evalin('base', 'est_propogate_period');
@@ -49,16 +54,18 @@ if(mrec_active == 1)
   X_accelmeas_noisy = zeros(n,1);
   Y_accelmeas_noisy = zeros(n,1);
 else
-  X_accelmeas = force_matrix(1,7,:) /10000;
-  Y_accelmeas = force_matrix(2,7,:) /10000;
+  %X_accelmeas = force_matrix(1,7,:) /10000;
+  %Y_accelmeas = force_matrix(2,7,:) /10000;
+  X_accelmeas = zeros(n,1);
+  Y_accelmeas = zeros(n,1);
   X_accelmeas_noisy(1,1,:) = rand(n,1) * 0.20 - 0.10;
   X_accelmeas_noisy(1,1,PA_index) = 0;              % PA larin ivmeleri gurultusuz olsun
   %X_accelmeas_noisy(1,1,:) = zeros(n,1);
-  X_accelmeas_noisy = X_accelmeas_noisy + force_matrix(1,7,:) /10000;
+  %X_accelmeas_noisy = X_accelmeas_noisy + force_matrix(1,7,:) /10000;
   Y_accelmeas_noisy(1,1,:) = rand(n,1) * 0.20 - 0.10;
   Y_accelmeas_noisy(1,1,PA_index) = 0;              % PA larin ivmeleri gurultusuz olsun
   %Y_accelmeas_noisy(1,1,:) = zeros(n,1);
-  Y_accelmeas_noisy = Y_accelmeas_noisy + force_matrix(2,7,:) /10000;
+  %Y_accelmeas_noisy = Y_accelmeas_noisy + force_matrix(2,7,:) /10000;
 end
 
 for i = 1 : 1 : n
@@ -94,7 +101,8 @@ for i = 1 : 1 : n
   Ydot_real(i) = Y_real_vector(2);
     
 end
-
+Error_State = [Error_State (X - X_real).^2 + (Y - Y_real).^2 ];
+assignin('base', 'Error_State', Error_State);
 assignin('base', 'X', X);
 assignin('base', 'Y', Y);
 assignin('base', 'Xdot', Xdot);

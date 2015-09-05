@@ -9,7 +9,7 @@ for i  = 1 : 1 : n
          lost_agent_matrix(i,2) = 1;
          text = 'Come Home!';
      end
-     set(g(i),'String',text);
+     %set(g(i),'String',text);
  else
      lost_agent_matrix(i,:) = [0 0];
      %set(g(i),'String',int2str(i));
