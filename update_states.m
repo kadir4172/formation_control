@@ -151,8 +151,15 @@ for i = 1 : 1 : max_rank
 end
 
 assignin('base', 'total', total);
-figure
-plot(total)
+figure(15)
+cmap = hsv(10);  %# Creates a 10-by-3 set of colors from the HSV colormap
+%plot(Error_State(4,:) ,'Color',cmap(1,:));  
+ind = abs(floor(rand(1,1)*10));
+if(ind >=10 || ind == 0)
+    ind = 10;
+end
+plot(total,'Color',cmap(ind,:))
+hold on
 xlabel('Rank Value')
 ylabel('Error Rate')
 title('Rank vs Error')
