@@ -10,6 +10,10 @@
   force_matrix = evalin('base', 'force_matrix');
   
   km  = evalin('base', 'km');
+  use_fractals = evalin('base', 'use_fractals');
+  if(use_fractals) % fractal varsa intermember kuvveti dusurelim
+   km = km / 2;
+  end
  
   n = evalin('base', 'n');
   

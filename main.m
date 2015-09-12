@@ -31,7 +31,7 @@ Ydotdot_real = zeros(n,1);
 feedback_matrix = [];
 dt = 0;
 use_real_positions = 1;
-use_fractals       = 1;
+use_fractals       = 0;
 
 %agent sayisinin %10 u kadar PA ayarla
 PA_number = round(n/5);

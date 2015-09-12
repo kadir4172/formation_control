@@ -222,12 +222,10 @@ else
     GoalStateFractalPos2 = pointList(21:40,:);
     GoalStateFractalPos3 = pointList(41:50,:);
 end 
-
-
   assignin('base', 'GoalStateFractalPos1', GoalStateFractalPos1);
   assignin('base', 'GoalStateFractalPos2', GoalStateFractalPos2);
   assignin('base', 'GoalStateFractalPos3', GoalStateFractalPos3);
   
-  assignin('base', 'GoalStatePos1', GoalStateFractalPos1);
+  assignin('base', 'GoalStatePos1', GoalStateFractalPos1);k
   assignin('base', 'GoalStatePos2', GoalStateFractalPos2);
   assignin('base', 'GoalStatePos3', GoalStateFractalPos3);
