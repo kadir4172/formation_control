@@ -31,8 +31,19 @@ Ydotdot_real = zeros(n,1);
 feedback_matrix = [];
 dt = 0;
 use_real_positions = 1;
-use_fractals       = 0;
+use_traces         = 1;     % store the trajectories of agents
 
+
+
+use_fractals          = 0;     % offline formation with randomized fractals
+use_artificial_forces = 0;     % if not, decrease intermember forces 
+
+
+
+if(use_traces)
+ X_positions = [];
+ Y_positions = [];
+end
 %agent sayisinin %10 u kadar PA ayarla
 PA_number = round(n/5);
 PA_index  = round(rand(PA_number,1) * n);
@@ -132,17 +143,31 @@ x_swarm_flag = 0;
 force_matrix = zeros(2,7,n);
 inside_outside_array = zeros(n,1);
 
-
-ka = 2000;
+if(~use_artificial_forces)
+ka = 500;
 kr = 0;
 kf = 0;
 km = 750;
 ko = 5500;
-ka2 = 70000;
-kgoal1 = 10;
+ka2 = 9000;
+kgoal1 = 100;
 kgoal2 = 200;
+kgoalint = 0;
 max_force = 1000;
 max_goal_state_force = 4;
+else
+ka = 25000;
+kr = 150;
+kf = 0;
+km = 1500;
+ko = 5500;
+ka2 = 190000;
+kgoal1 = 0;
+kgoal2 =  0;
+kgoalint = 0;
+max_force = 1000;
+max_goal_state_force = 4;
+end
 %Artificial forces for individual members
 
 
@@ -183,6 +208,7 @@ offline_dt = 0;
 GoalStatePos1 = 0;
 GoalStatePos2 = 0;
 GoalStatePos3 = 0;
+GoalStateIntegral = zeros(n,2);
 if(use_fractals)
 GoalStateFractalPos1 = 0;
 GoalStateFractalPos2 = 0;

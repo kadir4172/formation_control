@@ -15,6 +15,7 @@ probable_map = grid_map .* (~free_map);
 X_pos_array = -35: search_step : 35;
 Y_pos_array = -35: search_step : 35;
 %yer_sayisi = length(row)
+
 if (length(row) >= n  && formation_ok_in == 1)
  choose_list = 1 : 1 : length(row);
  rand_list = datasample(choose_list, n, 'Replace', false);    
@@ -29,8 +30,10 @@ if (length(row) >= n  && formation_ok_in == 1)
  assignin('base', 'Y_offline', Y_offline);
  assignin('base', 'Xdot_offline', Xdot_offline);
  assignin('base', 'Ydot_offline', Ydot_offline);
+ 
 else
  formation_ok = 0;
+ 
 end
   assignin('base', 'formation_ok', formation_ok);
 

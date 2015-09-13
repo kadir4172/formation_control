@@ -55,6 +55,7 @@ Ydot_real  = evalin('base', 'Ydot_real');
 Xdotdot  = evalin('base', 'Xdotdot');
 Ydotdot  = evalin('base', 'Ydotdot');
 P = evalin('base','P');
+use_traces = evalin('base','use_traces');
 PA_index = evalin('base','PA_index');
 use_real_positions = evalin('base','use_real_positions');
 
@@ -172,6 +173,9 @@ calculate_forces_flag = evalin('base', 'calculate_forces_flag');
     set_obstacle_forces    %agentlar icin obstacle lar tarafindan uretilen sanal kuvvetleri hesapla
     set_total_force        %tum force bilesenlerini toplayalim
     set_goal_state_forces
+    if(use_traces)
+      store_agent_positions;
+    end
     
     mrec_update
     mrec_propogate

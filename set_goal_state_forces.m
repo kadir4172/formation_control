@@ -1,9 +1,11 @@
-  GoalStatePos1  = evalin('base', 'GoalStatePos1');
-  GoalStatePos2  = evalin('base', 'GoalStatePos2');
-  GoalStatePos3  = evalin('base', 'GoalStatePos3');
+  GoalStatePos1      = evalin('base', 'GoalStatePos1');
+  GoalStatePos2      = evalin('base', 'GoalStatePos2');
+  GoalStatePos3      = evalin('base', 'GoalStatePos3');
+  GoalStateIntegral  = evalin('base', 'GoalStateIntegral');
   
   kgoal1  = evalin('base', 'kgoal1');
   kgoal2  = evalin('base', 'kgoal2');
+  kgoalint  = evalin('base', 'kgoalint');
   max_goal_state_force = evalin('base', ' max_goal_state_force');
   max_force = evalin('base', ' max_force');
     
@@ -69,6 +71,15 @@
     
 
     for i = 1 : 1 : n
+        if(inside_outside_array(i) ~= 1)
+        GoalStateIntegral(i,1) = GoalStateIntegral(i,1) + GoalStatesForces(i,1) * kgoalint;
+        GoalStateIntegral(i,2) = GoalStateIntegral(i,2) + GoalStatesForces(i,2) * kgoalint;
+        else
+        GoalStateIntegral(i,1) = 0;
+        GoalStateIntegral(i,2) = 0;
+        end
+        %GoalStatesForces(i,1) = GoalStatesForces(i,1) + GoalStateIntegral(i,1);
+        %GoalStatesForces(i,2) = GoalStatesForces(i,2) + GoalStateIntegral(i,2);
         amplitude = GoalStatesForces(i,1)^2 + GoalStatesForces(i,2)^2 ;
         amplitude = amplitude^0.5;
         gain = 1;
@@ -77,8 +88,8 @@
         end
     if(inside_outside_array(i) ~= 1) %eger agent shape icerisinde degilse hesaplansin
        
-        force_matrix(1,7,i) = force_matrix(1,7,i) - kgoal1 * GoalStatesForces(i,1) * gain ;
-        force_matrix(2,7,i) = force_matrix(2,7,i) - kgoal1 * GoalStatesForces(i,2) * gain ;        
+        force_matrix(1,7,i) = force_matrix(1,7,i) - kgoal1 * GoalStatesForces(i,1) * gain - GoalStateIntegral(i,1);
+        force_matrix(2,7,i) = force_matrix(2,7,i) - kgoal1 * GoalStatesForces(i,2) * gain - GoalStateIntegral(i,2);        
     else
         force_matrix(1,7,i) = force_matrix(1,7,i) - kgoal2 * GoalStatesForces(i,1) * gain ;
         force_matrix(2,7,i) = force_matrix(2,7,i) - kgoal2 * GoalStatesForces(i,2) * gain ;      
@@ -95,6 +106,7 @@
     end
   
  assignin('base', 'force_matrix', force_matrix);
+ assignin('base', 'GoalStateIntegral', GoalStateIntegral);
     
     
     
