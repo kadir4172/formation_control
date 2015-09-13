@@ -451,7 +451,7 @@ and
 	where $X_k$ is the position and $\dot{X}_k$ is the velocity of the agents in x coordinates in two dimensional environment. All of the following procedures will be handled exactly the same for the state vector in y coordinates.
 	The linear model to propogate states will be:
 	\begin{equation}
-  x_{k+1} = F_kx_{k} + B_ku_k + w_k
+  x_{k+1} = F_k     x_{k} + B_ku_k + w_k
 	\end{equation}
 	where $w_k$ is the process noise and 
 	\begin{equation}
@@ -528,7 +528,6 @@ R_k = Max. Position Error on Trilateration Process
 		\end{equation}
 		
 	in the above equations $K_k$ represents the Kalman gain matrix and $S_k$ is the residual covariance of the system at time $k$. $\hat{x}_{k,k}$ is the posteriori state estimate updated with measurements at time $k$ ;  $\hat{x}_{k,k-1}$ is the priori estimate of the state vector predicted with inputs at time $k$; $P_{k,k}$ is the posteriori error covariance matrix updated with measurements at time $k$; $P_{k,k-1}$ is the priori estimate covariance predicted with the inputs at time $k$
-		
 		
 		
 \section{FORMATION CONTROL}		
