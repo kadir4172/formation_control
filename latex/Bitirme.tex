@@ -1230,6 +1230,72 @@ In Section 2 and 3 possible routes and costs to the goal states are calculated w
      		\caption{HUNGARIAN ALGORITHM}
 		\end{algorithm}
 	
+	\subsection{Control System Design for Individual Agents}
+Shape partitioning methods will provide the goal states for a desired formation shape and agents will be assigned to those goal states to minimize the overall energy consumption of the swarm. A control system which will guide the agents to reach these goal states must be designed for each agent individually. Since the environment is dynamically changing with lots of  mobile agents, it is very probable to have different assignments to these goal states at each iteration of formation control. On the other hand, the collision with the obstacles and the other agents at the environment must be prevented due the requirements presented in Section-xx. The control system must react to these dynamic requests. A velocity controller with a large bandwith is designed at the inner loop of the control system and the outer loop is composed with a velocity setpoint generator. The block diagram for the proposed controller structure is presented in Figure -xx.
+
+Genel blok diyagram buraya eklenecek
+
+Velocity setpoint generator provides instant setpoints for the inner loop based on the current position of the agent and the desired goal state position.  This loop calculates the amplitude of the velocity setpoint proportinal with the euclidian distance of agent to the desired goal state. The direction of this velocity setpoint vector has a bearing angle of the line segment drawn from the agent to the goal state. This generator saturates the amplitude of the setpoint vector with 0.5 [m/sec] to prevent the agents' travelling in the environment so fast. 
+
+Amplitude ve bearing sekli buraya konacak
+
+
+The inner loop tis designed to track the velocity setpoint provided by the generator and it has a state feedback structure. The gains for the feedback states are calculated with an LQR controller. A simple mass, damper type second order linear system is used to provide a model for the controller. The translational friction force is assumed to be linear with the velocity of each agent. Different mass and friction coefficients for heterogenous mobile robots are used in control system design. To track the desired velocity setpoint, the model of the system is augmented with an artificial error state,
+
+\begin{equation}
+\begin{bmatrix}
+\dot{v} \\ \dot{e}
+\end{bmatrix}
+=
+\begin{bmatrix}
+-b/m & 0 \\
+1 & 0
+\end{bmatrix}
+\begin{bmatrix}
+v \\ e
+\end{bmatrix}
++ \begin{bmatrix}
+1/m \\ 0
+\end{bmatrix}
+F_{net} \hspace{0.5cm} and
+\hspace{0.5cm}
+y = \begin{bmatrix}
+1 & 0
+\end{bmatrix}
+\begin{bmatrix}
+v \\ e
+\end{bmatrix}
+\end{equation}
+
+where $b$ is the linear friction force coefficient and $m$ is the mass, $v$  is the linear velocity of the agent and $e$ is the augmented error state which is the integral of the velocity state. Here the $v$ state is the stabilizing part of the controller and the $e$ error state is the tracker part of the controller. The state feedback gain, $K$, which minimizes the quadratic cost function of
+\begin{equation}
+ J = \int_{t_o}^{t_1}(x^TQx + u^TRu) dt
+\end{equation}
+is calculated with help of $'lqr'$ function of MATLAB for the given system in $106 - degisebilir$ with the gain matrices of 
+
+\begin{equation}
+ Q = \begin{bmatrix}
+q_1 & 0 \\ 0 & q_2
+ \end{bmatrix}
+ \hspace{0.3cm} and
+\hspace{0.3cm}
+ R = r_1
+\end{equation}
+the parameters for the controller design are determined with the approach presented below,
+\begin{equation}
+q_1 = \frac{1}{t_1 (x_{1max})^2}; \hspace{0.1cm}
+q_2 = \frac{1}{t_2 (x_{2max})^2}; \hspace{0.1cm} and \hspace{0.1cm}
+r_1 = \frac{1}{ (u_{1max})^2}; \hspace{0.1cm}
+\end{equation}
+Here $t_i$  is the desired settling time for $x_i$ which is determined as 1.5 seconds for the velocity and 0.001 seconds for the integral state. The statement of $x_{imax}$ represents the expected maximum value of the state $i$ , which is defined 1 [m/sec] for the velocity state and 4 [m] for the error state. $u{1max}$ represent the maximum allowable input signal which is defined 3 [N]. The structure of the inner loop is illustrated in Figure-xx
+
+Inner loop sekli gelecek
+
+The error between the reference and the velocity feedback is integrated and multiplied with the error gain, and the velocity state is multiplied with the velocity gain. These two components generate the total control input of the system.  
+
+Step response buraya gelecek
+
+According to the Figure -xx, the settling time for the inner loop is around 0.5 seconds for a step input. This response characteristics is important since the system cannot react to the setpoints changing faster than 0.5 seconds, so the formation control loops in which the new goal state assignments are handled must be executed with 2Hz frequency. 
 
 \section{RESULTS AND DISCUSSION}	
 	
