@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-1.40.11 (MiKTeX 2.9) (preloaded format=pdflatex 2015.8.29)  13 SEP 2015 20:42
+This is pdfTeX, Version 3.1415926-1.40.11 (MiKTeX 2.9) (preloaded format=pdflatex 2015.8.29)  20 SEP 2015 22:00
 entering extended mode
 **Bitirme.tex
 ("C:\Users\Kadir\Desktop\Formation Control\formation_control\latex\Bitirme.tex"
@@ -773,7 +773,7 @@ File: ufplmbb.fd 2003/10/30 Fontinst v1.914 font definitions for U/fplmbb.
 [21]
 LaTeX Font Info:    Font shape `T1/pplx/bx/n' in size <9> not available
 (Font)              Font shape `T1/pplx/b/n' tried instead on input line 1105.
- <Forbidden.png, id=314, 222.8325pt x 249.93375pt>
+ <Forbidden.png, id=330, 222.8325pt x 249.93375pt>
 File: Forbidden.png Graphic file (type png)
  <use Forbidden.png>
 
@@ -784,7 +784,7 @@ Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
 (hyperref)                removing `math shift' on input line 1112.
 
-<shortest.png, id=315, 267.24844pt x 251.43938pt>
+<shortest.png, id=331, 267.24844pt x 251.43938pt>
 File: shortest.png Graphic file (type png)
  <use shortest.png>
 Underfull \vbox (badness 2680) has occurred while \output is active []
@@ -794,7 +794,7 @@ n.png (PNG copy)>]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [23 <C:/Users/Kadir/Desktop/Formation Control/formation_control/latex/shortest
-.png (PNG copy)>] <bipartite.png, id=332, 213.04594pt x 359.84438pt>
+.png (PNG copy)>] <bipartite.png, id=348, 213.04594pt x 359.84438pt>
 File: bipartite.png Graphic file (type png)
  <use bipartite.png>
 Underfull \vbox (badness 10000) has occurred while \output is active []
@@ -803,95 +803,139 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [25 <C:/Users/Kadir/Desktop/Formation Control/formation_control/latex/bipartit
-e.png (PNG copy)>] [26] [27] <Clusters_Ranks_1.jpg, id=359, 1189.44376pt x 579.
+e.png (PNG copy)>] [26] [27] <Clusters_Ranks_1.jpg, id=375, 1189.44376pt x 579.
 16376pt>
 File: Clusters_Ranks_1.jpg Graphic file (type jpg)
 
-<use Clusters_Ranks_1.jpg>
-<Rank_vs_Error.jpg, id=360, 1189.44376pt x 579.16376pt>
+<use Clusters_Ranks_1.jpg> [28 <C:/Users/Kadir/Desktop/Formation Control/format
+ion_control/latex/Clusters_Ranks_1.jpg>]
+<Rank_vs_Error.jpg, id=381, 1189.44376pt x 579.16376pt>
 File: Rank_vs_Error.jpg Graphic file (type jpg)
 
 <use Rank_vs_Error.jpg>
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [28 <C:/Users/Kadir/Desktop/Formation Control/formation_control/latex/Clusters
-_Ranks_1.jpg>] <Error-0,5Prop-3Update.jpg, id=366, 1189.44376pt x 387.4475pt>
+<Error-0,5Prop-3Update.jpg, id=382, 1189.44376pt x 387.4475pt>
 File: Error-0,5Prop-3Update.jpg Graphic file (type jpg)
 
 <use Error-0,5Prop-3Update.jpg>
-<Error-0,5Prop-5Update.jpg, id=367, 1189.44376pt x 387.4475pt>
-File: Error-0,5Prop-5Update.jpg Graphic file (type jpg)
-
-<use Error-0,5Prop-5Update.jpg>
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [29 <C:/Users/Kadir/Desktop/Formation Control/formation_control/latex/Rank_vs_
-Error.jpg> <C:/Users/Kadir/Desktop/Formation Control/formation_control/latex/Er
-ror-0,5Prop-3Update.jpg>] <Error-0,5Prop-8Update.jpg, id=374, 1189.44376pt x 38
-7.4475pt>
+Error.jpg>] <Error-0,5Prop-5Update.jpg, id=388, 1189.44376pt x 387.4475pt>
+File: Error-0,5Prop-5Update.jpg Graphic file (type jpg)
+
+<use Error-0,5Prop-5Update.jpg>
+<Error-0,5Prop-8Update.jpg, id=389, 1189.44376pt x 387.4475pt>
 File: Error-0,5Prop-8Update.jpg Graphic file (type jpg)
 
-<use Error-0,5Prop-8Update.jpg>
-<Pozisyon-1_Hatali.jpeg, id=375, 1534.73375pt x 846.16125pt>
+<use Error-0,5Prop-8Update.jpg> [30 <C:/Users/Kadir/Desktop/Formation Control/f
+ormation_control/latex/Error-0,5Prop-3Update.jpg> <C:/Users/Kadir/Desktop/Forma
+tion Control/formation_control/latex/Error-0,5Prop-5Update.jpg> <C:/Users/Kadir
+/Desktop/Formation Control/formation_control/latex/Error-0,5Prop-8Update.jpg>]
+<Pozisyon-1_Hatali.jpeg, id=397, 1534.73375pt x 846.16125pt>
 File: Pozisyon-1_Hatali.jpeg Graphic file (type jpg)
 
 <use Pozisyon-1_Hatali.jpeg>
-Underfull \vbox (badness 4995) has occurred while \output is active []
-
- [30 <C:/Users/Kadir/Desktop/Formation Control/formation_control/latex/Error-0,
-5Prop-5Update.jpg> <C:/Users/Kadir/Desktop/Formation Control/formation_control/
-latex/Error-0,5Prop-8Update.jpg>]
-<Pozisyon-1-Duzeltilmis.jpeg, id=382, 1587.9325pt x 869.2475pt>
+<Pozisyon-1-Duzeltilmis.jpeg, id=398, 1587.9325pt x 869.2475pt>
 File: Pozisyon-1-Duzeltilmis.jpeg Graphic file (type jpg)
 
-<use Pozisyon-1-Duzeltilmis.jpeg> [31 <C:/Users/Kadir/Desktop/Formation Control
-/formation_control/latex/Pozisyon-1_Hatali.jpeg> <C:/Users/Kadir/Desktop/Format
-ion Control/formation_control/latex/Pozisyon-1-Duzeltilmis.jpeg>]
-<Lost-2-2.jpeg, id=390, 1619.04875pt x 877.2775pt>
-File: Lost-2-2.jpeg Graphic file (type jpg)
- <use Lost-2-2.jpeg>
-<Lost-2-3.jpeg, id=391, 1604.99625pt x 879.285pt>
-File: Lost-2-3.jpeg Graphic file (type jpg)
- <use Lost-2-3.jpeg>
+<use Pozisyon-1-Duzeltilmis.jpeg>
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [32 <C:/Users/Kadir/Desktop/Formation Control/formation_control/latex/Lost-2-2
-.jpeg>]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 1451.
+ [31 <C:/Users/Kadir/Desktop/Formation Control/formation_control/latex/Pozisyon
+-1_Hatali.jpeg>] <Lost-2-2.jpeg, id=405, 1619.04875pt x 877.2775pt>
+File: Lost-2-2.jpeg Graphic file (type jpg)
+ <use Lost-2-2.jpeg>
+Underfull \vbox (badness 10000) has occurred while \output is active []
 
-[33 <C:/Users/Kadir/Desktop/Formation Control/formation_control/latex/Lost-2-3.
-jpeg>]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 1451.
+ [32 <C:/Users/Kadir/Desktop/Formation Control/formation_control/latex/Pozisyon
+-1-Duzeltilmis.jpeg>] <Lost-2-3.jpeg, id=411, 1604.99625pt x 879.285pt>
+File: Lost-2-3.jpeg Graphic file (type jpg)
+
+<use Lost-2-3.jpeg>
+Underfull \vbox (badness 3792) has occurred while \output is active []
+
+ [33 <C:/Users/Kadir/Desktop/Formation Control/formation_control/latex/Lost-2-2
+.jpeg> <C:/Users/Kadir/Desktop/Formation Control/formation_control/latex/Lost-2
+-3.jpeg>]
+<Artificial_Forces_Mesh_1.png, id=418, 592.46344pt x 215.30438pt>
+File: Artificial_Forces_Mesh_1.png Graphic file (type png)
+
+<use Artificial_Forces_Mesh_1.png>
+<Artificial_Forces_Mesh_2.png, id=420, 679.03688pt x 192.72pt>
+File: Artificial_Forces_Mesh_2.png Graphic file (type png)
+
+<use Artificial_Forces_Mesh_2.png>
+<Bubble_Packing_Mesh_1.png, id=421, 679.03688pt x 192.72pt>
+File: Bubble_Packing_Mesh_1.png Graphic file (type png)
+
+<use Bubble_Packing_Mesh_1.png>
+<Bubble_Packing_Mesh_2.png, id=422, 679.03688pt x 192.72pt>
+File: Bubble_Packing_Mesh_2.png Graphic file (type png)
+
+<use Bubble_Packing_Mesh_2.png>
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [34 <C:/Users/Kadir/Desktop/Formation Control/formation_control/latex/Artifici
+al_Forces_Mesh_1.png> <C:/Users/Kadir/Desktop/Formation Control/formation_contr
+ol/latex/Artificial_Forces_Mesh_2.png>]
+<Randomized_Fractals_Mesh_1.png, id=431, 679.03688pt x 192.72pt>
+File: Randomized_Fractals_Mesh_1.png Graphic file (type png)
+
+<use Randomized_Fractals_Mesh_1.png>
+<Randomized_Fractals_Mesh_2.png, id=432, 679.03688pt x 192.72pt>
+File: Randomized_Fractals_Mesh_2.png Graphic file (type png)
+
+<use Randomized_Fractals_Mesh_2.png>
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [35 <C:/Users/Kadir/Desktop/Formation Control/formation_control/latex/Bubble_P
+acking_Mesh_1.png> <C:/Users/Kadir/Desktop/Formation Control/formation_control/
+latex/Bubble_Packing_Mesh_2.png> <C:/Users/Kadir/Desktop/Formation Control/form
+ation_control/latex/Randomized_Fractals_Mesh_1.png>]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 1492.
+ [36 <C:/Users/Kadir/Desktop/Formation Control/formation_control/latex/Randomiz
+ed_Fractals_Mesh_2.png>]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 1492.
 
 ("C:\Users\Kadir\Desktop\Formation Control\formation_control\latex\Bitirme.aux"
 )
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 1451.
-Package rerunfilecheck Info: File `Bitirme.out' has not changed.
-(rerunfilecheck)             Checksum: F1996BE25FE88149F80DCB8106360F5E;1993.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 1492.
+
+
+Package rerunfilecheck Warning: File `Bitirme.out' has changed.
+(rerunfilecheck)                Rerun to get outlines right
+(rerunfilecheck)                or use package `bookmark'.
+
+Package rerunfilecheck Info: Checksums for `Bitirme.out':
+(rerunfilecheck)             Before: D9B8D7A46AD98B9D5F506DCD1DD47176;2291
+(rerunfilecheck)             After:  CE01C01B52B235A736E0364BF45EA65D;2216.
  ) 
 Here is how much of TeX's memory you used:
- 13608 strings out of 494019
- 204591 string characters out of 3143882
+ 13681 strings out of 494019
+ 206114 string characters out of 3143882
  451849 words of memory out of 3000000
- 16126 multiletter control sequences out of 15000+200000
- 77340 words of font info for 320 fonts, out of 3000000 for 9000
+ 16166 multiletter control sequences out of 15000+200000
+ 81664 words of font info for 336 fonts, out of 3000000 for 9000
  714 hyphenation exceptions out of 8191
  53i,15n,92p,1839b,431s stack positions out of 5000i,500n,10000p,200000b,50000s
-{C:/Program Files (x86)/MiKTeX 2.9/fonts/enc/dvips/fontname/8r.enc}<C:/Progra
-m Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Program 
-Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Program Fi
-les (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Program Files
- (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Program Files (
-x86)/MiKTeX 2.9/fonts/type1/public/mathpazo/fplmbb.pfb><C:/Program Files (x86)/
-MiKTeX 2.9/fonts/type1/public/mathpazo/fplmr.pfb><C:/Program Files (x86)/MiKTeX
- 2.9/fonts/type1/public/mathpazo/fplmri.pfb><C:/Program Files (x86)/MiKTeX 2.9/
-fonts/type1/public/fpl/fplrc8a.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/typ
-e1/urw/palatino/uplb8a.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/urw/p
-alatino/uplr8a.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/urw/palatino/
-uplri8a.pfb>
-Output written on Bitirme.pdf (33 pages, 1050414 bytes).
+pdfTeX warning (dest): name{subsection.5.4} has been referenced but does not 
+exist, replaced by a fixed one
+
+{C:/Program Files (x86)/MiKTeX 2.9/fonts/enc/dvips/fontname/8r.enc}<C:/Program 
+Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Program Fi
+les (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Program File
+s (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Program Files (
+x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Program Files (x8
+6)/MiKTeX 2.9/fonts/type1/public/mathpazo/fplmbb.pfb><C:/Program Files (x86)/Mi
+KTeX 2.9/fonts/type1/public/mathpazo/fplmr.pfb><C:/Program Files (x86)/MiKTeX 2
+.9/fonts/type1/public/mathpazo/fplmri.pfb><C:/Program Files (x86)/MiKTeX 2.9/fo
+nts/type1/public/fpl/fplrc8a.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1
+/urw/palatino/uplb8a.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/urw/pal
+atino/uplr8a.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/urw/palatino/up
+lri8a.pfb>
+Output written on Bitirme.pdf (36 pages, 1159752 bytes).
 PDF statistics:
- 485 PDF objects out of 1000 (max. 8388607)
- 198 named destinations out of 1000 (max. 500000)
- 54541 words of extra memory for PDF output out of 61914 (max. 10000000)
+ 535 PDF objects out of 1000 (max. 8388607)
+ 211 named destinations out of 1000 (max. 500000)
+ 60235 words of extra memory for PDF output out of 61914 (max. 10000000)
 
