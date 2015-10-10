@@ -1681,6 +1681,214 @@ A simulation with multiple formation shapes sequentially is illustrated in Figur
 			\end{center}
 		
 		
+		\subsection{HARDWARE IMPLEMENTATION}
+		
+   A hardware demonstration is held with 5 mobile robots with different sizes, to achieve a proof of concept related with the topics searched in this thesis work. The agents are designed as mobile robots with three omni-wheels which allows them to navigate in the field in every direction without the need for changing their attitudes (i.e. headings) .  The schematic environment of this implementation is illustrated in Figure -xx
+   
+   Hardware Implementation semasi sunumdan buraya eklenecek.
+   
+Each agent and the mission computer has a radio link to create a mesh network in which every agent and the mission computer can transfer messages between each other directly or with the help of their neighbors. Also they can broadcast messages to the rest of the nodes in the network.  On the other hand each agent has their individual CPU to execute the goal state decision process and to control the actuators to achieve the desired goal states. These processors also executes the control system which is descired in Section -xx and they manage the messaging by implementing the related protocols predetermined.  This architecture supports the idea of partially decentralized formation control in which each agent is responsible to take decisions and reach to a global consensus with the rest of the swarm on the potential goal states.  These potential goal states are determined by the mission computer which takes the desired formation shape from the operator and executes shape partitioning algorithms. The data of the potential goal states is broadcasted to all of the agents in the environment with the help of mesh network. 
+
+Since the environment is an indoor area, it is impossible to use a GNSS system to provide position and velocity measurements to the agents. To emulate this external measurements a visual feedback system is used with the help of a E/O camera and image processing algorithms.  The image processing algorithms used in this work depends on the color classfication of different cover planes placed on the top of the mobile robots. These covers are illustrated in Figure -xx
+
+
+		
+			\begin{figure}[H]
+				\caption{Covers for Different Types of Agents}
+				\centerline{\includegraphics[scale = 0.10]{Kapaklar}}
+			\end{figure} 
+		
+		
+		Covers have different sizes which represents the volumes of the agents in 2D environment. Each cover have two different size of circles with the same color. The colors of the circles are used to classify the agent ids and the positions of the circles are used to determine both position and attitude (i.e. heading) angles of the mobile robots in the environment. The orientation data of the agent in the environment is used in the command mixing algorithms of omni - wheels which will be described in details. The video of the environment is transmitted to the mission computer in nearly real time. Mission computer executes the image processing algorithms which filters the desired colors and detects the positions of the colored circles and broadcasts the position and orientation datas of the agents. A sample output of the image processing algorithm is illustrated in Figure-xx. 
+		
+		
+		\begin{figure}[H]
+			\caption{Sample Output of the Image Processing Algorithm}
+			\centerline{\includegraphics[scale = 0.50]{Image_Processing}}
+		\end{figure} 
+		
+		The orientation of an agent is determined with the clockwise bearing angle of the vector from the center of the large circle to the center of the small circle. Figure-xx illustrates this calculation.
+		
+				\begin{figure}[H]
+					\caption{Orientation of an Agent in the Environment}
+					\centerline{\includegraphics[scale = 0.20]{Bearing_Angle}}
+				\end{figure} 
+		
+		Each agent have their individual processor unit and radio link on their boards. A block diagram of an individual agent is illustrated in Figure -xx 
+		
+		Sunumdan Single agent sekli konacak
+		
+		Microchip's Pic16f690 Microcontroller is responsible of controlling the mobile robot and data communication with the environment. This microcontroller runs the control algorithms which is described in Section-xx and drives the 3 step motor control units, ULN2003APG, via GPIO peripherals. The instant velocity setpoints for the stepper motors  are determined with the command mixture algorihtm illustrated in Figure -xx.
+		
+		Sunumdan command mixture sekli eklenecek
+		
+		The desired velocity vector for the agent determined by the control algorithms is  distributed to the stepper motors in accordance with the orientation of the agent . Let $\norm{Vel}$ be the amplitude of the desired velocity and $\alpha$ is the angle representing the desired direction of the movement with respect to mobile robot's body frame.  The velocities for the stepper motors is determined with following equations,
+		
+		\begin{align*}
+		& V_A = \norm{Vel} cos(150+\alpha) \\
+		& V_B = \norm{Vel} cos(30 ' +\alpha) \\
+		& V_C = \norm{Vel} cos(270+\alpha) 
+		\end{align*}  
+	where $V_A, V_B, V_C$ represents the desired velocities of  stepper motor A,B and C respectively.
+		
+		
+		Microcontroller is also drives the radio link via UART peripheral and manages the communication of the agent with the environment. All of the units on the board are supplied with a 5VDC regulator, 7805. The schematic of the circuit which controls the agent is illustrated in Figure-xx.
+		
+					\begin{figure}[H]
+						\caption{Schematic of the Circuit on the Board}
+						\centerline{\includegraphics[scale = 0.40]{sematik}}
+					\end{figure} 
+
+	\begin{figure}[H]
+		\caption{3D Visualization of the Layout}
+		\centerline{\includegraphics[scale = 0.60]{sematik-layout}}
+	\end{figure} 
+Figure-xx and Figure-xx describes the hardware parts used on a mobile robot.
+		
+		Sunumdan Hardware-1 ve Hardware-2 sekilleri konacak
+		
+		\subsection{Performance Analysis}
+		The system is tested with several formation shapes and results are analyzed with total displacements of the agents and the settling time metrics. Sample formation shapes are covered  and the algorithm proposed for formation control is tested in real time successfully.  Traces of the agents are plotted with the continuous blue lines from their initial positions to the goal states in the following figures. The desired formation shape is plotted with black circles. 
+		
+		
+			\begin{figure}[H]
+				\caption{Formation Shape 1- Matlab Environment}
+				\centerline{\includegraphics[scale = 0.45]{2_hardware}}
+			\end{figure} 
+			
+					\begin{figure}[H]
+						\caption{Formation Shape 1- Test Environment}
+						\centerline{\includegraphics[scale = 0.35]{2_real_hardware}}
+					\end{figure} 
+					
+						 \begin{center}
+						 	\captionof{table}{Performance Metrics for Shape - 1} \label{tab:title} 
+						 	\begin{tabular}{||c| c |c |c ||}
+						 		
+						 		\hline
+						 		\textbf{Total Displacements[m]}  & \textbf{Settling Time[sec]}\\ 
+						 		\hline
+						 		1.75 & 23 \\
+						 		\hline
+						 	\end{tabular}
+						 \end{center}
+		
+					\begin{figure}[H]
+						\caption{Formation Shape 2- Matlab Environment}
+						\centerline{\includegraphics[scale = 0.45]{4_hardware}}
+					\end{figure} 
+					
+					\begin{figure}[H]
+						\caption{Formation Shape 2- Test Environment}
+						\centerline{\includegraphics[scale = 0.35]{4_real_hardware}}
+					\end{figure} 
+					
+					\begin{center}
+						\captionof{table}{Performance Metrics for Shape - 2} \label{tab:title} 
+						\begin{tabular}{||c| c |c |c ||}
+							
+							\hline
+							\textbf{Total Displacements[m]}  & \textbf{Settling Time[sec]}\\ 
+							\hline
+							1.63 & 19 \\
+							\hline
+						\end{tabular}
+					\end{center}
+		
+		
+					\begin{figure}[H]
+						\caption{Formation Shape 3- Matlab Environment}
+						\centerline{\includegraphics[scale = 0.45]{5_hardware}}
+					\end{figure} 
+					
+					\begin{figure}[H]
+						\caption{Formation Shape 3- Test Environment}
+						\centerline{\includegraphics[scale = 0.35]{5_real_hardware}}
+					\end{figure} 
+					
+					\begin{center}
+						\captionof{table}{Performance Metrics for Shape - 3} \label{tab:title} 
+						\begin{tabular}{||c| c |c |c ||}
+							
+							\hline
+							\textbf{Total Displacements[m]}  & \textbf{Settling Time[sec]}\\ 
+							\hline
+							1.95 & 26 \\
+							\hline
+						\end{tabular}
+					\end{center}
+		
+		
+					\begin{figure}[H]
+						\caption{Formation Shape 4- Matlab Environment}
+						\centerline{\includegraphics[scale = 0.45]{6_hardware}}
+					\end{figure} 
+					
+					\begin{figure}[H]
+						\caption{Formation Shape 4- Test Environment}
+						\centerline{\includegraphics[scale = 0.35]{6_real_hardware}}
+					\end{figure} 
+					
+					\begin{center}
+						\captionof{table}{Performance Metrics for Shape - 4} \label{tab:title} 
+						\begin{tabular}{||c| c |c |c ||}
+							
+							\hline
+							\textbf{Total Displacements[m]}  & \textbf{Settling Time[sec]}\\ 
+							\hline
+							2.16 & 29 \\
+							\hline
+						\end{tabular}
+					\end{center}
+		
+		
+		
+					\begin{figure}[H]
+						\caption{Formation Shape 5- Matlab Environment}
+						\centerline{\includegraphics[scale = 0.45]{9_hardware}}
+					\end{figure} 
+					
+					\begin{figure}[H]
+						\caption{Formation Shape 5- Test Environment}
+						\centerline{\includegraphics[scale = 0.35]{9_real_hardware}}
+					\end{figure} 
+					
+					\begin{center}
+						\captionof{table}{Performance Metrics for Shape - 5} \label{tab:title} 
+						\begin{tabular}{||c| c |c |c ||}
+							
+							\hline
+							\textbf{Total Displacements[m]}  & \textbf{Settling Time[sec]}\\ 
+							\hline
+							1.80 & 25 \\
+							\hline
+						\end{tabular}
+					\end{center}
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
 		
 		
 		
