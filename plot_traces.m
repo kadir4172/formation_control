@@ -28,22 +28,22 @@ clear formation_y
 load formation1
 hold on
 plot(formation_x , formation_y , 'b','LineWidth',2);
-
-clear formation_x
-clear formation_y
-load formation4
-hold on
-plot(formation_x , formation_y , 'm','LineWidth',2);
-
-clear formation_x
-clear formation_y
-load formation3
-hold on
-plot(formation_x , formation_y , 'k','LineWidth',2);
-
-clear formation_x
-clear formation_y
-load formation5
-hold on
-plot(formation_x , formation_y , 'r','LineWidth',2);
-calculate_energy_time_consumption
+% 
+% clear formation_x
+% clear formation_y
+% load formation4
+% hold on
+% plot(formation_x , formation_y , 'm','LineWidth',2);
+% 
+% clear formation_x
+% clear formation_y
+% load formation3
+% hold on
+% plot(formation_x , formation_y , 'k','LineWidth',2);
+% 
+% clear formation_x
+% clear formation_y
+% load formation5
+% hold on
+% plot(formation_x , formation_y , 'r','LineWidth',2);
+% calculate_energy_time_consumption

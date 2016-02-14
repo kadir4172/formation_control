@@ -152,5 +152,6 @@ assignin('base', 'color', color);
 refreshdata
 
 skip_first_poll = 0;
+propogate_dynamic_formation;
 end
 

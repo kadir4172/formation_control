@@ -1,6 +1,6 @@
-clc
-clear all
-close all
+%clc
+%clear all
+%close all
 
 animation_real_time = 20;
 animation_time_step = 0.5;
@@ -33,13 +33,13 @@ for i = 1 : 1 : size(formation,2) - 1
       counter = counter + 1;
     end
 end
-%%
-
-
-
-figure
-title('real time animation')
-for l = 1 : 1 : size(formation_animation,2)
-  plot(formation_animation{l}.formation_x, formation_animation{l}.formation_y)
-  pause(0.5)
-end
+% %%
+% 
+% 
+% 
+% figure
+% title('real time animation')
+% for l = 1 : 1 : size(formation_animation,2)
+%   plot(formation_animation{l}.formation_x, formation_animation{l}.formation_y)
+%   pause(0.5)
+% end

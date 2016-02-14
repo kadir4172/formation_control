@@ -56,6 +56,7 @@ Xdotdot  = evalin('base', 'Xdotdot');
 Ydotdot  = evalin('base', 'Ydotdot');
 P = evalin('base','P');
 use_traces = evalin('base','use_traces');
+agents_zone_matlab = evalin('base','agents_zone_matlab');
 PA_index = evalin('base','PA_index');
 use_real_positions = evalin('base','use_real_positions');
 
@@ -130,7 +131,12 @@ else
   assignin('base', 'Ydot', Ydot_real);
 end    
 assignin('base', 'P', P);
-
+refreshdata
+drawnow
+%hold all
+%l = scatter(X_real, Y_real, agents_zone_matlab,'r');
+%hold off
+%drawnow
   %for i = 1 : 1 :n
     %set(g(i),'Position',[X(i),Y(i),0]);
   %end
@@ -172,7 +178,7 @@ calculate_forces_flag = evalin('base', 'calculate_forces_flag');
     set_friction_forces    %agentlar icin surtunme kuvvetlerini hesapla
     set_obstacle_forces    %agentlar icin obstacle lar tarafindan uretilen sanal kuvvetleri hesapla
     set_total_force        %tum force bilesenlerini toplayalim
-    set_goal_state_forces
+    %set_goal_state_forces
     if(use_traces)
       store_agent_positions;
     end
@@ -182,5 +188,6 @@ calculate_forces_flag = evalin('base', 'calculate_forces_flag');
    
     udp_send
   end
+ 
 end
 

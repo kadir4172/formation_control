@@ -16,7 +16,7 @@ est_propogate_period = 0.5;
 est_update_period    = 5;
 
 %n tane agent i ve state lerini generate edelim
-n = 5; % n bes kalsin
+n = 5 % n bes kalsin
 [X, Y]  = generate_MAS(n);
 X_real = X;
 Y_real = Y;
@@ -33,7 +33,7 @@ dt = 0;
 use_real_positions = 1;
 use_traces         = 1;     % store the trajectories of agents
 
-
+FORMATIONS = [];
 
 use_fractals          = 0;     % offline formation with randomized fractals
 use_artificial_forces = 0;     % if not, decrease intermember forces 
@@ -132,7 +132,9 @@ set_obstacles;
 
 %formation bilgisini bir kez alalim TODO:daha sonra surekli dinamik
 %yapilmali
-pen;
+%pen;
+create_dynamic_formation;
+dynamic_formation_counter = 0;
 
 %P matrix for state estimation
 P = zeros(2,2,n);
@@ -239,7 +241,7 @@ update_states_loop;
 %scatter plot ile zone lar renk ve rank lar boyut olacak sekilde cizelim
 scale = route_table(:,2).^3 * 5;
 color = route_table(:,3);
-figure
+%figure
 %h = scatter(X, Y,scale, color, 'fill');
 %h = scatter(X, Y);
 
