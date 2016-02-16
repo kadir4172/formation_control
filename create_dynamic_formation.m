@@ -5,21 +5,21 @@
 animation_real_time = 20;
 animation_time_step = 0.5;
 
-load formation1
+load formation8
 formation{1}.formation_x = formation_x;
 formation{1}.formation_y = formation_y;
 
 clear formation_x
 clear formation_y
 
-load formation_mutant11
+load formation_mutant81
 formation{2}.formation_x = formation_x;
 formation{2}.formation_y = formation_y;
 
 clear formation_x
 clear formation_y
 
-load formation_mutant12
+load formation_mutant82
 formation{3}.formation_x = formation_x;
 formation{3}.formation_y = formation_y;
 

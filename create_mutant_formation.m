@@ -6,7 +6,7 @@ clc
 animation_real_time = 20;
 animation_time_step = 0.5;
 %load formation which you want to create a mutant of
-load formation_mutant11
+load formation_mutant81
 
 formation_start_x = formation_x;
 formation_start_y = formation_y;
