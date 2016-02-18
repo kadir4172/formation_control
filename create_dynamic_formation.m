@@ -1,4 +1,4 @@
-%clc
+i%clc
 %clear all
 %close all
 

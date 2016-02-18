@@ -147,11 +147,11 @@ inside_outside_array = zeros(n,1);
 
 if(~use_artificial_forces)
 ka = 500;
-kr = 0;
+kr = 100;
 kf = 0;
 km = 750;
 ko = 5500;
-ka2 = 9000;
+ka2 = 9000*2;
 kgoal1 = 100;
 kgoal2 = 200;
 kgoalint = 0;
@@ -159,11 +159,11 @@ max_force = 1000;
 max_goal_state_force = 4;
 else
 ka = 25000;
-kr = 150;
+kr = 250;
 kf = 0;
 km = 1500;
 ko = 5500;
-ka2 = 190000;
+ka2 = 190000*2;
 kgoal1 = 0;
 kgoal2 =  0;
 kgoalint = 0;
