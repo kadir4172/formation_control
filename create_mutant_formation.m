@@ -6,14 +6,14 @@ clc
 animation_real_time = 20;
 animation_time_step = 0.5;
 %load formation which you want to create a mutant of
-load formation_mutant81
+load formation_mutant101
 
 formation_start_x = formation_x;
 formation_start_y = formation_y;
 clear formation_x;
 clear formation_y;
 m = figure
-
+axis([-20 20 -20 20])
 dot_count = length(formation_start_x)
 for i = 1 : 1 : length(formation_start_x)
   text(formation_start_x(i),formation_start_y(i),num2str(i))

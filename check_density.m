@@ -22,14 +22,14 @@ density = total / formation_area;
 %km = 6000;                     % give default value first
 if(density > desired_density)  % if shape is full then increase km for better formation
   %km = 750;
-  kr = 1;
+  %kr = 1;
 else
   if((agents_inside / n) > 0.9) % if shape is not full but there is no agents left, increase km harder for better formation
     %km = 750;
-    kr = 1;
+    %kr = 1;
   else
     %km = 750;
-    kr = 1;
+    %kr = 1;
   end
 end
 

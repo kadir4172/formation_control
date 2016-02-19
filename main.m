@@ -146,24 +146,24 @@ force_matrix = zeros(2,7,n);
 inside_outside_array = zeros(n,1);
 
 if(~use_artificial_forces)
-ka = 500;
-kr = 100;
+ka = 500*4;
+kr = 30;
 kf = 0;
-km = 750;
-ko = 5500;
-ka2 = 9000*2;
+km = 1400;
+ko = 10;
+ka2 = 9000*4;
 kgoal1 = 100;
 kgoal2 = 200;
 kgoalint = 0;
 max_force = 1000;
 max_goal_state_force = 4;
 else
-ka = 25000;
-kr = 250;
+ka = 25000*2;
+kr = 30;
 kf = 0;
-km = 1500;
-ko = 5500;
-ka2 = 190000*2;
+km = 1400;
+ko = 10;
+ka2 = 190000*4;
 kgoal1 = 0;
 kgoal2 =  0;
 kgoalint = 0;

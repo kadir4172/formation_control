@@ -13,7 +13,7 @@
   
   force_matrix = evalin('base', 'force_matrix');
   
-  kr = evalin('base', 'kr');
+  kr = evalin('base', 'kr')
  
   n = evalin('base', 'n');
   agents_radius = evalin('base', 'agents_radius');
