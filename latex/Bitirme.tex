@@ -197,39 +197,375 @@ These micro robots have a great reusability for different types of formation con
 	\end{figure} 
 
 
+\subsection{Objectives}
+
+
+In this thesis work, our aim is to provide different approaches $\&$ solutions to the requirements in formation control problem.  There are mainly different types of  infrastructures while providing a global solution to the formation control problem like the heterogeneity vs. homogeneity of the agents, communication structures, centralized vs. decentralized structures, swarm control strategies like behavior based and leader-following approaches or virtual structure based approaches. 
+
+In addition to choice of the formation control infrastructures, capabilities of the individual agents provide additional requirements and constraints while designing a formation control system. One of the most important characteristic of an agent in the swarm is its simplicity and limited sensor $\&$ communication capability. This approach results from the idea of achieving collective tasks with lots of simple individuals  and it is based on biological inspirations in nature like colony of ants etc.
+
+In this project the defined requirements and objectives are given as follows;
+
+\subsubsection{Heterogenous Robots with Different Dynamics}
+
+
+Agents have different dynamics from each other like different friction surfaces, geometrical structures and functionalities. They have different volumes and masses(not mass point particles) and they may collide with the other ones and the obstacles in the environment. 
+
+
+	\begin{figure}[H]
+		\caption{Heterogenous Agents with Different Physical Properties and Functionalities}
+		\centering
+		\includegraphics[scale = 1]{heterogenous}
+	\end{figure} 
+	
+	
+
+\subsubsection{Communication Infrastructure}
+
+Agents in the swarm have limited communication capabilities and can only negotiate with its local neighbors in a narrow line of sight range due to power consumption issues and their weak radio links.
+
+\begin{figure}[H]
+	\caption{Radio Links on Agents have a narorw LOS range}
+	\centering
+	\includegraphics[scale = 1]{narrow_los}
+\end{figure} 
+
+
+
+a)Communication Topology
+
+
+Communication topology is a wireless mesh network in which each agent relays data for the network. The network is fully connected and has routing technique where the data is propogated along a route by transporting over the nodes(member agents of the swarm) . 
+
+\begin{figure}[H]
+	\caption{Mesh Network Between Agents}
+	\centering
+	\includegraphics[scale = 1]{mesh}
+\end{figure} 
+
+b)Communication Bandwith
+
+Bandwith of the communication between agents is limited and nodes can only transport most critical data like heartbeats, agent IDs, type and position etc. 
+
+
+
+\subsubsection{ Decentralized Decision Making Process}
+
+Centralized formation controller systems implement a single controller  server/root node
+to process all the data needed to achieve the desired control objectives. This type of systems achieve superior performance and optimal decisions  but they require high computational power, high communication bandwiths and are not robust due to dependence on a single controller[12]. Decentralized formation controller structures have agents which are completely autonomous and responsible their own individual decisions. In this work, a hybrid centralized/decentralized controller architecture in which there is a central manager which partitions the desired formation shapes into goal states and there are independent agents who make their own choices on these goal states to reach as unaware of the other agents' choices. 
+
+
+\begin{figure}[H]
+	\caption{Agents make their own choices about target goal states}
+	\centering
+	\includegraphics[scale = 1]{decentralized}
+\end{figure} 
+
+
+\subsubsection{Complex Closed Contours}
+Formation shapes will be defined as closed curves with complex shapes and they cannot be identified analytically . On the other hand shapes will be changing dynamically during formation control. 
+
+\begin{figure}[H]
+	\caption{Complex and Dynamically Changing Formation Shapes}
+	\centering
+	\includegraphics[scale = 1]{complex}
+\end{figure} 
+
+
+
+\subsubsection{Simple Agents with Low Sensor Capabilities and Low Computing Powers}
+
+
+Agents in the swarm are assumed to have low sensor capabilities and weak computing power. This 
+condition must be taken into account during the control system design, since individuals do not have a high resolution and sensitive data about their state vectors, and they cannot run high level complex control algorithms.
+
+
+\subsection{Goals}
+
+Along with these requirements and problems, the specific goals of the thesis:
+
+1. Propogate the position and velocity states of the agents with inertial measurements.
+
+2. Update$\&$adjust the position data of the robots with the help of agents which have positioning sensors by local trilaterations.
+
+3. Update the route tables of the agents to forward data globally in the mesh network topology.
+
+4. Determine the goal states in the desired complex formation shape to cover by heterogenous agents with the help of a central server.
+
+5. Decide each agents' target goal state by local interactions between individuals to optimize the global utility of the swarm.
+
+
+\subsection{Methodology}
+
+During the first part of the project a local positioning system(LPS) is designed. In this system agents which does not have position sensors propogate their position and velocity states with their inertial measurements. Due to the bias and drift errors on this solution a position update$\&$adjust process is handled on 0.1Hz frequency with the help of position beacons which are agents with position sensors on board in the swarm.. During the update phase of the solution route tables for individual agents are determined with the help of Graph Theory based Destination-Sequenced Distance Vector Routing Protocol (DSDV) algorithms. This process provides the clusters around position beacons and provides rank information for the agents which are in same clusters. Position measurements are handled with local trilateration process in turn with the rank values for every agent around each clusters after the establishment of route tables. A Kalman estimator system is designed to fuse these propogation and update phases of the solution.
+
+Formation controller system is designed with two novel methods based on artificial potential force methods and advancing front local reconnection method. Desired complex formation shapes are partitioned into goal states according to the heterogenous agents in the swarm for both of these two methods. Decision process of the agents about their target goal states to optimize the overall utility of the swarm is implemented with the help of Visibility Graphs and Hungarian algorithms. Internal velocity controllers for individual agents to reach the desired target goal states by providing obstacle avoidance, are implemented with a full state feedback method by regulating the dynamical system with the gains optimized by Linear Quadratic Regulators (LQR).
+
+
+\subsection{Contribution of Thesis}
+
+The main contributions of thesis are:
+
+1. Design a local positioning system(LPS) based on local trilaterations to provide a high accuracy position data to the agents which do not have a specific position sensors on their boards.
+
+2. Implement a wireless mesh network between agents in the swarm and design a communication infrastructure and related routing algorithms to exchange the local data globally in the network
+
+3. Partition the complex formation shapes into goal states to cover the whole formation homogenously with the different types of heterogenous agents.
+
+4. Design and implement the rules$\&$algorithms for the decision process of the individual agents about the goal states to reach.
+
+5. Design a simulation environment to test the proposals and algorithms of this thesis work
+
+6. Design a simple demonstrative hardware application.
+
+
+\subsection{Outline of the Thesis}
+This thesis work is organized into 5 main sections .Chapter 1 introduces the main theme and the potential areas of the usage of formation control, while specifying our motivation and the requirements$\&$problems to meet$\&$solve related with the topic.
+
+Chapter 2 gives literature reviews about the related works and basic mathematical background on the methods used in this paper.
+
+Chapter 3 introduces the methods and solutions used in two different parts of the problem; local positioning system and formation conroller system. In this chapter, routing algorithms and mathematical aspects of the trilateration process is introduced. Methods$\&$algorithms used for formation control is discussed in details.
+
+Chapter 4 provides simulation analysis on the local positioning system and gives mutual evaluations of the performances of different methods used in formation control system.
+
+Chapter 5 provides the details of hardware implementations and the experimental results.
+
+Chapter 6 concludes the thesis and defines the future works related with the thesis.
+
+
+\section{Literature Survey}
+This chapter focuses on the related works on local positioning systems and formation control systems. 
+
+\subsection{Local Positioning Systems}
+
+Positioning systems fall in to two main branches, global positioning systems and local positioning systems. Global positioning systems(GPS) has become increasingly popular for a couple of last decades for tracking location. It is a precise system depends on satellite based positioning mainly developed for direction finding and navigation.  Some of the problems encountered with the usage of GPS systems: (1) the signal from the satellites cannot penetrate to the indoor space so it doesn't perform in such areas, (2) it looses its precision in rich scattering environments such as urban areas[19].  A local positioning system can provide a position information where GPS systems are unavaliable,with the usage of signaling beacons which are placed at the exacltly known locations.
 
 
 
 
+\begin{figure}[H]
+	\caption{Accuracy Statistics of Different Positioning Sources}
+	\centering
+	\includegraphics[scale = 1]{gps}
+\end{figure} 
+
+Figure xx represents an onverview of current positioning systems. Global positioning systems are widely used nowadays and they provide accuracies in the range of 3-30 meters, they can operate outdoor environments with the necessity of radio signals from satellites. Differential GPS systems decrease these accuracy range below 3 meters with the help of additional local static beacons. GSM based solutions have the worst accuracy performance, but they can perform in indoor environments partially.  Local positioning systems have the capability of working indoor environments and they have a wide accuray range changing with respect to the implemented topologies and methods. 
+
+Local positioning systems has different system topologies illustrated in the Table 1[20]. 
+
+
+
+	\begin{center}
+			\newcommand{\wrap}[1]{\parbox{.40\linewidth}{\vspace{1.5mm}#1\vspace{1mm}}}
+				\captionof{table}{Local Posititioning Systems with Different System Topologies} \label{tab:title} 
+		\begin{tabular}{ |c|c| } 
+			\hline
+			\wrap{Concept} &\wrap{Concept	Definition} \\
+			\hline
+			\wrap{Remote Positioning} &\wrap{Measurement from remote site to mobile device}\\
+			\hline
+			\wrap{Self Positioning}&\wrap{Measurement from mobile unit to usually fixed transponders(landmarks)} \\
+			\hline
+			\wrap{Indirect remote positioning}&\wrap{Self positioning system with data transfer of measuring result to remote site } \\
+		    \hline
+			\wrap{Indirect self positioning}&\wrap{Remote positioning system with data transfer of measuring result to mobile unit} \\			
+             \hline
+		\end{tabular}
+	\end{center}
+
+Two main topologies are self positioning and remote positioning systems[20].  In self positioning system a mobile device finds its own position with the help of a reference like a starting point or a beacon node with exactly known positions. On the other hand, in remote positioning systems a mobile node locates other objects positions with respect to its own position[19].   These two type of topologies can be converted to each other with the help of a communications structures integrated on the devices to share the result of position measurement and thus indirect remote positioning and indirect self positioning system topologies can be implemented. 
 
 
 
 
+\subsubsection{Measurement Principles}
+
+Angle of arrival (AOA), received signal strength(RSS) and propogation-time based systems are commonly used as three different measurement techniques used in local positioning systems. 
+
+\begin{figure}[H]
+	\caption{Different Measurement Principles}
+	\centering
+	\includegraphics[scale = 1]{measurement}
+\end{figure} 
+
+In Angle-of-arrival (AOA) systems use directional antennas to measure the bearing and the angle to the points located at known positions are measured. The position value of device can be calculated with the intersection of several measurement, but the accuarcy is limited by shadowing and multipath reflections of radio signals. 
+
+Received signal strength(RSS) systems calculate the distance value by taking the difference of the received signal power from the transmitted power. Some advanced propogation models are required to calculate the distance from the transmission loss in the air to eliminate the multipath fading and shadowing effects[21] . 
+
+Time based systems calculates the distance between measuring unit and signal transmitter with the help of propogation time like used in the global positioning systems generally. This process requires a perfect time synchronization between the mobile and stationary units[20].
+
+In this thesis work, we implement a self positioning system in which every agent localize itself with the help of position beacons in the swarm with exactly known positions. The distance from the agents to these beacons in the swarm are assumed to be calculated with the help of a range sensor like a ultrasonic or a lidar sensor. 
+
+
+\subsubsection{Trilateration Process}
+
+Trilateration process determine the three dimensional coordinates of unknown positions with the help of distance measurement to known position [22].  It is widely used in wireless sensor network topologies and local positioning systems.  In theory, it is needed to have at least four beacon nodes to calculte an unknown position in 3D, and at least three beacon nodes to calculate an unknown position in 2D environment. But these worst case numbers are generally not sufficient to estimate an unknown position with a good accuracy due to errors on range calculations and synchronization problems. Figure -xx demonstrates a simple trilateration procees in 2D environment with the help of  three position beacons. Suppose a mobile device which tries to estimate its position with the local positioning systems is at the red point in the figure. If it can measure its distance to the beacons named A,B and C with exactly known positions, it will be possible to estimate the unknown position of this mobile device with the same approach used in global positioning systems. 
+
+
+\begin{figure}[H]
+	\caption{Trilateration Process}
+	\centering
+	\includegraphics[scale = 1]{trilateration}
+\end{figure}
 
 
 
+\subsection{Formation Control Systems}
+
+Formation control approaches can be classified into three basic strategies as leader-following, virtual structure and behaviour based approaches[12].  In leader following strategy, some of the agents in the swarm are the leaders to manage the rest of the swarm to achieve a desired specific task and the rest of the agents act as followers. This approach reduces the formation control problem into tracking control problem of individuals to follow the leader from a desired distance and bearing angle, thus the stability and convergence analysis of the formation can be done with the usage of single tracking controllers of members. Kumar, Fierro .. at [18] proposed a control framework in which follower agents move along a trajectory afterwords the leader agent with a desired seperation lij(ifade syf2 de) and desired relative bearing angle (ifade).  Figure -xx represents a formation control with three agents where R3 is the leader and R1,R2 are the follower agents. 
+
+\begin{figure}[H]
+	\caption{Leader-Follower Systems}
+	\centering
+	\includegraphics[scale = 1]{leader}
+\end{figure}
+
+
+In this approach it is hard to apply to gather the agents in a certain shapes. Another drawback is that, determining the seperation and bearing angles for individual agents will be getting harder with the increasing number of agents in the swarm and this strategy is not fault tolerant to the absence of communication between agents.
+
+
+In virtual structure approach, the formation is composed with a virtual rigid body. Formation control is applied to whole virtual structure and then the individual agent control laws are determined with inverse dynamic solutions[12].  Lewis and Tan proposed a virtual structure based method for formation control in [23] with a bidirectional flow control where robots move to stay in the virtual structure when the swarm is following a trajectory and virtual structure move to fit robots' current positions to compensate the relative errors at the end of that maneuver. 
+
+\begin{figure}[H]
+	\caption{Rotational Maneuver of a Formation and Compensation of Virtual Structure}
+	\centering
+	\includegraphics[scale = 1]{virtual_structure}
+\end{figure}
+
+In virtual structure strategy it is east to achieve a coordinated behavior for the group to maintain the formation during a trajectory tracking or a maneuvering, but it is not a suitable strategy to apply a formation control to achieve a certain geometrical shape with the agents in the swarm. 
+
+
+Behavior based strategies model every agents behaviors to achieve specific tasks with swarm. These behaviours may be very simple like randomly walking and avoiding obstacle in the environment or they may be defined very complicated to achieve complex formation shapes with the entire swarm while optimizing the overall energy consumption depend on the implementation of the controller structures.  One of the main usage of this strategy is artificial potential field based implementations . Cheng and Nagpal have introduced a robust and self repairing formation control method for swarms in [24]. In this approach, individual control laws for the agents are composed with the artificial forces defined between the agents (to avoid collisions) and between the desired formation shape. This solution provides robustness to the agent losses in the swarm during formation control and the rest of the swarm has the ability to refiil their absence in real time without changing the dynamics and the parameters of the formation controller. One of the main disadvantage of the artificial potential based approaches is that , the control forces applied to individual agents are determined instantaneously in accordance with that agent's and the other agents' positions and they cannot guarantee to optimize the total distance travelled by the agents. In this strategy the solution may converge to the steady state very slow due to absence of generalized goal states for individual agents in the final state of formation. 
+
+\begin{figure}[H]
+	\caption{Formation Control with Artificial Forces}
+	\centering
+	\includegraphics[scale = 1]{potential}
+\end{figure}
+
+
+Another approach is to define mathematical constraints and objective functions to achieve a specific formation shape and controlling the swarm to follow a trajectory while keeping the formation.  Kumar and Belta presented an abstraction method of configuration space to a manifold defined as A  = G x S where G is a Lie group representing the position and the orientation of the swarm  and S represents the shape of the manifold.  They provide individual control laws which can be seperately handled to manipulate the lie group “G” to achieve formation tracking and orientation control and to manipulate the shape “S” to achieve different geometrical shapes. Cheah and Slotine proposed a similar method based on objective functions[8].  Common drawback for these researches, they can only implement a limited number of simple geometrical shapes because the desired formation shapes must be identified analyticall to compose the related objective functions or shape manifolds. 
 
 
 
+\begin{figure}[H]
+	\caption{Formation Control with Objective Functions}
+	\centering
+	\includegraphics[scale = 1]{manifold}
+\end{figure}
 
 
 
+\subsection{Partitioning Complex Geometrical Shapes}
+
+
+This process is used to determine the goal states of the agents in the formation to cover the desired complex geometrical shape. There are some different solutions in the literature including fractal filling of space algorithms, bubble$\&$circle packing algorithms and advancing front algorithms. 
+
+Fractals are self similar  patterns in all scales of themselves. They are defined with simple rules and they can cover any complex shape in the nature by progressing this simple rules iteratively. This approach is widely used in mesh generating algorithms and filling space problems.  Shier and Bourke [26] have introduced a randomized fractal filling of space algorithm. They proposed a fractal based method to cover a given geometrical shape with the desired shapes and they provide the proof of their algorithm is space-filling with the following statements. 
+
+	\begin{equation} % eq 1
+	A_i = {\frac{A}{{\zeta(c,N)(i+N)^c}}}
+	\end{equation}	
+	
+	where ${\zeta(c,N)}$ is the Hurwitz zeta function defined by 
+	\begin{equation}
+	\zeta(c,N) = \sum_{i=0}^{\infty}\left(\frac{1}{(i+N)^c}\right)
+	\end{equation}
+	This known to converge for $c>1$ and $N>0$. In view of equation 2 one can write
+	\begin{equation}
+	\sum_{i=0}^{\infty}A_i = \sum_{i = 0}^{\infty}\left(\frac{A}{\zeta(c,N)(i+N)^c}\right)
+	\end{equation}
+
+
+such that the sum of all areas $A_i$ is the total area $A$ to be filled, that is, if the algorithm does not halt then it is space-filling. 
+Some of the outputs of their algorithm is given at Figure -xx
 
 
 
+\begin{figure}[H]
+	\caption{Space Filling Examples with Randomized Fractals}
+	\centering
+	\includegraphics[scale = 1]{randomized1}
+\end{figure}
+
+
+Bubble$\&$Circle packing algorithms are widely used in mesh generation problems in finite element method. The main idea is that the close packong of bubbles mimics a pttern of Voroni tessellation. Corresponding to well shaped Delaunay triangles or tetrahedra which select the best topological connection for a set of nodes by avoiding small included angles[27].
+
+
+\begin{figure}[H]
+	\caption{Uniform and Non-Uniform Node Spacing}
+	\centering
+	\includegraphics[scale = 1]{nodespacing}
+\end{figure}
+
+Shimada and Gossard proposed a method based on interbubble forces to provide close packaging of bubbles in desired geometrical shape. This approach is very similar with the one used in formation control of swarms to achieve geometrical shapes. The related interbubble forces are described at Figure – xx.
+
+\begin{figure}[H]
+	\caption{Interbubble Forces}
+	\centering
+	\includegraphics[scale = 1]{interbubble}
+\end{figure}
+
+
+With the help of adaptive population control by removing the excess bubble which significantly overlap their neighbors, they provide an adaptive bubble packing algorithm for mesh generation. A result with a 2D shape is given at Figure -xx
+
+
+\begin{figure}[H]
+	\caption{Mesh Generation with Interbubble Forces}
+	\centering
+	\includegraphics[scale = 1]{interbubble2}
+\end{figure}
+
+This approach can easily be augmented for different types and number of shapes to partition a complex geometrical shape with regular sets. Basically the resultant solution will be similar to the one used in artificial potential field approach in formation control. 
+
+Advancing front methods are one of the alternatives used in mesh generation in literature.  In a two dimensional advancing front method, new triangles are added into the domain from the initial front boundary and the front is propogated iteratively between the meshed and the unmeshed region. The initial front is created by the desired outer boundary of the shape and the procedure continues until the given domain is fully meshed. 
+
+
+\begin{figure}[H]
+	\caption{Triangulation with Advancing Front Method}
+	\centering
+	\includegraphics[scale = 1]{advancing}
+\end{figure}
+
+
+\section{Methodology}
+
+In this thesis work, the problem of dynamical formation control of heterogenous mobile robots is reduced down to two subproblems as local positioning system design and formation control system design. Local positioning subsystem proposes  a  solution for the localization of the agents in the environment with the low sensor capabilities. This part of the solution provides a basis for the formation control problem with the true state vectors of agents composed with the translational positions and velocities. Formation control subsystem proposes a solution to achieve desired complex shapes with heterogenous agents in the swarm.  In this chapter, details of the solution for these subproblems are presented in details. 
+
+\begin{figure}[H]
+	\caption{Flowchart of the Provided Solution}
+	\centering
+	\includegraphics[scale = 0.65]{general_scheme}
+\end{figure}
+
+
+\subsection{Local Positioning System}
+
+Local positionin system is a subsystem to provide a complete solution to the localization of the agents in the environment. As discussed in Section-xx(Objectives) , agents are expected to have low sensor capabilities and only a limited number of them have external position measurement sensors on their boards. The rest of the swarm have to maintain their position$\&$velocity data with the help of their inertial measurements. Propogation of the states with this type of measurements are always inclined to drift problems due to the errors$\&$noise and bias problems of the sensors and the state vectors composed with the translational positions and velocities have to be corrected with an external measurement. A complete solution for this type of problem is proposed in Figure-xx. 
 
 
 
+\begin{figure}[H]
+	\caption{Local Positioning System}
+	\centering
+	\includegraphics[scale = 0.65]{lps}
+\end{figure}
+
+
+As illustrated in Figure-xx, agents are expected to propogate their states with the help of acceleration, gyroscope and magnetometer sensors. Since the trilateration and route table determination processes require iterative and time consuming algorithms, a localization timer with a suitable period is implemented to the solution. Agents will correct their state vectors with the localization period of 3 seconds by measuring their positions with trilateration process and execute the update procedure in their state estimator algorithms. 
 
 
 
+\subsubsection{Trilateration Process}
 
+Trilateration process helps the agents to localize themselves with the help of their local neighbors.  Trilateration calculations use distance measurements to the nodes with known positions, to determine the coordinates of unknown positions[22]. These measurements are assumed to be done with the help of low cost range sensors like ultrasonic sensors.  Solution of the unknown position with the help of these distance measurements can be reduced down to a $A\vec{x} = \vec{b}$ type equation with the help of mathematical manipulations. The agents which has position sensors on their boards are called position beacons. Figure-xx illustrates a sample environment which consist of $i$ beacons and an agent which tries to localize itself with the help of distance measurements $r_i$ and the position data $B_i$ of the beacon nodes.
+\begin{figure}[H]
+	\caption{Environment for Trilateration Process}
+	\centering
+	\includegraphics[scale = 0.65]{beacons}
+\end{figure}
 
-
-
-3.1.1Trilateration Process
-
-
+The distance function $\hat{r_i}$ can be written as follows;
 \begin{equation} % eq 2
 \hat{r_i} = \sqrt{(x-x_i)^2 + (y-y_i)^2+ (z-z_i)^2}    \hspace{0.3cm}   (i=1,2,...,n)
 \end{equation}
@@ -239,12 +575,11 @@ where $i$ denotes the beacon number and $n$ is the total number of beacons. We h
   (x-x_i)^2 + (y - y_i)^2 = {r_i}^2
 \end{equation}
 
-Lets assume $\theta = (x,y)$ is representing the coordinates of an agent which is trying to localize itself, and $B1 = (x_1,y_1) ; B2 = (x_2,y_2) ; B3 = (x_3,y_3) ; ...  ; B_i = (x_i,y_i)$ are the agents with exactly known positions. 
+Lets assume $\theta = (x,y)$ is representing the coordinates of an agent which is trying to localize itself, and $B_1 = (x_1,y_1) ; B_2 = (x_2,y_2) ; B_3 = (x_3,y_3) ; ...  ; B_i = (x_i,y_i)$ are the agents with exactly known positions. 
 
 
-FOTOGRAF KONACAK
 
-If any beacon is considered as the reference beacon and named with an index of $r$, the distance equations can be provided as following 
+If any of the beacons is considered as the reference beacon and named with an index of $r$, the distance equations can be provided as following 
 
 The distance between the target agent and any beacon $i$
 \begin{equation}
@@ -322,24 +657,23 @@ b_{n1}\\
 
 
 with the help of this mathematical manipulations, localization problem is reduced down to a $A\vec{x} = \vec{b}$ problem.
-There are some possible solutions to this type of equation regarding with the structure of matrix $A$ and vector $b$.
+There are some possible solutions to this type of equation regarding with the structure of matrix $A$ and vector $b$.\\
 
-SOLUTION TO Ax = b problem
 
+\underline {\textit{*Solution to $A\vec{x} = \vec{b}$ Problem}}\\
 In a localization problem handled in two dimensional world, the $A$ matrix has $(n-1)$ rows and $2$ columns, where $'n'$ is the number of neighbor beacons. It is obvious that there is no solution when the number of neighbors lower than $3$ since the $A$ matrix will have $1$ or smaller number of lines. When the number of neighbor beacons are equal or greater than $3$
 we have three different solution types up to the structure of the linearized equations. 
 
-1) Unique solution
-If A matrix has the dimensions of $2x2$ and the rank of A matrix $'rank(A)'$ is equal to $2$, then the solution of $\vec{x}$ is unique with
+\textit{1) Unique solution:}\\
+ If A matrix has the dimensions of $2x2$ and the rank of A matrix $'rank(A)'$ is equal to $2$, then the solution of $\vec{x}$ is unique with
 
 \begin{equation}
   \hat{x} = A^{-1}\vec{b}
 \end{equation}
-  where $\hat{x}$ is the unique solution. 
+  where $\hat{x}$ is the unique solution. \\
   
   
-  2) Minimum Norm solution with pseudo inverse
-  
+\textit{ 2) Minimum Norm solution with pseudo inverse:} \\  
   If $A$ matrix has the dimensions of $(n-1)x2$ where $n>3$ ,which means the number of neighbor beacons greater than $3$, and if columns of $A$ matrix form a linearly independent set (full column rank matrix) then the solution can be found with the projection of $\vec{b}$ over range space of $A$, $Proj_{R(A)}\vec{b}$ where
   \begin{equation}
   Proj_{R(A)}\vec{b} = A (A^TA)^{-1}A^T\vec{b}
@@ -371,11 +705,10 @@ then
 Proj_{ \mathcal{N}(\mathbf{A})^\perp}\hat{x} = \hat{x}
   \end{equation}
   
-  this concludes that $\hat{x}$ is the unique minimum norm solution to the $A\hat{x} = \vec{b}$ problem
+  this concludes that $\hat{x}$ is the unique minimum norm solution to the $A\hat{x} = \vec{b}$ problem\\
 	
 	
-	3) Minimum norm solution with nonlinear least squares method
-	
+	\textit{3) Minimum norm solution with nonlinear least squares method}\\	
 	If $A$ matrix has the dimensions of $2x2$ or $(n-1)x2$ with $n>3$ and if rank of $A$ matrix is equal to $1$, $rank(A) = 1$ then the solution to the $A\hat{x} = \vec{b}$ problem can be found iteratively with the help of nonlinear least squares method. Lets define the cost function to be minimized 	as the sum of the squares of the errors on the distances
 	
 	\begin{equation}
@@ -462,11 +795,15 @@ and
 \end{equation}
 	
 	
-	\section{ Route Table Determination and - DSDV Tablolar}
+	\subsubsection{ Route Table Determination and  DSDV Algorithm}
 	
 	It is obvious that each agent must have at least three neighbor agents to solve the $A\vec{x}=\vec{b}$ type problem in two dimensional domain and recalculate its position in the environment. Since the possibility of having a large error on position and velocity data for the agents which do not have an external position measurement sensors, it will be appropriate to get the agents into local trilateration process with the agents which have position sensors as much as possible. It is assumed that the positions of the beacon agents in the trilateration process are well-known with a little error boundary, ideally with no errors, so getting in the trilateration process with the agents which are already have errors on their position and velocity datas may increase the error on the calculated datas. On the other hand due to the restrictions $\&$ requirements defined in the Section 1-2 Objectives, it will not be possible to interact with the agents with agents with position sensors directly due to the small communication ranges of the agents and line of sight issues. In this case, it will be a good choice to handle this trilaterion process starting with the agents which are closer to the position agents in a increasing order of distance. 
 	
-	SUNUM1 deki yukaridan asagi biliginin dagitimi sekli buraya gelecek
+\begin{figure}[H]
+	\caption{A Cluster of Agents Around a Position Beacon}
+	\centering
+	\includegraphics[scale = 0.65]{position_beacon}
+\end{figure}
 	
 	As illustrated on the Figure-xx, suppose that the red agents which are closest ones to the position beacon in the swarm are the only ones which have the capability of interacting with the position beacon. Since the only source of true position measurement is the position beacon, this data must be distributed to these red agents first, then trilateration process must be propogated through the orange agents and then the yellow agents last, since they can only interact with an upper layer in the swarm due to the line of sight and communication range issues.
 	
