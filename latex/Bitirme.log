@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-1.40.11 (MiKTeX 2.9) (preloaded format=pdflatex 2015.8.29)  17 OCT 2015 18:40
+This is pdfTeX, Version 3.1415926-1.40.11 (MiKTeX 2.9) (preloaded format=pdflatex 2015.8.29)  20 FEB 2016 17:38
 entering extended mode
 **Bitirme.tex
 ("C:\Users\Kadir\Desktop\Formation Control\formation_control\latex\Bitirme.tex"
@@ -788,498 +788,552 @@ Package microtype Info: Loading generic settings for font family
 Package microtype Info: Character `029' is missing
 (microtype)             in font `T1/pplx/m/sc/12'.
 (microtype)             Ignoring protrusion settings for this character.
-LaTeX Font Info:    Font shape `T1/pplx/bx/n' in size <10> not available
-(Font)              Font shape `T1/pplx/b/n' tried instead on input line 95.
  [1{C:/ProgramData/MiKTeX/2.9/pdftex/config/pdftex.map}
 
-] [2]
-LaTeX Font Info:    Try loading font information for U+fplmbb on input line 260
+]
+LaTeX Font Info:    Font shape `T1/pplx/bx/n' in size <9> not available
+(Font)              Font shape `T1/pplx/b/n' tried instead on input line 130.
+
+<scout_robots.png, id=177, 208.52907pt x 152.82094pt>
+File: scout_robots.png Graphic file (type png)
+ <use scout_robots.png>
+<eyebot.png, id=178, 333.49594pt x 319.94531pt>
+File: eyebot.png Graphic file (type png)
+ <use eyebot.png>
+Underfull \vbox (badness 2443) has occurred while \output is active []
+
+ [2 <C:/Users/Kadir/Desktop/Formation Control/formation_control/latex/scout_rob
+ots.png (PNG copy)>] <Satellite.png, id=185, 303.38344pt x 210.03468pt>
+File: Satellite.png Graphic file (type png)
+
+<use Satellite.png>
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [3 <C:/Users/Kadir/Desktop/Formation Control/formation_control/latex/eyebot.pn
+g (PNG copy)>] <samitha.png, id=191, 238.64156pt x 158.84344pt>
+File: samitha.png Graphic file (type png)
+ <use samitha.png> [4 <C:/Users/Kadir/Desktop/Formation Control/formation_contr
+ol/latex/Satellite.png (PNG copy)> <C:/Users/Kadir/Desktop/Formation Control/fo
+rmation_control/latex/samitha.png (PNG copy)>] <slotine.png, id=198, 400.49625p
+t x 283.81032pt>
+File: slotine.png Graphic file (type png)
+
+<use slotine.png> <kumar.png, id=199, 283.0575pt x 551.05875pt>
+File: kumar.png Graphic file (type png)
+
+<use kumar.png>
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [5 <C:/Users/Kadir/Desktop/Formation Control/formation_control/latex/slotine.p
+ng (PNG copy)>] [6 <C:/Users/Kadir/Desktop/Formation Control/formation_control/
+latex/kumar.png (PNG copy)>] <kilobot.png, id=210, 479.54156pt x 171.64125pt>
+File: kilobot.png Graphic file (type png)
+
+<use kilobot.png>
+Overfull \hbox (49.53577pt too wide) in paragraph at lines 184--185
+ [][] 
+ []
+
+<mobilerobots.png, id=211, 462.97969pt x 315.42844pt>
+File: mobilerobots.png Graphic file (type png)
+ <use mobilerobots.png>
+Overfull \hbox (32.97392pt too wide) in paragraph at lines 196--197
+ [][] 
+ []
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [7 <C:/Users/Kadir/Desktop/Formation Control/formation_control/latex/kilobot.p
+ng (PNG copy)>] [8 <C:/Users/Kadir/Desktop/Formation Control/formation_control/
+latex/mobilerobots.png (PNG copy)>] [9]
+LaTeX Font Info:    Try loading font information for U+fplmbb on input line 366
 .
 
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\psnfss\ufplmbb.fd"
 File: ufplmbb.fd 2003/10/30 Fontinst v1.914 font definitions for U/fplmbb.
-) [3] [4]
-[5] [6] [7] [8] [9] [10] [11] [12] [13] [14] [15] [16] [17] [18] [19]
+) [10] [11]
+[12]
+LaTeX Font Info:    Font shape `T1/pplx/bx/n' in size <10> not available
+(Font)              Font shape `T1/pplx/b/n' tried instead on input line 483.
+ [13] [14] [15] [16] [17] [18] [19] [20] [21] [22] [23] [24] [25] [26]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [20]
-[21]
-LaTeX Font Info:    Font shape `T1/pplx/bx/n' in size <9> not available
-(Font)              Font shape `T1/pplx/b/n' tried instead on input line 1108.
- <Forbidden.png, id=366, 222.8325pt x 249.93375pt>
+ [27]
+[28] <Forbidden.png, id=416, 222.8325pt x 249.93375pt>
 File: Forbidden.png Graphic file (type png)
  <use Forbidden.png>
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 1115.
+(hyperref)                removing `math shift' on input line 1221.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 1115.
+(hyperref)                removing `math shift' on input line 1221.
 
-[22 <C:/Users/Kadir/Desktop/Formation Control/formation_control/latex/Forbidden
-.png (PNG copy)>] <shortest.png, id=374, 267.24844pt x 251.43938pt>
+[29 <C:/Users/Kadir/Desktop/Formation Control/formation_control/latex/Forbidden
+.png (PNG copy)>] <shortest.png, id=424, 267.24844pt x 251.43938pt>
 File: shortest.png Graphic file (type png)
 
-<use shortest.png> [23 <C:/Users/Kadir/Desktop/Formation Control/formation_cont
+<use shortest.png> [30 <C:/Users/Kadir/Desktop/Formation Control/formation_cont
 rol/latex/shortest.png (PNG copy)>]
-<bipartite.png, id=384, 213.04594pt x 359.84438pt>
+<bipartite.png, id=434, 213.04594pt x 359.84438pt>
 File: bipartite.png Graphic file (type png)
  <use bipartite.png>
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [24]
+ [31]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [25 <C:/Users/Kadir/Desktop/Formation Control/formation_control/latex/bipartit
-e.png (PNG copy)>] [26] [27] <Clusters_Ranks_1.jpg, id=411, 1189.44376pt x 579.
+ [32 <C:/Users/Kadir/Desktop/Formation Control/formation_control/latex/bipartit
+e.png (PNG copy)>] [33] [34] <Clusters_Ranks_1.jpg, id=461, 1189.44376pt x 579.
 16376pt>
 File: Clusters_Ranks_1.jpg Graphic file (type jpg)
 
-<use Clusters_Ranks_1.jpg> [28 <C:/Users/Kadir/Desktop/Formation Control/format
+<use Clusters_Ranks_1.jpg> [35 <C:/Users/Kadir/Desktop/Formation Control/format
 ion_control/latex/Clusters_Ranks_1.jpg>]
-<Rank_vs_Error.jpg, id=417, 1189.44376pt x 579.16376pt>
+<Rank_vs_Error.jpg, id=467, 1189.44376pt x 579.16376pt>
 File: Rank_vs_Error.jpg Graphic file (type jpg)
 
 <use Rank_vs_Error.jpg>
-<Error-0,5Prop-3Update.jpg, id=418, 1189.44376pt x 387.4475pt>
+<Error-0,5Prop-3Update.jpg, id=468, 1189.44376pt x 387.4475pt>
 File: Error-0,5Prop-3Update.jpg Graphic file (type jpg)
 
 <use Error-0,5Prop-3Update.jpg>
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [29 <C:/Users/Kadir/Desktop/Formation Control/formation_control/latex/Rank_vs_
-Error.jpg>] <Error-0,5Prop-5Update.jpg, id=424, 1189.44376pt x 387.4475pt>
+ [36 <C:/Users/Kadir/Desktop/Formation Control/formation_control/latex/Rank_vs_
+Error.jpg>] <Error-0,5Prop-5Update.jpg, id=474, 1189.44376pt x 387.4475pt>
 File: Error-0,5Prop-5Update.jpg Graphic file (type jpg)
 
 <use Error-0,5Prop-5Update.jpg>
-<Error-0,5Prop-8Update.jpg, id=425, 1189.44376pt x 387.4475pt>
+<Error-0,5Prop-8Update.jpg, id=475, 1189.44376pt x 387.4475pt>
 File: Error-0,5Prop-8Update.jpg Graphic file (type jpg)
 
-<use Error-0,5Prop-8Update.jpg> [30 <C:/Users/Kadir/Desktop/Formation Control/f
+<use Error-0,5Prop-8Update.jpg> [37 <C:/Users/Kadir/Desktop/Formation Control/f
 ormation_control/latex/Error-0,5Prop-3Update.jpg> <C:/Users/Kadir/Desktop/Forma
 tion Control/formation_control/latex/Error-0,5Prop-5Update.jpg> <C:/Users/Kadir
 /Desktop/Formation Control/formation_control/latex/Error-0,5Prop-8Update.jpg>]
-<Pozisyon-1_Hatali.jpeg, id=433, 1534.73375pt x 846.16125pt>
+<Pozisyon-1_Hatali.jpeg, id=484, 1534.73375pt x 846.16125pt>
 File: Pozisyon-1_Hatali.jpeg Graphic file (type jpg)
 
 <use Pozisyon-1_Hatali.jpeg>
-<Pozisyon-1-Duzeltilmis.jpeg, id=434, 1587.9325pt x 869.2475pt>
+<Pozisyon-1-Duzeltilmis.jpeg, id=485, 1587.9325pt x 869.2475pt>
 File: Pozisyon-1-Duzeltilmis.jpeg Graphic file (type jpg)
 
 <use Pozisyon-1-Duzeltilmis.jpeg>
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [31 <C:/Users/Kadir/Desktop/Formation Control/formation_control/latex/Pozisyon
--1_Hatali.jpeg>] <Lost-2-2.jpeg, id=441, 1619.04875pt x 877.2775pt>
+ [38 <C:/Users/Kadir/Desktop/Formation Control/formation_control/latex/Pozisyon
+-1_Hatali.jpeg>] <Lost-2-2.jpeg, id=491, 1619.04875pt x 877.2775pt>
 File: Lost-2-2.jpeg Graphic file (type jpg)
  <use Lost-2-2.jpeg>
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [32 <C:/Users/Kadir/Desktop/Formation Control/formation_control/latex/Pozisyon
--1-Duzeltilmis.jpeg>] <Lost-2-3.jpeg, id=447, 1604.99625pt x 879.285pt>
+ [39 <C:/Users/Kadir/Desktop/Formation Control/formation_control/latex/Pozisyon
+-1-Duzeltilmis.jpeg>] <Lost-2-3.jpeg, id=497, 1604.99625pt x 879.285pt>
 File: Lost-2-3.jpeg Graphic file (type jpg)
 
 <use Lost-2-3.jpeg>
 Underfull \vbox (badness 3792) has occurred while \output is active []
 
- [33 <C:/Users/Kadir/Desktop/Formation Control/formation_control/latex/Lost-2-2
+ [40 <C:/Users/Kadir/Desktop/Formation Control/formation_control/latex/Lost-2-2
 .jpeg> <C:/Users/Kadir/Desktop/Formation Control/formation_control/latex/Lost-2
 -3.jpeg>]
-<Artificial_Forces_Mesh_1.png, id=454, 592.46344pt x 215.30438pt>
+<Artificial_Forces_Mesh_1.png, id=504, 592.46344pt x 215.30438pt>
 File: Artificial_Forces_Mesh_1.png Graphic file (type png)
 
 <use Artificial_Forces_Mesh_1.png>
-<Artificial_Forces_Mesh_2.png, id=456, 679.03688pt x 192.72pt>
+<Artificial_Forces_Mesh_2.png, id=506, 679.03688pt x 192.72pt>
 File: Artificial_Forces_Mesh_2.png Graphic file (type png)
 
 <use Artificial_Forces_Mesh_2.png>
-<Bubble_Packing_Mesh_1.png, id=457, 679.03688pt x 192.72pt>
+<Bubble_Packing_Mesh_1.png, id=507, 679.03688pt x 192.72pt>
 File: Bubble_Packing_Mesh_1.png Graphic file (type png)
 
 <use Bubble_Packing_Mesh_1.png>
-<Bubble_Packing_Mesh_2.png, id=458, 679.03688pt x 192.72pt>
+<Bubble_Packing_Mesh_2.png, id=508, 679.03688pt x 192.72pt>
 File: Bubble_Packing_Mesh_2.png Graphic file (type png)
 
 <use Bubble_Packing_Mesh_2.png>
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [34 <C:/Users/Kadir/Desktop/Formation Control/formation_control/latex/Artifici
+ [41 <C:/Users/Kadir/Desktop/Formation Control/formation_control/latex/Artifici
 al_Forces_Mesh_1.png> <C:/Users/Kadir/Desktop/Formation Control/formation_contr
 ol/latex/Artificial_Forces_Mesh_2.png>]
-<Randomized_Fractals_Mesh_1.png, id=467, 679.03688pt x 192.72pt>
+<Randomized_Fractals_Mesh_1.png, id=517, 679.03688pt x 192.72pt>
 File: Randomized_Fractals_Mesh_1.png Graphic file (type png)
 
 <use Randomized_Fractals_Mesh_1.png>
-<Randomized_Fractals_Mesh_2.png, id=468, 679.03688pt x 192.72pt>
+<Randomized_Fractals_Mesh_2.png, id=518, 679.03688pt x 192.72pt>
 File: Randomized_Fractals_Mesh_2.png Graphic file (type png)
 
 <use Randomized_Fractals_Mesh_2.png>
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [35 <C:/Users/Kadir/Desktop/Formation Control/formation_control/latex/Bubble_P
+ [42 <C:/Users/Kadir/Desktop/Formation Control/formation_control/latex/Bubble_P
 acking_Mesh_1.png> <C:/Users/Kadir/Desktop/Formation Control/formation_control/
 latex/Bubble_Packing_Mesh_2.png> <C:/Users/Kadir/Desktop/Formation Control/form
 ation_control/latex/Randomized_Fractals_Mesh_1.png>]
-<Topological_Irr_1.png, id=479, 1265.47781pt x 715.17188pt>
+<Topological_Irr_1.png, id=529, 1265.47781pt x 715.17188pt>
 File: Topological_Irr_1.png Graphic file (type png)
 
 <use Topological_Irr_1.png>
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [36 <C:/Users/Kadir/Desktop/Formation Control/formation_control/latex/Randomiz
-ed_Fractals_Mesh_2.png>] <Geometrical_Irr_1.png, id=486, 1265.47781pt x 715.171
+ [43 <C:/Users/Kadir/Desktop/Formation Control/formation_control/latex/Randomiz
+ed_Fractals_Mesh_2.png>] <Geometrical_Irr_1.png, id=537, 1265.47781pt x 715.171
 88pt>
 File: Geometrical_Irr_1.png Graphic file (type png)
 
 <use Geometrical_Irr_1.png>
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [37 <C:/Users/Kadir/Desktop/Formation Control/formation_control/latex/Topologi
-cal_Irr_1.png (PNG copy)>] <Topological_Irr_2.png, id=493, 1265.47781pt x 715.1
+ [44 <C:/Users/Kadir/Desktop/Formation Control/formation_control/latex/Topologi
+cal_Irr_1.png (PNG copy)>] <Topological_Irr_2.png, id=543, 1265.47781pt x 715.1
 7188pt>
 File: Topological_Irr_2.png Graphic file (type png)
 
 <use Topological_Irr_2.png>
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [38 <C:/Users/Kadir/Desktop/Formation Control/formation_control/latex/Geometri
-cal_Irr_1.png (PNG copy)>] <Geometrical_Irr_2.png, id=499, 1265.47781pt x 715.1
+ [45 <C:/Users/Kadir/Desktop/Formation Control/formation_control/latex/Geometri
+cal_Irr_1.png (PNG copy)>] <Geometrical_Irr_2.png, id=549, 1265.47781pt x 715.1
 7188pt>
 File: Geometrical_Irr_2.png Graphic file (type png)
 
 <use Geometrical_Irr_2.png>
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [39 <C:/Users/Kadir/Desktop/Formation Control/formation_control/latex/Topologi
+ [46 <C:/Users/Kadir/Desktop/Formation Control/formation_control/latex/Topologi
 cal_Irr_2.png (PNG copy)>]
-<Trajectories_Formation_Shape_1_2.png, id=505, 1063.72406pt x 661.72218pt>
+<Trajectories_Formation_Shape_1_2.png, id=555, 1063.72406pt x 661.72218pt>
 File: Trajectories_Formation_Shape_1_2.png Graphic file (type png)
 
 <use Trajectories_Formation_Shape_1_2.png>
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [40 <C:/Users/Kadir/Desktop/Formation Control/formation_control/latex/Geometri
+ [47 <C:/Users/Kadir/Desktop/Formation Control/formation_control/latex/Geometri
 cal_Irr_2.png (PNG copy)>]
-<Trajectories_Formation_Shape_1_1.png, id=511, 1223.32031pt x 712.91344pt>
+<Trajectories_Formation_Shape_1_1.png, id=561, 1223.32031pt x 712.91344pt>
 File: Trajectories_Formation_Shape_1_1.png Graphic file (type png)
 
 <use Trajectories_Formation_Shape_1_1.png>
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [41 <C:/Users/Kadir/Desktop/Formation Control/formation_control/latex/Trajecto
+ [48 <C:/Users/Kadir/Desktop/Formation Control/formation_control/latex/Trajecto
 ries_Formation_Shape_1_2.png (PNG copy)>]
-<Aritificial_Trajecories_1.png, id=517, 1265.47781pt x 715.17188pt>
+<Aritificial_Trajecories_1.png, id=567, 1265.47781pt x 715.17188pt>
 File: Aritificial_Trajecories_1.png Graphic file (type png)
 
 <use Aritificial_Trajecories_1.png>
-<Bubble_Trajectories_1.png, id=518, 1265.47781pt x 715.17188pt>
+<Bubble_Trajectories_1.png, id=568, 1265.47781pt x 715.17188pt>
 File: Bubble_Trajectories_1.png Graphic file (type png)
 
 <use Bubble_Trajectories_1.png>
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [42 <C:/Users/Kadir/Desktop/Formation Control/formation_control/latex/Trajecto
+ [49 <C:/Users/Kadir/Desktop/Formation Control/formation_control/latex/Trajecto
 ries_Formation_Shape_1_1.png (PNG copy)> <C:/Users/Kadir/Desktop/Formation Cont
 rol/formation_control/latex/Aritificial_Trajecories_1.png (PNG copy)>]
-<Randomized_Trajectories_1.png, id=525, 1265.47781pt x 715.17188pt>
+<Randomized_Trajectories_1.png, id=576, 1265.47781pt x 715.17188pt>
 File: Randomized_Trajectories_1.png Graphic file (type png)
 
-<use Randomized_Trajectories_1.png> [43 <C:/Users/Kadir/Desktop/Formation Contr
+<use Randomized_Trajectories_1.png> [50 <C:/Users/Kadir/Desktop/Formation Contr
 ol/formation_control/latex/Bubble_Trajectories_1.png (PNG copy)> <C:/Users/Kadi
 r/Desktop/Formation Control/formation_control/latex/Randomized_Trajectories_1.p
-ng (PNG copy)>] <Total_Energy_Shape_1.png, id=533, 1265.47781pt x 715.17188pt>
+ng (PNG copy)>] <Total_Energy_Shape_1.png, id=583, 1265.47781pt x 715.17188pt>
 File: Total_Energy_Shape_1.png Graphic file (type png)
 
 <use Total_Energy_Shape_1.png>
-<Trajectories_Formation_Shape_2_2.png, id=534, 1045.65656pt x 658.71094pt>
+<Trajectories_Formation_Shape_2_2.png, id=584, 1045.65656pt x 658.71094pt>
 File: Trajectories_Formation_Shape_2_2.png Graphic file (type png)
 
 <use Trajectories_Formation_Shape_2_2.png>
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [44 <C:/Users/Kadir/Desktop/Formation Control/formation_control/latex/Total_En
+ [51 <C:/Users/Kadir/Desktop/Formation Control/formation_control/latex/Total_En
 ergy_Shape_1.png (PNG copy)>]
-<Trajectories_Formation_Shape_2_1.png, id=540, 1215.79219pt x 708.39656pt>
+<Trajectories_Formation_Shape_2_1.png, id=590, 1215.79219pt x 708.39656pt>
 File: Trajectories_Formation_Shape_2_1.png Graphic file (type png)
 
 <use Trajectories_Formation_Shape_2_1.png>
-<Artificial_Trajectories_2.png, id=541, 1265.47781pt x 715.17188pt>
+<Artificial_Trajectories_2.png, id=591, 1265.47781pt x 715.17188pt>
 File: Artificial_Trajectories_2.png Graphic file (type png)
 
 <use Artificial_Trajectories_2.png>
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [45 <C:/Users/Kadir/Desktop/Formation Control/formation_control/latex/Trajecto
+ [52 <C:/Users/Kadir/Desktop/Formation Control/formation_control/latex/Trajecto
 ries_Formation_Shape_2_2.png> <C:/Users/Kadir/Desktop/Formation Control/formati
 on_control/latex/Trajectories_Formation_Shape_2_1.png (PNG copy)>]
-<Bubble_Trajectories_2.png, id=549, 1265.47781pt x 715.17188pt>
+<Bubble_Trajectories_2.png, id=599, 1265.47781pt x 715.17188pt>
 File: Bubble_Trajectories_2.png Graphic file (type png)
 
 <use Bubble_Trajectories_2.png>
-<Randomized_Trajectories_2.png, id=550, 1265.47781pt x 715.17188pt>
+<Randomized_Trajectories_2.png, id=600, 1265.47781pt x 715.17188pt>
 File: Randomized_Trajectories_2.png Graphic file (type png)
 
 <use Randomized_Trajectories_2.png>
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [46 <C:/Users/Kadir/Desktop/Formation Control/formation_control/latex/Artifici
+ [53 <C:/Users/Kadir/Desktop/Formation Control/formation_control/latex/Artifici
 al_Trajectories_2.png (PNG copy)> <C:/Users/Kadir/Desktop/Formation Control/for
 mation_control/latex/Bubble_Trajectories_2.png (PNG copy)>]
-<Total_Energy_Shape_2.png, id=557, 1265.47781pt x 715.17188pt>
+<Total_Energy_Shape_2.png, id=607, 1265.47781pt x 715.17188pt>
 File: Total_Energy_Shape_2.png Graphic file (type png)
 
 <use Total_Energy_Shape_2.png>
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [47 <C:/Users/Kadir/Desktop/Formation Control/formation_control/latex/Randomiz
+ [54 <C:/Users/Kadir/Desktop/Formation Control/formation_control/latex/Randomiz
 ed_Trajectories_2.png (PNG copy)> <C:/Users/Kadir/Desktop/Formation Control/for
 mation_control/latex/Total_Energy_Shape_2.png (PNG copy)>]
-<Total_Time_Shape_1.png, id=564, 1265.47781pt x 715.17188pt>
+<Total_Time_Shape_1.png, id=614, 1265.47781pt x 715.17188pt>
 File: Total_Time_Shape_1.png Graphic file (type png)
 
 <use Total_Time_Shape_1.png>
-<Total_Time_Shape_2.png, id=565, 1265.47781pt x 715.17188pt>
+<Total_Time_Shape_2.png, id=615, 1265.47781pt x 715.17188pt>
 File: Total_Time_Shape_2.png Graphic file (type png)
 
 <use Total_Time_Shape_2.png>
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [48 <C:/Users/Kadir/Desktop/Formation Control/formation_control/latex/Total_Ti
+ [55 <C:/Users/Kadir/Desktop/Formation Control/formation_control/latex/Total_Ti
 me_Shape_1.png (PNG copy)>]
 
 Package caption Warning: The option `hypcap=true' will be ignored for this
-(caption)                particular \caption on input line 1549.
+(caption)                particular \caption on input line 1655.
 See the caption package documentation for explanation.
 
-[49 <C:/Users/Kadir/Desktop/Formation Control/formation_control/latex/Total_Tim
-e_Shape_2.png (PNG copy)>] <1_Gazebo.png, id=579, 1215.79219pt x 706.89093pt>
+[56 <C:/Users/Kadir/Desktop/Formation Control/formation_control/latex/Total_Tim
+e_Shape_2.png (PNG copy)>] <1_Gazebo.png, id=629, 1215.79219pt x 706.89093pt>
 File: 1_Gazebo.png Graphic file (type png)
 
-<use 1_Gazebo.png> <1.png, id=580, 1265.47781pt x 715.17188pt>
+<use 1_Gazebo.png> <1.png, id=630, 1265.47781pt x 715.17188pt>
 File: 1.png Graphic file (type png)
  <use 1.png>
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [50 <C:/Users/Kadir/Desktop/Formation Control/formation_control/latex/1_Gazebo
+ [57 <C:/Users/Kadir/Desktop/Formation Control/formation_control/latex/1_Gazebo
 .png (PNG copy)>]
 
 Package caption Warning: The option `hypcap=true' will be ignored for this
-(caption)                particular \caption on input line 1579.
+(caption)                particular \caption on input line 1685.
 See the caption package documentation for explanation.
 
 
-Overfull \hbox (96.7154pt too wide) in paragraph at lines 1580--1588
+Overfull \hbox (96.7154pt too wide) in paragraph at lines 1686--1694
  [] 
  []
 
-<2_Gazebo.png, id=586, 1214.28656pt x 703.87968pt>
+<2_Gazebo.png, id=636, 1214.28656pt x 703.87968pt>
 File: 2_Gazebo.png Graphic file (type png)
  <use 2_Gazebo.png>
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [51 <C:/Users/Kadir/Desktop/Formation Control/formation_control/latex/1.png (P
+ [58 <C:/Users/Kadir/Desktop/Formation Control/formation_control/latex/1.png (P
 NG copy)>]
-<2.png, id=593, 1265.47781pt x 715.17188pt>
+<2.png, id=643, 1265.47781pt x 715.17188pt>
 File: 2.png Graphic file (type png)
  <use 2.png>
 
 Package caption Warning: The option `hypcap=true' will be ignored for this
-(caption)                particular \caption on input line 1603.
+(caption)                particular \caption on input line 1709.
 See the caption package documentation for explanation.
 
-[52 <C:/Users/Kadir/Desktop/Formation Control/formation_control/latex/2_Gazebo.
+[59 <C:/Users/Kadir/Desktop/Formation Control/formation_control/latex/2_Gazebo.
 png (PNG copy)> <C:/Users/Kadir/Desktop/Formation Control/formation_control/lat
 ex/2.png (PNG copy)>]
-Overfull \hbox (96.7154pt too wide) in paragraph at lines 1604--1612
+Overfull \hbox (96.7154pt too wide) in paragraph at lines 1710--1718
  [] 
  []
 
-<3_Gazebo.png, id=600, 1217.2978pt x 706.89093pt>
+<3_Gazebo.png, id=650, 1217.2978pt x 706.89093pt>
 File: 3_Gazebo.png Graphic file (type png)
  <use 3_Gazebo.png>
-<3.png, id=601, 1265.47781pt x 715.17188pt>
+<3.png, id=651, 1265.47781pt x 715.17188pt>
 File: 3.png Graphic file (type png)
  <use 3.png>
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [53 <C:/Users/Kadir/Desktop/Formation Control/formation_control/latex/3_Gazebo
+ [60 <C:/Users/Kadir/Desktop/Formation Control/formation_control/latex/3_Gazebo
 .png (PNG copy)>]
 
 Package caption Warning: The option `hypcap=true' will be ignored for this
-(caption)                particular \caption on input line 1627.
+(caption)                particular \caption on input line 1733.
 See the caption package documentation for explanation.
 
 
-Overfull \hbox (96.7154pt too wide) in paragraph at lines 1628--1636
+Overfull \hbox (96.7154pt too wide) in paragraph at lines 1734--1742
  [] 
  []
 
-<4_Gazebo.png, id=608, 1211.27531pt x 706.89093pt>
+<4_Gazebo.png, id=658, 1211.27531pt x 706.89093pt>
 File: 4_Gazebo.png Graphic file (type png)
  <use 4_Gazebo.png>
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [54 <C:/Users/Kadir/Desktop/Formation Control/formation_control/latex/3.png (P
+ [61 <C:/Users/Kadir/Desktop/Formation Control/formation_control/latex/3.png (P
 NG copy)>]
-<4.png, id=615, 1265.47781pt x 715.17188pt>
+<4.png, id=666, 1265.47781pt x 715.17188pt>
 File: 4.png Graphic file (type png)
  <use 4.png>
 
 Package caption Warning: The option `hypcap=true' will be ignored for this
-(caption)                particular \caption on input line 1651.
+(caption)                particular \caption on input line 1757.
 See the caption package documentation for explanation.
 
-[55 <C:/Users/Kadir/Desktop/Formation Control/formation_control/latex/4_Gazebo.
+[62 <C:/Users/Kadir/Desktop/Formation Control/formation_control/latex/4_Gazebo.
 png (PNG copy)> <C:/Users/Kadir/Desktop/Formation Control/formation_control/lat
 ex/4.png (PNG copy)>]
-Overfull \hbox (96.7154pt too wide) in paragraph at lines 1652--1660
+Overfull \hbox (96.7154pt too wide) in paragraph at lines 1758--1766
  [] 
  []
 
-<multiple_formation.png, id=623, 1265.47781pt x 715.17188pt>
+<multiple_formation.png, id=673, 1265.47781pt x 715.17188pt>
 File: multiple_formation.png Graphic file (type png)
 
 <use multiple_formation.png>
 
 Package caption Warning: The option `hypcap=true' will be ignored for this
-(caption)                particular \caption on input line 1672.
+(caption)                particular \caption on input line 1778.
 See the caption package documentation for explanation.
 
-[56 <C:/Users/Kadir/Desktop/Formation Control/formation_control/latex/multiple_
-formation.png>] <Kapaklar.png, id=632, 3363.56625pt x 2047.65pt>
+[63 <C:/Users/Kadir/Desktop/Formation Control/formation_control/latex/multiple_
+formation.png>] <Kapaklar.png, id=682, 3363.56625pt x 2047.65pt>
 File: Kapaklar.png Graphic file (type png)
 
-<use Kapaklar.png> <Image_Processing.jpg, id=633, 496.85625pt x 446.41782pt>
+<use Kapaklar.png> <Image_Processing.jpg, id=683, 496.85625pt x 446.41782pt>
 File: Image_Processing.jpg Graphic file (type jpg)
 
 <use Image_Processing.jpg>
 Underfull \vbox (badness 2173) has occurred while \output is active []
 
- [57 <C:/Users/Kadir/Desktop/Formation Control/formation_control/latex/Kapaklar
-.png (PNG copy)>] <Bearing_Angle.png, id=639, 1187.18532pt x 1111.90407pt>
+ [64 <C:/Users/Kadir/Desktop/Formation Control/formation_control/latex/Kapaklar
+.png (PNG copy)>] <Bearing_Angle.png, id=689, 1187.18532pt x 1111.90407pt>
 File: Bearing_Angle.png Graphic file (type png)
 
-<use Bearing_Angle.png> [58 <C:/Users/Kadir/Desktop/Formation Control/formation
+<use Bearing_Angle.png> [65 <C:/Users/Kadir/Desktop/Formation Control/formation
 _control/latex/Image_Processing.jpg> <C:/Users/Kadir/Desktop/Formation Control/
 formation_control/latex/Bearing_Angle.png (PNG copy)>]
-<sematik.png, id=646, 988.44281pt x 694.84593pt>
+<sematik.png, id=696, 988.44281pt x 694.84593pt>
 File: sematik.png Graphic file (type png)
  <use sematik.png>
-<sematik-layout.png, id=647, 420.6114pt x 463.9734pt>
+<sematik-layout.png, id=697, 420.6114pt x 463.9734pt>
 File: sematik-layout.png Graphic file (type png)
  <use sematik-layout.png>
 Underfull \vbox (badness 7944) has occurred while \output is active []
 
- [59 <C:/Users/Kadir/Desktop/Formation Control/formation_control/latex/sematik.
-png (PNG copy)>] <2_hardware.png, id=653, 892.08281pt x 434.37282pt>
+ [66 <C:/Users/Kadir/Desktop/Formation Control/formation_control/latex/sematik.
+png (PNG copy)>] <2_hardware.png, id=703, 892.08281pt x 434.37282pt>
 File: 2_hardware.png Graphic file (type png)
  <use 2_hardware.png>
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [60 <C:/Users/Kadir/Desktop/Formation Control/formation_control/latex/sematik-
-layout.png>] <2_real_hardware.png, id=660, 867.99281pt x 502.12593pt>
+ [67 <C:/Users/Kadir/Desktop/Formation Control/formation_control/latex/sematik-
+layout.png>] <2_real_hardware.png, id=711, 867.99281pt x 502.12593pt>
 File: 2_real_hardware.png Graphic file (type png)
 
 <use 2_real_hardware.png>
 
 Package caption Warning: The option `hypcap=true' will be ignored for this
-(caption)                particular \caption on input line 1765.
+(caption)                particular \caption on input line 1871.
 See the caption package documentation for explanation.
 
-<4_hardware.png, id=661, 892.08281pt x 434.37282pt>
+<4_hardware.png, id=712, 892.08281pt x 434.37282pt>
 File: 4_hardware.png Graphic file (type png)
  <use 4_hardware.png>
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [61 <C:/Users/Kadir/Desktop/Formation Control/formation_control/latex/2_hardwa
+ [68 <C:/Users/Kadir/Desktop/Formation Control/formation_control/latex/2_hardwa
 re.png (PNG copy)> <C:/Users/Kadir/Desktop/Formation Control/formation_control/
 latex/2_real_hardware.png (PNG copy)>]
-<4_real_hardware.png, id=670, 688.82344pt x 560.0925pt>
+<4_real_hardware.png, id=720, 688.82344pt x 560.0925pt>
 File: 4_real_hardware.png Graphic file (type png)
 
 <use 4_real_hardware.png>
 
 Package caption Warning: The option `hypcap=true' will be ignored for this
-(caption)                particular \caption on input line 1787.
+(caption)                particular \caption on input line 1893.
 See the caption package documentation for explanation.
 
-<5_hardware.png, id=671, 892.08281pt x 434.37282pt>
+<5_hardware.png, id=721, 892.08281pt x 434.37282pt>
 File: 5_hardware.png Graphic file (type png)
  <use 5_hardware.png>
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [62 <C:/Users/Kadir/Desktop/Formation Control/formation_control/latex/4_hardwa
+ [69 <C:/Users/Kadir/Desktop/Formation Control/formation_control/latex/4_hardwa
 re.png (PNG copy)> <C:/Users/Kadir/Desktop/Formation Control/formation_control/
 latex/4_real_hardware.png (PNG copy)>]
-<5_real_hardware.png, id=679, 648.17157pt x 573.64313pt>
+<5_real_hardware.png, id=729, 648.17157pt x 573.64313pt>
 File: 5_real_hardware.png Graphic file (type png)
 
 <use 5_real_hardware.png>
 
 Package caption Warning: The option `hypcap=true' will be ignored for this
-(caption)                particular \caption on input line 1810.
+(caption)                particular \caption on input line 1916.
 See the caption package documentation for explanation.
 
-<6_hardware.png, id=680, 892.08281pt x 434.37282pt>
+<6_hardware.png, id=730, 892.08281pt x 434.37282pt>
 File: 6_hardware.png Graphic file (type png)
  <use 6_hardware.png>
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [63 <C:/Users/Kadir/Desktop/Formation Control/formation_control/latex/5_hardwa
+ [70 <C:/Users/Kadir/Desktop/Formation Control/formation_control/latex/5_hardwa
 re.png (PNG copy)> <C:/Users/Kadir/Desktop/Formation Control/formation_control/
 latex/5_real_hardware.png (PNG copy)>]
-<6_real_hardware.png, id=688, 821.31844pt x 520.94624pt>
+<6_real_hardware.png, id=738, 821.31844pt x 520.94624pt>
 File: 6_real_hardware.png Graphic file (type png)
 
 <use 6_real_hardware.png>
 
 Package caption Warning: The option `hypcap=true' will be ignored for this
-(caption)                particular \caption on input line 1833.
+(caption)                particular \caption on input line 1939.
 See the caption package documentation for explanation.
 
-<9_hardware.png, id=689, 892.08281pt x 434.37282pt>
+<9_hardware.png, id=739, 892.08281pt x 434.37282pt>
 File: 9_hardware.png Graphic file (type png)
  <use 9_hardware.png>
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [64 <C:/Users/Kadir/Desktop/Formation Control/formation_control/latex/6_hardwa
+ [71 <C:/Users/Kadir/Desktop/Formation Control/formation_control/latex/6_hardwa
 re.png (PNG copy)> <C:/Users/Kadir/Desktop/Formation Control/formation_control/
 latex/6_real_hardware.png (PNG copy)>]
-<9_real_hardware.png, id=697, 866.48718pt x 624.08156pt>
+<9_real_hardware.png, id=747, 866.48718pt x 624.08156pt>
 File: 9_real_hardware.png Graphic file (type png)
 
 <use 9_real_hardware.png>
 
 Package caption Warning: The option `hypcap=true' will be ignored for this
-(caption)                particular \caption on input line 1857.
+(caption)                particular \caption on input line 1963.
 See the caption package documentation for explanation.
 
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [65 <C:/Users/Kadir/Desktop/Formation Control/formation_control/latex/9_hardwa
+ [72 <C:/Users/Kadir/Desktop/Formation Control/formation_control/latex/9_hardwa
 re.png (PNG copy)> <C:/Users/Kadir/Desktop/Formation Control/formation_control/
-latex/9_real_hardware.png (PNG copy)>] [66] [67] [68]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 1948.
- [69]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 1948.
+latex/9_real_hardware.png (PNG copy)>] [73] [74] [75]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 2054.
+ [76]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 2054.
 
 ("C:\Users\Kadir\Desktop\Formation Control\formation_control\latex\Bitirme.aux"
 )
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 1948.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 2054.
 Package rerunfilecheck Info: File `Bitirme.out' has not changed.
-(rerunfilecheck)             Checksum: 53D3247B1E42C58A1DEA7AC90669D43A;2935.
+(rerunfilecheck)             Checksum: 1644E11EC517980421C05CE68272F3AE;3065.
 
 
 LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 14007 strings out of 494019
- 212455 string characters out of 3143882
+ 14063 strings out of 494019
+ 213295 string characters out of 3143882
  451947 words of memory out of 3000000
- 16346 multiletter control sequences out of 15000+200000
+ 16380 multiletter control sequences out of 15000+200000
  82064 words of font info for 342 fonts, out of 3000000 for 9000
  714 hyphenation exceptions out of 8191
  53i,15n,92p,2613b,509s stack positions out of 5000i,500n,10000p,200000b,50000s
@@ -1295,9 +1349,9 @@ fonts/type1/public/fpl/fplrc8a.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/typ
 e1/urw/palatino/uplb8a.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/urw/p
 alatino/uplr8a.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/urw/palatino/
 uplri8a.pfb>
-Output written on Bitirme.pdf (69 pages, 36205685 bytes).
+Output written on Bitirme.pdf (76 pages, 38054658 bytes).
 PDF statistics:
- 831 PDF objects out of 1000 (max. 8388607)
- 307 named destinations out of 1000 (max. 500000)
- 60517 words of extra memory for PDF output out of 61914 (max. 10000000)
+ 884 PDF objects out of 1000 (max. 8388607)
+ 321 named destinations out of 1000 (max. 500000)
+ 60573 words of extra memory for PDF output out of 61914 (max. 10000000)
 

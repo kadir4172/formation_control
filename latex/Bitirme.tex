@@ -88,40 +88,146 @@
 	
 	\thispagestyle{fancy} % All pages have headers and footers
 	
-	%----------------------------------------------------------------------------------------
-	%	ABSTRACT
-	%----------------------------------------------------------------------------------------
-	
-	\begin{abstract}
-		
-	Bitirme calismasindaki tum denklemler buradadır
-		
-		
-	\end{abstract}
+
 	
 	%----------------------------------------------------------------------------------------
-	%	ARTICLE CONTENTS
+	%	INTRODUCTION
 	%----------------------------------------------------------------------------------------
 	
-%	\begin{multicols}{2} % Two-column layout throughout the main article text
+
 		
 		\section{Introduction}
 	
-	\begin{equation} % eq 1
-	A_i = {\frac{A}{{\zeta(c,N)(i+N)^c}}}
-	\end{equation}	
-	
-	where ${\zeta(c,N)}$ is the Hurwitz zeta function defined by 
-	\begin{equation}
- \zeta(c,N) = \sum_{i=0}^{\infty}\left(\frac{1}{(i+N)^c}\right)
-	\end{equation}
-	This known to converge for $c>1$ and $N>0$. In view of equation 2 one can write
-	\begin{equation}
-    \sum_{i=0}^{\infty}A_i = \sum_{i = 0}^{\infty}\left(\frac{A}{\zeta(c,N)(i+N)^c}\right)
-	\end{equation}
-such that the sum of all areas $A_i$ is the total area $A$ to be filled, that is, if the algorithm does not halt then it is space-filling. 
-		
+In this thesis work, it is aimed to create a novel method for formation control of a swarm which consists of heterogenous mobile robots. The term of swarm represents a large group of locally interacting individuals with common goals[4]. 
 
+Self organizing swarm researches and its applications are generally inspired by the biological systems in the nature. 
+The behaviours of these biological systems were considered mysterious and strange for a long time, but in recent researches show that individuals don't need any sophisticated knowledge or top level functionalities to produce such complex tasks[2] . These biological systems (e.g. colony of ants) have simple behaviours but they can accomplish very complicated collective tasks in the nature which are impossible with their own individual capabilities. Beni [1] describes this collaboration of members as follows:
+
+The group of robots is not just a group. It has some special characteristics, which are found in swarms of insects, that is, decentralised control, lack of synchronisation, simple and (quasi) identical members.
+
+It is obvious that such a collective behaviour of these swarms has more power and efficiency than the sum of the individual capabilities of the members. 
+
+General aspects of the swarm robotics systems are the simplicity of individuals, restricted sensing and communication capabilities, achieving tasks mutually, robustness and decentralized control capability[6].
+
+
+Swarm robotics has been studied to produce different collective behaviors to solve tasks such as as aggregation , pattern formation , self-assembly and morphogenesis , object clustering, assembling and construction , collective search$\&$rescue and exploration , coordinated motion , collective transportation , self-deployment , foraging and others[5]. Dorigo and Trianni[7] are studied on controllers for aggregation of coordinated motion of the identical mobile robots called swarm-bots.  Hou, S.P., C.C. Cheah, and J.J.E. Slotine is focused on controlling of a swarm within a dynamically changing formation[8]. Ganesh and Lisa introduced two new strategies for collective search and exploration of fields with swarm intelligence[9]. Chaimowicz and Campos proposed a new methodology which is based on a dynamic role assignment mechanism in which the robots cooperate with each other and they demonstrate this method in a cooperative transportation task[10].  Campo and Gutierrez is studied on collective foraging task and they propose a method for path selection to optimize the profits of the swarm[11].
+
+There are lots of studies related with different problems in swarm robotics literature as discussed briefly. In this thesis project, we are focused on dynamic pattern formation control of swarms consist of heterogeneous robots.
+
+
+\subsection{Problem Definition}
+
+
+\subsection{Motivation}
+
+
+The formation control problem can be defined as collaboration of a group of to maintain a formation with a certain shape [12]. It focuses on leading the individual agents of a swarm to perform a collective tasks including shape generation and formation reconfiguration while traversing a trajectory by providing collision avoidance simultaneosuly. Related tasks are achieved with a large group of small and simple robots  that can cooperate with each other. Formation control of multi agent systems  is an actively growing research field.  
+
+Formation control has lots of implementations such as security patrols, search and rescue in hazardous environments [13]. A group of autonomous vehicles may be required to keep in a specified formations in military missions related with area coverage and reconnaissance[13].  Balch and Arkin presented a behaviour based formation control for multi robot teams which is implemented on a team of robotic scout vehicles manufactured for a DARPA project[14]. 
+
+
+	\begin{figure}[H]
+		\caption{A team of four robotic scout vehicles on which formation control techniques implemented}
+		\centering
+		\includegraphics[scale = 1]{scout_robots}
+	\end{figure} 
+
+In real world applications there may be need for different  functionalities to achieve some specific tasks. If this is the case, one solution may be to design a sophisticated robot which includes all required capabilities for this task. In this scenario, this robot will be the single point of failure in the system and if robustness is a  vital feature for this solution, some redundant robots have to be added to the system. It is clear that the design of such an advanced robot and hold its redundant backups in the system will increase the cost of the solution. In swarm robotics concept, another approach is to gather some different types of simple mobile robots which have their own specific functionalities to achieve a collective task rather than designing an advanced robot for the solution. With this approach, the robustness of the system is increased, costs are reduced down and the reusability of the individual members of the swarm for other tasks is provided.  A project named Swarmanoid which is funded by European Commission, has an objective to implement and control of a novel distributed robotic system. The system is made uo heterogeneous, dynamically connected, small autonomous robots called,  foot-bots , hand-bots and eye-bots where foot-bots are responsible to transport the required materials(including other types of robots) to a specific task area and foot-bots are responsible of operations with their manipulators in and eye-bots are responsible of observations and reconnaissance on the area.
+
+	\begin{figure}[H]
+		\caption{A Robot Team Consists of Eyebot, Handbot and Footbot Agents}
+		\centering
+		\includegraphics[scale = 1]{eyebot}
+	\end{figure} 
+
+
+Martin and Kilberg have worked on formation control and formation tracking of  microsatellites to achieve continous coverage and improved capability. They also mentioned that small formations will reduce the fuel consumption for propulsion and expand the sensing capabilities of microsatellites[15].
+
+	\begin{figure}[H]
+		\caption{Sparse Aperture Formation of Micro Satellites}
+		\centering
+		\includegraphics[scale = 1]{Satellite}
+	\end{figure} 
+
+
+Formation control problem have different subproblems like formation shape generation, formation reconfiguration and selection and formation tracking [12].  
+In formation shape generation agents are expected to get a formation shape which can be defined by externally or with some mathematical constraint functions[16].  One general approach is to consider some artificial potential functions. Samitha and Pubudu have presented an artificial potential function based method  by considering the problem as controlling and positioning of a swarm into a shape bounded by a simple closed contour in the complex plane while spreading memebers inside the contour uniformly.  They provide analysis about the stability and robustness of their systems with the help of Lyapunov like functions[17].
+
+	\begin{figure}[H]
+		\caption{Motions and formation of the agents in presence of obstacles[17]}
+		\centering
+		\includegraphics[scale = 1]{samitha}
+	\end{figure} 
+
+It may be needed to change the formation shape or splitting and joining of the agents together due to either a change in coordinated task requirements or change in environmental conditions such as narrow corridors.  This rask requires formation reconfiguration and selections capabilites for the swarms. Hou and Slotine have defined a method based on global objective functions to provide formation control of a swarm. In their approach it is possible to implement scaling and rotating functions into control laws[8].
+
+	\begin{figure}[H]
+		\caption{A group of 100 robots in a rotating rotating and scaling ellipse formation[8]}
+		\centering
+		\includegraphics[scale = 1]{slotine}
+	\end{figure} 
+
+One of the subproblems studied in formation control is formation tracking. The main objective of this problem is to maintain a desired formation with a group of robots, while tracking or following a reference trajectory. The most general strategy to provide a solution for this problem is leader-following swarm structures. Other strategies have a basis on optimization and graph theory approaches[12]. Kumar, Fierro and Das proposed a vision based formation control framework  for this problem. This framework has a leader following background [18]. 
+
+	\begin{figure}[H]
+		\caption{Five Robot Formation with trajectory tracking [18]}
+		\centering
+		\includegraphics[scale = 1]{kumar}
+	\end{figure} 
+
+There are some hardware implementations to test the related formation control algorithms in real time applications. Since the formation control problem requires lots of agents in a swarm, these works are have a common point of providing agents with minimal costs and sensor capabilities. The Kilobot Project from Harvard university have released their agents with the name of Kilobots and they have teams which are working on different formation control problems with Kilobots.
+
+
+	\begin{figure}[H]
+		\caption{Formation Control with Kilobots}
+		\centering
+		\includegraphics[scale = 1]{kilobot}
+	\end{figure} 
+
+
+These micro robots have a great reusability for different types of formation control problems  and they have biological insprations from the nature in the sense of individual simplicity and power of collective behaviors.
+
+	\begin{figure}[H]
+		\caption{A) Swarm Robot Project from Universities of Stuttgart  \\
+            			B) Colias Project from University of Lincoln and Tsinghua University in China\\
+			            C) Marx bot developed at EPFL \\
+            			D)Swarm bots project conducted by  European Commission			}
+		\centering
+		\includegraphics[scale = 1]{mobilerobots}
+	\end{figure} 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+3.1.1Trilateration Process
 
 
 \begin{equation} % eq 2
