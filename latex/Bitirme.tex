@@ -60,6 +60,8 @@
 \fancyhead[C]{May 2015} % Custom header text
 \fancyfoot[RO,LE]{\thepage} % Custom footer text
 
+\usepackage{titlesec}
+\setcounter{secnumdepth}{4}
 %----------------------------------------------------------------------------------------
 %	TITLE SECTION
 %----------------------------------------------------------------------------------------
@@ -809,51 +811,83 @@ and
 	
 	It is needed to have an algorithm to organize the order of the local trilateration process and the determines the beacon agents for each member of the swarm. Basically this algorithm will assign each agent a rank which represenets the number of sequence in the localization process, and will determine at least three local neighbors of each agent to get in trilateration. Agents which do no have at least three neighbors are assumend to be lost agents and the handling of these type of agents are illustrated in Section -xx.
 	
-	\subsection{Routing Algorithm- Bellman Ford}
+	\paragraph{Routing Algorithm- Bellman Ford}
 	As mentioned in the Objectives section of the thesis work, agents are assumed to have a limited communication range and bandwith and the communication topology in the swarm is implemented with a wireless mesh network. In this type of network, each node have a relay in the network and the data is transferred to the related destination with the help of route tables. This makes it possible to have the capability of transferring low bandwith data through the network with multiple hops.  In this work, we implement this topology with a table driven routing scheme known as DSDV(Destination-Sequenced Distance Vector Routing Protocol) algorithm based on Bellman Ford algorithm. Bellman-Ford is and algorithm that computes the shortest path in a weighted graph and the correctness of the algorithm is proven. It is an algorithm based on relaxation, the correct distance to the vertices in the graph are updated iteratively from the initial estimations until converging to the optimal solution. This algorithm is slower than the Djikstra's algorithm which has similar functionalities but negative edge weights can be implemented in the related graph to report the negative cycles which means there is no cheapest path to the related destination vertex. On the other hand, it is possible to augment this algorithm with DSDV implementation to handle the routing loop problem when there is one or more vertices are no more exists in the network. The probability of the case with the non-existence of some vertices during the algorithm is processed can be very high since the agents in the swarm have low sensor capabilities and small range of communication and they have a great possibility to get lost in the environment. A simple demonstration of the Bellman-Ford algorithm with a simple network is illustrated in the Figure-xx
 	
-	Powerpoint cizilen ornek network ve iterasyonlari eklenecek
+\begin{figure}[H]
+	\caption{Costs for Shortest Paths to Each Nodes from Node 'S'}
+	\centering
+	\includegraphics[scale = 0.65]{bellman}
+\end{figure}
+
 	
 	The algorithm to calculate the shortest paths for node `S` is done at the end of 7 iterations. At the beginning of the process, the weights for each edges are determined including the negative ones and each distance to the paths are filled with infinitive. Then the shortest paths to the each node in the given directed graph are determined iteratively with the help of the Bellman-Ford algorithm 
 	
 	
-	\subsubsection{Usage on Bellman Ford algorithm and DSDV}
+	\paragraph{Usage on Bellman Ford algorithm and DSDV}
 	
 	Bellman Ford algorithm have a drawback related with the routing loop problem which occurs in an event of one or more nodes in the graph are lost during the process. Figure -xx illustrates a simple routing loop problem. 
 	
-	POwerpoint deki sunum-1 den alinan cizim eklenenecek
+	\begin{figure}[H]
+		\caption{Routing Problem Engaged by a Lost of a Node in Network}
+		\centering
+		\includegraphics[scale = 0.65]{routing_problem}
+	\end{figure}
+
+	
+
 	
 	Suppose that the node D have lost its contact with the network due to some malfunction or being lost by getting outside of the communication range to the closest neighbor of itself. Before this event,node C have a unit distance to the node D and consequently node B have a 2 unit distance to node D , node A have a 3 unit distance to node D. In case of a failure on node D, on the next iteration C will update its route table with the 3 unit distance to node D by taking reference the node B. Then node B will update its route table with the shortest distance of 4 units to the node D\ by referencing the node C and this process will diverge to infinity on the shortest paths with the increasing number of iterations. To provide a solution for this type of problems, DSDV algorihm has implement the sequence numbers and counts for hops into the route tables of the nodes. A simple route table for a vertex in a network is given in Figure -xx
-	
-	Metric ve dest.seq iceren resim buraay eklenecek
+		\begin{figure}[H]
+			\caption{An Example for Route Table}
+			\centering
+			\includegraphics[scale = 0.65]{dest_seq}
+		\end{figure}
+
+
+
+
 	
 	In the DSDV algorithm, each node have a sequence number and counts for hops (metric) for each route in its route table and periodically transmits the updates including its own sequence number and routing tables updates. In the network, when two routes to the same destination received from two different neighbors the nodes will observe the following rules;
 	
 	- Choose the one with the larger destination sequence number
 	- If the sequence numbers are equal, then choose the route with minimum number of hops and update the route table.
 	
-	DSDV Link addition
-	
-	Sunumdan ilgili sekli koyalim
+		\paragraph{DSDV Link addition}\hspace{0pt} \\
+			\begin{figure}[H]
+				\caption{An Example for Route Table}
+				\centering
+				\includegraphics[scale = 0.65]{link_add}
+			\end{figure}
 	
 	When a new node A joins the network, it transmits of its own route table including the destination to itself $<A,A,0,101>$. Then the following procedure will be handled during iterations
 	-Node B receives the the transmission of A and inserts a new line into its route table with $<A,A,1,101>$ and propogates this new node to its neighbors
 	-Node C and Node D receives this transmission and inserts the new route to their route tables with $<A,B,2,101>$
 	
 	
-	DSDV link breaks
+	\paragraph{DSDV link breaks}\hspace{0pt} \\
 	
-	Sunumdan ilgili sekli koyalim
+			\begin{figure}[H]
+				\caption{An Example for Route Table}
+				\centering
+				\includegraphics[scale = 0.65]{link_break}
+			\end{figure}
+
 	
 	When the link between B and D breaks, node B gets no trasnmission from the D and notices the link breaks, then the following procedure will be handled,
 	- Node B update the hop count for node D and E to the infinity and increments the sequence numbers to these routes 
 	- Node B propogates the updates to its neighbors and node A and node C updates the lines of the routes to the D and E, since the message from B includes higher sequence numbers for those routes. 
 	
 	DSDV is implementing an algorithm to find the shortest paths between the internal nodes of a given directed graph. The costs for each shortest paths are calculated with the help of the weight of edges in the graph. Since our aim is to find the closest position beacon which has the minimum number of hops, the weight for each edge in the graph must be represented with the same unit size and the directions of the edges are negligible. 
-	\subsection{clusters}
+	\subsubsection{Clusters}
 	Since there are limited number of position beacons in a swarm, it will be appropriate to cluster the agents around these position agents to minimize the problem to the subproblems in which every one of them there are only one position beacon and the agents which are assigned to that cluster. The error on the trilateration process is expected to be increasing at the lower layers of the process illustrated in Figure -xx because of the cumulative effects of errors added to the position and velocity data of the agents in each layer. Thus, the policy for the assignment of the agents to the clusters must be the number of hops to the routes of position beacons rather than the physical distances. Since DSDV algorithm has a structure storing the number of counts to each route in the tables, this information can be used to determine each agents' clusters in the swarm. 
-	
-	clusterlarla ilgili bir resim koyalim
+		\begin{figure}[H]
+			\caption{Clusters Around Position Beacons}
+			\centering
+			\includegraphics[scale = 0.35]{Clusters_Ranks_2}
+		\end{figure}
+
+
 	
 	As illustrated in the Figure -xx, all agents have assigned themselves to the clusters around position beacons, in which they have minimum number of hops in the route to the related position agent.  With this approach, the generic algorithm which will be executed with the period of localization process for each agent must be implemented as follows:
 	
@@ -863,7 +897,7 @@ and
 	4) If the localization sequence is valid(siranin gelmesi denmeli) for this agent, enter the trilateration process with the agents from upper layer,  which are the next hops in the route table.
 	5) Call the update procedure of the observer system of which details are presented in section -xx
 	
-	\subsection{Handling Lost Agents}
+	\subsubsection{Handling Lost Agents}
 	
 	The minimum number of neighbors required for the trilateration process is three for a two dimensional localization problem as illustrated in section -xx(trilateration bolumu) . Since the agents are assumed to have a narrow communication range, it is possible to not to find three neighbors for any agent at an instant time. At this case, it will be impossible to relocate these agents with trilateration and the position$\&$velocity data will drift from the real values with the increasing time passed without trilaterions. To avoid these kind of problems, the concept of `lost` agents and the procedures for these type of agents are described as follows:
 	
@@ -874,13 +908,18 @@ and
 	The idea behind the 'Return to Home' mode is basically to increase the possibility of the lost agent to get in touch with the rest of the swarm with directing it to the center of the swarm. A simple demonstration of this procedure is illustrated in Figure-xx
 	
 	
-	Return to home sekli sunumdan konacak
+			\begin{figure}[H]
+				\caption{Return to Home Approach of a Lost Agent}
+				\centering
+				\includegraphics[scale = 0.60]{return_home}
+			\end{figure}
+
 	
 	
 	The lost agent aims to reach to the center of the formation and due to the errors on its position$\&$velocity data, it is expected to arrive to the red point illustrated in the figure. With this maneuver, the lost agent still have a chance to meet some other agents in the swarm even if it directs itself to an incorrect goal state. 
 	
 	
-	\subsection{State Estimation Procedure}
+	\subsubsection{State Estimation Procedure}
 	In local positioning subsystem, agents are expected to execute a state estimator algorithm in which they propogate their state vector composed of translational position and velocities with the help of inertial measurements. As discussed in Section 3.1 they will update and correct their positions with the measurements provided by the trilateration process execeuted with the localization timer period of 5 seconds. A Kalman estimator algorithm which uses the trilateration outputs as external measurents and the sensor measurement as inputs is designed to fusion the sensor measurements with the trilateration calculations. The model for this observer system is defined as follows:
 	
 	The state vector for each agent is defined as:
@@ -973,13 +1012,18 @@ R_k = Max. Position Error on Trilateration Process
 	in the above equations $K_k$ represents the Kalman gain matrix and $S_k$ is the residual covariance of the system at time $k$. $\hat{x}_{k,k}$ is the posteriori state estimate updated with measurements at time $k$ ;  $\hat{x}_{k,k-1}$ is the priori estimate of the state vector predicted with inputs at time $k$; $P_{k,k}$ is the posteriori error covariance matrix updated with measurements at time $k$; $P_{k,k-1}$ is the priori estimate covariance predicted with the inputs at time $k$
 		
 		
-\section{FORMATION CONTROL}		
+\subsection{FORMATION CONTROL}		
   The details of the methodology for dynamical formation control with heterogenous mobile robots is presented in this chapter. Basically three different approaches as artificial forces method, bubble packing method and randomized fractals method are implemented. It is possible to classify these methods in two sub categories. Potential field based approaches implements artificial forces acting on agents to get inside and cover the desired formation shape homogenously by avoiding collisions between the agents. The resultant positions of the agents in the formation shape is not certain, it dynamically changes with the instantaneous positions and interactions of the agents with each other and environment. The other two methods , shape partitioning based approaches, share a common structural basis. In these approaches the complex formation shape is partitioned into goal states to cover the shape homogenously with the mobile robots. The assignment of the agents to these goal states is handled with special algorithms to optimize the overall energy consumpytion of the swarm. The difference between these two methods is the partitioning approach of the complex shape. 
 		
-		Method lari gosteren sekli buraya ekleyelim
+	\begin{figure}[H]
+		\caption{Clusters Around Position Beacons}
+		\centering
+		\includegraphics[scale = 0.60]{methods}
+	\end{figure}
+
 		
 		
-		\subsection{artificial forces method}
+		\subsubsection{Artificial Forces Method}
 		Artificial forces method implements some potential fields over each agent arised from the interactions between agents, formation shape and environment etc. The positions of the agents at the formation shape  are determined randomly with a local equilibrium point of the swarm in which every agent is at balance under the total force acting from the environment. There are basically three different kinds of artificial forces named intermember forces representing the forces created by the other agents in the swarm to achieve collision avoidance, the attractive forces representing the forces created by the desired formation shape to attract the agent into the shape and repulsive forces created by the formation shape to keep agent inside the shape. It is possible to augment these type of forces for specific tasks and objectives, e.g. obstacle forces created by the obstacles in the environment can be implemented to achieve obstacle avoidance.
 		Since the method to calculate the artificial forces involves contour integrals, it will be useful to give mathematical definition of contour integrals;
 		
@@ -998,8 +1042,13 @@ z(t) = x(t)+iy(t),   \hspace{0.1cm} a\leq t \leq b
 z(t_1) \neq z(t_2)   \hspace{0.1cm} whenever   \hspace{0.3cm} t_1\neq t_2
 		\end{equation}
 		On the other hand if  $z(a)=z(b)$ is the only intersection point, the curve is said to be simple closed curve. Regarding with these given definitions, an example for a  simple smooth closed curve is illustrated in Figure -xx
+			\begin{figure}[H]
+				\caption{A Simple Closed Curve}
+				\centering
+				\includegraphics[scale = 0.60]{simple_closed_curve}
+			\end{figure}
+
 		
-		Sunumdan simple closed curve buraya konacak
 		
 		Let $f(z)$ is a complex function in a domain $D$ in the complex pane and let $C$ be simple closed contour contained in $D$ with initial point $z_0$ and terminal point  $z$. It is possible to take the integral of $f(z)$ along the contour $C$
 		
@@ -1019,10 +1068,9 @@ z(t_1) \neq z(t_2)   \hspace{0.1cm} whenever   \hspace{0.3cm} t_1\neq t_2
                         & \hspace{0.4cm} + i\int_{a}^{b} \left[u(x(t),y(t) )\frac{dy(t)}{dt} + v(x(t),y(t) )\frac{dx(t)}{dt}\right]dt
 		\end{align*}
 		
-     \subsection{Artificial Forces and Utitilty Functions}
-		As it is mentioned in the Section-xx Objectives part, the formation shapes will be complex contours which cannot be identified analytically, but the definition for the artificial forces and utility functions are expressed in continuous contour integrals which requires the analytical expression of the curve on which the integral will be taken. To enable these type of calculations it is required to provide these statements in discrete domain to achieve calculations with complex closed curves.
-
-		1- Cauchy Winding Number
+     \paragraph{Utitilty Functions}\hspace{0pt} \\
+		As it is mentioned in the Section-xx Objectives part, the formation shapes will be complex contours which cannot be identified analytically, but the definition for the artificial forces and utility functions are expressed in continuous contour integrals which requires the analytical expression of the curve on which the integral will be taken. To enable these type of calculations it is required to provide these statements in discrete domain to achieve calculations with complex closed curves. \\ \newline
+\textit{ 		1- Cauchy Winding Number:} \\ 
 		Cauchy winding number of a curve in the plane around a given point is the number of times that curve travels counterclockwise around the point. This number is used to switch on/off some of the artificial forces while the agent is inside or outside of the formation shape. Suppose $C$ is the complex closed curve which is a set of points $z=(x,y)$ in the complex plane  and $z_i$ is a point to check whether it is inside of the curve, then the Caucy winding number is :
 					
 		\begin{equation}
@@ -1071,9 +1119,16 @@ z_k - z_{k-1} = z_{k+1} - z_k, \hspace{0.2cm}  \forall k ;  \hspace{0.2cm} when 
 		
 The assumption of $K \to\infty$ makes it possible to calculate the integral of Cauchy winding number with a small error with large number of $K$ which can be achieved by partitioning the desired formation shape  into small pieces with equal  distances. This approach is used to provide representations of the contour integrals in discrete domain. 
 
-Burada iceride dısarda noktalarla doldurdughumuz seklı verelim
+			\begin{figure}[H]
+				\caption{Formation Shape in an Environment (Green Dots: Inside of the Shape - Red Dots: Outside of the Shape)}
+				\centering			
+				\includegraphics[scale = 0.30]{iceride_disarida}
+
+			\end{figure}
+
+
+		\textit{ 	2- Length of a formation shape} \\ 
 		
-		2- Length of a formation shape
 		
 		The length of a formation shape can be calculated with the equation of;
 		
@@ -1090,8 +1145,8 @@ l(C) = \sum_{k=1}^{K}\sqrt{(x_{k+1} - x_k)^2 + (y_{k+1} - y_k)^2}
 				z_k - z_{k-1} = z_{k+1} - z_k, \hspace{0.2cm}  \forall k ;  \hspace{0.2cm} when  \hspace{0.2cm} K \to\infty
 				\end{equation}
 		
-		3-Center of a Formation Shape
-		
+	
+		\textit{ 	3-Center of a Formation Shape} \\ 	
 	The center of a formation shape can be calculated with the equation of;
 	\begin{equation}
  z_c = \frac{\oint_C z\norm{dz}}{l(C)}
@@ -1105,8 +1160,8 @@ l(C) = \sum_{k=1}^{K}\sqrt{(x_{k+1} - x_k)^2 + (y_{k+1} - y_k)^2}
 		
 		where $z_{cx}$ and $z_{cy}$ are the $x$ and $y$ coordinates of the center of formation shape respectively.
 		
-		4- Area of a Formation Shape
-		
+	
+		\textit{ 	4- Area of a Formation Shape} \\ 		
 		Green's theorem can be used to calculate of the area of a closed curve. According to this theorem the area of $D$ given by the double integral
 		\begin{equation}
  A = \int\int_D dA
@@ -1136,7 +1191,8 @@ Area &= \frac{1}{2} \oint_C xdy - \frac{1}{2} \oint_C ydx \\
 				\begin{equation}
 				z_k - z_{k-1} = z_{k+1} - z_k, \hspace{0.2cm}  \forall k ;  \hspace{0.2cm} when  \hspace{0.2cm} K \to\infty
 				\end{equation}
-			I- ARTIFICIAL FORCES
+ \paragraph{Artificial Forces}\hspace{0pt} \\
+
 			Artificial forces are defined to gather the agents in the swarm inside a formation shape and make them distributed homogenously inside the shape. It is possible to define some additional artificial forces to implement features like obstacle$\&$collision avoidance or smooth transitions between the boundaries of the formation shape. Attractive forces, repulsive forces, intermember forces, obstacle forces and transition forces are implemented to generate individual control laws for all agents in the swarm. Suppose the state of a member $i$ is described by
 			\begin{equation}
 X_i = \begin{bmatrix}
@@ -1179,14 +1235,26 @@ u_i = F_{i,a} + F_{i,r} + F_{i,m} + F_{i,t}
 			\end{equation}
 		It is necessary to define the concept of "covearge circle"	for the agents which will be used in the artificial forces calculations. Coverage circle of agent $i$, $C_i$ is defined as the circle with minimum radius which can cover the whole agent's collision surface. The radius of this circle is given with $d_c$. Some of the examples of coverage circles for different types of mobile robots are illustrated in Figure -xx below
 		
-		Farkli sekillerde agentlar ve bunlarin ertrafindaki daireleri gosteren coverage circle resimleri koyalim
+					\begin{figure}[H]
+						\caption{Coverage Circles of Different Types of Agents}
+						\centering
+						\includegraphics[scale = 0.60]{coverage_circles}
+					\end{figure}
+		
+
 		
 		
-		The components of these  control forces are described in details at the following section.
-			1- Attractive Forces
+		The components of these  control forces are described in details at the following section. \newline
+				\textit{			1- Attractive Forces} \\ 
+
 			Attractive forces are the artificial force components generated by the formation shape to attract the agent towards the center of the formation .They are active when the agents are outside of the shape. 
-			
-			Attractive force lari gosteren bir sekil koyalim, agentlara shape disarisindayken etki eden kuvvet vektorleri
+						\begin{figure}[H]
+							\caption{Attractive Forces Generated by the Formation Shape}
+							\centering
+							\includegraphics[scale = 0.60]{attractive_forces}
+						\end{figure}	
+
+
 
 The equations for the attractive forces are defined as follows:			
 			\begin{equation}
@@ -1202,12 +1270,18 @@ F_{i,a} := \frac{k_a (1-n(C,\alpha X_i))}{l(C)} \oint_C(z-\alpha X_i)\norm{dz}
 		z_k - z_{k-1} = z_{k+1} - z_k, \hspace{0.2cm}  \forall k ;  \hspace{0.2cm} when  \hspace{0.2cm} K \to\infty
 		\end{equation}
 			
-			and $F_{iax} , F_{iay} $ are the attractive force components in $x,y$ coordinates respectively.
+			and $F_{iax} , F_{iay} $ are the attractive force components in $x,y$ coordinates respectively.\newline
 			
-			2- Repulsive Forces
+					\textit{	2- Repulsive Forces} \\ 
+		
 			Repulsive forces are the artificial force components generated by the formation shape to keep the agents inside the shape. They are active when the agents are inside the shape. 
 					
-						Repulsive force lari gosteren bir sekil koyalim, agentlara shape icindeyken etki eden kuvvet vektorleri
+							\begin{figure}[H]
+								\caption{Repulsive Forces Generated by the Formation Shape}
+								\centering
+								\includegraphics[scale = 0.60]{repulsive_forces}
+							\end{figure}
+							
 			The equations for the attractive forces are defined as follows:	
 				\begin{equation}
 F_{i,r} := k_r  n(C,\alpha X_i) \oint_C \left[\frac{\alpha X_i - z}{\norm{\alpha X_i - z}^3}\right] \norm{dz}
@@ -1222,13 +1296,17 @@ F_{i,r} := k_r  n(C,\alpha X_i) \oint_C \left[\frac{\alpha X_i - z}{\norm{\alpha
 						z_k - z_{k-1} = z_{k+1} - z_k, \hspace{0.2cm}  \forall k ;  \hspace{0.2cm} when  \hspace{0.2cm} K \to\infty
 						\end{equation}
 						
-						and $F_{irx} , F_{iry} $ are the repulsive force components in $x,y$ coordinates respectively.
+						and $F_{irx} , F_{iry} $ are the repulsive force components in $x,y$ coordinates respectively. \newline
 						
-			
-			3- Inter-member repulsion forces
+					\textit{		3- Inter-member repulsion forces} \\ 
+	
 			Intermember forces are the artificial force components generated by the agents in the swarm to avoid collisions between themselves. 
 			
-			Intermember kuvvetleri gosteren bir sekil ve mesafeye bagli olarak kuvvetlerin arttigini gosteren bubble packing deki sekil konsun
+			\begin{figure}[H]
+				\caption{Intermember Forces Generated by Agents}
+				\centering
+				\includegraphics[scale = 0.60]{intermember_forces}
+			\end{figure}
 			
 			The equations for the intermember forces on the agent $i$ on $z_i = (x_i, y_i)$  in the complex plane ,
 			
@@ -1244,14 +1322,19 @@ F_{i,m} = k_m \sum_{j=1, j\neq i}^{N}\frac{\alpha X_i - \alpha X_j}{(\norm{\alph
 &F_{imx} = k_m \sum_{j=1, j\neq i}^{N}\frac{x_i- x_j}{\norm{\alpha X_i - \alpha X_j}}  \frac{1}{(\norm{\alpha X_i - \alpha X_j} - d_o)^2}\\
 &F_{imy} = k_m \sum_{j=1, j\neq i}^{N}\frac{y_i- y_j}{\norm{\alpha X_i - \alpha X_j}}  \frac{1}{(\norm{\alpha X_i - \alpha X_j} - d_o)^2}\\
 			\end{align*}
-			where $k_m$ is the variable gain for the intermember forces. 
+			where $k_m$ is the variable gain for the intermember forces.  \newline
 			
+					\textit{4- Transition Forces} \\ 
 			
-			4- Transition Forces
 			
 			Transition forces are the artificial force component to force the agent inside the formation shape when they are close to the boundaries. Since the attractive forces have a decreasing nature while the agent getting closer to the formation shape, it is needed to add this type of forcing function to ensure the agents to get inside the shape. Transition forces are active outside of the desired formation shape.
 			
-			Burada attractive force larin sekil boundary sine yaklastikca kuculdupu transition larin basladigini gosteren bir sekil konulsun
+				\begin{figure}[H]
+					\caption{Comparison of Attractive and Transition Forces Close to the Formation Shape Boundary}
+					\centering
+					\includegraphics[scale = 0.80]{transition_forces}
+				\end{figure}
+			
 			
 				The equation for the transition forces are defined as follows:	
 				
@@ -1265,9 +1348,10 @@ F_{i,m} = k_m \sum_{j=1, j\neq i}^{N}\frac{\alpha X_i - \alpha X_j}{(\norm{\alph
 &F_{ity} = k_t  (1-n(C,\alpha X_i) \sum_{k=1,}^{K}\frac{y_k- y_i}{\norm{\alpha X_i - z_k}^3}\\
 \end{align*}
 			
-			where  $F_{itx} , F_{ity} $ are the transition force components in $x,y$ coordinates respectively.
+			where  $F_{itx} , F_{ity} $ are the transition force components in $x,y$ coordinates respectively. \newline
 			
-			5- Obstacle forces
+					\textit{			5- Obstacle forces} \\ 
+
 			
 			Obstacle forces are the artificial force components generated by the obstacle in the environment to achieve obstacle avoidance of the agents during formation control. 	
 			The equation for the obstacle forces are defined as follows:	
@@ -1289,13 +1373,19 @@ F_{i,o} := k_o  \oint_O \left[\frac{\alpha X_i - z_o}{(\norm{\alpha X_i - z_o} -
 			\end{equation}
 			
 			
-			\subsection{Buffer Zone Implementation}
+			\paragraph{Buffer Zone Implementation}\hspace{0pt} \\
 			
      The attractive and transition forces are defined to be active when the agents are outside of the shape, the resistive forces are active when agents are inside the shape. Due to this type of sharp transitions on the total artificial force acting on an agent which is crossing the boundary of the formation shape, it is possible to have a chattering effect. To avoid this chattering effect and provide a smooth transition of the agent to pass the boundary of formation shape, a buffer zone around the boundaries are implemented. The main approach during the transition of these boundaries is to dynamically change the variable gains of these artificial forces to linearly change between zero and nominal values at the boundary conditions. 
      
-     Linear degisen gainlerle iliskili bi sekil koyalim. hem att, trans. repusive icin
+			\begin{figure}[H]
+				\caption{Transition of the Artificial Forces on Buffer Zone}
+				\centering
+				\includegraphics[scale = 0.50]{buffer_zone}
+			\end{figure}
 			
-			\subsection{XSwarm Theory}
+			
+			\paragraph{XSwarm Theory}\hspace{0pt} \\
+
 			
 			Samitha and Pubudu [xx] have provided a definition of "X-Swarm" and give a theorem which describes the motion of an agent towards s the formation shape based on the X -Swarm definition. Let $S$ be a swarm with $N$ agents. This swarm is defined as X-Swarm if there exists some positive constants $\delta$ and  $ \gamma$ that satisfy the following conditions simultaneously for all $i,j \in S$ and $i \neq j$
 			
@@ -1350,8 +1440,9 @@ Then using the condition 2 of the X-swarm definition, the following expression c
 			\begin{equation}
 \dot{V}_i < -k_f \norm{\dot{v}_i} ^2
 			\end{equation}
-			which proves the given theorem. 
-\subsection{Implementation of X-Swarm Theory}			
+			which proves the given theorem.  \newline
+
+	\paragraph{Implementation of X-Swarm Theory}\hspace{0pt} \\		
 
 Two conditions to create a X-Swarm is to find two positive variables which satisfy the following inequalities
 
@@ -1420,7 +1511,13 @@ Shape partitioning methods have an approach to direct the agents to the goal sta
 		
 		The term free configuration space $C_{free}$ will be analyzed in detail in Section -xx. An execution of the Algorithm-1 is illustrated in Figure -xx below.
 		
-		Giris formation shape ve bubble lar, cikista merkezde toplanmis bubblelar olan bir sekil koyalim
+				\begin{figure}[H]
+					\caption{Initialization of the Bubble Packing Algorithm}
+					\centering
+					\includegraphics[scale = 0.50]{bubble_packing}
+				\end{figure}
+				
+
 		
 		II- Bubble Meshing Process 
 		
@@ -1433,7 +1530,14 @@ Shape partitioning methods have an approach to direct the agents to the goal sta
 		\end{array} \right.
 		\end{equation}
 	where $l$ is the distance between the centers of the related bubbles. 
-	Makaleden interbubble force seklini alalim ya da biz cizelim
+		\begin{figure}[H]
+			\caption{Interbubble Forces}
+			\centering
+			\includegraphics[scale = 0.70]{interbubble_forces}
+		\end{figure}
+		
+
+
 	
 	The shape repulsive forces have the same characteristics with the repulsive artificial forces discussed in Section -xx. The representation of shape repulsive forces for the desired formation shape $C$ with the points of  $z_k = (x_k,y_k)$ the complex plane::
 	
@@ -1444,9 +1548,13 @@ Shape partitioning methods have an approach to direct the agents to the goal sta
 			where $k_r$ is the variable gain for the repulsive forces. The representation of the repulsive forces on agent $i$ on $z_i = (x_i, y_i)$ with the points of  $z_k = (x_k,y_k)$ of formation shape in the complex plane:
 	
 	The bubbles are distributed homogenously under the influence of these two forces when they get an equilibrium state in which the total net forces acting on individual bubbles reaches zero. The final equilibrium states of the bubbles determines the potential goal states of the agents in the swarm to cover the formation shape. 
-	
-	Buraya initial pozisyonlardan nihai pozisyona gelinmis goal state seklini gosteren bir resim koyalim. (Iteration lar ile)
-	
+			\begin{figure}[H]
+				\caption{Bubble Packing Algorithm}
+				\centering
+				\includegraphics[scale = 0.70]{bubble_packing2}
+			\end{figure}
+
+
 			\subsubsection{Randomized Fractals Method}
 Randomized fractals method are used to cover surfaces or volumes randomly with fractals. The main idea is to fill the fractals with the areas determined by the rule of [26] :
 \begin{equation}
