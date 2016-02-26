@@ -25,30 +25,21 @@
 \BOOKMARK [3][-]{subsubsection.3.1.4}{Handling Lost Agents}{subsection.3.1}% 25
 \BOOKMARK [3][-]{subsubsection.3.1.5}{State Estimation Procedure}{subsection.3.1}% 26
 \BOOKMARK [2][-]{subsection.3.2}{FORMATION CONTROL}{section.3}% 27
-\BOOKMARK [3][-]{subsubsection.3.2.1}{Artificial Forces Method}{subsection.3.2}% 28
-\BOOKMARK [1][-]{section.4}{Shape Partitioning Methods}{}% 29
-\BOOKMARK [2][-]{subsection.4.1}{Determining the Potential Goal States}{section.4}% 30
-\BOOKMARK [3][-]{subsubsection.4.1.1}{Bubble Packing Method}{subsection.4.1}% 31
-\BOOKMARK [3][-]{subsubsection.4.1.2}{Randomized Fractals Method}{subsection.4.1}% 32
-\BOOKMARK [2][-]{subsection.4.2}{Mesh Quality Measurement}{section.4}% 33
-\BOOKMARK [2][-]{subsection.4.3}{Decision Process on Goal States}{section.4}% 34
-\BOOKMARK [3][-]{subsubsection.4.3.1}{Free Configuration Space}{subsection.4.3}% 35
-\BOOKMARK [3][-]{subsubsection.4.3.2}{Visibility Graphs and Dijkstra's Algorihtm}{subsection.4.3}% 36
-\BOOKMARK [3][-]{subsubsection.4.3.3}{Collaborative Decision Process of Final Goal States}{subsection.4.3}% 37
-\BOOKMARK [2][-]{subsection.4.4}{Control System Design for Individual Agents}{section.4}% 38
-\BOOKMARK [1][-]{section.5}{RESULTS AND DISCUSSION}{}% 39
-\BOOKMARK [2][-]{subsection.5.1}{Simulation Environment}{section.5}% 40
-\BOOKMARK [2][-]{subsection.5.2}{LPS Design}{section.5}% 41
-\BOOKMARK [2][-]{subsection.5.3}{FORMATION CONTROL SYSTEM}{section.5}% 42
-\BOOKMARK [3][-]{subsubsection.5.3.1}{Mesh Qualities}{subsection.5.3}% 43
-\BOOKMARK [3][-]{subsubsection.5.3.2}{Total Energy Consumption}{subsection.5.3}% 44
-\BOOKMARK [3][-]{subsubsection.5.3.3}{Formation Shape 1}{subsection.5.3}% 45
-\BOOKMARK [3][-]{subsubsection.5.3.4}{Formation Shape 2}{subsection.5.3}% 46
-\BOOKMARK [3][-]{subsubsection.5.3.5}{Settling Time}{subsection.5.3}% 47
-\BOOKMARK [3][-]{subsubsection.5.3.6}{Evaluation}{subsection.5.3}% 48
-\BOOKMARK [2][-]{subsection.5.4}{HARDWARE IMPLEMENTATION}{section.5}% 49
-\BOOKMARK [2][-]{subsection.5.5}{Performance Analysis}{section.5}% 50
-\BOOKMARK [1][-]{section.6}{Conclusion and Future Works}{}% 51
-\BOOKMARK [2][-]{subsection.6.1}{Conclusion}{section.6}% 52
-\BOOKMARK [2][-]{subsection.6.2}{Future Works}{section.6}% 53
-\BOOKMARK [1][-]{section.7}{ornekler}{}% 54
+\BOOKMARK [3][-]{subsubsection.3.2.1}{Potential Field Based Approach}{subsection.3.2}% 28
+\BOOKMARK [3][-]{subsubsection.3.2.2}{Shape Partitioning Methods}{subsection.3.2}% 29
+\BOOKMARK [1][-]{section.4}{RESULTS AND DISCUSSION}{}% 30
+\BOOKMARK [2][-]{subsection.4.1}{Simulation Environment}{section.4}% 31
+\BOOKMARK [2][-]{subsection.4.2}{LPS Design}{section.4}% 32
+\BOOKMARK [2][-]{subsection.4.3}{FORMATION CONTROL SYSTEM}{section.4}% 33
+\BOOKMARK [3][-]{subsubsection.4.3.1}{Mesh Qualities}{subsection.4.3}% 34
+\BOOKMARK [3][-]{subsubsection.4.3.2}{Total Energy Consumption}{subsection.4.3}% 35
+\BOOKMARK [3][-]{subsubsection.4.3.3}{Formation Shape 1}{subsection.4.3}% 36
+\BOOKMARK [3][-]{subsubsection.4.3.4}{Formation Shape 2}{subsection.4.3}% 37
+\BOOKMARK [3][-]{subsubsection.4.3.5}{Settling Time}{subsection.4.3}% 38
+\BOOKMARK [3][-]{subsubsection.4.3.6}{Evaluation}{subsection.4.3}% 39
+\BOOKMARK [2][-]{subsection.4.4}{HARDWARE IMPLEMENTATION}{section.4}% 40
+\BOOKMARK [2][-]{subsection.4.5}{Performance Analysis}{section.4}% 41
+\BOOKMARK [1][-]{section.5}{Conclusion and Future Works}{}% 42
+\BOOKMARK [2][-]{subsection.5.1}{Conclusion}{section.5}% 43
+\BOOKMARK [2][-]{subsection.5.2}{Future Works}{section.5}% 44
+\BOOKMARK [1][-]{section.6}{ornekler}{}% 45

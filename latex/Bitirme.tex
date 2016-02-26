@@ -61,7 +61,7 @@
 \fancyfoot[RO,LE]{\thepage} % Custom footer text
 
 \usepackage{titlesec}
-\setcounter{secnumdepth}{4}
+\setcounter{secnumdepth}{5}
 %----------------------------------------------------------------------------------------
 %	TITLE SECTION
 %----------------------------------------------------------------------------------------
@@ -1023,7 +1023,8 @@ R_k = Max. Position Error on Trilateration Process
 
 		
 		
-		\subsubsection{Artificial Forces Method}
+		\subsubsection{Potential Field Based Approach}
+		\paragraph{Artificial Forces Method}
 		Artificial forces method implements some potential fields over each agent arised from the interactions between agents, formation shape and environment etc. The positions of the agents at the formation shape  are determined randomly with a local equilibrium point of the swarm in which every agent is at balance under the total force acting from the environment. There are basically three different kinds of artificial forces named intermember forces representing the forces created by the other agents in the swarm to achieve collision avoidance, the attractive forces representing the forces created by the desired formation shape to attract the agent into the shape and repulsive forces created by the formation shape to keep agent inside the shape. It is possible to augment these type of forces for specific tasks and objectives, e.g. obstacle forces created by the obstacles in the environment can be implemented to achieve obstacle avoidance.
 		Since the method to calculate the artificial forces involves contour integrals, it will be useful to give mathematical definition of contour integrals;
 		
@@ -1068,7 +1069,7 @@ z(t_1) \neq z(t_2)   \hspace{0.1cm} whenever   \hspace{0.3cm} t_1\neq t_2
                         & \hspace{0.4cm} + i\int_{a}^{b} \left[u(x(t),y(t) )\frac{dy(t)}{dt} + v(x(t),y(t) )\frac{dx(t)}{dt}\right]dt
 		\end{align*}
 		
-     \paragraph{Utitilty Functions}\hspace{0pt} \\
+     \subparagraph{Utitilty Functions}\hspace{0pt} \\
 		As it is mentioned in the Section-xx Objectives part, the formation shapes will be complex contours which cannot be identified analytically, but the definition for the artificial forces and utility functions are expressed in continuous contour integrals which requires the analytical expression of the curve on which the integral will be taken. To enable these type of calculations it is required to provide these statements in discrete domain to achieve calculations with complex closed curves. \\ \newline
 \textit{ 		1- Cauchy Winding Number:} \\ 
 		Cauchy winding number of a curve in the plane around a given point is the number of times that curve travels counterclockwise around the point. This number is used to switch on/off some of the artificial forces while the agent is inside or outside of the formation shape. Suppose $C$ is the complex closed curve which is a set of points $z=(x,y)$ in the complex plane  and $z_i$ is a point to check whether it is inside of the curve, then the Caucy winding number is :
@@ -1191,7 +1192,7 @@ Area &= \frac{1}{2} \oint_C xdy - \frac{1}{2} \oint_C ydx \\
 				\begin{equation}
 				z_k - z_{k-1} = z_{k+1} - z_k, \hspace{0.2cm}  \forall k ;  \hspace{0.2cm} when  \hspace{0.2cm} K \to\infty
 				\end{equation}
- \paragraph{Artificial Forces}\hspace{0pt} \\
+ \subparagraph{Artificial Forces}\hspace{0pt} \\
 
 			Artificial forces are defined to gather the agents in the swarm inside a formation shape and make them distributed homogenously inside the shape. It is possible to define some additional artificial forces to implement features like obstacle$\&$collision avoidance or smooth transitions between the boundaries of the formation shape. Attractive forces, repulsive forces, intermember forces, obstacle forces and transition forces are implemented to generate individual control laws for all agents in the swarm. Suppose the state of a member $i$ is described by
 			\begin{equation}
@@ -1373,7 +1374,7 @@ F_{i,o} := k_o  \oint_O \left[\frac{\alpha X_i - z_o}{(\norm{\alpha X_i - z_o} -
 			\end{equation}
 			
 			
-			\paragraph{Buffer Zone Implementation}\hspace{0pt} \\
+			\subparagraph{Buffer Zone Implementation}\hspace{0pt} \\
 			
      The attractive and transition forces are defined to be active when the agents are outside of the shape, the resistive forces are active when agents are inside the shape. Due to this type of sharp transitions on the total artificial force acting on an agent which is crossing the boundary of the formation shape, it is possible to have a chattering effect. To avoid this chattering effect and provide a smooth transition of the agent to pass the boundary of formation shape, a buffer zone around the boundaries are implemented. The main approach during the transition of these boundaries is to dynamically change the variable gains of these artificial forces to linearly change between zero and nominal values at the boundary conditions. 
      
@@ -1384,7 +1385,7 @@ F_{i,o} := k_o  \oint_O \left[\frac{\alpha X_i - z_o}{(\norm{\alpha X_i - z_o} -
 			\end{figure}
 			
 			
-			\paragraph{XSwarm Theory}\hspace{0pt} \\
+			\subparagraph{XSwarm Theory}\hspace{0pt} \\
 
 			
 			Samitha and Pubudu [xx] have provided a definition of "X-Swarm" and give a theorem which describes the motion of an agent towards s the formation shape based on the X -Swarm definition. Let $S$ be a swarm with $N$ agents. This swarm is defined as X-Swarm if there exists some positive constants $\delta$ and  $ \gamma$ that satisfy the following conditions simultaneously for all $i,j \in S$ and $i \neq j$
@@ -1442,7 +1443,7 @@ Then using the condition 2 of the X-swarm definition, the following expression c
 			\end{equation}
 			which proves the given theorem.  \newline
 
-	\paragraph{Implementation of X-Swarm Theory}\hspace{0pt} \\		
+	\subparagraph{Implementation of X-Swarm Theory}\hspace{0pt} \\		
 
 Two conditions to create a X-Swarm is to find two positive variables which satisfy the following inequalities
 
@@ -1473,20 +1474,21 @@ X_{sw_{max}} := max \norm{\frac{z_i - z_{cm}^i}{z_i - z_{cm}}}  \hspace{0.2cm} X
 			
 			
 			
-		\section{Shape Partitioning Methods}
+		\subsubsection{Shape Partitioning Methods}
 			
 			Shape partitioning methods have basically reduced down the formation control problem into two subproblems. The first part of the solution is to partition the desired formation shape into potential goal states according to the agent types to cover the desired formation shape homogenously. There are two different solutions to the shape partitioning problem are presented in this thesis work, bubble packing method and randomized fractals method. The second part of the solution is the decision process of the agents to select these goal states continuously to minimize the energy consumption of the swarm. During this decision process, the cost of reaching different goal states will be the main criteria for each agent. It is obvious that each agent will try to choose a goal state with minimum cost according to its position and the orientation in the environment. But the cases in which two or more agents are willing to reach the same goal point must be handled to optimize the overall utility of the swarm. 
 
 
 Shape partitioning methods have an approach to direct the agents to the goal states in which they have assigned instantly to minimize the energy consumption, but it is important to keep the agents together in the swarm while moving on a trajectory towards the formation shape, to reduce the Lost agent events described in Section-xx. For this purpose, attractive forces which directs the agents to the center of the formation shape under X-swarm consideration is added to the agents' control signal as an additive term. 
 			
-			\subsection{Determining the Potential Goal States}
-			\subsubsection{Bubble Packing Method}
+			\paragraph{Determining the Potential Goal States}
+			\subparagraph{Bubble Packing Method} \hspace{0pt} \\	
 			
 			Bubble packing method is widely used in mesh generation problems. It basically depends on covering a curve, surface or a volume with a proper number of bubbles by packing them tightly which mimic a Voronoi diagram, from which a set of well-shaped Delaunay triangles and tetrahedra can be created by connecting the centers of the bubbles[27].  The algorithm places the bubbles with their initial conditions in the surface and apply them interbubble forces which imitates the Van der Waals forces between the moleculer bonds  to distrubute the bubbles homogenously. Here, the main idea is to generate a mesh for a surface with identical bubbles to mimic a regular Voronoi diagram with the vertices represented by the centers of these bubbles. On the other hand, adaptive population control  methods are developed to increase the number of bubbles to fill the gaps in the shape and to remove the excess bubbles which are overlapping with each other and the shape boundaries. 
-			 Since the numbers and the the radius of coverage circles which is defined at Section-xx for the agents are predetermined in our formation control problem, the general bubble meshing algorithm have to be adopted to meet the requirements in shape partitioning in formation control.  The basic approach is to represent the agents in the swarm as bubbles with the radius of  their coverage circles and create a mesh by using these bubbles. 
+			 Since the numbers and the the radius of coverage circles which is defined at Section-xx for the agents are predetermined in our formation control problem, the general bubble meshing algorithm have to be adopted to meet the requirements in shape partitioning in formation control.  The basic approach is to represent the agents in the swarm as bubbles with the radius of  their coverage circles and create a mesh by using these bubbles. \newline
 			
-			I - Initial Placements of the Bubbles
+			\textit{			I - Initial Placements of the Bubbles} \\ 
+
 		  The initial bubble placements are important because it will greatly reduce the convergence time of the partitioning process. In this work, the bubbles are initiated close to the center of the formation shape randomly. The algorithm for initial bubble placements is provided as follows:
 		  
 
@@ -1518,8 +1520,8 @@ Shape partitioning methods have an approach to direct the agents to the goal sta
 				\end{figure}
 				
 
-		
-		II- Bubble Meshing Process 
+			\textit{			II- Bubble Meshing Process } \\ 
+	
 		
 		The bubbles are distributed homogenously with this process under two kinds of forces, interbubble forces and shape repulsive forces. The interbubble forces are proximity-based forces so that a system of bubbles is in equilibrium when bubbles are distributed over the whole formation shape. The implemented force equation is given
 		
@@ -1555,7 +1557,7 @@ Shape partitioning methods have an approach to direct the agents to the goal sta
 			\end{figure}
 
 
-			\subsubsection{Randomized Fractals Method}
+			\subparagraph{Randomized Fractals Method}\hspace{0pt} \\
 Randomized fractals method are used to cover surfaces or volumes randomly with fractals. The main idea is to fill the fractals with the areas determined by the rule of [26] :
 \begin{equation}
   A_i = \frac{A}{\zeta(c,N)(i+N)^c}
@@ -1571,7 +1573,13 @@ Randomized fractals method are used to cover surfaces or volumes randomly with f
 		\end{equation}
 	
 		which tells us the sum of the all areas $A_i$ is the total area of $A$ and the algorithm is space filling. This approach implements the fractals infinitely by reducing the areas in accordance with the Equation -xx to the desired formation shape randomly. 
-		Paperdan koymadigimiz bir sekil koyalim
+				\begin{figure}[H]
+					\caption{Randomized Fractals}
+					\centering
+					\includegraphics[scale = 0.70]{randomized}
+				\end{figure}
+		
+
 		
 		Since the areas and the number of the agents, which will be represented with their coverage circles, are predetermined in our work, it is possible to adopt this algorithm as follows:
 		
@@ -1597,7 +1605,7 @@ Randomized fractals method are used to cover surfaces or volumes randomly with f
 					\end{algorithm}
 	
 	
-	\subsection{Mesh Quality Measurement}
+	\paragraph{Mesh Quality Measurement}\hspace{0pt} \\
 	Since we have two different solutions to the shape partitioning problem, it is useful to define a method to compare the performances of these algorithms. One of the criterion of mesh diagrams is topological mesh irregularity [27-29]. This parametere is defined by : 
 	\begin{equation}
 \epsilon _t = \frac{1}{n} \sum_{i = 0}^{n} |\gamma _i - D|
@@ -1614,7 +1622,12 @@ Randomized fractals method are used to cover surfaces or volumes randomly with f
 	
 	and $\gamma _i$ represents the degree, or the number of neighboring nodes connected to the $i^th$ interior node, and $n$ represents the total number of interior nodes, i.e. the number of bubbles or fractals. It is obvious that the topological mesh irregularity vanishes when all nodes have $D$ neighbors, but it is almost not possible in practical application. 
 	
-	Burada 3=5 komusus olan bir node u ucgen ya da tetra voronoi diagrami ile verelim
+		\begin{figure}[H]
+			\caption{A Node with 6 Neighbors}
+			\centering
+			\includegraphics[scale = 0.70]{voronoi}
+		\end{figure}
+
 	
 	Another metric to evaluate the quality or the performance of the mesh is the geometric irregularity defined as[27]:
 	\begin{equation}
@@ -1630,15 +1643,19 @@ Randomized fractals method are used to cover surfaces or volumes randomly with f
 		
 		and $m$ represents the number of nodes, $r_i$ is the radii of inscribed circle of Voronoi cell belonging to node $i$ and $R_i$ is the radii of the circumscribing circle of Voronoi cell belonging to node $i$
 	
-	Burada bir ucgen bir tetraheadral icindeki disindaki daIRELERLE  voronoi verelim
+
+		\begin{figure}[H]
+			\caption{Inscribing and Circumscribing Circle of a Voronoi Cell Belonged to Node i}
+			\centering
+			\includegraphics[scale = 0.70]{voronoi2}
+		\end{figure}
 	
 	
-	
-		\subsection{Decision Process on Goal States}
+		\paragraph{Decision Process on Goal States}\hspace{0pt} \\
 	In the first part of the work,Section-xx Shape Partitioning, the formation control problem is reduced down to a problem in which every agent is expected to decide individually where to position in a given set of possible goal states $g_i \in G$ .  During this decision process, the cost of reaching different goal states will be the main criteria for each agent. Given goal states and cost values to these goal states, each agent must individually  decide where to position in the formation. This process must be held to optimize the utility of every agent with a collaboration. It is obvious that some of the agents may want to choose the same goal point to reach, so the swarm must reach a global consensus on target points and conflict cases must be handled. The main approach to provide a solution for this problem is to make each agent to calculate the costs of its own to the goal states and then create a global consensus with the other agents to minimize the overall energy consumption of the swarm while achieving a formation shape. 
 	In this work, the cost of reaching a goal state is defined with the minimum shortest path in the environment. A visibility graph based approach is used to calculate the shortest possible path to a goal states by taking into account the obstacles in the environment. The assignment process of the agents to the goal states which will be minimize the overall cost, is handled with the help of Munkres (Hungarian)  algorithm.
 	
-	\subsubsection{Free Configuration Space}
+	\subparagraph{Free Configuration Space}\hspace{0pt} \\
 		Since the shortest path is defined in the free configuration domain, each agent must calculate its free space by taking the obstacles in the environment into the account. 
 
 	Assume an environment with set of obstacles $S = \begin{Bmatrix}
@@ -1662,8 +1679,7 @@ Randomized fractals method are used to cover surfaces or volumes randomly with f
 	\end{figure}
 	Forbidden space for agent $i$, $C_{forb}(R_i, S)$ is the sum of the forbidden spaces calculated for each obstacle in the environment. 
 	
-	
-	\subsubsection{Visibility Graphs and Dijkstra$'$s Algorihtm}
+		\subparagraph{Visibility Graphs and Dijkstra$'$s Algorihtm}\hspace{0pt} \\
 It is obvious that the shortest path between two points in the environment must lie on the free configuration space, $C_{free}$ for each agent. A constraint for the shortest path is given as follows[30] : 
 \begin{displayquote}
 The shortest path between $p_{start}$ and $p_{goal}$ among a set $S$ of augmented polygonal obstacles consists of the arcs of the visibility graph $\gamma_{vis}(S^*)$ where $S^* := S \cup \begin{Bmatrix}
@@ -1743,9 +1759,9 @@ Consider set of obstacles in the environment is augmented with the Minkowski Sum
 		\end{algorithm}
 		In algorithm above $Distance[x]$ function call, calculates the total cost from the $source$\_$ node$ to the $x$ vertex, and $Previous[x]$ function call, returns the previous node in optimal path from $source$\_$ node$ .
 	In our work, the weights of the edges in $\gamma_{vis}$ , are calculated with the Euler distance between nodes in the environment.  
+			\subparagraph{Collaborative Decision Process of Final Goal States}\hspace{0pt} \\
 	
-	
-	\subsubsection{Collaborative Decision Process of Final Goal States}
+
 	
 In Section 2 and 3 possible routes and costs to the goal states are calculated with the help of Visibility Graphs and Dijkstra's algorithm  for each agent. It is obvious that each agent will try to choose a goal state with minimum cost according to its position and the orientation in the environment. But the cases in which two or more agents are willing to reach the same goal point must be handled by optimizing the overall utility of the swarm. To minimize to overall cost of whole swarm while achieving a formation shape, Hungarian algorithm which is a combinational optimization algorithm that solves this assignment problem is used. To implement this algorithm, a complete bipartite graph $G=(S,T,E)$ with $n \in S$ agents and $t \in T$ goal points is constructed.In this graph, each agent have a cost which is defined by the shortest path to the destination in the environment for different goal points. 
 	\begin{figure}[H]
@@ -1784,14 +1800,24 @@ In Section 2 and 3 possible routes and costs to the goal states are calculated w
      		\caption{HUNGARIAN ALGORITHM}
 		\end{algorithm}
 	
-	\subsection{Control System Design for Individual Agents}
+	\paragraph{Control System Design for Individual Agents}\hspace{0pt} \\
 Shape partitioning methods will provide the goal states for a desired formation shape and agents will be assigned to those goal states to minimize the overall energy consumption of the swarm. A control system which will guide the agents to reach these goal states must be designed for each agent individually. Since the environment is dynamically changing with lots of  mobile agents, it is very probable to have different assignments to these goal states at each iteration of formation control. On the other hand, the collision with the obstacles and the other agents at the environment must be prevented due the requirements presented in Section-xx. The control system must react to these dynamic requests. A velocity controller with a large bandwith is designed at the inner loop of the control system and the outer loop is composed with a velocity setpoint generator. The block diagram for the proposed controller structure is presented in Figure -xx.
 
-Genel blok diyagram buraya eklenecek
+
+			\begin{figure}[H]
+				\caption{General Scheme of the Contol System}
+				\centering
+				\includegraphics[scale = 0.45]{controller}
+			\end{figure}
+
 
 Velocity setpoint generator provides instant setpoints for the inner loop based on the current position of the agent and the desired goal state position.  This loop calculates the amplitude of the velocity setpoint proportinal with the euclidian distance of agent to the desired goal state. The direction of this velocity setpoint vector has a bearing angle of the line segment drawn from the agent to the goal state. This generator saturates the amplitude of the setpoint vector with 0.5 [m/sec] to prevent the agents' travelling in the environment so fast. 
+	\begin{figure}[H]
+		\caption{Velocity Setpoint Generation}
+		\centering
+		\includegraphics[scale = 0.50]{bearing}
+	\end{figure}
 
-Amplitude ve bearing sekli buraya konacak
 
 
 The inner loop tis designed to track the velocity setpoint provided by the generator and it has a state feedback structure. The gains for the feedback states are calculated with an LQR controller. A simple mass, damper type second order linear system is used to provide a model for the controller. The translational friction force is assumed to be linear with the velocity of each agent. Different mass and friction coefficients for heterogenous mobile robots are used in control system design. To track the desired velocity setpoint, the model of the system is augmented with an artificial error state,
@@ -1842,12 +1868,21 @@ q_2 = \frac{1}{t_2 (x_{2max})^2}; \hspace{0.1cm} and \hspace{0.1cm}
 r_1 = \frac{1}{ (u_{1max})^2}; \hspace{0.1cm}
 \end{equation}
 Here $t_i$  is the desired settling time for $x_i$ which is determined as 1.5 seconds for the velocity and 0.001 seconds for the integral state. The statement of $x_{imax}$ represents the expected maximum value of the state $i$ , which is defined 1 [m/sec] for the velocity state and 4 [m] for the error state. $u{1max}$ represent the maximum allowable input signal which is defined 3 [N]. The structure of the inner loop is illustrated in Figure-xx
+	\begin{figure}[H]
+		\caption{Inner Loop Structure}
+		\centering
+		\includegraphics[scale = 0.50]{inner_loop}
+	\end{figure}
 
-Inner loop sekli gelecek
+
 
 The error between the reference and the velocity feedback is integrated and multiplied with the error gain, and the velocity state is multiplied with the velocity gain. These two components generate the total control input of the system.  
 
-Step response buraya gelecek
+	\begin{figure}[H]
+		\caption{Step Response of the Closed Loop}
+		\centering
+		\includegraphics[scale = 0.50]{step_resp}
+	\end{figure}
 
 According to the Figure -xx, the settling time for the inner loop is around 0.5 seconds for a step input. This response characteristics is important since the system cannot react to the setpoints changing faster than 0.5 seconds, so the formation control loops in which the new goal state assignments are handled must be executed with 2Hz frequency. 
 
@@ -1858,12 +1893,19 @@ According to the Figure -xx, the settling time for the inner loop is around 0.5 
 	\subsection{Simulation Environment}
     Block diagram of the simulation environment is illustrated in Figure -xx.
     
-    Environment sekli buraya konacak.
+    
+    	\begin{figure}[H]
+    		\caption{Simulation Environment}
+    		\centering
+    		\includegraphics[scale = 0.50]{environment}
+    	\end{figure}
+    
+
     
 	Gazebo is an open source multi robot simulator developed by OSRF(Open Source Robotics Foundation). It has multiple physics engine ODE (Open Dynamics Engine), Bullet, DART(Dynamic Animation and Robotics Toolkit) and Simbody. It can execute simulations with multiple agents in an environment that is fully determined by the user. The dynamics and the physical properties of the robots are determined by the user. It supports to integrate with ROS (Robot Operating System)
     Shape partitioning algorithms are executed in Matlab environment and  potential goal states are published over a network socket. A plugin working in Gazebo environment listens the packets sent by Matlab and parse the data for each agent. Agents have their own plugins that listens goal states and execute their decision process algorithms. These plugins also have controller algorithms to make the agents reached to the goal states they have assigned. Dynamics of the agents are handled in the physics engines of the Gazebo simulator. The state vectors of the agents are published with a plugin from the Gazebo simulator and these state datas are used in the shape partitioning algorithms together with the formation shapes demanded by the user.   The environment is chosen as a rough 3D territory and each agent have different interactions with the environment with different mass and friction characteristics.
     
-    Uc farkli agent seklini ve environment i gosteren Gazebo sekli 
+
 
 	
 	\subsection{LPS  Design}
@@ -2236,7 +2278,10 @@ A simulation with multiple formation shapes sequentially is illustrated in Figur
 		
    A hardware demonstration is held with 5 mobile robots with different sizes, to achieve a proof of concept related with the topics searched in this thesis work. The agents are designed as mobile robots with three omni-wheels which allows them to navigate in the field in every direction without the need for changing their attitudes (i.e. headings) .  The schematic environment of this implementation is illustrated in Figure -xx
    
-   Hardware Implementation semasi sunumdan buraya eklenecek.
+ 	\begin{figure}[H]
+ 		\caption{Implementation Environment}
+ 		\centerline{\includegraphics[scale = 0.55]{hardware}}
+ 	\end{figure} 
    
 Each agent and the mission computer has a radio link to create a mesh network in which every agent and the mission computer can transfer messages between each other directly or with the help of their neighbors. Also they can broadcast messages to the rest of the nodes in the network.  On the other hand each agent has their individual CPU to execute the goal state decision process and to control the actuators to achieve the desired goal states. These processors also executes the control system which is descired in Section -xx and they manage the messaging by implementing the related protocols predetermined.  This architecture supports the idea of partially decentralized formation control in which each agent is responsible to take decisions and reach to a global consensus with the rest of the swarm on the potential goal states.  These potential goal states are determined by the mission computer which takes the desired formation shape from the operator and executes shape partitioning algorithms. The data of the potential goal states is broadcasted to all of the agents in the environment with the help of mesh network. 
 
@@ -2267,11 +2312,18 @@ Since the environment is an indoor area, it is impossible to use a GNSS system t
 		
 		Each agent have their individual processor unit and radio link on their boards. A block diagram of an individual agent is illustrated in Figure -xx 
 		
-		Sunumdan Single agent sekli konacak
+		\begin{figure}[H]
+			\caption{Hardware of an Agent}
+			\centerline{\includegraphics[scale = 0.70]{agent}}
+		\end{figure} 
 		
 		Microchip's Pic16f690 Microcontroller is responsible of controlling the mobile robot and data communication with the environment. This microcontroller runs the control algorithms which is described in Section-xx and drives the 3 step motor control units, ULN2003APG, via GPIO peripherals. The instant velocity setpoints for the stepper motors  are determined with the command mixture algorihtm illustrated in Figure -xx.
 		
-		Sunumdan command mixture sekli eklenecek
+			\begin{figure}[H]
+				\caption{Command Mixture of Step Motors}
+				\centerline{\includegraphics[scale = 0.70]{ccmb}}
+			\end{figure} 
+
 		
 		The desired velocity vector for the agent determined by the control algorithms is  distributed to the stepper motors in accordance with the orientation of the agent . Let $\norm{Vel}$ be the amplitude of the desired velocity and $\alpha$ is the angle representing the desired direction of the movement with respect to mobile robot's body frame.  The velocities for the stepper motors is determined with following equations,
 		
@@ -2295,8 +2347,14 @@ Since the environment is an indoor area, it is impossible to use a GNSS system t
 		\centerline{\includegraphics[scale = 0.60]{sematik-layout}}
 	\end{figure} 
 Figure-xx and Figure-xx describes the hardware parts used on a mobile robot.
-		
-		Sunumdan Hardware-1 ve Hardware-2 sekilleri konacak
+			\begin{figure}[H]
+				\caption{Harware of an Agent - Top View}
+				\centerline{\includegraphics[scale = 0.80]{hardware1}}
+			\end{figure} 
+		\begin{figure}[H]
+			\caption{Harware of an Agent - Bottom View}
+			\centerline{\includegraphics[scale = 0.80]{hardware2}}
+		\end{figure} 
 		
 		\subsection{Performance Analysis}
 		The system is tested with several formation shapes and results are analyzed with total displacements of the agents and the settling time metrics. Sample formation shapes are covered  and the algorithm proposed for formation control is tested in real time successfully.  Traces of the agents are plotted with the continuous blue lines from their initial positions to the goal states in the following figures. The desired formation shape is plotted with black circles. 
