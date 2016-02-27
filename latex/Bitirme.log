@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-1.40.11 (MiKTeX 2.9) (preloaded format=pdflatex 2015.8.29)  27 FEB 2016 11:52
+This is pdfTeX, Version 3.1415926-1.40.11 (MiKTeX 2.9) (preloaded format=pdflatex 2015.8.29)  27 FEB 2016 14:03
 entering extended mode
 **Bitirme.tex
 ("C:\Users\Kadir\Desktop\Formation Control\formation_control\latex\Bitirme.tex"
@@ -791,54 +791,45 @@ Package microtype Info: Loading generic settings for font family
 Package microtype Info: Character `029' is missing
 (microtype)             in font `T1/pplx/m/sc/12'.
 (microtype)             Ignoring protrusion settings for this character.
-
-Underfull \hbox (badness 10000) in paragraph at lines 125--126
-
- []
-
-[1{C:/ProgramData/MiKTeX/2.9/pdftex/config/pdftex.map}
+ [1{C:/ProgramData/MiKTeX/2.9/pdftex/config/pdftex.map}
 
 ]
-Underfull \hbox (badness 10000) in paragraph at lines 127--128
+Underfull \hbox (badness 10000) in paragraph at lines 128--129
 
  []
 
-LaTeX Font Info:    Font shape `T1/pplx/bx/n' in size <9> not available
-(Font)              Font shape `T1/pplx/b/n' tried instead on input line 132.
-<eyebot.png, id=181, 333.49594pt x 319.94531pt>
-File: eyebot.png Graphic file (type png)
- <use eyebot.png>
-Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [2]
-<Satellite.png, id=186, 303.38344pt x 210.03468pt>
+Underfull \hbox (badness 10000) in paragraph at lines 130--131
+
+ []
+
+[2]
+LaTeX Font Info:    Font shape `T1/pplx/bx/n' in size <9> not available
+(Font)              Font shape `T1/pplx/b/n' tried instead on input line 135.
+ <eyebot.png, id=185, 333.49594pt x 319.94531pt>
+File: eyebot.png Graphic file (type png)
+ <use eyebot.png> [3 <C:/Users/Kadir/Desktop/Formation Control/formation_contro
+l/latex/eyebot.png (PNG copy)>] <Satellite.png, id=192, 303.38344pt x 210.03468
+pt>
 File: Satellite.png Graphic file (type png)
  <use Satellite.png>
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [3 <C:/Users/Kadir/Desktop/Formation Control/formation_control/latex/eyebot.pn
-g (PNG copy)>] <scout_robots.png, id=193, 208.52907pt x 152.82094pt>
+<scout_robots.png, id=193, 208.52907pt x 152.82094pt>
 File: scout_robots.png Graphic file (type png)
-
-<use scout_robots.png> <kilobot.png, id=194, 479.54156pt x 171.64125pt>
+ <use scout_robots.png>
+[4 <C:/Users/Kadir/Desktop/Formation Control/formation_control/latex/Satellite.
+png (PNG copy)> <C:/Users/Kadir/Desktop/Formation Control/formation_control/lat
+ex/scout_robots.png (PNG copy)>]
+<kilobot.png, id=200, 479.54156pt x 171.64125pt>
 File: kilobot.png Graphic file (type png)
-
-<use kilobot.png>
-Overfull \hbox (49.53577pt too wide) in paragraph at lines 162--163
+ <use kilobot.png>
+Overfull \hbox (49.53577pt too wide) in paragraph at lines 165--166
  [][] 
  []
 
-
-Underfull \vbox (badness 2744) has occurred while \output is active []
-
- [4 <C:/Users/Kadir/Desktop/Formation Control/formation_control/latex/Satellite
-.png (PNG copy)> <C:/Users/Kadir/Desktop/Formation Control/formation_control/la
-tex/scout_robots.png (PNG copy)>] <mobilerobots.png, id=201, 462.97969pt x 315.
-42844pt>
+<mobilerobots.png, id=201, 462.97969pt x 315.42844pt>
 File: mobilerobots.png Graphic file (type png)
-
-<use mobilerobots.png>
-Overfull \hbox (32.97392pt too wide) in paragraph at lines 174--175
+ <use mobilerobots.png>
+Overfull \hbox (32.97392pt too wide) in paragraph at lines 177--178
  [][] 
  []
 
@@ -848,7 +839,7 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
  [5 <C:/Users/Kadir/Desktop/Formation Control/formation_control/latex/kilobot.p
 ng (PNG copy)>]
 LaTeX Font Info:    Font shape `T1/pplx/bx/n' in size <10> not available
-(Font)              Font shape `T1/pplx/b/n' tried instead on input line 187.
+(Font)              Font shape `T1/pplx/b/n' tried instead on input line 190.
 
 Underfull \vbox (badness 7081) has occurred while \output is active []
 
@@ -879,7 +870,7 @@ File: gps.png Graphic file (type png)
  <use gps.png>
 
 Package caption Warning: The option `hypcap=true' will be ignored for this
-(caption)                particular \caption on input line 338.
+(caption)                particular \caption on input line 341.
 See the caption package documentation for explanation.
 
 
@@ -943,7 +934,7 @@ ntrol/latex/potential.png (PNG copy)>]
 <manifold.png, id=291, 493.845pt x 253.69781pt>
 File: manifold.png Graphic file (type png)
  <use manifold.png>
-Overfull \hbox (63.83916pt too wide) in paragraph at lines 456--457
+Overfull \hbox (63.83916pt too wide) in paragraph at lines 459--460
  [][] 
  []
 
@@ -984,7 +975,7 @@ ble2.png (PNG copy)>] <general_scheme.png, id=327, 686.565pt x 319.94531pt>
 File: general_scheme.png Graphic file (type png)
 
 <use general_scheme.png>
-Overfull \hbox (16.25734pt too wide) in paragraph at lines 540--541
+Overfull \hbox (16.25734pt too wide) in paragraph at lines 543--544
  [][] 
  []
 
@@ -1002,21 +993,21 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
  [24 <C:/Users/Kadir/Desktop/Formation Control/formation_control/latex/lps.png 
 (PNG copy)>] [25 <C:/Users/Kadir/Desktop/Formation Control/formation_control/la
 tex/beacons.png (PNG copy)>]
-Underfull \hbox (badness 10000) in paragraph at lines 661--663
+Underfull \hbox (badness 10000) in paragraph at lines 664--666
 
  []
 
 [26]
-Underfull \hbox (badness 10000) in paragraph at lines 674--676
+Underfull \hbox (badness 10000) in paragraph at lines 677--679
 
  []
 
-LaTeX Font Info:    Try loading font information for U+fplmbb on input line 702
+LaTeX Font Info:    Try loading font information for U+fplmbb on input line 705
 .
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\psnfss\ufplmbb.fd"
 File: ufplmbb.fd 2003/10/30 Fontinst v1.914 font definitions for U/fplmbb.
 )
-Underfull \hbox (badness 10000) in paragraph at lines 710--711
+Underfull \hbox (badness 10000) in paragraph at lines 713--714
 
  []
 
@@ -1043,12 +1034,12 @@ problem.png (PNG copy)>] <link_add.png, id=406, 290.58563pt x 201.00093pt>
 File: link_add.png Graphic file (type png)
 
 <use link_add.png>
-Underfull \hbox (badness 10000) in paragraph at lines 856--861
+Underfull \hbox (badness 10000) in paragraph at lines 859--864
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 868--869
+Underfull \hbox (badness 10000) in paragraph at lines 871--872
 
  []
 
@@ -1080,7 +1071,7 @@ ol/latex/methods.png (PNG copy)>]
 File: simple_closed_curve.png Graphic file (type png)
 
 <use simple_closed_curve.png>
-Underfull \hbox (badness 10000) in paragraph at lines 1072--1076
+Underfull \hbox (badness 10000) in paragraph at lines 1075--1079
 
  []
 
@@ -1090,13 +1081,13 @@ osed_curve.png (PNG copy)>]
 File: iceride_disarida.png Graphic file (type png)
 
 <use iceride_disarida.png> [39]
-Underfull \hbox (badness 10000) in paragraph at lines 1131--1132
+Underfull \hbox (badness 10000) in paragraph at lines 1134--1135
 
  []
 
 [40 <C:/Users/Kadir/Desktop/Formation Control/formation_control/latex/iceride_d
 isarida.png (PNG copy)>]
-Underfull \hbox (badness 10000) in paragraph at lines 1195--1196
+Underfull \hbox (badness 10000) in paragraph at lines 1198--1199
 
  []
 
@@ -1104,7 +1095,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 1195--1196
 File: coverage_circles.png Graphic file (type png)
 
 <use coverage_circles.png>
-Underfull \hbox (badness 10000) in paragraph at lines 1248--1250
+Underfull \hbox (badness 10000) in paragraph at lines 1251--1253
 
  []
 
@@ -1116,12 +1107,12 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [42 <C:/Users/Kadir/Desktop/Formation Control/formation_control/latex/coverage
 _circles.png (PNG copy)>]
-Underfull \hbox (badness 10000) in paragraph at lines 1274--1275
+Underfull \hbox (badness 10000) in paragraph at lines 1277--1278
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1276--1277
+Underfull \hbox (badness 10000) in paragraph at lines 1279--1280
 
  []
 
@@ -1133,12 +1124,12 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [43 <C:/Users/Kadir/Desktop/Formation Control/formation_control/latex/attracti
 ve_forces.png (PNG copy)>]
-Underfull \hbox (badness 10000) in paragraph at lines 1300--1301
+Underfull \hbox (badness 10000) in paragraph at lines 1303--1304
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1302--1303
+Underfull \hbox (badness 10000) in paragraph at lines 1305--1306
 
  []
 
@@ -1146,7 +1137,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 1302--1303
 File: intermember_forces.png Graphic file (type png)
 
 <use intermember_forces.png>
-Overfull \hbox (1.81197pt too wide) in paragraph at lines 1309--1310
+Overfull \hbox (1.81197pt too wide) in paragraph at lines 1312--1313
  [][] 
  []
 
@@ -1155,12 +1146,12 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [44 <C:/Users/Kadir/Desktop/Formation Control/formation_control/latex/repulsiv
 e_forces.png (PNG copy)>]
-Underfull \hbox (badness 10000) in paragraph at lines 1325--1327
+Underfull \hbox (badness 10000) in paragraph at lines 1328--1330
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1328--1329
+Underfull \hbox (badness 10000) in paragraph at lines 1331--1332
 
  []
 
@@ -1169,51 +1160,51 @@ File: transition_forces.png Graphic file (type png)
 
 <use transition_forces.png> [45 <C:/Users/Kadir/Desktop/Formation Control/forma
 tion_control/latex/intermember_forces.png (PNG copy)>]
-Underfull \hbox (badness 10000) in paragraph at lines 1352--1353
+Underfull \hbox (badness 10000) in paragraph at lines 1355--1356
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1354--1355
+Underfull \hbox (badness 10000) in paragraph at lines 1357--1358
 
  []
 
 [46 <C:/Users/Kadir/Desktop/Formation Control/formation_control/latex/transitio
 n_forces.png (PNG copy)>]
-Underfull \hbox (badness 10000) in paragraph at lines 1377--1378
+Underfull \hbox (badness 10000) in paragraph at lines 1380--1381
 
  []
 
 <buffer_zone.png, id=551, 693.34032pt x 319.94531pt>
 File: buffer_zone.png Graphic file (type png)
  <use buffer_zone.png>
-Underfull \hbox (badness 10000) in paragraph at lines 1388--1389
+Underfull \hbox (badness 10000) in paragraph at lines 1391--1392
 
  []
 
 [47 <C:/Users/Kadir/Desktop/Formation Control/formation_control/latex/buffer_zo
 ne.png (PNG copy)>]
-Underfull \hbox (badness 10000) in paragraph at lines 1443--1445
+Underfull \hbox (badness 10000) in paragraph at lines 1446--1448
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1446--1447
+Underfull \hbox (badness 10000) in paragraph at lines 1449--1450
 
  []
 
 [48] [49]
-Underfull \hbox (badness 10000) in paragraph at lines 1485--1486
+Underfull \hbox (badness 10000) in paragraph at lines 1488--1489
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1487--1489
+Underfull \hbox (badness 10000) in paragraph at lines 1490--1492
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1490--1491
+Underfull \hbox (badness 10000) in paragraph at lines 1493--1494
 
  []
 
@@ -1221,7 +1212,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 1490--1491
 File: bubble_packing.png Graphic file (type png)
 
 <use bubble_packing.png> [50]
-Underfull \hbox (badness 10000) in paragraph at lines 1523--1524
+Underfull \hbox (badness 10000) in paragraph at lines 1526--1527
 
  []
 
@@ -1233,7 +1224,7 @@ File: interbubble_forces.png Graphic file (type png)
 File: bubble_packing2.png Graphic file (type png)
 
 <use bubble_packing2.png>
-Overfull \hbox (20.55058pt too wide) in paragraph at lines 1556--1557
+Overfull \hbox (20.55058pt too wide) in paragraph at lines 1559--1560
  [][] 
  []
 
@@ -1271,7 +1262,7 @@ Underfull \vbox (badness 4556) has occurred while \output is active []
  [56 <C:/Users/Kadir/Desktop/Formation Control/formation_control/latex/Forbidde
 n.png (PNG copy)> <C:/Users/Kadir/Desktop/Formation Control/formation_control/l
 atex/shortest.png (PNG copy)>] [57]
-Underfull \hbox (badness 10000) in paragraph at lines 1762--1763
+Underfull \hbox (badness 10000) in paragraph at lines 1765--1766
 
  []
 
@@ -1299,7 +1290,7 @@ ng (PNG copy)>] <step_resp.png, id=687, 889.07156pt x 601.4972pt>
 File: step_resp.png Graphic file (type png)
 
 <use step_resp.png>
-Overfull \hbox (14.53008pt too wide) in paragraph at lines 1884--1885
+Overfull \hbox (14.53008pt too wide) in paragraph at lines 1887--1888
  [][] 
  []
 
@@ -1308,16 +1299,16 @@ p.png (PNG copy)> <C:/Users/Kadir/Desktop/Formation Control/formation_control/l
 atex/step_resp.png (PNG copy)>]
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 1890.
+(hyperref)                removing `math shift' on input line 1893.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 1890.
+(hyperref)                removing `math shift' on input line 1893.
 
 <environment.png, id=695, 994.46532pt x 466.74374pt>
 File: environment.png Graphic file (type png)
  <use environment.png>
-Overfull \hbox (67.22682pt too wide) in paragraph at lines 1900--1901
+Overfull \hbox (67.22682pt too wide) in paragraph at lines 1903--1904
  [][] 
  []
 
@@ -1440,7 +1431,7 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [73 <C:/Users/Kadir/Desktop/Formation Control/formation_control/latex/Topologi
 cal_Irr_2.png (PNG copy)>]
-Underfull \hbox (badness 10000) in paragraph at lines 2040--2041
+Underfull \hbox (badness 10000) in paragraph at lines 2043--2044
 
  []
 
@@ -1543,7 +1534,7 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 me_Shape_1.png (PNG copy)>]
 
 Package caption Warning: The option `hypcap=true' will be ignored for this
-(caption)                particular \caption on input line 2142.
+(caption)                particular \caption on input line 2145.
 See the caption package documentation for explanation.
 
 [83 <C:/Users/Kadir/Desktop/Formation Control/formation_control/latex/Total_Tim
@@ -1559,11 +1550,11 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 .png (PNG copy)>]
 
 Package caption Warning: The option `hypcap=true' will be ignored for this
-(caption)                particular \caption on input line 2172.
+(caption)                particular \caption on input line 2175.
 See the caption package documentation for explanation.
 
 
-Overfull \hbox (96.7154pt too wide) in paragraph at lines 2173--2181
+Overfull \hbox (96.7154pt too wide) in paragraph at lines 2176--2184
  [] 
  []
 
@@ -1579,13 +1570,13 @@ File: 2.png Graphic file (type png)
  <use 2.png>
 
 Package caption Warning: The option `hypcap=true' will be ignored for this
-(caption)                particular \caption on input line 2196.
+(caption)                particular \caption on input line 2199.
 See the caption package documentation for explanation.
 
 [86 <C:/Users/Kadir/Desktop/Formation Control/formation_control/latex/2_Gazebo.
 png (PNG copy)> <C:/Users/Kadir/Desktop/Formation Control/formation_control/lat
 ex/2.png (PNG copy)>]
-Overfull \hbox (96.7154pt too wide) in paragraph at lines 2197--2205
+Overfull \hbox (96.7154pt too wide) in paragraph at lines 2200--2208
  [] 
  []
 
@@ -1601,11 +1592,11 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 .png (PNG copy)>]
 
 Package caption Warning: The option `hypcap=true' will be ignored for this
-(caption)                particular \caption on input line 2220.
+(caption)                particular \caption on input line 2223.
 See the caption package documentation for explanation.
 
 
-Overfull \hbox (96.7154pt too wide) in paragraph at lines 2221--2229
+Overfull \hbox (96.7154pt too wide) in paragraph at lines 2224--2232
  [] 
  []
 
@@ -1621,13 +1612,13 @@ File: 4.png Graphic file (type png)
  <use 4.png>
 
 Package caption Warning: The option `hypcap=true' will be ignored for this
-(caption)                particular \caption on input line 2244.
+(caption)                particular \caption on input line 2247.
 See the caption package documentation for explanation.
 
 [89 <C:/Users/Kadir/Desktop/Formation Control/formation_control/latex/4_Gazebo.
 png (PNG copy)> <C:/Users/Kadir/Desktop/Formation Control/formation_control/lat
 ex/4.png (PNG copy)>]
-Overfull \hbox (96.7154pt too wide) in paragraph at lines 2245--2253
+Overfull \hbox (96.7154pt too wide) in paragraph at lines 2248--2256
  [] 
  []
 
@@ -1637,16 +1628,16 @@ File: multiple_formation.png Graphic file (type png)
 <use multiple_formation.png>
 
 Package caption Warning: The option `hypcap=true' will be ignored for this
-(caption)                particular \caption on input line 2265.
+(caption)                particular \caption on input line 2268.
 See the caption package documentation for explanation.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 2277.
+(hyperref)                removing `math shift' on input line 2280.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 2277.
+(hyperref)                removing `math shift' on input line 2280.
 
 <hardware.png, id=911, 762.59906pt x 518.6878pt>
 File: hardware.png Graphic file (type png)
@@ -1722,7 +1713,7 @@ File: 2_real_hardware.png Graphic file (type png)
 <use 2_real_hardware.png>
 
 Package caption Warning: The option `hypcap=true' will be ignored for this
-(caption)                particular \caption on input line 2374.
+(caption)                particular \caption on input line 2377.
 See the caption package documentation for explanation.
 
 <4_hardware.png, id=980, 892.08281pt x 434.37282pt>
@@ -1739,7 +1730,7 @@ File: 4_real_hardware.png Graphic file (type png)
 <use 4_real_hardware.png>
 
 Package caption Warning: The option `hypcap=true' will be ignored for this
-(caption)                particular \caption on input line 2396.
+(caption)                particular \caption on input line 2399.
 See the caption package documentation for explanation.
 
 <5_hardware.png, id=989, 892.08281pt x 434.37282pt>
@@ -1756,7 +1747,7 @@ File: 5_real_hardware.png Graphic file (type png)
 <use 5_real_hardware.png>
 
 Package caption Warning: The option `hypcap=true' will be ignored for this
-(caption)                particular \caption on input line 2419.
+(caption)                particular \caption on input line 2422.
 See the caption package documentation for explanation.
 
 <6_hardware.png, id=998, 892.08281pt x 434.37282pt>
@@ -1773,7 +1764,7 @@ File: 6_real_hardware.png Graphic file (type png)
 <use 6_real_hardware.png>
 
 Package caption Warning: The option `hypcap=true' will be ignored for this
-(caption)                particular \caption on input line 2442.
+(caption)                particular \caption on input line 2445.
 See the caption package documentation for explanation.
 
 <9_hardware.png, id=1007, 892.08281pt x 434.37282pt>
@@ -1790,7 +1781,7 @@ File: 9_real_hardware.png Graphic file (type png)
 <use 9_real_hardware.png>
 
 Package caption Warning: The option `hypcap=true' will be ignored for this
-(caption)                particular \caption on input line 2466.
+(caption)                particular \caption on input line 2469.
 See the caption package documentation for explanation.
 
 
@@ -1799,13 +1790,13 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
  [104 <C:/Users/Kadir/Desktop/Formation Control/formation_control/latex/9_hardw
 are.png (PNG copy)> <C:/Users/Kadir/Desktop/Formation Control/formation_control
 /latex/9_real_hardware.png (PNG copy)>] [105] [106]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 2530.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 2533.
  [107]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 2530.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 2533.
 
 ("C:\Users\Kadir\Desktop\Formation Control\formation_control\latex\Bitirme.aux"
 )
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 2530.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 2533.
 Package rerunfilecheck Info: File `Bitirme.out' has not changed.
 (rerunfilecheck)             Checksum: EFC2FE9DEAF120B87AC5B51273E29570;3166.
 
@@ -1833,7 +1824,7 @@ fonts/type1/public/fpl/fplrc8a.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/typ
 e1/urw/palatino/uplb8a.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/urw/p
 alatino/uplr8a.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/urw/palatino/
 uplri8a.pfb>
-Output written on Bitirme.pdf (107 pages, 40510625 bytes).
+Output written on Bitirme.pdf (107 pages, 40512703 bytes).
 PDF statistics:
  1163 PDF objects out of 1200 (max. 8388607)
  426 named destinations out of 1000 (max. 500000)

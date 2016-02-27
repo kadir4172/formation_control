@@ -118,11 +118,14 @@ There are lots of studies related with different problems in swarm robotics lite
 
 
 \subsection{Problem Definition}
+In this thesis work, the main idea is to propose a complete design solution to a dynamically changing formation system, including a local positioning system and formation control system. The swarm which is used in this formation system is assumed to be composed of heterogenous agents which have different functionalities and physical properties. The formation shape is expected to be closed contours which cannot be identified with analytical expressions and these shapes will be changing dynamically with a continuous manner. 
 
+Formation control system is heavily depend on the position data of individual agents in the environment. Since it is expected to have high number of agents in the environment due to the nature of a swarm, the agents are assumed to have simple structures with low capabilities including certain types of sensors. On the other hand, for indoor applications it will not be possible to use satellite dependent positioning systems on agents. Even if a positioning solution depending on different methods including visual feedback(by image processing), RSS(received signal strength) etc. is available for an indoor application, it is not possible to implement this solution for each single agent in the environment due to the increasing complexity and the costs by the number of agents. As a result of these constraints, it is required to implement a localization solution for the agents to provide the corrected positions in the workspace to be used by the formation control system. This localization process have to correct the position data of the agents with the determined process period and within an maximum error bound which will be determined by the requirements of the formation control problem. 
 
+Formation control system have to provide a solution to the coverage of a dynamically changing formation shape by the agents in the swarm. Desired formation shapes will not be simple geometrical shapes like circles, triangles etc.  Heterogenous agents with different shapes have to cover the instant formation shape homogenously as possible as. The total displacements of the agents while travelling towards the desired formation have to be minimized. In other words, agents have to adapt the new formation shape with minimum possible movement. On the other hand, collision avoidance with the obstacles in the workspace and with the other agents has to be provided while achieving different types of formation tasks. Each agent must execute its own controller-decision making algorithms in a decentralized manner. 
 \subsection{Motivation}
 
-The formation control problem can be defined as collaboration of a group of to maintain a formation with a certain shape [12]. It focuses on leading the individual agents of a swarm to perform  collective tasks including shape generation and formation reconfiguration while traversing a trajectory by providing collision avoidance simultaneosuly. These kind of tasks are achieved with a large group of small and simple robots  that can cooperate with each other. Formation control of multi agent systems  is an actively growing research field.\newline 
+The formation control problem can be defined as collaboration of an agents' group to maintain a formation with a certain shape [12]. It focuses on leading the individual agents of a swarm to perform  collective tasks including shape generation and formation reconfiguration while traversing a trajectory by providing collision avoidance simultaneosuly. These kind of tasks are achieved with a large group of small and simple robots  that can cooperate with each other. Formation control of multi agent systems  is an actively growing research field.\newline 
 
 Swarms which are used in formation control systems, can be composed of homogenous or heterogenous agents according to the requirements of the problem. The usage of the homogenous agents increases the total energy and the coverage of the system in the environment. This kind of a swarm has an increased redundancy and is capable of resuming the current task in case of failures of some of the agents during mission. On the other hand, a swarm composed of heterogeonus agents holds the different capabilities of the agents. This kind of a system can be used in tasks which requires different functionalities has to be performed individually or simultaneously.\newline
 
@@ -260,7 +263,7 @@ condition must be taken into account during the control system design, since ind
 
 \subsection{Goals}
 
-Along with these requirements and problems, the specific goals of the thesis:
+The objectives and the assumptions about the requirements define the goals of this thesis project. 
 
 1. Propogate the position and velocity states of the agents with inertial measurements.
 
@@ -543,7 +546,7 @@ In this thesis work, the problem of dynamical formation control of heterogenous 
 
 \subsection{Local Positioning System}
 
-Local positionin system is a subsystem to provide a complete solution to the localization of the agents in the environment. As discussed in Section-xx(Objectives) , agents are expected to have low sensor capabilities and only a limited number of them have external position measurement sensors on their boards. The rest of the swarm have to maintain their position$\&$velocity data with the help of their inertial measurements. Propogation of the states with this type of measurements are always inclined to drift problems due to the errors$\&$noise and bias problems of the sensors and the state vectors composed with the translational positions and velocities have to be corrected with an external measurement. A complete solution for this type of problem is proposed in Figure-xx. 
+Local positioning system is a subsystem to provide a complete solution to the localization of the agents in the environment. As discussed in Section-xx(Objectives) , agents are expected to have low sensor capabilities and only a limited number of them have external position measurement sensors on their boards. The rest of the swarm have to maintain their position$\&$velocity data with the help of their inertial measurements. Propogation of the states with this type of measurements are always inclined to drift problems due to the errors$\&$noise and bias problems of the sensors and the state vectors composed with the translational positions and velocities have to be corrected with an external measurement. A complete solution for this type of problem is proposed in Figure-xx. 
 
 
 
