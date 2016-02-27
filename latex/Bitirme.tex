@@ -1887,7 +1887,7 @@ The error between the reference and the velocity feedback is integrated and mult
 According to the Figure -xx, the settling time for the inner loop is around 0.5 seconds for a step input. This response characteristics is important since the system cannot react to the setpoints changing faster than 0.5 seconds, so the formation control loops in which the new goal state assignments are handled must be executed with 2Hz frequency. 
 
 
-\section{RESULTS AND DISCUSSION}	
+\section{SIMULATION ENVIRONMENT$\&$RESULTS}	
 	
 	In this section the results of the simulation are analyzed and discussed in detail for the LPS system design and Formation Control system design. Three different methods of Formation control system which are presented in Section-xx are evaluated and compared with each other. Simulations are handled in the environment of Gazebo simulator with a swarm of 50 agents which includes three different types of robots. The main system frequncy is determined as 2Hz due to the bandwith of the controllers which is discussed in Section-xx. 
 	\subsection{Simulation Environment}
@@ -2037,7 +2037,7 @@ The performance of the LPS design is tested in simulations with different condit
 		
 		In this thesis work, it is aimed to minimize the overall energy consumption of the swarm while getting the desired formation shape. Here the energy consumption of the swarm is defined as the sum of the consumed energy by the individual agents. Monte Carlo simulations with 1000 iterations are handled for the same formations shapes with different same initial conditions of the agents in the environment. 				Trajectories of the agents are recorded from the same initial positions until the goal states for three different types of formation control systems. Total energy consumption of the swarm is measured with total position displacements of the agents while getting the desired formation shapes. Sample outputs for three different types of formation control algorithms are illustrated in the following Figures.
 		
-   \subsubsection{Formation Shape 1}
+   \paragraph{Formation Shape 1}\hspace{0pt} \\
 		
 			\begin{figure}[H]
 				\caption{Formation Shape 1 in MATLAB environment:}
@@ -2075,7 +2075,7 @@ The performance of the LPS design is tested in simulations with different condit
 		
 		
 		
-		   \subsubsection{Formation Shape 2}
+		   \paragraph{Formation Shape 2}\hspace{0pt} \\
 Second formation shape gives similar results with three different formation control methods, the Artificial Forces Method increases the total energy consumption of the agents because of the reasons discussed for the Formation Shape 1.
 
 		   \begin{figure}[H]
@@ -2274,7 +2274,7 @@ A simulation with multiple formation shapes sequentially is illustrated in Figur
 			\end{center}
 		
 		
-		\subsection{HARDWARE IMPLEMENTATION}
+		\section{HARDWARE ENVIRONMENT $\&$ RESULTS}
 		
    A hardware demonstration is held with 5 mobile robots with different sizes, to achieve a proof of concept related with the topics searched in this thesis work. The agents are designed as mobile robots with three omni-wheels which allows them to navigate in the field in every direction without the need for changing their attitudes (i.e. headings) .  The schematic environment of this implementation is illustrated in Figure -xx
    
@@ -2523,34 +2523,7 @@ Figure-xx and Figure-xx describes the hardware parts used on a mobile robot.
 		
 		
 		
-		\section{ornekler}
-		
-		\begin{equation}
- k_t  \hspace{0.1cm}and\hspace{0.1cm} k_r
-		\end{equation}
-			\begin{equation}
-			A_i = C_{free}(R_i,S) + C_{forb}(R_i,S)
-			\end{equation}	
-			
-			
-			
-			\begin{equation}
-			S_1 \oplus S_2 := \begin{Bmatrix}
-			p+q : p \subset S_1, q \subset S_2
-			\end{Bmatrix} 
-			\end{equation}
-			
-			\begin{equation}
-			F_{i,m,x} = k_m \sum_{j=1, j\neq{i}}^{n}\left({\frac{x_i - x_j}{{d_{ij}}} \frac{1}{\left(d_{ij} - d_o \right)^2} } \right)
-			\end{equation}
-			
-			\begin{equation}
-			X_i= \begin{bmatrix}
-			z_i\\
-			\dot{z_i}
-			\end{bmatrix}
-			\end{equation}
-	
+
 		
 	%\end{multicols}
 	

@@ -27,19 +27,16 @@
 \BOOKMARK [2][-]{subsection.3.2}{FORMATION CONTROL}{section.3}% 27
 \BOOKMARK [3][-]{subsubsection.3.2.1}{Potential Field Based Approach}{subsection.3.2}% 28
 \BOOKMARK [3][-]{subsubsection.3.2.2}{Shape Partitioning Methods}{subsection.3.2}% 29
-\BOOKMARK [1][-]{section.4}{RESULTS AND DISCUSSION}{}% 30
+\BOOKMARK [1][-]{section.4}{SIMULATION ENVIRONMENT\046RESULTS}{}% 30
 \BOOKMARK [2][-]{subsection.4.1}{Simulation Environment}{section.4}% 31
 \BOOKMARK [2][-]{subsection.4.2}{LPS Design}{section.4}% 32
 \BOOKMARK [2][-]{subsection.4.3}{FORMATION CONTROL SYSTEM}{section.4}% 33
 \BOOKMARK [3][-]{subsubsection.4.3.1}{Mesh Qualities}{subsection.4.3}% 34
 \BOOKMARK [3][-]{subsubsection.4.3.2}{Total Energy Consumption}{subsection.4.3}% 35
-\BOOKMARK [3][-]{subsubsection.4.3.3}{Formation Shape 1}{subsection.4.3}% 36
-\BOOKMARK [3][-]{subsubsection.4.3.4}{Formation Shape 2}{subsection.4.3}% 37
-\BOOKMARK [3][-]{subsubsection.4.3.5}{Settling Time}{subsection.4.3}% 38
-\BOOKMARK [3][-]{subsubsection.4.3.6}{Evaluation}{subsection.4.3}% 39
-\BOOKMARK [2][-]{subsection.4.4}{HARDWARE IMPLEMENTATION}{section.4}% 40
-\BOOKMARK [2][-]{subsection.4.5}{Performance Analysis}{section.4}% 41
-\BOOKMARK [1][-]{section.5}{Conclusion and Future Works}{}% 42
-\BOOKMARK [2][-]{subsection.5.1}{Conclusion}{section.5}% 43
-\BOOKMARK [2][-]{subsection.5.2}{Future Works}{section.5}% 44
-\BOOKMARK [1][-]{section.6}{ornekler}{}% 45
+\BOOKMARK [3][-]{subsubsection.4.3.3}{Settling Time}{subsection.4.3}% 36
+\BOOKMARK [3][-]{subsubsection.4.3.4}{Evaluation}{subsection.4.3}% 37
+\BOOKMARK [1][-]{section.5}{HARDWARE ENVIRONMENT \046 RESULTS}{}% 38
+\BOOKMARK [2][-]{subsection.5.1}{Performance Analysis}{section.5}% 39
+\BOOKMARK [1][-]{section.6}{Conclusion and Future Works}{}% 40
+\BOOKMARK [2][-]{subsection.6.1}{Conclusion}{section.6}% 41
+\BOOKMARK [2][-]{subsection.6.2}{Future Works}{section.6}% 42
