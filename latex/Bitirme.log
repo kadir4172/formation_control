@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-1.40.11 (MiKTeX 2.9) (preloaded format=pdflatex 2015.8.29)  27 FEB 2016 14:03
+This is pdfTeX, Version 3.1415926-1.40.11 (MiKTeX 2.9) (preloaded format=pdflatex 2015.8.29)  27 FEB 2016 15:12
 entering extended mode
 **Bitirme.tex
 ("C:\Users\Kadir\Desktop\Formation Control\formation_control\latex\Bitirme.tex"
@@ -867,35 +867,33 @@ on_control/latex/decentralized.png (PNG copy)>] [9 <C:/Users/Kadir/Desktop/Form
 ation Control/formation_control/latex/complex.png (PNG copy)>] [10]
 <gps.png, id=239, 354.57469pt x 174.6525pt>
 File: gps.png Graphic file (type png)
- <use gps.png>
+ <use gps.png> [11 <C:/Users/Kadir/Desktop/Formation Control/formation_control/
+latex/gps.png (PNG copy)>]
 
 Package caption Warning: The option `hypcap=true' will be ignored for this
-(caption)                particular \caption on input line 341.
+(caption)                particular \caption on input line 345.
 See the caption package documentation for explanation.
 
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [11 <C:/Users/Kadir/Desktop/Formation Control/formation_control/latex/gps.png 
-(PNG copy)>] <measurement.png, id=246, 228.10219pt x 231.11343pt>
+<measurement.png, id=245, 228.10219pt x 231.11343pt>
 File: measurement.png Graphic file (type png)
  <use measurement.png>
-[12 <C:/Users/Kadir/Desktop/Formation Control/formation_control/latex/measureme
-nt.png (PNG copy)>] <trilateration.png, id=252, 178.41656pt x 160.34906pt>
-File: trilateration.png Graphic file (type png)
-
-<use trilateration.png> [13 <C:/Users/Kadir/Desktop/Formation Control/formation
-_control/latex/trilateration.png (PNG copy)>]
-<samitha.png, id=259, 238.64156pt x 158.84344pt>
-File: samitha.png Graphic file (type png)
- <use samitha.png>
-<slotine.png, id=260, 400.49625pt x 283.81032pt>
-File: slotine.png Graphic file (type png)
- <use slotine.png>
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [14 <C:/Users/Kadir/Desktop/Formation Control/formation_control/latex/samitha.
-png (PNG copy)>] <kumar.png, id=266, 283.0575pt x 551.05875pt>
+ [12]
+[13 <C:/Users/Kadir/Desktop/Formation Control/formation_control/latex/measureme
+nt.png (PNG copy)>] <trilateration.png, id=257, 178.41656pt x 160.34906pt>
+File: trilateration.png Graphic file (type png)
+
+<use trilateration.png> <samitha.png, id=258, 238.64156pt x 158.84344pt>
+File: samitha.png Graphic file (type png)
+
+<use samitha.png> [14 <C:/Users/Kadir/Desktop/Formation Control/formation_contr
+ol/latex/trilateration.png (PNG copy)> <C:/Users/Kadir/Desktop/Formation Contro
+l/formation_control/latex/samitha.png (PNG copy)>]
+<slotine.png, id=265, 400.49625pt x 283.81032pt>
+File: slotine.png Graphic file (type png)
+ <use slotine.png>
+<kumar.png, id=266, 283.0575pt x 551.05875pt>
 File: kumar.png Graphic file (type png)
  <use kumar.png>
 Underfull \vbox (badness 10000) has occurred while \output is active []
@@ -934,7 +932,7 @@ ntrol/latex/potential.png (PNG copy)>]
 <manifold.png, id=291, 493.845pt x 253.69781pt>
 File: manifold.png Graphic file (type png)
  <use manifold.png>
-Overfull \hbox (63.83916pt too wide) in paragraph at lines 459--460
+Overfull \hbox (63.83916pt too wide) in paragraph at lines 463--464
  [][] 
  []
 
@@ -975,7 +973,7 @@ ble2.png (PNG copy)>] <general_scheme.png, id=327, 686.565pt x 319.94531pt>
 File: general_scheme.png Graphic file (type png)
 
 <use general_scheme.png>
-Overfull \hbox (16.25734pt too wide) in paragraph at lines 543--544
+Overfull \hbox (16.25734pt too wide) in paragraph at lines 547--548
  [][] 
  []
 
@@ -993,21 +991,21 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
  [24 <C:/Users/Kadir/Desktop/Formation Control/formation_control/latex/lps.png 
 (PNG copy)>] [25 <C:/Users/Kadir/Desktop/Formation Control/formation_control/la
 tex/beacons.png (PNG copy)>]
-Underfull \hbox (badness 10000) in paragraph at lines 664--666
+Underfull \hbox (badness 10000) in paragraph at lines 668--670
 
  []
 
 [26]
-Underfull \hbox (badness 10000) in paragraph at lines 677--679
+Underfull \hbox (badness 10000) in paragraph at lines 681--683
 
  []
 
-LaTeX Font Info:    Try loading font information for U+fplmbb on input line 705
+LaTeX Font Info:    Try loading font information for U+fplmbb on input line 709
 .
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\psnfss\ufplmbb.fd"
 File: ufplmbb.fd 2003/10/30 Fontinst v1.914 font definitions for U/fplmbb.
 )
-Underfull \hbox (badness 10000) in paragraph at lines 713--714
+Underfull \hbox (badness 10000) in paragraph at lines 717--718
 
  []
 
@@ -1034,12 +1032,12 @@ problem.png (PNG copy)>] <link_add.png, id=406, 290.58563pt x 201.00093pt>
 File: link_add.png Graphic file (type png)
 
 <use link_add.png>
-Underfull \hbox (badness 10000) in paragraph at lines 859--864
+Underfull \hbox (badness 10000) in paragraph at lines 863--868
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 871--872
+Underfull \hbox (badness 10000) in paragraph at lines 875--876
 
  []
 
@@ -1071,7 +1069,7 @@ ol/latex/methods.png (PNG copy)>]
 File: simple_closed_curve.png Graphic file (type png)
 
 <use simple_closed_curve.png>
-Underfull \hbox (badness 10000) in paragraph at lines 1075--1079
+Underfull \hbox (badness 10000) in paragraph at lines 1079--1083
 
  []
 
@@ -1081,13 +1079,13 @@ osed_curve.png (PNG copy)>]
 File: iceride_disarida.png Graphic file (type png)
 
 <use iceride_disarida.png> [39]
-Underfull \hbox (badness 10000) in paragraph at lines 1134--1135
+Underfull \hbox (badness 10000) in paragraph at lines 1138--1139
 
  []
 
 [40 <C:/Users/Kadir/Desktop/Formation Control/formation_control/latex/iceride_d
 isarida.png (PNG copy)>]
-Underfull \hbox (badness 10000) in paragraph at lines 1198--1199
+Underfull \hbox (badness 10000) in paragraph at lines 1202--1203
 
  []
 
@@ -1095,7 +1093,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 1198--1199
 File: coverage_circles.png Graphic file (type png)
 
 <use coverage_circles.png>
-Underfull \hbox (badness 10000) in paragraph at lines 1251--1253
+Underfull \hbox (badness 10000) in paragraph at lines 1255--1257
 
  []
 
@@ -1107,12 +1105,12 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [42 <C:/Users/Kadir/Desktop/Formation Control/formation_control/latex/coverage
 _circles.png (PNG copy)>]
-Underfull \hbox (badness 10000) in paragraph at lines 1277--1278
+Underfull \hbox (badness 10000) in paragraph at lines 1281--1282
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1279--1280
+Underfull \hbox (badness 10000) in paragraph at lines 1283--1284
 
  []
 
@@ -1124,12 +1122,12 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [43 <C:/Users/Kadir/Desktop/Formation Control/formation_control/latex/attracti
 ve_forces.png (PNG copy)>]
-Underfull \hbox (badness 10000) in paragraph at lines 1303--1304
+Underfull \hbox (badness 10000) in paragraph at lines 1307--1308
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1305--1306
+Underfull \hbox (badness 10000) in paragraph at lines 1309--1310
 
  []
 
@@ -1137,7 +1135,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 1305--1306
 File: intermember_forces.png Graphic file (type png)
 
 <use intermember_forces.png>
-Overfull \hbox (1.81197pt too wide) in paragraph at lines 1312--1313
+Overfull \hbox (1.81197pt too wide) in paragraph at lines 1316--1317
  [][] 
  []
 
@@ -1146,12 +1144,12 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [44 <C:/Users/Kadir/Desktop/Formation Control/formation_control/latex/repulsiv
 e_forces.png (PNG copy)>]
-Underfull \hbox (badness 10000) in paragraph at lines 1328--1330
+Underfull \hbox (badness 10000) in paragraph at lines 1332--1334
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1331--1332
+Underfull \hbox (badness 10000) in paragraph at lines 1335--1336
 
  []
 
@@ -1160,51 +1158,51 @@ File: transition_forces.png Graphic file (type png)
 
 <use transition_forces.png> [45 <C:/Users/Kadir/Desktop/Formation Control/forma
 tion_control/latex/intermember_forces.png (PNG copy)>]
-Underfull \hbox (badness 10000) in paragraph at lines 1355--1356
+Underfull \hbox (badness 10000) in paragraph at lines 1359--1360
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1357--1358
+Underfull \hbox (badness 10000) in paragraph at lines 1361--1362
 
  []
 
 [46 <C:/Users/Kadir/Desktop/Formation Control/formation_control/latex/transitio
 n_forces.png (PNG copy)>]
-Underfull \hbox (badness 10000) in paragraph at lines 1380--1381
+Underfull \hbox (badness 10000) in paragraph at lines 1384--1385
 
  []
 
 <buffer_zone.png, id=551, 693.34032pt x 319.94531pt>
 File: buffer_zone.png Graphic file (type png)
  <use buffer_zone.png>
-Underfull \hbox (badness 10000) in paragraph at lines 1391--1392
+Underfull \hbox (badness 10000) in paragraph at lines 1395--1396
 
  []
 
 [47 <C:/Users/Kadir/Desktop/Formation Control/formation_control/latex/buffer_zo
 ne.png (PNG copy)>]
-Underfull \hbox (badness 10000) in paragraph at lines 1446--1448
+Underfull \hbox (badness 10000) in paragraph at lines 1450--1452
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1449--1450
+Underfull \hbox (badness 10000) in paragraph at lines 1453--1454
 
  []
 
 [48] [49]
-Underfull \hbox (badness 10000) in paragraph at lines 1488--1489
+Underfull \hbox (badness 10000) in paragraph at lines 1492--1493
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1490--1492
+Underfull \hbox (badness 10000) in paragraph at lines 1494--1496
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1493--1494
+Underfull \hbox (badness 10000) in paragraph at lines 1497--1498
 
  []
 
@@ -1212,7 +1210,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 1493--1494
 File: bubble_packing.png Graphic file (type png)
 
 <use bubble_packing.png> [50]
-Underfull \hbox (badness 10000) in paragraph at lines 1526--1527
+Underfull \hbox (badness 10000) in paragraph at lines 1530--1531
 
  []
 
@@ -1224,7 +1222,7 @@ File: interbubble_forces.png Graphic file (type png)
 File: bubble_packing2.png Graphic file (type png)
 
 <use bubble_packing2.png>
-Overfull \hbox (20.55058pt too wide) in paragraph at lines 1559--1560
+Overfull \hbox (20.55058pt too wide) in paragraph at lines 1563--1564
  [][] 
  []
 
@@ -1262,7 +1260,7 @@ Underfull \vbox (badness 4556) has occurred while \output is active []
  [56 <C:/Users/Kadir/Desktop/Formation Control/formation_control/latex/Forbidde
 n.png (PNG copy)> <C:/Users/Kadir/Desktop/Formation Control/formation_control/l
 atex/shortest.png (PNG copy)>] [57]
-Underfull \hbox (badness 10000) in paragraph at lines 1765--1766
+Underfull \hbox (badness 10000) in paragraph at lines 1769--1770
 
  []
 
@@ -1290,7 +1288,7 @@ ng (PNG copy)>] <step_resp.png, id=687, 889.07156pt x 601.4972pt>
 File: step_resp.png Graphic file (type png)
 
 <use step_resp.png>
-Overfull \hbox (14.53008pt too wide) in paragraph at lines 1887--1888
+Overfull \hbox (14.53008pt too wide) in paragraph at lines 1891--1892
  [][] 
  []
 
@@ -1299,16 +1297,16 @@ p.png (PNG copy)> <C:/Users/Kadir/Desktop/Formation Control/formation_control/l
 atex/step_resp.png (PNG copy)>]
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 1893.
+(hyperref)                removing `math shift' on input line 1897.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 1893.
+(hyperref)                removing `math shift' on input line 1897.
 
 <environment.png, id=695, 994.46532pt x 466.74374pt>
 File: environment.png Graphic file (type png)
  <use environment.png>
-Overfull \hbox (67.22682pt too wide) in paragraph at lines 1903--1904
+Overfull \hbox (67.22682pt too wide) in paragraph at lines 1907--1908
  [][] 
  []
 
@@ -1431,7 +1429,7 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [73 <C:/Users/Kadir/Desktop/Formation Control/formation_control/latex/Topologi
 cal_Irr_2.png (PNG copy)>]
-Underfull \hbox (badness 10000) in paragraph at lines 2043--2044
+Underfull \hbox (badness 10000) in paragraph at lines 2047--2048
 
  []
 
@@ -1534,7 +1532,7 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 me_Shape_1.png (PNG copy)>]
 
 Package caption Warning: The option `hypcap=true' will be ignored for this
-(caption)                particular \caption on input line 2145.
+(caption)                particular \caption on input line 2149.
 See the caption package documentation for explanation.
 
 [83 <C:/Users/Kadir/Desktop/Formation Control/formation_control/latex/Total_Tim
@@ -1550,11 +1548,11 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 .png (PNG copy)>]
 
 Package caption Warning: The option `hypcap=true' will be ignored for this
-(caption)                particular \caption on input line 2175.
+(caption)                particular \caption on input line 2179.
 See the caption package documentation for explanation.
 
 
-Overfull \hbox (96.7154pt too wide) in paragraph at lines 2176--2184
+Overfull \hbox (96.7154pt too wide) in paragraph at lines 2180--2188
  [] 
  []
 
@@ -1570,13 +1568,13 @@ File: 2.png Graphic file (type png)
  <use 2.png>
 
 Package caption Warning: The option `hypcap=true' will be ignored for this
-(caption)                particular \caption on input line 2199.
+(caption)                particular \caption on input line 2203.
 See the caption package documentation for explanation.
 
 [86 <C:/Users/Kadir/Desktop/Formation Control/formation_control/latex/2_Gazebo.
 png (PNG copy)> <C:/Users/Kadir/Desktop/Formation Control/formation_control/lat
 ex/2.png (PNG copy)>]
-Overfull \hbox (96.7154pt too wide) in paragraph at lines 2200--2208
+Overfull \hbox (96.7154pt too wide) in paragraph at lines 2204--2212
  [] 
  []
 
@@ -1592,11 +1590,11 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 .png (PNG copy)>]
 
 Package caption Warning: The option `hypcap=true' will be ignored for this
-(caption)                particular \caption on input line 2223.
+(caption)                particular \caption on input line 2227.
 See the caption package documentation for explanation.
 
 
-Overfull \hbox (96.7154pt too wide) in paragraph at lines 2224--2232
+Overfull \hbox (96.7154pt too wide) in paragraph at lines 2228--2236
  [] 
  []
 
@@ -1612,13 +1610,13 @@ File: 4.png Graphic file (type png)
  <use 4.png>
 
 Package caption Warning: The option `hypcap=true' will be ignored for this
-(caption)                particular \caption on input line 2247.
+(caption)                particular \caption on input line 2251.
 See the caption package documentation for explanation.
 
 [89 <C:/Users/Kadir/Desktop/Formation Control/formation_control/latex/4_Gazebo.
 png (PNG copy)> <C:/Users/Kadir/Desktop/Formation Control/formation_control/lat
 ex/4.png (PNG copy)>]
-Overfull \hbox (96.7154pt too wide) in paragraph at lines 2248--2256
+Overfull \hbox (96.7154pt too wide) in paragraph at lines 2252--2260
  [] 
  []
 
@@ -1628,16 +1626,16 @@ File: multiple_formation.png Graphic file (type png)
 <use multiple_formation.png>
 
 Package caption Warning: The option `hypcap=true' will be ignored for this
-(caption)                particular \caption on input line 2268.
+(caption)                particular \caption on input line 2272.
 See the caption package documentation for explanation.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 2280.
+(hyperref)                removing `math shift' on input line 2284.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 2280.
+(hyperref)                removing `math shift' on input line 2284.
 
 <hardware.png, id=911, 762.59906pt x 518.6878pt>
 File: hardware.png Graphic file (type png)
@@ -1713,7 +1711,7 @@ File: 2_real_hardware.png Graphic file (type png)
 <use 2_real_hardware.png>
 
 Package caption Warning: The option `hypcap=true' will be ignored for this
-(caption)                particular \caption on input line 2377.
+(caption)                particular \caption on input line 2381.
 See the caption package documentation for explanation.
 
 <4_hardware.png, id=980, 892.08281pt x 434.37282pt>
@@ -1730,7 +1728,7 @@ File: 4_real_hardware.png Graphic file (type png)
 <use 4_real_hardware.png>
 
 Package caption Warning: The option `hypcap=true' will be ignored for this
-(caption)                particular \caption on input line 2399.
+(caption)                particular \caption on input line 2403.
 See the caption package documentation for explanation.
 
 <5_hardware.png, id=989, 892.08281pt x 434.37282pt>
@@ -1747,7 +1745,7 @@ File: 5_real_hardware.png Graphic file (type png)
 <use 5_real_hardware.png>
 
 Package caption Warning: The option `hypcap=true' will be ignored for this
-(caption)                particular \caption on input line 2422.
+(caption)                particular \caption on input line 2426.
 See the caption package documentation for explanation.
 
 <6_hardware.png, id=998, 892.08281pt x 434.37282pt>
@@ -1764,7 +1762,7 @@ File: 6_real_hardware.png Graphic file (type png)
 <use 6_real_hardware.png>
 
 Package caption Warning: The option `hypcap=true' will be ignored for this
-(caption)                particular \caption on input line 2445.
+(caption)                particular \caption on input line 2449.
 See the caption package documentation for explanation.
 
 <9_hardware.png, id=1007, 892.08281pt x 434.37282pt>
@@ -1781,7 +1779,7 @@ File: 9_real_hardware.png Graphic file (type png)
 <use 9_real_hardware.png>
 
 Package caption Warning: The option `hypcap=true' will be ignored for this
-(caption)                particular \caption on input line 2469.
+(caption)                particular \caption on input line 2473.
 See the caption package documentation for explanation.
 
 
@@ -1790,13 +1788,13 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
  [104 <C:/Users/Kadir/Desktop/Formation Control/formation_control/latex/9_hardw
 are.png (PNG copy)> <C:/Users/Kadir/Desktop/Formation Control/formation_control
 /latex/9_real_hardware.png (PNG copy)>] [105] [106]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 2533.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 2537.
  [107]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 2533.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 2537.
 
 ("C:\Users\Kadir\Desktop\Formation Control\formation_control\latex\Bitirme.aux"
 )
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 2533.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 2537.
 Package rerunfilecheck Info: File `Bitirme.out' has not changed.
 (rerunfilecheck)             Checksum: EFC2FE9DEAF120B87AC5B51273E29570;3166.
 
@@ -1805,11 +1803,11 @@ LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 14463 strings out of 494019
- 220250 string characters out of 3143882
+ 14467 strings out of 494019
+ 220281 string characters out of 3143882
  453943 words of memory out of 3000000
  16610 multiletter control sequences out of 15000+200000
- 83167 words of font info for 353 fonts, out of 3000000 for 9000
+ 83367 words of font info for 356 fonts, out of 3000000 for 9000
  714 hyphenation exceptions out of 8191
  53i,15n,92p,2613b,509s stack positions out of 5000i,500n,10000p,200000b,50000s
 {C:/Program Files (x86)/MiKTeX 2.9/fonts/enc/dvips/fontname/8r.enc}<C:/Progra
@@ -1824,7 +1822,7 @@ fonts/type1/public/fpl/fplrc8a.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/typ
 e1/urw/palatino/uplb8a.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/urw/p
 alatino/uplr8a.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/urw/palatino/
 uplri8a.pfb>
-Output written on Bitirme.pdf (107 pages, 40512703 bytes).
+Output written on Bitirme.pdf (107 pages, 40514153 bytes).
 PDF statistics:
  1163 PDF objects out of 1200 (max. 8388607)
  426 named destinations out of 1000 (max. 500000)

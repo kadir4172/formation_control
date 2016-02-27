@@ -263,22 +263,26 @@ condition must be taken into account during the control system design, since ind
 
 \subsection{Goals}
 
-The objectives and the assumptions about the requirements define the goals of this thesis project. 
+The objectives and the assumptions about the requirements define the goals of this thesis project. The goals of the project are listed in the following section.
 
-1. Propogate the position and velocity states of the agents with inertial measurements.
+1. Agents have to propogate their position and velocity states with the help of inertial measurements.This process is handled with a Kalman estimator which takes the translational accelaration data as an input to the observer model .The translational acceleration data is calculated with the help of AHRS system composed by 3 axis accelerometers, gyroscopes and magnetometers. 
 
-2. Update$\&$adjust the position data of the robots with the help of agents which have positioning sensors by local trilaterations.
+2. Agents have to update$\&$adjust the position data with the help of agents which have positioning sensors(position beacons) by local trilaterations.This position data is used in the internal estimator systems as external measurements to correct the drifts caused by propogation error of translational accelerations.  The ordering for this trilateration process have to determined appropriately to minimize the error on calculated position data of agents which are far away from the position beacons.
 
-3. Update the route tables of the agents to forward data globally in the mesh network topology.
+3. Agents have to update their route tables to create a communication backbone with the mesh network topology. Since agents are assumed to have low range$\&$bandwith radio links, the propogation of a data between each agent in the swarm will be handled over this mesh network. 
 
-4. Determine the goal states in the desired complex formation shape to cover by heterogenous agents with the help of a central server.
+4. Agents have to determine the goal states in the desired complex formation shape to cover with the help of a central server. Desired formation shape will be partitioned into potential goal states assigned to different types of agents. Performance analysis on proposed shape partitioning methods have to be done with some different criterias. 
 
-5. Decide each agents' target goal state by local interactions between individuals to optimize the global utility of the swarm.
+5. Assignment of the agents to their target goal states should be handled to minimize the total displacement of the agents while travelling towards the desired formation shape. 
+
+6. Simulations should be performed to compare the efficiency of different methods proposed in this thesis work   Differnt types of agents have to be represented with different dynamical and physical models during simulations.
+
+7. Hardware demonstrations should be performed to illustrate the applicability of the proposed solution in real time systems. These applications may not contain the full implementation of the proposed system, but they must demonstrate the proof of concept(POC) environment. 
 
 
 \subsection{Methodology}
 
-During the first part of the project a local positioning system(LPS) is designed. In this system agents which does not have position sensors propogate their position and velocity states with their inertial measurements. Due to the bias and drift errors on this solution a position update$\&$adjust process is handled on 0.1Hz frequency with the help of position beacons which are agents with position sensors on board in the swarm.. During the update phase of the solution route tables for individual agents are determined with the help of Graph Theory based Destination-Sequenced Distance Vector Routing Protocol (DSDV) algorithms. This process provides the clusters around position beacons and provides rank information for the agents which are in same clusters. Position measurements are handled with local trilateration process in turn with the rank values for every agent around each clusters after the establishment of route tables. A Kalman estimator system is designed to fuse these propogation and update phases of the solution.
+During the first part of the project, a local positioning system(LPS) is designed. In this system, agents which does not have position sensors propogate their position and velocity states with their inertial measurements. Due to the bias and drift errors on this solution a position update$\&$adjust process is handled on 0.1Hz frequency with the help of position beacons which are agents with position sensors on board in the swarm.. During the update phase of the solution route tables for individual agents are determined with the help of Graph Theory based Destination-Sequenced Distance Vector Routing Protocol (DSDV) algorithms. This process provides the clusters around position beacons and provides rank information for the agents which are in same clusters. Position measurements are handled with local trilateration process in turn with the rank values for every agent around each clusters after the establishment of route tables. A Kalman estimator system is designed to fuse these propogation and update phases of the solution.
 
 Formation controller system is designed with two novel methods based on artificial potential force methods and advancing front local reconnection method. Desired complex formation shapes are partitioned into goal states according to the heterogenous agents in the swarm for both of these two methods. Decision process of the agents about their target goal states to optimize the overall utility of the swarm is implemented with the help of Visibility Graphs and Hungarian algorithms. Internal velocity controllers for individual agents to reach the desired target goal states by providing obstacle avoidance, are implemented with a full state feedback method by regulating the dynamical system with the gains optimized by Linear Quadratic Regulators (LQR).
 
@@ -287,17 +291,17 @@ Formation controller system is designed with two novel methods based on artifici
 
 The main contributions of thesis are:
 
-1. Design a local positioning system(LPS) based on local trilaterations to provide a high accuracy position data to the agents which do not have a specific position sensors on their boards.
+1. Designing a local positioning system(LPS) based on local trilaterations to provide a high accuracy position data to the agents which do not have a specific position sensors on their boards.
 
-2. Implement a wireless mesh network between agents in the swarm and design a communication infrastructure and related routing algorithms to exchange the local data globally in the network
+2. Implementing a wireless mesh network between agents in the swarm and design a communication infrastructure and related routing algorithms to exchange the local data globally in the network
 
-3. Partition the complex formation shapes into goal states to cover the whole formation homogenously with the different types of heterogenous agents.
+3. Partitioning the complex formation shapes into goal states to cover the whole formation homogenously with the different types of heterogenous agents.
 
-4. Design and implement the rules$\&$algorithms for the decision process of the individual agents about the goal states to reach.
+4. Designing and implement the rules$\&$algorithms for the decision process of the individual agents about the goal states to reach.
 
-5. Design a simulation environment to test the proposals and algorithms of this thesis work
+5. Designing a simulation environment to test the proposals and algorithms of this thesis work
 
-6. Design a simple demonstrative hardware application.
+6. Designing a simple demonstrative hardware application.
 
 
 \subsection{Outline of the Thesis}
