@@ -1,0 +1,26 @@
+\begin{thebibliography}{1}
+
+\bibitem{atkinson04}
+Darren~C. Atkinson, Daniel~C. Weeks, and John Noll.
+\newblock The design of evolutionary process modeling languages.
+\newblock In {\em APSEC}, pages 73--82. IEEE Computer Society, 2004.
+
+\bibitem{erl05}
+Thomas Erl.
+\newblock {\em Service-Oriented Architecture: Concepts, Technology, and
+  Design}.
+\newblock Printice Hall, 2005.
+
+\bibitem{bpeltools}
+IAAS.
+\newblock Open source bpel4chor tools.
+\newblock https://github.com/IAAS, last visited on November 2013.
+
+\bibitem{kitchenham07}
+Barbara Kitchenham and Stuart Charters.
+\newblock {Guidelines for performing Systematic Literature Reviews in Software
+  Engineering}.
+\newblock Technical Report EBSE 2007-001, Keele University and Durham
+  University Joint Report, 2007.
+
+\end{thebibliography}

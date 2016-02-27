@@ -1,0 +1,112 @@
+\documentclass[chaparabic,ee,ms,12pt,oneandhalf]{metu}
+\usepackage{appendix}
+\usepackage{mathptmx}
+\usepackage{caption}
+\usepackage{amsmath}
+\usepackage{times}
+\author{Kadir Çimenci}
+\title{Dynamic Formation Control with Heterogenous Mobile Robots}
+\turkishtitle{Heterojen Robotlarla Dinamik Formasyon Kontrolü}
+\date{June 2016}
+\director[prof]{xxx}
+\headofdept[prof]{Gönül Turhan Sayhan}
+\supervisor[prof]{Aydan Erkmen}
+\cosupervisor[assistprof]{xx}
+\departmentofsupervisor{Electrical and Electronics Engineering Department, METU}
+\departmentofcosupervisor{Electrical and Electronics Engineering Department, METU.}
+\committeememberi[prof]{İsmail Hakkı Toroslu}
+\affiliationi{Computer Engineering Department, METU}
+\committeememberii[prof]{Ali H. Doğru}
+\affiliationii{Computer Engineering Department, METU}
+\committeememberiii[assocprof]{Pınar Karagöz}
+\affiliationiii{Computer Engineering Department, METU}
+\committeememberiv[assistprof]{Selim Temizer}
+\affiliationiv{Computer Engineering Department, METU}
+\committeememberv[assistprof]{Aykut Erdem}
+\affiliationv{Computer Engineering Department, Hacettepe University}
+\keywords{Multi Agent Systems, Formation Control, Localization, Mesh Network}
+\anahtarklm{Çok Elemanlı Sistemler, Formasyon Kontrolü, Konumlama, Örgün Ağlar}
+
+\abstract{Formation control in robotics is a growing topic where mainly research works are geared towards heterogenous swarm colonies under decentralized control or heterogenous colonies where some centralization is considered. In swarm works where decentralization is applied, it is nevertheless assumed that the agents are capable of getting global information about the whole swarm.Moreover in the literature, formation control is generally done for known fixed shapes that can be defined mathematically. However no dynamically changing shapes are envisaged and no shape transitions are clearly handled in those works. We attempt to bring a clear impact to the literature by focusing our thesis work on tracking and realising formation shapes under dynamically changing formation shape demands. Furthermore,in our thesis work, we focus on robot colonies composed of heterogeneous robots of different dynamics and sensory capabilities under decentralized dynamically changing formation control. These robots are able furthermore, to just posess local mutual interactions only with their closeby neighboring agents. Using communications with those neighbors, all agents are being able to acquire graph theoretically, information about the whole colony. Simulations in our work will be generated using the Gazebo environment modeling a rough territory. Hardware applications of our approach will also be developed.}
+
+\oz{Formasyon kontrolü robotik alanında heterojen robot kolonilerinin merkezi yönetici birimler olmadan ya da yerel merkezi birimleri barındıran topolojilerle kontrolü konularına yönelik büyüyen bir araştırma alanıdır. Merkezi yönetim birimlerinin olmadığı robot sürüsü çalışmalarında ne yazık ki her üyenin, koloniye mensup diğer üyelerin tüm verilerine erişebildiği varsayımı yapılmaktadır.Öte yandan, literatürde formasyon kontrolü genellikle matematiksel olarak ifade edilebilen basit geometrik şekillerle yapılmaktadır. Bununla birlikte bu çalışmalarda, dinamik olarak değişen şekiller ve bu şekiller arasında formasyon geçişleri konusu yeterli olarak ele alınmamaktadır. Bu çalışma kapsamında dinamik olarak değişen şekiller için formasyon kontrolü sağlayarak literatüre katkıda bulunmayı hedefliyoruz. Öte yandan bu tez çalışmamızda, farklı dinamiklere ve sensör yetkinliklerine sahip heterojen robot kolonileri kullanarak dinamik formasyon kontrolü problemini merkezi karar verici birimlerin olmadığı bir topolojide ele alacağız. Çalışma kapsamında ele alınan kolonilerdeki tüm robotlar yalnızca kendilerine en yakın komşu üyelerle yerel etkileşimlerde bulunabileceklerdir. Komşularıyla etkileşimde bulunan üyeler, konsensus koordinat sistemi ve koloninin geri kalanı hakkında bilgi sahibi olabileceklerdir. Çalışmamız kapsamında simülasyonlar Gazebo ortamında üç boyutlu düzgün olmayan araziler modellenerek yapılacaktır. Ayrıca donanımsal gerçeklemeler içeren çalışmalar da yapılacaktır.} 
+
+\dedication{\textit{To my family and people who are reading this page}}
+ 
+\acknowledgments{
+TODO
+}
+
+
+\usepackage[pdftex]{hyperref}
+\usepackage[all]{hypcap}
+\usepackage{todonotes}
+\usepackage{graphicx}
+\graphicspath{ {./images/} }
+\usepackage{rotating}
+\usepackage{xy} 
+\usepackage{booktabs}
+\usepackage{pifont}
+\usepackage{color}
+\usepackage{listings}
+\usepackage{pdfpages}
+\usepackage{array}
+\newcolumntype{M}{>{\centering\arraybackslash}m{\dimexpr.25\linewidth-2\tabcolsep}}
+\renewcommand\lstlistingname{XChor Language - }
+\def\lstlistingautorefname{XChorCode.}
+\lstset{
+language = java,
+basicstyle=\small,
+numbers=left,
+numbersep=10pt,
+numberstyle=\tiny\color{black},
+stepnumber=1,
+tabsize=2,
+showspaces=false, 
+frame=single,
+breaklines=true,
+escapeinside=~~
+}
+\usepackage{float}
+\restylefloat{figure}
+\newcommand{\tab}{\hspace*{2em}}
+\DeclareGraphicsExtensions{.pdf,.png,.jpg}
+
+\begin{document}
+
+% Preliminaries
+\begin{preliminaries}
+% If you are willing to use any custom stuff before Chapters, put it here
+% Such as List of Abbreviations
+% Check the abbreviations.tex for a template list of abbreviations
+
+\input{abbreviations.tex}
+% End of Preliminaries
+\end{preliminaries}
+%   
+% Latex content Goes Here 
+% 
+%
+\input{chapter1/chapter1.tex}
+
+
+\chapter{Next Chapter}
+This is another chapter. All these chapters can go into seperate .tex files and you can include
+them with \verb|\input{chapter1.tex}|. For only one citation \cite{bpeltools}, for multiple citations \cite{atkinson04,erl05,kitchenham07}.
+
+\bibliographystyle{plain}	
+%
+% References in Bibtex format goes into below indicated file with .bib extension
+\bibliography{thesis_references}
+% You can use full name of authors, however most likely some of the Bibtex entries you will find, will use abbreviated first names
+% If you don't want to correct each of them by hand, you can use abbreviated style for all of the references
+
+\appendix
+\chapter{Appendix Name}
+Appendix content goes here.
+ 
+%
+% If you are a Ph.D. Student you need to insert a CV at the end of you thesis
+% Check vita.tex for a simple CV template in Latex
+\input{vita.tex}
+\end{document}
