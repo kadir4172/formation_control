@@ -122,19 +122,11 @@ There are lots of studies related with different problems in swarm robotics lite
 
 \subsection{Motivation}
 
+The formation control problem can be defined as collaboration of a group of to maintain a formation with a certain shape [12]. It focuses on leading the individual agents of a swarm to perform  collective tasks including shape generation and formation reconfiguration while traversing a trajectory by providing collision avoidance simultaneosuly. These kind of tasks are achieved with a large group of small and simple robots  that can cooperate with each other. Formation control of multi agent systems  is an actively growing research field.\newline 
 
-The formation control problem can be defined as collaboration of a group of to maintain a formation with a certain shape [12]. It focuses on leading the individual agents of a swarm to perform a collective tasks including shape generation and formation reconfiguration while traversing a trajectory by providing collision avoidance simultaneosuly. Related tasks are achieved with a large group of small and simple robots  that can cooperate with each other. Formation control of multi agent systems  is an actively growing research field.  
+Swarms which are used in formation control systems, can be composed of homogenous or heterogenous agents according to the requirements of the problem. The usage of the homogenous agents increases the total energy and the coverage of the system in the environment. This kind of a swarm has an increased redundancy and is capable of resuming the current task in case of failures of some of the agents during mission. On the other hand, a swarm composed of heterogeonus agents holds the different capabilities of the agents. This kind of a system can be used in tasks which requires different functionalities has to be performed individually or simultaneously.\newline
 
-Formation control has lots of implementations such as security patrols, search and rescue in hazardous environments [13]. A group of autonomous vehicles may be required to keep in a specified formations in military missions related with area coverage and reconnaissance[13].  Balch and Arkin presented a behaviour based formation control for multi robot teams which is implemented on a team of robotic scout vehicles manufactured for a DARPA project[14]. 
-
-
-	\begin{figure}[H]
-		\caption{A team of four robotic scout vehicles on which formation control techniques implemented}
-		\centering
-		\includegraphics[scale = 1]{scout_robots}
-	\end{figure} 
-
-In real world applications there may be need for different  functionalities to achieve some specific tasks. If this is the case, one solution may be to design a sophisticated robot which includes all required capabilities for this task. In this scenario, this robot will be the single point of failure in the system and if robustness is a  vital feature for this solution, some redundant robots have to be added to the system. It is clear that the design of such an advanced robot and hold its redundant backups in the system will increase the cost of the solution. In swarm robotics concept, another approach is to gather some different types of simple mobile robots which have their own specific functionalities to achieve a collective task rather than designing an advanced robot for the solution. With this approach, the robustness of the system is increased, costs are reduced down and the reusability of the individual members of the swarm for other tasks is provided.  A project named Swarmanoid which is funded by European Commission, has an objective to implement and control of a novel distributed robotic system. The system is made uo heterogeneous, dynamically connected, small autonomous robots called,  foot-bots , hand-bots and eye-bots where foot-bots are responsible to transport the required materials(including other types of robots) to a specific task area and foot-bots are responsible of operations with their manipulators in and eye-bots are responsible of observations and reconnaissance on the area.
+In real world applications there may be need for different  functionalities to achieve some specific tasks. If this is the case, one solution may be to design a sophisticated robot which includes all required capabilities for this task. In this scenario, this robot will be the single point of failure in the system and if robustness is a  vital feature for this solution, some redundant robots have to be added to the system. It is clear that the design of such an advanced robot and hold its redundant backups in the system will increase the cost of the solution. In swarm robotics concept, one of the approaches related with the usage of the heterogenous agents is to gather some different types of simple mobile robots which have their own specific functionalities to achieve a collective task rather than designing an advanced robot for the solution. With this approach, the robustness of the system is increased, costs are reduced down and the reusability of the individual members of the swarm for other tasks is provided.  A project named Swarmanoid which is funded by European Commission, has an objective to implement and control of a novel distributed robotic system. The system is made uo heterogeneous, dynamically connected, small autonomous robots called,  foot-bots , hand-bots and eye-bots where foot-bots are responsible to transport the required materials(including other types of robots) to a specific task area and foot-bots are responsible of operations with their manipulators in and eye-bots are responsible of observations and reconnaissance on the area.
 
 	\begin{figure}[H]
 		\caption{A Robot Team Consists of Eyebot, Handbot and Footbot Agents}
@@ -143,7 +135,7 @@ In real world applications there may be need for different  functionalities to a
 	\end{figure} 
 
 
-Martin and Kilberg have worked on formation control and formation tracking of  microsatellites to achieve continous coverage and improved capability. They also mentioned that small formations will reduce the fuel consumption for propulsion and expand the sensing capabilities of microsatellites[15].
+A swarm which is composed with same type of homogenous agents can be used to increase the total impact and the energy of an individual agent. This kind of a system can be used in missions like coverage, search and  reconnaissance etc.  Martin and Kilberg have worked on formation control and formation tracking of  microsatellites to achieve continous coverage and improved capability. They also mentioned that small formations will reduce the fuel consumption for propulsion and expand the sensing capabilities of microsatellites[15].
 
 	\begin{figure}[H]
 		\caption{Sparse Aperture Formation of Micro Satellites}
@@ -152,30 +144,14 @@ Martin and Kilberg have worked on formation control and formation tracking of  m
 	\end{figure} 
 
 
-Formation control problem have different subproblems like formation shape generation, formation reconfiguration and selection and formation tracking [12].  
-In formation shape generation agents are expected to get a formation shape which can be defined by externally or with some mathematical constraint functions[16].  One general approach is to consider some artificial potential functions. Samitha and Pubudu have presented an artificial potential function based method  by considering the problem as controlling and positioning of a swarm into a shape bounded by a simple closed contour in the complex plane while spreading memebers inside the contour uniformly.  They provide analysis about the stability and robustness of their systems with the help of Lyapunov like functions[17].
+Formation control solutions has lots of usage areas such as coverage missions, security patrols and search$\&$rescue in hazardous environments etc.[13]. For missions related with area coverage and reconnaissance, a group of autonomous vehicles may be required to keep in a specified formation [13].  Balch and Arkin presented a behaviour based formation control for multi robot teams which is implemented on a team of robotic scout vehicles manufactured for a DARPA project[14]. 
 
-	\begin{figure}[H]
-		\caption{Motions and formation of the agents in presence of obstacles[17]}
-		\centering
-		\includegraphics[scale = 1]{samitha}
-	\end{figure} 
 
-It may be needed to change the formation shape or splitting and joining of the agents together due to either a change in coordinated task requirements or change in environmental conditions such as narrow corridors.  This rask requires formation reconfiguration and selections capabilites for the swarms. Hou and Slotine have defined a method based on global objective functions to provide formation control of a swarm. In their approach it is possible to implement scaling and rotating functions into control laws[8].
-
-	\begin{figure}[H]
-		\caption{A group of 100 robots in a rotating rotating and scaling ellipse formation[8]}
-		\centering
-		\includegraphics[scale = 1]{slotine}
-	\end{figure} 
-
-One of the subproblems studied in formation control is formation tracking. The main objective of this problem is to maintain a desired formation with a group of robots, while tracking or following a reference trajectory. The most general strategy to provide a solution for this problem is leader-following swarm structures. Other strategies have a basis on optimization and graph theory approaches[12]. Kumar, Fierro and Das proposed a vision based formation control framework  for this problem. This framework has a leader following background [18]. 
-
-	\begin{figure}[H]
-		\caption{Five Robot Formation with trajectory tracking [18]}
-		\centering
-		\includegraphics[scale = 1]{kumar}
-	\end{figure} 
+\begin{figure}[H]
+	\caption{A team of four robotic scout vehicles on which formation control techniques implemented}
+	\centering
+	\includegraphics[scale = 1]{scout_robots}
+\end{figure} 
 
 There are some hardware implementations to test the related formation control algorithms in real time applications. Since the formation control problem requires lots of agents in a swarm, these works are have a common point of providing agents with minimal costs and sensor capabilities. The Kilobot Project from Harvard university have released their agents with the name of Kilobots and they have teams which are working on different formation control problems with Kilobots.
 
@@ -413,8 +389,32 @@ Trilateration process determine the three dimensional coordinates of unknown pos
 
 
 \subsection{Formation Control Systems}
+Formation control problem have different subproblems like formation shape generation, formation reconfiguration and selection and formation tracking [12].  
+In formation shape generation agents are expected to get a formation shape which can be defined by externally or with some mathematical constraint functions[16].  One general approach is to consider some artificial potential functions. Samitha and Pubudu have presented an artificial potential function based method  by considering the problem as controlling and positioning of a swarm into a shape bounded by a simple closed contour in the complex plane while spreading memebers inside the contour uniformly.  They provide analysis about the stability and robustness of their systems with the help of Lyapunov like functions[17].
 
-Formation control approaches can be classified into three basic strategies as leader-following, virtual structure and behaviour based approaches[12].  In leader following strategy, some of the agents in the swarm are the leaders to manage the rest of the swarm to achieve a desired specific task and the rest of the agents act as followers. This approach reduces the formation control problem into tracking control problem of individuals to follow the leader from a desired distance and bearing angle, thus the stability and convergence analysis of the formation can be done with the usage of single tracking controllers of members. Kumar, Fierro .. at [18] proposed a control framework in which follower agents move along a trajectory afterwords the leader agent with a desired seperation lij(ifade syf2 de) and desired relative bearing angle (ifade).  Figure -xx represents a formation control with three agents where R3 is the leader and R1,R2 are the follower agents. 
+\begin{figure}[H]
+	\caption{Motions and formation of the agents in presence of obstacles[17]}
+	\centering
+	\includegraphics[scale = 1]{samitha}
+\end{figure} 
+
+In some applications, it may be needed to change the formation shape or splitting and joining of the agents together due to either a change in coordinated task requirements or change in environmental conditions such as narrow corridors.  This rask requires formation reconfiguration and selections capabilites for the swarms. Hou and Slotine have defined a method based on global objective functions to provide formation control of a swarm. In their approach it is possible to implement scaling and rotating functions into control laws[8].
+
+\begin{figure}[H]
+	\caption{A group of 100 robots in a rotating rotating and scaling ellipse formation[8]}
+	\centering
+	\includegraphics[scale = 1]{slotine}
+\end{figure} 
+
+One of the subproblems studied in formation control is formation tracking. The main objective of this problem is to maintain a desired formation with a group of robots, while tracking or following a reference trajectory. The most general strategy to provide a solution for this problem is leader-following swarm structures. Other strategies have a basis on optimization and graph theory approaches[12]. Kumar, Fierro and Das proposed a vision based formation control framework  for this problem. This framework has a leader following background [18]. 
+
+\begin{figure}[H]
+	\caption{Five Robot Formation with trajectory tracking [18]}
+	\centering
+	\includegraphics[scale = 1]{kumar}
+\end{figure} 
+
+The solutions for the formation control approaches can be classified into three basic strategies as leader-following, virtual structure and behaviour based approaches[12].  In leader following strategy, some of the agents in the swarm are the leaders to manage the rest of the swarm to achieve a desired specific task and the rest of the agents act as followers. This approach reduces the formation control problem into tracking control problem of individuals to follow the leader from a desired distance and bearing angle, thus the stability and convergence analysis of the formation can be done with the usage of single tracking controllers of members. Kumar, Fierro .. at [18] proposed a control framework in which follower agents move along a trajectory afterwords the leader agent with a desired seperation lij(ifade syf2 de) and desired relative bearing angle (ifade).  Figure -xx represents a formation control with three agents where R3 is the leader and R1,R2 are the follower agents. 
 
 \begin{figure}[H]
 	\caption{Leader-Follower Systems}
@@ -446,7 +446,7 @@ Behavior based strategies model every agents behaviors to achieve specific tasks
 \end{figure}
 
 
-Another approach is to define mathematical constraints and objective functions to achieve a specific formation shape and controlling the swarm to follow a trajectory while keeping the formation.  Kumar and Belta presented an abstraction method of configuration space to a manifold defined as A  = G x S where G is a Lie group representing the position and the orientation of the swarm  and S represents the shape of the manifold.  They provide individual control laws which can be seperately handled to manipulate the lie group “G” to achieve formation tracking and orientation control and to manipulate the shape “S” to achieve different geometrical shapes. Cheah and Slotine proposed a similar method based on objective functions[8].  Common drawback for these researches, they can only implement a limited number of simple geometrical shapes because the desired formation shapes must be identified analyticall to compose the related objective functions or shape manifolds. 
+Another approach is to define mathematical constraints and objective functions to achieve a specific formation shape and controlling the swarm to follow a trajectory while keeping the formation.  Kumar and Belta presented an abstraction method of configuration space to a manifold defined as $A  = G x S$ where $G$ is a Lie group representing the position and the orientation of the swarm  and S represents the shape of the manifold.  They provide individual control laws which can be seperately handled to manipulate the lie group $“G”$ to achieve formation tracking and orientation control and to manipulate the shape $“S”$ to achieve different geometrical shapes. Cheah and Slotine proposed a similar method based on objective functions[8].  Common drawback for these researches, they can only implement a limited number of simple geometrical shapes because the desired formation shapes must be identified analytical to compose the related objective functions or shape manifolds. 
 
 
 
