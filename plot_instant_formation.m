@@ -34,7 +34,7 @@ obstacle_3_y = obstacle_3_y * obstacle_gain;
 
 obstacle_number = 3;
 
-sample_to_plot = 700;
+sample_to_plot = 780;
 
 %cmap = hsv(n);  %# Creates a 50-by-3 set of colors from the HSV colormap
 figure
