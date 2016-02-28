@@ -24,8 +24,38 @@
 \BOOKMARK [2][-]{subsection.2.1.2}{Trilateration Process}{section.2.1}% 24
 \BOOKMARK [1][-]{section.2.2}{Formation Control Systems}{chapter.2}% 25
 \BOOKMARK [1][-]{section.2.3}{Partitioning Complex Geometrical Shapes}{chapter.2}% 26
-\BOOKMARK [0][-]{chapter.3}{Next Chapter}{}% 27
-\BOOKMARK [0][-]{chapter*.9}{REFERENCES}{}% 28
-\BOOKMARK [0][-]{chapter*.9}{APPENDICES}{}% 29
-\BOOKMARK [0][-]{appendix.A}{Appendix Name}{}% 30
-\BOOKMARK [0][-]{appendix*.10}{CURRICULUM VITAE}{}% 31
+\BOOKMARK [0][-]{chapter.3}{METHODOLOGY}{}% 27
+\BOOKMARK [1][-]{section.3.1}{Methodology}{chapter.3}% 28
+\BOOKMARK [2][-]{subsection.3.1.1}{Local Positioning System}{section.3.1}% 29
+\BOOKMARK [3][-]{subsubsection.3.1.1.1}{Trilateration Process}{subsection.3.1.1}% 30
+\BOOKMARK [3][-]{subsubsection.3.1.1.2}{ Route Table Determination and DSDV Algorithm}{subsection.3.1.1}% 31
+\BOOKMARK [4][-]{section*.9}{Routing Algorithm- Bellman Ford}{subsubsection.3.1.1.2}% 32
+\BOOKMARK [4][-]{section*.10}{Usage on Bellman Ford algorithm and DSDV}{subsubsection.3.1.1.2}% 33
+\BOOKMARK [4][-]{section*.11}{DSDV Link addition}{subsubsection.3.1.1.2}% 34
+\BOOKMARK [4][-]{section*.12}{DSDV link breaks}{subsubsection.3.1.1.2}% 35
+\BOOKMARK [3][-]{subsubsection.3.1.1.3}{Clusters}{subsection.3.1.1}% 36
+\BOOKMARK [3][-]{subsubsection.3.1.1.4}{Handling Lost Agents}{subsection.3.1.1}% 37
+\BOOKMARK [3][-]{subsubsection.3.1.1.5}{State Estimation Procedure}{subsection.3.1.1}% 38
+\BOOKMARK [2][-]{subsection.3.1.2}{FORMATION CONTROL}{section.3.1}% 39
+\BOOKMARK [3][-]{subsubsection.3.1.2.1}{Potential Field Based Approach}{subsection.3.1.2}% 40
+\BOOKMARK [4][-]{section*.13}{Artificial Forces Method}{subsubsection.3.1.2.1}% 41
+\BOOKMARK [5][-]{section*.14}{Utitilty Functions}{section*.13}% 42
+\BOOKMARK [5][-]{section*.15}{Artificial Forces}{section*.13}% 43
+\BOOKMARK [5][-]{section*.16}{Buffer Zone Implementation}{section*.13}% 44
+\BOOKMARK [5][-]{section*.17}{XSwarm Theory}{section*.13}% 45
+\BOOKMARK [5][-]{section*.18}{Implementation of X-Swarm Theory}{section*.13}% 46
+\BOOKMARK [3][-]{subsubsection.3.1.2.2}{Shape Partitioning Methods}{subsection.3.1.2}% 47
+\BOOKMARK [4][-]{section*.19}{Determining the Potential Goal States}{subsubsection.3.1.2.2}% 48
+\BOOKMARK [5][-]{section*.20}{Bubble Packing Method}{section*.19}% 49
+\BOOKMARK [5][-]{section*.21}{Randomized Fractals Method}{section*.19}% 50
+\BOOKMARK [4][-]{section*.22}{Mesh Quality Measurement}{subsubsection.3.1.2.2}% 51
+\BOOKMARK [4][-]{section*.23}{Decision Process on Goal States}{subsubsection.3.1.2.2}% 52
+\BOOKMARK [5][-]{section*.24}{Free Configuration Space}{section*.23}% 53
+\BOOKMARK [5][-]{section*.25}{Visibility Graphs and Dijkstra's Algorihtm}{section*.23}% 54
+\BOOKMARK [5][-]{section*.26}{Collaborative Decision Process of Final Goal States}{section*.23}% 55
+\BOOKMARK [4][-]{section*.27}{Control System Design for Individual Agents}{subsubsection.3.1.2.2}% 56
+\BOOKMARK [0][-]{chapter.4}{Next Chapter}{}% 57
+\BOOKMARK [0][-]{chapter*.28}{REFERENCES}{}% 58
+\BOOKMARK [0][-]{chapter*.28}{APPENDICES}{}% 59
+\BOOKMARK [0][-]{appendix.A}{Appendix Name}{}% 60
+\BOOKMARK [0][-]{appendix*.29}{CURRICULUM VITAE}{}% 61
