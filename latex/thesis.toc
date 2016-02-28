@@ -35,7 +35,7 @@
 \contentsline {section}{\numberline {2.2}Formation Control Systems}{21}{section.2.2}
 \contentsline {section}{\numberline {2.3}Partitioning Complex Geometrical Shapes}{28}{section.2.3}
 \contentsline {chapter}{\numberline {3}\MakeUppercase {Next Chapter}}{33}{chapter.3}
-\contentsline {leads}{\numberline {}\uppercase {REFERENCES}}{35}{chapter*.8}
-\contentsline {nodots}{\numberline {}APPENDICES}{35}{chapter*.8}
+\contentsline {leads}{\numberline {}\uppercase {REFERENCES}}{35}{chapter*.9}
+\contentsline {nodots}{\numberline {}APPENDICES}{35}{chapter*.9}
 \contentsline {chapter}{\numberline {A}\MakeUppercase {Appendix Name}}{37}{appendix.A}
-\contentsline {leads}{\numberline {}CURRICULUM VITAE}{39}{appendix*.9}
+\contentsline {leads}{\numberline {}CURRICULUM VITAE}{39}{appendix*.10}
