@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2016.2.27)  27 FEB 2016 23:56
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2016.2.27)  28 FEB 2016 11:37
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1143,15 +1143,15 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 \tf@lot=\write7
 \openout7 = `thesis.lot'.
 
- [13] (./thesis.lof)
+ [13] (./thesis.lof
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [14])
 \tf@lof=\write8
 \openout8 = `thesis.lof'.
 
 
-[14] (./abbreviations.tex [15]) [16
-
-
-] (./chapter1/chapter1.tex
+[15] (./abbreviations.tex [16]) (./chapter1/chapter1.tex
 \vskip 4mm CHAPTER 1.
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
@@ -1162,64 +1162,56 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [1
 
+
+
 ]
 Underfull \vbox (badness 1371) has occurred while \output is active []
 
  [2]
-Underfull \hbox (badness 10000) in paragraph at lines 32--33
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 34--35
-
- []
-
-
-Underfull \vbox (badness 6094) has occurred while \output is active []
+Underfull \vbox (badness 1371) has occurred while \output is active []
 
  [3]
-<eyebot.png, id=244, 333.49594pt x 319.94531pt>
+<eyebot.png, id=308, 333.49594pt x 319.94531pt>
 File: eyebot.png Graphic file (type png)
  <use eyebot.png>
-Package pdftex.def Info: eyebot.png used on input line 41.
+Package pdftex.def Info: eyebot.png used on input line 39.
 (pdftex.def)             Requested size: 333.49512pt x 319.94452pt.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [4]
-<Satellite.png, id=249, 303.38344pt x 210.03468pt>
+<Satellite.png, id=314, 303.38344pt x 210.03468pt>
 File: Satellite.png Graphic file (type png)
  <use Satellite.png>
-Package pdftex.def Info: Satellite.png used on input line 50.
+Package pdftex.def Info: Satellite.png used on input line 47.
 (pdftex.def)             Requested size: 303.38269pt x 210.03416pt.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [5 <./eyebot.png>] <scout_robots.png, id=254, 208.52907pt x 152.82094pt>
+ [5 <./eyebot.png>] <scout_robots.png, id=319, 208.52907pt x 152.82094pt>
 File: scout_robots.png Graphic file (type png)
 
 <use scout_robots.png>
-Package pdftex.def Info: scout_robots.png used on input line 60.
+Package pdftex.def Info: scout_robots.png used on input line 57.
 (pdftex.def)             Requested size: 208.52855pt x 152.82054pt.
  [6 <./Satellite.png> <./scout_robots.png>]
-<kilobot.png, id=259, 479.54156pt x 171.64125pt>
+<kilobot.png, id=324, 479.54156pt x 171.64125pt>
 File: kilobot.png Graphic file (type png)
  <use kilobot.png>
-Package pdftex.def Info: kilobot.png used on input line 69.
+Package pdftex.def Info: kilobot.png used on input line 65.
 (pdftex.def)             Requested size: 479.54039pt x 171.64081pt.
 
-Overfull \hbox (72.66591pt too wide) in paragraph at lines 69--70
+Overfull \hbox (72.66591pt too wide) in paragraph at lines 65--66
  [][] 
  []
 
-<mobilerobots.png, id=260, 462.97969pt x 315.42844pt>
+<mobilerobots.png, id=325, 462.97969pt x 315.42844pt>
 File: mobilerobots.png Graphic file (type png)
  <use mobilerobots.png>
-Package pdftex.def Info: mobilerobots.png used on input line 81.
+Package pdftex.def Info: mobilerobots.png used on input line 77.
 (pdftex.def)             Requested size: 462.97855pt x 315.42766pt.
 
-Overfull \hbox (56.10406pt too wide) in paragraph at lines 81--82
+Overfull \hbox (56.10406pt too wide) in paragraph at lines 77--78
  [][] 
  []
 
@@ -1229,61 +1221,237 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
  [7 <./kilobot.png>]
 Underfull \vbox (badness 1527) has occurred while \output is active []
 
- [8 <./mobilerobots.png>] <heterogenous.png, id=269, 258.9675pt x 158.09062pt>
+ [8 <./mobilerobots.png>] <heterogenous.png, id=334, 258.9675pt x 158.09062pt>
 File: heterogenous.png Graphic file (type png)
 
 <use heterogenous.png>
-Package pdftex.def Info: heterogenous.png used on input line 103.
+Package pdftex.def Info: heterogenous.png used on input line 93.
 (pdftex.def)             Requested size: 258.96684pt x 158.09023pt.
- <narrow_los.png, id=270, 314.67563pt x 164.86594pt>
+ <narrow_los.png, id=335, 314.67563pt x 164.86594pt>
 File: narrow_los.png Graphic file (type png)
 
 <use narrow_los.png>
-Package pdftex.def Info: narrow_los.png used on input line 115.
+Package pdftex.def Info: narrow_los.png used on input line 102.
 (pdftex.def)             Requested size: 314.67485pt x 164.86551pt.
 
-Underfull \vbox (badness 10000) has occurred while \output is active []
+Underfull \vbox (badness 3668) has occurred while \output is active []
 
- [9 <./heterogenous.png>] <mesh.png, id=276, 296.60812pt x 154.32657pt>
+ [9 <./heterogenous.png>] <mesh.png, id=341, 296.60812pt x 154.32657pt>
 File: mesh.png Graphic file (type png)
  <use mesh.png>
-Package pdftex.def Info: mesh.png used on input line 128.
+Package pdftex.def Info: mesh.png used on input line 111.
 (pdftex.def)             Requested size: 296.60739pt x 154.32617pt.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [10 <./narrow_los.png> <./mesh.png>]
-<decentralized.png, id=281, 344.78813pt x 124.21407pt>
+<decentralized.png, id=346, 344.78813pt x 124.21407pt>
 File: decentralized.png Graphic file (type png)
  <use decentralized.png>
-Package pdftex.def Info: decentralized.png used on input line 146.
+Package pdftex.def Info: decentralized.png used on input line 124.
 (pdftex.def)             Requested size: 344.78728pt x 124.21375pt.
 
-<complex.png, id=282, 367.3725pt x 231.11343pt>
+<complex.png, id=347, 367.3725pt x 231.11343pt>
 File: complex.png Graphic file (type png)
  <use complex.png>
-Package pdftex.def Info: complex.png used on input line 156.
+Package pdftex.def Info: complex.png used on input line 133.
 (pdftex.def)             Requested size: 367.37158pt x 231.11287pt.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [11 <./decentralized.png>] [12 <./complex.png>] [13]
+Overfull \hbox (1.75858pt too wide) in paragraph at lines 159--160
+\T1/ptm/m/n/12 two novel meth-ods based on bub-ble pack-ing meth-ods and ran-do
+m-ized frac-tals method.
+ []
+
+
 Underfull \vbox (badness 1478) has occurred while \output is active []
 
  [14])
-[15] [16
+(./chapter2/chapter2.tex [15] [16
 
 ]
 \vskip 4mm CHAPTER 2.
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `\uppercase' on input line 93.
+(hyperref)                removing `\uppercase' on input line 4.
 
-LaTeX Font Info:    Try loading font information for T1+pcr on input line 95.
+<gps.png, id=373, 354.57469pt x 174.6525pt>
+File: gps.png Graphic file (type png)
+ <use gps.png>
+Package pdftex.def Info: gps.png used on input line 19.
+(pdftex.def)             Requested size: 354.57382pt x 174.65207pt.
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [17]
+Underfull \hbox (badness 10000) in paragraph at lines 37--37
+[]\T1/ptm/m/n/12 Measurement from mo-bile
+ []
+
+
+Underfull \hbox (badness 1810) in paragraph at lines 37--37
+\T1/ptm/m/n/12 unit to usu-ally fixed transpon-
+ []
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [18 <./gps.png>] <measurement.png, id=382, 228.10219pt x 231.11343pt>
+File: measurement.png Graphic file (type png)
+
+<use measurement.png>
+Package pdftex.def Info: measurement.png used on input line 58.
+(pdftex.def)             Requested size: 228.10161pt x 231.11287pt.
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [19]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [20 <./measurement.png>] <trilateration.png, id=391, 178.41656pt x 160.34906pt
+>
+File: trilateration.png Graphic file (type png)
+
+<use trilateration.png>
+Package pdftex.def Info: trilateration.png used on input line 78.
+(pdftex.def)             Requested size: 178.4161pt x 160.34866pt.
+ [21 <./trilateration.png>]
+<samitha.png, id=397, 238.64156pt x 158.84344pt>
+File: samitha.png Graphic file (type png)
+ <use samitha.png>
+Package pdftex.def Info: samitha.png used on input line 90.
+(pdftex.def)             Requested size: 238.64096pt x 158.84305pt.
+
+<slotine.png, id=398, 400.49625pt x 283.81032pt>
+File: slotine.png Graphic file (type png)
+ <use slotine.png>
+Package pdftex.def Info: slotine.png used on input line 98.
+(pdftex.def)             Requested size: 400.49527pt x 283.80962pt.
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [22 <./samitha.png>] <kumar.png, id=403, 283.0575pt x 551.05875pt>
+File: kumar.png Graphic file (type png)
+ <use kumar.png>
+Package pdftex.def Info: kumar.png used on input line 106.
+(pdftex.def)             Requested size: 283.0568pt x 551.05739pt.
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [23 <./slotine.png>] [24 <./kumar.png>] <leader.png, id=412, 195.73125pt x 163
+.3603pt>
+File: leader.png Graphic file (type png)
+
+<use leader.png>
+Package pdftex.def Info: leader.png used on input line 114.
+(pdftex.def)             Requested size: 195.73076pt x 163.3599pt.
+ <virtual_structure.png, id=413, 422.32782pt x 146.04562pt>
+File: virtual_structure.png Graphic file (type png)
+
+<use virtual_structure.png>
+Package pdftex.def Info: virtual_structure.png used on input line 126.
+(pdftex.def)             Requested size: 422.32678pt x 146.04524pt.
+
+Overfull \hbox (15.4523pt too wide) in paragraph at lines 126--127
+ [][] 
+ []
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [25 <./leader.png>] <potential.png, id=418, 298.86656pt x 87.32625pt>
+File: potential.png Graphic file (type png)
+
+<use potential.png>
+Package pdftex.def Info: potential.png used on input line 137.
+(pdftex.def)             Requested size: 298.86581pt x 87.32603pt.
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [26 <./virtual_structure.png>]
+
+LaTeX Warning: Command \textquotedblleft invalid in math mode on input line 141
+.
+
+
+LaTeX Warning: Command \textquotedblright invalid in math mode on input line 14
+1.
+
+
+LaTeX Warning: Command \textquotedblleft invalid in math mode on input line 141
+.
+
+
+LaTeX Warning: Command \textquotedblright invalid in math mode on input line 14
+1.
+
+<manifold.png, id=424, 493.845pt x 253.69781pt>
+File: manifold.png Graphic file (type png)
+ <use manifold.png>
+Package pdftex.def Info: manifold.png used on input line 148.
+(pdftex.def)             Requested size: 493.84378pt x 253.69719pt.
+
+Overfull \hbox (86.9693pt too wide) in paragraph at lines 148--149
+ [][] 
+ []
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [27 <./potential.png>] [28 <./manifold.png>]
+<randomized1.png, id=438, 404.26031pt x 191.21437pt>
+File: randomized1.png Graphic file (type png)
+ <use randomized1.png>
+Package pdftex.def Info: randomized1.png used on input line 182.
+(pdftex.def)             Requested size: 404.25932pt x 191.2139pt.
+
+<nodespacing.png, id=439, 254.45062pt x 191.21437pt>
+File: nodespacing.png Graphic file (type png)
+ <use nodespacing.png>
+Package pdftex.def Info: nodespacing.png used on input line 192.
+(pdftex.def)             Requested size: 254.45pt x 191.2139pt.
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [29 <./randomized1.png>] <interbubble.png, id=448, 186.6975pt x 148.30406pt>
+File: interbubble.png Graphic file (type png)
+
+<use interbubble.png>
+Package pdftex.def Info: interbubble.png used on input line 200.
+(pdftex.def)             Requested size: 186.69704pt x 148.30368pt.
+ <interbubble2.png, id=449, 224.33812pt x 322.95656pt>
+File: interbubble2.png Graphic file (type png)
+
+<use interbubble2.png>
+Package pdftex.def Info: interbubble2.png used on input line 210.
+(pdftex.def)             Requested size: 224.33757pt x 322.95576pt.
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [30 <./nodespacing.png> <./interbubble.png>]
+<advancing.png, id=454, 347.04657pt x 118.94438pt>
+File: advancing.png Graphic file (type png)
+ <use advancing.png>
+Package pdftex.def Info: advancing.png used on input line 221.
+(pdftex.def)             Requested size: 347.04572pt x 118.94408pt.
+)
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [31 <./interbubble2.png>] [32 <./advancing.png>]
+\vskip 4mm CHAPTER 3.
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `\uppercase' on input line 94.
+
+LaTeX Font Info:    Try loading font information for T1+pcr on input line 96.
 (/usr/share/texlive/texmf-dist/tex/latex/psnfss/t1pcr.fd
 File: t1pcr.fd 2001/06/04 font definitions for T1/pcr.
 ) (./thesis.bbl
-[17] [18
+[33
+
+] [34
 
 ]
 
@@ -1294,15 +1462,15 @@ Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
 
 Package hyperref Warning: bookmark level for unknown nodots defaults to 0.
 
-[19] [20
+[35] [36
 
 ]
 APPENDIX A.
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `\uppercase' on input line 105.
+(hyperref)                removing `\uppercase' on input line 106.
 
-(./vita.tex [21] [22
+(./vita.tex [37] [38
 
 ]
 Underfull \hbox (badness 10000) in paragraph at lines 6--12
@@ -1310,36 +1478,40 @@ Underfull \hbox (badness 10000) in paragraph at lines 6--12
  []
 
 )
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 112.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 113.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [23]
-[24]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 112.
+ [39]
+[40]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 113.
  (./thesis.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 112.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 112.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 113.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 113.
 Package rerunfilecheck Info: File `thesis.out' has not changed.
-(rerunfilecheck)             Checksum: 7B7C92243A9950F295FEE9A2D06AD51E;1533.
+(rerunfilecheck)             Checksum: 59B0FAB76373B932CD9EBD9FA66CA549;1967.
  ) 
 Here is how much of TeX's memory you used:
- 20379 strings out of 494424
- 338499 string characters out of 6165346
- 467979 words of memory out of 5000000
- 23118 multiletter control sequences out of 15000+600000
- 31889 words of font info for 55 fonts, out of 8000000 for 9000
+ 20522 strings out of 494424
+ 340451 string characters out of 6165346
+ 468979 words of memory out of 5000000
+ 23188 multiletter control sequences out of 15000+600000
+ 37389 words of font info for 68 fonts, out of 8000000 for 9000
  372 hyphenation exceptions out of 8191
- 63i,7n,73p,1638b,822s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 63i,9n,75p,1638b,822s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/share/texliv
-e/texmf-dist/fonts/type1/urw/courier/ucrr8a.pfb></usr/share/texlive/texmf-dist/
-fonts/type1/urw/times/utmb8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw
-/times/utmr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmri8a.
-pfb>
-Output written on thesis.pdf (40 pages, 1949423 bytes).
+e/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texlive/texm
+f-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texmf-dist
+/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/
+type1/urw/courier/ucrr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/sym
+bol/usyr.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/symbol/usyr.pfb></u
+sr/share/texlive/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/share/texliv
+e/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/share/texlive/texmf-dist/fo
+nts/type1/urw/times/utmri8a.pfb>
+Output written on thesis.pdf (56 pages, 2618585 bytes).
 PDF statistics:
- 394 PDF objects out of 1000 (max. 8388607)
- 334 compressed objects within 4 object streams
- 84 named destinations out of 1000 (max. 500000)
- 263 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 572 PDF objects out of 1000 (max. 8388607)
+ 475 compressed objects within 5 object streams
+ 125 named destinations out of 1000 (max. 500000)
+ 386 words of extra memory for PDF output out of 10000 (max. 10000000)
 
