@@ -9,7 +9,8 @@
 \contentsline {leads}{\numberline {}TABLE OF CONTENTS}{xi}{chapter*.4}
 \contentsline {leads}{\numberline {}LIST OF TABLES}{xv}{chapter*.5}
 \contentsline {leads}{\numberline {}LIST OF FIGURES}{xvi}{chapter*.6}
-\contentsline {leads}{\numberline {}LIST OF ABBREVIATIONS}{xix}{chapter*.7}
+\contentsline {leads}{\numberline {}LIST OF ALGORITHMS}{xix}{chapter*.7}
+\contentsline {leads}{\numberline {}LIST OF ABBREVIATIONS}{xx}{chapter*.8}
 \numberline {}CHAPTERS
 \select@language {turkish}
 \select@language {english}
@@ -35,37 +36,36 @@
 \contentsline {section}{\numberline {2.2}Formation Control Systems}{21}{section.2.2}
 \contentsline {section}{\numberline {2.3}Partitioning Complex Geometrical Shapes}{28}{section.2.3}
 \contentsline {chapter}{\numberline {3}\MakeUppercase {METHODOLOGY}}{33}{chapter.3}
-\contentsline {section}{\numberline {3.1}Methodology}{33}{section.3.1}
-\contentsline {subsection}{\numberline {3.1.1}Local Positioning System}{34}{subsection.3.1.1}
-\contentsline {subsubsection}{\numberline {3.1.1.1}Trilateration Process}{35}{subsubsection.3.1.1.1}
-\contentsline {subsubsection}{\numberline {3.1.1.2} Route Table Determination and DSDV Algorithm}{42}{subsubsection.3.1.1.2}
-\contentsline {paragraph}{Routing Algorithm- Bellman Ford}{43}{section*.9}
-\contentsline {paragraph}{Usage on Bellman Ford algorithm and DSDV}{44}{section*.10}
-\contentsline {paragraph}{DSDV Link addition}{46}{section*.11}
-\contentsline {paragraph}{DSDV link breaks}{47}{section*.12}
-\contentsline {subsubsection}{\numberline {3.1.1.3}Clusters}{48}{subsubsection.3.1.1.3}
-\contentsline {subsubsection}{\numberline {3.1.1.4}Handling Lost Agents}{50}{subsubsection.3.1.1.4}
-\contentsline {subsubsection}{\numberline {3.1.1.5}State Estimation Procedure}{51}{subsubsection.3.1.1.5}
+\contentsline {section}{\numberline {3.1}Local Positioning System}{34}{section.3.1}
+\contentsline {subsection}{\numberline {3.1.1}Trilateration Process}{35}{subsection.3.1.1}
+\contentsline {subsubsection}{\numberline {3.1.1.1} Route Table Determination and DSDV Algorithm}{41}{subsubsection.3.1.1.1}
+\contentsline {paragraph}{Routing Algorithm- Bellman Ford}{43}{section*.10}
+\contentsline {paragraph}{Usage on Bellman Ford algorithm and DSDV}{44}{section*.11}
+\contentsline {paragraph}{DSDV Link addition}{46}{section*.12}
+\contentsline {paragraph}{DSDV link breaks}{47}{section*.13}
+\contentsline {subsubsection}{\numberline {3.1.1.2}Clusters}{48}{subsubsection.3.1.1.2}
+\contentsline {subsubsection}{\numberline {3.1.1.3}Handling Lost Agents}{50}{subsubsection.3.1.1.3}
+\contentsline {subsubsection}{\numberline {3.1.1.4}State Estimation Procedure}{51}{subsubsection.3.1.1.4}
 \contentsline {subsection}{\numberline {3.1.2}FORMATION CONTROL}{53}{subsection.3.1.2}
 \contentsline {subsubsection}{\numberline {3.1.2.1}Potential Field Based Approach}{54}{subsubsection.3.1.2.1}
-\contentsline {paragraph}{Artificial Forces Method}{54}{section*.13}
-\contentsline {subparagraph}{Utitilty Functions}{56}{section*.14}
-\contentsline {subparagraph}{Artificial Forces}{59}{section*.15}
-\contentsline {subparagraph}{Buffer Zone Implementation}{66}{section*.16}
-\contentsline {subparagraph}{XSwarm Theory}{67}{section*.17}
-\contentsline {subparagraph}{Implementation of X-Swarm Theory}{68}{section*.18}
-\contentsline {subsubsection}{\numberline {3.1.2.2}Shape Partitioning Methods}{69}{subsubsection.3.1.2.2}
-\contentsline {paragraph}{Determining the Potential Goal States}{70}{section*.19}
-\contentsline {subparagraph}{Bubble Packing Method}{70}{section*.20}
-\contentsline {subparagraph}{Randomized Fractals Method}{73}{section*.21}
-\contentsline {paragraph}{Mesh Quality Measurement}{74}{section*.22}
-\contentsline {paragraph}{Decision Process on Goal States}{76}{section*.23}
-\contentsline {subparagraph}{Free Configuration Space}{77}{section*.24}
-\contentsline {subparagraph}{Visibility Graphs and Dijkstra$'$s Algorihtm}{77}{section*.25}
-\contentsline {subparagraph}{Collaborative Decision Process of Final Goal States}{79}{section*.26}
-\contentsline {paragraph}{Control System Design for Individual Agents}{81}{section*.27}
-\contentsline {chapter}{\numberline {4}\MakeUppercase {Next Chapter}}{85}{chapter.4}
-\contentsline {leads}{\numberline {}\uppercase {REFERENCES}}{87}{chapter*.28}
-\contentsline {nodots}{\numberline {}APPENDICES}{87}{chapter*.28}
-\contentsline {chapter}{\numberline {A}\MakeUppercase {Appendix Name}}{89}{appendix.A}
-\contentsline {leads}{\numberline {}CURRICULUM VITAE}{91}{appendix*.29}
+\contentsline {paragraph}{Artificial Forces Method}{54}{section*.14}
+\contentsline {subparagraph}{Utitilty Functions}{56}{section*.15}
+\contentsline {subparagraph}{Artificial Forces}{59}{section*.16}
+\contentsline {subparagraph}{Buffer Zone Implementation}{66}{section*.17}
+\contentsline {subparagraph}{XSwarm Theory}{67}{section*.18}
+\contentsline {subparagraph}{Implementation of X-Swarm Theory}{69}{section*.19}
+\contentsline {subsubsection}{\numberline {3.1.2.2}Shape Partitioning Methods}{70}{subsubsection.3.1.2.2}
+\contentsline {paragraph}{Determining the Potential Goal States}{70}{section*.20}
+\contentsline {subparagraph}{Bubble Packing Method}{70}{section*.21}
+\contentsline {subparagraph}{Randomized Fractals Method}{73}{section*.22}
+\contentsline {paragraph}{Mesh Quality Measurement}{75}{section*.23}
+\contentsline {paragraph}{Decision Process on Goal States}{76}{section*.24}
+\contentsline {subparagraph}{Free Configuration Space}{77}{section*.25}
+\contentsline {subparagraph}{Visibility Graphs and Dijkstra$'$s Algorihtm}{78}{section*.26}
+\contentsline {subparagraph}{Collaborative Decision Process of Final Goal States}{80}{section*.27}
+\contentsline {paragraph}{Control System Design for Individual Agents}{82}{section*.28}
+\contentsline {chapter}{\numberline {4}\MakeUppercase {Next Chapter}}{87}{chapter.4}
+\contentsline {leads}{\numberline {}\uppercase {REFERENCES}}{89}{chapter*.29}
+\contentsline {nodots}{\numberline {}APPENDICES}{89}{chapter*.29}
+\contentsline {chapter}{\numberline {A}\MakeUppercase {Appendix Name}}{91}{appendix.A}
+\contentsline {leads}{\numberline {}CURRICULUM VITAE}{93}{appendix*.30}

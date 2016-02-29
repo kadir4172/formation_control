@@ -4,58 +4,58 @@
 \BOOKMARK [0][-]{chapter*.4}{TABLE OF CONTENTS}{}% 4
 \BOOKMARK [0][-]{chapter*.5}{LIST OF TABLES}{}% 5
 \BOOKMARK [0][-]{chapter*.6}{LIST OF FIGURES}{}% 6
-\BOOKMARK [0][-]{chapter*.7}{LIST OF ABBREVIATIONS}{}% 7
-\BOOKMARK [0][-]{chapter.1}{INTRODUCTION}{}% 8
-\BOOKMARK [1][-]{section.1.1}{Problem Definition}{chapter.1}% 9
-\BOOKMARK [1][-]{section.1.2}{Motivation}{chapter.1}% 10
-\BOOKMARK [1][-]{section.1.3}{Objectives}{chapter.1}% 11
-\BOOKMARK [2][-]{subsection.1.3.1}{Heterogenous Robots with Different Dynamics}{section.1.3}% 12
-\BOOKMARK [2][-]{subsection.1.3.2}{Communication Infrastructure}{section.1.3}% 13
-\BOOKMARK [2][-]{subsection.1.3.3}{ Decentralized Decision Making Process}{section.1.3}% 14
-\BOOKMARK [2][-]{subsection.1.3.4}{Complex Closed Contours}{section.1.3}% 15
-\BOOKMARK [2][-]{subsection.1.3.5}{Simple Agents with Low Sensor Capabilities and Low Computing Powers}{section.1.3}% 16
-\BOOKMARK [1][-]{section.1.4}{Goals}{chapter.1}% 17
-\BOOKMARK [1][-]{section.1.5}{Methodology}{chapter.1}% 18
-\BOOKMARK [1][-]{section.1.6}{Contribution of Thesis}{chapter.1}% 19
-\BOOKMARK [1][-]{section.1.7}{Outline of the Thesis}{chapter.1}% 20
-\BOOKMARK [0][-]{chapter.2}{LITERATURE SURVEY}{}% 21
-\BOOKMARK [1][-]{section.2.1}{Local Positioning Systems}{chapter.2}% 22
-\BOOKMARK [2][-]{subsection.2.1.1}{Measurement Principles}{section.2.1}% 23
-\BOOKMARK [2][-]{subsection.2.1.2}{Trilateration Process}{section.2.1}% 24
-\BOOKMARK [1][-]{section.2.2}{Formation Control Systems}{chapter.2}% 25
-\BOOKMARK [1][-]{section.2.3}{Partitioning Complex Geometrical Shapes}{chapter.2}% 26
-\BOOKMARK [0][-]{chapter.3}{METHODOLOGY}{}% 27
-\BOOKMARK [1][-]{section.3.1}{Methodology}{chapter.3}% 28
-\BOOKMARK [2][-]{subsection.3.1.1}{Local Positioning System}{section.3.1}% 29
-\BOOKMARK [3][-]{subsubsection.3.1.1.1}{Trilateration Process}{subsection.3.1.1}% 30
-\BOOKMARK [3][-]{subsubsection.3.1.1.2}{ Route Table Determination and DSDV Algorithm}{subsection.3.1.1}% 31
-\BOOKMARK [4][-]{section*.9}{Routing Algorithm- Bellman Ford}{subsubsection.3.1.1.2}% 32
-\BOOKMARK [4][-]{section*.10}{Usage on Bellman Ford algorithm and DSDV}{subsubsection.3.1.1.2}% 33
-\BOOKMARK [4][-]{section*.11}{DSDV Link addition}{subsubsection.3.1.1.2}% 34
-\BOOKMARK [4][-]{section*.12}{DSDV link breaks}{subsubsection.3.1.1.2}% 35
-\BOOKMARK [3][-]{subsubsection.3.1.1.3}{Clusters}{subsection.3.1.1}% 36
-\BOOKMARK [3][-]{subsubsection.3.1.1.4}{Handling Lost Agents}{subsection.3.1.1}% 37
-\BOOKMARK [3][-]{subsubsection.3.1.1.5}{State Estimation Procedure}{subsection.3.1.1}% 38
+\BOOKMARK [0][-]{chapter*.7}{LIST OF ALGORITHMS}{}% 7
+\BOOKMARK [0][-]{chapter*.8}{LIST OF ABBREVIATIONS}{}% 8
+\BOOKMARK [0][-]{chapter.1}{INTRODUCTION}{}% 9
+\BOOKMARK [1][-]{section.1.1}{Problem Definition}{chapter.1}% 10
+\BOOKMARK [1][-]{section.1.2}{Motivation}{chapter.1}% 11
+\BOOKMARK [1][-]{section.1.3}{Objectives}{chapter.1}% 12
+\BOOKMARK [2][-]{subsection.1.3.1}{Heterogenous Robots with Different Dynamics}{section.1.3}% 13
+\BOOKMARK [2][-]{subsection.1.3.2}{Communication Infrastructure}{section.1.3}% 14
+\BOOKMARK [2][-]{subsection.1.3.3}{ Decentralized Decision Making Process}{section.1.3}% 15
+\BOOKMARK [2][-]{subsection.1.3.4}{Complex Closed Contours}{section.1.3}% 16
+\BOOKMARK [2][-]{subsection.1.3.5}{Simple Agents with Low Sensor Capabilities and Low Computing Powers}{section.1.3}% 17
+\BOOKMARK [1][-]{section.1.4}{Goals}{chapter.1}% 18
+\BOOKMARK [1][-]{section.1.5}{Methodology}{chapter.1}% 19
+\BOOKMARK [1][-]{section.1.6}{Contribution of Thesis}{chapter.1}% 20
+\BOOKMARK [1][-]{section.1.7}{Outline of the Thesis}{chapter.1}% 21
+\BOOKMARK [0][-]{chapter.2}{LITERATURE SURVEY}{}% 22
+\BOOKMARK [1][-]{section.2.1}{Local Positioning Systems}{chapter.2}% 23
+\BOOKMARK [2][-]{subsection.2.1.1}{Measurement Principles}{section.2.1}% 24
+\BOOKMARK [2][-]{subsection.2.1.2}{Trilateration Process}{section.2.1}% 25
+\BOOKMARK [1][-]{section.2.2}{Formation Control Systems}{chapter.2}% 26
+\BOOKMARK [1][-]{section.2.3}{Partitioning Complex Geometrical Shapes}{chapter.2}% 27
+\BOOKMARK [0][-]{chapter.3}{METHODOLOGY}{}% 28
+\BOOKMARK [1][-]{section.3.1}{Local Positioning System}{chapter.3}% 29
+\BOOKMARK [2][-]{subsection.3.1.1}{Trilateration Process}{section.3.1}% 30
+\BOOKMARK [3][-]{subsubsection.3.1.1.1}{ Route Table Determination and DSDV Algorithm}{subsection.3.1.1}% 31
+\BOOKMARK [4][-]{section*.10}{Routing Algorithm- Bellman Ford}{subsubsection.3.1.1.1}% 32
+\BOOKMARK [4][-]{section*.11}{Usage on Bellman Ford algorithm and DSDV}{subsubsection.3.1.1.1}% 33
+\BOOKMARK [4][-]{section*.12}{DSDV Link addition}{subsubsection.3.1.1.1}% 34
+\BOOKMARK [4][-]{section*.13}{DSDV link breaks}{subsubsection.3.1.1.1}% 35
+\BOOKMARK [3][-]{subsubsection.3.1.1.2}{Clusters}{subsection.3.1.1}% 36
+\BOOKMARK [3][-]{subsubsection.3.1.1.3}{Handling Lost Agents}{subsection.3.1.1}% 37
+\BOOKMARK [3][-]{subsubsection.3.1.1.4}{State Estimation Procedure}{subsection.3.1.1}% 38
 \BOOKMARK [2][-]{subsection.3.1.2}{FORMATION CONTROL}{section.3.1}% 39
 \BOOKMARK [3][-]{subsubsection.3.1.2.1}{Potential Field Based Approach}{subsection.3.1.2}% 40
-\BOOKMARK [4][-]{section*.13}{Artificial Forces Method}{subsubsection.3.1.2.1}% 41
-\BOOKMARK [5][-]{section*.14}{Utitilty Functions}{section*.13}% 42
-\BOOKMARK [5][-]{section*.15}{Artificial Forces}{section*.13}% 43
-\BOOKMARK [5][-]{section*.16}{Buffer Zone Implementation}{section*.13}% 44
-\BOOKMARK [5][-]{section*.17}{XSwarm Theory}{section*.13}% 45
-\BOOKMARK [5][-]{section*.18}{Implementation of X-Swarm Theory}{section*.13}% 46
+\BOOKMARK [4][-]{section*.14}{Artificial Forces Method}{subsubsection.3.1.2.1}% 41
+\BOOKMARK [5][-]{section*.15}{Utitilty Functions}{section*.14}% 42
+\BOOKMARK [5][-]{section*.16}{Artificial Forces}{section*.14}% 43
+\BOOKMARK [5][-]{section*.17}{Buffer Zone Implementation}{section*.14}% 44
+\BOOKMARK [5][-]{section*.18}{XSwarm Theory}{section*.14}% 45
+\BOOKMARK [5][-]{section*.19}{Implementation of X-Swarm Theory}{section*.14}% 46
 \BOOKMARK [3][-]{subsubsection.3.1.2.2}{Shape Partitioning Methods}{subsection.3.1.2}% 47
-\BOOKMARK [4][-]{section*.19}{Determining the Potential Goal States}{subsubsection.3.1.2.2}% 48
-\BOOKMARK [5][-]{section*.20}{Bubble Packing Method}{section*.19}% 49
-\BOOKMARK [5][-]{section*.21}{Randomized Fractals Method}{section*.19}% 50
-\BOOKMARK [4][-]{section*.22}{Mesh Quality Measurement}{subsubsection.3.1.2.2}% 51
-\BOOKMARK [4][-]{section*.23}{Decision Process on Goal States}{subsubsection.3.1.2.2}% 52
-\BOOKMARK [5][-]{section*.24}{Free Configuration Space}{section*.23}% 53
-\BOOKMARK [5][-]{section*.25}{Visibility Graphs and Dijkstra's Algorihtm}{section*.23}% 54
-\BOOKMARK [5][-]{section*.26}{Collaborative Decision Process of Final Goal States}{section*.23}% 55
-\BOOKMARK [4][-]{section*.27}{Control System Design for Individual Agents}{subsubsection.3.1.2.2}% 56
+\BOOKMARK [4][-]{section*.20}{Determining the Potential Goal States}{subsubsection.3.1.2.2}% 48
+\BOOKMARK [5][-]{section*.21}{Bubble Packing Method}{section*.20}% 49
+\BOOKMARK [5][-]{section*.22}{Randomized Fractals Method}{section*.20}% 50
+\BOOKMARK [4][-]{section*.23}{Mesh Quality Measurement}{subsubsection.3.1.2.2}% 51
+\BOOKMARK [4][-]{section*.24}{Decision Process on Goal States}{subsubsection.3.1.2.2}% 52
+\BOOKMARK [5][-]{section*.25}{Free Configuration Space}{section*.24}% 53
+\BOOKMARK [5][-]{section*.26}{Visibility Graphs and Dijkstra's Algorihtm}{section*.24}% 54
+\BOOKMARK [5][-]{section*.27}{Collaborative Decision Process of Final Goal States}{section*.24}% 55
+\BOOKMARK [4][-]{section*.28}{Control System Design for Individual Agents}{subsubsection.3.1.2.2}% 56
 \BOOKMARK [0][-]{chapter.4}{Next Chapter}{}% 57
-\BOOKMARK [0][-]{chapter*.28}{REFERENCES}{}% 58
-\BOOKMARK [0][-]{chapter*.28}{APPENDICES}{}% 59
+\BOOKMARK [0][-]{chapter*.29}{REFERENCES}{}% 58
+\BOOKMARK [0][-]{chapter*.29}{APPENDICES}{}% 59
 \BOOKMARK [0][-]{appendix.A}{Appendix Name}{}% 60
-\BOOKMARK [0][-]{appendix*.29}{CURRICULUM VITAE}{}% 61
+\BOOKMARK [0][-]{appendix*.30}{CURRICULUM VITAE}{}% 61

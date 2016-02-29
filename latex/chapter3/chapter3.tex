@@ -4,63 +4,54 @@
 \chapter{METHODOLOGY}
 \label{chp:Methodology}
 
-
-\section{Methodology}
-
 In this thesis work, the problem of dynamical formation control of heterogenous mobile robots is reduced down to two subproblems as local positioning system design and formation control system design. Local positioning subsystem proposes  a  solution for the localization of the agents in the environment with the low sensor capabilities. This part of the solution provides a basis for the formation control problem with the true state vectors of agents composed with the translational positions and velocities. Formation control subsystem proposes a solution to achieve desired complex shapes with heterogenous agents in the swarm.  In this chapter, details of the solution for these subproblems are presented in details. 
 
 \begin{figure}[H]
-	\caption{Flowchart of the Provided Solution}
-	\centering
-	\includegraphics[scale = 0.65]{general_scheme}
+\caption{Flowchart of the Provided Solution}
+\centering
+\includegraphics[scale = 0.65]{general_scheme}
 \end{figure}
 
-
-\subsection{Local Positioning System}
-
-Local positioning system is a subsystem to provide a complete solution to the localization of the agents in the environment. As discussed in Section-xx(Objectives) , agents are expected to have low sensor capabilities and only a limited number of them have external position measurement sensors on their boards. The rest of the swarm have to maintain their position$\&$velocity data with the help of their inertial measurements. Propogation of the states with this type of measurements are always inclined to drift problems due to the errors$\&$noise and bias problems of the sensors and the state vectors composed with the translational positions and velocities have to be corrected with an external measurement. A complete solution for this type of problem is proposed in Figure-xx. 
-
-
+\section{Local Positioning System}
+Local positioning system is a subsystem to provide a complete solution to the localization of the agents in the environment. As discussed in Section-xx(Objectives) , agents are expected to have low sensor capabilities and only a limited number of them have external position measurement sensors on their boards. The rest of the swarm have to maintain their position$\&$velocity data with the help of their inertial measurements. Propogation of the states with this type of measurements are always inclined to drift problems due to the errors$\&$noise and bias problems of the sensors and the state vectors composed with the translational positions and velocities have to be corrected with an external measurement. A complete solution for this type of problem is proposed in Figure-xx.
 
 \begin{figure}[H]
-	\caption{Local Positioning System}
-	\centering
-	\includegraphics[scale = 0.65]{lps}
+\caption{Local Positioning System}
+\centering
+\includegraphics[scale = 0.65]{lps}
 \end{figure}
 
+As illustrated in Figure-xx, agents are expected to propogate their states with the help of acceleration, gyroscope and magnetometer sensors. Since the trilateration and route table determination processes require iterative and time consuming algorithms, a localization timer with a suitable period is implemented to the solution. Agents will correct their state vectors with the localization period of 3 seconds by measuring their positions with trilateration process and execute the update procedure in their state estimator algorithms.
 
-As illustrated in Figure-xx, agents are expected to propogate their states with the help of acceleration, gyroscope and magnetometer sensors. Since the trilateration and route table determination processes require iterative and time consuming algorithms, a localization timer with a suitable period is implemented to the solution. Agents will correct their state vectors with the localization period of 3 seconds by measuring their positions with trilateration process and execute the update procedure in their state estimator algorithms. 
-
-
-
-\subsubsection{Trilateration Process}
-
+\subsection{Trilateration Process}
 Trilateration process helps the agents to localize themselves with the help of their local neighbors.  Trilateration calculations use distance measurements to the nodes with known positions, to determine the coordinates of unknown positions[22]. These measurements are assumed to be done with the help of low cost range sensors like ultrasonic sensors.  Solution of the unknown position with the help of these distance measurements can be reduced down to a $A\vec{x} = \vec{b}$ type equation with the help of mathematical manipulations. The agents which has position sensors on their boards are called position beacons. Figure-xx illustrates a sample environment which consist of $i$ beacons and an agent which tries to localize itself with the help of distance measurements $r_i$ and the position data $B_i$ of the beacon nodes.
+
 \begin{figure}[H]
-	\caption{Environment for Trilateration Process}
-	\centering
-	\includegraphics[scale = 0.65]{beacons}
+\caption{Environment for Trilateration Process}
+\centering
+\includegraphics[scale = 0.65]{beacons}
 \end{figure}
 
 The distance function $\hat{r_i}$ can be written as follows;
+
 \begin{equation} % eq 2
 \hat{r_i} = \sqrt{(x-x_i)^2 + (y-y_i)^2+ (z-z_i)^2}    \hspace{0.3cm}   (i=1,2,...,n)
 \end{equation}
+
 where $i$ denotes the beacon number and $n$ is the total number of beacons. We have $n$ number of constraints in the solution of the localization problem. In our work, we have implemented a two dimensional localization solution with the assumption of each agent in the swarm have the same vertical position in Earth centered coordinate system. With this assumption, the problem for the localization process can be reduced down to a $A.\vec{x} =\vec{b} $ type linear system problem and the constraints will be circle functions rather than spherical ones, presented with
 
 \begin{equation}
-  (x-x_i)^2 + (y - y_i)^2 = {r_i}^2
+(x-x_i)^2 + (y - y_i)^2 = {r_i}^2
 \end{equation}
 
-Lets assume $\theta = (x,y)$ is representing the coordinates of an agent which is trying to localize itself, and $B_1 = (x_1,y_1) ; B_2 = (x_2,y_2) ; B_3 = (x_3,y_3) ; ...  ; B_i = (x_i,y_i)$ are the agents with exactly known positions. 
+Lets assume $\theta = (x,y)$ is representing the coordinates of an agent which is trying to localize itself, and $B_1 = (x_1,y_1) ; B_2 = (x_2,y_2) ; B_3 = (x_3,y_3) ; ...  ; B_i = (x_i,y_i)$ are the agents with exactly known positions.
 
-
-
-If any of the beacons is considered as the reference beacon and named with an index of $r$, the distance equations can be provided as following 
+If any of the beacons is considered as the reference beacon and named with an index of $r$, the distance equations can be provided as following
 
 The distance between the target agent and any beacon $i$
+
 \begin{equation}
-  d_i(\theta) = \sqrt{\left((x - x_i)^2 + (y - y_i)^2\right)}
+d_i(\theta) = \sqrt{\left((x - x_i)^2 + (y - y_i)^2\right)}
 \end{equation}
 
 The distance between the referance beacon and the other beacons
@@ -83,7 +74,6 @@ d_i^2(\theta) = & (x - x_r + x_r - x_i)^2 + (y - y_r + y_r - y_i)^2 \\
               + & (y - y_r)^2 + 2(y_r - y_i)(y - y_r) + (y_r - y_i)^2 \\               
 \end{align*}
 
-
 This equation yields to
 
 \begin{align*}
@@ -93,34 +83,34 @@ This equation yields to
 this general statement is valid for each beacon with
 
 \begin{align*}
-  & (x_2 - x_1)(x - x_1) + (y_2 - y_1)(y - y_1) = \frac{1}{2} [d_r^2(\theta) + d_{2r}^2 - d_2^2(\theta)] \\
-  & (x_3 - x_1)(x - x_1) + (y_3 - y_1)(y - y_1) = \frac{1}{2} [d_r^2(\theta) + d_{3r}^2 - d_3^2(\theta)] \\
-  & ... \\
-  & (x_n - x_1)(x - x_1) + (y_n - y_1)(y - y_1) = \frac{1}{2} [d_r^2(\theta) + d_{nr}^2 - d_n^2(\theta)] \\
+& (x_2 - x_1)(x - x_1) + (y_2 - y_1)(y - y_1) = \frac{1}{2} [d_r^2(\theta) + d_{2r}^2 - d_2^2(\theta)] \\
+& (x_3 - x_1)(x - x_1) + (y_3 - y_1)(y - y_1) = \frac{1}{2} [d_r^2(\theta) + d_{3r}^2 - d_3^2(\theta)] \\
+& ... \\
+& (x_n - x_1)(x - x_1) + (y_n - y_1)(y - y_1) = \frac{1}{2} [d_r^2(\theta) + d_{nr}^2 - d_n^2(\theta)] \\
 \end{align*}
 
 if $b_{ir}$ is defined for each beacon as follows:
 
 \begin{equation}
-  b_{ir} := \frac{1}{2}[d_r^2(\theta) + d_{ir}^2 - d_i^2(\theta)]
+b_{ir} := \frac{1}{2}[d_r^2(\theta) + d_{ir}^2 - d_i^2(\theta)]
 \end{equation}
 
 then the linearized system equations can be represented with $A\vec{x} = \vec{b}$ type equation where;
 
 \begin{equation}
-			A = \begin{bmatrix}
-			x_2 - x_r & y_2 - y_r\\
-			x_3 - x_r & y_3 - y_r\\
-			...       & ...      \\
-			x_n - x_r & y_n - y_r\\
-			\end{bmatrix}				
+A = \begin{bmatrix}
+x_2 - x_r & y_2 - y_r\\
+x_3 - x_r & y_3 - y_r\\
+...       & ...      \\
+x_n - x_r & y_n - y_r\\
+\end{bmatrix}				
 \end{equation}
 
 \begin{equation}
-		x = \begin{bmatrix}
-		x - x_r\\
-		y - y_r\\
-		\end{bmatrix}
+x = \begin{bmatrix}
+x - x_r\\
+y - y_r\\
+\end{bmatrix}
 \end{equation}
 
 \begin{equation}
@@ -132,71 +122,73 @@ b_{n1}\\
 \end{bmatrix}
 \end{equation}
 
-
 with the help of this mathematical manipulations, localization problem is reduced down to a $A\vec{x} = \vec{b}$ problem.
+
 There are some possible solutions to this type of equation regarding with the structure of matrix $A$ and vector $b$.\\
 
-
 \underline {\textit{*Solution to $A\vec{x} = \vec{b}$ Problem}}\\
-In a localization problem handled in two dimensional world, the $A$ matrix has $(n-1)$ rows and $2$ columns, where $'n'$ is the number of neighbor beacons. It is obvious that there is no solution when the number of neighbors lower than $3$ since the $A$ matrix will have $1$ or smaller number of lines. When the number of neighbor beacons are equal or greater than $3$
-we have three different solution types up to the structure of the linearized equations. 
+In a localization problem handled in two dimensional world, the $A$ matrix has $(n-1)$ rows and $2$ columns, where $'n'$ is the number of neighbor beacons. It is obvious that there is no solution when the number of neighbors lower than $3$ since the $A$ matrix will have $1$ or smaller number of lines. When the number of neighbor beacons are equal or greater than $3$ we have three different solution types up to the structure of the linearized equations.
 
 \textit{1) Unique solution:}\\
  If A matrix has the dimensions of $2x2$ and the rank of A matrix $'rank(A)'$ is equal to $2$, then the solution of $\vec{x}$ is unique with
 
 \begin{equation}
-  \hat{x} = A^{-1}\vec{b}
+\hat{x} = A^{-1}\vec{b}
 \end{equation}
-  where $\hat{x}$ is the unique solution. \\
-  
+
+where $\hat{x}$ is the unique solution. \\
   
 \textit{ 2) Minimum Norm solution with pseudo inverse:} \\  
-  If $A$ matrix has the dimensions of $(n-1)x2$ where $n>3$ ,which means the number of neighbor beacons greater than $3$, and if columns of $A$ matrix form a linearly independent set (full column rank matrix) then the solution can be found with the projection of $\vec{b}$ over range space of $A$, $Proj_{R(A)}\vec{b}$ where
-  \begin{equation}
-  Proj_{R(A)}\vec{b} = A (A^TA)^{-1}A^T\vec{b}
-  \end{equation}
-  \begin{align*}
-  & A\vec{x} = Proj_{R(A)}\vec{b}\\
-  & \vec{A}\hat{x} = A(A^TA)^{-1}A^T\vec{b}
-  \end{align*}
+If $A$ matrix has the dimensions of $(n-1)x2$ where $n>3$ ,which means the number of neighbor beacons greater than $3$, and if columns of $A$ matrix form a linearly independent set (full column rank matrix) then the solution can be found with the projection of $\vec{b}$ over range space of $A$, $Proj_{R(A)}\vec{b}$ where
+
+\begin{equation}
+Proj_{R(A)}\vec{b} = A (A^TA)^{-1}A^T\vec{b}
+\end{equation}
+
+\begin{align*}
+& A\vec{x} = Proj_{R(A)}\vec{b}\\
+& \vec{A}\hat{x} = A(A^TA)^{-1}A^T\vec{b}
+\end{align*}
  
 with the help of the above equation
+
 \begin{equation}
-  A(\hat{x} - (A^TA)^{-1}A^T\vec{b}) = 0
+ A(\hat{x} - (A^TA)^{-1}A^T\vec{b}) = 0
 \end{equation}
 
 then 
+
 \begin{equation}
- \hat{x} = (A^TA)^{-1}A^T\vec{b}
+\hat{x} = (A^TA)^{-1}A^T\vec{b}
 \end{equation}
   
-  since $A$ matrix is full column rank matrix,
+since $A$ matrix is full column rank matrix,
   
-  \begin{align*}
+\begin{align*}
 \mathcal{N}(\mathbf{A}) = \{0\} \hspace{0.3cm}  and  \hspace{0.3cm}  \mathcal{N}(\mathbf{A})^\perp =\mathbb{R} ^n 
-  \end{align*}
+\end{align*}
   
-  then 
+then 
   
-  \begin{equation}
+\begin{equation}
 Proj_{ \mathcal{N}(\mathbf{A})^\perp}\hat{x} = \hat{x}
-  \end{equation}
+\end{equation}
   
-  this concludes that $\hat{x}$ is the unique minimum norm solution to the $A\hat{x} = \vec{b}$ problem\\
+this concludes that $\hat{x}$ is the unique minimum norm solution to the $A\hat{x} = \vec{b}$ problem\\
 	
 	
-	\textit{3) Minimum norm solution with nonlinear least squares method}\\	
-	If $A$ matrix has the dimensions of $2x2$ or $(n-1)x2$ with $n>3$ and if rank of $A$ matrix is equal to $1$, $rank(A) = 1$ then the solution to the $A\hat{x} = \vec{b}$ problem can be found iteratively with the help of nonlinear least squares method. Lets define the cost function to be minimized 	as the sum of the squares of the errors on the distances
+\textit{3) Minimum norm solution with nonlinear least squares method}\\	
+If $A$ matrix has the dimensions of $2x2$ or $(n-1)x2$ with $n>3$ and if rank of $A$ matrix is equal to $1$, $rank(A) = 1$ then the solution to the $A\hat{x} = \vec{b}$ problem can be found iteratively with the help of nonlinear least squares method. Lets define the cost function to be minimized 	as the sum of the squares of the errors on the distances
 	
-	\begin{equation}
-    F(\theta) = \sum_{i=1}^{n} \left(f_i^2(x,y)\right)
-	\end{equation}
+\begin{equation}
+F(\theta) = \sum_{i=1}^{n} \left(f_i^2(x,y)\right)
+\end{equation}
 	
-	with
+with
 	
-	\begin{equation}
-   f_i(x,y) = \sqrt{(x-x_i)^2 + (y - y_i)^2} - r_i = f_i(\theta) 
-	\end{equation}
+\begin{equation}
+f_i(x,y) = \sqrt{(x-x_i)^2 + (y - y_i)^2} - r_i = f_i(\theta) 
+\end{equation}
 
 There are various algorithms to minimize the sum of the square errors in literature, Newton iteration is used to find the optimal solution in this work.  Taking the partial derivatives of the cost function with respect to $x$ and $y$ gives 
 
@@ -224,21 +216,21 @@ where
 
 \begin{equation}
 J(\theta) = \begin{bmatrix}
-  \frac{\partial{f_1(\theta)}}{\partial{x}} & \frac{\partial{f_1(\theta)}}{\partial{y}} \\
-  \frac{\partial{f_2(\theta)}}{\partial{x}} & \frac{\partial{f_2(\theta)}}{\partial{y}} \\
-  ... & ... \\
-  \frac{\partial{f_n(\theta)}}{\partial{x}} & \frac{\partial{f_n(\theta)}}{\partial{y}} \\
+\frac{\partial{f_1(\theta)}}{\partial{x}} & \frac{\partial{f_1(\theta)}}{\partial{y}} \\
+\frac{\partial{f_2(\theta)}}{\partial{x}} & \frac{\partial{f_2(\theta)}}{\partial{y}} \\
+... & ... \\
+\frac{\partial{f_n(\theta)}}{\partial{x}} & \frac{\partial{f_n(\theta)}}{\partial{y}} \\
 \end{bmatrix}
 \end{equation}
 
 and 
 \begin{equation}
- f(\theta) = \begin{bmatrix}
-  f_1(\theta) \\
-  f_2(\theta) \\
-  ...         \\
-  f_n(\theta)
- \end{bmatrix}
+f(\theta) = \begin{bmatrix}
+f_1(\theta) \\
+f_2(\theta) \\
+...         \\
+f_n(\theta)
+\end{bmatrix}
 \end{equation}
 	
 Using the vector $\vec{R}$	
@@ -1240,9 +1232,11 @@ Consider set of obstacles in the environment is augmented with the Minkowski Sum
 	
 In Section 2 and 3 possible routes and costs to the goal states are calculated with the help of Visibility Graphs and Dijkstra's algorithm  for each agent. It is obvious that each agent will try to choose a goal state with minimum cost according to its position and the orientation in the environment. But the cases in which two or more agents are willing to reach the same goal point must be handled by optimizing the overall utility of the swarm. To minimize to overall cost of whole swarm while achieving a formation shape, Hungarian algorithm which is a combinational optimization algorithm that solves this assignment problem is used. To implement this algorithm, a complete bipartite graph $G=(S,T,E)$ with $n \in S$ agents and $t \in T$ goal points is constructed.In this graph, each agent have a cost which is defined by the shortest path to the destination in the environment for different goal points. 
 	\begin{figure}[H]
-		\includegraphics[width=.4\textwidth,center]{bipartite}
+	\centering
+		\includegraphics[width=.4\textwidth]{bipartite}
 		\caption{Sample Bipartite Graph Used in Assignment Problem}
 	\end{figure}
+
 
 	A cost matrix  $C$ is defined to implement the Hungarian algorithm .  The dimensions of the cost matrix is $nxm$ in which each element represents the cost of assigning the goal state $m$ to the agent $n$.  Since we have equal number of agents and goal states, the cost matrix will be a square matrix with $nxn$ or $mxm$.  The algorithm for the assignment process as follows:
 	
