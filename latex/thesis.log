@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2016.2.27)  29 FEB 2016 13:56
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2016.2.27)  4 MAR 2016 23:40
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -492,6 +492,9 @@ Package: amsfonts 2013/01/14 v3.01 Basic AMSFonts support
 \symAMSb=\mathgroup7
 LaTeX Font Info:    Overwriting math alphabet `\mathfrak' in version `bold'
 (Font)                  U/euf/m/n --> U/euf/b/n on input line 106.
+)
+(/usr/share/texlive/texmf-dist/tex/latex/tools/xr.sty
+Package: xr 1994/05/28 v5.02 eXternal References (DPC)
 )
 (/usr/share/texlive/texmf-dist/tex/latex/hyperref/hyperref.sty
 Package: hyperref 2012/11/06 v6.83m Hypertext links for LaTeX
@@ -1073,21 +1076,21 @@ Package csquotes Info: Redefining alias 'default' -> 'english'.
  (./thesis.aux)
 \openout1 = `thesis.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 79.
-LaTeX Font Info:    ... okay on input line 79.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 79.
-LaTeX Font Info:    ... okay on input line 79.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 79.
-LaTeX Font Info:    ... okay on input line 79.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 79.
-LaTeX Font Info:    ... okay on input line 79.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 79.
-LaTeX Font Info:    ... okay on input line 79.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 79.
-LaTeX Font Info:    ... okay on input line 79.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 79.
-LaTeX Font Info:    ... okay on input line 79.
-LaTeX Font Info:    Try loading font information for T1+ptm on input line 79.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 80.
+LaTeX Font Info:    ... okay on input line 80.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 80.
+LaTeX Font Info:    ... okay on input line 80.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 80.
+LaTeX Font Info:    ... okay on input line 80.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 80.
+LaTeX Font Info:    ... okay on input line 80.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 80.
+LaTeX Font Info:    ... okay on input line 80.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 80.
+LaTeX Font Info:    ... okay on input line 80.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 80.
+LaTeX Font Info:    ... okay on input line 80.
+LaTeX Font Info:    Try loading font information for T1+ptm on input line 80.
 
 (/usr/share/texlive/texmf-dist/tex/latex/psnfss/t1ptm.fd
 File: t1ptm.fd 2001/06/04 font definitions for T1/ptm.
@@ -1105,7 +1108,7 @@ Package caption Info: End \AtBeginDocument code.
 Package hyperref Warning: Height of page (\paperheight) is invalid (0.0pt),
 (hyperref)                using 11in.
 
-Package hyperref Info: Link coloring OFF on input line 79.
+Package hyperref Info: Link coloring OFF on input line 80.
 (/usr/share/texlive/texmf-dist/tex/latex/hyperref/nameref.sty
 Package: nameref 2012/10/27 v2.43 Cross-referencing by name of section
 
@@ -1114,9 +1117,9 @@ Package: gettitlestring 2010/12/03 v1.4 Cleanup title references (HO)
 )
 \c@section@level=\count172
 )
-LaTeX Info: Redefining \ref on input line 79.
-LaTeX Info: Redefining \pageref on input line 79.
-LaTeX Info: Redefining \nameref on input line 79.
+LaTeX Info: Redefining \ref on input line 80.
+LaTeX Info: Redefining \pageref on input line 80.
+LaTeX Info: Redefining \nameref on input line 80.
 
 (./thesis.out) (./thesis.out)
 \@outlinefile=\write5
@@ -1151,64 +1154,64 @@ Package grfext Info: Graphics extension search list:
 File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
 e
 ))
-LaTeX Font Info:    Try loading font information for OT1+ztmcm on input line 79
+LaTeX Font Info:    Try loading font information for OT1+ztmcm on input line 80
 .
 
 (/usr/share/texlive/texmf-dist/tex/latex/psnfss/ot1ztmcm.fd
 File: ot1ztmcm.fd 2000/01/03 Fontinst v1.801 font definitions for OT1/ztmcm.
 )
-LaTeX Font Info:    Try loading font information for OML+ztmcm on input line 79
+LaTeX Font Info:    Try loading font information for OML+ztmcm on input line 80
 .
 
 (/usr/share/texlive/texmf-dist/tex/latex/psnfss/omlztmcm.fd
 File: omlztmcm.fd 2000/01/03 Fontinst v1.801 font definitions for OML/ztmcm.
 )
-LaTeX Font Info:    Try loading font information for OMS+ztmcm on input line 79
+LaTeX Font Info:    Try loading font information for OMS+ztmcm on input line 80
 .
 
 (/usr/share/texlive/texmf-dist/tex/latex/psnfss/omsztmcm.fd
 File: omsztmcm.fd 2000/01/03 Fontinst v1.801 font definitions for OMS/ztmcm.
 )
-LaTeX Font Info:    Try loading font information for OMX+ztmcm on input line 79
+LaTeX Font Info:    Try loading font information for OMX+ztmcm on input line 80
 .
 
 (/usr/share/texlive/texmf-dist/tex/latex/psnfss/omxztmcm.fd
 File: omxztmcm.fd 2000/01/03 Fontinst v1.801 font definitions for OMX/ztmcm.
 )
-LaTeX Font Info:    Try loading font information for OT1+ptm on input line 79.
+LaTeX Font Info:    Try loading font information for OT1+ptm on input line 80.
 
 (/usr/share/texlive/texmf-dist/tex/latex/psnfss/ot1ptm.fd
 File: ot1ptm.fd 2001/06/04 font definitions for OT1/ptm.
 )
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <12> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 79.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 80.
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <9> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 79.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 80.
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <7> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 79.
-Package xypdf Info: Line width: 0.47987pt on input line 79.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 80.
+Package xypdf Info: Line width: 0.47987pt on input line 80.
 \c@lstlisting=\count179
  [1
 
 {/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}] [2]
-Overfull \hbox (19.91685pt too wide) in paragraph at lines 82--82
+Overfull \hbox (19.91685pt too wide) in paragraph at lines 83--83
 [][] 
  []
 
 LaTeX Font Info:    Font shape `T1/ptm/bx/n' in size <12> not available
-(Font)              Font shape `T1/ptm/b/n' tried instead on input line 82.
+(Font)              Font shape `T1/ptm/b/n' tried instead on input line 83.
 
-Overfull \hbox (19.91685pt too wide) in paragraph at lines 82--82
+Overfull \hbox (19.91685pt too wide) in paragraph at lines 83--83
 [][] 
  []
 
 
-Overfull \hbox (5.69048pt too wide) in paragraph at lines 82--82
+Overfull \hbox (5.69048pt too wide) in paragraph at lines 83--83
 [][] 
  []
 
 [3]
-Underfull \hbox (badness 10000) in paragraph at lines 82--82
+Underfull \hbox (badness 10000) in paragraph at lines 83--83
 
  []
 
@@ -1217,7 +1220,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 82--82
 Package hyperref Warning: bookmark level for unknown leads defaults to 0.
 
 LaTeX Font Info:    Font shape `T1/ptm/bx/n' in size <14.4> not available
-(Font)              Font shape `T1/ptm/b/n' tried instead on input line 82.
+(Font)              Font shape `T1/ptm/b/n' tried instead on input line 83.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
@@ -1538,13 +1541,25 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
 (hyperref)                removing `\uppercase' on input line 4.
 
+
+Package xr Warning: 
+No file chapter1.aux
+LABELS NOT IMPORTED.
+ on input line 8.
+
+
+Package xr Warning: 
+No file chapter2.aux
+LABELS NOT IMPORTED.
+ on input line 9.
+
 <general_scheme.png, id=716, 686.565pt x 319.94531pt>
 File: general_scheme.png Graphic file (type png)
  <use general_scheme.png>
-Package pdftex.def Info: general_scheme.png used on input line 12.
+Package pdftex.def Info: general_scheme.png used on input line 16.
 (pdftex.def)             Requested size: 446.26196pt x 207.96198pt.
 
-Overfull \hbox (39.38748pt too wide) in paragraph at lines 12--13
+Overfull \hbox (39.38748pt too wide) in paragraph at lines 16--17
  [][] 
  []
 
@@ -1553,52 +1568,53 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [33
 
- <./general_scheme.png>] <lps.png, id=721, 470.50781pt x 233.37187pt>
+ <./general_scheme.png>] <lps.png, id=722, 470.50781pt x 233.37187pt>
 File: lps.png Graphic file (type png)
  <use lps.png>
-Package pdftex.def Info: lps.png used on input line 21.
+Package pdftex.def Info: lps.png used on input line 25.
 (pdftex.def)             Requested size: 305.82645pt x 151.68991pt.
 
-Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [34 <./lps.png>] <beacons.png, id=726, 446.41782pt x 326.72063pt>
+LaTeX Warning: Reference `fig:beacons' on page 34 undefined on input line 32.
+
+[34 <./lps.png>] <beacons.png, id=729, 446.41782pt x 326.72063pt>
 File: beacons.png Graphic file (type png)
- <use beacons.png>
-Package pdftex.def Info: beacons.png used on input line 32.
-(pdftex.def)             Requested size: 290.16814pt x 212.36588pt.
 
-[35 <./beacons.png>] [36]
+<use beacons.png>
+Package pdftex.def Info: beacons.png used on input line 37.
+(pdftex.def)             Requested size: 290.16814pt x 212.36588pt.
+ [35 <./beacons.png>] [36]
 Underfull \vbox (badness 1292) has occurred while \output is active []
 
  [37]
-Underfull \hbox (badness 10000) in paragraph at lines 127--128
+Underfull \hbox (badness 10000) in paragraph at lines 132--133
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 139--140
+Underfull \hbox (badness 10000) in paragraph at lines 144--145
 
  []
 
 [38]
-Underfull \hbox (badness 10000) in paragraph at lines 177--178
+Underfull \hbox (badness 10000) in paragraph at lines 182--183
 
  []
 
-[39] [40] <position_beacon.png, id=774, 307.1475pt x 259.7203pt>
+[39] [40] <position_beacon.png, id=779, 307.1475pt x 259.7203pt>
 File: position_beacon.png Graphic file (type png)
 
 <use position_beacon.png>
-Package pdftex.def Info: position_beacon.png used on input line 273.
+Package pdftex.def Info: position_beacon.png used on input line 278.
 (pdftex.def)             Requested size: 199.6435pt x 168.8162pt.
  [41] [42 <./position_beacon.png>]
-<bellman.png, id=789, 657.95813pt x 307.1475pt>
+<bellman.png, id=794, 657.95813pt x 307.1475pt>
 File: bellman.png Graphic file (type png)
  <use bellman.png>
-Package pdftex.def Info: bellman.png used on input line 286.
+Package pdftex.def Info: bellman.png used on input line 291.
 (pdftex.def)             Requested size: 427.66772pt x 199.6435pt.
 
-Overfull \hbox (20.79324pt too wide) in paragraph at lines 286--287
+Overfull \hbox (20.79324pt too wide) in paragraph at lines 291--292
  [][] 
  []
 
@@ -1606,31 +1622,31 @@ Overfull \hbox (20.79324pt too wide) in paragraph at lines 286--287
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [43]
-<routing_problem.png, id=794, 423.08063pt x 259.7203pt>
+<routing_problem.png, id=799, 423.08063pt x 259.7203pt>
 File: routing_problem.png Graphic file (type png)
 
 <use routing_problem.png>
-Package pdftex.def Info: routing_problem.png used on input line 297.
+Package pdftex.def Info: routing_problem.png used on input line 302.
 (pdftex.def)             Requested size: 274.99915pt x 168.8162pt.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [44 <./bellman.png>] <dest_seq.png, id=799, 319.1925pt x 324.46219pt>
+ [44 <./bellman.png>] <dest_seq.png, id=804, 319.1925pt x 324.46219pt>
 File: dest_seq.png Graphic file (type png)
  <use dest_seq.png>
-Package pdftex.def Info: dest_seq.png used on input line 305.
+Package pdftex.def Info: dest_seq.png used on input line 310.
 (pdftex.def)             Requested size: 207.47266pt x 210.8979pt.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [45 <./routing_problem.png>] <link_add.png, id=804, 290.58563pt x 201.00093pt>
+ [45 <./routing_problem.png>] <link_add.png, id=809, 290.58563pt x 201.00093pt>
 File: link_add.png Graphic file (type png)
 
 <use link_add.png>
-Package pdftex.def Info: link_add.png used on input line 316.
+Package pdftex.def Info: link_add.png used on input line 321.
 (pdftex.def)             Requested size: 188.87842pt x 130.64905pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 312--317
+Underfull \hbox (badness 10000) in paragraph at lines 317--322
 
  []
 
@@ -1638,22 +1654,22 @@ Underfull \hbox (badness 10000) in paragraph at lines 312--317
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [46 <./dest_seq.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 323--324
+Underfull \hbox (badness 10000) in paragraph at lines 328--329
 
  []
 
-<link_break.png, id=809, 298.86656pt x 201.00093pt>
+<link_break.png, id=814, 298.86656pt x 201.00093pt>
 File: link_break.png Graphic file (type png)
  <use link_break.png>
-Package pdftex.def Info: link_break.png used on input line 328.
+Package pdftex.def Info: link_break.png used on input line 333.
 (pdftex.def)             Requested size: 194.26094pt x 130.64905pt.
 
 [47 <./link_add.png> <./link_break.png>]
-<Clusters_Ranks_2.png, id=815, 1152.55594pt x 685.8122pt>
+<Clusters_Ranks_2.png, id=820, 1152.55594pt x 685.8122pt>
 File: Clusters_Ranks_2.png Graphic file (type png)
 
 <use Clusters_Ranks_2.png>
-Package pdftex.def Info: Clusters_Ranks_2.png used on input line 343.
+Package pdftex.def Info: Clusters_Ranks_2.png used on input line 348.
 (pdftex.def)             Requested size: 403.40062pt x 240.03786pt.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
@@ -1661,57 +1677,57 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
  [48]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [49 <./Clusters_Ranks_2.png>] <return_home.png, id=824, 612.78937pt x 316.1812
+ [49 <./Clusters_Ranks_2.png>] <return_home.png, id=829, 612.78937pt x 316.1812
 4pt>
 File: return_home.png Graphic file (type png)
 
 <use return_home.png>
-Package pdftex.def Info: return_home.png used on input line 366.
+Package pdftex.def Info: return_home.png used on input line 371.
 (pdftex.def)             Requested size: 367.67645pt x 189.7102pt.
 
 Underfull \vbox (badness 3138) has occurred while \output is active []
 
- [50 <./return_home.png>] [51] [52] [53] <methods.png, id=860, 667.74469pt x 28
+ [50 <./return_home.png>] [51] [52] [53] <methods.png, id=865, 667.74469pt x 28
 5.31593pt>
 File: methods.png Graphic file (type png)
 
 <use methods.png>
-Package pdftex.def Info: methods.png used on input line 485.
+Package pdftex.def Info: methods.png used on input line 490.
 (pdftex.def)             Requested size: 400.6499pt x 171.19087pt.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [54 <./methods.png>] [55] <simple_closed_curve.png, id=872, 234.1247pt x 201.0
+ [54 <./methods.png>] [55] <simple_closed_curve.png, id=877, 234.1247pt x 201.0
 0093pt>
 File: simple_closed_curve.png Graphic file (type png)
 
 <use simple_closed_curve.png>
-Package pdftex.def Info: simple_closed_curve.png used on input line 517.
+Package pdftex.def Info: simple_closed_curve.png used on input line 522.
 (pdftex.def)             Requested size: 140.47589pt x 120.60147pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 539--541
+Underfull \hbox (badness 10000) in paragraph at lines 544--546
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 539--541
+Underfull \hbox (badness 10000) in paragraph at lines 544--546
 
  []
 
 [56 <./simple_closed_curve.png>] [57]
-Overfull \hbox (25.04523pt too wide) detected at line 590
+Overfull \hbox (25.04523pt too wide) detected at line 595
 []\OML/ztmcm/m/it/12 n\OT1/ztmcm/m/n/12 (\OML/ztmcm/m/it/12 C; z[]\OT1/ztmcm/m/
 n/12 ) = [] []
  []
 
-<iceride_disarida.png, id=888, 1434.10782pt x 718.18312pt>
+<iceride_disarida.png, id=893, 1434.10782pt x 718.18312pt>
 File: iceride_disarida.png Graphic file (type png)
 
 <use iceride_disarida.png>
-Package pdftex.def Info: iceride_disarida.png used on input line 603.
+Package pdftex.def Info: iceride_disarida.png used on input line 608.
 (pdftex.def)             Requested size: 430.23567pt x 215.45659pt.
 
-Overfull \hbox (23.36119pt too wide) in paragraph at lines 603--604
+Overfull \hbox (23.36119pt too wide) in paragraph at lines 608--609
  [][] 
  []
 
@@ -1720,120 +1736,120 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [58]
 [59 <./iceride_disarida.png (PNG copy)>] [60] [61]
-<coverage_circles.png, id=921, 414.04688pt x 202.50656pt>
+<coverage_circles.png, id=926, 414.04688pt x 202.50656pt>
 File: coverage_circles.png Graphic file (type png)
 
 <use coverage_circles.png>
-Package pdftex.def Info: coverage_circles.png used on input line 736.
+Package pdftex.def Info: coverage_circles.png used on input line 741.
 (pdftex.def)             Requested size: 248.43004pt x 121.50485pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 739--740
+Underfull \hbox (badness 10000) in paragraph at lines 744--745
 
  []
 
 [62 <./coverage_circles.png>]
-<attractive_forces.png, id=929, 529.98pt x 299.61937pt>
+<attractive_forces.png, id=934, 529.98pt x 299.61937pt>
 File: attractive_forces.png Graphic file (type png)
 
 <use attractive_forces.png>
-Package pdftex.def Info: attractive_forces.png used on input line 747.
+Package pdftex.def Info: attractive_forces.png used on input line 752.
 (pdftex.def)             Requested size: 317.99043pt x 179.77301pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 769--770
+Underfull \hbox (badness 10000) in paragraph at lines 774--775
 
  []
 
 [63 <./attractive_forces.png>]
-<repulsive_forces.png, id=936, 437.38406pt x 284.56313pt>
+<repulsive_forces.png, id=941, 437.38406pt x 284.56313pt>
 File: repulsive_forces.png Graphic file (type png)
 
 <use repulsive_forces.png>
-Package pdftex.def Info: repulsive_forces.png used on input line 777.
+Package pdftex.def Info: repulsive_forces.png used on input line 782.
 (pdftex.def)             Requested size: 262.43245pt x 170.73918pt.
  [64 <./repulsive_forces.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 799--800
+Underfull \hbox (badness 10000) in paragraph at lines 804--805
 
  []
 
-<intermember_forces.png, id=942, 719.68875pt x 336.50719pt>
+<intermember_forces.png, id=947, 719.68875pt x 336.50719pt>
 File: intermember_forces.png Graphic file (type png)
 
 <use intermember_forces.png>
-Package pdftex.def Info: intermember_forces.png used on input line 807.
+Package pdftex.def Info: intermember_forces.png used on input line 812.
 (pdftex.def)             Requested size: 431.81659pt x 201.90585pt.
 
-Overfull \hbox (24.94211pt too wide) in paragraph at lines 807--808
+Overfull \hbox (24.94211pt too wide) in paragraph at lines 812--813
  [][] 
  []
 
 [65 <./intermember_forces.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 829--830
+Underfull \hbox (badness 10000) in paragraph at lines 834--835
 
  []
 
-<transition_forces.png, id=951, 436.63126pt x 255.20343pt>
+<transition_forces.png, id=956, 436.63126pt x 255.20343pt>
 File: transition_forces.png Graphic file (type png)
 
 <use transition_forces.png>
-Package pdftex.def Info: transition_forces.png used on input line 837.
+Package pdftex.def Info: transition_forces.png used on input line 842.
 (pdftex.def)             Requested size: 349.30548pt x 204.16301pt.
  [66 <./transition_forces.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 853--854
+Underfull \hbox (badness 10000) in paragraph at lines 858--859
 
  []
 
-[67] <buffer_zone.png, id=962, 693.34032pt x 319.94531pt>
+[67] <buffer_zone.png, id=967, 693.34032pt x 319.94531pt>
 File: buffer_zone.png Graphic file (type png)
 
 <use buffer_zone.png>
-Package pdftex.def Info: buffer_zone.png used on input line 884.
+Package pdftex.def Info: buffer_zone.png used on input line 889.
 (pdftex.def)             Requested size: 346.66931pt x 159.97226pt.
  [68 <./buffer_zone.png>] [69]
-Underfull \hbox (badness 10000) in paragraph at lines 957--958
+Underfull \hbox (badness 10000) in paragraph at lines 962--963
 
  []
 
 [70] [71]
-Underfull \hbox (badness 10000) in paragraph at lines 1003--1004
+Underfull \hbox (badness 10000) in paragraph at lines 1008--1009
 
  []
 
-[72] <bubble_packing.png, id=999, 627.84563pt x 135.50626pt>
+[72] <bubble_packing.png, id=1004, 627.84563pt x 135.50626pt>
 File: bubble_packing.png Graphic file (type png)
 
 <use bubble_packing.png>
-Package pdftex.def Info: bubble_packing.png used on input line 1027.
+Package pdftex.def Info: bubble_packing.png used on input line 1032.
 (pdftex.def)             Requested size: 313.92204pt x 67.75294pt.
 
-Overfull \hbox (0.8342pt too wide) in paragraph at lines 1030--1032
+Overfull \hbox (0.8342pt too wide) in paragraph at lines 1035--1037
 \T1/ptm/m/n/12 The bub-bles are dis-tributed ho-moge-nously with this pro-cess 
 un-der two kinds of forces,
  []
 
 [73 <./bubble_packing.png>]
-<interbubble_forces.png, id=1005, 396.7322pt x 240.14719pt>
+<interbubble_forces.png, id=1010, 396.7322pt x 240.14719pt>
 File: interbubble_forces.png Graphic file (type png)
 
 <use interbubble_forces.png>
-Package pdftex.def Info: interbubble_forces.png used on input line 1045.
+Package pdftex.def Info: interbubble_forces.png used on input line 1050.
 (pdftex.def)             Requested size: 277.71063pt x 168.10187pt.
 
-<bubble_packing2.png, id=1006, 643.6547pt x 135.50626pt>
+<bubble_packing2.png, id=1011, 643.6547pt x 135.50626pt>
 File: bubble_packing2.png Graphic file (type png)
 
 <use bubble_packing2.png>
-Package pdftex.def Info: bubble_packing2.png used on input line 1061.
+Package pdftex.def Info: bubble_packing2.png used on input line 1066.
 (pdftex.def)             Requested size: 450.5552pt x 94.85371pt.
 
-Overfull \hbox (43.68073pt too wide) in paragraph at lines 1061--1062
+Overfull \hbox (43.68073pt too wide) in paragraph at lines 1066--1067
  [][] 
  []
 
 [74 <./interbubble_forces.png>]
-<randomized.png, id=1013, 348.55219pt x 332.74312pt>
+<randomized.png, id=1018, 348.55219pt x 332.74312pt>
 File: randomized.png Graphic file (type png)
  <use randomized.png>
-Package pdftex.def Info: randomized.png used on input line 1088.
+Package pdftex.def Info: randomized.png used on input line 1093.
 (pdftex.def)             Requested size: 243.98485pt x 232.91858pt.
 
 Underfull \vbox (badness 1616) has occurred while \output is active []
@@ -1845,28 +1861,28 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [77]
-<Forbidden.png, id=1031, 222.8325pt x 249.93375pt>
+<Forbidden.png, id=1036, 222.8325pt x 249.93375pt>
 File: Forbidden.png Graphic file (type png)
  <use Forbidden.png>
-Package pdftex.def Info: Forbidden.png used on input line 1140.
+Package pdftex.def Info: Forbidden.png used on input line 1145.
 (pdftex.def)             Requested size: 89.13141pt x 99.97173pt.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 1145.
+(hyperref)                removing `math shift' on input line 1150.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 1145.
+(hyperref)                removing `math shift' on input line 1150.
 
-[78 <./Forbidden.png>] <shortest.png, id=1038, 267.24844pt x 251.43938pt>
+[78 <./Forbidden.png>] <shortest.png, id=1043, 267.24844pt x 251.43938pt>
 File: shortest.png Graphic file (type png)
 
 <use shortest.png>
-Package pdftex.def Info: shortest.png used on input line 1161.
+Package pdftex.def Info: shortest.png used on input line 1166.
 (pdftex.def)             Requested size: 106.89748pt x 100.57396pt.
 
-Overfull \hbox (3.1622pt too wide) in paragraph at lines 1176--1177
+Overfull \hbox (3.1622pt too wide) in paragraph at lines 1181--1182
 []\T1/ptm/m/n/12 where $\OML/ztmcm/m/it/12 VISIBLEVERTICES\OT1/ztmcm/m/n/12 (\O
 ML/ztmcm/m/it/12 v; S\OT1/ztmcm/m/n/12 )$ \T1/ptm/m/n/12 al-go-rithm checks whe
 ther line seg-ments drawn from
@@ -1879,17 +1895,17 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [80]
-Overfull \hbox (23.51259pt too wide) in paragraph at lines 1218--1219
+Overfull \hbox (23.51259pt too wide) in paragraph at lines 1223--1224
 []\T1/ptm/m/n/12 In al-go-rithm above $\OML/ztmcm/m/it/12 Distance\OT1/ztmcm/m/
 n/12 [\OML/ztmcm/m/it/12 x\OT1/ztmcm/m/n/12 ]$ \T1/ptm/m/n/12 func-tion call, c
 al-cu-lates the to-tal cost from the $\OML/ztmcm/m/it/12 source$\T1/ptm/m/n/12 
 _$\OML/ztmcm/m/it/12 node$
  []
 
-[81] <bipartite.png, id=1054, 213.04594pt x 359.84438pt>
+[81] <bipartite.png, id=1059, 213.04594pt x 359.84438pt>
 File: bipartite.png Graphic file (type png)
  <use bipartite.png>
-Package pdftex.def Info: bipartite.png used on input line 1227.
+Package pdftex.def Info: bipartite.png used on input line 1232.
 (pdftex.def)             Requested size: 162.7473pt x 274.90118pt.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
@@ -1898,50 +1914,50 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 Underfull \vbox (badness 6094) has occurred while \output is active []
 
  [83]
-<voronoi.png, id=1065, 364.36125pt x 275.52937pt>
+<voronoi.png, id=1071, 364.36125pt x 275.52937pt>
 File: voronoi.png Graphic file (type png)
  <use voronoi.png>
-Package pdftex.def Info: voronoi.png used on input line 1279.
+Package pdftex.def Info: voronoi.png used on input line 1284.
 (pdftex.def)             Requested size: 255.05113pt x 192.86923pt.
- [84 <./voronoi.png>] <voronoi2.png, id=1074, 417.05812pt x 256.70906pt>
+ [84 <./voronoi.png>] <voronoi2.png, id=1079, 417.05812pt x 256.70906pt>
 File: voronoi2.png Graphic file (type png)
 
 <use voronoi2.png>
-Package pdftex.def Info: voronoi2.png used on input line 1302.
+Package pdftex.def Info: voronoi2.png used on input line 1307.
 (pdftex.def)             Requested size: 291.93869pt x 179.6951pt.
  [85 <./voronoi2.png>]
-<controller.png, id=1080, 871.75688pt x 203.25937pt>
+<controller.png, id=1085, 871.75688pt x 203.25937pt>
 File: controller.png Graphic file (type png)
  <use controller.png>
-Package pdftex.def Info: controller.png used on input line 1311.
+Package pdftex.def Info: controller.png used on input line 1316.
 (pdftex.def)             Requested size: 392.28697pt x 91.46587pt.
 
-<bearing.png, id=1081, 459.21562pt x 203.25937pt>
+<bearing.png, id=1086, 459.21562pt x 203.25937pt>
 File: bearing.png Graphic file (type png)
  <use bearing.png>
-Package pdftex.def Info: bearing.png used on input line 1319.
+Package pdftex.def Info: bearing.png used on input line 1324.
 (pdftex.def)             Requested size: 229.60724pt x 101.62943pt.
 
 Underfull \vbox (badness 2547) has occurred while \output is active []
 
- [86 <./controller.png> <./bearing.png>] <inner_loop.png, id=1086, 670.00313pt 
+ [86 <./controller.png> <./bearing.png>] <inner_loop.png, id=1091, 670.00313pt 
 x 216.81pt>
 File: inner_loop.png Graphic file (type png)
 
 <use inner_loop.png>
-Package pdftex.def Info: inner_loop.png used on input line 1379.
+Package pdftex.def Info: inner_loop.png used on input line 1384.
 (pdftex.def)             Requested size: 335.00075pt x 108.40472pt.
 
 Underfull \vbox (badness 3965) has occurred while \output is active []
 
  [87]
-<step_resp.png, id=1095, 889.07156pt x 601.4972pt>
+<step_resp.png, id=1100, 889.07156pt x 601.4972pt>
 File: step_resp.png Graphic file (type png)
  <use step_resp.png>
-Package pdftex.def Info: step_resp.png used on input line 1387.
+Package pdftex.def Info: step_resp.png used on input line 1392.
 (pdftex.def)             Requested size: 444.5347pt x 300.74786pt.
 
-Overfull \hbox (37.66022pt too wide) in paragraph at lines 1387--1388
+Overfull \hbox (37.66022pt too wide) in paragraph at lines 1392--1393
  [][] 
  []
 
@@ -1951,9 +1967,9 @@ Overfull \hbox (37.66022pt too wide) in paragraph at lines 1387--1388
 \vskip 4mm CHAPTER 4.
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `\uppercase' on input line 99.
+(hyperref)                removing `\uppercase' on input line 100.
 
-LaTeX Font Info:    Try loading font information for T1+pcr on input line 101.
+LaTeX Font Info:    Try loading font information for T1+pcr on input line 102.
 (/usr/share/texlive/texmf-dist/tex/latex/psnfss/t1pcr.fd
 File: t1pcr.fd 2001/06/04 font definitions for T1/pcr.
 ) (./thesis.bbl
@@ -1974,7 +1990,7 @@ Package hyperref Warning: bookmark level for unknown nodots defaults to 0.
 APPENDIX A.
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `\uppercase' on input line 111.
+(hyperref)                removing `\uppercase' on input line 112.
 
 (./vita.tex [95] [96
 
@@ -1984,24 +2000,28 @@ Underfull \hbox (badness 10000) in paragraph at lines 6--12
  []
 
 )
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 118.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 119.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [97]
 [98]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 118.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 119.
  (./thesis.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 118.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 118.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 119.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 119.
 Package rerunfilecheck Info: File `thesis.out' has not changed.
 (rerunfilecheck)             Checksum: E5F7F3DBAACE4E589D126EC47BD374C3;4432.
+
+
+LaTeX Warning: There were undefined references.
+
  ) 
 Here is how much of TeX's memory you used:
- 23249 strings out of 494424
- 379442 string characters out of 6165346
- 538414 words of memory out of 5000000
- 25589 multiletter control sequences out of 15000+600000
+ 23272 strings out of 494424
+ 379725 string characters out of 6165346
+ 538666 words of memory out of 5000000
+ 25609 multiletter control sequences out of 15000+600000
  45780 words of font info for 86 fonts, out of 8000000 for 9000
  372 hyphenation exceptions out of 8191
  63i,15n,75p,1866b,872s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -2017,10 +2037,10 @@ hare/texlive/texmf-dist/fonts/type1/urw/symbol/usyr.pfb></usr/share/texlive/tex
 mf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/share/texlive/texmf-dist/fonts/t
 ype1/urw/times/utmr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/
 utmri8a.pfb>
-Output written on thesis.pdf (118 pages, 3407481 bytes).
+Output written on thesis.pdf (118 pages, 3407903 bytes).
 PDF statistics:
- 1279 PDF objects out of 1440 (max. 8388607)
- 1078 compressed objects within 11 object streams
+ 1284 PDF objects out of 1440 (max. 8388607)
+ 1083 compressed objects within 11 object streams
  368 named destinations out of 1000 (max. 500000)
  791 words of extra memory for PDF output out of 10000 (max. 10000000)
 

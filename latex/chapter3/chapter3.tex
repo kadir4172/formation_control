@@ -4,6 +4,10 @@
 \chapter{METHODOLOGY}
 \label{chp:Methodology}
 
+
+\externaldocument{chapter1}
+\externaldocument{chapter2}
+
 In this thesis work, the problem of dynamical formation control of heterogenous mobile robots is reduced down to two subproblems as local positioning system design and formation control system design. Local positioning subsystem proposes  a  solution for the localization of the agents in the environment with the low sensor capabilities. This part of the solution provides a basis for the formation control problem with the true state vectors of agents composed with the translational positions and velocities. Formation control subsystem proposes a solution to achieve desired complex shapes with heterogenous agents in the swarm.  In this chapter, details of the solution for these subproblems are presented in details. 
 
 \begin{figure}[H]
@@ -13,20 +17,21 @@ In this thesis work, the problem of dynamical formation control of heterogenous 
 \end{figure}
 
 \section{LOCAL POSITIONING SYSTEMS}
-Local positioning system is a subsystem to provide a complete solution to the localization of the agents in the environment. As discussed in Section-xx(Objectives) , agents are expected to have low sensor capabilities and only a limited number of them have external position measurement sensors on their boards. The rest of the swarm have to maintain their position$\&$velocity data with the help of their inertial measurements. Propogation of the states with this type of measurements are always inclined to drift problems due to the errors$\&$noise and bias problems of the sensors and the state vectors composed with the translational positions and velocities have to be corrected with an external measurement. A complete solution for this type of problem is proposed in Figure-xx.
+Local positioning system is a subsystem to provide a complete solution to the localization of the agents in the environment. As discussed in Section-1.3 , agents are expected to have low sensor capabilities and only a limited number of them have external position measurement sensors on their boards. The rest of the swarm have to maintain their position$\&$velocity data with the help of their inertial measurements. Propogation of the states with these type of measurements are always inclined to drift problems due to the errors$\&$noise and bias problems of the sensors. As a result of this problem, state vectors composed with the translational positions and velocities have to be corrected with an external measurement. A complete solution for this type of problem is proposed in Figure \ref{fig:lps}.
 
 \begin{figure}[H]
 \caption{Local Positioning System}
 \centering
 \includegraphics[scale = 0.65]{lps}
+\label{fig:lps}
 \end{figure}
 
-As illustrated in Figure-xx, agents are expected to propogate their states with the help of acceleration, gyroscope and magnetometer sensors. Since the trilateration and route table determination processes require iterative and time consuming algorithms, a localization timer with a suitable period is implemented to the solution. Agents will correct their state vectors with the localization period of 3 seconds by measuring their positions with trilateration process and execute the update procedure in their state estimator algorithms.
+As illustrated in Figure \ref{fig:lps}, agents are expected to propogate their states with the help of acceleration, gyroscope and magnetometer sensors. Since the trilateration and route table determination processes require recursive and time consuming algorithms, a localization timer with a suitable period is implemented to the solution. Agents will correct their state vectors with the localization period of 3 seconds by measuring their positions with trilateration process and execute the update procedure in their state estimator algorithms. The requirement about the maximum value of 3 seconds for the localization period is determined with the help of Monte Carlo simulations discussed in Section-xx by defining a maximum allowable error on the position data since the error on the state vectors are drifting exponentially with increasing time.   
 
 \subsection{Trilateration Process}
-Trilateration process helps the agents to localize themselves with the help of their local neighbors.  Trilateration calculations use distance measurements to the nodes with known positions, to determine the coordinates of unknown positions[22]. These measurements are assumed to be done with the help of low cost range sensors like ultrasonic sensors.  Solution of the unknown position with the help of these distance measurements can be reduced down to a $A\vec{x} = \vec{b}$ type equation with the help of mathematical manipulations. The agents which has position sensors on their boards are called position beacons. Figure-xx illustrates a sample environment which consist of $i$ beacons and an agent which tries to localize itself with the help of distance measurements $r_i$ and the position data $B_i$ of the beacon nodes.
+Trilateration process helps the agents to localize themselves with the help of their local neighbors.  Trilateration calculations use distance measurements to the nodes with known positions, to determine the coordinates of unknown positions[22]. These measurements are assumed to be done with the help of time of arrival methods disccussed in Section \ref{sssec:num1}.  Solution of the unknown position with the help of these distance measurements can be reduced down to a $A\vec{x} = \vec{b}$ type equation with the help of mathematical manipulations. The agents which has position sensors on their boards are called position beacons. Figure \ref{fig:beacons} illustrates a sample environment which consist of $i$ beacons and an agent which tries to localize itself with the help of distance measurements $r_i$ and the position data $B_i$ of the beacon nodes.
 
-\begin{figure}[H]
+\begin{figure}[H] \label{beacons}
 \caption{Environment for Trilateration Process}
 \centering
 \includegraphics[scale = 0.65]{beacons}
@@ -38,7 +43,7 @@ The distance function $\hat{r_i}$ can be written as follows;
 \hat{r_i} = \sqrt{(x-x_i)^2 + (y-y_i)^2+ (z-z_i)^2}    \hspace{0.3cm}   (i=1,2,...,n)
 \end{equation}
 
-where $i$ denotes the beacon number and $n$ is the total number of beacons. We have $n$ number of constraints in the solution of the localization problem. In our work, we have implemented a two dimensional localization solution with the assumption of each agent in the swarm have the same vertical position in Earth centered coordinate system. With this assumption, the problem for the localization process can be reduced down to a $A.\vec{x} =\vec{b} $ type linear system problem and the constraints will be circle functions rather than spherical ones, presented with
+where $i$ denotes the beacon number and $n$ is the total number of beacons. We have $n$ number of constraints in the solution of the localization problem. In our work, we have implemented a two dimensional localization solution with the assumption of each agent in the swarm have the same vertical position in Earth centered coordinate system. With this assumption, the problem for the localization process can be reduced down to a $A\vec{x} =\vec{b} $ type linear system problem and the constraints will be circle functions rather than spherical ones, presented with
 
 \begin{equation}
 (x-x_i)^2 + (y - y_i)^2 = {r_i}^2
@@ -50,7 +55,7 @@ If any of the beacons is considered as the reference beacon and named with an in
 
 The distance between the target agent and any beacon $i$
 
-\begin{equation}
+\begin{equation} \label{3.3}
 d_i(\theta) = \sqrt{\left((x - x_i)^2 + (y - y_i)^2\right)}
 \end{equation}
 
@@ -66,7 +71,7 @@ The distance between the target agent and the referance beacon
 d_r(\theta) = \sqrt{\left((x - x_r)^2 + (y - y_r)^2\right)}
 \end{equation}
 
-Adding and subtracting $x_j, y_j$ and $z_j$ in (6) gives
+Adding and subtracting $x_j, y_j$ and $z_j$ in equation \ref{3.3} gives
 
 \begin{align*}
 d_i^2(\theta) = & (x - x_r + x_r - x_i)^2 + (y - y_r + y_r - y_i)^2 \\
@@ -122,15 +127,15 @@ b_{n1}\\
 \end{bmatrix}
 \end{equation}
 
-with the help of this mathematical manipulations, localization problem is reduced down to a $A\vec{x} = \vec{b}$ problem.
+with the help of these mathematical manipulations, localization problem is reduced down to a $A\vec{x} = \vec{b}$ problem.
 
 There are some possible solutions to this type of equation regarding with the structure of matrix $A$ and vector $b$.\\
 
-\underline {\textit{*Solution to $A\vec{x} = \vec{b}$ Problem}}\\
-In a localization problem handled in two dimensional world, the $A$ matrix has $(n-1)$ rows and $2$ columns, where $'n'$ is the number of neighbor beacons. It is obvious that there is no solution when the number of neighbors lower than $3$ since the $A$ matrix will have $1$ or smaller number of lines. When the number of neighbor beacons are equal or greater than $3$ we have three different solution types up to the structure of the linearized equations.
+\underline {\textit{Solution to $A\vec{x} = \vec{b}$ Problem}}\\
+In a localization problem handled in two dimensional world, the $A$ matrix has $(n-1)$ rows and $2$ columns, where $n$ is the number of neighbor beacons. It is obvious that there is no solution when the number of neighbors lower than $3$, since the $A$ matrix will have one or less number of lines. When the number of neighbor beacons are equal or greater than $3$ we have three different solutions according to the structure of the linearized equations.
 
-\textit{1) Unique solution:}\\
- If A matrix has the dimensions of $2x2$ and the rank of A matrix $'rank(A)'$ is equal to $2$, then the solution of $\vec{x}$ is unique with
+\textit{1) Unique Solution:}\\
+ If A matrix has the dimensions of $2\ x\ 2$ and the rank of A matrix$(rank(A))$ is equal to $2$, then the solution of $\vec{x}$ is unique with
 
 \begin{equation}
 \hat{x} = A^{-1}\vec{b}
@@ -138,8 +143,8 @@ In a localization problem handled in two dimensional world, the $A$ matrix has $
 
 where $\hat{x}$ is the unique solution. \\
   
-\textit{ 2) Minimum Norm solution with pseudo inverse:} \\  
-If $A$ matrix has the dimensions of $(n-1)x2$ where $n>3$ ,which means the number of neighbor beacons greater than $3$, and if columns of $A$ matrix form a linearly independent set (full column rank matrix) then the solution can be found with the projection of $\vec{b}$ over range space of $A$, $Proj_{R(A)}\vec{b}$ where
+\textit{ 2) Minimum Norm Solution With Pseudo Inverse:} \\  
+If $A$ matrix has the dimensions of $(n-1)\ x\ 2$ where $n>3$ ,which means the number of neighbor beacons greater than $3$, and if columns of $A$ matrix form a linearly independent set (full column rank matrix) then the solution can be found with the projection of $\vec{b}$ over range space of $A$, $Proj_{R(A)}\vec{b}$ where
 
 \begin{equation}
 Proj_{R(A)}\vec{b} = A (A^TA)^{-1}A^T\vec{b}
@@ -177,8 +182,8 @@ Proj_{ \mathcal{N}(\mathbf{A})^\perp}\hat{x} = \hat{x}
 this concludes that $\hat{x}$ is the unique minimum norm solution to the $A\hat{x} = \vec{b}$ problem\\
 	
 	
-\textit{3) Minimum norm solution with nonlinear least squares method}\\	
-If $A$ matrix has the dimensions of $2x2$ or $(n-1)x2$ with $n>3$ and if rank of $A$ matrix is equal to $1$, $rank(A) = 1$ then the solution to the $A\hat{x} = \vec{b}$ problem can be found iteratively with the help of nonlinear least squares method. Lets define the cost function to be minimized 	as the sum of the squares of the errors on the distances
+\textit{3) Minimum Norm Solution With Nonlinear Least Squares Method}\\	
+If matrix $A$ has the dimensions of $2\ x\ 2$ or $(n-1)\ x\ 2$ with $n>3$ and if rank of $A$ matrix is equal to $1$,$(rank(A) = 1)$, then the solution to the $A\hat{x} = \vec{b}$ problem can be found iteratively with the help of nonlinear least squares method. Lets define the cost function to be minimized 	as the sum of the squares of the errors on the distances
 	
 \begin{equation}
 F(\theta) = \sum_{i=1}^{n} \left(f_i^2(x,y)\right)
@@ -266,19 +271,19 @@ J^T\vec{f} = \left(\begin{matrix}
 	
 	
 \subsection{ Route Table Determination and  DSDV Algorithm}
-It is obvious that each agent must have at least three neighbor agents to solve the $A\vec{x}=\vec{b}$ type problem in two dimensional domain and recalculate its position in the environment. Since the possibility of having a large error on position and velocity data for the agents which do not have an external position measurement sensors, it will be appropriate to get the agents into local trilateration process with the agents which have position sensors as much as possible. It is assumed that the positions of the beacon agents in the trilateration process are well-known with a little error boundary, ideally with no errors, so getting in the trilateration process with the agents which are already have errors on their position and velocity datas may increase the error on the calculated datas. On the other hand due to the restrictions $\&$ requirements defined in the Section 1-2 Objectives, it will not be possible to interact with the agents with agents with position sensors directly due to the small communication ranges of the agents and line of sight issues. In this case, it will be a good choice to handle this trilaterion process starting with the agents which are closer to the position agents in a increasing order of distance.
-\begin{figure}[H]
+It is obvious that the possibility of having a large error on position and velocity data for the agents which do not have an external position measurement sensors,then it will be appropriate to get the agents into local trilateration process with the agents which have position sensors as much as possible. It is assumed that the positions of the beacon agents in the trilateration process are well-known with a little error boundary, ideally with no errors, so getting in the trilateration process with the agents which are already have errors on their position data and range measurements with errors may increase the error on the calculated datas. On the other hand due to the restrictions $\&$ requirements defined in the Section \ref{Objectives}, it will not be possible to interact with the agents with position sensors directly due to the small communication ranges of the agents and line of sight issues. In this case, it will be a good choice to handle this trilaterion process starting with the agents which are closer to the position agents in an increasing order of distance.
+\begin{figure}[H] \label{position_beacon}
 \caption{A Cluster of Agents Around a Position Beacon}
 \centering
 \includegraphics[scale = 0.65]{position_beacon}
 \end{figure}
 
-As illustrated on the Figure-xx, suppose that the red agents which are closest ones to the position beacon in the swarm are the only ones which have the capability of interacting with the position beacon. Since the only source of true position measurement is the position beacon, this data must be distributed to these red agents first, then trilateration process must be propogated through the orange agents and then the yellow agents last, since they can only interact with an upper layer in the swarm due to the line of sight and communication range issues.
+As illustrated on the Figure \ref{position_beacon}, suppose that the red agents which are closest ones to the position beacon in the swarm are the only ones which have the capability of interacting with the position beacon. Since the only source of true position measurement is the position beacon, this data must be distributed to these red agents first, then trilateration process must be propogated through the orange agents and then the yellow agents last, since they can only interact with an upper layer in the swarm due to the line of sight and communication range issues.
 
-It is needed to have an algorithm to organize the order of the local trilateration process and the determines the beacon agents for each member of the swarm. Basically this algorithm will assign each agent a rank which represenets the number of sequence in the localization process, and will determine at least three local neighbors of each agent to get in trilateration. Agents which do no have at least three neighbors are assumend to be lost agents and the handling of these type of agents are illustrated in Section -xx.
+It is needed to have an algorithm to organize the order of the local trilateration process and to determine the beacon agents for each member of the swarm. Basically this algorithm will assign each agent a rank which represents the number of sequence in the localization process, and will determine at least three local neighbors of each agent to get in trilateration. Agents which do no have at least three neighbors are assumend to be lost agents and the handling of these type of agents are illustrated in Section \ref{LostAgents}.
 	
 \subsubsection{Routing Algorithm- Bellman Ford}
-As mentioned in the Objectives section of the thesis work, agents are assumed to have a limited communication range and bandwith and the communication topology in the swarm is implemented with a wireless mesh network. In this type of network, each node have a relay in the network and the data is transferred to the related destination with the help of route tables. This makes it possible to have the capability of transferring low bandwith data through the network with multiple hops.  In this work, we implement this topology with a table driven routing scheme known as DSDV(Destination-Sequenced Distance Vector Routing Protocol) algorithm based on Bellman Ford algorithm. Bellman-Ford is and algorithm that computes the shortest path in a weighted graph and the correctness of the algorithm is proven. It is an algorithm based on relaxation, the correct distance to the vertices in the graph are updated iteratively from the initial estimations until converging to the optimal solution. This algorithm is slower than the Djikstra's algorithm which has similar functionalities but negative edge weights can be implemented in the related graph to report the negative cycles which means there is no cheapest path to the related destination vertex. On the other hand, it is possible to augment this algorithm with DSDV implementation to handle the routing loop problem when there is one or more vertices are no more exists in the network. The probability of the case with the non-existence of some vertices during the algorithm is processed can be very high since the agents in the swarm have low sensor capabilities and small range of communication and they have a great possibility to get lost in the environment. A simple demonstration of the Bellman-Ford algorithm with a simple network is illustrated in the Figure-xx
+As mentioned in the \ref{Objectives} of the thesis work, agents are assumed to have a limited communication range and bandwith and the communication topology in the swarm must be implemented with a wireless mesh network. In this type of network, each node have a relay in the network and the data is transferred to the related destination with the help of route tables. This makes it possible to have the capability of transferring low bandwith data through the network with multiple hops.  In this work, we implement this topology with a table driven routing scheme known as DSDV(Destination-Sequenced Distance Vector Routing Protocol) algorithm based on Bellman Ford algorithm. Bellman-Ford is and algorithm that computes the shortest path in a weighted graph and the correctness of the algorithm is proven. It is an algorithm based on relaxation, the correct distance to the vertices in the graph are updated iteratively from the initial estimations until converging to the optimal solution. This algorithm is slower than the Djikstra's algorithm which has similar functionalities but negative edge weights can be implemented in the related graph to report the negative cycles which means there is no cheapest path to the related destination vertex. On the other hand, it is possible to augment this algorithm with DSDV implementation to handle the routing loop problem when there is one or more vertices are no more exists in the network. The probability of the case with the non-existence of some vertices during the algorithm is processed can be very high since the agents in the swarm have low sensor capabilities and small range of communication and they have a great possibility to get lost in the environment. A simple demonstration of the Bellman-Ford algorithm with a simple network is illustrated in the Figure-xx
 	
 \begin{figure}[H]
 \caption{Costs for Shortest Paths to Each Nodes from Node 'S'}
@@ -351,7 +356,7 @@ As illustrated in the Figure -xx, all agents have assigned themselves to the clu
 	4) If the localization sequence is valid(siranin gelmesi denmeli) for this agent, enter the trilateration process with the agents from upper layer,  which are the next hops in the route table.
 	5) Call the update procedure of the observer system of which details are presented in section -xx
 	
-\subsection{Handling Lost Agents}
+\subsection{Handling Lost Agents} \label{LostAgents}
 The minimum number of neighbors required for the trilateration process is three for a two dimensional localization problem as illustrated in section -xx(trilateration bolumu) . Since the agents are assumed to have a narrow communication range, it is possible to not to find three neighbors for any agent at an instant time. At this case, it will be impossible to relocate these agents with trilateration and the position$\&$velocity data will drift from the real values with the increasing time passed without trilaterions. To avoid these kind of problems, the concept of `lost` agents and the procedures for these type of agents are described as follows:
 	
 	* An agent gets into 'Lost' mode, if it doesn't find three neighbors at an instant time
