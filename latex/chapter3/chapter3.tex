@@ -504,7 +504,7 @@ The details of the methodology for dynamical formation control with heterogenous
 		
 \subsection{Potential Field Based Approach}
 
-\subsubsection{Artificial Forces Method}
+\subsubsection{Artificial Forces Method} \label{Artificial Forces Ref}
 Artificial forces method implements some potential fields over each agent arised from the interactions between agents, formation shape and environment etc. The positions of the agents at the formation shape  are determined with local equilibrium of the swarm in which every agent is at balance under the total force acting from the environment. There are basically three different kinds of artificial forces named intermember forces representing the forces created by the other agents in the swarm to achieve collision avoidance, the attractive forces representing the forces created by the desired formation shape to attract the agent into the shape and repulsive forces created by the formation shape to keep agents inside the desired formation shape. It is possible to augment these type of forces for specific tasks and objectives, e.g. obstacle forces created by the obstacles in the environment can be implemented to achieve obstacle avoidance.
 Since the method to calculate the artificial forces involves contour integrals, it will be useful to give mathematical definition of contour integrals;
 		
@@ -646,16 +646,18 @@ where
 \textit{ 	3-Center of a Formation Shape} \\ 	
 The center of a formation shape can be calculated with the equation of;
 
-\begin{equation}
+\begin{equation} \label{center_formation_ref}
  z_c = \frac{\oint_C z\norm{dz}}{l(C)}
 \end{equation}
 		
-the expressiion for this equationl with points of  $z_k = (x_k,y_k)$ in the complex plane
+the discrete domain expression for Equation \ref{center_formation_ref} with points of  $z_k = (x_k,y_k)$ in the complex plane
 
-\begin{align*}
+\begin{align}
+\begin{split}
 &z_{cx} = \frac{\sum_{k=1}^{K}x(k)}{K}  \\
 &z_{cy} = \frac{\sum_{k=1}^{K}y(k)}{K}  
-\end{align*}
+\end{split}
+\end{align}
 		
 where $z_{cx}$ and $z_{cy}$ are the $x$ and $y$ coordinates of the center of formation shape respectively.
 
@@ -680,12 +682,14 @@ F(x,y) = (-y/2,x/2)
 		
 This contour integral can be reduced down to
 
-\begin{align*}
+\begin{align} \label{area_formation_ref}
+\begin{split}
 Area &= \frac{1}{2} \oint_C xdy - \frac{1}{2} \oint_C ydx \\
 &= \frac{1}{2} \int_{t=a}^{b} x(t)\frac{dy(t)}{dt}dt - \frac{1}{2} \int_{t=a}^{b}y(t)\frac{dx(t)}{dt}dt
-\end{align*}
+\end{split}
+\end{align}
 		
-the expressiion for this equationl with points of  $z_k = (x_k,y_k)$ in the complex plane
+the discrete domain expression for Equation \ref{area_formation_ref} with points of  $z_k = (x_k,y_k)$ in the complex plane
 			
 \begin{equation}
 Area = \frac{1}{2} \sum_{k=1}^{K} x_k(y_{k+1} - y_k) - \frac{1}{2} \sum_{k=1}^{K}y_k(x_{k+1} - x_k)
@@ -697,7 +701,7 @@ where
 \norm{z_k - z_{k-1}} = \norm{z_{k+1} - z_k}, \hspace{0.2cm}  \forall k ;  \hspace{0.2cm} when  \hspace{0.2cm} K \to\infty
 \end{equation}
 
-\paragraph{Artificial Forces}\hspace{0pt} \\
+\paragraph{Artificial Forces}\hspace{0pt} \\ 
 Artificial forces are defined to gather the agents in the swarm inside a formation shape and make them distributed homogenously inside the shape. It is possible to define some additional artificial forces to implement features like obstacle$\&$collision avoidance or smooth transitions between the boundaries of the formation shape. Attractive forces, repulsive forces, intermember forces, obstacle forces and transition forces are implemented to generate individual control laws for all agents in the swarm. Suppose the state of a member $i$ is described by
 
 \begin{equation}
@@ -706,13 +710,9 @@ z_i\\ \dot{z}_i
 \end{bmatrix}
 \end{equation}
 
-where  $z_i \in C$, represents the position of the $i^{th}$ member of the swarm and $\alpha = \begin{bmatrix}
-1 & 0
-\end{bmatrix}$ and $\beta = \begin{bmatrix}
-0 & 1
-\end{bmatrix}$. The state of the whole swarm $x= \begin{bmatrix}
+where  $z_i \in C$, represents the position of the $i^{th}$ member of the swarm. The state of the whole swarm $x= \begin{bmatrix}
 X_1 & X_2 & ... X_n
-\end{bmatrix}$ is determined by the linear equations of [pubudu referans verelim]
+\end{bmatrix}$ is determined by the linear equations of [xx]
 
 \begin{equation}
 \dot{x} = Ax + Bu
@@ -720,10 +720,12 @@ X_1 & X_2 & ... X_n
 
 where
 
-\begin{align*}
+\begin{align}
+\begin{split}
 &A = diag\left(\hat{A}\right)_{nxn}\\
 &B = \frac{1}{m} diag\left(\hat{B}\right)_{nxn}
-\end{align*}
+\end{split}
+\end{align}
 			
 with
 
@@ -749,10 +751,10 @@ where
 u_i = F_{i,a} + F_{i,r} + F_{i,m} + F_{i,t}
 \end{equation}
 
-It is necessary to define the concept of "covearge circle"	for the agents which will be used in the artificial forces calculations. Coverage circle of agent $i$, $C_i$ is defined as the circle with minimum radius which can cover the whole agent's collision surface. The radius of this circle is given with $d_c$. Some of the examples of coverage circles for different types of mobile robots are illustrated in Figure -xx below
+It is necessary to define the concept of "coverage circle"	for the agents which will be used in the artificial forces calculations. Coverage circle of agent $i$, $C_i$ is defined as the circle with minimum radius which can cover the whole agent's collision surface. The radius of this circle is given with $d_c$. Some of the examples of coverage circles for different types of mobile robots are illustrated in Figure \ref{coverage_circle_ref} below
 		
 \begin{figure}[H]
-\caption{Coverage Circles of Different Types of Agents}
+\caption{Coverage Circles of Different Types of Agents} \label{coverage_circle_ref}
 \centering
 \includegraphics[scale = 0.60]{coverage_circles}
 \end{figure}
@@ -776,15 +778,17 @@ F_{i,a} := \frac{k_a (1-n(C,\alpha X_i))}{l(C)} \oint_C(z-\alpha X_i)\norm{dz}
 
 where $k_a$ is the variable gain for the attractive forces. The representation of the attractive forces on agent $i$ on $z_i = (x_i, y_i)$ with the points of  $z_k = (x_k,y_k)$ of formation shape in the complex plane:
 
-\begin{align*}
+\begin{align}
+\begin{split}
 & F_{iax} =\frac{k_a (1-n(C,\alpha X_i))}{l(C)}  \sum_{k=1}^{K} (x_k  - x_i)\\
 & F_{iay} =\frac{k_a (1-n(C,\alpha X_i))}{l(C)}  \sum_{k=1}^{K} (y_k  - y_i)\\
-\end{align*}
+\end{split}
+\end{align}
 			
 where
 
 \begin{equation}
-z_k - z_{k-1} = z_{k+1} - z_k, \hspace{0.2cm}  \forall k ;  \hspace{0.2cm} when  \hspace{0.2cm} K \to\infty
+\norm{z_k - z_{k-1}} = \norm{z_{k+1} - z_k}, \hspace{0.2cm}  \forall k ;  \hspace{0.2cm} when  \hspace{0.2cm} K \to\infty
 \end{equation}
 			
 and $F_{iax} , F_{iay} $ are the attractive force components in $x,y$ coordinates respectively.\newline
@@ -806,15 +810,17 @@ F_{i,r} := k_r  n(C,\alpha X_i) \oint_C \left[\frac{\alpha X_i - z}{\norm{\alpha
 
 where $k_r$ is the variable gain for the repulsive forces. The representation of the repulsive forces on agent $i$ on $z_i = (x_i, y_i)$ with the points of  $z_k = (x_k,y_k)$ of formation shape in the complex plane:
 
-\begin{align*}
+\begin{align}
+\begin{split}
 & F_{irx} = k_r n(C,\alpha X_i)  \sum_{k=1}^{K} \frac{x_i - x_k}{\norm{\alpha X_i - z_k}^3}\\
 & F_{iry} = k_r n(C,\alpha X_i)  \sum_{k=1}^{K} \frac{y_i - y_k}{\norm{\alpha X_i - z_k}^3}
-\end{align*}
+\end{split}
+\end{align}
 				
 where
 
 \begin{equation}
-z_k - z_{k-1} = z_{k+1} - z_k, \hspace{0.2cm}  \forall k ;  \hspace{0.2cm} when  \hspace{0.2cm} K \to\infty
+\norm{z_k - z_{k-1}} = \norm{z_{k+1} - z_k}, \hspace{0.2cm}  \forall k ;  \hspace{0.2cm} when  \hspace{0.2cm} K \to\infty
 \end{equation}
 						
 and $F_{irx} , F_{iry} $ are the repulsive force components in $x,y$ coordinates respectively. \newline
@@ -842,15 +848,17 @@ where $d_o$ is the total distance minimum distance between the agents which can 
 			
 The force components in x,y coordinates respectively,
 
-\begin{align*}
+\begin{align}
+\begin{split}
 &F_{imx} = k_m \sum_{j=1, j\neq i}^{N}\frac{x_i- x_j}{\norm{\alpha X_i - \alpha X_j}}  \frac{1}{(\norm{\alpha X_i - \alpha X_j} - d_o)^2}\\
 &F_{imy} = k_m \sum_{j=1, j\neq i}^{N}\frac{y_i- y_j}{\norm{\alpha X_i - \alpha X_j}}  \frac{1}{(\norm{\alpha X_i - \alpha X_j} - d_o)^2}\\
-\end{align*}
+\end{split}
+\end{align}
 		
 where $k_m$ is the variable gain for the intermember forces.  \newline
 			
 \textit{4- Transition Forces} \\ 		
-Transition forces are the artificial force component to force the agent inside the formation shape when they are close to the boundaries. Since the attractive forces have a decreasing nature while the agent getting closer to the formation shape, it is needed to add this type of forcing function to ensure the agents to get inside the shape. Transition forces are active outside of the desired formation shape.
+Transition forces are the artificial force components to force the agent to get inside the formation shape when they are close to the boundaries. Since the attractive forces have a decreasing nature while the agent getting closer to the formation shape, it is needed to add this type of forcing function to ensure the agents to get inside the shape. Transition forces are active outside of the desired formation shape.
 			
 \begin{figure}[H]
 \caption{Comparison of Attractive and Transition Forces Close to the Formation Shape Boundary}
@@ -866,34 +874,36 @@ F_{i,t} = k_t (1-n(C,\alpha X_i) \oint_C \frac{z-\alpha X_i}{\norm{z-\alpha X_i}
 				
 where $k_t$ is the variable gain for the transition forces. The representation of the transition forces on agent $i$ on $z_i = (x_i, y_i)$ with the points of  $z_k = (x_k,y_k)$ of formation shape in the complex plane:
 			
-\begin{align*}
+\begin{align}
+\begin{split}
 &F_{itx} = k_t  (1-n(C,\alpha X_i) \sum_{k=1,}^{K}\frac{x_k- x_i}{\norm{\alpha X_i - z_k}^3}\\
 &F_{ity} = k_t  (1-n(C,\alpha X_i) \sum_{k=1,}^{K}\frac{y_k- y_i}{\norm{\alpha X_i - z_k}^3}\\
-\end{align*}
+\end{split}
+\end{align}
 			
 where  $F_{itx} , F_{ity} $ are the transition force components in $x,y$ coordinates respectively. \newline
 			
 \textit{			5- Obstacle forces} \\ 
-Obstacle forces are the artificial force components generated by the obstacle in the environment to achieve obstacle avoidance of the agents during formation control. 	
+Obstacle forces are the artificial force components generated by the obstacles in the environment to achieve obstacle avoidance of the agents during formation control. 	
 The equation for the obstacle forces are defined as follows:	
 			
 \begin{equation}
-F_{i,o} := k_o  \oint_O \left[\frac{\alpha X_i - z_o}{(\norm{\alpha X_i - z_o} - d_{ci})^4}\right] \norm{dz_o}
+F_{i,o} := k_o  \oint_O \left[\frac{\alpha X_i - z_o}{(\norm{\alpha X_i - z_o} - d_{c_i})^4}\right] \norm{dz_o}
 \end{equation}
 			
-where $k_o$ is the variable gain for the transition forces and $d_{ci}$ is the radius of coverage circle of agent $i$ . This contour integral is taken on the curve of the obstacle with  points of $z_o = (x_o,y_o)$ in the complex plane.
+where $k_o$ is the variable gain for the transition forces and $d_{c_i}$ is the radius of coverage circle of agent $i$ . This contour integral is taken on the curve of the obstacle with  points of $z_o = (x_o,y_o)$ in the complex plane.
 			
 The representation of the obstacle forces on agent $i$ on $z_i = (x_i, y_i)$ with the points of  $z_{ok} = (x_{ok},y_{ok})$ of formation shape in the complex plane:
 			
 \begin{align*}
-& F_{iox} = k_o   \sum_{k=1}^{K} \frac{x_i -x_{ok}}{(\norm{\alpha X_i - z_{ok}} -d_{ci})^4}\\
-& F_{ioy} = k_o   \sum_{k=1}^{K} \frac{y_i - y_{ok}}{(\norm{\alpha X_i - z_{ok}} -d_{ci})^4}\\
+& F_{iox} = k_o   \sum_{k=1}^{K} \frac{x_i -x_{ok}}{(\norm{\alpha X_i - z_{ok}} -d_{c_i})^4}\\
+& F_{ioy} = k_o   \sum_{k=1}^{K} \frac{y_i - y_{ok}}{(\norm{\alpha X_i - z_{ok}} -d_{c_i})^4}\\
 \end{align*}
 			
 where
 
 \begin{equation}
-z_{ok}- z_{ok -1} = z_{ok+1} - z_{ok}, \hspace{0.2cm}  \forall k ;  \hspace{0.2cm} when  \hspace{0.2cm} K \to\infty
+\norm{z_{ok}- z_{ok -1}} = \norm{z_{ok+1} - z_{ok}}, \hspace{0.2cm}  \forall k ;  \hspace{0.2cm} when  \hspace{0.2cm} K \to\infty
 \end{equation}
 			
 \paragraph{Buffer Zone Implementation}\hspace{0pt} \\
@@ -907,12 +917,14 @@ The attractive and transition forces are defined to be active when the agents ar
 			
 			
 \paragraph{XSwarm Theory}\hspace{0pt} \\
-Samitha and Pubudu [xx] have provided a definition of "X-Swarm" and give a theorem which describes the motion of an agent towards s the formation shape based on the X -Swarm definition. Let $S$ be a swarm with $N$ agents. This swarm is defined as X-Swarm if there exists some positive constants $\delta$ and  $ \gamma$ that satisfy the following conditions simultaneously for all $i,j \in S$ and $i \neq j$
+In artificial forces method it is required to analyse the movement of a single agent and to prove that the motion will be towards to the desired shape under the effect of different artificial force components, since there are no predetermined goal states within the desired formation shape. For this purpose, Samitha and Pubudu [xx] have provided a definition of "X-Swarm" and give a theorem which describes the motion of an agent towards the formation shape based on the X -Swarm definition. Let $S$ be a swarm with $N$ agents. This swarm is defined as X-Swarm if there exists some positive constants $\delta$ and  $ \gamma$ that satisfy the following conditions simultaneously for all $i,j \in S$ and $i \neq j$
 			
-\begin{align*}
+\begin{align}
+\begin{split}
 &\succ\hspace{0.2cm}  d_{ij} \geq \gamma + \delta \\
 &\succ \hspace{0.2cm}   \norm{\frac{z_i - z_{cm}^i}{z_i - z_{cm}}} < \left(1+\frac{\delta}{\gamma}\right)^3
-\end{align*}
+\end{split}
+\end{align}
 
 where
 
@@ -931,24 +943,24 @@ Lemma 1: The magnitude of artificial inter-member force acting on an agent of X-
 Proof:
 
 \begin{equation}
-F_{i,m} = k_m \sum_{j=1, j\ neq i}^{N} \frac{z_i - z_j}{d_{ij}^3} 
+F_{i,m} = k_m \sum_{j=1, j \neq i}^{N} \frac{z_i - z_j}{d_{ij}^3} 
 \end{equation}
 
 Using the first condition of the X-Swarm , we have
 \begin{equation}
-\norm{F_{i,m}} < \frac{k(N-1)}{(\gamma + \delta)^3} \norm{z_i - z_{cm}^i}
+\norm{F_{i,m}} < \frac{k_m(N-1)}{(\gamma + \delta)^3} \norm{z_i - z_{cm}^i}
 \end{equation}
 
 Then using the condition 2 of the X-swarm definition, the following expression can be derived
 
 \begin{equation}
-\norm{F_{i,m}} < \frac{k(N-1)}{\gamma^3} \norm{z_i - z_{cm}^i}
+\norm{F_{i,m}} < \frac{k_m(N-1)}{\gamma^3} \norm{z_i - z_{cm}^i}
 \end{equation}
 
 This result provides an upper bound to the magnitude of the inter-member repulsion force in a X-Swarm.  
 		
-Theorem: Conside the agent $i$	outside of a desired formation shape in a X-swarm, if $\frac{k_a}{k_m} > \frac{N-1}{\gamma^3  l(C)}$ then the motion of member $i$ is towards to the center of the swarm. 
-Proof: Choosing a Lyapunov function candidate for the agent $i$ as?
+Theorem: Consider the agent $i$	outside of a desired formation shape in a X-swarm, if $\frac{k_a}{k_m} > \frac{N-1}{\gamma^3  l(C)}$, then the motion of member $i$ is towards to the center of the swarm. \newline
+Proof: Choosing a Lyapunov function candidate for the agent $i$ as:
 
 \begin{equation}
 V_i = \frac{1}{2} \dot{v}_i \dot{v}_i^T + \frac{1}{2} v_i v_i^T\left(k_al(C)-\frac{k_m(N-1)}{\gamma^3}\right) 
@@ -963,10 +975,10 @@ It is possible to show that $\dot{V}_i$ is bounded by taking the derivatives,
 \end{bmatrix} \norm{\dot{v}}
 \end{equation}
 			
-Since agent $i$ is considered a member of a X-swarm, from Lemma -1
+Since agent $i$ is considered a member of a X-swarm, from Lemma 1
 
 \begin{equation}
-\norm{ \sum_{j=1, j \neq i}^{N} \frac{z_i - z_j}{\norm{z_i - z_j}^3}} < \frac{N-1}{\gamma^3} \norm{z_i - z_cm}
+\norm{ \sum_{j=1, j \neq i}^{N} \frac{z_i - z_j}{\norm{z_i - z_j}^3}} < \frac{N-1}{\gamma^3} \norm{z_i - z_{cm}}
 \end{equation}
 
 and hence
@@ -980,12 +992,14 @@ which proves the given theorem.  \newline
 \paragraph{Implementation of X-Swarm Theory}\hspace{0pt} \\		
 Two conditions to create a X-Swarm is to find two positive variables which satisfy the following inequalities
 
-\begin{align*}
+\begin{align}
+\begin{split}
 &\succ\hspace{0.2cm}  d_{ij} \geq \gamma + \delta \\
 &\succ \hspace{0.2cm}   \norm{\frac{z_i - z_{cm}^i}{z_i - z_{cm}}} < \left(1+\frac{\delta}{\gamma}\right)^3
-\end{align*}
+\end{split}
+\end{align}
 		
-It is possible to check the X-swarm conditions for a swarm  with the $min(d_{ij})$ and $max \norm{\frac{z_i - z_{cm}^i}{z_i - z_{cm}}} $ . Lets define the variable  of $X_{sw_{min}}$ and $X_{sw_{max}}$ as following:
+It is possible to check the X-swarm conditions for a swarm  by using $min(d_{ij})$ and $max \norm{\frac{z_i - z_{cm}^i}{z_i - z_{cm}}} $ values. Lets define the variable  of $X_{sw_{min}}$ and $X_{sw_{max}}$ as following:
 
 \begin{equation}
 X_{sw_{max}} := max \norm{\frac{z_i - z_{cm}^i}{z_i - z_{cm}}}  \hspace{0.2cm} X_{sw_{min}} := min(d_{ij})
@@ -997,7 +1011,7 @@ To satisfy the X-swarm inequalities, it is possible to write
  X_{sw_{min}} = \gamma + \delta  \hspace{0.2cm} X_{sw_{max}} = (1 + \frac{\delta}{\gamma})^3
 \end{equation}
 
-by using the above equations it is possible to calculate the variables of $\gamma$ and $\delta$ can be calculated with,
+by using the above equations it is possible to calculate the variables of $\gamma$ and $\delta$ as following,
 
 \begin{equation}
 \gamma = \frac{ X_{sw_{min}}}{\sqrt[3]{ X_{sw_{max}}}}
@@ -1008,20 +1022,20 @@ and
 \delta =  X_{sw_{min}} - \frac{ X_{sw_{min}}}{\sqrt[3]{ X_{sw_{max}}}}
 \end{equation}
 
-if the calculated  $\gamma$ and $\delta$ are both positive, than the X-swarm conditions are satisfied. Otherwise, the main approach is to increase the variable gain of $k_m$ which determines the magnitude of the repulsive forces between agents to increase the minimum distance between the agents in the swarm, $X_{sw_{min}} := min(d_{ij})$
+if the calculated  $\gamma$ and $\delta$ are both positive, than the X-swarm conditions are satisfied. Otherwise, the main approach is to increase the variable gain of $k_m$ on runtime which determines the magnitude of the repulsive forces between agents to increase the minimum distance between the agents in the swarm, $X_{sw_{min}} := min(d_{ij})$
 			
-On the other hand, the theorem related with the convergence of member agents of an X-Swarm to the $z_cm$ is satisfied under the condition of $\frac{k_a}{k_m} > \frac{N-1}{\gamma^3  l(C)}$ . Another approach is to increase the $k_a$ gain to make the related inequality be satisfied to force the agents which are outside of the desired shape to the center mass of the formation geometry. 
+On the other hand, the theorem related with the convergence of member agents of an X-Swarm to the $z_{cm}$ is satisfied under the condition of $\frac{k_a}{k_m} > \frac{N-1}{\gamma^3  l(C)}$ . Another approach is to increase the $k_a$ gain on runtime to make the related inequality be satisfied to force the agents which are outside of the desired shape to the center mass of the formation geometry. 
 					
 \subsection{Shape Partitioning Methods}
-Shape partitioning methods have basically reduced down the formation control problem into two subproblems. The first part of the solution is to partition the desired formation shape into potential goal states according to the agent types to cover the desired formation shape homogenously. There are two different solutions to the shape partitioning problem are presented in this thesis work, bubble packing method and randomized fractals method. The second part of the solution is the decision process of the agents to select these goal states continuously to minimize the energy consumption of the swarm. During this decision process, the cost of reaching different goal states will be the main criteria for each agent. It is obvious that each agent will try to choose a goal state with minimum cost according to its position and the orientation in the environment. But the cases in which two or more agents are willing to reach the same goal point must be handled to optimize the overall utility of the swarm. 
+Shape partitioning methods have basically reduced down the formation control problem into two subproblems. The first part of the solution is to partition the desired formation shape into potential goal states according to the agent types to cover the desired formation shape homogenously. There are two different solutions to the shape partitioning problem which are presented in this thesis work, bubble packing method and randomized fractals method. The second part of the solution is the decision process of the agents to select these goal states continuously to minimize the total displacements of the agents while achieving the desired formation shape. During this decision process, the cost of reaching different goal states will be the main criteria for each agent. It is obvious that each agent will try to choose a goal state with minimum cost according to its position and the orientation in the environment. But the cases in which two or more agents are willing to reach the same goal point must be handled to optimize the overall utility of the swarm. 
 
-Shape partitioning methods have an approach to direct the agents to the goal states in which they have assigned instantly to minimize the energy consumption, but it is important to keep the agents together in the swarm while moving on a trajectory towards the formation shape, to reduce the Lost agent events described in Section-xx. For this purpose, attractive forces which directs the agents to the center of the formation shape under X-swarm consideration is added to the agents' control signal as an additive term. 
+Shape partitioning methods have an approach to direct the agents to the goal states in which they have assigned instantly to minimize the total displacement, but it is important to keep the agents together in the swarm while moving on a trajectory towards the formation shape, to reduce the lost agent events described in Section \ref{LostAgents}. On the other hand, it is required to provide a collision avoidance between the agents and the obstacles while reaching the desired goal states. For these purposes, attractive forces which directs the agents to the center of the formation shape under X-swarm consideration and inter-member forces which avoids collisions between agents are added to the agents' control signal as an additive term. 
 			
-\subsubsection{Determining the Potential Goal States}
+\subsubsection{Determining the Potential Goal States} \label{Partitioning_ref}
 \paragraph{Bubble Packing Method} \hspace{0pt} \\				
 Bubble packing method is widely used in mesh generation problems. It basically depends on covering a curve, surface or a volume with a proper number of bubbles by packing them tightly which mimic a Voronoi diagram, from which a set of well-shaped Delaunay triangles and tetrahedra can be created by connecting the centers of the bubbles[27].  The algorithm places the bubbles with their initial conditions in the surface and apply them interbubble forces which imitates the Van der Waals forces between the moleculer bonds  to distrubute the bubbles homogenously. Here, the main idea is to generate a mesh for a surface with identical bubbles to mimic a regular Voronoi diagram with the vertices represented by the centers of these bubbles. On the other hand, adaptive population control  methods are developed to increase the number of bubbles to fill the gaps in the shape and to remove the excess bubbles which are overlapping with each other and the shape boundaries. 
 
-Since the numbers and the the radius of coverage circles which is defined at Section-xx for the agents are predetermined in our formation control problem, the general bubble meshing algorithm have to be adopted to meet the requirements in shape partitioning in formation control.  The basic approach is to represent the agents in the swarm as bubbles with the radius of  their coverage circles and create a mesh by using these bubbles. \newline
+Since the numbers and the the radius of coverage circles which is defined at Section \ref{Artificial Forces Ref} for the agents are predetermined in our formation control problem, the general bubble meshing algorithm have to be adopted to meet the requirements for shape partitioning in formation control.  The basic approach is to represent the agents in the swarm as bubbles with the radius of  their coverage circles and create a mesh by using these bubbles. \newline
 			
 \textit{			I - Initial Placements of the Bubbles} \\ 
 The initial bubble placements are important because it will greatly reduce the convergence time of the partitioning process. In this work, the bubbles are initiated close to the center of the formation shape randomly. The algorithm for initial bubble placements is provided as follows:
@@ -1029,21 +1043,21 @@ The initial bubble placements are important because it will greatly reduce the c
 \begin{algorithm}[H]
 \KwData{Set of Bubbles, Desired Formation Shape }
 \KwResult{Initial Placements of the Bubbles }
-Initialize free configuration space $C_{free}$ as the desired formation shape
-\For{<Bubbles of $i$>}
+Initialize free configuration space $C_{free}$ as the desired formation shape \newline
+\For{<Each Bubble $i$>}
 {		
-*Calculate the free configuration space $C_{free}$ for bubble $i$\;
-*Put the Bubble $i$ to the closest point to  formation center  $z_c$  in the free configuration space $i$ \;
-*Add the agent $i$ into the desired formation shape as an obstacle \;
+*Calculate the free configuration space,$C_{free}$, for bubble $i$\;
+*Put the Bubble $i$ to the closest point to  formation center  $z_c$  in the free configuration space\;
+*Add the agent $i$ into the configuration space shape as an obstacle \;
 }
 				
 \caption{INITIALIZE$\_$BUBBLE$\_$POSITIONS}
 \end{algorithm}
 		
-The term free configuration space $C_{free}$ will be analyzed in detail in Section -xx. An execution of the Algorithm-1 is illustrated in Figure -xx below.
+The term free configuration space $C_{free}$ will be analyzed in detail in Section \ref{DecisionProcess Ref}. An execution of the Algorithm 1 is illustrated in Figure \ref{algorithm1_ref} below.
 		
 \begin{figure}[H]
-\caption{Initialization of the Bubble Packing Algorithm}
+\caption{Initialization of the Bubble Packing Algorithm} \label{algorithm1_ref}
 \centering
 \includegraphics[scale = 0.50]{bubble_packing}
 \end{figure}
@@ -1058,7 +1072,7 @@ al^3 + bl^2 + cl + d &\mbox{ when 0 $\leq$ l $\leq$ $l_0$} \\
 \end{array} \right.
 \end{equation}
 
-where $l$ is the distance between the centers of the related bubbles. 
+where $l$ is the distance between the centers of the related bubbles and $a,b,c,d,l_0$ are the variables to tune the force acting on the bubbles. 
 
 \begin{figure}[H]
 \caption{Interbubble Forces}
@@ -1066,13 +1080,25 @@ where $l$ is the distance between the centers of the related bubbles.
 \includegraphics[scale = 0.70]{interbubble_forces}
 \end{figure}
 	
-The shape repulsive forces have the same characteristics with the repulsive artificial forces discussed in Section -xx. The representation of shape repulsive forces for the desired formation shape $C$ with the points of  $z_k = (x_k,y_k)$ the complex plane::
+The shape repulsive forces have the same characteristics with the repulsive artificial forces discussed in Section \ref{Artificial Forces Ref}. The representation of shape repulsive forces for the desired formation shape $C$ with the points of  $z_k = (x_k,y_k)$ the complex plane::
 	
 \begin{equation}
 f_r(X_i) := \oint_C \left[\frac{\alpha X_i - z}{\norm{\alpha X_i - z}^3}\right] \norm{dz}
 \end{equation}
 
 where $k_r$ is the variable gain for the repulsive forces. The representation of the repulsive forces on agent $i$ on $z_i = (x_i, y_i)$ with the points of  $z_k = (x_k,y_k)$ of formation shape in the complex plane:
+
+\begin{equation}
+f_r(X_i) = \sum_{k=1}^{K} \frac{Z_i - Z_k}{\norm{\alpha X_i - z_k}^3}
+\end{equation}
+				
+where
+
+\begin{equation}
+\norm{z_k - z_{k-1}} = \norm{z_{k+1} - z_k}, \hspace{0.2cm}  \forall k ;  \hspace{0.2cm} when  \hspace{0.2cm} K \to\infty
+\end{equation}
+						
+
 	
 The bubbles are distributed homogenously under the influence of these two forces when they get an equilibrium state in which the total net forces acting on individual bubbles reaches zero. The final equilibrium states of the bubbles determines the potential goal states of the agents in the swarm to cover the formation shape. 
 
@@ -1083,13 +1109,13 @@ The bubbles are distributed homogenously under the influence of these two forces
 \end{figure}
 
 \subparagraph{Randomized Fractals Method}\hspace{0pt} \\
-Randomized fractals method are used to cover surfaces or volumes randomly with fractals. The main idea is to fill the fractals with the areas determined by the rule of [26] :
+Randomized fractals methods are used to cover surfaces or volumes randomly with fractals. The main idea is to fill the fractals with the areas determined by the rule of [26] :
 
-\begin{equation}
+\begin{equation} \label{fractals}
 A_i = \frac{A}{\zeta(c,N)(i+N)^c}
 \end{equation}
 
-where $A$ is the total are to cover and $A_i$ is the area of the $i^th$ fractal. The parameters of $c$ and $N$ can be chosen to implement different changes on the fractals areas with the increasing number of iterations with $c>1$ and $N>0$. Here  $\zeta$ is the Hurwitz function defiend by
+where $A$ is the total area to cover and $A_i$ is the area of the $i^{th}$ fractal. The parameters of $c$ and $N$ can be chosen to implement different changes on the fractals areas with the increasing number of iterations with $c>1$ and $N>0$. Here  $\zeta$ is the Hurwitz function defiend by
 
 \begin{equation}
 \zeta(c,N) = \sum_{i=0}^{\infty} \frac{1}{(i+N)^c}
@@ -1101,7 +1127,7 @@ It is possble to write,
 \sum_{i=0}^{\infty}A_i = \sum_{i = 0}^{\infty}\left(\frac{A}{\zeta(c,N)(i+N)^c}\right)
 \end{equation}
 	
-which tells us the sum of the all areas $A_i$ is the total area of $A$ and the algorithm is space filling. This approach implements the fractals infinitely by reducing the areas in accordance with the Equation -xx to the desired formation shape randomly. 
+which tells us the sum of the all areas $A_i$ is the total area of $A$ and the algorithm is space filling. This approach implements the fractals infinitely by reducing the areas in accordance with the Equation \ref{fractals}, to cover the desired formation shape randomly. 
 
 \begin{figure}[H]
 \caption{Randomized Fractals}
@@ -1114,29 +1140,29 @@ Since the areas and the number of the agents, which will be represented with the
 \begin{algorithm}[H]
 \KwData{Set of Coverage Circles, Desired Formation Shape }
 \KwResult{Potential Goal States }
-Initialize free configuration space $C_{free}$ as the desired formation shape
-\For{<Coverage Circles of $i$>}
+Initialize free configuration space $C_{free}$ as the desired formation shape \newline
+\For{<Each Coverage Circle $i$>}
 {		
 *Calculate the free configuration space $C_{free}$ for circle $i$\;
 \eIf{$C_{free}  \neq Null$}{
 *Put the circle $i$ randomly in $C_{free}$ \;
-*Add the agent $i$ into the desired formation shape as an obstacle \;
+*Add the agent $i$ into configuration space as an obstacle \;
 }{
 *Break and warn the operator to increase the size of formation shape
 }
 }												
-\caption{RANDOMIZED$\_$FRACTALS$\_$ALGORITHMS}
+\caption{RANDOMIZED$\_$FRACTALS$\_$ALGORITHM} 
 \end{algorithm}
 		
 
 	
-\subsubsection{Decision Process on Goal States}\hspace{0pt} \\
-In the first part of the work,Section-xx Shape Partitioning, the formation control problem is reduced down to a problem in which every agent is expected to decide individually where to position in a given set of possible goal states $g_i \in G$ .  During this decision process, the cost of reaching different goal states will be the main criteria for each agent. Given goal states and cost values to these goal states, each agent must individually  decide where to position in the formation. This process must be held to optimize the utility of every agent with a collaboration. It is obvious that some of the agents may want to choose the same goal point to reach, so the swarm must reach a global consensus on target points and conflict cases must be handled. The main approach to provide a solution for this problem is to make each agent to calculate the costs of its own to the goal states and then create a global consensus with the other agents to minimize the overall energy consumption of the swarm while achieving a formation shape. 
+\subsubsection{Decision Process on Goal States}\hspace{0pt} \label{DecisionProcess Ref} \\
+In Section \ref{Partitioning_ref}, the formation control problem is reduced down to a problem in which every agent is expected to decide where to position in a given set of possible goal states $g_i \in G$ .  During this decision process, the cost of reaching different goal states will be the main criteria for each agent. Given goal states and cost values to these goal states, each agent must decide where to position in the formation. This process must be held to optimize the utility of every agent with a collaboration. It is obvious that some of the agents may want to choose the same goal point to reach, so the swarm must reach a global consensus on target points and cases including conflictions must be handled. The main approach to provide a solution for this problem is to make each agent to calculate the costs of its own to the goal states and then create a global consensus with the other agents to minimize the overall displacements of the swarm while achieving a desired formation shape. 
 
-In this work, the cost of reaching a goal state is defined with the minimum shortest path in the environment. A visibility graph based approach is used to calculate the shortest possible path to a goal states by taking into account the obstacles in the environment. The assignment process of the agents to the goal states which will be minimize the overall cost, is handled with the help of Munkres (Hungarian)  algorithm.
+In this work, the cost of reaching a goal state is defined with the minimum shortest path in the environment. A visibility graph based approach is used to calculate the shortest possible path to a goal state by taking into account the obstacles in the environment. The assignment process of the agents to the goal states which will be minimize the overall displacement, is handled with the help of Munkres (Hungarian)  algorithm.
 	
 \paragraph{Free Configuration Space}\hspace{0pt} \\
-Since the shortest path is defined in the free configuration domain, each agent must calculate its free space by taking the obstacles in the environment into the account. 
+Since the shortest path is defined in the free configuration space, each agent must calculate its free configuration space by taking the obstacles in the environment into the account. 
 
 Assume an environment with set of obstacles $S = \begin{Bmatrix}
 P_1, P_2, .. P_t \end{Bmatrix}$. Configuration for agent $i$ can be described with the position of the center of its coverage circle with $R=\begin{Bmatrix}x_i, y_i\end{Bmatrix}$. Configuration space of $i$ th agent is the environment itself and represented by $C(R_i)$. This configuration space is composed of two subspaces; free configuration space and forbidden configuration space of agent $i$.
@@ -1145,7 +1171,7 @@ P_1, P_2, .. P_t \end{Bmatrix}$. Configuration for agent $i$ can be described wi
 C(R_i) = C_{free}(R_i,S) + C_{forb}(R_i,S)
 \end{equation}
 
-The configuration space $C(R_i)$ of agent $i$ is the environment itself. If the forbidden space is calculated with Minkowski Sum method, free configuration space can be derived simply by extracting the forbidden space from the environment. Let a single obstacle is described with a point set of $S_1$ and the agent is described with a point set of $S_2$. The Minkowski sum of these two sets $S_1 \subset R^2$ and $S_2 \subset R^2$ can be calculated with the following,
+If the forbidden space is calculated with Minkowski Sum method, free configuration space can be derived simply by extracting the forbidden space from the environment. Let a single obstacle is described with a point set of $S_1$ and the agent is described with a point set of $S_2$. The Minkowski sum of these two sets $S_1 \subset R^2$ and $S_2 \subset R^2$ can be calculated with the following,
 	
 \begin{equation}
 S_1 \oplus S_2 := \begin{Bmatrix}
@@ -1164,7 +1190,7 @@ where $p+q$ denotes the vector sum of the vectors $p$ and $q$.
 Forbidden space for agent $i$, $C_{forb}(R_i, S)$ is the sum of the forbidden spaces calculated for each obstacle in the environment. 
 	
 \paragraph{Visibility Graphs and Dijkstra$'$s Algorihtm}\hspace{0pt} \\
-It is obvious that the shortest path between two points in the environment must lie on the free configuration space, $C_{free}$ for each agent. A constraint for the shortest path is given as follows[30] : 
+It is obvious that the shortest path between two points in the environment must lie on the free configuration space, $C_{free}$ for each agent to avoid collisions with the obstacle . A constraint for the shortest path is given as follows[30] : 
 
 \begin{displayquote}
 The shortest path between $p_{start}$ and $p_{goal}$ among a set $S$ of augmented polygonal obstacles consists of the arcs of the visibility graph $\gamma_{vis}(S^*)$ where $S^* := S \cup \begin{Bmatrix}
@@ -1174,7 +1200,7 @@ p_{start}, p_{goal}
 
 A visibility graph,$\gamma_{vis}(S^*)$ , is a graph which is set of interior nodes representing the vertices of the set of obstacles, $S$, in the environment and edges which represents visible (which are not crossing and interior region of an obstacel) connections between these nodes. 
 
-Consider set of obstacles in the environment is augmented with the Minkowski Sums described in the Section-xx . Let these set of augmented polygonal obstacles represented with $S_i \subset S$. 
+Consider set of obstacles in the environment is augmented with the Minkowski Sums. Let these set of augmented polygonal obstacles represented with $S_i \subset S$. 
 
 \begin{figure}[H]
 \caption{Shorthest Path from an initial state to a goal state}
@@ -1190,28 +1216,28 @@ Algorithm to calculate the visibility graph of $S^*$,
 Initialize a graph $\gamma = (V,E)$ where $V$ is the set of al vertices of the polygons in $S$ and $E = \oslash$ 
 \For{<all vertices $v \subset V$>}
 {		
-W = VISIBLEVERTICES($v$,S)\;}
-\caption{VISIBILITYGRAPH($S^*$)}
+W = VISIBLE$\_$VERTICES($v$,S)\;}
+\caption{VISIBILITY$\_$GRAPH}
 \end{algorithm}
 
-where $VISIBLEVERTICES(v,S)$ algorithm checks whether line segments drawn from $v$ to all vertices in $S$ is intersecting an interior area of any obstacle in the environment. With the help of this $VISIBILITYGRAPH$ algorithm $SHORTESTPATH$ algorithm can be defined as follows.
+where $VISIBLE$\_$VERTICES(v,S)$ algorithm checks whether line segments drawn from $v$ to all vertices in $S$ is intersecting an interior area of any obstacle in the environment. With the help of this $VISIBILITY$\_$GRAPH$ algorithm $SHORTEST$\_$PATH$ algorithm can be defined as follows.
 	
 \begin{algorithm}[H]
 \KwData{A set $S$ of disjoint polygonal obstacles, and two points $p_{start}$ and $p_{goal}$ in the free space.}
 \KwResult{The shortest collision-free path connecting $p_{start}$ and $p_{goal}$}
-1) Assign $\gamma$ = VISIBILITYGRAPH$(S^*)$
-2) Assign each arc $(v,w)$ in $\gamma_{vis}$ a weight, which is the Euclidian length of segment $vw$
-3) Use Dijkstra's algorithm to compute a shortest path between $p_{start}$ and $p_{goal}$ in $\gamma_{vis}$
-\caption{SHORTESTPATH}
+* Assign $\gamma$ = VISIBILITY$\_$GRAPH$(S^*)$ \newline
+* Assign each arc $(v,w)$ in $\gamma_{vis}$ a weight, which is the Euclidian length of segment $vw$ \newline
+* Use Dijkstra's algorithm to compute a shortest path between $p_{start}$ and $p_{goal}$ in $\gamma_{vis}$
+\caption{SHORTEST$\_$PATH}
 \end{algorithm}
 	
 Dijkstra$'$s algorithm computes the shortest path between two nodes in
-graph with k arcs, each having a non-negative weight. It is a tree search algorithm and  used to calculate the shortest paths between nodes in a graphs, with the help of weighted edges between nodes. The time complexity of the original algorithm is $O(n^2)$ where $n$ is the number of the nodes in the graph. With the usage self balancing binary search tree, the algorithm requires $O(k+nlogn)$ time in the worst case. The algorithm for the Dijkstra's is given as follows:
+graph with $k$ arcs, each having a non-negative weight. It is a tree search algorithm and  used to calculate the shortest paths between nodes in a graphs, with the help of weighted edges between nodes. The time complexity of the original algorithm is $O(n^2)$ where $n$ is the number of the nodes in the graph. With the usage self balancing binary search tree, the algorithm requires $O(k+nlogn)$ time in the worst case. The algorithm for the Dijkstra's is given as follows:
 	
 \begin{algorithm}[H]
 \KwData{$\gamma_{vis}$ , $source$\_$ node$ }
 \KwResult{Shortest Distance to Any Node from $source$\_$ node$ in $\gamma_{vis}$}
-\For{<each vertex $v \subset \gamma_{vis}$>}
+\For{<Each Vertex $v \subset \gamma_{vis}$>}
 {		
 Distance[v] := $\infty$ \;
 Previous[v] := $undefined$ \;
@@ -1232,7 +1258,7 @@ Previous[v] :=u\;
 }
 }
 }
-return Previous[];
+return Previous[v]; \newline
 \caption{DIJKSTRA'S ALGORITHM}
 \end{algorithm}
 
@@ -1241,7 +1267,7 @@ In algorithm above $Distance[x]$ function call, calculates the total cost from t
 In our work, the weights of the edges in $\gamma_{vis}$ , are calculated with the Euler distance between nodes in the environment.  
 
 \paragraph{Collaborative Decision Process of Final Goal States}\hspace{0pt} \\
-In Section 2 and 3 possible routes and costs to the goal states are calculated with the help of Visibility Graphs and Dijkstra's algorithm  for each agent. It is obvious that each agent will try to choose a goal state with minimum cost according to its position and the orientation in the environment. But the cases in which two or more agents are willing to reach the same goal point must be handled by optimizing the overall utility of the swarm. To minimize to overall cost of whole swarm while achieving a formation shape, Hungarian algorithm which is a combinational optimization algorithm that solves this assignment problem is used. To implement this algorithm, a complete bipartite graph $G=(S,T,E)$ with $n \in S$ agents and $t \in T$ goal points is constructed.In this graph, each agent have a cost which is defined by the shortest path to the destination in the environment for different goal points. 
+Possible routes and costs to the goal states are calculated with the help of Visibility Graphs and Dijkstra's algorithm  for each agent. It is obvious that each agent will try to choose a goal state with minimum cost according to its position and the orientation in the environment. But the cases in which two or more agents are willing to reach the same goal point must be handled by optimizing the overall utility of the swarm. To minimize to overall cost of whole swarm while achieving a formation shape, Hungarian algorithm which is a combinational optimization algorithm that solves this assignment problem is used. To implement this algorithm, a complete bipartite graph $G=(S,T,E)$ with $n \in S$ agents and $t \in T$ goal points is constructed.In this graph, each agent have a cost which is defined by the shortest path to the destination in the environment for different goal points. 
 
 \begin{figure}[H]
 \centering
@@ -1259,11 +1285,11 @@ Label1  \;
 Find the smallest element and subtract it from every element
 }
 Label 2  \; 
-\If{A Column,$K$, contains more than one zero}
+\If{A column,$K$, contains more than one zero}
 {Repeat Label1 for each column, $K$}
 Label 3  \; 
 
-Select element in columns for which a distinct minimum weight has been determined and add to solution
+Select element in columns for which a distinct minimum weight has been determined and add to solution \newline
 Label 4 \;
 If it is not possible to reach the full solution, flag rows without solutions. Flag all columns in flagged rows that contain a zero. Flag all rows with a previously determined solution in previously flagged columns.
      
@@ -1271,13 +1297,13 @@ Label 5 \;
 From elements remaining in flagged rows and unflagged rows, determine the element which has smallest value and assign this value to $\gamma$. Subtract $\gamma$  from every unflagged element and add  $\gamma$ to every element that has been flagged twice.
      
 Label6 \;
-Goto Label3 until full solution has been achieved.
+Goto Label3 until full solution has been achieved. \newline
      
 \caption{HUNGARIAN ALGORITHM}
 \end{algorithm}
 
 \subsection{Mesh Quality Measurement}\hspace{0pt} \\
-Since we have two different solutions to the shape partitioning problem, it is useful to define a method to compare the performances of these algorithms. One of the criterion of mesh diagrams is topological mesh irregularity [27-29]. This parametere is defined by : 
+Since we have two different solutions to the shape partitioning problem, it is useful to define a method to compare the performances of these algorithms. One of the criterion of mesh diagrams is topological mesh irregularity [27-29]. This parameter is defined by : 
 
 \begin{equation}
 \epsilon _t = \frac{1}{n} \sum_{i = 0}^{n} |\gamma _i - D|
@@ -1292,7 +1318,7 @@ D = \left\{ \begin{array}{rl}
 \end{array} \right.
 \end{equation}
 	
-and $\gamma _i$ represents the degree, or the number of neighboring nodes connected to the $i^th$ interior node, and $n$ represents the total number of interior nodes, i.e. the number of bubbles or fractals. It is obvious that the topological mesh irregularity vanishes when all nodes have $D$ neighbors, but it is almost not possible in practical application. 
+and $\gamma _i$ represents the degree, or the number of neighboring nodes connected to the $i^{th}$ interior node, and $n$ represents the total number of interior nodes, i.e. the number of bubbles or fractals. It is obvious that the topological mesh irregularity vanishes when all nodes have $D$ neighbors, but it is almost not possible in practical application. 
 	
 \begin{figure}[H]
 \caption{A Node with 6 Neighbors}
@@ -1324,10 +1350,10 @@ and $m$ represents the number of nodes, $r_i$ is the radii of inscribed circle o
 \end{figure}
 	
 \subsection{Control System Design for Individual Agents}\hspace{0pt} \\
-Shape partitioning methods will provide the goal states for a desired formation shape and agents will be assigned to those goal states to minimize the overall energy consumption of the swarm. A control system which will guide the agents to reach these goal states must be designed for each agent individually. Since the environment is dynamically changing with lots of  mobile agents, it is very probable to have different assignments to these goal states at each iteration of formation control. On the other hand, the collision with the obstacles and the other agents at the environment must be prevented due the requirements presented in Section-xx. The control system must react to these dynamic requests. A velocity controller with a large bandwith is designed at the inner loop of the control system and the outer loop is composed with a velocity setpoint generator. The block diagram for the proposed controller structure is presented in Figure -xx.
+Shape partitioning methods will provide the goal states for a desired formation shape and agents will be assigned to those goal states to minimize the overall energy consumption of the swarm. A control system which will guide the agents to reach these goal states must be designed for each agent individually. Since the environment is dynamically changing with lots of  mobile agents, it is very probable to have different assignments to these goal states at each iteration of formation control. On the other hand, the collision with the obstacles and the other agents at the environment must be prevented due the requirements presented in Section \ref{Objectives}. The control system must react to these dynamic requests. For these purposes, a velocity controller with a large bandwith is designed at the inner loop of the control system and the outer loop is composed with a velocity setpoint generator. The block diagram for the proposed controller structure is presented in Figure \ref{Controller_ref}.
 
 \begin{figure}[H]
-\caption{General Scheme of the Contol System}
+\caption{General Scheme of the Contol System} \label{Controller_ref}
 \centering
 \includegraphics[scale = 0.45]{controller}
 \end{figure}
@@ -1340,9 +1366,9 @@ Velocity setpoint generator provides instant setpoints for the inner loop based 
 \includegraphics[scale = 0.50]{bearing}
 \end{figure}
 
-The inner loop tis designed to track the velocity setpoint provided by the generator and it has a state feedback structure. The gains for the feedback states are calculated with an LQR controller. A simple mass, damper type second order linear system is used to provide a model for the controller. The translational friction force is assumed to be linear with the velocity of each agent. Different mass and friction coefficients for heterogenous mobile robots are used in control system design. To track the desired velocity setpoint, the model of the system is augmented with an artificial error state,
+The inner loop tis designed to track the velocity setpoint provided by the generator and it has a state feedback structure. The gains for the feedback states are calculated with an LQR controller. A simple mass, damper type second order linear system is used to provide a model for the controller. The translational friction force is assumed to be linear with the velocity of each agent. Different mass and friction coefficients for heterogenous mobile robots are used in control system design. To track the desired velocity setpoint, the model of the system is augmented with an artificial error state $e$,
 
-\begin{equation}
+\begin{equation} \label{dynamic_system}
 \begin{bmatrix}
 \dot{v} \\ \dot{e}
 \end{bmatrix}
@@ -1373,7 +1399,7 @@ where $b$ is the linear friction force coefficient and $m$ is the mass, $v$  is 
 J = \int_{t_o}^{t_1}(x^TQx + u^TRu) dt
 \end{equation}
 
-is calculated with help of $'lqr'$ function of MATLAB for the given system in $106 - degisebilir$ with the gain matrices of 
+is calculated with help of $'lqr'$ function of MATLAB for the given system in Equation \ref{dynamic_system} with the gain matrices of 
 
 \begin{equation}
 Q = \begin{bmatrix}
@@ -1384,7 +1410,7 @@ q_1 & 0 \\ 0 & q_2
 R = r_1
 \end{equation}
 
-the parameters for the controller design are determined with the approach presented below,
+The parameters for the controller design are determined with the approach presented below,
 
 \begin{equation}
 q_1 = \frac{1}{t_1 (x_{1max})^2}; \hspace{0.1cm}
@@ -1392,20 +1418,20 @@ q_2 = \frac{1}{t_2 (x_{2max})^2}; \hspace{0.1cm} and \hspace{0.1cm}
 r_1 = \frac{1}{ (u_{1max})^2}; \hspace{0.1cm}
 \end{equation}
 
-Here $t_i$  is the desired settling time for $x_i$ which is determined as 1.5 seconds for the velocity and 0.001 seconds for the integral state. The statement of $x_{imax}$ represents the expected maximum value of the state $i$ , which is defined 1 [m/sec] for the velocity state and 4 [m] for the error state. $u{1max}$ represent the maximum allowable input signal which is defined 3 [N]. The structure of the inner loop is illustrated in Figure-xx
+Here $t_i$  is the desired settling time for $x_i$ which is determined as 1.5 seconds for the velocity and 0.001 seconds for the integral state. The statement of $x_{imax}$ represents the expected maximum value of the state $i$ , which is defined 1 [m/sec] for the velocity state and 4 [m] for the error state. $u_{1max}$ represent the maximum allowable input signal which is defined as 3 [N]. The structure of the inner loop is illustrated in Figure \ref{innerloopref}
 
 \begin{figure}[H]
-\caption{Inner Loop Structure}
+\caption{Inner Loop Structure} \label{innerloopref}
 \centering
 \includegraphics[scale = 0.50]{inner_loop}
 \end{figure}
 
-The error between the reference and the velocity feedback is integrated and multiplied with the error gain, and the velocity state is multiplied with the velocity gain. These two components generate the total control input of the system.  
+The error between the reference and the velocity feedback is integrated and multiplied with the error gain, and the velocity state is multiplied with the velocity gain. These two components generate the total velocity control input of the system.  
 
 \begin{figure}[H]
-\caption{Step Response of the Closed Loop}
+\caption{Step Response of the Closed Loop} \label{Stepresp}
 \centering
-\includegraphics[scale = 0.50]{step_resp}
+\includegraphics[scale = 0.40]{step_resp}
 \end{figure}
 
-According to the Figure -xx, the settling time for the inner loop is around 0.5 seconds for a step input. This response characteristics is important since the system cannot react to the setpoints changing faster than 0.5 seconds, so the formation control loops in which the new goal state assignments are handled must be executed with 2Hz frequency.
+According to the Figure \ref{Stepresp}, the settling time for the inner loop is around 0.5 seconds for a step input. This response characteristics is important since the system cannot react to the setpoints changing faster than 0.5 seconds, so the formation control loops in which the new goal state assignments are handled must be executed with 2Hz frequency.
