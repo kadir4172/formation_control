@@ -52,18 +52,18 @@
 \contentsline {paragraph}{Utitilty Functions}{57}{section*.10}
 \contentsline {paragraph}{Artificial Forces}{61}{section*.11}
 \contentsline {paragraph}{Buffer Zone Implementation}{68}{section*.12}
-\contentsline {paragraph}{XSwarm Theory}{68}{section*.13}
-\contentsline {paragraph}{Implementation of X-Swarm Theory}{70}{section*.14}
-\contentsline {subsection}{\numberline {3.2.2}Shape Partitioning Methods}{71}{subsection.3.2.2}
-\contentsline {subsubsection}{\numberline {3.2.2.1}Determining the Potential Goal States}{72}{subsubsection.3.2.2.1}
-\contentsline {paragraph}{Bubble Packing Method}{72}{section*.15}
-\contentsline {subparagraph}{Randomized Fractals Method}{75}{section*.16}
-\contentsline {subsubsection}{\numberline {3.2.2.2}Decision Process on Goal States}{77}{subsubsection.3.2.2.2}
-\contentsline {paragraph}{Free Configuration Space}{77}{section*.17}
-\contentsline {paragraph}{Visibility Graphs and Dijkstra$'$s Algorihtm}{78}{section*.18}
-\contentsline {paragraph}{Collaborative Decision Process of Final Goal States}{81}{section*.19}
-\contentsline {subsection}{\numberline {3.2.3}Mesh Quality Measurement}{83}{subsection.3.2.3}
-\contentsline {subsection}{\numberline {3.2.4}Control System Design for Individual Agents}{85}{subsection.3.2.4}
+\contentsline {paragraph}{XSwarm Theory}{69}{section*.13}
+\contentsline {paragraph}{Implementation of X-Swarm Theory}{71}{section*.14}
+\contentsline {subsection}{\numberline {3.2.2}Shape Partitioning Methods}{72}{subsection.3.2.2}
+\contentsline {subsubsection}{\numberline {3.2.2.1}Determining the Potential Goal States}{73}{subsubsection.3.2.2.1}
+\contentsline {paragraph}{Bubble Packing Method}{73}{section*.15}
+\contentsline {subparagraph}{Randomized Fractals Method}{76}{section*.16}
+\contentsline {subsubsection}{\numberline {3.2.2.2}Decision Process on Goal States}{78}{subsubsection.3.2.2.2}
+\contentsline {paragraph}{Free Configuration Space}{78}{section*.17}
+\contentsline {paragraph}{Visibility Graphs and Dijkstra$'$s Algorihtm}{79}{section*.18}
+\contentsline {paragraph}{Collaborative Decision Process of Final Goal States}{82}{section*.19}
+\contentsline {subsection}{\numberline {3.2.3}Mesh Quality Measurement}{84}{subsection.3.2.3}
+\contentsline {subsection}{\numberline {3.2.4}Control System Design for Individual Agents}{86}{subsection.3.2.4}
 \contentsline {chapter}{\numberline {4}\MakeUppercase {Next Chapter}}{91}{chapter.4}
 \contentsline {leads}{\numberline {}\uppercase {REFERENCES}}{93}{chapter*.20}
 \contentsline {nodots}{\numberline {}APPENDICES}{93}{chapter*.20}

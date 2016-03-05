@@ -74,26 +74,30 @@ d_r(\theta) = \sqrt{\left((x - x_r)^2 + (y - y_r)^2\right)}
 
 Adding and subtracting $x_j, y_j$ and $z_j$ in equation \ref{3.3} gives
 
-\begin{align*}
-d_i^2(\theta) = & (x - x_r + x_r - x_i)^2 + (y - y_r + y_r - y_i)^2 \\
-              = & (x - x_r)^2 + 2(x_r - x_i)(x - x_r) + (x_r-x_i)^2 \\ 
-              + & (y - y_r)^2 + 2(y_r - y_i)(y - y_r) + (y_r - y_i)^2 \\               
-\end{align*}
+\begin{align}
+\begin{split}
+d_i^2(\theta) = & (x - x_r + x_r - x_i)^2 + (y - y_r + y_r - y_i)^2 \\ 
+              = & (x - x_r)^2 + 2(x_r - x_i)(x - x_r) + (x_r-x_i)^2 \\
+              + & (y - y_r)^2 + 2(y_r - y_i)(y - y_r) + (y_r - y_i)^2
+\end{split}
+\end{align}
 
 This equation yields to
 
-\begin{align*}
+\begin{equation}
  2((x_i - x_r)(x - x_r) + (y_i - y_r)(y - y_r)) = d_r^2(\theta) + d_{ir}^2 - d_i^2(\theta)
-\end{align*}
+\end{equation}
 
 this general statement is valid for each beacon with
 
-\begin{align*}
+\begin{align}
+\begin{split}
 & (x_2 - x_1)(x - x_1) + (y_2 - y_1)(y - y_1) = \frac{1}{2} [d_r^2(\theta) + d_{2r}^2 - d_2^2(\theta)] \\
 & (x_3 - x_1)(x - x_1) + (y_3 - y_1)(y - y_1) = \frac{1}{2} [d_r^2(\theta) + d_{3r}^2 - d_3^2(\theta)] \\
 & ... \\
-& (x_n - x_1)(x - x_1) + (y_n - y_1)(y - y_1) = \frac{1}{2} [d_r^2(\theta) + d_{nr}^2 - d_n^2(\theta)] \\
-\end{align*}
+& (x_n - x_1)(x - x_1) + (y_n - y_1)(y - y_1) = \frac{1}{2} [d_r^2(\theta) + d_{nr}^2 - d_n^2(\theta)]
+\end{split}
+\end{align}
 
 if $b_{ir}$ is defined for each beacon as follows:
 
@@ -151,10 +155,12 @@ If $A$ matrix has the dimensions of $(n-1)\ x\ 2$ where $n>3$ ,which means the n
 Proj_{R(A)}\vec{b} = A (A^TA)^{-1}A^T\vec{b}
 \end{equation}
 
-\begin{align*}
+\begin{align}
+\begin{split}
 & A\vec{x} = Proj_{R(A)}\vec{b}\\
 & \vec{A}\hat{x} = A(A^TA)^{-1}A^T\vec{b}
-\end{align*}
+\end{split}
+\end{align}
  
 with the help of the above equation
 
@@ -169,10 +175,12 @@ then
 \end{equation}
   
 since $A$ matrix is full column rank matrix,
-  
-\begin{align*}
+
+\begin{align}
+\begin{split}
 \mathcal{N}(\mathbf{A}) = \{0\} \hspace{0.3cm}  and  \hspace{0.3cm}  \mathcal{N}(\mathbf{A})^\perp =\mathbb{R} ^n 
-\end{align*}
+\end{split}
+\end{align}
   
 then 
   
@@ -198,10 +206,12 @@ f_i(x,y) = \sqrt{(x-x_i)^2 + (y - y_i)^2} - r_i = f_i(\theta)
 
 There are various algorithms to minimize the sum of the square errors in literature, Newton iteration is used to find the optimal solution in this work.  Taking the partial derivatives of the cost function with respect to $x$ and $y$ gives 
 
-\begin{align*}
+\begin{align}
+\begin{split}
 \frac{\partial{F}}{\partial{\vec{x}}} = 2\sum_{i=1}^{n}f_i\frac{\partial{f_i(\theta)}}{\partial{x}} \\
 \frac{\partial{F}}{\partial{\vec{y}}} = 2\sum_{i=1}^{n}f_i\frac{\partial{f_i(\theta)}}{\partial{y}}
-\end{align*}
+\end{split}
+\end{align}
 
 The partial derivative matrix of the cost function is composed as;
 
@@ -495,7 +505,7 @@ The details of the methodology for dynamical formation control with heterogenous
 \subsection{Potential Field Based Approach}
 
 \subsubsection{Artificial Forces Method}
-Artificial forces method implements some potential fields over each agent arised from the interactions between agents, formation shape and environment etc. The positions of the agents at the formation shape  are determined with local equilibrium points of the swarm in which every agent is at balance under the total force acting from the environment. There are basically three different kinds of artificial forces named intermember forces representing the forces created by the other agents in the swarm to achieve collision avoidance, the attractive forces representing the forces created by the desired formation shape to attract the agent into the shape and repulsive forces created by the formation shape to keep agent inside the shape. It is possible to augment these type of forces for specific tasks and objectives, e.g. obstacle forces created by the obstacles in the environment can be implemented to achieve obstacle avoidance.
+Artificial forces method implements some potential fields over each agent arised from the interactions between agents, formation shape and environment etc. The positions of the agents at the formation shape  are determined with local equilibrium of the swarm in which every agent is at balance under the total force acting from the environment. There are basically three different kinds of artificial forces named intermember forces representing the forces created by the other agents in the swarm to achieve collision avoidance, the attractive forces representing the forces created by the desired formation shape to attract the agent into the shape and repulsive forces created by the formation shape to keep agents inside the desired formation shape. It is possible to augment these type of forces for specific tasks and objectives, e.g. obstacle forces created by the obstacles in the environment can be implemented to achieve obstacle avoidance.
 Since the method to calculate the artificial forces involves contour integrals, it will be useful to give mathematical definition of contour integrals;
 		
 Consider a curve $C$ which is a set of points $z = (x,y)$ in the complex plane defined by
@@ -504,22 +514,22 @@ Consider a curve $C$ which is a set of points $z = (x,y)$ in the complex plane d
 x = x(t),   \hspace{0.1cm} y = y(t),  \hspace{0.1cm} a\leq t \leq b
 \end{equation}
 
-where $x(t)$ and $y(t)$ are continuous functions of the real parametere t.  It is possible to write
+where $x(t)$ and $y(t)$ are continuous functions of the real parameter $t$.  It is possible to write
 		
 \begin{equation}
 z(t) = x(t)+iy(t),   \hspace{0.1cm} a\leq t \leq b
 \end{equation}
 		
-This curve is called smooth if $z(t)$ has continuous derivative $z'(t) \neq 0$ for all points along the curve, and it is called simple if it does not cross itself as mentioned;
+This curve is called smooth if $z(t)$ has continuous derivative of $z'(t) \neq 0$ for all points along the curve, and it is called simple if it does not cross itself as mentioned in Equation \ref{crossitself}
 
-\begin{equation}
+\begin{equation} \label{crossitself}
 z(t_1) \neq z(t_2)   \hspace{0.1cm} whenever   \hspace{0.3cm} t_1\neq t_2
 \end{equation}
 		
-On the other hand if  $z(a)=z(b)$ is the only intersection point, the curve is said to be simple closed curve. Regarding with these given definitions, an example for a  simple smooth closed curve is illustrated in Figure -xx
+On the other hand if  $z(a)=z(b)$ is the only intersection point, the curve is said to be simple closed curve. Regarding with these given definitions, an example for a  simple smooth closed curve is illustrated in Figure \ref{simple_closed_curve_ref}
 
 \begin{figure}[H]
-\caption{A Simple Closed Curve}
+\caption{A Simple Closed Curve} \label{simple_closed_curve_ref}
 \centering
 \includegraphics[scale = 0.60]{simple_closed_curve}
 \end{figure}
@@ -535,19 +545,23 @@ where
 \frac{dz(t)}{dt} = \frac{dx(t)}{dt} + i\frac{dy(t)}{dt},   \hspace{0.1cm} a\leq t\leq b
 \end{equation}
 		
-To simplify this equation, one can wrtie $f(z) = u(x,y) + iv(x,y)$ and $dz = dx + idy$ into the statements,
+To simplify this equation, one can write $f(z) = u(x,y) + iv(x,y)$ and $dz = dx + idy$ into the statements,
 		
-\begin{align*}
+\begin{align} \label{contour_integral}
+\begin{split}
 \oint_C f(z)dz & = \oint_C u dx - v dy + i \oint_C u dy + v dx \\
 &= \int_{a}^{b}\left[u(x(t),y(t) )\frac{dx(t)}{dt} - v(x(t),y(t) )\frac{dy(t)}{dt}\right]dt\\
 & \hspace{0.4cm} + i\int_{a}^{b} \left[u(x(t),y(t) )\frac{dy(t)}{dt} + v(x(t),y(t) )\frac{dx(t)}{dt}\right]dt
-\end{align*}
+\end{split}
+\end{align}
+
+This simplified form of the contour integrals will be used in utility function in the following section. 		
 		
 \paragraph{Utitilty Functions}\hspace{0pt} \\
-As it is mentioned in the Section-xx Objectives part, the formation shapes will be complex contours which cannot be identified analytically, but the definition for the artificial forces and utility functions are expressed in continuous contour integrals which requires the analytical expression of the curve on which the integral will be taken. To enable these type of calculations it is required to provide these statements in discrete domain to achieve calculations with complex closed curves. \\ \newline
+As it is mentioned in the Section \ref{Objectives} part, the formation shapes will be simple closed contours which cannot be identified analytically, but the definition for the artificial forces and utility functions are expressed in continuous contour integrals which requires the analytical expression of the curve on which the integral will be taken. To provide a solution to  these type of calculations it is required to redefine these statements in discrete domain to achieve calculations with closed curves without analytical expressions.  \\ \newline
 
 \textit{ 		1- Cauchy Winding Number:} \\ 
-Cauchy winding number of a curve in the plane around a given point is the number of times that curve travels counterclockwise around the point. This number is used to switch on/off some of the artificial forces while the agent is inside or outside of the formation shape. Suppose $C$ is the complex closed curve which is a set of points $z=(x,y)$ in the complex plane  and $z_i$ is a point to check whether it is inside of the curve, then the Caucy winding number is :
+Cauchy winding number of a curve in the plane around a given point is the number of times that curve travels counterclockwise around the point. This number is used to switch on/off some of the artificial forces while the agent is inside or outside of the formation shape. Suppose $C$ is the closed curve which is a set of points $z=(x,y)$ in the complex plane  and $z_i$ is a point to check whether it is inside of the curve, then the Caucy winding number is :
 					
 \begin{equation}
  n(C,z_i) = \frac{1}{2\pi i}\oint_C \frac{dz}{z-z_i}
@@ -579,7 +593,7 @@ Function of $f(z)$ can be partitioned into real and complex parts as:
 u(x,y) = real(f(z))  \hspace{0.2cm} and \hspace{0.2cm} v(x,y) = imag(f(z))
 \end{equation}
 		
-partitioning as it mentioned in equation -xx
+partitioning as it mentioned in Equation \ref{contour_integral}
 \begin{equation}
 \oint_C f(z)dz  = \oint_C u dx - v dy + i \oint_C u dy + v dx 
 \end{equation}
@@ -590,16 +604,16 @@ then
 n(C,z_i)  = \frac{1}{2\pi i} \left[\int_{a}^{b} \left(u\frac{dx}{dt} - v\frac{dy}{dt}\right)dt + i\int_{a}^{b}\left(u\frac{dy}{dt} + v\frac{dx}{dt}\right)dt\right]
 \end{equation}
 		
-This contour integral representation of this equation is
+Discrete contour integral representation of this equation is
 		
 \begin{equation}
-n(C,z_i)  = \frac{1}{2\pi i} \left[\sum_{k=1}^{K} \left(u(x_{k+1} - x_k ) - v(y_{k+1} -yx_k )\right) + i\sum_{k=1}^{K}\left(u(y_{k+1} - y_k ) + v(x_{k+1} - x_k )\right)dt\right]
+n(C,z_i)  = \frac{1}{2\pi i} \left[\sum_{k=1}^{K} \left(u(x_{k+1} - x_k ) - v(y_{k+1} -yx_k )\right) + i\sum_{k=1}^{K}\left(u(y_{k+1} - y_k ) + v(x_{k+1} - x_k )\right)\right]
 \end{equation}
 
 where
 
 \begin{equation}
-z_k - z_{k-1} = z_{k+1} - z_k, \hspace{0.2cm}  \forall k ;  \hspace{0.2cm} when  \hspace{0.2cm} K \to\infty
+\norm{z_k - z_{k-1}} = \norm{z_{k+1} - z_k}, \hspace{0.2cm}  \forall k ;  \hspace{0.2cm} when  \hspace{0.2cm} K \to\infty
 \end{equation}
 
 The assumption of $K \to\infty$ makes it possible to calculate the integral of Cauchy winding number with a small error with large number of $K$ which can be achieved by partitioning the desired formation shape  into small pieces with equal  distances. This approach is used to provide representations of the contour integrals in discrete domain. 
@@ -626,7 +640,7 @@ l(C) = \sum_{k=1}^{K}\sqrt{(x_{k+1} - x_k)^2 + (y_{k+1} - y_k)^2}
 where
 
 \begin{equation}
-z_k - z_{k-1} = z_{k+1} - z_k, \hspace{0.2cm}  \forall k ;  \hspace{0.2cm} when  \hspace{0.2cm} K \to\infty
+\norm{z_k - z_{k-1}} = \norm{z_{k+1} - z_k}, \hspace{0.2cm}  \forall k ;  \hspace{0.2cm} when  \hspace{0.2cm} K \to\infty
 \end{equation}
 		
 \textit{ 	3-Center of a Formation Shape} \\ 	
@@ -646,7 +660,7 @@ the expressiion for this equationl with points of  $z_k = (x_k,y_k)$ in the comp
 where $z_{cx}$ and $z_{cy}$ are the $x$ and $y$ coordinates of the center of formation shape respectively.
 
 \textit{ 	4- Area of a Formation Shape} \\ 		
-Green's theorem can be used to calculate of the area of a closed curve. According to this theorem the area of $D$ given by the double integral
+Green's theorem can be used to calculate the area of a closed curve. According to this theorem the area of $D$ given by the double integral
 
 \begin{equation}
  A = \int\int_D dA
@@ -680,7 +694,7 @@ Area = \frac{1}{2} \sum_{k=1}^{K} x_k(y_{k+1} - y_k) - \frac{1}{2} \sum_{k=1}^{K
 where
 
 \begin{equation}
-z_k - z_{k-1} = z_{k+1} - z_k, \hspace{0.2cm}  \forall k ;  \hspace{0.2cm} when  \hspace{0.2cm} K \to\infty
+\norm{z_k - z_{k-1}} = \norm{z_{k+1} - z_k}, \hspace{0.2cm}  \forall k ;  \hspace{0.2cm} when  \hspace{0.2cm} K \to\infty
 \end{equation}
 
 \paragraph{Artificial Forces}\hspace{0pt} \\
