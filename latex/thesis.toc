@@ -49,7 +49,7 @@
 \contentsline {section}{\numberline {3.2}FORMATION CONTROL}{54}{section.3.2}
 \contentsline {subsection}{\numberline {3.2.1}Potential Field Based Approach}{55}{subsection.3.2.1}
 \contentsline {subsubsection}{\numberline {3.2.1.1}Artificial Forces Method}{55}{subsubsection.3.2.1.1}
-\contentsline {paragraph}{Utitilty Functions}{56}{section*.10}
+\contentsline {paragraph}{Utitilty Functions}{57}{section*.10}
 \contentsline {paragraph}{Artificial Forces}{61}{section*.11}
 \contentsline {paragraph}{Buffer Zone Implementation}{68}{section*.12}
 \contentsline {paragraph}{XSwarm Theory}{68}{section*.13}

@@ -68,7 +68,7 @@ Time based systems calculates the distance between measuring unit and signal tra
 In this thesis work, we implement a self positioning system in which every agent localize itself with the help of position beacons in the swarm with exactly known positions. The distance from the agents to these beacons in the swarm are assumed to be calculated with the help of a time of arrival(TOA) solution in which a node can calculate its distance to the transmitter beacon by measuring the difference between the timestamps of transmission and reception of the signal. 
 
 
-\subsection{Trilateration Process}
+\subsection{Trilateration Process} \label{Trilateration_Process_ref}
 
 Trilateration process is used to determine the three dimensional position of unknown locations with the help of distance measurement to known positions [22].  It is widely used in wireless sensor network topologies and local positioning systems.  In theory, it is needed to have at least four beacon nodes to calculte an unknown position in 3D, and at least three beacon nodes to calculate an unknown position in 2D environment. But these worst case numbers are generally not sufficient to estimate an unknown position with a good accuracy due to errors on range calculations and synchronization problems. Figure -xx demonstrates a simple trilateration procees in 2D environment with the help of  three position beacons. Suppose a mobile device which tries to estimate its position with the help of local positioning system is at the red point in the figure. If it can measure its distance to the beacons named A,B and C with exactly known positions, it will be possible to estimate the unknown position of this mobile device with the same approach used in global positioning systems. 
 
