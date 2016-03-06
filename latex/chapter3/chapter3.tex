@@ -14,11 +14,11 @@ In this thesis work, the problem of dynamical formation control of heterogenous 
 \begin{figure}[H]
 \caption{Flowchart of the Provided Solution}
 \centering
-\includegraphics[scale = 0.65]{general_scheme}
+\includegraphics[scale = 0.58]{general_scheme}
 \end{figure}
 
 \section{LOCAL POSITIONING SYSTEMS} \label{LOCAL POSITIONING SYSTEMS_ref}
-Local positioning system is a subsystem to provide a complete solution to the localization of the agents in the environment. As discussed in Section-1.3 , agents are expected to have low sensor capabilities and only a limited number of them have external position measurement sensors on their boards. The rest of the swarm have to maintain their position$\&$velocity data with the help of their inertial measurements. Propogation of the states with these type of measurements are always inclined to drift problems due to the errors$\&$noise and bias problems of the sensors. As a result of this problem, state vectors composed with the translational positions and velocities have to be corrected with an external measurement. A complete solution for this type of problem is proposed in Figure \ref{fig:lps}.
+Local positioning system is a subsystem to provide a complete solution to the localization of the agents in the environment. As discussed in Section \ref{Objectives}, agents are expected to have low sensor capabilities and only a limited number of them have external position measurement sensors on their boards. The rest of the swarm have to maintain their position$\&$velocity data with the help of their inertial measurements. Propogation of the states with these type of measurements are always inclined to drift problems due to the error$\&$noise and bias problems of the sensors. As a result of this problem, state vectors composed with the translational positions and velocities have to be corrected with an external measurement. A complete solution for this type of problem is proposed in Figure \ref{fig:lps}.
 
 \begin{figure}[H]
 \caption{Local Positioning System}
@@ -30,12 +30,13 @@ Local positioning system is a subsystem to provide a complete solution to the lo
 As illustrated in Figure \ref{fig:lps}, agents are expected to propogate their states with the help of acceleration, gyroscope and magnetometer sensors. Since the trilateration and route table determination processes require recursive and time consuming algorithms, a localization timer with a suitable period is implemented to the solution. Agents will correct their state vectors with the localization period of 3 seconds by measuring their positions with trilateration process and execute the update procedure in their state estimator algorithms. The requirement about the maximum value of 3 seconds for the localization period is determined with the help of Monte Carlo simulations discussed in Section-xx by defining a maximum allowable error on the position data since the error on the state vectors are drifting exponentially with increasing time.   
 
 \subsection{Trilateration Process}
-Trilateration process helps the agents to localize themselves with the help of their local neighbors.  Trilateration calculations use distance measurements to the nodes with known positions, to determine the coordinates of unknown positions[22]. These measurements are assumed to be done with the help of time of arrival methods disccussed in Section \ref{sssec:num1}.  Solution of the unknown position with the help of these distance measurements can be reduced down to a $A\vec{x} = \vec{b}$ type equation with the help of mathematical manipulations. The agents which has position sensors on their boards are called position beacons. Figure \ref{fig:beacons} illustrates a sample environment which consist of $i$ beacons and an agent which tries to localize itself with the help of distance measurements $r_i$ and the position data $B_i$ of the beacon nodes.
+Trilateration process helps the agents to localize themselves with the help of their local neighbors.  Trilateration calculations use distance measurements to the nodes with known positions, to determine the coordinates of unknown positions[22]. These measurements are assumed to be done with the help of time of arrival methods disccussed in Section \ref{sssec:num1}.  Solution of the unknown position with the help of these distance measurements can be reduced down to a $A\vec{x} = \vec{b}$ type equation with the help of mathematical manipulations. The agents which has position sensors on their boards are called position beacons. Figure \ref{beacons_ref} illustrates a sample environment which consist of $i$ beacons and an agent which tries to localize itself with the help of distance measurements $r_i$ and the position data $B_i$ of the beacon nodes.
 
-\begin{figure}[H] \label{beacons}
+\begin{figure}[H] 
 \caption{Environment for Trilateration Process}
 \centering
 \includegraphics[scale = 0.65]{beacons}
+\label{beacons_ref}
 \end{figure}
 
 The distance function $\hat{r_i}$ can be written as follows;
@@ -63,7 +64,7 @@ d_i(\theta) = \sqrt{\left((x - x_i)^2 + (y - y_i)^2\right)}
 The distance between the referance beacon and the other beacons
 
 \begin{equation}
-d_ir(\theta) = \sqrt{\left((x_i - x_r)^2 + (y_i - y_r)^2\right)}
+d_{ir}(\theta) = \sqrt{\left((x_i - x_r)^2 + (y_i - y_r)^2\right)}
 \end{equation}
 
 The distance between the target agent and the referance beacon
@@ -282,7 +283,7 @@ J^T\vec{f} = \left(\begin{matrix}
 	
 	
 \subsection{ Route Table Determination and  DSDV Algorithm}
-It is obvious that the possibility of having a large error on position and velocity data for the agents which do not have an external position measurement sensors,then it will be appropriate to get the agents into local trilateration process with the agents which have position sensors as much as possible. It is assumed that the positions of the beacon agents in the trilateration process are well-known with a little error boundary, ideally with no errors, so getting in the trilateration process with the agents which are already have errors on their position data and range measurements with errors may increase the error on the calculated datas. On the other hand due to the restrictions $\&$ requirements defined in the Section \ref{Objectives}, it will not be possible to interact with the agents with position sensors directly due to the small communication ranges of the agents and line of sight issues. In this case, it will be a good choice to handle this trilaterion process starting with the agents which are closer to the position agents in an increasing order of distance.
+It is obvious that the possibility of having a large error on position and velocity data for the agents which do not have an external position measurement sensors,then it will be appropriate to get the agents into local trilateration process with the agents which have position sensors as much as possible. It is assumed that the positions of the beacon agents in the trilateration process are well-known with a little error boundary, ideally with no errors, so getting in the trilateration process with the agents which are already have errors on their position data and range measurements with errors will include some error components on the calculated datas. On the other hand due to the restrictions $\&$ requirements defined in the Section \ref{Objectives}, it will not be possible to interact with the agents with position sensors directly due to the small communication ranges of the agents and line of sight issues. In this case, it will be a good choice to handle this trilaterion process starting with the agents which are closer to the position agents in an increasing order of distance.
 
 \begin{figure}[H] 
 \caption{A Cluster of Agents Around a Position Beacon} \label{position_beacon}
@@ -295,7 +296,7 @@ As illustrated on the Figure \ref{position_beacon} , suppose that the red agents
 It is needed to have an algorithm to organize the order of the local trilateration process and to determine the beacon agents for each member of the swarm. Basically this algorithm will assign each agent a rank which represents the number of sequence in the localization process, and will determine at least three local neighbors of each agent to get in trilateration. Agents which do no have at least three neighbors are assumed to be lost agents and the handling of these type of agents are illustrated in Section \ref{LostAgents}.
 	
 \subsubsection{Routing Algorithm- Bellman Ford}
-As mentioned in the Section \ref{Objectives} of the thesis work, agents are assumed to have a limited communication range and bandwith and the communication topology in the swarm must be implemented with a wireless mesh network. In this type of network, each node is a relay in the network and the data is transferred to the related destination with the help of route tables. This makes it possible to have the capability of transferring low bandwith data through the network with multiple hops.  In this work, we have implemented this topology with a table driven routing scheme known as DSDV(Destination-Sequenced Distance Vector Routing Protocol) algorithm based on Bellman Ford algorithm. Bellman-Ford is and algorithm that computes the shortest path in a weighted graph. It is an algorithm based on relaxation, the correct distance to the vertices in the graph are updated iteratively from the initial estimations until converging to the optimal solution. This algorithm is slower than the Djikstra's algorithm which has similar functionalities but negative edge weights can be implemented in the related graph to report the negative cycles which means there is no cheapest path to the related destination vertex. On the other hand, it is possible to augment this algorithm with DSDV implementation to handle the routing loop problem when there is one or more vertices are no more exists in the network. The probability of the case with the non-existence of some vertices during the algorithm is processed can be very high since the agents in the swarm have low sensor capabilities and small range of communication and they have a great possibility to get lost in the environment. A simple demonstration of the Bellman-Ford algorithm with a simple network is illustrated in the Figure \ref{bellman_ref}
+As mentioned in the Section \ref{Objectives} of the thesis work, agents are assumed to have a limited communication range and bandwith and the communication topology in the swarm must be implemented with a wireless mesh network. In this type of topology, each node is a relay in the network and the data is transferred to the related destination with the help of route tables. This makes it possible to have the capability of transferring low bandwith data through the network with multiple hops.  In this work, we have implemented this topology with a table driven routing scheme known as DSDV(Destination-Sequenced Distance Vector Routing Protocol) algorithm based on Bellman Ford algorithm. Bellman-Ford is an algorithm that computes the shortest path in a weighted graph. It is an algorithm based on relaxation and the correct distance to the vertices in the graph are updated iteratively from the initial estimations until converging to the optimal solution. This algorithm is slower than the Djikstra's algorithm which has similar functionalities but negative edge weights can be implemented in the related graph to report the negative cycles which means there is no cheapest path to the related destination vertex. On the other hand, it is possible to augment this algorithm with DSDV implementation to handle the routing loop problem when there is one or more vertices are no more exists in the network. The probability of the case with the non-existence of some vertices during the algorithm is processed is very high since the agents in the swarm have low sensor capabilities and small range of communication and they have a great possibility to get lost in the environment. A simple demonstration of the Bellman-Ford algorithm with a simple network is illustrated in the Figure \ref{bellman_ref}
 	
 \begin{figure}[H]
 \caption{Costs for Shortest Paths to Each Nodes from Node 'S'} \label{bellman_ref}
@@ -366,7 +367,7 @@ As illustrated in the Figure \ref{Clusters_Ranks_2_ref}, all agents have assigne
 	2) Check for the routes to the position agents and join the cluster in which minimum number of hops required to that destination. \newline
 	3) Wait for the localization sequence in which the agents are entered the process with the increasing number of hops, e.g. the agent which have a single hop to the position agents are processed first, and then the other ones are processed consecutively as illustrated in Figure \ref{position_beacon} \newline
 	4) If the localization sequence is valid for this agent, enter the trilateration process with at least 3 neighbor agents starting from upper layer,  which are the next hops in the route table. \newline
-	5) Call the update procedure of the observer system of which details are presented in section -xx
+	5) Call the update procedure of the observer system of which details are presented in Section \ref{StateEstimationref}
 	
 \subsection{Handling Lost Agents} \label{LostAgents}
 The minimum number of neighbors required for the trilateration process is three for a two dimensional localization problem as illustrated in Section \ref{Trilateration_Process_ref} . Since the agents are assumed to have a narrow communication range, it is possible to not to find three neighbors for any agent at an instant time. In this case, it will be impossible to relocate these agents with trilateration and the position$\&$velocity data will drift from the real values with the increasing time passed without trilaterions. To avoid these kind of problems, the concept of `lost` agents and the procedures for these type of agents are described as follows:
@@ -375,7 +376,7 @@ The minimum number of neighbors required for the trilateration process is three 
 	* If an agent is in 'Lost' mode and missed the localization process for three times, it will get into 'Return to Home' mode \newline
 	* If an agent is in 'Return to Home' mode, it will directly try to reach to the center of the desired formation shape.
 		
-The idea behind the 'Return to Home' mode is basically to increase the possibility of the lost agent to get in touch with the rest of the swarm with directing it to the center of the swarm. A simple demonstration of this procedure is illustrated in Figure \ref{return_home_ref}
+The idea behind the 'Return to Home' mode is basically to increase the possibility of getting the lost agent in touch with the rest of the swarm with directing it to the center of the swarm. A simple demonstration of this procedure is illustrated in Figure \ref{return_home_ref}
 	
 \begin{figure}[H]
 \caption{Return to Home Approach of a Lost Agent} \label{return_home_ref}
@@ -385,8 +386,8 @@ The idea behind the 'Return to Home' mode is basically to increase the possibili
 	
 The lost agent aims to reach to the center of the formation and due to the errors on its position$\&$velocity data, it is expected to arrive to the red point illustrated in the figure. With this maneuver, the lost agent still have a chance to meet some other agents in the swarm even if it directs itself to an incorrect goal state.
 	
-\subsection{State Estimation Procedure}
-In local positioning subsystem, agents are expected to execute a state estimator algorithm in which they propogate their state vectors composed of translational position and velocities with the help of inertial measurements. As discussed at the introduction of Section \ref{LOCAL POSITIONING SYSTEMS_ref} they will update and correct their positions with the measurements provided by the trilateration process execeuted with the localization timer period of 3 seconds. A Kalman estimator algorithm which uses the trilateration outputs as external measurents and the sensor measurement as inputs, is designed to fusion the sensor measurements with the trilateration calculations. The model for this observer system is defined as follows:
+\subsection{State Estimation Procedure} \label{StateEstimationref}
+In local positioning subsystem, agents are expected to execute a state estimator algorithm in which they propogate their state vectors composed of translational position and velocities with the help of inertial measurements. As discussed at the introduction of Section \ref{LOCAL POSITIONING SYSTEMS_ref} they will update and correct their positions with the measurements provided by the trilateration process execeuted with the localization timer period of 3 seconds. A Kalman estimator algorithm which uses the trilateration outputs as external measurements and the sensor measurements as inputs, is designed to fuse the sensor measurements with the trilateration calculations. The model for this observer system is defined as follows:
 	
 The state vector for each agent is defined as:
 
@@ -505,7 +506,7 @@ The details of the methodology for dynamical formation control with heterogenous
 \subsection{Potential Field Based Approach}
 
 \subsubsection{Artificial Forces Method} \label{Artificial Forces Ref}
-Artificial forces method implements some potential fields over each agent arised from the interactions between agents, formation shape and environment etc. The positions of the agents at the formation shape  are determined with local equilibrium of the swarm in which every agent is at balance under the total force acting from the environment. There are basically three different kinds of artificial forces named intermember forces representing the forces created by the other agents in the swarm to achieve collision avoidance, the attractive forces representing the forces created by the desired formation shape to attract the agent into the shape and repulsive forces created by the formation shape to keep agents inside the desired formation shape. It is possible to augment these type of forces for specific tasks and objectives, e.g. obstacle forces created by the obstacles in the environment can be implemented to achieve obstacle avoidance.
+Artificial forces method implements potential fields over each agent arised from the interactions between agents, formation shape and environment. The positions of the agents at the formation shape  are determined with local equilibrium of the swarm in which every agent is at balance under the total force acting from the environment. There are basically three different kinds of artificial forces named intermember forces representing the forces created by the other agents in the swarm to achieve collision avoidance, the attractive forces representing the forces created by the desired formation shape to attract the agent into the shape and repulsive forces created by the formation shape to keep agents inside the desired formation shape. It is possible to augment these type of forces for specific tasks and objectives, e.g. obstacle forces created by the obstacles in the environment can be implemented to achieve obstacle avoidance.
 Since the method to calculate the artificial forces involves contour integrals, it will be useful to give mathematical definition of contour integrals;
 		
 Consider a curve $C$ which is a set of points $z = (x,y)$ in the complex plane defined by
@@ -520,7 +521,7 @@ where $x(t)$ and $y(t)$ are continuous functions of the real parameter $t$.  It 
 z(t) = x(t)+iy(t),   \hspace{0.1cm} a\leq t \leq b
 \end{equation}
 		
-This curve is called smooth if $z(t)$ has continuous derivative of $z'(t) \neq 0$ for all points along the curve, and it is called simple if it does not cross itself as mentioned in Equation \ref{crossitself}
+This curve is called smooth if $z(t)$ has continuous derivative of $z'(t) \neq 0$ for all points along the curve, and it is called simple if it does not cross itself as defined in Equation \ref{crossitself}
 
 \begin{equation} \label{crossitself}
 z(t_1) \neq z(t_2)   \hspace{0.1cm} whenever   \hspace{0.3cm} t_1\neq t_2
@@ -534,7 +535,7 @@ On the other hand if  $z(a)=z(b)$ is the only intersection point, the curve is s
 \includegraphics[scale = 0.60]{simple_closed_curve}
 \end{figure}
 		
-Let $f(z)$ is a complex function in a domain $D$ in the complex pane and let $C$ be simple closed contour contained in $D$ with initial point $z_0$ and terminal point  $z$. It is possible to take the integral of $f(z)$ along the contour $C$
+Let $f(z)$ is a complex function in a domain $D$ in the complex plane and let $C$ be simple closed contour contained in $D$ with initial point $z_0$ and terminal point  $z$. It is possible to take the integral of $f(z)$ along the contour $C$
 		
 \begin{equation}
 \oint_C f(z) dz = \int_{a}^{b} f(z(t))\frac{dz(t)}{dt} dt
@@ -555,10 +556,10 @@ To simplify this equation, one can write $f(z) = u(x,y) + iv(x,y)$ and $dz = dx 
 \end{split}
 \end{align}
 
-This simplified form of the contour integrals will be used in utility function in the following section. 		
+This simplified form of the contour integrals will be used in utility functions in the following section. 		
 		
 \paragraph{Utitilty Functions}\hspace{0pt} \\
-As it is mentioned in the Section \ref{Objectives} part, the formation shapes will be simple closed contours which cannot be identified analytically, but the definition for the artificial forces and utility functions are expressed in continuous contour integrals which requires the analytical expression of the curve on which the integral will be taken. To provide a solution to  these type of calculations it is required to redefine these statements in discrete domain to achieve calculations with closed curves without analytical expressions.  \\ \newline
+As it is mentioned in the Section \ref{Objectives} part, the formation shapes will be simple closed contours which cannot be identified analytically, but the definition for the artificial forces and utility functions are expressed in continuous contour integrals which requires the analytical expression of the curve on which the integral will be taken. To provide a solution to  these type of calculations, it is required to redefine these statements in discrete domain to achieve calculations with closed curves without analytical expressions.  \\ \newline
 
 \textit{ 		1- Cauchy Winding Number:} \\ 
 Cauchy winding number of a curve in the plane around a given point is the number of times that curve travels counterclockwise around the point. This number is used to switch on/off some of the artificial forces while the agent is inside or outside of the formation shape. Suppose $C$ is the closed curve which is a set of points $z=(x,y)$ in the complex plane  and $z_i$ is a point to check whether it is inside of the curve, then the Caucy winding number is :
@@ -593,7 +594,7 @@ Function of $f(z)$ can be partitioned into real and complex parts as:
 u(x,y) = real(f(z))  \hspace{0.2cm} and \hspace{0.2cm} v(x,y) = imag(f(z))
 \end{equation}
 		
-partitioning as it mentioned in Equation \ref{contour_integral}
+partitioning this function as mentioned in Equation \ref{contour_integral}
 \begin{equation}
 \oint_C f(z)dz  = \oint_C u dx - v dy + i \oint_C u dy + v dx 
 \end{equation}
@@ -662,7 +663,7 @@ the discrete domain expression for Equation \ref{center_formation_ref} with poin
 where $z_{cx}$ and $z_{cy}$ are the $x$ and $y$ coordinates of the center of formation shape respectively.
 
 \textit{ 	4- Area of a Formation Shape} \\ 		
-Green's theorem can be used to calculate the area of a closed curve. According to this theorem the area of $D$ given by the double integral
+Green's theorem can be used to calculate the area of a closed curve. According to this theorem, the area of $D$ given by the double integral
 
 \begin{equation}
  A = \int\int_D dA
@@ -776,7 +777,9 @@ The equations for the attractive forces are defined as follows:
 F_{i,a} := \frac{k_a (1-n(C,\alpha X_i))}{l(C)} \oint_C(z-\alpha X_i)\norm{dz}
 \end{equation}
 
-where $k_a$ is the variable gain for the attractive forces. The representation of the attractive forces on agent $i$ on $z_i = (x_i, y_i)$ with the points of  $z_k = (x_k,y_k)$ of formation shape in the complex plane:
+where $k_a$ is the variable gain and $\alpha = \begin{bmatrix}
+1 & 0
+		\end{bmatrix}$. for the attractive forces. The representation of the attractive forces on agent $i$ on $z_i = (x_i, y_i)$ with the points of  $z_k = (x_k,y_k)$ of formation shape in the complex plane:
 
 \begin{align}
 \begin{split}
@@ -840,10 +843,10 @@ The equations for the intermember forces on the agent $i$ on $z_i = (x_i, y_i)$ 
 F_{i,m} = k_m \sum_{j=1, j\neq i}^{N}\frac{\alpha X_i - \alpha X_j}{(\norm{\alpha X_i - \alpha X_j})} \frac{1}{(\norm{\alpha X_i - \alpha X_j} - d_o)^2}
 \end{equation}
 			
-where $d_o$ is the total distance minimum distance between the agents which can be calculated with
+where $d_o$ is the total distance between the center of coverage circels of agents which can be calculated with
 
 \begin{equation}
- d_o = d_i + d_j
+ d_o = d_{c_i} + d_{c_j}
 \end{equation}
 			
 The force components in x,y coordinates respectively,
@@ -895,10 +898,12 @@ where $k_o$ is the variable gain for the transition forces and $d_{c_i}$ is the 
 			
 The representation of the obstacle forces on agent $i$ on $z_i = (x_i, y_i)$ with the points of  $z_{ok} = (x_{ok},y_{ok})$ of formation shape in the complex plane:
 			
-\begin{align*}
+\begin{align}
+\begin{split}
 & F_{iox} = k_o   \sum_{k=1}^{K} \frac{x_i -x_{ok}}{(\norm{\alpha X_i - z_{ok}} -d_{c_i})^4}\\
 & F_{ioy} = k_o   \sum_{k=1}^{K} \frac{y_i - y_{ok}}{(\norm{\alpha X_i - z_{ok}} -d_{c_i})^4}\\
-\end{align*}
+\end{split}
+\end{align}
 			
 where
 
@@ -959,7 +964,7 @@ Then using the condition 2 of the X-swarm definition, the following expression c
 
 This result provides an upper bound to the magnitude of the inter-member repulsion force in a X-Swarm.  
 		
-Theorem: Consider the agent $i$	outside of a desired formation shape in a X-swarm, if $\frac{k_a}{k_m} > \frac{N-1}{\gamma^3  l(C)}$, then the motion of member $i$ is towards to the center of the swarm. \newline
+Theorem: Consider the agent $i$	outside of a desired formation shape in an X-swarm, if $\frac{k_a}{k_m} > \frac{N-1}{\gamma^3  l(C)}$, then the motion of member $i$ is towards to the center of the swarm. \newline
 Proof: Choosing a Lyapunov function candidate for the agent $i$ as:
 
 \begin{equation}
@@ -990,7 +995,7 @@ and hence
 which proves the given theorem.  \newline
 
 \paragraph{Implementation of X-Swarm Theory}\hspace{0pt} \\		
-Two conditions to create a X-Swarm is to find two positive variables which satisfy the following inequalities
+Two conditions to create an X-Swarm is to find two positive variables which satisfy the following inequalities
 
 \begin{align}
 \begin{split}
@@ -1029,11 +1034,11 @@ On the other hand, the theorem related with the convergence of member agents of 
 \subsection{Shape Partitioning Methods}
 Shape partitioning methods have basically reduced down the formation control problem into two subproblems. The first part of the solution is to partition the desired formation shape into potential goal states according to the agent types to cover the desired formation shape homogenously. There are two different solutions to the shape partitioning problem which are presented in this thesis work, bubble packing method and randomized fractals method. The second part of the solution is the decision process of the agents to select these goal states continuously to minimize the total displacements of the agents while achieving the desired formation shape. During this decision process, the cost of reaching different goal states will be the main criteria for each agent. It is obvious that each agent will try to choose a goal state with minimum cost according to its position and the orientation in the environment. But the cases in which two or more agents are willing to reach the same goal point must be handled to optimize the overall utility of the swarm. 
 
-Shape partitioning methods have an approach to direct the agents to the goal states in which they have assigned instantly to minimize the total displacement, but it is important to keep the agents together in the swarm while moving on a trajectory towards the formation shape, to reduce the lost agent events described in Section \ref{LostAgents}. On the other hand, it is required to provide a collision avoidance between the agents and the obstacles while reaching the desired goal states. For these purposes, attractive forces which directs the agents to the center of the formation shape under X-swarm consideration and inter-member forces which avoids collisions between agents are added to the agents' control signal as an additive term. 
+Shape partitioning methods have an approach to direct the agents to the goal states in which they have assigned instantly to minimize the total displacement, but it is important to keep the agents together in the swarm while moving on a trajectory towards the formation shape, to reduce the lost agent events described in Section \ref{LostAgents}. On the other hand, it is required to provide a collision avoidance between the agents and the obstacles while reaching the desired goal states. For these purposes, attractive force components which directs the agents to the center of the formation shape under X-swarm consideration and inter-member force components which avoids collisions between agents are added to the agents' velocity setpoints as additive terms. 
 			
 \subsubsection{Determining the Potential Goal States} \label{Partitioning_ref}
 \paragraph{Bubble Packing Method} \hspace{0pt} \\				
-Bubble packing method is widely used in mesh generation problems. It basically depends on covering a curve, surface or a volume with a proper number of bubbles by packing them tightly which mimic a Voronoi diagram, from which a set of well-shaped Delaunay triangles and tetrahedra can be created by connecting the centers of the bubbles[27].  The algorithm places the bubbles with their initial conditions in the surface and apply them interbubble forces which imitates the Van der Waals forces between the moleculer bonds  to distrubute the bubbles homogenously. Here, the main idea is to generate a mesh for a surface with identical bubbles to mimic a regular Voronoi diagram with the vertices represented by the centers of these bubbles. On the other hand, adaptive population control  methods are developed to increase the number of bubbles to fill the gaps in the shape and to remove the excess bubbles which are overlapping with each other and the shape boundaries. 
+Bubble packing method is widely used in mesh generation problems. It basically depends on covering a curve, surface or a volume with a proper number of bubbles by packing them tightly which mimic a Voronoi diagram, from which a set of well-shaped Delaunay triangles and tetrahedra can be created by connecting the centers of the bubbles[27].  The algorithm places the bubbles with their initial conditions in the environment and apply them interbubble forces which imitates the Van der Waals forces between the moleculer bonds  to distrubute the bubbles homogenously. Here, the main idea is to generate a mesh for a surface with identical bubbles to mimic a regular Voronoi diagram with the vertices represented by the centers of these bubbles. On the other hand, adaptive population control  methods are developed to increase the number of bubbles to fill the gaps in the shape and to remove the excess bubbles which are overlapping with each other and the shape boundaries. 
 
 Since the numbers and the the radius of coverage circles which is defined at Section \ref{Artificial Forces Ref} for the agents are predetermined in our formation control problem, the general bubble meshing algorithm have to be adopted to meet the requirements for shape partitioning in formation control.  The basic approach is to represent the agents in the swarm as bubbles with the radius of  their coverage circles and create a mesh by using these bubbles. \newline
 			
@@ -1049,8 +1054,7 @@ Initialize free configuration space $C_{free}$ as the desired formation shape \n
 *Calculate the free configuration space,$C_{free}$, for bubble $i$\;
 *Put the Bubble $i$ to the closest point to  formation center  $z_c$  in the free configuration space\;
 *Add the agent $i$ into the configuration space shape as an obstacle \;
-}
-				
+}\		
 \caption{INITIALIZE$\_$BUBBLE$\_$POSITIONS}
 \end{algorithm}
 		
@@ -1072,7 +1076,7 @@ al^3 + bl^2 + cl + d &\mbox{ when 0 $\leq$ l $\leq$ $l_0$} \\
 \end{array} \right.
 \end{equation}
 
-where $l$ is the distance between the centers of the related bubbles and $a,b,c,d,l_0$ are the variables to tune the force acting on the bubbles. 
+where $l$ is the distance between the centers of the related bubbles and $a,b,c,d$ and $l_0$ are the variables to tune the force acting on the bubbles. 
 
 \begin{figure}[H]
 \caption{Interbubble Forces}
@@ -1086,10 +1090,10 @@ The shape repulsive forces have the same characteristics with the repulsive arti
 f_r(X_i) := \oint_C \left[\frac{\alpha X_i - z}{\norm{\alpha X_i - z}^3}\right] \norm{dz}
 \end{equation}
 
-where $k_r$ is the variable gain for the repulsive forces. The representation of the repulsive forces on agent $i$ on $z_i = (x_i, y_i)$ with the points of  $z_k = (x_k,y_k)$ of formation shape in the complex plane:
+where $k_r$ is the variable gain for the shape repulsive forces. The representation of the shpae repulsive forces on agent $i$ on $z_i = (x_i, y_i)$ with the points of  $z_k = (x_k,y_k)$ of formation shape in the complex plane:
 
 \begin{equation}
-f_r(X_i) = \sum_{k=1}^{K} \frac{Z_i - Z_k}{\norm{\alpha X_i - z_k}^3}
+f_r(X_i) = \sum_{k=1}^{K} \frac{\alpha X_i - Z_k}{\norm{\alpha X_i - z_k}^3}
 \end{equation}
 				
 where
@@ -1100,7 +1104,7 @@ where
 						
 
 	
-The bubbles are distributed homogenously under the influence of these two forces when they get an equilibrium state in which the total net forces acting on individual bubbles reaches zero. The final equilibrium states of the bubbles determines the potential goal states of the agents in the swarm to cover the formation shape. 
+The bubbles are distributed homogenously under the influence of these two forces when they get an equilibrium state in which the total net forces acting on individual bubbles reaches zero. The final equilibrium states of the bubbles determine the potential goal states of the agents in the swarm to cover the formation shape. 
 
 \begin{figure}[H]
 \caption{Bubble Packing Algorithm}
@@ -1115,13 +1119,13 @@ Randomized fractals methods are used to cover surfaces or volumes randomly with 
 A_i = \frac{A}{\zeta(c,N)(i+N)^c}
 \end{equation}
 
-where $A$ is the total area to cover and $A_i$ is the area of the $i^{th}$ fractal. The parameters of $c$ and $N$ can be chosen to implement different changes on the fractals areas with the increasing number of iterations with $c>1$ and $N>0$. Here  $\zeta$ is the Hurwitz function defiend by
+where $A$ is the total area to cover and $A_i$ is the area of the $i^{th}$ fractal. The parameters of $c$ and $N$ can be chosen to implement different changes on the fractals' areas with the increasing number of iterations with $c>1$ and $N>0$. Here  $\zeta$ is the Hurwitz function defiend by
 
 \begin{equation}
 \zeta(c,N) = \sum_{i=0}^{\infty} \frac{1}{(i+N)^c}
 \end{equation}
 
-It is possble to write, 
+It is possible to write, 
 	
 \begin{equation}
 \sum_{i=0}^{\infty}A_i = \sum_{i = 0}^{\infty}\left(\frac{A}{\zeta(c,N)(i+N)^c}\right)
@@ -1150,7 +1154,7 @@ Initialize free configuration space $C_{free}$ as the desired formation shape \n
 }{
 *Break and warn the operator to increase the size of formation shape
 }
-}												
+}\												
 \caption{RANDOMIZED$\_$FRACTALS$\_$ALGORITHM} 
 \end{algorithm}
 		
@@ -1171,7 +1175,7 @@ P_1, P_2, .. P_t \end{Bmatrix}$. Configuration for agent $i$ can be described wi
 C(R_i) = C_{free}(R_i,S) + C_{forb}(R_i,S)
 \end{equation}
 
-If the forbidden space is calculated with Minkowski Sum method, free configuration space can be derived simply by extracting the forbidden space from the environment. Let a single obstacle is described with a point set of $S_1$ and the agent is described with a point set of $S_2$. The Minkowski sum of these two sets $S_1 \subset R^2$ and $S_2 \subset R^2$ can be calculated with the following,
+If the forbidden space is calculated with the help of Minkowski Sum method, free configuration space can be derived simply by extracting the forbidden space from the environment itself. Let a single obstacle is described with a point set of $S_1$ and the agent is described with a point set of $S_2$. The Minkowski sum of these two sets $S_1 \subset R^2$ and $S_2 \subset R^2$ can be calculated with the following,
 	
 \begin{equation}
 S_1 \oplus S_2 := \begin{Bmatrix}
@@ -1187,10 +1191,10 @@ where $p+q$ denotes the vector sum of the vectors $p$ and $q$.
 \includegraphics[scale = 0.4]{Forbidden}
 \end{figure}
 	
-Forbidden space for agent $i$, $C_{forb}(R_i, S)$ is the sum of the forbidden spaces calculated for each obstacle in the environment. 
+Forbidden space for agent $i$, $C_{forb}(R_i, S)$, is the sum of the forbidden spaces calculated for each obstacle in the environment. 
 	
 \paragraph{Visibility Graphs and Dijkstra$'$s Algorihtm}\hspace{0pt} \\
-It is obvious that the shortest path between two points in the environment must lie on the free configuration space, $C_{free}$ for each agent to avoid collisions with the obstacle . A constraint for the shortest path is given as follows[30] : 
+It is obvious that the shortest path between two points in the environment must lie on the free configuration space, $C_{free}$, for each agent to avoid collisions with the obstacles . A constraint for the shortest path is given as follows[30] : 
 
 \begin{displayquote}
 The shortest path between $p_{start}$ and $p_{goal}$ among a set $S$ of augmented polygonal obstacles consists of the arcs of the visibility graph $\gamma_{vis}(S^*)$ where $S^* := S \cup \begin{Bmatrix}
@@ -1198,7 +1202,7 @@ p_{start}, p_{goal}
 \end{Bmatrix}$
 \end{displayquote}
 
-A visibility graph,$\gamma_{vis}(S^*)$ , is a graph which is set of interior nodes representing the vertices of the set of obstacles, $S$, in the environment and edges which represents visible (which are not crossing and interior region of an obstacel) connections between these nodes. 
+A visibility graph,$\gamma_{vis}(S^*)$ , is a graph which is set of interior nodes representing the vertices of the set of obstacles, $S$, in the environment and edges which represents visible (which are not crossing and interior region of an obstacle) connections between these nodes. 
 
 Consider set of obstacles in the environment is augmented with the Minkowski Sums. Let these set of augmented polygonal obstacles represented with $S_i \subset S$. 
 
@@ -1216,7 +1220,7 @@ Algorithm to calculate the visibility graph of $S^*$,
 Initialize a graph $\gamma = (V,E)$ where $V$ is the set of al vertices of the polygons in $S$ and $E = \oslash$ 
 \For{<all vertices $v \subset V$>}
 {		
-W = VISIBLE$\_$VERTICES($v$,S)\;}
+W = VISIBLE$\_$VERTICES($v$,S)\;}\
 \caption{VISIBILITY$\_$GRAPH}
 \end{algorithm}
 
@@ -1227,7 +1231,7 @@ where $VISIBLE$\_$VERTICES(v,S)$ algorithm checks whether line segments drawn fr
 \KwResult{The shortest collision-free path connecting $p_{start}$ and $p_{goal}$}
 * Assign $\gamma$ = VISIBILITY$\_$GRAPH$(S^*)$ \newline
 * Assign each arc $(v,w)$ in $\gamma_{vis}$ a weight, which is the Euclidian length of segment $vw$ \newline
-* Use Dijkstra's algorithm to compute a shortest path between $p_{start}$ and $p_{goal}$ in $\gamma_{vis}$
+* Use Dijkstra's algorithm to compute a shortest path between $p_{start}$ and $p_{goal}$ in $\gamma_{vis}$ \newline
 \caption{SHORTEST$\_$PATH}
 \end{algorithm}
 	
@@ -1248,7 +1252,7 @@ Q:= The set of all vertices $v \subset \gamma_{vis}$ \;
 {
 u:= Node in Q with smallest distance to $source$\_$ node$\;
 remove u from Q\;
-\For{<each neighbor v of u>}
+\For{<Each Neighbor v of u>}
 {
 alt:= Distance[u] + Cost Between u and v nodes\;
 \If{alt<Distance[v]}
@@ -1297,8 +1301,7 @@ Label 5 \;
 From elements remaining in flagged rows and unflagged rows, determine the element which has smallest value and assign this value to $\gamma$. Subtract $\gamma$  from every unflagged element and add  $\gamma$ to every element that has been flagged twice.
      
 Label6 \;
-Goto Label3 until full solution has been achieved. \newline
-     
+Goto Label3 until full solution has been achieved. \newline    
 \caption{HUNGARIAN ALGORITHM}
 \end{algorithm}
 
@@ -1318,7 +1321,7 @@ D = \left\{ \begin{array}{rl}
 \end{array} \right.
 \end{equation}
 	
-and $\gamma _i$ represents the degree, or the number of neighboring nodes connected to the $i^{th}$ interior node, and $n$ represents the total number of interior nodes, i.e. the number of bubbles or fractals. It is obvious that the topological mesh irregularity vanishes when all nodes have $D$ neighbors, but it is almost not possible in practical application. 
+and $\gamma _i$ represents the degree, or the number of neighboring nodes connected to the $i^{th}$ interior node, and $n$ represents the total number of interior nodes, i.e. the number of bubbles or fractals. It is obvious that the topological mesh irregularity vanishes when all nodes have $D$ neighbors, but it is almost not possible in practical applications. 
 	
 \begin{figure}[H]
 \caption{A Node with 6 Neighbors}
@@ -1350,7 +1353,7 @@ and $m$ represents the number of nodes, $r_i$ is the radii of inscribed circle o
 \end{figure}
 	
 \subsection{Control System Design for Individual Agents}\hspace{0pt} \\
-Shape partitioning methods will provide the goal states for a desired formation shape and agents will be assigned to those goal states to minimize the overall energy consumption of the swarm. A control system which will guide the agents to reach these goal states must be designed for each agent individually. Since the environment is dynamically changing with lots of  mobile agents, it is very probable to have different assignments to these goal states at each iteration of formation control. On the other hand, the collision with the obstacles and the other agents at the environment must be prevented due the requirements presented in Section \ref{Objectives}. The control system must react to these dynamic requests. For these purposes, a velocity controller with a large bandwith is designed at the inner loop of the control system and the outer loop is composed with a velocity setpoint generator. The block diagram for the proposed controller structure is presented in Figure \ref{Controller_ref}.
+Shape partitioning methods will provide the goal states for a desired formation shape and agents will be assigned to those goal states to minimize the total displacements of the agents in the swarm. A control system which will guide the agents to reach these goal states must be designed for each agent individually. Since the environment is dynamically changing with lots of  mobile agents, it is very probable to have different assignments to these goal states at each iteration of formation control. On the other hand, the collision with the obstacles and the other agents at the environment must be prevented due the requirements presented in Section \ref{Objectives}. The control system must react to these dynamic requests. For these purposes, a velocity controller with a large bandwith is designed at the inner loop of the control system and the outer loop is composed with a velocity setpoint generator. The block diagram for the proposed controller structure is presented in Figure \ref{Controller_ref}.
 
 \begin{figure}[H]
 \caption{General Scheme of the Contol System} \label{Controller_ref}
@@ -1366,7 +1369,7 @@ Velocity setpoint generator provides instant setpoints for the inner loop based 
 \includegraphics[scale = 0.50]{bearing}
 \end{figure}
 
-The inner loop tis designed to track the velocity setpoint provided by the generator and it has a state feedback structure. The gains for the feedback states are calculated with an LQR controller. A simple mass, damper type second order linear system is used to provide a model for the controller. The translational friction force is assumed to be linear with the velocity of each agent. Different mass and friction coefficients for heterogenous mobile robots are used in control system design. To track the desired velocity setpoint, the model of the system is augmented with an artificial error state $e$,
+The inner loop is designed to track the velocity setpoint provided by the generator and additive terms and it has a state feedback structure. The gains for the feedback states are calculated with an LQR controller. A simple mass, damper type second order linear system is used to provide a model for the controller. The translational friction force is assumed to be linear with the velocity of each agent. Different mass and friction coefficients for heterogenous mobile robots are used in control system design. To track the desired velocity setpoint, the model of the system is augmented with an artificial error state $e$,
 
 \begin{equation} \label{dynamic_system}
 \begin{bmatrix}
@@ -1434,4 +1437,4 @@ The error between the reference and the velocity feedback is integrated and mult
 \includegraphics[scale = 0.40]{step_resp}
 \end{figure}
 
-According to the Figure \ref{Stepresp}, the settling time for the inner loop is around 0.5 seconds for a step input. This response characteristics is important since the system cannot react to the setpoints changing faster than 0.5 seconds, so the formation control loops in which the new goal state assignments are handled must be executed with 2Hz frequency.
+According to the Figure \ref{Stepresp}, the settling time for the inner loop is around 0.5 seconds for a step input. This response characteristics is important since the system cannot react to the setpoints changing faster than 0.5 seconds approximately, so the formation control loops in which the new goal state assignments are handled must not be executed with a frequency greater than 2Hz.
