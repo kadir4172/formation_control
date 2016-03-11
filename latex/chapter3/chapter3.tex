@@ -1352,7 +1352,7 @@ and $m$ represents the number of nodes, $r_i$ is the radii of inscribed circle o
 \includegraphics[scale = 0.70]{voronoi2}
 \end{figure}
 	
-\subsection{Control System Design for Individual Agents}\hspace{0pt} \\
+\subsection{Control System Design for Individual Agents}\hspace{0pt}\label{lqr_design}  \\ 
 Shape partitioning methods will provide the goal states for a desired formation shape and agents will be assigned to those goal states to minimize the total displacements of the agents in the swarm. A control system which will guide the agents to reach these goal states must be designed for each agent individually. Since the environment is dynamically changing with lots of  mobile agents, it is very probable to have different assignments to these goal states at each iteration of formation control. On the other hand, the collision with the obstacles and the other agents at the environment must be prevented due the requirements presented in Section \ref{Objectives}. The control system must react to these dynamic requests. For these purposes, a velocity controller with a large bandwith is designed at the inner loop of the control system and the outer loop is composed with a velocity setpoint generator. The block diagram for the proposed controller structure is presented in Figure \ref{Controller_ref}.
 
 \begin{figure}[H]
