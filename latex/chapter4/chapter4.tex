@@ -74,7 +74,7 @@ The agents which are not directly get into trilateration process with the positi
 	
 \begin{figure}[H]
 \caption{Total Error on Position Data with Respect to Ranks} \label{cumulative_effect}
-\centerline{\includegraphics[scale = 0.4]{Rank_vs_Error}}
+\centerline{\includegraphics[scale = 0.4]{rank_vs_error}}
 \end{figure} 
 	
 The state propogation period which is discussed in Section-xx is determined as 2Hz as equal to the main system frequency since the new position datas for the formation control system are required to be determined with this rate. 	As discussed in Section-xx, a localization timer is proposed to handle the DSDV algorithm and trilateration process which will provide a greater execution period than the propogation process of the states with the help of inertial measurements. It is obvious that the state variables will be drifting with the increasing time because of the measurement and process noise in propogation process unless they are not corrected with the external measurements, so it is possible to determine a minimum execution period of this trilateration process to satisfy an error band in the state variables. 
