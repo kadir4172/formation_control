@@ -352,7 +352,7 @@ When the link between B and D breaks, node B gets no transmission from the D and
 	
 DSDV is implementing an algorithm to find the shortest paths between the internal nodes of a given directed graph. The costs for each shortest path are calculated with the help of the weight of edges in the graph. Since our aim is to find the closest position beacon which has the minimum number of hops, the weight for each edge in the graph must be represented with the same unit size and the directions of the edges are negligible. 
 
-\subsection{Clusters}
+\subsection{Clusters} \labe{Clusters}
 Since there are limited number of position beacons in a swarm, it will be appropriate to cluster the agents around these position agents to minimize the problem to the subproblems in which every one of them there are only one position beacon and the agents which are assigned to that cluster. The error on the trilateration process is expected to be increasing at the lower layers of the process illustrated in Figure -xx because of the cumulative effects of errors added to the position and velocity data of the agents in each layer. Thus, the policy for the assignment of the agents to the clusters must be the number of hops to the position beacons rather than the physical distances. Since DSDV algorithm has a structure storing the number of counts to each route in the tables, this information can be used to determine each agents' clusters in the swarm. 
 
 \begin{figure}[H]
@@ -505,7 +505,7 @@ The details of the methodology for dynamical formation control with heterogenous
 		
 \subsection{Potential Field Based Approach}
 
-\subsubsection{Artificial Forces Method} \label{Artificial Forces Ref}
+\subsubsection{Artificial Forces Method} \label{Artificial Forces Ref} \label{Artificial_forces_ref}
 Artificial forces method implements potential fields over each agent arised from the interactions between agents, formation shape and environment. The positions of the agents at the formation shape  are determined with local equilibrium of the swarm in which every agent is at balance under the total force acting from the environment. There are basically three different kinds of artificial forces named intermember forces representing the forces created by the other agents in the swarm to achieve collision avoidance, the attractive forces representing the forces created by the desired formation shape to attract the agent into the shape and repulsive forces created by the formation shape to keep agents inside the desired formation shape. It is possible to augment these type of forces for specific tasks and objectives, e.g. obstacle forces created by the obstacles in the environment can be implemented to achieve obstacle avoidance.
 Since the method to calculate the artificial forces involves contour integrals, it will be useful to give mathematical definition of contour integrals;
 		

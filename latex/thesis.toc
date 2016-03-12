@@ -65,17 +65,17 @@
 \contentsline {subsection}{\numberline {3.2.3}Mesh Quality Measurement}{84}{subsection.3.2.3}
 \contentsline {subsection}{\numberline {3.2.4}Control System Design for Individual Agents}{86}{subsection.3.2.4}
 \contentsline {chapter}{\numberline {4}\MakeUppercase {SIMULATION ENVIRONMENT $\&$ RESULTS}}{91}{chapter.4}
-\contentsline {subsection}{\numberline {4.0.5}Simulation Environment}{91}{subsection.4.0.5}
-\contentsline {subsection}{\numberline {4.0.6}LPS Design}{93}{subsection.4.0.6}
-\contentsline {subsection}{\numberline {4.0.7}FORMATION CONTROL SYSTEM}{100}{subsection.4.0.7}
-\contentsline {subsubsection}{\numberline {4.0.7.1}Mesh Qualities}{100}{subsubsection.4.0.7.1}
-\contentsline {subsubsection}{\numberline {4.0.7.2}Total Energy Consumption}{106}{subsubsection.4.0.7.2}
-\contentsline {paragraph}{Formation Shape 1}{107}{section*.20}
-\contentsline {paragraph}{Formation Shape 2}{110}{section*.21}
-\contentsline {subsubsection}{\numberline {4.0.7.3}Settling Time}{114}{subsubsection.4.0.7.3}
-\contentsline {subsubsection}{\numberline {4.0.7.4}Evaluation}{115}{subsubsection.4.0.7.4}
-\contentsline {chapter}{\numberline {5}\MakeUppercase {Next Chapter}}{123}{chapter.5}
-\contentsline {leads}{\numberline {}\uppercase {REFERENCES}}{125}{chapter*.22}
-\contentsline {nodots}{\numberline {}APPENDICES}{125}{chapter*.22}
-\contentsline {chapter}{\numberline {A}\MakeUppercase {Appendix Name}}{127}{appendix.A}
-\contentsline {leads}{\numberline {}CURRICULUM VITAE}{129}{appendix*.23}
+\contentsline {section}{\numberline {4.1}Simulation Environment}{91}{section.4.1}
+\contentsline {section}{\numberline {4.2}LPS Design}{94}{section.4.2}
+\contentsline {section}{\numberline {4.3}FORMATION CONTROL SYSTEM}{102}{section.4.3}
+\contentsline {subsection}{\numberline {4.3.1}Mesh Qualities}{102}{subsection.4.3.1}
+\contentsline {subsection}{\numberline {4.3.2}Total Energy Consumption}{108}{subsection.4.3.2}
+\contentsline {subsubsection}{\numberline {4.3.2.1}Shape 1}{109}{subsubsection.4.3.2.1}
+\contentsline {subsubsection}{\numberline {4.3.2.2}Shape 2}{112}{subsubsection.4.3.2.2}
+\contentsline {subsection}{\numberline {4.3.3}Settling Time}{116}{subsection.4.3.3}
+\contentsline {subsection}{\numberline {4.3.4}Evaluation}{117}{subsection.4.3.4}
+\contentsline {chapter}{\numberline {5}\MakeUppercase {Next Chapter}}{125}{chapter.5}
+\contentsline {leads}{\numberline {}\uppercase {REFERENCES}}{127}{chapter*.20}
+\contentsline {nodots}{\numberline {}APPENDICES}{127}{chapter*.20}
+\contentsline {chapter}{\numberline {A}\MakeUppercase {Appendix Name}}{129}{appendix.A}
+\contentsline {leads}{\numberline {}CURRICULUM VITAE}{131}{appendix*.21}

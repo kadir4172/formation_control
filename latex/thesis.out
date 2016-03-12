@@ -55,17 +55,17 @@
 \BOOKMARK [2][-]{subsection.3.2.3}{Mesh Quality Measurement}{section.3.2}% 55
 \BOOKMARK [2][-]{subsection.3.2.4}{Control System Design for Individual Agents}{section.3.2}% 56
 \BOOKMARK [0][-]{chapter.4}{SIMULATION ENVIRONMENT \046 RESULTS}{}% 57
-\BOOKMARK [1][-]{subsection.4.0.5}{Simulation Environment}{chapter.4}% 58
-\BOOKMARK [2][-]{subsection.4.0.6}{LPS Design}{subsection.4.0.5}% 59
-\BOOKMARK [2][-]{subsection.4.0.7}{FORMATION CONTROL SYSTEM}{subsection.4.0.5}% 60
-\BOOKMARK [3][-]{subsubsection.4.0.7.1}{Mesh Qualities}{subsection.4.0.7}% 61
-\BOOKMARK [3][-]{subsubsection.4.0.7.2}{Total Energy Consumption}{subsection.4.0.7}% 62
-\BOOKMARK [4][-]{section*.20}{Formation Shape 1}{subsubsection.4.0.7.2}% 63
-\BOOKMARK [4][-]{section*.21}{Formation Shape 2}{subsubsection.4.0.7.2}% 64
-\BOOKMARK [3][-]{subsubsection.4.0.7.3}{Settling Time}{subsection.4.0.7}% 65
-\BOOKMARK [3][-]{subsubsection.4.0.7.4}{Evaluation}{subsection.4.0.7}% 66
+\BOOKMARK [1][-]{section.4.1}{Simulation Environment}{chapter.4}% 58
+\BOOKMARK [1][-]{section.4.2}{LPS Design}{chapter.4}% 59
+\BOOKMARK [1][-]{section.4.3}{FORMATION CONTROL SYSTEM}{chapter.4}% 60
+\BOOKMARK [2][-]{subsection.4.3.1}{Mesh Qualities}{section.4.3}% 61
+\BOOKMARK [2][-]{subsection.4.3.2}{Total Energy Consumption}{section.4.3}% 62
+\BOOKMARK [3][-]{subsubsection.4.3.2.1}{Shape 1}{subsection.4.3.2}% 63
+\BOOKMARK [3][-]{subsubsection.4.3.2.2}{Shape 2}{subsection.4.3.2}% 64
+\BOOKMARK [2][-]{subsection.4.3.3}{Settling Time}{section.4.3}% 65
+\BOOKMARK [2][-]{subsection.4.3.4}{Evaluation}{section.4.3}% 66
 \BOOKMARK [0][-]{chapter.5}{Next Chapter}{}% 67
-\BOOKMARK [0][-]{chapter*.22}{REFERENCES}{}% 68
-\BOOKMARK [0][-]{chapter*.22}{APPENDICES}{}% 69
+\BOOKMARK [0][-]{chapter*.20}{REFERENCES}{}% 68
+\BOOKMARK [0][-]{chapter*.20}{APPENDICES}{}% 69
 \BOOKMARK [0][-]{appendix.A}{Appendix Name}{}% 70
-\BOOKMARK [0][-]{appendix*.23}{CURRICULUM VITAE}{}% 71
+\BOOKMARK [0][-]{appendix*.21}{CURRICULUM VITAE}{}% 71
