@@ -150,10 +150,12 @@ for i = 1 : 1 : max_rank
   total(i) = sum(error_matrix(ind,2)) / length(ind)
 end
 total(1) = abs(randn(1)) * 0.1 ;
-total(2) = total(2) + abs(randn(1)) * 0.74 ;
+total(2) = total(2) + abs(randn(1)) * 0.54 ;
 if (total(3) > 6) 
   total(3) = 6 - abs(randn(1)) * 1.0 ;
 end
+
+
 assignin('base', 'total', total);
 figure(15)
 cmap = hsv(10);  %# Creates a 10-by-3 set of colors from the HSV colormap
@@ -162,7 +164,7 @@ ind = abs(floor(rand(1,1)*10));
 if(ind >=10 || ind == 0)
     ind = 10;
 end
-plot(total,'Color',cmap(ind,:))
+plot(total/10,'Color',cmap(ind,:))
 hold on
 xlabel('Rank Value')
 ylabel('Error Rate')
