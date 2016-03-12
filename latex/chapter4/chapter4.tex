@@ -22,7 +22,7 @@ Block diagram of the simulation environment is illustrated in Figure \ref{simula
 \begin{figure}[H]
 \caption{Simulation Environment} \label{simulation_env_ref}
 \centering
-\includegraphics[scale = 0.50]{environment}
+\includegraphics[scale = 0.45]{environment}
 \end{figure}
     
 Gazebo is an open source multi robot simulator developed by OSRF(Open Source Robotics Foundation). It has multiple physics engines; ODE (Open Dynamics Engine), Bullet, DART(Dynamic Animation and Robotics Toolkit) and Simbody. It can execute simulations with multiple agents in an environment that is fully created by the user. The dynamics and the physical properties of the robots are determined by the user. It can be integrated with Robot Operating System(ROS)
@@ -99,6 +99,8 @@ It is clear that the total error norm on position datas are decreased dramatical
 The performance of the LPS design is tested in simulations with different conditions in which swarm is propogating to a desired formation shape or agents are keeping their positions in dynamically changing formation shapes.  In both cases, it is observed that the position datas of the agents are drifted with an increasing error between two  sequential localization process. A sample case for this situation is illustrated in Figure \ref{hatali_pos_ref} and Figure \ref{duzgun_pos_ref}
 
 \begin{figure}[H]
+\centering
+\captionsetup{format=hang,justification=centerfirst}
 \caption{Positions of the Agents Before Localization Process \\
 (Red Circles: Estimated Positions ; Blue Circles: Real Positions)} \label{hatali_pos_ref}
 \centerline{
@@ -107,28 +109,32 @@ The performance of the LPS design is tested in simulations with different condit
 \end{figure}
 
 \begin{figure}[H]
+\centering
+\captionsetup{format=hang,justification=centerfirst}
 \caption{Positions of the Agents After Localization Process \\
 (Red Circles: Estimated Positions ; Blue Circles: Real Positions)} \label{duzgun_pos_ref}
 \centerline{\includegraphics[scale = 0.27]{Pozisyon-1-Duzeltilmis}}
 \end{figure} 
 		
-Handling procedures of the lost agents are presented in Section-xx. Agents which do not have three neighbors around itselves will get into the 'Lost' mode, and if  they miss three localization process they will get into 'Come Home' mode. When an agent have 'Come Home' mode, it will try to reach the center of formation to increase the possibility to meet some neighbors to localize itself as discussed in Section-xx. A simulation result in which two agents cannot have three neighbors around themselves and get into 'Lost' mode and 'Come Home' modes  is presented in Figure -xx and Figure-xx respectively.
+Handling procedures of the lost agents are presented in Section \ref{LostAgents}. Agents which do not have at least three neighbors around itselves will get into the 'Lost' mode, and if  they miss three localization process they will get into 'Come Home' mode. When an agent is in 'Come Home' mode, it will try to reach the center of formation to increase the possibility to meet some neighbors to localize itself as discussed in Section \ref{LostAgents}. A simulation result in which two agents cannot have three neighbors around themselves and get into 'Lost' mode and 'Come Home' modes  is presented in Figure -xx and Figure-xx respectively.
 		
 \begin{figure}[H]
 \caption{Agents will be in 'Lost' Mode When They Do Not Have 3 Neighbors}
-\centerline{\includegraphics[scale = 0.30]{Lost-2-2}}
+\centering
+\centerline{\includegraphics[scale = 0.27]{Lost-2-2}}
 \end{figure} 
 
 \begin{figure}[H]
+\captionsetup{format=hang,justification=centerfirst}
 \caption{Agents will be in 'Come Home' Mode When They Miss Localization Process for 3 Times}
-\centerline{\includegraphics[scale = 0.30]{Lost-2-3}}
+\centerline{\includegraphics[scale = 0.27]{Lost-2-3}}
 \end{figure} 		
 		
 \section{FORMATION CONTROL SYSTEM}
-Three dıfferent approaches of which the details are presented is Section-xx are evaluated according to their settling times, mesh qualities and energy consumptions. 
+Three different approaches of which the details are presented in Section \ref{formation_control_ref} are evaluated according to their settling times, mesh qualities and total displacements. 
 
 \subsection{Mesh Qualities} 
-Mesh qualities is a measure of how the agents homogenously distributed while covering the desired formation shape. Basically, two different types of quality measurents defined in Section-xx are used to evaluate the performance of the formation control methods, topological mesh irregularity $\epsilon_t$ and geometrical mesh irregularity $\epsilon_g$ . Monte Carlo simulations with 1000 iterations are handled for the same formations shapes with different initial conditions of the agents in the environment. Sample outputs for three different types of formation control algorithms are illustrated in the following Figures
+Mesh quality is a measure of how the agents homogenously distributed while covering the desired formation shape. Basically, two different types of quality measurements defined in Section \ref{mesh_quality_ref} are used to evaluate the performance of the formation control methods, topological mesh irregularity $\epsilon_t$ and geometrical mesh irregularity $\epsilon_g$ . Monte Carlo simulations with 1000 iterations are handled for the same formation shapes with different initial conditions of the agents in the environment. Sample outputs for three different types of formation control algorithms are illustrated in the following figures
   
 \begin{figure}[H]
 \caption{Formation Shape 1 with Artificial Forces Methods:$\epsilon_t = 2.1$ and $\epsilon_g = 0.32$}
@@ -160,41 +166,41 @@ Mesh qualities is a measure of how the agents homogenously distributed while cov
 \centerline{\includegraphics[scale = 0.65]{Randomized_Fractals_Mesh_2}}
 \end{figure} 	
 
-It is obvious that Randomized Fractals method have the worst mesh performance due the its randomized assignment of goal states into the formation shape. Bubble Packing and Artificial Forces methods give similar results since they have an analogy in their approaches of implementing inter member/bubble forces which makes the agents distributed in the formation shape more homogenously. Artificial force method applies this intermember forces directly to the agents in real time while Bubble Packing method use this kind of force on artificial bubbles to partition the shape into goal states. Monte Carlo simulations with 1000 iterations for both formation shapes are handled and the results are illustrated in Figure -x1 -x2 . Randomized Fractals method have greater mean values for both topological and geometrical mesh irregularities as expected.  Bubble Packing and Artificial Forces methods have similar performances on Mesh quality.
+It is obvious that Randomized Fractals method have the worst mesh performance due the its randomized assignment of goal states into the formation shape. Bubble Packing and Artificial Forces methods give similar results since they have an analogy in their approaches of implementing inter member/bubble forces which makes the agents distributed in the formation shape more homogenously. Artificial force method applies this intermember forces directly to the agents in formation control while Bubble Packing method use this kind of force on artificial bubbles to partition the shape into goal states. Monte Carlo simulations with 1000 iterations for both formation shapes are handled and the results are illustrated in Figure \ref{topologic_ref_1}; \ref{geometric_ref_1}; \ref{topologic_ref_2}; \ref{geometric_ref_2} . Randomized Fractals method have greater mean values for both topological and geometrical mesh irregularities as expected.  Bubble Packing and Artificial Forces methods have similar performances on mesh quality.
 		
 \begin{figure}[H]
-\caption{Formation Shape 1 Topological Mesh Irregularities:}
-\centerline{\includegraphics[scale = 0.45]{Topological_Irr_1}}
+\caption{Formation Shape 1 Topological Mesh Irregularities:} \label{topologic_ref_1}
+\centerline{\includegraphics[scale = 0.40]{Topological_Irr_1}}
 \end{figure} 	
 		
 \begin{figure}[H]
-\caption{Formation Shape 1 Geometrical Mesh Irregularities:}
-\centerline{\includegraphics[scale = 0.45]{Geometrical_Irr_1}}
+\caption{Formation Shape 1 Geometrical Mesh Irregularities:} \label{geometric_ref_1}
+\centerline{\includegraphics[scale = 0.40]{Geometrical_Irr_1}}
 \end{figure} 	
 
 \begin{figure}[H]
-\caption{Formation Shape 2 Topological Mesh Irregularities:}
-\centerline{\includegraphics[scale = 0.45]{Topological_Irr_2}}
+\caption{Formation Shape 2 Topological Mesh Irregularities:} \label{topologic_ref_2}
+\centerline{\includegraphics[scale = 0.40]{Topological_Irr_2}}
 \end{figure} 	
 				
 \begin{figure}[H]
-\caption{Formation Shape 2 Geometrical Mesh Irregularities:}
-\centerline{\includegraphics[scale = 0.45]{Geometrical_Irr_2}}
+\caption{Formation Shape 2 Geometrical Mesh Irregularities:} \label{geometric_ref_2}
+\centerline{\includegraphics[scale = 0.40]{Geometrical_Irr_2}}
 \end{figure} 	
 		
-\subsection{Total Energy Consumption} 
+\subsection{Total Displacement of the Agents}  \label{total_dist_ref}
 		
-In this thesis work, it is aimed to minimize the overall energy consumption of the swarm while getting the desired formation shape. Here the energy consumption of the swarm is defined as the sum of the consumed energy by the individual agents. Monte Carlo simulations with 1000 iterations are handled for the same formations shapes with different same initial conditions of the agents in the environment. Trajectories of the agents are recorded from the same initial positions until the goal states for three different types of formation control systems. Total energy consumption of the swarm is measured with total position displacements of the agents while getting the desired formation shapes. Sample outputs for three different types of formation control algorithms are illustrated in the following Figures.
+In this thesis work, it is aimed to minimize the overall displacement of the agents in the swarm while getting the desired formation shape. Here the main approach is to reduce down the expected energy consumption of the swarm by decreasing the required displacements. Monte Carlo simulations with 1000 iterations are handled for the same formations shapes with different initial conditions of the agents in the environment. Trajectories of the agents are recorded from the initial positions to the goal states for three different types of formation control systems. Sample outputs for three different types of formation control algorithms are illustrated in the following figures.
 		
 \subsubsection{Shape 1}\hspace{0pt} \\
 		
 \begin{figure}[H]
-\caption{Formation Shape 1 in MATLAB environment:}
+\caption{Formation Shape 1 in MATLAB environment}
 \centerline{\includegraphics[scale = 0.40]{Trajectories_Formation_Shape_1_2}}
 \end{figure} 	
 			
 \begin{figure}[H]
-\caption{Formation Shape 1 in Gazebo environment:}
+\caption{Formation Shape 1 in Gazebo environment}
 \centerline{\includegraphics[scale = 0.35]{Trajectories_Formation_Shape_1_1}}
 \end{figure} 	
 		
@@ -213,25 +219,25 @@ In this thesis work, it is aimed to minimize the overall energy consumption of t
 \centerline{\includegraphics[scale = 0.35]{Randomized_Trajectories_1}}
 \end{figure} 	
 			
-It is obvious that the trajectories of the agents are more chaotic and complex in the Artificial Forces method according to the other two solutions. This is because the agents are under the effect of a total force which is instantly changing both amplitude and direction with the local interactions in the environment. According to the X-Swarm theory which is described in Section-xx, all agents will move towards the center of the formation shape if the X Swarm conditions are satisfied by the agents. So the only force component which provides the distribution of the agents in the formation shape homogenously is the intermember forces which is dynamically changing so much with the local instant neighbors of the agents in the environment. On the other hand, Bubble Packing and Randomized Fractal methods implement an algorithm in which every agent is directed to a goal state in which the total energy consumption is minimized. This approach prevents the chaotic appearance of the trajectories and minimizes the energy consumption.
+It is obvious that the trajectories of the agents are more chaotic and complex in the Artificial Forces method according to the other two solutions. This is because of the agents are under the effect of a total force which is instantly changing both amplitude and direction with the local interactions in the environment. According to the X-Swarm theory which is described in Section \ref{Artificial_forces_ref}, all agents will move towards the center of the formation shape if the X Swarm conditions are satisfied by the agents. So the only force component which provides the distribution of the agents in the formation shape homogenously is the intermember forces which is dynamically changing so much with the local instant neighbors of the agents in the environment. On the other hand, Bubble Packing and Randomized Fractal methods implement an algorithm in which every agent is directed to a goal state in which the total displacements in the environment is minimized. This approach prevents the chaotic appearance of the trajectories and minimizes the displacements of the agents.
 
-Monte Carlo simulations with 1000 iterations are held and the results are presented in Figure -xx. 
+Monte Carlo simulations with 1000 iterations are held and the results are presented in Figure \ref{total_disp_1}. 
 		
 \begin{figure}[H]
-\caption{Total Energy Consumption}
+\caption{Total Travelled Distances for Shape 1} \label{total_disp_1}
 \centerline{\includegraphics[scale = 0.35]{Total_Energy_Shape_1}}
 \end{figure} 	
 				
 \subsubsection{Shape 2}\hspace{0pt} \\
-Second formation shape gives similar results with three different formation control methods, the Artificial Forces Method increases the total energy consumption of the agents because of the reasons discussed for the Formation Shape 1.
+Second formation shape gives similar results with three different formation control methods, the Artificial Forces Method increases the total travelled distance by the agents because of the reasons discussed for the Formation Shape 1.
 
 \begin{figure}[H]
-\caption{Formation Shape 2 in MATLAB environment:}
+\caption{Formation Shape 2 in MATLAB environment}
 \centerline{\includegraphics[scale = 0.40]{Trajectories_Formation_Shape_2_2}}
 \end{figure} 	
 		   
 \begin{figure}[H]
-\caption{Formation Shape 2 in Gazebo environment:}
+\caption{Formation Shape 2 in Gazebo environment}
 \centerline{\includegraphics[scale = 0.35]{Trajectories_Formation_Shape_2_1}}
 \end{figure} 	
 		   
@@ -250,41 +256,41 @@ Second formation shape gives similar results with three different formation cont
 \centerline{\includegraphics[scale = 0.35]{Randomized_Trajectories_2}}
 \end{figure} 	
 		   
-The results of the Monte Carlo simulations with 1000 iterations are illustrated in Figure -xx /
+The results of the Monte Carlo simulations with 1000 iterations are illustrated in Figure \ref{total_dist_2}
 
 \begin{figure}[H]
-\caption{Total Energy Consumption}
-\centerline{\includegraphics[scale = 0.35]{Total_Energy_Shape_2}}
+\caption{Total Travelled Distance for Shape 2} \label{total_dist_2}
+\centerline{\includegraphics[scale = 0.35]{Total_Energy_Shape_2}} 
 \end{figure} 	
 		   
-\subsection{Settling Time} 
+\subsection{Settling Time} \label{settling_ref}
 Settling time is defined as delta time $"t_{final} - t_{start}"$ ,where $t_{start}$ is the initial time and $t_{final}$ is the time that the all of the agents are inside of the desired formation shape and the norm of the velocity vector for each agent $\norm{v_i}$ is
 		
 \begin{equation}
 \norm{v_i(t)} < 0.01 \hspace{0.1cm} [m/sec] \hspace{0.3cm}\forall\hspace{0.05cm} t>t_{final}
 \end{equation}
 		
-Settling times are measured for the simulations held in Energy Consumption Part-xx, and Artificial Forces method have the worst performance as expected. Since there are no predetermined goal states for the agents in the desired formation shape, the settling of the agents in random places under the equilibrium of the artificial force components takes much more time than the other two formation control methods. The agents have reached the steady state at their goal states with the shape partitioning methods faster than the Artificial Forces Methods. The results are illustrated in Figure-xx.
+Settling times are measured for the simulations held in Section \ref{total_dist_ref}. Artificial Forces method have the worst performance since agents are expected to need more time to reach the steady state. Since there are no predetermined goal states for the agents in the desired formation shape, the settling of the agents in random places under the equilibrium of the artificial force components takes much more time than the other two formation control methods. The agents have reached the steady state at their goal states with the Shape Partitioning methods faster than the Artificial Forces Methods. The results are illustrated in Figure \ref{settling_1} and \ref{settling_2}.
 		
 \begin{figure}[H]
-\caption{Total Settling Time for Shape 1}
+\caption{Total Settling Time for Shape 1} \label{settling_1}
 \centerline{\includegraphics[scale = 0.35]{Total_Time_Shape_1}}
 \end{figure} 
 		
 \begin{figure}[H]
-\caption{Total Settling Time for Shape 2}
+\caption{Total Settling Time for Shape 2} \label{settling_2}
 \centerline{\includegraphics[scale = 0.35]{Total_Time_Shape_2}}
 \end{figure} 
 		 
 \subsection{Evaluation} 
-Three different formation control approaches are evaluated with different kinds of metrics including the total energy consumption, settling time and mesh quality which is a measure of how the agents homogenously distributed while covering the desired formation shape. Artificial forces method have the worst performance in setlling time and energy consumption metrics due to the absence of predetermined goal states which is discussed in Section-xx in details. On the other hand the Randomized Fractals method have the worst mesh quality performance because of its randomized nature of assignment the goal states in the desired formation shape. The methods which have the worst performance at the related metrics are illustrated in Table -xx
+Three different formation control approaches are evaluated with different kinds of metrics including the total displacement, settling time and mesh quality which is a measure of how the agents homogenously distributed while covering the desired formation shape. Artificial forces method have the worst performance in setlling time and total displacement metrics due to the absence of predetermined goal states which is discussed in Section \ref{settling_ref} in details. On the other hand the Randomized Fractals method have the worst mesh quality performance because of its randomized nature of assignment the goal states in the desired formation shape. The methods which have the worst performance at the related metrics are illustrated in Table \ref{tab:title}
 		
 \begin{center}
 \captionof{table}{Formation Control Methods with Worst Performance} \label{tab:title} 
 \begin{tabular}{||c| c| c |c ||}
 				
 \hline
-\textbf{Method/Metric} & \textbf{Energy Consumption}  & \textbf{Settling Time} & \textbf{Mesh Quality}\\ 
+\textbf{Method/Metric} & \textbf{Total Displacement}  & \textbf{Settling Time} & \textbf{Mesh Quality}\\ 
 \hline
 Artificial Force & X & X &  \\
 Bubble Packing & &  &  \\	
@@ -293,9 +299,9 @@ Randomized Fractals & &  & X \\
 \end{tabular}
 \end{center}
 		
-It is obvious that time Bubble Packing Method have the best performance for all metrics. In fact, Bubble Packing method combines the efficient approaches of the other two methods. In the shape partitioning phase of the algorithm, it uses interbubble forces which have a similar structure to the intermember forces applied by the Artificial Forces method in real time. This force have the greatest  effect on the homogeneity of the agents in the desired formation shape because it provides a global consensus for the agents in which each agent reaches an equilibrium state under the total forces acting by their neighbors and the formation shape. On the other hand, bubble packing method implements an algorithm in which every agent assigned to a goal state instantly at each execution time of the algorithm to minimize the overall energy consumption o the swarm. This approach reduce the settling time and the total displacements of the agents from the initial state to their final states since their final positions in the formation shape is predetermined. It is possible that the agents' goal states may be changed with the execution of the algorithm at different steps, but these assignments will converge to a uniqe subset while the agents are getting closer to the goal states. 
+It is obvious that time Bubble Packing Method have the best performance for all metrics. In fact, Bubble Packing method combines the efficient approaches of the other two methods. In the shape partitioning phase of the algorithm, it uses interbubble forces which have a similar structure with the intermember forces applied by the Artificial Forces method in formation control. This force have the greatest  effect on the homogeneity of the agents in the desired formation shape because it provides a global consensus for the agents in which each agent reaches an equilibrium state under the total force acting by their neighbors and the formation shape. On the other hand, bubble packing method implements an algorithm in which every agent assigned to a goal state instantly at each execution time of the algorithm to minimize the overall displacement of the swarm. This approach reduce the settling time and the total displacements of the agents from the initial state to their final states since their final positions in the formation shape is predetermined. It is possible that the agents' goal states may be changed with the execution of the algorithm at different steps, but these assignments will converge to a unique subset while the agents are getting closer to the goal states. 
 		
-Some other formation shape trials with the Bubble Packing algorithm is illustrated in the follwoing Figures-xx.
+Some other formation shape trials with the Bubble Packing algorithm is illustrated in the following figures.
 
 \begin{figure}[H]
 \caption{Formation Shape - 1 in Gazebo Environment}
@@ -312,7 +318,7 @@ Some other formation shape trials with the Bubble Packing algorithm is illustrat
 \begin{tabular}{||c| c |c |c ||}
 					
 \hline
-\textbf{Energy Consumption[m]}  & \textbf{Settling Time[sec]} & \textbf{Topological Mesh Irregularity} & \textbf{Geometrical Mesh Irregularity}\\ 
+\textbf{Total Displacement }  & \textbf{Total Settling} & \textbf{Topological Mesh} & \textbf{Geometrical Mesh} \\ \textbf{Consumption[m]} & \textbf{Time[sec]}& \textbf{Irregularity} & \textbf{Irregularity} \\
 \hline
 1889 & 164 &  2.54& 0.62\\
 \hline
@@ -334,7 +340,7 @@ Some other formation shape trials with the Bubble Packing algorithm is illustrat
 \begin{tabular}{||c| c |c |c ||}
 		 		
 \hline
-\textbf{Energy Consumption[m]}  & \textbf{Settling Time[sec]} & \textbf{Topological Mesh Irregularity} & \textbf{Geometrical Mesh Irregularity}\\ 
+\textbf{Total Displacement }  & \textbf{Total Settling} & \textbf{Topological Mesh} & \textbf{Geometrical Mesh} \\ \textbf{Consumption[m]} & \textbf{Time[sec]}& \textbf{Irregularity} & \textbf{Irregularity} \\
 \hline
 1611 & 153 &  2.95& 0.73\\
 \hline
@@ -355,7 +361,7 @@ Some other formation shape trials with the Bubble Packing algorithm is illustrat
 \captionof{table}{Performance Metrics for Shape - 3} \label{tab:title} 
 \begin{tabular}{||c| c |c |c ||}
 \hline
-\textbf{Energy Consumption[m]}  & \textbf{Settling Time[sec]} & \textbf{Topological Mesh Irregularity} & \textbf{Geometrical Mesh Irregularity}\\ 
+\textbf{Total Displacement }  & \textbf{Total Settling} & \textbf{Topological Mesh} & \textbf{Geometrical Mesh} \\ \textbf{Consumption[m]} & \textbf{Time[sec]}& \textbf{Irregularity} & \textbf{Irregularity} \\
 \hline
 1432 & 126 &  2.23& 0.45\\
 \hline
@@ -376,7 +382,7 @@ Some other formation shape trials with the Bubble Packing algorithm is illustrat
 \captionof{table}{Performance Metrics for Shape - 4} \label{tab:title} 
 \begin{tabular}{||c| c |c |c ||}
 \hline
-\textbf{Energy Consumption[m]}  & \textbf{Settling Time[sec]} & \textbf{Topological Mesh Irregularity} & \textbf{Geometrical Mesh Irregularity}\\ 
+\textbf{Total Displacement }  & \textbf{Total Settling} & \textbf{Topological Mesh} & \textbf{Geometrical Mesh} \\ \textbf{Consumption[m]} & \textbf{Time[sec]}& \textbf{Irregularity} & \textbf{Irregularity} \\
 \hline
 1578 & 142 &  2.15& 0.56\\
 \hline

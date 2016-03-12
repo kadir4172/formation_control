@@ -69,13 +69,13 @@
 \contentsline {section}{\numberline {4.2}Local Positioning System}{94}{section.4.2}
 \contentsline {section}{\numberline {4.3}FORMATION CONTROL SYSTEM}{101}{section.4.3}
 \contentsline {subsection}{\numberline {4.3.1}Mesh Qualities}{101}{subsection.4.3.1}
-\contentsline {subsection}{\numberline {4.3.2}Total Energy Consumption}{107}{subsection.4.3.2}
-\contentsline {subsubsection}{\numberline {4.3.2.1}Shape 1}{108}{subsubsection.4.3.2.1}
-\contentsline {subsubsection}{\numberline {4.3.2.2}Shape 2}{111}{subsubsection.4.3.2.2}
-\contentsline {subsection}{\numberline {4.3.3}Settling Time}{115}{subsection.4.3.3}
-\contentsline {subsection}{\numberline {4.3.4}Evaluation}{116}{subsection.4.3.4}
-\contentsline {chapter}{\numberline {5}\MakeUppercase {Next Chapter}}{125}{chapter.5}
-\contentsline {leads}{\numberline {}\uppercase {REFERENCES}}{127}{chapter*.20}
-\contentsline {nodots}{\numberline {}APPENDICES}{127}{chapter*.20}
-\contentsline {chapter}{\numberline {A}\MakeUppercase {Appendix Name}}{129}{appendix.A}
-\contentsline {leads}{\numberline {}CURRICULUM VITAE}{131}{appendix*.21}
+\contentsline {subsection}{\numberline {4.3.2}Total Displacement of the Agents}{106}{subsection.4.3.2}
+\contentsline {subsubsection}{\numberline {4.3.2.1}Shape 1}{106}{subsubsection.4.3.2.1}
+\contentsline {subsubsection}{\numberline {4.3.2.2}Shape 2}{109}{subsubsection.4.3.2.2}
+\contentsline {subsection}{\numberline {4.3.3}Settling Time}{113}{subsection.4.3.3}
+\contentsline {subsection}{\numberline {4.3.4}Evaluation}{114}{subsection.4.3.4}
+\contentsline {chapter}{\numberline {5}\MakeUppercase {Next Chapter}}{123}{chapter.5}
+\contentsline {leads}{\numberline {}\uppercase {REFERENCES}}{125}{chapter*.20}
+\contentsline {nodots}{\numberline {}APPENDICES}{125}{chapter*.20}
+\contentsline {chapter}{\numberline {A}\MakeUppercase {Appendix Name}}{127}{appendix.A}
+\contentsline {leads}{\numberline {}CURRICULUM VITAE}{129}{appendix*.21}

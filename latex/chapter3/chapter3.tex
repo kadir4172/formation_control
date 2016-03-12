@@ -495,7 +495,7 @@ R_k = Max.\ Position\ Error\ on\ Trilateration\ Process
 		
 in the above equations $K_k$ represents the Kalman gain matrix and $S_k$ is the residual covariance of the system at time $k$. $\hat{x}_{k,k}$ is the posteriori state estimate updated with measurements at time $k$ ;  $\hat{x}_{k,k-1}$ is the priori estimate of the state vector predicted with inputs at time $k$; $P_{k,k}$ is the posteriori error covariance matrix updated with measurements at time $k$; $P_{k,k-1}$ is the priori estimate covariance predicted with the inputs at time $k$.
 			
-\section{FORMATION CONTROL}		
+\section{FORMATION CONTROL} \label{formation_control_ref}
 The details of the methodology for dynamical formation control with heterogenous mobile robots is presented in this chapter. Basically three different approaches as artificial forces method, bubble packing method and randomized fractals method are implemented. It is possible to classify these methods in two sub categories. Potential field based approaches implements artificial forces acting on agents to get inside and cover the desired formation shape homogenously by avoiding collisions between the agents. The resultant positions of the agents in the formation shape is not certain, it dynamically changes with the instantaneous positions and interactions of the agents with each other and environment. The other two methods , shape partitioning based approaches, share a common structural basis. In these approaches the complex formation shape is partitioned into goal states to cover the shape homogenously with the mobile robots. The assignment of the agents to these goal states is handled with special algorithms to optimize the total displacements of the agents in the environment. The difference between these two methods is the partitioning approach of the formation shape. 
 		
 \begin{figure}[H]
@@ -1306,7 +1306,7 @@ Goto Label3 until full solution has been achieved. \newline
 \caption{HUNGARIAN ALGORITHM}
 \end{algorithm}
 
-\subsection{Mesh Quality Measurement}\hspace{0pt} \\
+\subsection{Mesh Quality Measurement}\hspace{0pt} \label{mesh_quality_ref}  \\
 Since we have two different solutions to the shape partitioning problem, it is useful to define a method to compare the performances of these algorithms. One of the criterion of mesh diagrams is topological mesh irregularity [27-29]. This parameter is defined by : 
 
 \begin{equation}
