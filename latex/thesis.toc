@@ -67,13 +67,13 @@
 \contentsline {chapter}{\numberline {4}\MakeUppercase {SIMULATION ENVIRONMENT $\&$ RESULTS}}{91}{chapter.4}
 \contentsline {section}{\numberline {4.1}Simulation Environment}{91}{section.4.1}
 \contentsline {section}{\numberline {4.2}Local Positioning System}{94}{section.4.2}
-\contentsline {section}{\numberline {4.3}FORMATION CONTROL SYSTEM}{102}{section.4.3}
-\contentsline {subsection}{\numberline {4.3.1}Mesh Qualities}{102}{subsection.4.3.1}
-\contentsline {subsection}{\numberline {4.3.2}Total Energy Consumption}{108}{subsection.4.3.2}
-\contentsline {subsubsection}{\numberline {4.3.2.1}Shape 1}{109}{subsubsection.4.3.2.1}
-\contentsline {subsubsection}{\numberline {4.3.2.2}Shape 2}{112}{subsubsection.4.3.2.2}
-\contentsline {subsection}{\numberline {4.3.3}Settling Time}{116}{subsection.4.3.3}
-\contentsline {subsection}{\numberline {4.3.4}Evaluation}{117}{subsection.4.3.4}
+\contentsline {section}{\numberline {4.3}FORMATION CONTROL SYSTEM}{101}{section.4.3}
+\contentsline {subsection}{\numberline {4.3.1}Mesh Qualities}{101}{subsection.4.3.1}
+\contentsline {subsection}{\numberline {4.3.2}Total Energy Consumption}{107}{subsection.4.3.2}
+\contentsline {subsubsection}{\numberline {4.3.2.1}Shape 1}{108}{subsubsection.4.3.2.1}
+\contentsline {subsubsection}{\numberline {4.3.2.2}Shape 2}{111}{subsubsection.4.3.2.2}
+\contentsline {subsection}{\numberline {4.3.3}Settling Time}{115}{subsection.4.3.3}
+\contentsline {subsection}{\numberline {4.3.4}Evaluation}{116}{subsection.4.3.4}
 \contentsline {chapter}{\numberline {5}\MakeUppercase {Next Chapter}}{125}{chapter.5}
 \contentsline {leads}{\numberline {}\uppercase {REFERENCES}}{127}{chapter*.20}
 \contentsline {nodots}{\numberline {}APPENDICES}{127}{chapter*.20}

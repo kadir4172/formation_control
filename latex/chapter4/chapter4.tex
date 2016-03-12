@@ -40,15 +40,15 @@ In this simulation environment, each agent is designed with collision surfaces c
 cylindrical links binding there spherical contact points. The mass and friction coefficients for different types of agents are given in Table \ref{agent_props}. Here there are two different types of frictions, $\mu_1$ represents the Coulomb friction coefficient for the first friction direction and the $\mu_2$ is the friction coefficient for the second friction direction (perpendicular to the first friction direction)
 
 \begin{center}
-\captionof{table}{Friction Coefficient and Mass for Different Types of Agents} \label{agent_props} 
-\begin{tabular}{||c| c| c |c ||}
+\captionof{table}{Mass,Friction Coefficient and Coverage Circle Radius for Different Types of Agents} \label{agent_props} 
+\begin{tabular}{||c| c| c |c |c||}
 				
 \hline
-\textbf{Agent Type} & \textbf{Mass[kg]}  & \textbf{$\mu_1$} & \textbf{$\mu_2$}\\ 
+\textbf{Agent Type} & \textbf{Mass[kg]}  & \textbf{$\mu_1$} & \textbf{$\mu_2$} & \textbf{Coverage Circle Radius[m]} \\ 
 \hline
-Agent 1& 0.8 & 0.21  & 0.13 \\
-Agent 2& 1   &  0.18 & 0.18 \\	
-Agent 3& 1.5 &  0.21 & 0.13 \\	
+Agent 1& 0.8 & 0.21  & 0.13 & 0.15\\
+Agent 2& 1   &  0.18 & 0.18 & 0.3\\	
+Agent 3& 1.5 &  0.21 & 0.13 & 0.5\\	
 \hline
 \end{tabular}
 \end{center}
@@ -60,7 +60,7 @@ Figure \ref{Matlab_env} illustrates the Matlab environment used in simulations. 
 \centerline{\includegraphics[scale = 0.35]{2}}
 \end{figure} 
     
-\section{Local Positioning System}
+\section{Local Positioning System} \label{lps_ref}
 In the local positioning system, the main aim is to design an architecture in which every agent can localize itself with the help of the position agents which have positioning sensors on their boards. With the help of DSDV algorithms, each individual agent assign itself to the cluster of a position agent with minimum number of hops in the network which is discussed in Section \ref{Clusters}. A sample output of this algorithm at an instant time during simulations is illustrated in Figure \ref{Cluster_figure}. 
 	
 \begin{figure}[H]
@@ -70,14 +70,14 @@ In the local positioning system, the main aim is to design an architecture in wh
 
 Agents with the same colors are assigned to the same clusters at this instant time and their size represents the rank number of each agent at that cluster which is determined with the number of hops to reach the position beacon in that cluster. It is important to notice that agents are assigned to the clusters of the position agents with minimum number of hops rather than the minimum distance since it is expected to have greater errors on position data with the increasing number of ranks because of the cumulative error effect. This assumption is supported with the simulation experiments and results are presented in Figure \ref{cumulative_effect}. 
 
-The agents which are not directly get into trilateration process with the position agents (i.e. agents with rank greater than 2) have to localize themselves with the help of their neighbor with lower ranks,thus their position data will include the errors of the localization process of their neighbors. This situation is illustrated in Figure \ref{cumulative_effect}, total error is increasing cumulatively with the increaasing number of rank. 
+The agents which are not directly get into trilateration process with the position agents (i.e. agents with rank greater than 2) have to localize themselves with the help of their neighbor with lower ranks,thus their position data will include the errors of the localization process of their neighbors. This situation is illustrated in Figure \ref{cumulative_effect}, total error is increasing cumulatively with the increasing number of rank. 
 	
 \begin{figure}[H]
 \caption{Total Error on Position Data with Respect to Ranks} \label{cumulative_effect}
-\centerline{\includegraphics[scale = 0.4]{rank_vs_error}}
+\centerline{\includegraphics[scale = 0.35]{rank_vs_error}}
 \end{figure} 
 	
-The state propogation period which is discussed in Section-xx is determined as 2Hz as equal to the main system frequency since the new position datas for the formation control system are required to be determined with this rate. 	As discussed in Section-xx, a localization timer is proposed to handle the DSDV algorithm and trilateration process which will provide a greater execution period than the propogation process of the states with the help of inertial measurements. It is obvious that the state variables will be drifting with the increasing time because of the measurement and process noise in propogation process unless they are not corrected with the external measurements, so it is possible to determine a minimum execution period of this trilateration process to satisfy an error band in the state variables. 
+The state propogation period is determined as 2Hz which is equal to the main system frequency since the new position datas for the formation control system are required to be determined with this rate. 	As discussed in Section \ref{LOCAL POSITIONING SYSTEMS_ref}, a localization timer is proposed to handle the DSDV algorithm and trilateration process which will provide a greater execution period than the propogation process of the states with the help of inertial measurements. It is obvious that the state variables will be drifting with the increasing time because of the measurement and process noise in propogation process unless they are not corrected with the external measurements, so it is possible to determine a minimum execution period of this trilateration process to satisfy an error band in the state variables. 
 		
 \begin{figure}[H]
 \caption{Total Error with Localization Timer Period of 3 Seconds}
@@ -94,21 +94,22 @@ The state propogation period which is discussed in Section-xx is determined as 2
 \centerline{\includegraphics[scale = 0.4]{Error-0,5Prop-8Update}}
 \end{figure} 		
 		
-It is clear that the total error norm on position datas are decreased dramatically with the localization period which equals to 6 iterations for 3 seconds period, 10 iterations for 5 seconds and 16 iterations for 8 seconds period. The peak values on the error norms are always observed at the iterations just before the localization process. It can be concluded that the peak values on the error norms are greatly related with the localization period and they have greater values with the increasing number of this period. The maximum error norm is below 3 meters with localization period of 3 seconds, below 10 meters with localization period of 5 seconds and below 12 meters with localization period of 8 seconds. It is decided  that the error norm of 3 meters is the maximum tolerable value for the formation control system and the localization period is determined as 3 seconds. 
+It is clear that the total error norm on position datas are decreased dramatically with the localization period which equals to 6 iterations for 3 seconds period, 10 iterations for 5 seconds and 16 iterations for 8 seconds period. The peak values on the error norms are always observed at the iterations just before the localization process. It can be concluded that the peak values on the error norms are greatly related with the localization period and they have greater values with the increasing number of this period. The maximum error norm is below 3 meters with localization period of 3 seconds, below 10 meters with localization period of 5 seconds and below 12 meters with localization period of 8 seconds. In this work, it is assumed that the error norm of 3 meters is the maximum tolerable value for the formation control system to satisfy a successful collision avoidance for the agents since we have a coverage circle radius of 0.5m for the biggest agent in the swarm. Thus, the localization period for the trilateration process is determined as 3 seconds. 
 
-The performance of the LPS design is tested in simulations with different conditions in which swarm is propogating to a desired formation shape or agents are keeping their positions in a given formation shapes.  In both cases, it is observed that the position datas of the agents are drifted with an increasing error between two  sequential localization process. A sample case for this situation is illustrated in Figure -xx
+The performance of the LPS design is tested in simulations with different conditions in which swarm is propogating to a desired formation shape or agents are keeping their positions in dynamically changing formation shapes.  In both cases, it is observed that the position datas of the agents are drifted with an increasing error between two  sequential localization process. A sample case for this situation is illustrated in Figure \ref{hatali_pos_ref} and Figure \ref{duzgun_pos_ref}
 
 \begin{figure}[H]
-\caption{Local Positioning System}
-\centering
-\includegraphics[scale = 0.65]{Pozisyon_1_Hatali}
+\caption{Positions of the Agents Before Localization Process \\
+(Red Circles: Estimated Positions ; Blue Circles: Real Positions)} \label{hatali_pos_ref}
+\centerline{
+\includegraphics[scale = 0.27]{Pozisyon_1_Hatali}}
 \label{fig:lps}
 \end{figure}
 
 \begin{figure}[H]
 \caption{Positions of the Agents After Localization Process \\
-(Red Circles: Estimated Positions ; Blue Circles: Real Positions)}
-\centerline{\includegraphics[scale = 0.30]{Pozisyon-1-Duzeltilmis}}
+(Red Circles: Estimated Positions ; Blue Circles: Real Positions)} \label{duzgun_pos_ref}
+\centerline{\includegraphics[scale = 0.27]{Pozisyon-1-Duzeltilmis}}
 \end{figure} 
 		
 Handling procedures of the lost agents are presented in Section-xx. Agents which do not have three neighbors around itselves will get into the 'Lost' mode, and if  they miss three localization process they will get into 'Come Home' mode. When an agent have 'Come Home' mode, it will try to reach the center of formation to increase the possibility to meet some neighbors to localize itself as discussed in Section-xx. A simulation result in which two agents cannot have three neighbors around themselves and get into 'Lost' mode and 'Come Home' modes  is presented in Figure -xx and Figure-xx respectively.

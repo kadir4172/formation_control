@@ -79,42 +79,42 @@
 \contentsline {figure}{\numberline {4.6}{\ignorespaces Total Error with Localization Timer Period of 3 Seconds\relax }}{97}{figure.4.6}
 \contentsline {figure}{\numberline {4.7}{\ignorespaces Total Error with Localization Timer Period of 5 Seconds\relax }}{97}{figure.4.7}
 \contentsline {figure}{\numberline {4.8}{\ignorespaces Total Error with Localization Timer Period of 8 Seconds\relax }}{97}{figure.4.8}
-\contentsline {figure}{\numberline {4.9}{\ignorespaces Local Positioning System\relax }}{99}{figure.4.9}
-\contentsline {figure}{\numberline {4.10}{\ignorespaces Positions of the Agents After Localization Process (Red Circles: Estimated Positions ; Blue Circles: Real Positions)\relax }}{100}{figure.4.10}
-\contentsline {figure}{\numberline {4.11}{\ignorespaces Agents will be in 'Lost' Mode When They Do Not Have 3 Neighbors\relax }}{101}{figure.4.11}
-\contentsline {figure}{\numberline {4.12}{\ignorespaces Agents will be in 'Come Home' Mode When They Miss Localization Process for 3 Times\relax }}{101}{figure.4.12}
-\contentsline {figure}{\numberline {4.13}{\ignorespaces Formation Shape 1 with Artificial Forces Methods:$\epsilon _t = 2.1$ and $\epsilon _g = 0.32$\relax }}{102}{figure.4.13}
-\contentsline {figure}{\numberline {4.14}{\ignorespaces Formation Shape 2 with Artificial Forces Methods:$\epsilon _t = 2.6$ and $\epsilon _g = 0.4$\relax }}{103}{figure.4.14}
-\contentsline {figure}{\numberline {4.15}{\ignorespaces Formation Shape 1 with Bubble Packing Method:$\epsilon _t = 2.1$ and $\epsilon _g = 0.24$\relax }}{103}{figure.4.15}
-\contentsline {figure}{\numberline {4.16}{\ignorespaces Formation Shape 2 with Bubble Packing Method:$\epsilon _t = 2.3$ and $\epsilon _g = 0.28$\relax }}{103}{figure.4.16}
-\contentsline {figure}{\numberline {4.17}{\ignorespaces Formation Shape 1 with Randomized Fractals Method:$\epsilon _t = 2.7$ and $\epsilon _g = 0.65$\relax }}{104}{figure.4.17}
-\contentsline {figure}{\numberline {4.18}{\ignorespaces Formation Shape 2 with Randomized Fractals Method:$\epsilon _t = 3.1$ and $\epsilon _g = 0.62$\relax }}{104}{figure.4.18}
-\contentsline {figure}{\numberline {4.19}{\ignorespaces Formation Shape 1 Topological Mesh Irregularities:\relax }}{105}{figure.4.19}
-\contentsline {figure}{\numberline {4.20}{\ignorespaces Formation Shape 1 Geometrical Mesh Irregularities:\relax }}{106}{figure.4.20}
-\contentsline {figure}{\numberline {4.21}{\ignorespaces Formation Shape 2 Topological Mesh Irregularities:\relax }}{107}{figure.4.21}
-\contentsline {figure}{\numberline {4.22}{\ignorespaces Formation Shape 2 Geometrical Mesh Irregularities:\relax }}{108}{figure.4.22}
-\contentsline {figure}{\numberline {4.23}{\ignorespaces Formation Shape 1 in MATLAB environment:\relax }}{109}{figure.4.23}
-\contentsline {figure}{\numberline {4.24}{\ignorespaces Formation Shape 1 in Gazebo environment:\relax }}{110}{figure.4.24}
-\contentsline {figure}{\numberline {4.25}{\ignorespaces Artificial Forces Method Trajectories for Shape 1\relax }}{110}{figure.4.25}
-\contentsline {figure}{\numberline {4.26}{\ignorespaces Bubble Packing Method Trajectories for Shape 1\relax }}{111}{figure.4.26}
-\contentsline {figure}{\numberline {4.27}{\ignorespaces Randomized Fractals Method Trajectories for Shape 1\relax }}{111}{figure.4.27}
-\contentsline {figure}{\numberline {4.28}{\ignorespaces Total Energy Consumption\relax }}{112}{figure.4.28}
-\contentsline {figure}{\numberline {4.29}{\ignorespaces Formation Shape 2 in MATLAB environment:\relax }}{113}{figure.4.29}
-\contentsline {figure}{\numberline {4.30}{\ignorespaces Formation Shape 2 in Gazebo environment:\relax }}{113}{figure.4.30}
-\contentsline {figure}{\numberline {4.31}{\ignorespaces Artificial Forces Method Trajectories for Shape 2\relax }}{114}{figure.4.31}
-\contentsline {figure}{\numberline {4.32}{\ignorespaces Bubble Packing Method Trajectories for Shape 2\relax }}{114}{figure.4.32}
-\contentsline {figure}{\numberline {4.33}{\ignorespaces Randomized Fractals Method Trajectories for Shape 2\relax }}{115}{figure.4.33}
-\contentsline {figure}{\numberline {4.34}{\ignorespaces Total Energy Consumption\relax }}{115}{figure.4.34}
-\contentsline {figure}{\numberline {4.35}{\ignorespaces Total Settling Time for Shape 1\relax }}{116}{figure.4.35}
-\contentsline {figure}{\numberline {4.36}{\ignorespaces Total Settling Time for Shape 2\relax }}{117}{figure.4.36}
-\contentsline {figure}{\numberline {4.37}{\ignorespaces Formation Shape - 1 in Gazebo Environment\relax }}{118}{figure.4.37}
-\contentsline {figure}{\numberline {4.38}{\ignorespaces Formation Shape - 1 in MATLAB Environment\relax }}{119}{figure.4.38}
-\contentsline {figure}{\numberline {4.39}{\ignorespaces Formation Shape - 2 in Gazebo Environment\relax }}{120}{figure.4.39}
-\contentsline {figure}{\numberline {4.40}{\ignorespaces Formation Shape - 2 in MATLAB Environment\relax }}{120}{figure.4.40}
-\contentsline {figure}{\numberline {4.41}{\ignorespaces Formation Shape - 3 in Gazebo Environment\relax }}{121}{figure.4.41}
-\contentsline {figure}{\numberline {4.42}{\ignorespaces Formation Shape - 3 in MATLAB Environment\relax }}{122}{figure.4.42}
-\contentsline {figure}{\numberline {4.43}{\ignorespaces Formation Shape - 4 in Gazebo Environment\relax }}{123}{figure.4.43}
-\contentsline {figure}{\numberline {4.44}{\ignorespaces Formation Shape - 4 in MATLAB Environment\relax }}{123}{figure.4.44}
-\contentsline {figure}{\numberline {4.45}{\ignorespaces Multiple Formations\relax }}{124}{figure.4.45}
+\contentsline {figure}{\numberline {4.9}{\ignorespaces Positions of the Agents Before Localization Process (Red Circles: Estimated Positions ; Blue Circles: Real Positions)\relax }}{98}{figure.4.9}
+\contentsline {figure}{\numberline {4.10}{\ignorespaces Positions of the Agents After Localization Process (Red Circles: Estimated Positions ; Blue Circles: Real Positions)\relax }}{99}{figure.4.10}
+\contentsline {figure}{\numberline {4.11}{\ignorespaces Agents will be in 'Lost' Mode When They Do Not Have 3 Neighbors\relax }}{100}{figure.4.11}
+\contentsline {figure}{\numberline {4.12}{\ignorespaces Agents will be in 'Come Home' Mode When They Miss Localization Process for 3 Times\relax }}{100}{figure.4.12}
+\contentsline {figure}{\numberline {4.13}{\ignorespaces Formation Shape 1 with Artificial Forces Methods:$\epsilon _t = 2.1$ and $\epsilon _g = 0.32$\relax }}{101}{figure.4.13}
+\contentsline {figure}{\numberline {4.14}{\ignorespaces Formation Shape 2 with Artificial Forces Methods:$\epsilon _t = 2.6$ and $\epsilon _g = 0.4$\relax }}{102}{figure.4.14}
+\contentsline {figure}{\numberline {4.15}{\ignorespaces Formation Shape 1 with Bubble Packing Method:$\epsilon _t = 2.1$ and $\epsilon _g = 0.24$\relax }}{102}{figure.4.15}
+\contentsline {figure}{\numberline {4.16}{\ignorespaces Formation Shape 2 with Bubble Packing Method:$\epsilon _t = 2.3$ and $\epsilon _g = 0.28$\relax }}{102}{figure.4.16}
+\contentsline {figure}{\numberline {4.17}{\ignorespaces Formation Shape 1 with Randomized Fractals Method:$\epsilon _t = 2.7$ and $\epsilon _g = 0.65$\relax }}{103}{figure.4.17}
+\contentsline {figure}{\numberline {4.18}{\ignorespaces Formation Shape 2 with Randomized Fractals Method:$\epsilon _t = 3.1$ and $\epsilon _g = 0.62$\relax }}{103}{figure.4.18}
+\contentsline {figure}{\numberline {4.19}{\ignorespaces Formation Shape 1 Topological Mesh Irregularities:\relax }}{104}{figure.4.19}
+\contentsline {figure}{\numberline {4.20}{\ignorespaces Formation Shape 1 Geometrical Mesh Irregularities:\relax }}{105}{figure.4.20}
+\contentsline {figure}{\numberline {4.21}{\ignorespaces Formation Shape 2 Topological Mesh Irregularities:\relax }}{106}{figure.4.21}
+\contentsline {figure}{\numberline {4.22}{\ignorespaces Formation Shape 2 Geometrical Mesh Irregularities:\relax }}{107}{figure.4.22}
+\contentsline {figure}{\numberline {4.23}{\ignorespaces Formation Shape 1 in MATLAB environment:\relax }}{108}{figure.4.23}
+\contentsline {figure}{\numberline {4.24}{\ignorespaces Formation Shape 1 in Gazebo environment:\relax }}{109}{figure.4.24}
+\contentsline {figure}{\numberline {4.25}{\ignorespaces Artificial Forces Method Trajectories for Shape 1\relax }}{109}{figure.4.25}
+\contentsline {figure}{\numberline {4.26}{\ignorespaces Bubble Packing Method Trajectories for Shape 1\relax }}{110}{figure.4.26}
+\contentsline {figure}{\numberline {4.27}{\ignorespaces Randomized Fractals Method Trajectories for Shape 1\relax }}{110}{figure.4.27}
+\contentsline {figure}{\numberline {4.28}{\ignorespaces Total Energy Consumption\relax }}{111}{figure.4.28}
+\contentsline {figure}{\numberline {4.29}{\ignorespaces Formation Shape 2 in MATLAB environment:\relax }}{112}{figure.4.29}
+\contentsline {figure}{\numberline {4.30}{\ignorespaces Formation Shape 2 in Gazebo environment:\relax }}{112}{figure.4.30}
+\contentsline {figure}{\numberline {4.31}{\ignorespaces Artificial Forces Method Trajectories for Shape 2\relax }}{113}{figure.4.31}
+\contentsline {figure}{\numberline {4.32}{\ignorespaces Bubble Packing Method Trajectories for Shape 2\relax }}{113}{figure.4.32}
+\contentsline {figure}{\numberline {4.33}{\ignorespaces Randomized Fractals Method Trajectories for Shape 2\relax }}{114}{figure.4.33}
+\contentsline {figure}{\numberline {4.34}{\ignorespaces Total Energy Consumption\relax }}{114}{figure.4.34}
+\contentsline {figure}{\numberline {4.35}{\ignorespaces Total Settling Time for Shape 1\relax }}{115}{figure.4.35}
+\contentsline {figure}{\numberline {4.36}{\ignorespaces Total Settling Time for Shape 2\relax }}{116}{figure.4.36}
+\contentsline {figure}{\numberline {4.37}{\ignorespaces Formation Shape - 1 in Gazebo Environment\relax }}{117}{figure.4.37}
+\contentsline {figure}{\numberline {4.38}{\ignorespaces Formation Shape - 1 in MATLAB Environment\relax }}{118}{figure.4.38}
+\contentsline {figure}{\numberline {4.39}{\ignorespaces Formation Shape - 2 in Gazebo Environment\relax }}{119}{figure.4.39}
+\contentsline {figure}{\numberline {4.40}{\ignorespaces Formation Shape - 2 in MATLAB Environment\relax }}{119}{figure.4.40}
+\contentsline {figure}{\numberline {4.41}{\ignorespaces Formation Shape - 3 in Gazebo Environment\relax }}{120}{figure.4.41}
+\contentsline {figure}{\numberline {4.42}{\ignorespaces Formation Shape - 3 in MATLAB Environment\relax }}{121}{figure.4.42}
+\contentsline {figure}{\numberline {4.43}{\ignorespaces Formation Shape - 4 in Gazebo Environment\relax }}{122}{figure.4.43}
+\contentsline {figure}{\numberline {4.44}{\ignorespaces Formation Shape - 4 in MATLAB Environment\relax }}{122}{figure.4.44}
+\contentsline {figure}{\numberline {4.45}{\ignorespaces Multiple Formations\relax }}{123}{figure.4.45}
 \addvspace {10pt}
 \addvspace {10pt}
