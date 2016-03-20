@@ -5,21 +5,21 @@ i%clc
 animation_real_time = 30;
 animation_time_step = 0.5;
 formation_gain = 1.10;
-load formation10
+load formation8
 formation{1}.formation_x = formation_x * formation_gain;
 formation{1}.formation_y = formation_y * formation_gain;
 
 clear formation_x
 clear formation_y
 
-load formation_mutant101
+load formation_mutant81
 formation{2}.formation_x = formation_x * formation_gain;
 formation{2}.formation_y = formation_y * formation_gain;
 
 clear formation_x
 clear formation_y
 
-load formation_mutant102
+load formation_mutant82
 formation{3}.formation_x = formation_x * formation_gain;
 formation{3}.formation_y = formation_y * formation_gain;
 
