@@ -282,27 +282,61 @@ Settling times are measured for the simulations held in Section \ref{total_dist_
 \centerline{\includegraphics[scale = 0.35]{Total_Time_Shape_2}}
 \end{figure} 
 
-\subsection{Dynamically Changing Formations}
-In dynamic formation control, desired formation shape is changed dynamically in a smooth fashion. Agents are expected to adapt themselves to the changing formation shape and cover the shape in a continuous manner. Since the formation shape is expected to have smooth changes in local regions, it is aimed to adapt the agents which are positioned at these local regions rather than replacing all agents simultaneously. To minimize the total displacement of the swarm, the general approach is to make the agents which are close to the changing regions get action and replace themselves while other ones which are far away from that region keeps their positions. Randomized fractals method doesn't have a solution for this type of problem since its nature of assiginment of agents randomly in a given formation shape. These assignments made by the randomized fractals method will not have continuous transitions on goal states between sequential formation shapes changing with execution period of the algorithm. On the other hand, it is possible to adapt the bubble packing algorithm to provide a solution for the dynamically changing formations. Since buble packing algorithm determines goal states in a formation shape by applying interbubble forces, it is possible to keep this shape partitioning process running in background and dynamically adapt the goal states to the changing formation shape. The assignments to these goal states with Hungarian algorithm will adapt the swarm to the dynamically changing formation shape. Artificial forces method calculates control inputs for the individuals according to the current environment conditions and the formation shape. There is no need to update the algorithm for dynamically changing formation shapes.
+\subsection{Dynamically Changing Formations} \label{dynamical_ref}
+In dynamic formation control, desired formation shape is changed dynamically in a smooth fashion. Agents have to adapt themselves to the changing formation shape and cover the shape in a continuous manner. Since the formation shape is expected to have smooth changes in local regions, it is aimed to adapt the agents which are positioned at these local regions rather than replacing all agents simultaneously. To minimize the total displacement of the swarm, the general approach is to make the agents which are close to the changing regions get action and replace themselves while other ones which are far away from that region keeps their positions. Randomized fractals method doesn't have a solution for this type of problem since its nature of assiginment of agents randomly in a given formation shape. These assignments made by the randomized fractals method will not have continuous transitions on goal states between sequential formation shapes changing with execution period of the algorithm. On the other hand, it is possible to adapt the bubble packing algorithm to provide a solution for the dynamically changing formations. Since buble packing algorithm determines goal states in a formation shape by applying interbubble forces, it is possible to keep this shape partitioning process running in background and dynamically adapt the goal states to the changing formation shape. The assignments to these goal states with Hungarian algorithm will adapt the swarm to the dynamically changing formation shape. Artificial forces method calculates control inputs for the individuals according to the current environment conditions and the formation shape. There is no need to update the algorithm for dynamically changing formation shapes, it already supports dynamically changing formations. 
 		 
+\begin{figure}[H]
+\caption{Dynamic Formation Control with Bubble Packing Method} \label{multiple1_ref}
+\centerline{\includegraphics[scale = 0.16]{multiple1}}
+\end{figure} 
+
+Figure \ref{multiple1_ref} shows a simulation result for dynamical formation control implemented with Bubble Packing Method. Agents adapt themselves to the dynamically changing formation shape by assigning new positions of the goal states at each iterations. The positions of these goal states are determined with shape partitioning implemented with Bubble Packing algorithm. 
+
+\begin{figure}[H]
+\caption{Dynamic Formation Control with Artificial Forces Method} \label{multiple2_ref}
+\centerline{\includegraphics[scale = 0.16]{multiple2}}
+\end{figure} 		 
+
+Figure \ref{multiple2_ref} illustrates a simulation result of Artificial Forces method. In this method agents reposition in the changing formation shape with the help of artificial force components calculated with current formation shape. Since, agents directly adapts themselves to the changing formations shape in Artificial Forces method, it is expected to have a faster response than the Bubble Packing method. In Bubble Packing pethod, goal states are adapted to the changing formation shape and agents try to reach these goal states in runtime. This kind of approach introduces an additional latency to the response of the swarm to dynamically changing formation shapes. 
+
+\begin{figure}[H]
+\caption{Latency in Bubble Packing Method-1} \label{combo1_ref}
+\centerline{\includegraphics[scale = 0.35]{combo1}}
+\end{figure} 
+
+\begin{figure}[H]
+\caption{Latency in Bubble Packing Method-2} \label{combo2_ref}
+\centerline{\includegraphics[scale = 0.35]{combo2}}
+\end{figure} 
+
+\begin{figure}[H]
+\caption{Latency in Bubble Packing Method-3} \label{combo3_ref}
+\centerline{\includegraphics[scale = 0.35]{combo3}}
+\end{figure} 
+
+Figure \ref{combo1_ref}, \ref{combo2_ref} and \ref{combo3_ref} compares the responses of these two algorithms to dynamically changing formation shapes. Bubble Packing and Artificial Force algorithms are executed with the same dynamical formation shapes and same initial positions of the agents. In these figures, red circles are representing the agents' positions with Bubble Packing method and green circles are representing the agents' positions with Artificial Forces method at the same time from the beginning of the simulations. Formation shape with blue line illustrates the current formation shape. It is obvious that the green agents are adapted to the current formation shape better than the red ones. The shape with dotted red line, represents the estimatated coverage area of red agents in the environment and this shape differs from the current formation shape locally at some boundary regions. This shows that agents response to the dynamically changing formation shape fasters with Artifical Forces method. 
+
 \subsection{Evaluation} 
-Three different formation control approaches are evaluated with different kinds of metrics including the total displacement, settling time and mesh quality which is a measure of how the agents homogenously distributed while covering the desired formation shape. Artificial forces method have the worst performance in setlling time and total displacement metrics due to the absence of predetermined goal states which is discussed in Section \ref{settling_ref} in details. On the other hand the Randomized Fractals method have the worst mesh quality performance because of its randomized nature of assignment the goal states in the desired formation shape. The methods which have the worst performance at the related metrics are illustrated in Table \ref{tab:title}
+Three different formation control approaches are evaluated with different kinds of metrics including the total displacement, settling time, mesh quality and dynamically changing formations. Artificial forces method have the worst performance in setlling time and total displacement metrics due to the absence of predetermined goal states which is discussed in Section \ref{settling_ref} in details. On the other hand the Randomized Fractals method have the worst mesh quality performance because of its randomized nature of assignment the goal states in the desired formation shape. It is not possible to adapt the agents for dynamically changing formations as discussed in Section \ref{dynamical_ref}. Artificial forces method have better response to the dynamically changing formations. The methods which have the worst performance at the related metrics are illustrated in Table \ref{worst_performance}
 		
 \begin{center}
-\captionof{table}{Formation Control Methods with Worst Performance} \label{tab:title} 
-\begin{tabular}{||c| c| c |c ||}
+\captionof{table}{Formation Control Methods with Worst Performance} \label{worst_performance} 
+\begin{tabular}{||c| c| c | c | c||}
 				
 \hline
-\textbf{Method/Metric} & \textbf{Total Displacement}  & \textbf{Settling Time} & \textbf{Mesh Quality}\\ 
+\textbf{Method/Metric} & \textbf{Total}  & \textbf{Settling} & \textbf{Mesh} & \textbf{Dynamical}\\ 
+                       & \textbf{Displacement}  & \textbf{Time} & \textbf{Quality} & \textbf{Formation}\\
 \hline
-Artificial Force & X & X &  \\
-Bubble Packing & &  &  \\	
-Randomized Fractals & &  & X \\	
+Artificial Force & X & X & & \\
+Bubble Packing & &  & & X\\	
+Randomized Fractals & &  & X & N/A \\	
 \hline
 \end{tabular}
 \end{center}
 		
-It is obvious that time Bubble Packing Method have the best performance for all metrics. In fact, Bubble Packing method combines the efficient approaches of the other two methods. In the shape partitioning phase of the algorithm, it uses interbubble forces which have a similar structure with the intermember forces applied by the Artificial Forces method in formation control. This force have the greatest  effect on the homogeneity of the agents in the desired formation shape because it provides a global consensus for the agents in which each agent reaches an equilibrium state under the total force acting by their neighbors and the formation shape. On the other hand, bubble packing method implements an algorithm in which every agent assigned to a goal state instantly at each execution time of the algorithm to minimize the overall displacement of the swarm. This approach reduce the settling time and the total displacements of the agents from the initial state to their final states since their final positions in the formation shape is predetermined. It is possible that the agents' goal states may be changed with the execution of the algorithm at different steps, but these assignments will converge to a unique subset while the agents are getting closer to the goal states. 
+It is obvious that Bubble Packing Method have the best performance for all metrics except for dynamical formation shapes. In fact, Bubble Packing method combines the efficient approaches of the other two methods. In the shape partitioning phase of the algorithm, it uses interbubble forces which have a similar structure with the intermember forces applied by the Artificial Forces method in formation control. This force have the greatest  effect on the homogeneity of the agents in the desired formation shape because it provides a global consensus for the agents in which each agent reaches an equilibrium state under the total force acting by their neighbors and the formation shape. On the other hand, bubble packing method implements an algorithm in which every agent is assigned to a goal state instantly at each execution time of the algorithm to minimize the overall displacement of the swarm. This approach reduce the settling time and the total displacements of the agents from the initial state to their final states since their final positions in the formation shape is predetermined. It is possible that the agents' goal states may be changed with the execution of the algorithm at different steps, but these assignments will converge to a unique subset while the agents are getting closer to the goal states. 
+
+Artificial forces method has better performance on dynamically changing formations because it directly adapts the individual control signals on the agents according to the current formation shape. Bubble Packing method has a slower response to the dynamically changing formations due to its solution with two stages, shape partitioning and goal state assignment. 
 		
 Some other formation shape trials with the Bubble Packing algorithm is illustrated in the following figures.
 
@@ -317,7 +351,7 @@ Some other formation shape trials with the Bubble Packing algorithm is illustrat
 \end{figure} 
 			
 \begin{center}
-\captionof{table}{Performance Metrics for Shape - 1} \label{tab:title} 
+\captionof{table}{Performance Metrics for Shape - 1} \label{perf_shape1} 
 \begin{tabular}{||c| c |c |c ||}
 					
 \hline
@@ -339,7 +373,7 @@ Some other formation shape trials with the Bubble Packing algorithm is illustrat
 \end{figure} 
 		 
 \begin{center}
-\captionof{table}{Performance Metrics for Shape - 2} \label{tab:title} 
+\captionof{table}{Performance Metrics for Shape - 2} \label{perf_shape2} 
 \begin{tabular}{||c| c |c |c ||}
 		 		
 \hline
@@ -361,7 +395,7 @@ Some other formation shape trials with the Bubble Packing algorithm is illustrat
 \end{figure} 
 				 
 \begin{center}
-\captionof{table}{Performance Metrics for Shape - 3} \label{tab:title} 
+\captionof{table}{Performance Metrics for Shape - 3} \label{perf_shape3} 
 \begin{tabular}{||c| c |c |c ||}
 \hline
 \textbf{Total Displacement }  & \textbf{Total Settling} & \textbf{Topological Mesh} & \textbf{Geometrical Mesh} \\ \textbf{Consumption[m]} & \textbf{Time[sec]}& \textbf{Irregularity} & \textbf{Irregularity} \\
@@ -382,7 +416,7 @@ Some other formation shape trials with the Bubble Packing algorithm is illustrat
 \end{figure} 
 			
 \begin{center}
-\captionof{table}{Performance Metrics for Shape - 4} \label{tab:title} 
+\captionof{table}{Performance Metrics for Shape - 4} \label{perf_shape4} 
 \begin{tabular}{||c| c |c |c ||}
 \hline
 \textbf{Total Displacement }  & \textbf{Total Settling} & \textbf{Topological Mesh} & \textbf{Geometrical Mesh} \\ \textbf{Consumption[m]} & \textbf{Time[sec]}& \textbf{Irregularity} & \textbf{Irregularity} \\
@@ -400,7 +434,7 @@ A simulation with multiple formation shapes sequentially is illustrated in Figur
 \end{figure} 
 		
 \begin{center}
-\captionof{table}{Performance Metrics for Multiple Formation Shapes} \label{tab:title} 
+\captionof{table}{Performance Metrics for Multiple Formation Shapes} \label{perf_multiple} 
 \begin{tabular}{||c| c |c |c ||}
 \hline
 \textbf{Total Energy }  & \textbf{Total Settling} & \textbf{Topological Mesh} & \textbf{Geometrical Mesh} \\ \textbf{Consumption[m]} & \textbf{Time[sec]}& \textbf{Irregularity Mean} & \textbf{Irregularity Mean} \\

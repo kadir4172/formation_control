@@ -74,9 +74,9 @@
 \contentsline {subsubsection}{\numberline {4.3.2.2}Shape 2}{109}{subsubsection.4.3.2.2}
 \contentsline {subsection}{\numberline {4.3.3}Settling Time}{113}{subsection.4.3.3}
 \contentsline {subsection}{\numberline {4.3.4}Dynamically Changing Formations}{114}{subsection.4.3.4}
-\contentsline {subsection}{\numberline {4.3.5}Evaluation}{114}{subsection.4.3.5}
-\contentsline {chapter}{\numberline {5}\MakeUppercase {Next Chapter}}{123}{chapter.5}
-\contentsline {leads}{\numberline {}\uppercase {REFERENCES}}{125}{chapter*.20}
-\contentsline {nodots}{\numberline {}APPENDICES}{125}{chapter*.20}
-\contentsline {chapter}{\numberline {A}\MakeUppercase {Appendix Name}}{127}{appendix.A}
-\contentsline {leads}{\numberline {}CURRICULUM VITAE}{129}{appendix*.21}
+\contentsline {subsection}{\numberline {4.3.5}Evaluation}{119}{subsection.4.3.5}
+\contentsline {chapter}{\numberline {5}\MakeUppercase {Next Chapter}}{129}{chapter.5}
+\contentsline {leads}{\numberline {}\uppercase {REFERENCES}}{131}{chapter*.20}
+\contentsline {nodots}{\numberline {}APPENDICES}{131}{chapter*.20}
+\contentsline {chapter}{\numberline {A}\MakeUppercase {Appendix Name}}{133}{appendix.A}
+\contentsline {leads}{\numberline {}CURRICULUM VITAE}{135}{appendix*.21}

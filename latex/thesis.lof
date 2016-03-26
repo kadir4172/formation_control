@@ -107,14 +107,19 @@
 \contentsline {figure}{\numberline {4.34}{\ignorespaces Total Travelled Distance for Shape 2\relax }}{112}{figure.4.34}
 \contentsline {figure}{\numberline {4.35}{\ignorespaces Total Settling Time for Shape 1\relax }}{113}{figure.4.35}
 \contentsline {figure}{\numberline {4.36}{\ignorespaces Total Settling Time for Shape 2\relax }}{114}{figure.4.36}
-\contentsline {figure}{\numberline {4.37}{\ignorespaces Formation Shape - 1 in Gazebo Environment\relax }}{116}{figure.4.37}
-\contentsline {figure}{\numberline {4.38}{\ignorespaces Formation Shape - 1 in MATLAB Environment\relax }}{116}{figure.4.38}
-\contentsline {figure}{\numberline {4.39}{\ignorespaces Formation Shape - 2 in Gazebo Environment\relax }}{117}{figure.4.39}
-\contentsline {figure}{\numberline {4.40}{\ignorespaces Formation Shape - 2 in MATLAB Environment\relax }}{118}{figure.4.40}
-\contentsline {figure}{\numberline {4.41}{\ignorespaces Formation Shape - 3 in Gazebo Environment\relax }}{119}{figure.4.41}
-\contentsline {figure}{\numberline {4.42}{\ignorespaces Formation Shape - 3 in MATLAB Environment\relax }}{119}{figure.4.42}
-\contentsline {figure}{\numberline {4.43}{\ignorespaces Formation Shape - 4 in Gazebo Environment\relax }}{120}{figure.4.43}
-\contentsline {figure}{\numberline {4.44}{\ignorespaces Formation Shape - 4 in MATLAB Environment\relax }}{121}{figure.4.44}
-\contentsline {figure}{\numberline {4.45}{\ignorespaces Multiple Formations\relax }}{122}{figure.4.45}
+\contentsline {figure}{\numberline {4.37}{\ignorespaces Dynamic Formation Control with Bubble Packing Method\relax }}{116}{figure.4.37}
+\contentsline {figure}{\numberline {4.38}{\ignorespaces Dynamic Formation Control with Artificial Forces Method\relax }}{117}{figure.4.38}
+\contentsline {figure}{\numberline {4.39}{\ignorespaces Latency in Bubble Packing Method-1\relax }}{118}{figure.4.39}
+\contentsline {figure}{\numberline {4.40}{\ignorespaces Latency in Bubble Packing Method-2\relax }}{118}{figure.4.40}
+\contentsline {figure}{\numberline {4.41}{\ignorespaces Latency in Bubble Packing Method-3\relax }}{119}{figure.4.41}
+\contentsline {figure}{\numberline {4.42}{\ignorespaces Formation Shape - 1 in Gazebo Environment\relax }}{121}{figure.4.42}
+\contentsline {figure}{\numberline {4.43}{\ignorespaces Formation Shape - 1 in MATLAB Environment\relax }}{122}{figure.4.43}
+\contentsline {figure}{\numberline {4.44}{\ignorespaces Formation Shape - 2 in Gazebo Environment\relax }}{123}{figure.4.44}
+\contentsline {figure}{\numberline {4.45}{\ignorespaces Formation Shape - 2 in MATLAB Environment\relax }}{123}{figure.4.45}
+\contentsline {figure}{\numberline {4.46}{\ignorespaces Formation Shape - 3 in Gazebo Environment\relax }}{124}{figure.4.46}
+\contentsline {figure}{\numberline {4.47}{\ignorespaces Formation Shape - 3 in MATLAB Environment\relax }}{125}{figure.4.47}
+\contentsline {figure}{\numberline {4.48}{\ignorespaces Formation Shape - 4 in Gazebo Environment\relax }}{126}{figure.4.48}
+\contentsline {figure}{\numberline {4.49}{\ignorespaces Formation Shape - 4 in MATLAB Environment\relax }}{126}{figure.4.49}
+\contentsline {figure}{\numberline {4.50}{\ignorespaces Multiple Formations\relax }}{127}{figure.4.50}
 \addvspace {10pt}
 \addvspace {10pt}
