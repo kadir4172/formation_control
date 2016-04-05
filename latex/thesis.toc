@@ -7,10 +7,10 @@
 \select@language {english}
 \contentsline {leads}{\numberline {}ACKNOWLEDGMENTS}{x}{chapter*.3}
 \contentsline {leads}{\numberline {}TABLE OF CONTENTS}{xi}{chapter*.4}
-\contentsline {leads}{\numberline {}LIST OF TABLES}{xv}{chapter*.5}
-\contentsline {leads}{\numberline {}LIST OF FIGURES}{xvi}{chapter*.6}
-\contentsline {leads}{\numberline {}LIST OF ALGORITHMS}{xxii}{chapter*.7}
-\contentsline {leads}{\numberline {}LIST OF ABBREVIATIONS}{xxiii}{chapter*.8}
+\contentsline {leads}{\numberline {}LIST OF TABLES}{xvi}{chapter*.5}
+\contentsline {leads}{\numberline {}LIST OF FIGURES}{xvii}{chapter*.6}
+\contentsline {leads}{\numberline {}LIST OF ALGORITHMS}{xxiii}{chapter*.7}
+\contentsline {leads}{\numberline {}LIST OF ABBREVIATIONS}{xxiv}{chapter*.8}
 \numberline {}CHAPTERS
 \select@language {turkish}
 \select@language {english}
@@ -78,8 +78,10 @@
 \contentsline {chapter}{\numberline {5}\MakeUppercase {HARDWARE IMPLEMENTATION $\&$ RESULTS}}{129}{chapter.5}
 \contentsline {section}{\numberline {5.1}Hardware Demonstration Environment}{129}{section.5.1}
 \contentsline {section}{\numberline {5.2}Performance Analysis}{138}{section.5.2}
-\contentsline {chapter}{\numberline {6}\MakeUppercase {Next Chapter}}{145}{chapter.6}
-\contentsline {leads}{\numberline {}\uppercase {REFERENCES}}{147}{chapter*.20}
-\contentsline {nodots}{\numberline {}APPENDICES}{147}{chapter*.20}
-\contentsline {chapter}{\numberline {A}\MakeUppercase {Appendix Name}}{149}{appendix.A}
-\contentsline {leads}{\numberline {}CURRICULUM VITAE}{151}{appendix*.21}
+\contentsline {chapter}{\numberline {6}\MakeUppercase {CONCLUSION AND FUTURE WORKS}}{145}{chapter.6}
+\contentsline {section}{\numberline {6.1}Conclusion}{145}{section.6.1}
+\contentsline {section}{\numberline {6.2}Future Works}{149}{section.6.2}
+\contentsline {leads}{\numberline {}\uppercase {REFERENCES}}{151}{chapter*.20}
+\contentsline {nodots}{\numberline {}APPENDICES}{151}{chapter*.20}
+\contentsline {chapter}{\numberline {A}\MakeUppercase {Appendix Name}}{153}{appendix.A}
+\contentsline {leads}{\numberline {}CURRICULUM VITAE}{155}{appendix*.21}
