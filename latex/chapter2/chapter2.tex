@@ -4,6 +4,12 @@
 \chapter{LITERATURE SURVEY}
 \label{chp:Literature Survey}
 
+\externaldocument{chapter1}
+\externaldocument{chapter6}
+\externaldocument{chapter3}
+\externaldocument{chapter4}
+\externaldocument{chapter5}
+
 This chapter focuses on the related works on local positioning systems and formation control systems. 
 
 \section{Local Positioning Systems}
@@ -15,12 +21,12 @@ These systems fall in to two main branches, global positioning systems and local
 
 
 \begin{figure}[H]
-	\caption{Accuracy Statistics of Different Positioning Sources}
+	\caption{Accuracy Statistics of Different Positioning Sources} \label{overview_position}
 	\centering
 	\includegraphics[scale = 1]{gps}
 \end{figure} 
 
-Figure xx represents an onverview of current positioning systems. Global positioning systems are widely used nowadays and they provide accuracies in the range of 3-30 meters, they can operate outdoor environments with the necessity of radio signals from satellites. Differential GPS systems decrease these accuracy range below 3 meters with the help of additional local static beacons. GSM based solutions have the worst accuracy performance, but they can perform in indoor environments partially.  Local positioning systems have the capability of working indoor environments and they have a wide accuracy range changing with respect to the implemented topologies and methods. 
+Figure \ref{overview_position} represents an overview of current positioning systems. Global positioning systems are widely used nowadays and they provide accuracies in the range of 3-30 meters, they can operate outdoor environments with the necessity of radio signals from satellites. Differential GPS systems decrease these accuracy range below 3 meters with the help of additional local static beacons. GSM based solutions have the worst accuracy performance, but they can perform in indoor environments partially.  Local positioning systems have the capability of working indoor environments and they have a wide accuracy range changing with respect to the implemented topologies and methods. 
 
 Local positioning systems has different system topologies illustrated in the Table \ref{different_top}20].
 
@@ -70,11 +76,11 @@ In this thesis work, we implement a self positioning system in which every agent
 
 \subsection{Trilateration Process} \label{Trilateration_Process_ref}
 
-Trilateration process is used to determine the three dimensional position of unknown locations with the help of distance measurement to known positions [22].  It is widely used in wireless sensor network topologies and local positioning systems.  In theory, it is needed to have at least four beacon nodes to calculte an unknown position in 3D, and at least three beacon nodes to calculate an unknown position in 2D environment. But these worst case numbers are generally not sufficient to estimate an unknown position with a good accuracy due to errors on range calculations and synchronization problems. Figure -xx demonstrates a simple trilateration procees in 2D environment with the help of  three position beacons. Suppose a mobile device which tries to estimate its position with the help of local positioning system is at the red point in the figure. If it can measure its distance to the beacons named A,B and C with exactly known positions, it will be possible to estimate the unknown position of this mobile device with the same approach used in global positioning systems. 
+Trilateration process is used to determine the three dimensional position of unknown locations with the help of distance measurement to known positions [22].  It is widely used in wireless sensor network topologies and local positioning systems.  In theory, it is needed to have at least four beacon nodes to calculte an unknown position in 3D, and at least three beacon nodes to calculate an unknown position in 2D environment. But these worst case numbers are generally not sufficient to estimate an unknown position with a good accuracy due to errors on range calculations and synchronization problems. Figure \ref{trilateration_ref} demonstrates a simple trilateration procees in 2D environment with the help of  three position beacons. Suppose a mobile device which tries to estimate its position with the help of local positioning system is at the red point in the figure. If it can measure its distance to the beacons named A,B and C with exactly known positions, it will be possible to estimate the unknown position of this mobile device with the same approach used in global positioning systems. 
 
 
 \begin{figure}[H]
-	\caption{Trilateration Process}
+	\caption{Trilateration Process} \label{trilateration_ref}
 	\centering
 	\includegraphics[scale = 1]{trilateration}
 \end{figure}
@@ -107,10 +113,10 @@ One of the subproblems studied in formation control is formation tracking. The m
 	\includegraphics[scale = 1]{kumar}
 \end{figure} 
 
-The solutions for the formation control approaches can be classified into three basic strategies as leader-following, virtual structure and behaviour based approaches[12].  In leader following strategy, some of the agents in the swarm are the leaders to manage the rest of the swarm to achieve a desired specific task and the rest of the agents act as followers. This approach reduces the formation control problem into tracking control problem of individuals to follow the leader from a desired distance and bearing angle, thus the stability and convergence analysis of the formation can be done with the usage of single tracking controllers of members. Kumar, Fierro .. at [18] proposed a control framework in which follower agents move along a trajectory afterwords the leader agent with a desired seperation $l_{ij}$ and desired relative bearing angle $\psi_{ij}$.  Figure -xx represents a formation control with three agents where R3 is the leader and R1,R2 are the follower agents. 
+The solutions for the formation control approaches can be classified into three basic strategies as leader-following, virtual structure and behaviour based approaches[12].  In leader following strategy, some of the agents in the swarm are the leaders to manage the rest of the swarm to achieve a desired specific task and the rest of the agents act as followers. This approach reduces the formation control problem into tracking control problem of individuals to follow the leader from a desired distance and bearing angle, thus the stability and convergence analysis of the formation can be done with the usage of single tracking controllers of members. Kumar, Fierro .. at [18] proposed a control framework in which follower agents move along a trajectory afterwords the leader agent with a desired seperation $l_{ij}$ and desired relative bearing angle $\psi_{ij}$.  Figure \ref{leader_follower_ref} represents a formation control with three agents where R3 is the leader and R1,R2 are the follower agents. 
 
 \begin{figure}[H]
-	\caption{Leader-Follower Systems}
+	\caption{Leader-Follower Systems} \label{leader_follower_ref}
 	\centering
 	\includegraphics[scale = 1]{leader}
 \end{figure}
@@ -173,12 +179,12 @@ Fractals are self similar  patterns in all scales of themselves. They are define
 
 
 such that the sum of all areas $A_i$ is the total area $A$ to be filled, that is, if the algorithm does not halt then it is space-filling. 
-Some of the outputs of their algorithm is given at Figure -xx
+Some of the outputs of their algorithm is given at Figure \ref{space_filling}
 
 
 
 \begin{figure}[H]
-	\caption{Space Filling Examples with Randomized Fractals}
+	\caption{Space Filling Examples with Randomized Fractals} \label{space_filling}
 	\centering
 	\includegraphics[scale = 1]{randomized1}
 \end{figure}
@@ -193,20 +199,20 @@ Bubble$\&$Circle packing algorithms are widely used for mesh generation problems
 	\includegraphics[scale = 1]{nodespacing}
 \end{figure}
 
-Shimada and Gossard proposed a method based on interbubble forces to provide close packaging of bubbles in desired geometrical shape. This approach is very similar with the one used in formation control of swarms to achieve geometrical shapes. The related interbubble forces are described at Figure – xx.
+Shimada and Gossard proposed a method based on interbubble forces to provide close packaging of bubbles in desired geometrical shape. This approach is very similar with the one used in formation control of swarms to achieve geometrical shapes. The related interbubble forces are described at Figure \ref{interbubble_ref}.
 
 \begin{figure}[H]
-	\caption{Interbubble Forces}
+	\caption{Interbubble Forces} \label{interbubble_ref}
 	\centering
 	\includegraphics[scale = 1]{interbubble}
 \end{figure}
 
 
-With the help of adaptive population control by removing the excess bubble which significantly overlap their neighbors, they provide an adaptive bubble packing algorithm for mesh generation. A result with a 2D shape is given at Figure -xx
+With the help of adaptive population control by removing the excess bubble which significantly overlap their neighbors, they provide an adaptive bubble packing algorithm for mesh generation. A result with a 2D shape is given at Figure \ref{mesh_genearation_ref}
 
 
 \begin{figure}[H]
-	\caption{Mesh Generation with Interbubble Forces}
+	\caption{Mesh Generation with Interbubble Forces} \label{mesh_genearation_ref}
 	\centering
 	\includegraphics[scale = 1]{interbubble2}
 \end{figure}

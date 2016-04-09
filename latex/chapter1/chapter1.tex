@@ -12,7 +12,7 @@ Collaborative robot network is not just a agglomeration of robots, they have ess
 
 Properties of swarm robotics systems that make them unique are the simplicity of individuals, restricted sensing and communication capabilities, collaborative achievement of complex tasks, robustness and decentralization of control capabilities[6].
 
-Swarm robotics has been studied to produce different collective behaviors to solve tasks such as as aggregation , pattern formation , self-assembly and morphogenesis , object clustering, assembling and construction , collective search$\&$rescue and exploration , coordinated motion , collective transportation , self-deployment , foraging and others[5]. Dorigo and Trianni[7] are studied on controllers for aggregation of coordinated motion of the identical mobile robots called swarm-bots. Their implementation has a centralized structure in which a decision maker assigns roles to individual agents. In our work, each agent is responsible to reach global consensus on the final positions in formation which increase the robustness of the system to individual erroneous decisions. Hou, S.P., C.C. Cheah, and J.J.E. Slotine is focused on controlling of a swarm within a dynamically changing formation[8]. It is needed to descrive a global objective function which requires analytical expression of the desired formation shape. But it may not be possible to define the desired formation shape with analytical expressions in real world applications. In this thesis work, the solution does not require the analytical expressions of the desired formation shape.  Ganesh and Lisa introduced two new strategies for collective search and exploration of fields with swarm intelligence[9]. Their implementation requires a central controller to manage the individuals and this type of solution has a single point of failure characteristic because of the dependence on single decision maker agent.   Chaimowicz and Campos proposed a new methodology which is based on a dynamic role assignment mechanism in which the robots cooperate with each other and they demonstrate this method in a cooperative transportation task[10]. Their work implements a leader follower structure in which following agents has no impact on the global consensus of the swarm. This approach depends on the decision of an individual agent and an erroneous decision of this individual may cause the failure of whole swarm. 
+Swarm robotics has been studied to produce different collective behaviors to solve tasks such as as aggregation , pattern formation , self-assembly and morphogenesis , object clustering, assembling and construction , collective search$\&$rescue and exploration , coordinated motion , collective transportation , self-deployment , foraging and others[5]. Dorigo and Trianni[7] are studied on controllers for aggregation of coordinated motion of the identical mobile robots called swarm-bots. Their implementation has a centralized structure in which a decision maker assigns roles to individual agents. In our work, each agent is responsible to reach global consensus on the final positions in formation which increase the robustness of the system to individual erroneous decisions. Hou, S.P., C.C. Cheah, and J.J.E. Slotine is focused on controlling of a swarm within a dynamically changing formation[8]. In their work, it is needed to describe a global objective function which requires analytical expression of the desired formation shape. But it may not be possible to define the desired formation shape with analytical expressions in real world applications. In this thesis work, the solution does not require the analytical expressions of the desired formation shape.  Ganesh and Lisa introduced two new strategies for collective search and exploration of fields with swarm intelligence[9]. Their implementation requires a central controller to manage the individuals and this type of solution has a single point of failure characteristic because of the dependence on single decision maker agent.   Chaimowicz and Campos proposed a new methodology which is based on a dynamic role assignment mechanism in which the robots cooperate with each other and they demonstrate this method in a cooperative transportation task[10]. Their work implements a leader follower structure in which following agents has no impact on the global consensus of the swarm. This approach depends on the decision of an individual agent and an erroneous decision of this individual may cause the failure of whole swarm. 
 
 There are lots of studies related with different problems in swarm robotics literature as discussed briefly. In this thesis project, we are focused on dynamic pattern formation control of swarms consist of heterogeneous robots. All agents contribute on the decision process and they collaborate to minimize the total displacement while achieving the desired formation shape. 
 
@@ -48,44 +48,54 @@ A swarm which is composed with same type of homogenous agents can be used to inc
 
 Formation control solutions has lots of usage areas such as coverage missions, security patrols and search$\&$rescue in hazardous environments etc.[13]. For missions related with area coverage and reconnaissance, a group of autonomous vehicles may be required to keep in a specified formation [13].  
 
-There are some hardware implementations to test the related formation control algorithms in real time applications. Since the formation control problem requires lots of agents in a swarm, these works have a common point of providing agents with minimal costs and sensor capabilities. The Kilobot Project from Harvard university have released their agents with the name of Kilobots and they have teams which are working on different formation control problems with Kilobots.
+There are some hardware implementations to test the related formation control algorithms in real time applications. Since the formation control problem requires lots of agents in a swarm, these works have a common point of providing agents with minimal costs and sensor capabilities. The Kilobot Project from Harvard university have released their agents with the name of Kilobots and they have teams which are working on different formation control problems with Kilobots[98].
 
 \begin{figure}[H]
-\caption{Formation Control with Kilobots}
+\caption{Formation Control with Kilobots[98]}
 \centering
-\includegraphics[scale = 1]{kilobot}
+\includegraphics[scale = 0.75]{kilobot}
 \end{figure}
 
-These micro robots have a great reusability for different types of formation control problems  and they have biological insprations from the nature in the sense of individual simplicity and power of collective behaviors.
+These micro robots have a great reusability for different types of formation control problems  and they have biological insprations from the nature in the sense of individual simplicity and power of collective behaviors. Common feature of these projects, they implement formation control systems with swarms composed of homogenous agents. In real world applications, complex tasks may require different functionalities which can be provided by different type of robots. In our work, we have focused on implementing a formation control system with heterogenous agents.
 
 \begin{figure}[H]
 \captionsetup{format=hang,justification=centerfirst}
-\caption{A) Swarm Robot Project from Universities of Stuttgart  \\
-B) Colias Project from University of Lincoln and Tsinghua\\ University in China\\
-C) Marx bot developed at EPFL \\
-D)Swarm bots project conducted by  European Commission}
+\caption{A) Swarm Robot Project from Universities of Stuttgart[97]  \\
+B) Colias Project from University of Lincoln and Tsinghua\\ University in China[96]\\
+C) Marx bot developed at EPFL[95] \\
+D)Swarm bots project conducted by  European Commission[94]}
 \centering
-\includegraphics[scale = 1]{mobilerobots}
+\includegraphics[scale = 0.8]{mobilerobots}
 \end{figure}
 
-\section{Objectives} \label{Objectives}
-In this thesis work, our aim is to provide different approaches $\&$ solutions to the requirements in formation control problem.  There are mainly different types of  infrastructures while providing a global solution to the formation control problem like the heterogeneity vs. homogeneity of the agents, communication structures, centralized vs. decentralized structures, swarm control strategies like behavior based and leader-following approaches or virtual structure based approaches. 
-
-In addition to choice of the formation control infrastructures, capabilities of the individual agents provide additional requirements and constraints while designing a formation control system. One of the most important characteristic of an agent in the swarm is its simplicity and limited sensor $\&$ communication capability. This approach results from the idea of achieving collective tasks with lots of simple individuals  and it is based on biological inspirations in nature like colony of ants etc.
-
-In this project the defined requirements and objectives are given as follows;
-
-\subsection{Heterogenous Robots with Different Dynamics}
-Agents have different dynamics from each other like different friction surfaces, geometrical structures and functionalities. They have different volumes and masses(not mass point particles) and they may collide with the other ones and the obstacles in the environment.
+Hou, S.P., C.C. Cheah, and J.J.E. Slotine has implemented a formation control system with dynamically changing formation shapes[8]. Their approach defines a global objective function which requires the mathetmatical definition of the desired formation shape, but it may not be possible to derive the analytical expressions for the desired shape. In our work, control laws for individuals in the swarm does not require such a global objective function definition.
 
 \begin{figure}[H]
-\caption{Heterogenous Agents with Different Physical Properties and Functionalities}
+\caption{Dynamically Changing Formations with Global Objective Functions[8]}
 \centering
-\includegraphics[scale = 1]{heterogenous}
+\includegraphics[scale = 0.35]{houslotine}
 \end{figure}
 
+
+\section{Objectives $\&$ Goals} \label{Objectives}
+In this thesis work, our aim is to provide different approaches $\&$ solutions to the requirements in formation control problem.  There are mainly different types of  infrastructures which propose solutions to the formation control problems like the heterogeneity vs. homogeneity of the agents, communication structures, centralized vs. decentralized structures, swarm control strategies like behavior based and leader-following approaches or virtual structure based approaches. 
+
+Our main approach is to design a complete solution to the formation control problem by taking into account the requirements related with real world applications. In literature, formation control systems generally implements solutions with simple geometrical shapes[8]. One of the objectives of this thesis work is to implement a solution which does not require the mathematical definition of the desired formation shape. Also it is aimed to design an algorithm which can adapt itself to the dynamically changing formations.
+
+On the other hand, most of the related work assumes that it is possible to measure the exact positions of the agents in the workspace[98,97]. Another objective of this thesis work is to implement a localization solution for the agents by assuming they may not able to measure their positions. With this approach, it is possible to provide a complete solution to formation control problem.
+
+Specific tasks including different missions, requires agents with different capabilities and this kind of tasks may not be achieved with swarms composed of homogenous agents[99]. In our work, one of the objectives is to implement a formation control system with heterogenous agents. Furthermore, proposed solutions for formation control problem generally includes a decision making process which is executed by an individual agent or a central server. This kind of approach creates a single point of failure system and if this decision maker unit fails during mission, swarm cannot achieve the desired task. In this thesis work, it is aimed to implement a solution in which every agent is responsible of contributing on decisions and reaching a global consensus. 
+
+In addition to choice of the formation control infrastructures, capabilities of the individual agents provide additional requirements and constraints while designing a formation control system. One of the most important characteristic of an agent in the swarm is its simplicity and limited sensor $\&$ communication capability[6]. This approach results from the idea of achieving collective tasks with lots of simple individuals  and it is based on biological inspirations in nature like colonies of ants etc. In our work, it is aimed to propose a solution by taking into account that agents in the swarm has simple structures and limited sensor capabilities.
+
+To achieve these objectives and meet these requirements, the goals for this thesis work are defined as follows:
+
+\subsection{Heterogenous Robots with Different Dynamics}
+It is aimed to create a formation control system with heterogenous agents to achieve complex tasks which require different functionalities. To accomplish this objective, it is assumed that agents have different dynamics from each other like different friction surfaces, geometrical structures and functionalities. They have different volumes and masses(not mass point particles) and they may collide with the other ones and the obstacles in the environment.
+
+
 \subsection{Communication Infrastructure}
-Agents in the swarm have limited communication capabilities and can only negotiate with its local neighbors in a narrow line of sight range due to power consumption issues and their weak radio links.
+One of the objectives in this work is to implement a localization solution for the agents. Also it is required to implement a communication backbone to execute a decentrelized decision making process in which each agent reaches a global consensus. To meet these requirements, it is needed to implement a communication infrastructure in the proposed solution. By taking into account that the agents in the swarm have limited communication capabilities and can only negotiate with its local neighbors in a narrow line of sight range due to power consumption issues and their weak radio links, this infrastructure must have following specifications.
 
 \begin{figure}[H]
 \caption{Radio Links on Agents Have a Narrow LOS Range}
@@ -93,7 +103,7 @@ Agents in the swarm have limited communication capabilities and can only negotia
 \includegraphics[scale = 1]{narrow_los}
 \end{figure}
 
-a)Communication Topology
+a)Communication Topology \newline
 Communication topology is a wireless mesh network in which each agent relays data for the rest of the network. The network is fully connected and has routing technique where the data is propogated along a route by transporting over the nodes(member agents of the swarm).
 
 \begin{figure}[H]
@@ -102,7 +112,7 @@ Communication topology is a wireless mesh network in which each agent relays dat
 \includegraphics[scale = 1]{mesh}
 \end{figure} 
 
-b)Communication Bandwith
+b)Communication Bandwith \newline
 Bandwith of the communication between agents is limited and nodes can only transport most critical data like heartbeats, agent IDs, type and position etc.
 
 \subsection{ Decentralized Decision Making Process}
@@ -115,8 +125,8 @@ to process all the data needed to achieve the desired control objectives. This t
 \includegraphics[scale = 1]{decentralized}
 \end{figure} 
 
-\subsection{Complex Closed Contours}
-Formation shapes will be defined as closed curves with complex shapes and they cannot be identified analytically . On the other hand shapes will be changing dynamically during formation control.
+\subsection{Complex and Dynamically Changing Formation Shapes}
+In literature, formation control systems are generally designed with a single or combination of simple geometrical shapes and they require analytical expressions of these shapes while implementing the proposed control laws for individual agents[93]. Specific tasks which requires more complex shapes cannot be achieved with this approach. In our work, we have focused on designing a formation control algorithm which does not require the mathematical definition of the desired formation shape. The goal to accomplish this objective is to design a solution which does not depend on the analytical expression of the formation shape. Furthermore, in literature the general approach is to implement a solution to cover a static formation shape. In real world applications it may be needed to update the desired shape according to the requirements of the task. In our work, one of the goals is to propose an algorithm which can adapt dynamically changing formation shapes.
 
 \begin{figure}[H]
 \caption{Complex and Dynamically Changing Formation Shapes}
@@ -125,10 +135,10 @@ Formation shapes will be defined as closed curves with complex shapes and they c
 \end{figure}
 
 \subsection{Simple Agents with Low Sensor Capabilities and Low Computing Powers}
-Agents in the swarm are assumed to have low sensor capabilities and weak computing power. This condition must be taken into account during the control system design, since individuals do not have a high resolution and sensitive data about their state vectors, and they cannot execute high level complex control algorithms.
+Agents in the swarm are assumed to have low sensor capabilities and weak computing power[6]. This condition must be taken into account during the control system design, since individuals do not have a high resolution and sensitive data about their state vectors, and they cannot execute high level complex control algorithms.
 
-\section{Goals}
-The objectives and the assumptions about the requirements define the goals of this thesis project. The goals of the project are listed in the following section.
+\section{Requirements}
+The goals of this project define some requirements about the implementation phase of the project. These requirements are listed as follows:
 
 1. Agents have to propogate their position and velocity states with the help of inertial measurements.This process is handled with a Kalman estimator which takes the translational accelaration data as an input to the observer model .The translational acceleration data is calculated with the help of AHRS system composed by 3 axis accelerometers, gyroscopes and magnetometers. 
 
@@ -156,13 +166,10 @@ The main contributions of thesis are:
 
 2. Implementing a wireless mesh network between agents in the swarm and design a communication infrastructure and related routing algorithms to exchange the local data globally in the network
 
-3. Partitioning the complex formation shapes into goal states to cover the whole formation homogenously with the different types of heterogenous agents.
+3. Implementing a formation control system with complex and dynamically changing formation shapes by using swarms composed of heterogenous agents.
 
-4. Designing and implement the rules$\&$algorithms for the decision process of the individual agents about the goal states to reach.
+4. Designing and implementing the rules$\&$algorithms for the decentralized decision making process of the individual agents about the goal states in desired formation shape.
 
-5. Designing a simulation environment to test the proposals and algorithms of this thesis work
-
-6. Designing a simple demonstrative hardware application.
 
 \section{Outline of the Thesis}
 This thesis work is organized into 5 main sections .Chapter 1 introduces the main theme and the potential areas of the usage of formation control, while specifying our motivation and the requirements$\&$problems to meet$\&$solve related with the topic.

@@ -8,6 +8,8 @@
 \externaldocument{chapter1}
 \externaldocument{chapter2}
 \externaldocument{chapter3}
+\externaldocument{chapter6}
+\externaldocument{chapter5}
 
 
 
@@ -116,17 +118,17 @@ The performance of the LPS design is tested in simulations with different condit
 \centerline{\includegraphics[scale = 0.27]{Pozisyon-1-Duzeltilmis}}
 \end{figure} 
 		
-Handling procedures of the lost agents are presented in Section \ref{LostAgents}. Agents which do not have at least three neighbors around itselves will get into the 'Lost' mode, and if  they miss three localization process they will get into 'Come Home' mode. When an agent is in 'Come Home' mode, it will try to reach the center of formation to increase the possibility to meet some neighbors to localize itself as discussed in Section \ref{LostAgents}. A simulation result in which two agents cannot have three neighbors around themselves and get into 'Lost' mode and 'Come Home' modes  is presented in Figure -xx and Figure-xx respectively.
+Handling procedures of the lost agents are presented in Section \ref{LostAgents}. Agents which do not have at least three neighbors around itselves will get into the 'Lost' mode, and if  they miss three localization process they will get into 'Come Home' mode. When an agent is in 'Come Home' mode, it will try to reach the center of formation to increase the possibility to meet some neighbors to localize itself as discussed in Section \ref{LostAgents}. A simulation result in which two agents cannot have three neighbors around themselves and get into 'Lost' mode and 'Come Home' modes  is presented in Figure \ref{lost_ref} and Figure \ref{come_home_ref} respectively.
 		
 \begin{figure}[H]
-\caption{Agents will be in 'Lost' Mode When They Do Not Have 3 Neighbors}
+\caption{Agents will be in 'Lost' Mode When They Do Not Have 3 Neighbors} \label{lost_ref}
 \centering
 \centerline{\includegraphics[scale = 0.27]{Lost-2-2}}
 \end{figure} 
 
 \begin{figure}[H]
 \captionsetup{format=hang,justification=centerfirst}
-\caption{Agents will be in 'Come Home' Mode When They Miss Localization Process for 3 Times}
+\caption{Agents will be in 'Come Home' Mode When They Miss Localization Process for 3 Times} \label{come_home_ref}
 \centerline{\includegraphics[scale = 0.27]{Lost-2-3}}
 \end{figure} 		
 		
@@ -426,10 +428,10 @@ Some other formation shape trials with the Bubble Packing algorithm is illustrat
 \end{tabular}
 \end{center}
 		
-A simulation with multiple formation shapes sequentially is illustrated in Figure-xx.
+A simulation with multiple formation shapes sequentially is illustrated in Figure \ref{multiple_formation_ref}.
 
 \begin{figure}[H]
-\caption{Multiple Formations}
+\caption{Multiple Formations} \label{multiple_formation_ref}
 \centerline{\includegraphics[scale = 0.45]{multiple_formation}}
 \end{figure} 
 		

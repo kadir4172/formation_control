@@ -1,5 +1,5 @@
 
-% CHAPTER 2
+% CHAPTER 3
 
 \chapter{METHODOLOGY}
 \label{chp:Methodology}
@@ -7,8 +7,9 @@
 
 \externaldocument{chapter1}
 \externaldocument{chapter2}
-\externaldocument{chapter3}
+\externaldocument{chapter6}
 \externaldocument{chapter4}
+\externaldocument{chapter5}
 
 In this thesis work, the problem of dynamical formation control of heterogenous mobile robots is reduced down to two subproblems as local positioning system design and formation control system design. Local positioning subsystem proposes  a  solution for the localization of the agents in the environment with the low sensor capabilities. This part of the solution provides a basis for the formation control problem with the true state vectors of agents composed with the translational positions and velocities. Formation control subsystem proposes a solution to achieve desired complex shapes with heterogenous agents in the swarm.  In this chapter, details of the solution for these subproblems are presented in details. 
 
@@ -354,7 +355,7 @@ When the link between B and D breaks, node B gets no transmission from the D and
 DSDV is implementing an algorithm to find the shortest paths between the internal nodes of a given directed graph. The costs for each shortest path are calculated with the help of the weight of edges in the graph. Since our aim is to find the closest position beacon which has the minimum number of hops, the weight for each edge in the graph must be represented with the same unit size and the directions of the edges are negligible. 
 
 \subsection{Clusters} \label{Clusters}
-Since there are limited number of position beacons in a swarm, it will be appropriate to cluster the agents around these position agents to minimize the problem to the subproblems in which every one of them there are only one position beacon and the agents which are assigned to that cluster. The error on the trilateration process is expected to be increasing at the lower layers of the process illustrated in Figure -xx because of the cumulative effects of errors added to the position and velocity data of the agents in each layer. Thus, the policy for the assignment of the agents to the clusters must be the number of hops to the position beacons rather than the physical distances. Since DSDV algorithm has a structure storing the number of counts to each route in the tables, this information can be used to determine each agents' clusters in the swarm. 
+Since there are limited number of position beacons in a swarm, it will be appropriate to cluster the agents around these position agents to minimize the problem to the subproblems in which every one of them there are only one position beacon and the agents which are assigned to that cluster. The error on the trilateration process is expected to be increasing at the lower layers of the process illustrated in Figure \ref{cumulative_effect} because of the cumulative effects of errors added to the position and velocity data of the agents in each layer. Thus, the policy for the assignment of the agents to the clusters must be the number of hops to the position beacons rather than the physical distances. Since DSDV algorithm has a structure storing the number of counts to each route in the tables, this information can be used to determine each agents' clusters in the swarm. 
 
 \begin{figure}[H]
 \caption{Clusters Around Position Beacons} \label{Clusters_Ranks_2_ref}
@@ -714,7 +715,7 @@ z_i\\ \dot{z}_i
 
 where  $z_i \in C$, represents the position of the $i^{th}$ member of the swarm. The state of the whole swarm $x= \begin{bmatrix}
 X_1 & X_2 & ... X_n
-\end{bmatrix}$ is determined by the linear equations of [xx]
+\end{bmatrix}$ is determined by the linear equations of [17]
 
 \begin{equation}
 \dot{x} = Ax + Bu
@@ -923,7 +924,7 @@ The attractive and transition forces are defined to be active when the agents ar
 			
 			
 \paragraph{XSwarm Theory}\hspace{0pt} \\
-In artificial forces method it is required to analyse the movement of a single agent and to prove that the motion will be towards to the desired shape under the effect of different artificial force components, since there are no predetermined goal states within the desired formation shape. For this purpose, Samitha and Pubudu [xx] have provided a definition of "X-Swarm" and give a theorem which describes the motion of an agent towards the formation shape based on the X -Swarm definition. Let $S$ be a swarm with $N$ agents. This swarm is defined as X-Swarm if there exists some positive constants $\delta$ and  $ \gamma$ that satisfy the following conditions simultaneously for all $i,j \in S$ and $i \neq j$
+In artificial forces method it is required to analyse the movement of a single agent and to prove that the motion will be towards to the desired shape under the effect of different artificial force components, since there are no predetermined goal states within the desired formation shape. For this purpose, Samitha and Pubudu [17] have provided a definition of "X-Swarm" and give a theorem which describes the motion of an agent towards the formation shape based on the X -Swarm definition. Let $S$ be a swarm with $N$ agents. This swarm is defined as X-Swarm if there exists some positive constants $\delta$ and  $ \gamma$ that satisfy the following conditions simultaneously for all $i,j \in S$ and $i \neq j$
 			
 \begin{align}
 \begin{split}
