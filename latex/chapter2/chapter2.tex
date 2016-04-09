@@ -21,9 +21,9 @@ These systems fall in to two main branches, global positioning systems and local
 
 
 \begin{figure}[H]
-	\caption{Accuracy Statistics of Different Positioning Sources} \label{overview_position}
+	\caption{Accuracy Statistics of Different Positioning Sources[20]} \label{overview_position}
 	\centering
-	\includegraphics[scale = 1]{gps}
+	\includegraphics[scale = 0.4]{gps}
 \end{figure} 
 
 Figure \ref{overview_position} represents an overview of current positioning systems. Global positioning systems are widely used nowadays and they provide accuracies in the range of 3-30 meters, they can operate outdoor environments with the necessity of radio signals from satellites. Differential GPS systems decrease these accuracy range below 3 meters with the help of additional local static beacons. GSM based solutions have the worst accuracy performance, but they can perform in indoor environments partially.  Local positioning systems have the capability of working indoor environments and they have a wide accuracy range changing with respect to the implemented topologies and methods. 
@@ -33,7 +33,7 @@ Local positioning systems has different system topologies illustrated in the Tab
 \begin {table}[H]
 \begin{center}
 \newcommand{\wrap}[1]{\parbox{.40\linewidth}{\vspace{1.5mm}#1\vspace{1mm}}}
-\caption {Local Posititioning Systems with Different System Topologies} \label{different_top} 
+\caption {Local Posititioning Systems with Different System Topologies[20]} \label{different_top} 
 \begin{tabular}{ |c|c| } 
 \hline
 \wrap{Concept} &\wrap{Concept	Definition} \\
@@ -60,9 +60,9 @@ Two main topologies are self positioning and remote positioning systems[20].  In
 Angle of arrival (AOA), received signal strength(RSS) and propogation-time based systems are commonly used as three different measurement techniques used in local positioning systems. 
 
 \begin{figure}[H]
-	\caption{Different Measurement Principles}
+	\caption{Different Measurement Principles[20]}
 	\centering
-	\includegraphics[scale = 1]{measurement}
+	\includegraphics[scale = 0.4]{measurement}
 \end{figure} 
 
 In Angle-of-arrival (AOA) systems use directional antennas to measure the bearing and the angle to the points located at known positions are measured. The position value of device can be calculated with the intersection of several measurement, but the accuarcy is limited by shadowing and multipath reflections of radio signals. 
@@ -80,7 +80,7 @@ Trilateration process is used to determine the three dimensional position of unk
 
 
 \begin{figure}[H]
-	\caption{Trilateration Process} \label{trilateration_ref}
+	\caption{Trilateration Process[101]} \label{trilateration_ref}
 	\centering
 	\includegraphics[scale = 1]{trilateration}
 \end{figure}
@@ -94,7 +94,7 @@ In formation shape generation, agents are expected to get a formation shape whic
 \begin{figure}[H]
 	\caption{Motions and Formation of the Agents in Presence of Obstacles[17]}
 	\centering
-	\includegraphics[scale = 1]{samitha}
+	\includegraphics[scale = 0.7]{samitha}
 \end{figure} 
 
 In some applications, it may be needed to change the formation shape or splitting and joining of the agents together due to either a change in coordinated task requirements or change in environmental conditions such as narrow corridors.  This rask requires formation reconfiguration and selection capabilities for the swarms. Hou and Slotine have defined a method based on global objective functions to provide formation control of a swarm. In their approach it is possible to implement scaling and rotating functions into control laws[8].
@@ -110,15 +110,15 @@ One of the subproblems studied in formation control is formation tracking. The m
 \begin{figure}[H]
 	\caption{Five Robot Formation With Trajectory Tracking [18]}
 	\centering
-	\includegraphics[scale = 1]{kumar}
+	\includegraphics[scale = 0.65]{kumar}
 \end{figure} 
 
-The solutions for the formation control approaches can be classified into three basic strategies as leader-following, virtual structure and behaviour based approaches[12].  In leader following strategy, some of the agents in the swarm are the leaders to manage the rest of the swarm to achieve a desired specific task and the rest of the agents act as followers. This approach reduces the formation control problem into tracking control problem of individuals to follow the leader from a desired distance and bearing angle, thus the stability and convergence analysis of the formation can be done with the usage of single tracking controllers of members. Kumar, Fierro .. at [18] proposed a control framework in which follower agents move along a trajectory afterwords the leader agent with a desired seperation $l_{ij}$ and desired relative bearing angle $\psi_{ij}$.  Figure \ref{leader_follower_ref} represents a formation control with three agents where R3 is the leader and R1,R2 are the follower agents. 
+The solutions for the formation control approaches can be classified into three basic strategies as leader-following, virtual structure and behaviour based approaches[12].  In leader following strategy, some of the agents in the swarm are the leaders to manage the rest of the swarm to achieve a desired specific task and the rest of the agents act as followers. This approach reduces the formation control problem into tracking control problem of individuals to follow the leader from a desired distance and bearing angle, thus the stability and convergence analysis of the formation can be done with the usage of single tracking controllers of members. Kumar, Fierro and Das at [18] proposed a control framework in which follower agents move along a trajectory afterwords the leader agent with a desired seperation $l_{ij}$ and desired relative bearing angle $\psi_{ij}$.  Figure \ref{leader_follower_ref} represents a formation control with three agents where R3 is the leader and R1,R2 are the follower agents. 
 
 \begin{figure}[H]
-	\caption{Leader-Follower Systems} \label{leader_follower_ref}
+	\caption{Leader-Follower Systems[18]} \label{leader_follower_ref}
 	\centering
-	\includegraphics[scale = 1]{leader}
+	\includegraphics[scale = 0.5]{leader}
 \end{figure}
 
 
@@ -128,7 +128,7 @@ In this approach it is hard to gather the agents in a certain shape. Another dra
 In virtual structure approach, the formation is composed with a virtual rigid body. Formation control is applied to whole virtual structure and then the individual agent control laws are determined with inverse dynamic solutions[12].  Lewis and Tan proposed a virtual structure based method for formation control in [23] with a bidirectional flow control where robots move to stay in the virtual structure when the swarm is following a trajectory and virtual structure move to fit robots' current positions to compensate the relative errors at the end of that maneuver. 
 
 \begin{figure}[H]
-	\caption{Rotational Maneuver of a Formation and Compensation of Virtual Structure}
+	\caption{Maneuver of a Formation and Compensation of Virtual Structure}
 	\centering
 	\includegraphics[scale = 1]{virtual_structure}
 \end{figure}
@@ -139,9 +139,9 @@ In virtual structure strategy it is easy to achieve a coordinated behavior for t
 Behavior based strategies model every agents' behaviors to achieve specific tasks with swarm. These behaviours may be very simple like randomly walking and avoiding obstacle in the environment or they may be defined very complicated to achieve complex formation shapes with the entire swarm while optimizing the overall energy consumption depend on the implementation of the controller structures.  One of the main usage of this strategy is artificial potential field based implementations . Cheng and Nagpal have introduced a robust and self repairing formation control method for swarms[24]. In this approach, individual control laws for the agents are composed with the artificial forces defined between the agents (to avoid collisions) and between the desired formation shape. This solution provides robustness to the agent losses in the swarm during formation control and the rest of the swarm has the ability to refiil their absence in real time without changing the dynamics and the parameters of the formation controller. One of the main disadvantage of the artificial potential based approaches is that , the control forces applied to individual agents are determined instantaneously in accordance with that agent's and the other agents' positions and they cannot guarantee to optimize the total distance travelled by the agents. Another drawback, related with this type of solution, there is a possibility to have local minimas in the solution where an agent reaches an undesired configuration in a balance with different types of artificial force components. In this strategy the solution may converge to the steady state very slow due to absence of generalized goal states for individual agents in the final state of formation. 
 
 \begin{figure}[H]
-	\caption{Formation Control with Artificial Forces}
+	\caption{Formation Control with Artificial Forces[24]}
 	\centering
-	\includegraphics[scale = 1]{potential}
+	\includegraphics[scale = 0.4]{potential}
 \end{figure}
 
 
@@ -150,7 +150,7 @@ Another approach is to define mathematical constraints and objective functions t
 
 
 \begin{figure}[H]
-	\caption{Formation Control with Objective Functions}
+	\caption{Formation Control with Objective Functions[25]}
 	\centering
 	\includegraphics[scale = 0.8]{manifold}
 \end{figure}
@@ -184,7 +184,7 @@ Some of the outputs of their algorithm is given at Figure \ref{space_filling}
 
 
 \begin{figure}[H]
-	\caption{Space Filling Examples with Randomized Fractals} \label{space_filling}
+	\caption{Space Filling Examples with Randomized Fractals[26]} \label{space_filling}
 	\centering
 	\includegraphics[scale = 1]{randomized1}
 \end{figure}
@@ -194,17 +194,17 @@ Bubble$\&$Circle packing algorithms are widely used for mesh generation problems
 
 
 \begin{figure}[H]
-	\caption{Uniform and Non-Uniform Node Spacing}
+	\caption{Uniform and Non-Uniform Node Spacing[27]}
 	\centering
-	\includegraphics[scale = 1]{nodespacing}
+	\includegraphics[scale = 0.35]{nodespacing}
 \end{figure}
 
 Shimada and Gossard proposed a method based on interbubble forces to provide close packaging of bubbles in desired geometrical shape. This approach is very similar with the one used in formation control of swarms to achieve geometrical shapes. The related interbubble forces are described at Figure \ref{interbubble_ref}.
 
 \begin{figure}[H]
-	\caption{Interbubble Forces} \label{interbubble_ref}
+	\caption{Interbubble Forces[27]} \label{interbubble_ref}
 	\centering
-	\includegraphics[scale = 1]{interbubble}
+	\includegraphics[scale = 0.3]{interbubble}
 \end{figure}
 
 
@@ -212,9 +212,9 @@ With the help of adaptive population control by removing the excess bubble which
 
 
 \begin{figure}[H]
-	\caption{Mesh Generation with Interbubble Forces} \label{mesh_genearation_ref}
+	\caption{Mesh Generation with Interbubble Forces[27]} \label{mesh_genearation_ref}
 	\centering
-	\includegraphics[scale = 1]{interbubble2}
+	\includegraphics[scale = 0.4]{interbubble2}
 \end{figure}
 
 This approach can easily be augmented for different types and number of shapes to partition a complex geometrical shape with regular sets. Basically the resultant solution will be similar to the one used in artificial potential field approach in formation control. 
