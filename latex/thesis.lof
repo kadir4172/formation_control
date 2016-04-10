@@ -81,17 +81,17 @@
 \contentsline {figure}{\numberline {4.9}{\ignorespaces Positions of the Agents Before Localization Process (Red Circles: Estimated Positions ; Blue Circles: Real Positions)\relax }}{98}{figure.4.9}
 \contentsline {figure}{\numberline {4.10}{\ignorespaces Positions of the Agents After Localization Process (Red Circles: Estimated Positions ; Blue Circles: Real Positions)\relax }}{99}{figure.4.10}
 \contentsline {figure}{\numberline {4.11}{\ignorespaces Agents will be in 'Lost' Mode When They Do Not Have 3 Neighbors\relax }}{100}{figure.4.11}
-\contentsline {figure}{\numberline {4.12}{\ignorespaces Agents will be in 'Come Home' Mode When They Miss Localization Process for 3 Times\relax }}{100}{figure.4.12}
+\contentsline {figure}{\numberline {4.12}{\ignorespaces Agents will be in 'Come Home' Mode After Being Lost for 3 Times\relax }}{100}{figure.4.12}
 \contentsline {figure}{\numberline {4.13}{\ignorespaces Formation Shape 1 with Artificial Forces Methods:$\epsilon _t = 2.1$ and $\epsilon _g = 0.32$\relax }}{101}{figure.4.13}
-\contentsline {figure}{\numberline {4.14}{\ignorespaces Formation Shape 2 with Artificial Forces Methods:$\epsilon _t = 2.6$ and $\epsilon _g = 0.4$\relax }}{102}{figure.4.14}
+\contentsline {figure}{\numberline {4.14}{\ignorespaces Formation Shape 2 with Artificial Forces Methods:$\epsilon _t = 2.6$ and $\epsilon _g = 0.4$\relax }}{101}{figure.4.14}
 \contentsline {figure}{\numberline {4.15}{\ignorespaces Formation Shape 1 with Bubble Packing Method:$\epsilon _t = 2.1$ and $\epsilon _g = 0.24$\relax }}{102}{figure.4.15}
 \contentsline {figure}{\numberline {4.16}{\ignorespaces Formation Shape 2 with Bubble Packing Method:$\epsilon _t = 2.3$ and $\epsilon _g = 0.28$\relax }}{102}{figure.4.16}
-\contentsline {figure}{\numberline {4.17}{\ignorespaces Formation Shape 1 with Randomized Fractals Method:$\epsilon _t = 2.7$ and $\epsilon _g = 0.65$\relax }}{103}{figure.4.17}
+\contentsline {figure}{\numberline {4.17}{\ignorespaces Formation Shape 1 with Randomized Fractals Method:$\epsilon _t = 2.7$ and $\epsilon _g = 0.65$\relax }}{102}{figure.4.17}
 \contentsline {figure}{\numberline {4.18}{\ignorespaces Formation Shape 2 with Randomized Fractals Method:$\epsilon _t = 3.1$ and $\epsilon _g = 0.62$\relax }}{103}{figure.4.18}
-\contentsline {figure}{\numberline {4.19}{\ignorespaces Formation Shape 1 Topological Mesh Irregularities:\relax }}{104}{figure.4.19}
-\contentsline {figure}{\numberline {4.20}{\ignorespaces Formation Shape 1 Geometrical Mesh Irregularities:\relax }}{104}{figure.4.20}
-\contentsline {figure}{\numberline {4.21}{\ignorespaces Formation Shape 2 Topological Mesh Irregularities:\relax }}{105}{figure.4.21}
-\contentsline {figure}{\numberline {4.22}{\ignorespaces Formation Shape 2 Geometrical Mesh Irregularities:\relax }}{105}{figure.4.22}
+\contentsline {figure}{\numberline {4.19}{\ignorespaces Formation Shape 1 Topological Mesh Irregularities\relax }}{104}{figure.4.19}
+\contentsline {figure}{\numberline {4.20}{\ignorespaces Formation Shape 1 Geometrical Mesh Irregularities\relax }}{104}{figure.4.20}
+\contentsline {figure}{\numberline {4.21}{\ignorespaces Formation Shape 2 Topological Mesh Irregularities\relax }}{105}{figure.4.21}
+\contentsline {figure}{\numberline {4.22}{\ignorespaces Formation Shape 2 Geometrical Mesh Irregularities\relax }}{105}{figure.4.22}
 \contentsline {figure}{\numberline {4.23}{\ignorespaces Formation Shape 1 in MATLAB environment\relax }}{106}{figure.4.23}
 \contentsline {figure}{\numberline {4.24}{\ignorespaces Formation Shape 1 in Gazebo environment\relax }}{107}{figure.4.24}
 \contentsline {figure}{\numberline {4.25}{\ignorespaces Artificial Forces Method Trajectories for Shape 1\relax }}{107}{figure.4.25}
@@ -99,47 +99,47 @@
 \contentsline {figure}{\numberline {4.27}{\ignorespaces Randomized Fractals Method Trajectories for Shape 1\relax }}{108}{figure.4.27}
 \contentsline {figure}{\numberline {4.28}{\ignorespaces Total Travelled Distances for Shape 1\relax }}{109}{figure.4.28}
 \contentsline {figure}{\numberline {4.29}{\ignorespaces Formation Shape 2 in MATLAB environment\relax }}{110}{figure.4.29}
-\contentsline {figure}{\numberline {4.30}{\ignorespaces Formation Shape 2 in Gazebo environment\relax }}{111}{figure.4.30}
+\contentsline {figure}{\numberline {4.30}{\ignorespaces Formation Shape 2 in Gazebo environment\relax }}{110}{figure.4.30}
 \contentsline {figure}{\numberline {4.31}{\ignorespaces Artificial Forces Method Trajectories for Shape 2\relax }}{111}{figure.4.31}
-\contentsline {figure}{\numberline {4.32}{\ignorespaces Bubble Packing Method Trajectories for Shape 2\relax }}{112}{figure.4.32}
+\contentsline {figure}{\numberline {4.32}{\ignorespaces Bubble Packing Method Trajectories for Shape 2\relax }}{111}{figure.4.32}
 \contentsline {figure}{\numberline {4.33}{\ignorespaces Randomized Fractals Method Trajectories for Shape 2\relax }}{112}{figure.4.33}
-\contentsline {figure}{\numberline {4.34}{\ignorespaces Total Travelled Distance for Shape 2\relax }}{113}{figure.4.34}
-\contentsline {figure}{\numberline {4.35}{\ignorespaces Total Settling Time for Shape 1\relax }}{114}{figure.4.35}
+\contentsline {figure}{\numberline {4.34}{\ignorespaces Total Travelled Distance for Shape 2\relax }}{112}{figure.4.34}
+\contentsline {figure}{\numberline {4.35}{\ignorespaces Total Settling Time for Shape 1\relax }}{113}{figure.4.35}
 \contentsline {figure}{\numberline {4.36}{\ignorespaces Total Settling Time for Shape 2\relax }}{114}{figure.4.36}
-\contentsline {figure}{\numberline {4.37}{\ignorespaces Dynamic Formation Control with Bubble Packing Method\relax }}{116}{figure.4.37}
-\contentsline {figure}{\numberline {4.38}{\ignorespaces Dynamic Formation Control with Artificial Forces Method\relax }}{117}{figure.4.38}
-\contentsline {figure}{\numberline {4.39}{\ignorespaces Latency in Bubble Packing Method-1\relax }}{118}{figure.4.39}
-\contentsline {figure}{\numberline {4.40}{\ignorespaces Latency in Bubble Packing Method-2\relax }}{118}{figure.4.40}
-\contentsline {figure}{\numberline {4.41}{\ignorespaces Latency in Bubble Packing Method-3\relax }}{119}{figure.4.41}
-\contentsline {figure}{\numberline {4.42}{\ignorespaces Formation Shape - 1 in Gazebo Environment\relax }}{121}{figure.4.42}
-\contentsline {figure}{\numberline {4.43}{\ignorespaces Formation Shape - 1 in MATLAB Environment\relax }}{122}{figure.4.43}
-\contentsline {figure}{\numberline {4.44}{\ignorespaces Formation Shape - 2 in Gazebo Environment\relax }}{123}{figure.4.44}
-\contentsline {figure}{\numberline {4.45}{\ignorespaces Formation Shape - 2 in MATLAB Environment\relax }}{123}{figure.4.45}
-\contentsline {figure}{\numberline {4.46}{\ignorespaces Formation Shape - 3 in Gazebo Environment\relax }}{124}{figure.4.46}
-\contentsline {figure}{\numberline {4.47}{\ignorespaces Formation Shape - 3 in MATLAB Environment\relax }}{125}{figure.4.47}
-\contentsline {figure}{\numberline {4.48}{\ignorespaces Formation Shape - 4 in Gazebo Environment\relax }}{126}{figure.4.48}
-\contentsline {figure}{\numberline {4.49}{\ignorespaces Formation Shape - 4 in MATLAB Environment\relax }}{126}{figure.4.49}
-\contentsline {figure}{\numberline {4.50}{\ignorespaces Multiple Formations\relax }}{127}{figure.4.50}
+\contentsline {figure}{\numberline {4.37}{\ignorespaces Dynamic Formation Control with Bubble Packing Method\relax }}{115}{figure.4.37}
+\contentsline {figure}{\numberline {4.38}{\ignorespaces Dynamic Formation Control with Artificial Forces Method\relax }}{116}{figure.4.38}
+\contentsline {figure}{\numberline {4.39}{\ignorespaces Latency in Bubble Packing Method-1\relax }}{117}{figure.4.39}
+\contentsline {figure}{\numberline {4.40}{\ignorespaces Latency in Bubble Packing Method-2\relax }}{117}{figure.4.40}
+\contentsline {figure}{\numberline {4.41}{\ignorespaces Latency in Bubble Packing Method-3\relax }}{118}{figure.4.41}
+\contentsline {figure}{\numberline {4.42}{\ignorespaces Formation Shape - 1 in Gazebo Environment\relax }}{120}{figure.4.42}
+\contentsline {figure}{\numberline {4.43}{\ignorespaces Formation Shape - 1 in MATLAB Environment\relax }}{121}{figure.4.43}
+\contentsline {figure}{\numberline {4.44}{\ignorespaces Formation Shape - 2 in Gazebo Environment\relax }}{121}{figure.4.44}
+\contentsline {figure}{\numberline {4.45}{\ignorespaces Formation Shape - 2 in MATLAB Environment\relax }}{122}{figure.4.45}
+\contentsline {figure}{\numberline {4.46}{\ignorespaces Formation Shape - 3 in Gazebo Environment\relax }}{122}{figure.4.46}
+\contentsline {figure}{\numberline {4.47}{\ignorespaces Formation Shape - 3 in MATLAB Environment\relax }}{123}{figure.4.47}
+\contentsline {figure}{\numberline {4.48}{\ignorespaces Formation Shape - 4 in Gazebo Environment\relax }}{123}{figure.4.48}
+\contentsline {figure}{\numberline {4.49}{\ignorespaces Formation Shape - 4 in MATLAB Environment\relax }}{124}{figure.4.49}
+\contentsline {figure}{\numberline {4.50}{\ignorespaces Multiple Formations\relax }}{125}{figure.4.50}
 \addvspace {10pt}
-\contentsline {figure}{\numberline {5.1}{\ignorespaces Implementation Environment\relax }}{130}{figure.5.1}
-\contentsline {figure}{\numberline {5.2}{\ignorespaces Covers for Different Types of Agents\relax }}{131}{figure.5.2}
-\contentsline {figure}{\numberline {5.3}{\ignorespaces Sample Output of the Image Processing Algorithm\relax }}{132}{figure.5.3}
-\contentsline {figure}{\numberline {5.4}{\ignorespaces Orientation of an Agent in the Environment\relax }}{132}{figure.5.4}
-\contentsline {figure}{\numberline {5.5}{\ignorespaces Hardware of an Agent\relax }}{133}{figure.5.5}
-\contentsline {figure}{\numberline {5.6}{\ignorespaces Command Mixture of Step Motors\relax }}{134}{figure.5.6}
-\contentsline {figure}{\numberline {5.7}{\ignorespaces Schematic of the Circuit on the Board\relax }}{135}{figure.5.7}
-\contentsline {figure}{\numberline {5.8}{\ignorespaces 3D Visualization of the Layout\relax }}{136}{figure.5.8}
-\contentsline {figure}{\numberline {5.9}{\ignorespaces Harware of an Agent - Top View\relax }}{137}{figure.5.9}
-\contentsline {figure}{\numberline {5.10}{\ignorespaces Harware of an Agent - Bottom View\relax }}{138}{figure.5.10}
-\contentsline {figure}{\numberline {5.11}{\ignorespaces Formation Shape 1- Matlab Environment\relax }}{139}{figure.5.11}
-\contentsline {figure}{\numberline {5.12}{\ignorespaces Formation Shape 1- Test Environment\relax }}{139}{figure.5.12}
-\contentsline {figure}{\numberline {5.13}{\ignorespaces Formation Shape 2- Matlab Environment\relax }}{140}{figure.5.13}
-\contentsline {figure}{\numberline {5.14}{\ignorespaces Formation Shape 2- Test Environment\relax }}{140}{figure.5.14}
-\contentsline {figure}{\numberline {5.15}{\ignorespaces Formation Shape 3- Matlab Environment\relax }}{141}{figure.5.15}
-\contentsline {figure}{\numberline {5.16}{\ignorespaces Formation Shape 3- Test Environment\relax }}{141}{figure.5.16}
-\contentsline {figure}{\numberline {5.17}{\ignorespaces Formation Shape 4- Matlab Environment\relax }}{142}{figure.5.17}
-\contentsline {figure}{\numberline {5.18}{\ignorespaces Formation Shape 4- Test Environment\relax }}{142}{figure.5.18}
-\contentsline {figure}{\numberline {5.19}{\ignorespaces Formation Shape 5- Matlab Environment\relax }}{143}{figure.5.19}
-\contentsline {figure}{\numberline {5.20}{\ignorespaces Formation Shape 5- Test Environment\relax }}{143}{figure.5.20}
+\contentsline {figure}{\numberline {5.1}{\ignorespaces Implementation Environment\relax }}{128}{figure.5.1}
+\contentsline {figure}{\numberline {5.2}{\ignorespaces Covers for Different Types of Agents\relax }}{129}{figure.5.2}
+\contentsline {figure}{\numberline {5.3}{\ignorespaces Sample Output of the Image Processing Algorithm\relax }}{130}{figure.5.3}
+\contentsline {figure}{\numberline {5.4}{\ignorespaces Orientation of an Agent in the Environment\relax }}{130}{figure.5.4}
+\contentsline {figure}{\numberline {5.5}{\ignorespaces Hardware of an Agent\relax }}{131}{figure.5.5}
+\contentsline {figure}{\numberline {5.6}{\ignorespaces Command Mixture of Step Motors\relax }}{132}{figure.5.6}
+\contentsline {figure}{\numberline {5.7}{\ignorespaces Schematic of the Circuit on the Board\relax }}{133}{figure.5.7}
+\contentsline {figure}{\numberline {5.8}{\ignorespaces 3D Visualization of the Layout\relax }}{134}{figure.5.8}
+\contentsline {figure}{\numberline {5.9}{\ignorespaces Harware of an Agent - Top View\relax }}{135}{figure.5.9}
+\contentsline {figure}{\numberline {5.10}{\ignorespaces Harware of an Agent - Bottom View\relax }}{136}{figure.5.10}
+\contentsline {figure}{\numberline {5.11}{\ignorespaces Formation Shape 1- Matlab Environment\relax }}{137}{figure.5.11}
+\contentsline {figure}{\numberline {5.12}{\ignorespaces Formation Shape 1- Test Environment\relax }}{137}{figure.5.12}
+\contentsline {figure}{\numberline {5.13}{\ignorespaces Formation Shape 2- Matlab Environment\relax }}{138}{figure.5.13}
+\contentsline {figure}{\numberline {5.14}{\ignorespaces Formation Shape 2- Test Environment\relax }}{138}{figure.5.14}
+\contentsline {figure}{\numberline {5.15}{\ignorespaces Formation Shape 3- Matlab Environment\relax }}{139}{figure.5.15}
+\contentsline {figure}{\numberline {5.16}{\ignorespaces Formation Shape 3- Test Environment\relax }}{139}{figure.5.16}
+\contentsline {figure}{\numberline {5.17}{\ignorespaces Formation Shape 4- Matlab Environment\relax }}{140}{figure.5.17}
+\contentsline {figure}{\numberline {5.18}{\ignorespaces Formation Shape 4- Test Environment\relax }}{140}{figure.5.18}
+\contentsline {figure}{\numberline {5.19}{\ignorespaces Formation Shape 5- Matlab Environment\relax }}{141}{figure.5.19}
+\contentsline {figure}{\numberline {5.20}{\ignorespaces Formation Shape 5- Test Environment\relax }}{141}{figure.5.20}
 \addvspace {10pt}
 \addvspace {10pt}

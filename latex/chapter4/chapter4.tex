@@ -59,7 +59,7 @@ Figure \ref{Matlab_env} illustrates the Matlab environment used in simulations. 
 
 \begin{figure}[H]
 \caption{Simulation Environment in Matlab} \label{Matlab_env}
-\centerline{\includegraphics[scale = 0.35]{2}}
+\centerline{\includegraphics[scale = 0.30]{2}}
 \end{figure} 
     
 \section{Local Positioning System} \label{lps_ref}
@@ -106,7 +106,7 @@ The performance of the LPS design is tested in simulations with different condit
 \caption{Positions of the Agents Before Localization Process \\
 (Red Circles: Estimated Positions ; Blue Circles: Real Positions)} \label{hatali_pos_ref}
 \centerline{
-\includegraphics[scale = 0.27]{Pozisyon_1_Hatali}}
+\includegraphics[scale = 0.35]{Pozisyon_1_Hatali}}
 \label{fig:lps}
 \end{figure}
 
@@ -115,7 +115,7 @@ The performance of the LPS design is tested in simulations with different condit
 \captionsetup{format=hang,justification=centerfirst}
 \caption{Positions of the Agents After Localization Process \\
 (Red Circles: Estimated Positions ; Blue Circles: Real Positions)} \label{duzgun_pos_ref}
-\centerline{\includegraphics[scale = 0.27]{Pozisyon-1-Duzeltilmis}}
+\centerline{\includegraphics[scale = 0.26]{Pozisyon-1-Duzeltilmis}}
 \end{figure} 
 		
 Handling procedures of the lost agents are presented in Section \ref{LostAgents}. Agents which do not have at least three neighbors around itselves will get into the 'Lost' mode, and if  they miss three localization process they will get into 'Come Home' mode. When an agent is in 'Come Home' mode, it will try to reach the center of formation to increase the possibility to meet some neighbors to localize itself as discussed in Section \ref{LostAgents}. A simulation result in which two agents cannot have three neighbors around themselves and get into 'Lost' mode and 'Come Home' modes  is presented in Figure \ref{lost_ref} and Figure \ref{come_home_ref} respectively.
@@ -123,13 +123,13 @@ Handling procedures of the lost agents are presented in Section \ref{LostAgents}
 \begin{figure}[H]
 \caption{Agents will be in 'Lost' Mode When They Do Not Have 3 Neighbors} \label{lost_ref}
 \centering
-\centerline{\includegraphics[scale = 0.27]{Lost-2-2}}
+\centerline{\includegraphics[scale = 0.26]{Lost-2-2}}
 \end{figure} 
 
 \begin{figure}[H]
 \captionsetup{format=hang,justification=centerfirst}
-\caption{Agents will be in 'Come Home' Mode When They Miss Localization Process for 3 Times} \label{come_home_ref}
-\centerline{\includegraphics[scale = 0.27]{Lost-2-3}}
+\caption{Agents will be in 'Come Home' Mode After Being Lost for 3 Times} \label{come_home_ref}
+\centerline{\includegraphics[scale = 0.26]{Lost-2-3}}
 \end{figure} 		
 		
 \section{FORMATION CONTROL SYSTEM}
@@ -171,23 +171,23 @@ Mesh quality is a measure of how the agents homogenously distributed while cover
 It is obvious that Randomized Fractals method have the worst mesh performance due the its randomized assignment of goal states into the formation shape. Bubble Packing and Artificial Forces methods give similar results since they have an analogy in their approaches of implementing inter member/bubble forces which makes the agents distributed in the formation shape more homogenously. Artificial force method applies this intermember forces directly to the agents in formation control while Bubble Packing method use this kind of force on artificial bubbles to partition the shape into goal states. Monte Carlo simulations with 1000 iterations for both formation shapes are handled and the results are illustrated in Figure \ref{topologic_ref_1}; \ref{geometric_ref_1}; \ref{topologic_ref_2}; \ref{geometric_ref_2} . Randomized Fractals method have greater mean values for both topological and geometrical mesh irregularities as expected.  Bubble Packing and Artificial Forces methods have similar performances on mesh quality.
 		
 \begin{figure}[H]
-\caption{Formation Shape 1 Topological Mesh Irregularities:} \label{topologic_ref_1}
-\centerline{\includegraphics[scale = 0.40]{Topological_Irr_1}}
+\caption{Formation Shape 1 Topological Mesh Irregularities} \label{topologic_ref_1}
+\centerline{\includegraphics[scale = 0.35]{Topological_Irr_1}}
 \end{figure} 	
 		
 \begin{figure}[H]
-\caption{Formation Shape 1 Geometrical Mesh Irregularities:} \label{geometric_ref_1}
-\centerline{\includegraphics[scale = 0.40]{Geometrical_Irr_1}}
+\caption{Formation Shape 1 Geometrical Mesh Irregularities} \label{geometric_ref_1}
+\centerline{\includegraphics[scale = 0.35]{Geometrical_Irr_1}}
 \end{figure} 	
 
 \begin{figure}[H]
-\caption{Formation Shape 2 Topological Mesh Irregularities:} \label{topologic_ref_2}
-\centerline{\includegraphics[scale = 0.40]{Topological_Irr_2}}
+\caption{Formation Shape 2 Topological Mesh Irregularities} \label{topologic_ref_2}
+\centerline{\includegraphics[scale = 0.35]{Topological_Irr_2}}
 \end{figure} 	
 				
 \begin{figure}[H]
-\caption{Formation Shape 2 Geometrical Mesh Irregularities:} \label{geometric_ref_2}
-\centerline{\includegraphics[scale = 0.40]{Geometrical_Irr_2}}
+\caption{Formation Shape 2 Geometrical Mesh Irregularities} \label{geometric_ref_2}
+\centerline{\includegraphics[scale = 0.35]{Geometrical_Irr_2}}
 \end{figure} 	
 		
 \subsection{Total Displacement of the Agents}  \label{total_dist_ref}
@@ -198,27 +198,27 @@ In this thesis work, it is aimed to minimize the overall displacement of the age
 		
 \begin{figure}[H]
 \caption{Formation Shape 1 in MATLAB environment}
-\centerline{\includegraphics[scale = 0.40]{Trajectories_Formation_Shape_1_2}}
+\centerline{\includegraphics[scale = 0.32]{Trajectories_Formation_Shape_1_2}}
 \end{figure} 	
 			
 \begin{figure}[H]
 \caption{Formation Shape 1 in Gazebo environment}
-\centerline{\includegraphics[scale = 0.35]{Trajectories_Formation_Shape_1_1}}
+\centerline{\includegraphics[scale = 0.32]{Trajectories_Formation_Shape_1_1}}
 \end{figure} 	
 		
 \begin{figure}[H]
 \caption{Artificial Forces Method Trajectories for Shape 1}
-\centerline{\includegraphics[scale = 0.35]{Aritificial_Trajecories_1}}
+\centerline{\includegraphics[scale = 0.32]{Aritificial_Trajecories_1}}
 \end{figure} 	
 
 \begin{figure}[H]
 \caption{Bubble Packing Method Trajectories for Shape 1}
-\centerline{\includegraphics[scale = 0.35]{Bubble_Trajectories_1}}
+\centerline{\includegraphics[scale = 0.32]{Bubble_Trajectories_1}}
 \end{figure} 	
 		
 \begin{figure}[H]
 \caption{Randomized Fractals Method Trajectories for Shape 1}
-\centerline{\includegraphics[scale = 0.35]{Randomized_Trajectories_1}}
+\centerline{\includegraphics[scale = 0.32]{Randomized_Trajectories_1}}
 \end{figure} 	
 			
 It is obvious that the trajectories of the agents are more chaotic and complex in the Artificial Forces method according to the other two solutions. This is because of the agents are under the effect of a total force which is instantly changing both amplitude and direction with the local interactions in the environment. According to the X-Swarm theory which is described in Section \ref{Artificial_forces_ref}, all agents will move towards the center of the formation shape if the X Swarm conditions are satisfied by the agents. So the only force component which provides the distribution of the agents in the formation shape homogenously is the intermember forces which is dynamically changing so much with the local instant neighbors of the agents in the environment. On the other hand, Bubble Packing and Randomized Fractal methods implement an algorithm in which every agent is directed to a goal state in which the total displacements in the environment is minimized. This approach prevents the chaotic appearance of the trajectories and minimizes the displacements of the agents.
@@ -227,7 +227,7 @@ Monte Carlo simulations with 1000 iterations are held and the results are presen
 		
 \begin{figure}[H]
 \caption{Total Travelled Distances for Shape 1} \label{total_disp_1}
-\centerline{\includegraphics[scale = 0.35]{Total_Energy_Shape_1}}
+\centerline{\includegraphics[scale = 0.32]{Total_Energy_Shape_1}}
 \end{figure} 	
 				
 \subsubsection{Shape 2}\hspace{0pt} \\
@@ -235,34 +235,34 @@ Second formation shape gives similar results with three different formation cont
 
 \begin{figure}[H]
 \caption{Formation Shape 2 in MATLAB environment}
-\centerline{\includegraphics[scale = 0.40]{Trajectories_Formation_Shape_2_2}}
+\centerline{\includegraphics[scale = 0.32]{Trajectories_Formation_Shape_2_2}}
 \end{figure} 	
 		   
 \begin{figure}[H]
 \caption{Formation Shape 2 in Gazebo environment}
-\centerline{\includegraphics[scale = 0.35]{Trajectories_Formation_Shape_2_1}}
+\centerline{\includegraphics[scale = 0.32]{Trajectories_Formation_Shape_2_1}}
 \end{figure} 	
 		   
 \begin{figure}[H]
 \caption{Artificial Forces Method Trajectories for Shape 2}
-\centerline{\includegraphics[scale = 0.35]{Artificial_Trajectories_2}}
+\centerline{\includegraphics[scale = 0.32]{Artificial_Trajectories_2}}
 \end{figure} 	
 		   
 \begin{figure}[H]
 \caption{Bubble Packing Method Trajectories for Shape 2}
-\centerline{\includegraphics[scale = 0.35]{Bubble_Trajectories_2}}
+\centerline{\includegraphics[scale = 0.32]{Bubble_Trajectories_2}}
 \end{figure} 	
 		   
 \begin{figure}[H]
 \caption{Randomized Fractals Method Trajectories for Shape 2}
-\centerline{\includegraphics[scale = 0.35]{Randomized_Trajectories_2}}
+\centerline{\includegraphics[scale = 0.32]{Randomized_Trajectories_2}}
 \end{figure} 	
 		   
 The results of the Monte Carlo simulations with 1000 iterations are illustrated in Figure \ref{total_dist_2}
 
 \begin{figure}[H]
 \caption{Total Travelled Distance for Shape 2} \label{total_dist_2}
-\centerline{\includegraphics[scale = 0.35]{Total_Energy_Shape_2}} 
+\centerline{\includegraphics[scale = 0.32]{Total_Energy_Shape_2}} 
 \end{figure} 	
 		   
 \subsection{Settling Time} \label{settling_ref}
@@ -276,12 +276,12 @@ Settling times are measured for the simulations held in Section \ref{total_dist_
 		
 \begin{figure}[H]
 \caption{Total Settling Time for Shape 1} \label{settling_1}
-\centerline{\includegraphics[scale = 0.35]{Total_Time_Shape_1}}
+\centerline{\includegraphics[scale = 0.32]{Total_Time_Shape_1}}
 \end{figure} 
 		
 \begin{figure}[H]
 \caption{Total Settling Time for Shape 2} \label{settling_2}
-\centerline{\includegraphics[scale = 0.35]{Total_Time_Shape_2}}
+\centerline{\includegraphics[scale = 0.32]{Total_Time_Shape_2}}
 \end{figure} 
 
 \subsection{Dynamically Changing Formations} \label{dynamical_ref}
@@ -303,17 +303,17 @@ Figure \ref{multiple2_ref} illustrates a simulation result of Artificial Forces 
 
 \begin{figure}[H]
 \caption{Latency in Bubble Packing Method-1} \label{combo1_ref}
-\centerline{\includegraphics[scale = 0.35]{combo1}}
+\centerline{\includegraphics[scale = 0.32]{combo1}}
 \end{figure} 
 
 \begin{figure}[H]
 \caption{Latency in Bubble Packing Method-2} \label{combo2_ref}
-\centerline{\includegraphics[scale = 0.35]{combo2}}
+\centerline{\includegraphics[scale = 0.32]{combo2}}
 \end{figure} 
 
 \begin{figure}[H]
 \caption{Latency in Bubble Packing Method-3} \label{combo3_ref}
-\centerline{\includegraphics[scale = 0.35]{combo3}}
+\centerline{\includegraphics[scale = 0.32]{combo3}}
 \end{figure} 
 
 Figure \ref{combo1_ref}, \ref{combo2_ref} and \ref{combo3_ref} compares the responses of these two algorithms to dynamically changing formation shapes. Bubble Packing and Artificial Force algorithms are executed with the same dynamical formation shapes and same initial positions of the agents. In these figures, red circles are representing the agents' positions with Bubble Packing method and green circles are representing the agents' positions with Artificial Forces method at the same time from the beginning of the simulations. Formation shape with blue line illustrates the current formation shape. It is obvious that the green agents are adapted to the current formation shape better than the red ones. The shape with dotted red line, represents the estimatated coverage area of red agents in the environment and this shape differs from the current formation shape locally at some boundary regions. This shows that agents response to the dynamically changing formation shape fasters with Artifical Forces method. 
@@ -344,12 +344,12 @@ Some other formation shape trials with the Bubble Packing algorithm is illustrat
 
 \begin{figure}[H]
 \caption{Formation Shape - 1 in Gazebo Environment}
-\centerline{\includegraphics[scale = 0.35]{1_Gazebo}}
+\centerline{\includegraphics[scale = 0.32]{1_Gazebo}}
 \end{figure} 
 			
 \begin{figure}[H]
 \caption{Formation Shape - 1 in MATLAB Environment}
-\centerline{\includegraphics[scale = 0.35]{1}}
+\centerline{\includegraphics[scale = 0.32]{1}}
 \end{figure} 
 			
 \begin{center}
@@ -366,12 +366,12 @@ Some other formation shape trials with the Bubble Packing algorithm is illustrat
 	
 \begin{figure}[H]
 \caption{Formation Shape - 2 in Gazebo Environment}
-\centerline{\includegraphics[scale = 0.35]{2_Gazebo}}
+\centerline{\includegraphics[scale = 0.32]{2_Gazebo}}
 \end{figure} 
 		 
 \begin{figure}[H]
 \caption{Formation Shape - 2 in MATLAB Environment}
-\centerline{\includegraphics[scale = 0.35]{2}}
+\centerline{\includegraphics[scale = 0.32]{2}}
 \end{figure} 
 		 
 \begin{center}
@@ -388,12 +388,12 @@ Some other formation shape trials with the Bubble Packing algorithm is illustrat
 		 
 \begin{figure}[H]
 \caption{Formation Shape - 3 in Gazebo Environment}
-\centerline{\includegraphics[scale = 0.35]{3_Gazebo}}
+\centerline{\includegraphics[scale = 0.32]{3_Gazebo}}
 \end{figure} 
 				 
 \begin{figure}[H]
 \caption{Formation Shape - 3 in MATLAB Environment}
-\centerline{\includegraphics[scale = 0.35]{3}}
+\centerline{\includegraphics[scale = 0.32]{3}}
 \end{figure} 
 				 
 \begin{center}
@@ -409,12 +409,12 @@ Some other formation shape trials with the Bubble Packing algorithm is illustrat
 				 
 \begin{figure}[H]
 \caption{Formation Shape - 4 in Gazebo Environment}
-\centerline{\includegraphics[scale = 0.35]{4_Gazebo}}
+\centerline{\includegraphics[scale = 0.32]{4_Gazebo}}
 \end{figure} 
 			
 \begin{figure}[H]
 \caption{Formation Shape - 4 in MATLAB Environment}
-\centerline{\includegraphics[scale = 0.35]{4}}
+\centerline{\includegraphics[scale = 0.32]{4}}
 \end{figure} 
 			
 \begin{center}
@@ -432,7 +432,7 @@ A simulation with multiple formation shapes sequentially is illustrated in Figur
 
 \begin{figure}[H]
 \caption{Multiple Formations} \label{multiple_formation_ref}
-\centerline{\includegraphics[scale = 0.45]{multiple_formation}}
+\centerline{\includegraphics[scale = 0.33]{multiple_formation}}
 \end{figure} 
 		
 \begin{center}

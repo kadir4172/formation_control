@@ -360,7 +360,7 @@ Since there are limited number of position beacons in a swarm, it will be approp
 \begin{figure}[H]
 \caption{Clusters Around Position Beacons} \label{Clusters_Ranks_2_ref}
 \centering
-\includegraphics[scale = 0.25]{Clusters_Ranks_2}
+\includegraphics[scale = 0.27]{Clusters_Ranks_2}
 \end{figure}
 
 As illustrated in the Figure \ref{Clusters_Ranks_2_ref}, all agents have assigned themselves to the clusters around position beacons, in which they have minimum number of hops in the route to the related position agent. In the figure, the size of the agents are representing the increasing number of hops in the same cluster and the colors of the agents are representing the clusters in which each agent assigns itself. With this approach, the generic algorithm which will be executed with the period of localization process for each agent must be implemented as follows:
@@ -622,8 +622,9 @@ where
 The assumption of $K \to\infty$ makes it possible to calculate the integral of Cauchy winding number with a small error with large number of $K$ which can be achieved by partitioning the desired formation shape  into small pieces with equal  distances. This approach is used to provide representations of the contour integrals in discrete domain. 
 
 \begin{figure}[H]
-\caption{Formation Shape in an Environment (Green Dots: Inside of the Shape - Red Dots: Outside of the Shape)}
-\centering			
+\centering
+\captionsetup{format=hang,justification=centerfirst}
+\caption{Formation Shape in an Environment\\ (Green Dots: Inside of the Shape - Red Dots: Outside of the Shape)}
 \includegraphics[scale = 0.28]{iceride_disarida}
 \end{figure}
 
