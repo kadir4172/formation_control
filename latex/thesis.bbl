@@ -23,4 +23,19 @@ IAAS.
 \newblock Open source bpel4chor tools.
 \newblock https://github.com/IAAS, last visited on November 2013.
 
+\bibitem{1}
+Gerardo Beni.
+\newblock From swarm intelligence to swarm robotics.
+\newblock n.d.
+
+\bibitem{2}
+Simon Garnier, Jacques Gautrais, and Guy Theraulaz.
+\newblock The biological principles of swarm intelligence.
+\newblock {\em Swarm Intelligence}, 1:3--31, 2007.
+
+\bibitem{3}
+Inaki Navarro and Fernando Matia.
+\newblock An introduction to swarm robotics.
+\newblock {\em ISRN Robotics}, 3, 2012.
+
 \end{thebibliography}

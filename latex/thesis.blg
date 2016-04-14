@@ -3,44 +3,46 @@ Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
 The top-level auxiliary file: thesis.aux
 The style file: unsrt.bst
 Database file #1: thesis_references.bib
-You've used 4 entries,
+Warning--empty journal in 1
+You've used 7 entries,
             1791 wiz_defined-function locations,
-            466 strings with 4066 characters,
-and the built_in function-call counts, 642 in all, are:
-= -- 52
-> -- 27
+            477 strings with 4333 characters,
+and the built_in function-call counts, 1142 in all, are:
+= -- 96
+> -- 50
 < -- 1
-+ -- 11
-- -- 7
-* -- 21
-:= -- 112
-add.period$ -- 13
-call.type$ -- 4
-change.case$ -- 3
++ -- 20
+- -- 13
+* -- 46
+:= -- 200
+add.period$ -- 22
+call.type$ -- 7
+change.case$ -- 6
 chr.to.int$ -- 0
-cite$ -- 4
-duplicate$ -- 34
-empty$ -- 75
-format.name$ -- 7
-if$ -- 147
+cite$ -- 8
+duplicate$ -- 59
+empty$ -- 123
+format.name$ -- 13
+if$ -- 254
 int.to.chr$ -- 0
-int.to.str$ -- 4
-missing$ -- 3
-newline$ -- 23
-num.names$ -- 4
-pop$ -- 20
+int.to.str$ -- 7
+missing$ -- 6
+newline$ -- 38
+num.names$ -- 7
+pop$ -- 27
 preamble$ -- 1
 purify$ -- 0
 quote$ -- 0
-skip$ -- 11
+skip$ -- 22
 stack$ -- 0
-substring$ -- 0
-swap$ -- 5
+substring$ -- 16
+swap$ -- 7
 text.length$ -- 1
 text.prefix$ -- 0
 top$ -- 0
 type$ -- 0
-warning$ -- 0
-while$ -- 4
-width$ -- 5
-write$ -- 43
+warning$ -- 1
+while$ -- 9
+width$ -- 8
+write$ -- 74
+(There was 1 warning)
