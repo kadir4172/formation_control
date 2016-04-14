@@ -1,4 +1,4 @@
-\begin{thebibliography}{1}
+\begin{thebibliography}{10}
 
 \bibitem{erl05}
 Thomas Erl.
@@ -37,5 +37,142 @@ Simon Garnier, Jacques Gautrais, and Guy Theraulaz.
 Inaki Navarro and Fernando Matia.
 \newblock An introduction to swarm robotics.
 \newblock {\em ISRN Robotics}, 3, 2012.
+
+\bibitem{4}
+Jan Barca and Ahmet Sekercioglu.
+\newblock Swarm robotics reviewed.
+\newblock {\em Robotica}, 31:345--359, 2012.
+
+\bibitem{5}
+Aleksis Liekna and Janis Grundspenkis.
+\newblock Towards practical application of swarm robotics: Overvied of swarm
+  tasks.
+\newblock In {\em 13th International Scientific Conference - Engineering for
+  rural development}, 2014.
+
+\bibitem{7}
+Marco Dorigo, Vito Trianni, Erol Sahin, Roderich Grof, Thomas Labella, Gianluca
+  Baldassarre, Stefano Nolfi, Jean Deneubourg, Francesco Mondada, and Dario
+  Floreano.
+\newblock Evolving self-organizing behaviors for a swarm-bot.
+\newblock n.d.
+
+\bibitem{8}
+S.P. Hou, C.C. Cheah, and J.J.E. Slotine.
+\newblock Dynamic region following formation control for a swarm of robots.
+\newblock In {\em ICRA}, 2009.
+
+\bibitem{9}
+Ganesh Venayagamoorthy, Lisa Grant, and Sheetal Doctor.
+\newblock Collective robotic search using hybrid techniques: Fuzzy logic and
+  swarm intelligence inspired by nature.
+\newblock {\em Engineering Applications of Artificial Intelligence},
+  22:431--441, 2009.
+
+\bibitem{10}
+Luiz Chaimowicz, Mario Campos, and Vijay Kumar.
+\newblock Dynamic role assignment for cooperative robots.
+\newblock 2002.
+
+\bibitem{11}
+Alexandre Campo, Alvaro Gutierrez, Shervin Nouyan, Carlo Pinciroli, Valentin
+  Longchamp, Simon Garnier, and Marco Dorigo.
+\newblock Artificial pheromone for path selection by a foraging swarm of
+  robots.
+\newblock {\em Biol Cybern}, 103:339--352, 2010.
+
+\bibitem{12}
+Kiattisin Kanjanawanishkul.
+\newblock Formation control of mobile robots: Survey.
+\newblock n.d.
+
+\bibitem{13}
+YangQuan Chen and Zhongmin Wang.
+\newblock Formation control: A review and a new consideration.
+\newblock n.d.
+
+\bibitem{14}
+Tucker Balch and Ronald Arkin.
+\newblock Behavior-based formation control for multi-robot teams.
+\newblock {\em IEEE TRANSACTIONS ON ROBOTICS AND AUTOMATION}, 6:926--939, 1998.
+
+\bibitem{15}
+Maurice Martin and Steve Kilberg.
+\newblock Techsat 21 and revolutionizing space missions using microsatellites.
+\newblock n.d.
+
+\bibitem{16}
+Magnus Egerstedt and Xiaoming Hu.
+\newblock Formation constrained multi-agent control.
+\newblock {\em IEEE TRANSACTIONS ON ROBOTICS AND AUTOMATION}, 17, 2001.
+
+\bibitem{17}
+Samitha Ekanayake and Pubudu Pathirana.
+\newblock Formations of robotic swarm: An artificial force based approach.
+\newblock {\em International Journal of Advanced Robotic Systems}, 7:173--190,
+  2010.
+
+\bibitem{18}
+Aveek Das, Rafael Fierro, Vijay Kumar, James Ostrowski, John Spletzer, and
+  Camilla Taylor.
+\newblock A vision-based formation control framework.
+\newblock {\em IEEE TRANSACTIONS ON ROBOTICS AND AUTOMATION}, 18, 2002.
+
+\bibitem{19}
+Seyed Zekavat, Hui Tong, and Jindong Tan.
+\newblock A novel wireless local positioning system for airport (indoor)
+  security.
+\newblock n.d.
+
+\bibitem{20}
+Martin Vossiek, Peter Gulden, Jan Wieghardt, and Clemens Hoffman.
+\newblock Wireless local positioning - concepts, solutions, applications.
+\newblock In {\em RAWCON}, 2003.
+
+\bibitem{21}
+Juha Latvala, Jari Syrjarinne, Hannu Ikonen, and Jarkko Niittylahti.
+\newblock Wireless local positioning - concepts, solutions, applications.
+\newblock In {\em Signal Processing Conference}. IEEE, 2000.
+
+\bibitem{22}
+Willy Hereman and William Murphy.
+\newblock Determination of a position in three dimensions using trilateration
+  and approximate distances.
+\newblock 1995.
+
+\bibitem{23}
+Anthony Lewis and Kar-Han Tan.
+\newblock High precision formation control of mobile robots using virtual
+  structures.
+\newblock {\em Autonomous Robots}, 4:387--403, 1997.
+
+\bibitem{24}
+Jimming Cheng, Winston Cheng, and Radhika Nagpal.
+\newblock Robust and self-repairing formation control for swarms of mobile
+  agents.
+\newblock In {\em AAAI 20th National Conference on Artificial Intelligence},
+  volume~1, pages 59--64, 2005.
+
+\bibitem{25}
+Calin Belta and Vijay Kumar.
+\newblock Abstraction and control for groups of robots.
+\newblock {\em IEEE TRANSACTIONS ON ROBOTICS AND AUTOMATION}, 20, 2004.
+
+\bibitem{26}
+John Shier and Paul Bourke.
+\newblock An algorithm for random fractal filling of space.
+\newblock {\em Computer Graphics Forum}, 32:89--97, 2013.
+
+\bibitem{27}
+Kenji Shimada and David Gossard.
+\newblock Bubble mesh: Automated triangular meshing of non-manifold geometry by
+  sphere packing.
+\newblock In {\em ACM SYMPOSIUM ON SOLID MODELING AND APPLICATIONS}, pages
+  409--419, 1995.
+
+\bibitem{28}
+Jeong-Hun Kim, Hyun-Gyu Kim, Byung-Chai Lee, and Seyoung Im.
+\newblock Adaptive mesh generation by bubble packing method.
+\newblock {\em Structural Engineering and Mechanics}, 15:135--149, 2003.
 
 \end{thebibliography}

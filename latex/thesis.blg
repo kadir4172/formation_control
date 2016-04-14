@@ -4,45 +4,52 @@ The top-level auxiliary file: thesis.aux
 The style file: unsrt.bst
 Database file #1: thesis_references.bib
 Warning--empty journal in 1
-You've used 7 entries,
+Warning--empty journal in 7
+Warning--empty journal in 10
+Warning--empty journal in 12
+Warning--empty journal in 13
+Warning--empty journal in 15
+Warning--empty journal in 19
+Warning--empty journal in 22
+You've used 31 entries,
             1791 wiz_defined-function locations,
-            477 strings with 4333 characters,
-and the built_in function-call counts, 1142 in all, are:
-= -- 96
-> -- 50
-< -- 1
-+ -- 20
-- -- 13
-* -- 46
-:= -- 200
-add.period$ -- 22
-call.type$ -- 7
-change.case$ -- 6
+            588 strings with 7686 characters,
+and the built_in function-call counts, 6246 in all, are:
+= -- 522
+> -- 322
+< -- 4
++ -- 119
+- -- 88
+* -- 350
+:= -- 1038
+add.period$ -- 95
+call.type$ -- 31
+change.case$ -- 30
 chr.to.int$ -- 0
-cite$ -- 8
-duplicate$ -- 59
-empty$ -- 123
-format.name$ -- 13
-if$ -- 254
+cite$ -- 39
+duplicate$ -- 299
+empty$ -- 618
+format.name$ -- 88
+if$ -- 1375
 int.to.chr$ -- 0
-int.to.str$ -- 7
-missing$ -- 6
-newline$ -- 38
-num.names$ -- 7
-pop$ -- 27
+int.to.str$ -- 31
+missing$ -- 30
+newline$ -- 158
+num.names$ -- 31
+pop$ -- 111
 preamble$ -- 1
 purify$ -- 0
 quote$ -- 0
-skip$ -- 22
+skip$ -- 131
 stack$ -- 0
-substring$ -- 16
-swap$ -- 7
-text.length$ -- 1
+substring$ -- 266
+swap$ -- 47
+text.length$ -- 4
 text.prefix$ -- 0
 top$ -- 0
 type$ -- 0
-warning$ -- 1
-while$ -- 9
-width$ -- 8
-write$ -- 74
-(There was 1 warning)
+warning$ -- 8
+while$ -- 55
+width$ -- 33
+write$ -- 322
+(There were 8 warnings)
