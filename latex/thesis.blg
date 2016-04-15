@@ -3,53 +3,56 @@ Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
 The top-level auxiliary file: thesis.aux
 The style file: unsrt.bst
 Database file #1: thesis_references.bib
+Warning--I didn't find a database entry for "11"
+Warning--I didn't find a database entry for "14"
+Warning--I didn't find a database entry for "28"
+Warning--empty journal in 15
 Warning--empty journal in 1
 Warning--empty journal in 7
 Warning--empty journal in 10
 Warning--empty journal in 12
 Warning--empty journal in 13
-Warning--empty journal in 15
 Warning--empty journal in 19
 Warning--empty journal in 22
-You've used 31 entries,
+You've used 25 entries,
             1791 wiz_defined-function locations,
-            588 strings with 7686 characters,
-and the built_in function-call counts, 6246 in all, are:
-= -- 522
-> -- 322
-< -- 4
-+ -- 119
-- -- 88
-* -- 350
-:= -- 1038
-add.period$ -- 95
-call.type$ -- 31
-change.case$ -- 30
+            560 strings with 6826 characters,
+and the built_in function-call counts, 5007 in all, are:
+= -- 410
+> -- 258
+< -- 3
++ -- 95
+- -- 70
+* -- 273
+:= -- 830
+add.period$ -- 76
+call.type$ -- 25
+change.case$ -- 25
 chr.to.int$ -- 0
-cite$ -- 39
-duplicate$ -- 299
-empty$ -- 618
-format.name$ -- 88
-if$ -- 1375
+cite$ -- 33
+duplicate$ -- 250
+empty$ -- 500
+format.name$ -- 70
+if$ -- 1105
 int.to.chr$ -- 0
-int.to.str$ -- 31
-missing$ -- 30
-newline$ -- 158
-num.names$ -- 31
-pop$ -- 111
+int.to.str$ -- 25
+missing$ -- 25
+newline$ -- 128
+num.names$ -- 25
+pop$ -- 95
 preamble$ -- 1
 purify$ -- 0
 quote$ -- 0
-skip$ -- 131
+skip$ -- 114
 stack$ -- 0
-substring$ -- 266
-swap$ -- 47
-text.length$ -- 4
+substring$ -- 191
+swap$ -- 41
+text.length$ -- 3
 text.prefix$ -- 0
 top$ -- 0
 type$ -- 0
 warning$ -- 8
-while$ -- 55
-width$ -- 33
-write$ -- 322
-(There were 8 warnings)
+while$ -- 43
+width$ -- 27
+write$ -- 258
+(There were 11 warnings)

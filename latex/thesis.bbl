@@ -1,27 +1,31 @@
 \begin{thebibliography}{10}
 
-\bibitem{erl05}
-Thomas Erl.
-\newblock {\em Service-Oriented Architecture: Concepts, Technology, and
-  Design}.
-\newblock Printice Hall, 2005.
+\bibitem{20}
+Martin Vossiek, Peter Gulden, Jan Wieghardt, and Clemens Hoffman.
+\newblock Wireless local positioning - concepts, solutions, applications.
+\newblock In {\em RAWCON}, 2003.
 
-\bibitem{kitchenham07}
-Barbara Kitchenham and Stuart Charters.
-\newblock {Guidelines for performing Systematic Literature Reviews in Software
-  Engineering}.
-\newblock Technical Report EBSE 2007-001, Keele University and Durham
-  University Joint Report, 2007.
+\bibitem{15}
+Maurice Martin and Steve Kilberg.
+\newblock Techsat 21 and revolutionizing space missions using microsatellites.
+\newblock n.d.
 
-\bibitem{atkinson04}
-Darren~C. Atkinson, Daniel~C. Weeks, and John Noll.
-\newblock The design of evolutionary process modeling languages.
-\newblock In {\em APSEC}. IEEE Computer Society, 2004.
+\bibitem{8}
+S.P. Hou, C.C. Cheah, and J.J.E. Slotine.
+\newblock Dynamic region following formation control for a swarm of robots.
+\newblock In {\em ICRA}, 2009.
 
-\bibitem{bpeltools}
-IAAS.
-\newblock Open source bpel4chor tools.
-\newblock https://github.com/IAAS, last visited on November 2013.
+\bibitem{17}
+Samitha Ekanayake and Pubudu Pathirana.
+\newblock Formations of robotic swarm: An artificial force based approach.
+\newblock {\em International Journal of Advanced Robotic Systems}, 7:173--190,
+  2010.
+
+\bibitem{18}
+Aveek Das, Rafael Fierro, Vijay Kumar, James Ostrowski, John Spletzer, and
+  Camilla Taylor.
+\newblock A vision-based formation control framework.
+\newblock {\em IEEE TRANSACTIONS ON ROBOTICS AND AUTOMATION}, 18, 2002.
 
 \bibitem{1}
 Gerardo Beni.
@@ -50,17 +54,18 @@ Aleksis Liekna and Janis Grundspenkis.
 \newblock In {\em 13th International Scientific Conference - Engineering for
   rural development}, 2014.
 
+\bibitem{6}
+Yogeswaran Mohan and S.G. Ponnambalam.
+\newblock An extensive review of research in swarm robotics.
+\newblock In {\em World Congress on Nature $\&$ Biologically Inspired
+  Computing, NaBIC}, 2009.
+
 \bibitem{7}
 Marco Dorigo, Vito Trianni, Erol Sahin, Roderich Grof, Thomas Labella, Gianluca
   Baldassarre, Stefano Nolfi, Jean Deneubourg, Francesco Mondada, and Dario
   Floreano.
 \newblock Evolving self-organizing behaviors for a swarm-bot.
 \newblock n.d.
-
-\bibitem{8}
-S.P. Hou, C.C. Cheah, and J.J.E. Slotine.
-\newblock Dynamic region following formation control for a swarm of robots.
-\newblock In {\em ICRA}, 2009.
 
 \bibitem{9}
 Ganesh Venayagamoorthy, Lisa Grant, and Sheetal Doctor.
@@ -74,13 +79,6 @@ Luiz Chaimowicz, Mario Campos, and Vijay Kumar.
 \newblock Dynamic role assignment for cooperative robots.
 \newblock 2002.
 
-\bibitem{11}
-Alexandre Campo, Alvaro Gutierrez, Shervin Nouyan, Carlo Pinciroli, Valentin
-  Longchamp, Simon Garnier, and Marco Dorigo.
-\newblock Artificial pheromone for path selection by a foraging swarm of
-  robots.
-\newblock {\em Biol Cybern}, 103:339--352, 2010.
-
 \bibitem{12}
 Kiattisin Kanjanawanishkul.
 \newblock Formation control of mobile robots: Survey.
@@ -91,43 +89,16 @@ YangQuan Chen and Zhongmin Wang.
 \newblock Formation control: A review and a new consideration.
 \newblock n.d.
 
-\bibitem{14}
-Tucker Balch and Ronald Arkin.
-\newblock Behavior-based formation control for multi-robot teams.
-\newblock {\em IEEE TRANSACTIONS ON ROBOTICS AND AUTOMATION}, 6:926--939, 1998.
-
-\bibitem{15}
-Maurice Martin and Steve Kilberg.
-\newblock Techsat 21 and revolutionizing space missions using microsatellites.
-\newblock n.d.
-
 \bibitem{16}
 Magnus Egerstedt and Xiaoming Hu.
 \newblock Formation constrained multi-agent control.
 \newblock {\em IEEE TRANSACTIONS ON ROBOTICS AND AUTOMATION}, 17, 2001.
-
-\bibitem{17}
-Samitha Ekanayake and Pubudu Pathirana.
-\newblock Formations of robotic swarm: An artificial force based approach.
-\newblock {\em International Journal of Advanced Robotic Systems}, 7:173--190,
-  2010.
-
-\bibitem{18}
-Aveek Das, Rafael Fierro, Vijay Kumar, James Ostrowski, John Spletzer, and
-  Camilla Taylor.
-\newblock A vision-based formation control framework.
-\newblock {\em IEEE TRANSACTIONS ON ROBOTICS AND AUTOMATION}, 18, 2002.
 
 \bibitem{19}
 Seyed Zekavat, Hui Tong, and Jindong Tan.
 \newblock A novel wireless local positioning system for airport (indoor)
   security.
 \newblock n.d.
-
-\bibitem{20}
-Martin Vossiek, Peter Gulden, Jan Wieghardt, and Clemens Hoffman.
-\newblock Wireless local positioning - concepts, solutions, applications.
-\newblock In {\em RAWCON}, 2003.
 
 \bibitem{21}
 Juha Latvala, Jari Syrjarinne, Hannu Ikonen, and Jarkko Niittylahti.
@@ -169,10 +140,5 @@ Kenji Shimada and David Gossard.
   sphere packing.
 \newblock In {\em ACM SYMPOSIUM ON SOLID MODELING AND APPLICATIONS}, pages
   409--419, 1995.
-
-\bibitem{28}
-Jeong-Hun Kim, Hyun-Gyu Kim, Byung-Chai Lee, and Seyoung Im.
-\newblock Adaptive mesh generation by bubble packing method.
-\newblock {\em Structural Engineering and Mechanics}, 15:135--149, 2003.
 
 \end{thebibliography}

@@ -32,7 +32,7 @@ Local positioning system is a subsystem to provide a complete solution to the lo
 As illustrated in Figure \ref{fig:lps}, agents are expected to propogate their states with the help of acceleration, gyroscope and magnetometer sensors. Since the trilateration and route table determination processes require recursive and time consuming algorithms, a localization timer with a suitable period is implemented to the solution. Agents will correct their state vectors with the localization period of 3 seconds by measuring their positions with trilateration process and execute the update procedure in their state estimator algorithms. The requirement about the maximum value of 3 seconds for the localization period is determined with the help of Monte Carlo simulations discussed in Section \ref{lps_ref} by defining a maximum allowable error on the position data since the error on the state vectors are drifting exponentially with increasing time.   
 
 \subsection{Trilateration Process}
-Trilateration process helps the agents to localize themselves with the help of their local neighbors.  Trilateration calculations use distance measurements to the nodes with known positions, to determine the coordinates of unknown positions[22]. These measurements are assumed to be done with the help of time of arrival methods disccussed in Section \ref{sssec:num1}.  Solution of the unknown position with the help of these distance measurements can be reduced down to a $A\vec{x} = \vec{b}$ type equation with the help of mathematical manipulations. The agents which has position sensors on their boards are called position beacons. Figure \ref{beacons_ref} illustrates a sample environment which consist of $i$ beacons and an agent which tries to localize itself with the help of distance measurements $r_i$ and the position data $B_i$ of the beacon nodes.
+Trilateration process helps the agents to localize themselves with the help of their local neighbors.  Trilateration calculations use distance measurements to the nodes with known positions, to determine the coordinates of unknown positions \cite{22}. These measurements are assumed to be done with the help of time of arrival methods disccussed in Section \ref{sssec:num1}.  Solution of the unknown position with the help of these distance measurements can be reduced down to a $A\vec{x} = \vec{b}$ type equation with the help of mathematical manipulations. The agents which has position sensors on their boards are called position beacons. Figure \ref{beacons_ref} illustrates a sample environment which consist of $i$ beacons and an agent which tries to localize itself with the help of distance measurements $r_i$ and the position data $B_i$ of the beacon nodes.
 
 \begin{figure}[H] 
 \caption{Environment for Trilateration Process}
@@ -716,7 +716,7 @@ z_i\\ \dot{z}_i
 
 where  $z_i \in C$, represents the position of the $i^{th}$ member of the swarm. The state of the whole swarm $x= \begin{bmatrix}
 X_1 & X_2 & ... X_n
-\end{bmatrix}$ is determined by the linear equations of [17]
+\end{bmatrix}$ is determined by the linear equations of \cite{17}
 
 \begin{equation}
 \dot{x} = Ax + Bu
@@ -925,7 +925,7 @@ The attractive and transition forces are defined to be active when the agents ar
 			
 			
 \paragraph{XSwarm Theory}\hspace{0pt} \\
-In artificial forces method it is required to analyse the movement of a single agent and to prove that the motion will be towards to the desired shape under the effect of different artificial force components, since there are no predetermined goal states within the desired formation shape. For this purpose, Samitha and Pubudu [17] have provided a definition of "X-Swarm" and give a theorem which describes the motion of an agent towards the formation shape based on the X -Swarm definition. Let $S$ be a swarm with $N$ agents. This swarm is defined as X-Swarm if there exists some positive constants $\delta$ and  $ \gamma$ that satisfy the following conditions simultaneously for all $i,j \in S$ and $i \neq j$
+In artificial forces method it is required to analyse the movement of a single agent and to prove that the motion will be towards to the desired shape under the effect of different artificial force components, since there are no predetermined goal states within the desired formation shape. For this purpose, Samitha and Pubudu \cite{17} have provided a definition of "X-Swarm" and give a theorem which describes the motion of an agent towards the formation shape based on the X -Swarm definition. Let $S$ be a swarm with $N$ agents. This swarm is defined as X-Swarm if there exists some positive constants $\delta$ and  $ \gamma$ that satisfy the following conditions simultaneously for all $i,j \in S$ and $i \neq j$
 			
 \begin{align}
 \begin{split}
@@ -1041,7 +1041,7 @@ Shape partitioning methods have an approach to direct the agents to the goal sta
 			
 \subsubsection{Determining the Potential Goal States} \label{Partitioning_ref}
 \paragraph{Bubble Packing Method} \hspace{0pt} \\				
-Bubble packing method is widely used in mesh generation problems. It basically depends on covering a curve, surface or a volume with a proper number of bubbles by packing them tightly which mimic a Voronoi diagram, from which a set of well-shaped Delaunay triangles and tetrahedra can be created by connecting the centers of the bubbles[27].  The algorithm places the bubbles with their initial conditions in the environment and apply them interbubble forces which imitates the Van der Waals forces between the moleculer bonds  to distrubute the bubbles homogenously. Here, the main idea is to generate a mesh for a surface with identical bubbles to mimic a regular Voronoi diagram with the vertices represented by the centers of these bubbles. On the other hand, adaptive population control  methods are developed to increase the number of bubbles to fill the gaps in the shape and to remove the excess bubbles which are overlapping with each other and the shape boundaries. 
+Bubble packing method is widely used in mesh generation problems. It basically depends on covering a curve, surface or a volume with a proper number of bubbles by packing them tightly which mimic a Voronoi diagram, from which a set of well-shaped Delaunay triangles and tetrahedra can be created by connecting the centers of the bubbles \cite{27}.  The algorithm places the bubbles with their initial conditions in the environment and apply them interbubble forces which imitates the Van der Waals forces between the moleculer bonds  to distrubute the bubbles homogenously. Here, the main idea is to generate a mesh for a surface with identical bubbles to mimic a regular Voronoi diagram with the vertices represented by the centers of these bubbles. On the other hand, adaptive population control  methods are developed to increase the number of bubbles to fill the gaps in the shape and to remove the excess bubbles which are overlapping with each other and the shape boundaries. 
 
 Since the numbers and the the radius of coverage circles which is defined at Section \ref{Artificial Forces Ref} for the agents are predetermined in our formation control problem, the general bubble meshing algorithm have to be adopted to meet the requirements for shape partitioning in formation control.  The basic approach is to represent the agents in the swarm as bubbles with the radius of  their coverage circles and create a mesh by using these bubbles. \newline
 			
@@ -1116,7 +1116,7 @@ The bubbles are distributed homogenously under the influence of these two forces
 \end{figure}
 
 \subparagraph{Randomized Fractals Method}\hspace{0pt} \\
-Randomized fractals methods are used to cover surfaces or volumes randomly with fractals. The main idea is to fill the fractals with the areas determined by the rule of [26] :
+Randomized fractals methods are used to cover surfaces or volumes randomly with fractals. The main idea is to fill the fractals with the areas determined by the rule of \cite{26} :
 
 \begin{equation} \label{fractals}
 A_i = \frac{A}{\zeta(c,N)(i+N)^c}
@@ -1137,7 +1137,7 @@ It is possible to write,
 which tells us the sum of the all areas $A_i$ is the total area of $A$ and the algorithm is space filling. This approach implements the fractals infinitely by reducing the areas in accordance with the Equation \ref{fractals}, to cover the desired formation shape randomly. 
 
 \begin{figure}[H]
-\caption{Randomized Fractals[26]}
+\caption{Randomized Fractals \cite{26}}
 \centering
 \includegraphics[scale = 0.70]{randomized}
 \end{figure}
@@ -1169,7 +1169,7 @@ In Section \ref{Partitioning_ref}, the formation control problem is reduced down
 In this work, the cost of reaching a goal state is defined with the minimum shortest path in the environment. A visibility graph based approach is used to calculate the shortest possible path to a goal state by taking into account the obstacles in the environment. The assignment process of the agents to the goal states which will be minimize the overall displacement, is handled with the help of Munkres (Hungarian)  algorithm.
 	
 \paragraph{Free Configuration Space}\hspace{0pt} \\
-Since the shortest path is defined in the free configuration space, each agent must calculate its free configuration space by taking the obstacles in the environment into the account[92]. 
+Since the shortest path is defined in the free configuration space, each agent must calculate its free configuration space by taking the obstacles in the environment into the account \cite{92}. 
 
 Assume an environment with set of obstacles $S = \begin{Bmatrix}
 P_1, P_2, .. P_t \end{Bmatrix}$. Configuration for agent $i$ can be described with the position of the center of its coverage circle with $R=\begin{Bmatrix}x_i, y_i\end{Bmatrix}$. Configuration space of $i$ th agent is the environment itself and represented by $C(R_i)$. This configuration space is composed of two subspaces; free configuration space and forbidden configuration space of agent $i$.
@@ -1178,7 +1178,7 @@ P_1, P_2, .. P_t \end{Bmatrix}$. Configuration for agent $i$ can be described wi
 C(R_i) = C_{free}(R_i,S) + C_{forb}(R_i,S)
 \end{equation}
 
-If the forbidden space is calculated with the help of Minkowski Sum method, free configuration space can be derived simply by extracting the forbidden space from the environment itself. Let a single obstacle is described with a point set of $S_1$ and the agent is described with a point set of $S_2$. The Minkowski sum of these two sets $S_1 \subset R^2$ and $S_2 \subset R^2$ can be calculated with the following[92],
+If the forbidden space is calculated with the help of Minkowski Sum method, free configuration space can be derived simply by extracting the forbidden space from the environment itself. Let a single obstacle is described with a point set of $S_1$ and the agent is described with a point set of $S_2$. The Minkowski sum of these two sets $S_1 \subset R^2$ and $S_2 \subset R^2$ can be calculated with the following \cite{92},
 	
 \begin{equation}
 S_1 \oplus S_2 := \begin{Bmatrix}
@@ -1189,15 +1189,15 @@ p+q : p \subset S_1, q \subset S_2
 where $p+q$ denotes the vector sum of the vectors $p$ and $q$.
 		
 \begin{figure}[H]
-\caption{Forbidden Space Caused by an Obstacle[92]}
+\caption{Forbidden Space Caused by an Obstacle \cite{92}}
 \centering
 \includegraphics[scale = 0.6]{Forbidden}
 \end{figure}
 	
-Forbidden space for agent $i$, $C_{forb}(R_i, S)$, is the sum of the forbidden spaces calculated for each obstacle in the environment[92]. 
+Forbidden space for agent $i$, $C_{forb}(R_i, S)$, is the sum of the forbidden spaces calculated for each obstacle in the environment \cite{92}. 
 	
 \paragraph{Visibility Graphs and Dijkstra$'$s Algorihtm}\hspace{0pt} \\
-It is obvious that the shortest path between two points in the environment must lie on the free configuration space, $C_{free}$, for each agent to avoid collisions with the obstacles . A constraint for the shortest path is given as follows[30] : 
+It is obvious that the shortest path between two points in the environment must lie on the free configuration space, $C_{free}$, for each agent to avoid collisions with the obstacles . A constraint for the shortest path is given as follows \cite{92}: 
 
 \begin{displayquote}
 The shortest path between $p_{start}$ and $p_{goal}$ among a set $S$ of augmented polygonal obstacles consists of the arcs of the visibility graph $\gamma_{vis}(S^*)$ where $S^* := S \cup \begin{Bmatrix}
@@ -1205,12 +1205,12 @@ p_{start}, p_{goal}
 \end{Bmatrix}$
 \end{displayquote}
 
-A visibility graph,$\gamma_{vis}(S^*)$ , is a graph which is set of interior nodes representing the vertices of the set of obstacles, $S$, in the environment and edges which represents visible (which are not crossing and interior region of an obstacle) connections between these nodes[92]. 
+A visibility graph,$\gamma_{vis}(S^*)$ , is a graph which is set of interior nodes representing the vertices of the set of obstacles, $S$, in the environment and edges which represents visible (which are not crossing and interior region of an obstacle) connections between these nodes \cite{92}. 
 
 Consider set of obstacles in the environment is augmented with the Minkowski Sums. Let these set of augmented polygonal obstacles represented with $S_i \subset S$. 
 
 \begin{figure}[H]
-\caption{Shorthest Path from an initial state to a goal state[92]}
+\caption{Shorthest Path from an initial state to a goal state \cite{92}}
 \centering
 \includegraphics[scale = 0.6]{shortest}
 \end{figure} 
@@ -1239,7 +1239,7 @@ where $VISIBLE$\_$VERTICES(v,S)$ algorithm checks whether line segments drawn fr
 \end{algorithm}
 	
 Dijkstra$'$s algorithm computes the shortest path between two nodes in
-graph with $k$ arcs, each having a non-negative weight. It is a tree search algorithm and  used to calculate the shortest paths between nodes in a graphs, with the help of weighted edges between nodes. The time complexity of the original algorithm is $O(n^2)$ where $n$ is the number of the nodes in the graph. With the usage self balancing binary search tree, the algorithm requires $O(k+nlogn)$ time in the worst case. The algorithm for the Dijkstra's is given as follows[92]:
+graph with $k$ arcs, each having a non-negative weight. It is a tree search algorithm and  used to calculate the shortest paths between nodes in a graphs, with the help of weighted edges between nodes. The time complexity of the original algorithm is $O(n^2)$ where $n$ is the number of the nodes in the graph. With the usage self balancing binary search tree, the algorithm requires $O(k+nlogn)$ time in the worst case. The algorithm for the Dijkstra's is given as follows \cite{92}:
 	
 \begin{algorithm}[H]
 \KwData{$\gamma_{vis}$ , $source$\_$ node$ }
@@ -1332,7 +1332,7 @@ and $\gamma _i$ represents the degree, or the number of neighboring nodes connec
 \includegraphics[scale = 0.70]{voronoi}
 \end{figure}
 
-Another metric to evaluate the quality or the performance of the mesh is the geometric irregularity defined as[27]:
+Another metric to evaluate the quality or the performance of the mesh is the geometric irregularity defined as \cite{27}:
 
 \begin{equation}
 \epsilon _g = \frac{1}{m} \sum_{i = 0}^{m} (A-\frac{r_i}{R_i})

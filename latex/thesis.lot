@@ -11,7 +11,7 @@
 \select@language {english}
 \addvspace {10pt}
 \addvspace {10pt}
-\contentsline {table}{\numberline {2.1}{\ignorespaces Local Posititioning Systems with Different System Topologies[20]\relax }}{23}{table.caption.9}
+\contentsline {table}{\numberline {2.1}{\ignorespaces Local Posititioning Systems with Different System Topologies \cite {20}\relax }}{23}{table.caption.9}
 \addvspace {10pt}
 \addvspace {10pt}
 \contentsline {table}{\numberline {4.1}{\ignorespaces Mass,Friction Coefficient and Coverage Circle Radius for Different Types of Agents\relax }}{95}{table.4.1}
