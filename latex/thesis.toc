@@ -82,6 +82,6 @@
 \contentsline {section}{\numberline {6.1}Conclusion}{145}{section.6.1}
 \contentsline {section}{\numberline {6.2}Future Works}{149}{section.6.2}
 \contentsline {leads}{\numberline {}\uppercase {REFERENCES}}{151}{chapter*.20}
-\contentsline {nodots}{\numberline {}APPENDICES}{152}{chapter*.20}
-\contentsline {chapter}{\numberline {A}\MakeUppercase {Appendix Name}}{153}{appendix.A}
-\contentsline {leads}{\numberline {}CURRICULUM VITAE}{155}{appendix*.21}
+\contentsline {nodots}{\numberline {}APPENDICES}{153}{chapter*.20}
+\contentsline {chapter}{\numberline {A}\MakeUppercase {Appendix Name}}{155}{appendix.A}
+\contentsline {leads}{\numberline {}CURRICULUM VITAE}{157}{appendix*.21}

@@ -5,10 +5,48 @@ Martin Vossiek, Peter Gulden, Jan Wieghardt, and Clemens Hoffman.
 \newblock Wireless local positioning - concepts, solutions, applications.
 \newblock In {\em RAWCON}, 2003.
 
+\bibitem{99}
+Dorigo et~al.
+\newblock Swarmanoid: A novel concept for the study of heterogeneous robotic
+  swarms.
+\newblock {\em IEEE Robotics $\&$ Automation Magazine}, 20:60--71, 2013.
+
 \bibitem{15}
 Maurice Martin and Steve Kilberg.
 \newblock Techsat 21 and revolutionizing space missions using microsatellites.
 \newblock n.d.
+
+\bibitem{98}
+Michael Rubenstein, Adrian Cabrera, Justin Werfel, Golnaz Habibi, James
+  Mclurkin, and Radhika Nagpal.
+\newblock Collective transport of complex objects by simple robots: Theory and
+  experiments.
+\newblock In {\em nternational conference on Autonomous agents and multi-agent
+  systems}, pages 47--54, 2013.
+
+\bibitem{97}
+S~Kornienki, O.~Kornienko, and Levi. P.
+\newblock Minimalistic approach towards communication and perception in
+  microrobotic swarms.
+\newblock In {\em IEEE International Conference on Intelligent Robots and
+  Systems}, pages 2228--2234, 2005.
+
+\bibitem{96}
+Farshad Arvin, John Murray, Licheng Shi, Chun Zhang, and Shigang Yue.
+\newblock Development of an autonomous micro robot for swarm robotics.
+\newblock In {\em IEEE International Conference on Mechatronics and
+  Automation}, pages 635--640, 2014.
+
+\bibitem{95}
+Touraj Soleymani, Vito Trianni, Michael Bonani, Francesco Mondada, and Marco
+  Dorigo.
+\newblock Bio-inspired construction with mobile robots and compliant pockets.
+\newblock {\em Robotics and Autonomus Systems}, 74:340--350, 2015.
+
+\bibitem{94}
+Roderich Grof, Michael Bonani, Mondada Francesco, and Marco Dorigo.
+\newblock Autonomous self-assembly in a swarm-bot.
+\newblock {\em IEEE TRANSACTIONS ON ROBOTICS}, pages 1115--1130, 2006.
 
 \bibitem{8}
 S.P. Hou, C.C. Cheah, and J.J.E. Slotine.
@@ -26,6 +64,35 @@ Aveek Das, Rafael Fierro, Vijay Kumar, James Ostrowski, John Spletzer, and
   Camilla Taylor.
 \newblock A vision-based formation control framework.
 \newblock {\em IEEE TRANSACTIONS ON ROBOTICS AND AUTOMATION}, 18, 2002.
+
+\bibitem{24}
+Jimming Cheng, Winston Cheng, and Radhika Nagpal.
+\newblock Robust and self-repairing formation control for swarms of mobile
+  agents.
+\newblock In {\em AAAI 20th National Conference on Artificial Intelligence},
+  volume~1, pages 59--64, 2005.
+
+\bibitem{25}
+Calin Belta and Vijay Kumar.
+\newblock Abstraction and control for groups of robots.
+\newblock {\em IEEE TRANSACTIONS ON ROBOTICS AND AUTOMATION}, 20, 2004.
+
+\bibitem{26}
+John Shier and Paul Bourke.
+\newblock An algorithm for random fractal filling of space.
+\newblock {\em Computer Graphics Forum}, 32:89--97, 2013.
+
+\bibitem{27}
+Kenji Shimada and David Gossard.
+\newblock Bubble mesh: Automated triangular meshing of non-manifold geometry by
+  sphere packing.
+\newblock In {\em ACM SYMPOSIUM ON SOLID MODELING AND APPLICATIONS}, pages
+  409--419, 1995.
+
+\bibitem{92}
+Mark Berg, Otfried Cheong, Kreveld. Marc, and Marc Overmars.
+\newblock {\em Computational Geometry}.
+\newblock Springer, 1998.
 
 \bibitem{1}
 Gerardo Beni.
@@ -117,28 +184,10 @@ Anthony Lewis and Kar-Han Tan.
   structures.
 \newblock {\em Autonomous Robots}, 4:387--403, 1997.
 
-\bibitem{24}
-Jimming Cheng, Winston Cheng, and Radhika Nagpal.
-\newblock Robust and self-repairing formation control for swarms of mobile
-  agents.
-\newblock In {\em AAAI 20th National Conference on Artificial Intelligence},
-  volume~1, pages 59--64, 2005.
-
-\bibitem{25}
-Calin Belta and Vijay Kumar.
-\newblock Abstraction and control for groups of robots.
-\newblock {\em IEEE TRANSACTIONS ON ROBOTICS AND AUTOMATION}, 20, 2004.
-
-\bibitem{26}
-John Shier and Paul Bourke.
-\newblock An algorithm for random fractal filling of space.
-\newblock {\em Computer Graphics Forum}, 32:89--97, 2013.
-
-\bibitem{27}
-Kenji Shimada and David Gossard.
-\newblock Bubble mesh: Automated triangular meshing of non-manifold geometry by
-  sphere packing.
-\newblock In {\em ACM SYMPOSIUM ON SOLID MODELING AND APPLICATIONS}, pages
-  409--419, 1995.
+\bibitem{93}
+Reza Haghighi and Chien~Chern Cheah.
+\newblock Asynchronous dynamic multi-group formation for swarm robots.
+\newblock In {\em 50th IEEE Conference on Decision and Control amd European
+  Control Conference}, pages 2744--2749, 2011.
 
 \end{thebibliography}
