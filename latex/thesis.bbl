@@ -21,8 +21,8 @@ Michael Rubenstein, Adrian Cabrera, Justin Werfel, Golnaz Habibi, James
   Mclurkin, and Radhika Nagpal.
 \newblock Collective transport of complex objects by simple robots: Theory and
   experiments.
-\newblock In {\em nternational conference on Autonomous agents and multi-agent
-  systems}, 2013.
+\newblock In {\em nternational Conference on Autonomous Agents and Multi-Agent
+  Systems}, 2013.
 
 \bibitem{97}
 S~Kornienki, O.~Kornienko, and Levi. P.
@@ -46,7 +46,7 @@ Touraj Soleymani, Vito Trianni, Michael Bonani, Francesco Mondada, and Marco
 \bibitem{94}
 Roderich Grof, Michael Bonani, Mondada Francesco, and Marco Dorigo.
 \newblock Autonomous self-assembly in a swarm-bot.
-\newblock {\em IEEE TRANSACTIONS ON ROBOTICS}, 22:1115--1130, 2006.
+\newblock 22:1115--1130, 2006.
 
 \bibitem{8}
 S.P. Hou, C.C. Cheah, and J.J.E. Slotine.
@@ -69,7 +69,7 @@ Samitha Ekanayake and Pubudu Pathirana.
 Aveek Das, Rafael Fierro, Vijay Kumar, James Ostrowski, John Spletzer, and
   Camilla Taylor.
 \newblock A vision-based formation control framework.
-\newblock {\em IEEE TRANSACTIONS ON ROBOTICS AND AUTOMATION}, 18:813--825,
+\newblock {\em IEEE Transactions on Robotics and Automation}, 18:813--825,
   2002.
 
 \bibitem{24}
@@ -82,7 +82,7 @@ Jimming Cheng, Winston Cheng, and Radhika Nagpal.
 \bibitem{25}
 Calin Belta and Vijay Kumar.
 \newblock Abstraction and control for groups of robots.
-\newblock {\em IEEE TRANSACTIONS ON ROBOTICS AND AUTOMATION}, 20:865--875,
+\newblock {\em IEEE Transactions on Robotics and Automation}, 20:865--875,
   2004.
 
 \bibitem{26}
@@ -94,7 +94,7 @@ John Shier and Paul Bourke.
 Kenji Shimada and David Gossard.
 \newblock Bubble mesh: Automated triangular meshing of non-manifold geometry by
   sphere packing.
-\newblock In {\em ACM SYMPOSIUM ON SOLID MODELING AND APPLICATIONS}, 1995.
+\newblock In {\em ACM Symposium on Solid Modeling and Applications}, 1995.
 
 \bibitem{92}
 Mark Berg, Otfried Cheong, Kreveld. Marc, and Marc Overmars.
@@ -130,10 +130,10 @@ Yogeswaran Mohan and S.G. Ponnambalam.
 
 \bibitem{5}
 Aleksis Liekna and Janis Grundspenkis.
-\newblock Towards practical application of swarm robotics: Overvied of swarm
+\newblock Towards practical application of swarm robotics: Overviewed of swarm
   tasks.
 \newblock In {\em 13th International Scientific Conference - Engineering for
-  rural development}, 2014.
+  Rural Development}, 2014.
 
 \bibitem{7}
 Marco Dorigo, Vito Trianni, Erol Sahin, Roderich Grof, Thomas Labella, Gianluca
@@ -174,12 +174,12 @@ YangQuan Chen and Zhongmin Wang.
 \bibitem{93}
 Reza Haghighi and Chien~Chern Cheah.
 \newblock Asynchronous dynamic multi-group formation for swarm robots.
-\newblock In {\em 50th IEEE Conference on Decision and Control amd European
+\newblock In {\em 50th IEEE Conference on Decision and Control and European
   Control Conference}, 2011.
 
 \bibitem{21}
 Juha Latvala, Jari Syrjarinne, Hannu Ikonen, and Jarkko Niittylahti.
-\newblock Wireless local positioning - concepts, solutions, applications.
+\newblock Evaluation of rssi-based human tracking.
 \newblock In {\em Signal Processing Conference}, 2000.
 
 \bibitem{22}
@@ -191,7 +191,7 @@ Willy Hereman and William Murphy.
 \bibitem{16}
 Magnus Egerstedt and Xiaoming Hu.
 \newblock Formation constrained multi-agent control.
-\newblock {\em IEEE TRANSACTIONS ON ROBOTICS AND AUTOMATION}, 17:947--951,
+\newblock {\em IEEE Transactions On Robotics And Automation}, 17:947--951,
   2001.
 
 \bibitem{23}

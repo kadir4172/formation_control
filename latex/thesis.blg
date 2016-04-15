@@ -4,47 +4,48 @@ The top-level auxiliary file: thesis.aux
 The style file: unsrt.bst
 Database file #1: thesis_references.bib
 Warning--empty journal in 15
+Warning--empty journal in 94
 Warning--empty journal in 12
 Warning--empty journal in 22
 You've used 34 entries,
             1791 wiz_defined-function locations,
-            610 strings with 8629 characters,
-and the built_in function-call counts, 6996 in all, are:
-= -- 550
+            611 strings with 8685 characters,
+and the built_in function-call counts, 6995 in all, are:
+= -- 549
 > -- 363
 < -- 0
 + -- 134
 - -- 100
 * -- 399
-:= -- 1136
+:= -- 1135
 add.period$ -- 102
 call.type$ -- 34
 change.case$ -- 33
 chr.to.int$ -- 0
-cite$ -- 37
+cite$ -- 38
 duplicate$ -- 341
 empty$ -- 767
 format.name$ -- 100
-if$ -- 1553
+if$ -- 1552
 int.to.chr$ -- 0
 int.to.str$ -- 34
 missing$ -- 33
 newline$ -- 173
 num.names$ -- 34
-pop$ -- 150
+pop$ -- 152
 preamble$ -- 1
 purify$ -- 0
 quote$ -- 0
 skip$ -- 117
 stack$ -- 0
 substring$ -- 310
-swap$ -- 46
+swap$ -- 45
 text.length$ -- 0
 text.prefix$ -- 0
 top$ -- 0
 type$ -- 0
-warning$ -- 3
+warning$ -- 4
 while$ -- 60
 width$ -- 36
-write$ -- 350
-(There were 3 warnings)
+write$ -- 349
+(There were 4 warnings)
