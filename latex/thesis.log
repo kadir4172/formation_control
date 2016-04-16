@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2016.2.27)  16 APR 2016 10:00
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2016.2.27)  16 APR 2016 11:22
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1213,6 +1213,16 @@ Overfull \hbox (5.69048pt too wide) in paragraph at lines 83--83
 [][] 
  []
 
+
+Underfull \hbox (badness 10000) in paragraph at lines 83--83
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 83--83
+
+ []
+
 [3]
 Underfull \hbox (badness 10000) in paragraph at lines 83--83
 
@@ -1224,12 +1234,8 @@ Package hyperref Warning: bookmark level for unknown leads defaults to 0.
 
 LaTeX Font Info:    Font shape `T1/ptm/bx/n' in size <14.4> not available
 (Font)              Font shape `T1/ptm/b/n' tried instead on input line 83.
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [5]
-[6]
-Underfull \vbox (badness 10000) has occurred while \output is active []
+[5] [6]
+Underfull \vbox (badness 7722) has occurred while \output is active []
 
  [7]
 [8] [9] [10] (./thesis.toc
@@ -1264,10 +1270,7 @@ Overfull \hbox (9.06795pt too wide) in paragraph at lines 60--60
 Underfull \vbox (badness 1436) has occurred while \output is active []
 
  [17]
-Underfull \vbox (badness 4954) has occurred while \output is active []
-
- [18]
-[19] [20] [21])
+[18] [19] [20] [21])
 \tf@lof=\write8
 \openout8 = `thesis.lof'.
 
@@ -1297,7 +1300,7 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 Underfull \vbox (badness 1371) has occurred while \output is active []
 
  [4]
-<eyebot.png, id=905, 333.49594pt x 319.94531pt>
+<eyebot.png, id=904, 333.49594pt x 319.94531pt>
 File: eyebot.png Graphic file (type png)
  <use eyebot.png>
 Package pdftex.def Info: eyebot.png used on input line 38.
@@ -1305,13 +1308,13 @@ Package pdftex.def Info: eyebot.png used on input line 38.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [5 <./eyebot.png>] <Satellite.png, id=913, 303.38344pt x 210.03468pt>
+ [5 <./eyebot.png>] <Satellite.png, id=912, 303.38344pt x 210.03468pt>
 File: Satellite.png Graphic file (type png)
 
 <use Satellite.png>
 Package pdftex.def Info: Satellite.png used on input line 46.
 (pdftex.def)             Requested size: 303.38269pt x 210.03416pt.
- <kilobot.png, id=919, 479.54156pt x 171.64125pt>
+ <kilobot.png, id=918, 479.54156pt x 171.64125pt>
 File: kilobot.png Graphic file (type png)
 
 <use kilobot.png>
@@ -1320,7 +1323,7 @@ Package pdftex.def Info: kilobot.png used on input line 56.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [6 <./Satellite.png>] <mobilerobots.png, id=933, 462.97969pt x 315.42844pt>
+ [6 <./Satellite.png>] <mobilerobots.png, id=932, 462.97969pt x 315.42844pt>
 File: mobilerobots.png Graphic file (type png)
 
 <use mobilerobots.png>
@@ -1329,7 +1332,7 @@ Package pdftex.def Info: mobilerobots.png used on input line 70.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [7 <./kilobot.png>] <houslotine.png, id=942, 1061.9675pt x 956.57375pt>
+ [7 <./kilobot.png>] <houslotine.png, id=941, 1061.9675pt x 956.57375pt>
 File: houslotine.png Graphic file (type png)
 
 <use houslotine.png>
@@ -1348,13 +1351,13 @@ Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
 (hyperref)                removing `math shift' on input line 86.
 
 [9 <./houslotine.png>] [10]
-<narrow_los.png, id=960, 314.67563pt x 164.86594pt>
+<narrow_los.png, id=959, 314.67563pt x 164.86594pt>
 File: narrow_los.png Graphic file (type png)
  <use narrow_los.png>
 Package pdftex.def Info: narrow_los.png used on input line 109.
 (pdftex.def)             Requested size: 314.67485pt x 164.86551pt.
 
-<mesh.png, id=961, 296.60812pt x 154.32657pt>
+<mesh.png, id=960, 296.60812pt x 154.32657pt>
 File: mesh.png Graphic file (type png)
  <use mesh.png>
 Package pdftex.def Info: mesh.png used on input line 118.
@@ -1362,7 +1365,7 @@ Package pdftex.def Info: mesh.png used on input line 118.
 
 Underfull \vbox (badness 3209) has occurred while \output is active []
 
- [11 <./narrow_los.png>] <decentralized.png, id=967, 344.78813pt x 124.21407pt>
+ [11 <./narrow_los.png>] <decentralized.png, id=966, 344.78813pt x 124.21407pt>
 File: decentralized.png Graphic file (type png)
 
 <use decentralized.png>
@@ -1371,7 +1374,7 @@ Package pdftex.def Info: decentralized.png used on input line 131.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [12 <./mesh.png>] <complex.png, id=973, 367.3725pt x 231.11343pt>
+ [12 <./mesh.png>] <complex.png, id=972, 367.3725pt x 231.11343pt>
 File: complex.png Graphic file (type png)
  <use complex.png>
 Package pdftex.def Info: complex.png used on input line 140.
@@ -1433,7 +1436,7 @@ Overfull \hbox (2.81322pt too wide) in paragraph at lines 17--19
 mo-bile agent in the workspace.
  []
 
-<gps.png, id=1005, 926.46124pt x 559.08875pt>
+<gps.png, id=1004, 926.46124pt x 559.08875pt>
 File: gps.png Graphic file (type png)
  <use gps.png>
 Package pdftex.def Info: gps.png used on input line 26.
@@ -1454,7 +1457,7 @@ Underfull \hbox (badness 1810) in paragraph at lines 43--43
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [20 <./gps.png>] <measurement.png, id=1024, 894.34125pt x 852.18375pt>
+ [20 <./gps.png>] <measurement.png, id=1023, 894.34125pt x 852.18375pt>
 File: measurement.png Graphic file (type png)
 
 <use measurement.png>
@@ -1466,7 +1469,7 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
  [21]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [22 <./measurement.png>] <trilateration.png, id=1041, 178.41656pt x 160.34906p
+ [22 <./measurement.png>] <trilateration.png, id=1040, 178.41656pt x 160.34906p
 t>
 File: trilateration.png Graphic file (type png)
 
@@ -1476,13 +1479,13 @@ Package pdftex.def Info: trilateration.png used on input line 85.
 
 Underfull \vbox (badness 1127) has occurred while \output is active []
 
- [23 <./trilateration.png>] <samitha.png, id=1052, 400.49625pt x 290.08376pt>
+ [23 <./trilateration.png>] <samitha.png, id=1051, 400.49625pt x 290.08376pt>
 File: samitha.png Graphic file (type png)
 
 <use samitha.png>
 Package pdftex.def Info: samitha.png used on input line 97.
 (pdftex.def)             Requested size: 280.34546pt x 203.05724pt.
- <slotine.png, id=1056, 400.49625pt x 283.81032pt>
+ <slotine.png, id=1055, 400.49625pt x 283.81032pt>
 File: slotine.png Graphic file (type png)
 
 <use slotine.png>
@@ -1491,7 +1494,7 @@ Package pdftex.def Info: slotine.png used on input line 105.
 
 Underfull \vbox (badness 4713) has occurred while \output is active []
 
- [24 <./samitha.png>] <kumar.png, id=1067, 479.7925pt x 962.59625pt>
+ [24 <./samitha.png>] <kumar.png, id=1066, 479.7925pt x 962.59625pt>
 File: kumar.png Graphic file (type png)
  <use kumar.png>
 Package pdftex.def Info: kumar.png used on input line 113.
@@ -1502,47 +1505,46 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
  [25 <./slotine.png>]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [26 <./kumar.png>] <leader.png, id=1083, 711.65875pt x 512.91624pt>
+ [26 <./kumar.png>] <leader.png, id=1082, 711.65875pt x 512.91624pt>
 File: leader.png Graphic file (type png)
  <use leader.png>
 Package pdftex.def Info: leader.png used on input line 121.
 (pdftex.def)             Requested size: 355.8285pt x 256.45749pt.
 
 [27 <./leader.png>]
-<virtual_structure.png, id=1091, 422.32782pt x 146.04562pt>
+<virtual_structure.png, id=1090, 422.32782pt x 146.04562pt>
 File: virtual_structure.png Graphic file (type png)
 
 <use virtual_structure.png>
 Package pdftex.def Info: virtual_structure.png used on input line 133.
-(pdftex.def)             Requested size: 422.32678pt x 146.04524pt.
+(pdftex.def)             Requested size: 401.20915pt x 138.74252pt.
 
-Overfull \hbox (15.4523pt too wide) in paragraph at lines 133--134
- [][] 
- []
+Underfull \vbox (badness 3838) has occurred while \output is active []
 
-[28 <./virtual_structure.png>]
-<potential.png, id=1100, 888.31876pt x 297.11pt>
+ [28 <./virtual_structure.png>] <potential.png, id=1099, 888.31876pt x 297.11pt
+>
 File: potential.png Graphic file (type png)
- <use potential.png>
+
+<use potential.png>
 Package pdftex.def Info: potential.png used on input line 144.
 (pdftex.def)             Requested size: 355.32121pt x 118.84189pt.
-
-<manifold.png, id=1104, 493.845pt x 253.69781pt>
+ <manifold.png, id=1103, 493.845pt x 253.69781pt>
 File: manifold.png Graphic file (type png)
- <use manifold.png>
+
+<use manifold.png>
 Package pdftex.def Info: manifold.png used on input line 155.
 (pdftex.def)             Requested size: 395.07652pt x 202.95851pt.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [29 <./potential.png>] [30 <./manifold.png>]
-<randomized1.png, id=1123, 404.26031pt x 191.21437pt>
+<randomized1.png, id=1122, 404.26031pt x 191.21437pt>
 File: randomized1.png Graphic file (type png)
  <use randomized1.png>
 Package pdftex.def Info: randomized1.png used on input line 189.
 (pdftex.def)             Requested size: 404.25932pt x 191.2139pt.
 
-<nodespacing.png, id=1127, 901.3675pt x 701.62125pt>
+<nodespacing.png, id=1126, 901.3675pt x 701.62125pt>
 File: nodespacing.png Graphic file (type png)
  <use nodespacing.png>
 Package pdftex.def Info: nodespacing.png used on input line 199.
@@ -1550,13 +1552,13 @@ Package pdftex.def Info: nodespacing.png used on input line 199.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [31 <./randomized1.png>] <interbubble.png, id=1137, 680.5425pt x 468.75125pt>
+ [31 <./randomized1.png>] <interbubble.png, id=1136, 680.5425pt x 468.75125pt>
 File: interbubble.png Graphic file (type png)
 
 <use interbubble.png>
 Package pdftex.def Info: interbubble.png used on input line 207.
 (pdftex.def)             Requested size: 204.16432pt x 140.62645pt.
- <interbubble2.png, id=1141, 657.45625pt x 928.46875pt>
+ <interbubble2.png, id=1140, 657.45625pt x 928.46875pt>
 File: interbubble2.png Graphic file (type png)
 
 <use interbubble2.png>
@@ -1566,11 +1568,11 @@ Package pdftex.def Info: interbubble2.png used on input line 217.
 Underfull \vbox (badness 3291) has occurred while \output is active []
 
  [32 <./nodespacing.png> <./interbubble.png>]
-<advancing.png, id=1148, 347.04657pt x 118.94438pt>
+<advancing.png, id=1149, 548.0475pt x 287.0725pt>
 File: advancing.png Graphic file (type png)
  <use advancing.png>
 Package pdftex.def Info: advancing.png used on input line 228.
-(pdftex.def)             Requested size: 347.04572pt x 118.94408pt.
+(pdftex.def)             Requested size: 356.22665pt x 186.59491pt.
 )
 (./chapter3/chapter3.tex
 Underfull \vbox (badness 10000) has occurred while \output is active []
@@ -1611,7 +1613,7 @@ No file chapter5.aux
 LABELS NOT IMPORTED.
  on input line 12.
 
-<general_scheme.png, id=1158, 686.565pt x 319.94531pt>
+<general_scheme.png, id=1160, 686.565pt x 319.94531pt>
 File: general_scheme.png Graphic file (type png)
 
 <use general_scheme.png>
@@ -1622,13 +1624,13 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [35
 
- <./general_scheme.png>] <lps.png, id=1165, 470.50781pt x 233.37187pt>
+ <./general_scheme.png>] <lps.png, id=1167, 470.50781pt x 233.37187pt>
 File: lps.png Graphic file (type png)
  <use lps.png>
 Package pdftex.def Info: lps.png used on input line 28.
 (pdftex.def)             Requested size: 305.82645pt x 151.68991pt.
 
-[36 <./lps.png>] <beacons.png, id=1175, 446.41782pt x 326.72063pt>
+[36 <./lps.png>] <beacons.png, id=1177, 446.41782pt x 326.72063pt>
 File: beacons.png Graphic file (type png)
 
 <use beacons.png>
@@ -1652,7 +1654,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 194--195
 
  []
 
-[41] [42] [43] <position_beacon.png, id=1241, 307.1475pt x 259.7203pt>
+[41] [42] [43] <position_beacon.png, id=1243, 307.1475pt x 259.7203pt>
 File: position_beacon.png Graphic file (type png)
 
 <use position_beacon.png>
@@ -1661,7 +1663,7 @@ Package pdftex.def Info: position_beacon.png used on input line 293.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [44 <./position_beacon.png>] <bellman.png, id=1250, 657.95813pt x 307.1475pt>
+ [44 <./position_beacon.png>] <bellman.png, id=1252, 657.95813pt x 307.1475pt>
 File: bellman.png Graphic file (type png)
 
 <use bellman.png>
@@ -1671,7 +1673,7 @@ Package pdftex.def Info: bellman.png used on input line 306.
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [45]
-<routing_problem.png, id=1256, 423.08063pt x 259.7203pt>
+<routing_problem.png, id=1258, 423.08063pt x 259.7203pt>
 File: routing_problem.png Graphic file (type png)
 
 <use routing_problem.png>
@@ -1680,7 +1682,7 @@ Package pdftex.def Info: routing_problem.png used on input line 317.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [46 <./bellman.png>] <dest_seq.png, id=1262, 319.1925pt x 324.46219pt>
+ [46 <./bellman.png>] <dest_seq.png, id=1264, 319.1925pt x 324.46219pt>
 File: dest_seq.png Graphic file (type png)
 
 <use dest_seq.png>
@@ -1689,7 +1691,7 @@ Package pdftex.def Info: dest_seq.png used on input line 325.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [47 <./routing_problem.png>] <link_add.png, id=1267, 290.58563pt x 201.00093pt
+ [47 <./routing_problem.png>] <link_add.png, id=1269, 290.58563pt x 201.00093pt
 >
 File: link_add.png Graphic file (type png)
 
@@ -1709,14 +1711,14 @@ Underfull \hbox (badness 10000) in paragraph at lines 343--344
 
  []
 
-<link_break.png, id=1272, 298.86656pt x 201.00093pt>
+<link_break.png, id=1274, 298.86656pt x 201.00093pt>
 File: link_break.png Graphic file (type png)
  <use link_break.png>
 Package pdftex.def Info: link_break.png used on input line 348.
 (pdftex.def)             Requested size: 194.26094pt x 130.64905pt.
 
 [49 <./link_add.png> <./link_break.png>]
-<Clusters_Ranks_2.png, id=1279, 1446.15282pt x 707.64375pt>
+<Clusters_Ranks_2.png, id=1281, 1446.15282pt x 707.64375pt>
 File: Clusters_Ranks_2.png Graphic file (type png)
 
 <use Clusters_Ranks_2.png>
@@ -1729,7 +1731,7 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 Underfull \vbox (badness 4608) has occurred while \output is active []
 
  [51 <./Clusters_Ranks_2.png (PNG copy)>]
-<return_home.png, id=1293, 612.78937pt x 316.18124pt>
+<return_home.png, id=1295, 612.78937pt x 316.18124pt>
 File: return_home.png Graphic file (type png)
  <use return_home.png>
 Package pdftex.def Info: return_home.png used on input line 386.
@@ -1737,7 +1739,7 @@ Package pdftex.def Info: return_home.png used on input line 386.
 
 Underfull \vbox (badness 3138) has occurred while \output is active []
 
- [52 <./return_home.png>] [53] [54] [55] <methods.png, id=1329, 667.74469pt x 2
+ [52 <./return_home.png>] [53] [54] [55] <methods.png, id=1331, 667.74469pt x 2
 85.31593pt>
 File: methods.png Graphic file (type png)
 
@@ -1747,7 +1749,7 @@ Package pdftex.def Info: methods.png used on input line 505.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [56 <./methods.png>] [57] <simple_closed_curve.png, id=1343, 234.1247pt x 201.
+ [56 <./methods.png>] [57] <simple_closed_curve.png, id=1345, 234.1247pt x 201.
 00093pt>
 File: simple_closed_curve.png Graphic file (type png)
 
@@ -1765,65 +1767,56 @@ Underfull \hbox (badness 10000) in paragraph at lines 563--565
  []
 
 [58 <./simple_closed_curve.png>] [59]
-Overfull \hbox (13.23624pt too wide) detected at line 614
-[]\OML/ztmcm/m/it/12 n\OT1/ztmcm/m/n/12 (\OML/ztmcm/m/it/12 C; z[]\OT1/ztmcm/m/
-n/12 ) = [] []
- []
-
-<iceride_disarida.png, id=1362, 1446.15282pt x 707.64375pt>
+<iceride_disarida.png, id=1365, 1446.15282pt x 707.64375pt>
 File: iceride_disarida.png Graphic file (type png)
 
 <use iceride_disarida.png>
-Package pdftex.def Info: iceride_disarida.png used on input line 628.
+Package pdftex.def Info: iceride_disarida.png used on input line 638.
 (pdftex.def)             Requested size: 404.92003pt x 198.1389pt.
-
-Underfull \vbox (badness 8075) has occurred while \output is active []
-
- [60]
-[61 <./iceride_disarida.png (PNG copy)>] [62] [63]
-<coverage_circles.png, id=1403, 414.04688pt x 202.50656pt>
+ [60] [61 <./iceride_disarida.png (PNG copy)>]
+[62] [63] <coverage_circles.png, id=1408, 414.04688pt x 202.50656pt>
 File: coverage_circles.png Graphic file (type png)
 
 <use coverage_circles.png>
-Package pdftex.def Info: coverage_circles.png used on input line 763.
+Package pdftex.def Info: coverage_circles.png used on input line 773.
 (pdftex.def)             Requested size: 248.43004pt x 121.50485pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 766--767
+Underfull \hbox (badness 10000) in paragraph at lines 776--777
 
  []
 
-<attractive_forces.png, id=1404, 529.98pt x 299.61937pt>
+<attractive_forces.png, id=1409, 529.98pt x 299.61937pt>
 File: attractive_forces.png Graphic file (type png)
 
 <use attractive_forces.png>
-Package pdftex.def Info: attractive_forces.png used on input line 774.
+Package pdftex.def Info: attractive_forces.png used on input line 784.
 (pdftex.def)             Requested size: 317.99043pt x 179.77301pt.
  [64 <./coverage_circles.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 800--801
+Underfull \hbox (badness 10000) in paragraph at lines 810--811
 
  []
 
 [65 <./attractive_forces.png>]
-<repulsive_forces.png, id=1419, 437.38406pt x 284.56313pt>
+<repulsive_forces.png, id=1424, 437.38406pt x 284.56313pt>
 File: repulsive_forces.png Graphic file (type png)
 
 <use repulsive_forces.png>
-Package pdftex.def Info: repulsive_forces.png used on input line 808.
+Package pdftex.def Info: repulsive_forces.png used on input line 818.
 (pdftex.def)             Requested size: 262.43245pt x 170.73918pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 832--833
+Underfull \hbox (badness 10000) in paragraph at lines 842--843
 
  []
 
 [66 <./repulsive_forces.png>]
-<intermember_forces.png, id=1427, 719.68875pt x 336.50719pt>
+<intermember_forces.png, id=1432, 719.68875pt x 336.50719pt>
 File: intermember_forces.png Graphic file (type png)
 
 <use intermember_forces.png>
-Package pdftex.def Info: intermember_forces.png used on input line 840.
+Package pdftex.def Info: intermember_forces.png used on input line 850.
 (pdftex.def)             Requested size: 431.81659pt x 201.90585pt.
 
-Overfull \hbox (24.94211pt too wide) in paragraph at lines 840--841
+Overfull \hbox (24.94211pt too wide) in paragraph at lines 850--851
  [][] 
  []
 
@@ -1831,81 +1824,81 @@ Overfull \hbox (24.94211pt too wide) in paragraph at lines 840--841
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [67 <./intermember_forces.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 864--865
+Underfull \hbox (badness 10000) in paragraph at lines 874--875
 
  []
 
-<transition_forces.png, id=1435, 436.63126pt x 255.20343pt>
+<transition_forces.png, id=1440, 436.63126pt x 255.20343pt>
 File: transition_forces.png Graphic file (type png)
 
 <use transition_forces.png>
-Package pdftex.def Info: transition_forces.png used on input line 872.
+Package pdftex.def Info: transition_forces.png used on input line 882.
 (pdftex.def)             Requested size: 349.30548pt x 204.16301pt.
  [68 <./transition_forces.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 890--891
+Underfull \hbox (badness 10000) in paragraph at lines 900--901
 
  []
 
-[69] <buffer_zone.png, id=1450, 693.34032pt x 319.94531pt>
+[69] <buffer_zone.png, id=1455, 693.34032pt x 319.94531pt>
 File: buffer_zone.png Graphic file (type png)
 
 <use buffer_zone.png>
-Package pdftex.def Info: buffer_zone.png used on input line 923.
+Package pdftex.def Info: buffer_zone.png used on input line 933.
 (pdftex.def)             Requested size: 346.66931pt x 159.97226pt.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [70 <./buffer_zone.png>] [71]
-Underfull \hbox (badness 10000) in paragraph at lines 998--999
+Underfull \hbox (badness 10000) in paragraph at lines 1008--1009
 
  []
 
 [72] [73]
-Underfull \hbox (badness 10000) in paragraph at lines 1046--1047
+Underfull \hbox (badness 10000) in paragraph at lines 1056--1057
 
  []
 
-[74] <bubble_packing.png, id=1494, 627.84563pt x 135.50626pt>
+[74] <bubble_packing.png, id=1499, 627.84563pt x 135.50626pt>
 File: bubble_packing.png Graphic file (type png)
 
 <use bubble_packing.png>
-Package pdftex.def Info: bubble_packing.png used on input line 1069.
+Package pdftex.def Info: bubble_packing.png used on input line 1079.
 (pdftex.def)             Requested size: 313.92204pt x 67.75294pt.
 
-Overfull \hbox (0.8342pt too wide) in paragraph at lines 1072--1074
+Overfull \hbox (0.8342pt too wide) in paragraph at lines 1082--1084
 \T1/ptm/m/n/12 The bub-bles are dis-tributed ho-moge-nously with this pro-cess 
 un-der two kinds of forces,
  []
 
 [75 <./bubble_packing.png>]
-<interbubble_forces.png, id=1500, 396.7322pt x 240.14719pt>
+<interbubble_forces.png, id=1505, 396.7322pt x 240.14719pt>
 File: interbubble_forces.png Graphic file (type png)
 
 <use interbubble_forces.png>
-Package pdftex.def Info: interbubble_forces.png used on input line 1087.
+Package pdftex.def Info: interbubble_forces.png used on input line 1097.
 (pdftex.def)             Requested size: 277.71063pt x 168.10187pt.
  [76 <./interbubble_forces.png>]
-<bubble_packing2.png, id=1509, 643.6547pt x 135.50626pt>
+<bubble_packing2.png, id=1514, 643.6547pt x 135.50626pt>
 File: bubble_packing2.png Graphic file (type png)
 
 <use bubble_packing2.png>
-Package pdftex.def Info: bubble_packing2.png used on input line 1115.
+Package pdftex.def Info: bubble_packing2.png used on input line 1125.
 (pdftex.def)             Requested size: 399.06178pt x 84.01299pt.
  [77 <./bubble_packing2.png>]
-<randomized.png, id=1522, 348.55219pt x 332.74312pt>
+<randomized.png, id=1527, 348.55219pt x 332.74312pt>
 File: randomized.png Graphic file (type png)
  <use randomized.png>
-Package pdftex.def Info: randomized.png used on input line 1142.
+Package pdftex.def Info: randomized.png used on input line 1152.
 (pdftex.def)             Requested size: 243.98485pt x 232.91858pt.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [78 <./randomized.png>] [79] <Forbidden.png, id=1538, 222.8325pt x 249.93375pt
+ [78 <./randomized.png>] [79] <Forbidden.png, id=1543, 222.8325pt x 249.93375pt
 >
 File: Forbidden.png Graphic file (type png)
 
 <use Forbidden.png>
-Package pdftex.def Info: Forbidden.png used on input line 1194.
+Package pdftex.def Info: Forbidden.png used on input line 1204.
 (pdftex.def)             Requested size: 133.70053pt x 149.9614pt.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
@@ -1913,22 +1906,22 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
  [80]
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 1199.
+(hyperref)                removing `math shift' on input line 1209.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 1199.
+(hyperref)                removing `math shift' on input line 1209.
 
-<shortest.png, id=1550, 267.24844pt x 251.43938pt>
+<shortest.png, id=1555, 267.24844pt x 251.43938pt>
 File: shortest.png Graphic file (type png)
  <use shortest.png>
-Package pdftex.def Info: shortest.png used on input line 1215.
+Package pdftex.def Info: shortest.png used on input line 1225.
 (pdftex.def)             Requested size: 160.3503pt x 150.86478pt.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [81 <./Forbidden.png>] [82 <./shortest.png>]
-Overfull \hbox (23.51259pt too wide) in paragraph at lines 1272--1273
+Overfull \hbox (23.51259pt too wide) in paragraph at lines 1282--1283
 []\T1/ptm/m/n/12 In al-go-rithm above $\OML/ztmcm/m/it/12 Distance\OT1/ztmcm/m/
 n/12 [\OML/ztmcm/m/it/12 x\OT1/ztmcm/m/n/12 ]$ \T1/ptm/m/n/12 func-tion call, c
 al-cu-lates the to-tal cost from the $\OML/ztmcm/m/it/12 source$\T1/ptm/m/n/12 
@@ -1939,51 +1932,51 @@ _$\OML/ztmcm/m/it/12 node$
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [83]
-<bipartite.png, id=1568, 213.04594pt x 359.84438pt>
+<bipartite.png, id=1573, 213.04594pt x 359.84438pt>
 File: bipartite.png Graphic file (type png)
  <use bipartite.png>
-Package pdftex.def Info: bipartite.png used on input line 1281.
+Package pdftex.def Info: bipartite.png used on input line 1291.
 (pdftex.def)             Requested size: 162.7473pt x 274.90118pt.
 
 [84 <./bipartite.png>]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [85]
-<voronoi.png, id=1581, 364.36125pt x 275.52937pt>
+<voronoi.png, id=1586, 364.36125pt x 275.52937pt>
 File: voronoi.png Graphic file (type png)
  <use voronoi.png>
-Package pdftex.def Info: voronoi.png used on input line 1332.
+Package pdftex.def Info: voronoi.png used on input line 1342.
 (pdftex.def)             Requested size: 255.05113pt x 192.86923pt.
- [86 <./voronoi.png>] <voronoi2.png, id=1589, 417.05812pt x 256.70906pt>
+ [86 <./voronoi.png>] <voronoi2.png, id=1594, 417.05812pt x 256.70906pt>
 File: voronoi2.png Graphic file (type png)
 
 <use voronoi2.png>
-Package pdftex.def Info: voronoi2.png used on input line 1355.
+Package pdftex.def Info: voronoi2.png used on input line 1365.
 (pdftex.def)             Requested size: 291.93869pt x 179.6951pt.
  [87 <./voronoi2.png>]
-<controller.png, id=1598, 871.75688pt x 203.25937pt>
+<controller.png, id=1603, 871.75688pt x 203.25937pt>
 File: controller.png Graphic file (type png)
  <use controller.png>
-Package pdftex.def Info: controller.png used on input line 1364.
+Package pdftex.def Info: controller.png used on input line 1374.
 (pdftex.def)             Requested size: 392.28697pt x 91.46587pt.
 
-<bearing.png, id=1599, 459.21562pt x 203.25937pt>
+<bearing.png, id=1604, 459.21562pt x 203.25937pt>
 File: bearing.png Graphic file (type png)
  <use bearing.png>
-Package pdftex.def Info: bearing.png used on input line 1372.
+Package pdftex.def Info: bearing.png used on input line 1382.
 (pdftex.def)             Requested size: 229.60724pt x 101.62943pt.
- [88 <./controller.png> <./bearing.png>] <inner_loop.png, id=1606, 670.00313pt 
+ [88 <./controller.png> <./bearing.png>] <inner_loop.png, id=1611, 670.00313pt 
 x 216.81pt>
 File: inner_loop.png Graphic file (type png)
 
 <use inner_loop.png>
-Package pdftex.def Info: inner_loop.png used on input line 1432.
+Package pdftex.def Info: inner_loop.png used on input line 1442.
 (pdftex.def)             Requested size: 335.00075pt x 108.40472pt.
- [89] <step_resp.png, id=1615, 889.07156pt x 601.4972pt>
+ [89] <step_resp.png, id=1620, 889.07156pt x 601.4972pt>
 File: step_resp.png Graphic file (type png)
 
 <use step_resp.png>
-Package pdftex.def Info: step_resp.png used on input line 1440.
+Package pdftex.def Info: step_resp.png used on input line 1450.
 (pdftex.def)             Requested size: 355.62233pt x 240.59462pt.
 ) (./chapter4/chapter4.tex [90 <./inner_loop.png> <./step_resp.png>]
 \vskip 4mm CHAPTER 4.
@@ -2035,7 +2028,7 @@ No file chapter5.aux
 LABELS NOT IMPORTED.
  on input line 12.
 
-<environment.png, id=1624, 994.46532pt x 466.74374pt>
+<environment.png, id=1629, 994.46532pt x 466.74374pt>
 File: environment.png Graphic file (type png)
  <use environment.png>
 Package pdftex.def Info: environment.png used on input line 27.
@@ -2051,7 +2044,7 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
  [91
 
 ]
-<gazebo_env.png, id=1631, 1923.185pt x 1056.94875pt>
+<gazebo_env.png, id=1636, 1923.185pt x 1056.94875pt>
 File: gazebo_env.png Graphic file (type png)
  <use gazebo_env.png>
 Package pdftex.def Info: gazebo_env.png used on input line 38.
@@ -2059,12 +2052,12 @@ Package pdftex.def Info: gazebo_env.png used on input line 38.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [92 <./environment.png>] <2.png, id=1639, 1541.76pt x 735.548pt>
+ [92 <./environment.png>] <2.png, id=1644, 1541.76pt x 735.548pt>
 File: 2.png Graphic file (type png)
  <use 2.png>
 Package pdftex.def Info: 2.png used on input line 62.
 (pdftex.def)             Requested size: 462.53157pt x 220.66609pt.
- [93 <./gazebo_env.png>] <Clusters_Ranks_1.jpg, id=1647, 1189.44376pt x 579.163
+ [93 <./gazebo_env.png>] <Clusters_Ranks_1.jpg, id=1652, 1189.44376pt x 579.163
 76pt>
 File: Clusters_Ranks_1.jpg Graphic file (type jpg)
 
@@ -2074,7 +2067,7 @@ Package pdftex.def Info: Clusters_Ranks_1.jpg used on input line 70.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [94 <./2.png (PNG copy)>] <rank_vs_error.png, id=1654, 1541.76pt x 735.548pt>
+ [94 <./2.png (PNG copy)>] <rank_vs_error.png, id=1659, 1541.76pt x 735.548pt>
 File: rank_vs_error.png Graphic file (type png)
 
 <use rank_vs_error.png>
@@ -2084,7 +2077,7 @@ Package pdftex.def Info: rank_vs_error.png used on input line 79.
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [95 <./Clusters_Ranks_1.jpg>]
-<Error-0,5Prop-3Update.jpg, id=1660, 1189.44376pt x 387.4475pt>
+<Error-0,5Prop-3Update.jpg, id=1665, 1189.44376pt x 387.4475pt>
 File: Error-0,5Prop-3Update.jpg Graphic file (type jpg)
 
 <use Error-0,5Prop-3Update.jpg>
@@ -2094,14 +2087,14 @@ Package pdftex.def Info: Error-0,5Prop-3Update.jpg used on input line 86.
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [96 <./rank_vs_error.png (PNG copy)>]
-<Error-0,5Prop-5Update.jpg, id=1665, 1189.44376pt x 387.4475pt>
+<Error-0,5Prop-5Update.jpg, id=1670, 1189.44376pt x 387.4475pt>
 File: Error-0,5Prop-5Update.jpg Graphic file (type jpg)
 
 <use Error-0,5Prop-5Update.jpg>
 Package pdftex.def Info: Error-0,5Prop-5Update.jpg used on input line 91.
 (pdftex.def)             Requested size: 475.76907pt x 154.97624pt.
 
-<Error-0,5Prop-8Update.jpg, id=1666, 1189.44376pt x 387.4475pt>
+<Error-0,5Prop-8Update.jpg, id=1671, 1189.44376pt x 387.4475pt>
 File: Error-0,5Prop-8Update.jpg Graphic file (type jpg)
 
 <use Error-0,5Prop-8Update.jpg>
@@ -2109,288 +2102,291 @@ Package pdftex.def Info: Error-0,5Prop-8Update.jpg used on input line 96.
 (pdftex.def)             Requested size: 475.76907pt x 154.97624pt.
  [97 <./Error-0,5Prop-3Update.jpg> <./Error-0,5Prop-5Update.jpg> <./Error-0,5Pr
 op-8Update.jpg>]
-<Pozisyon_1_Hatali.png, id=1674, 1151.05031pt x 634.62094pt>
+<Pozisyon_1_Hatali.png, id=1679, 1151.05031pt x 634.62094pt>
 File: Pozisyon_1_Hatali.png Graphic file (type png)
 
 <use Pozisyon_1_Hatali.png>
-Package pdftex.def Info: Pozisyon_1_Hatali.png used on input line 109.
+Package pdftex.def Info: Pozisyon_1_Hatali.png used on input line 108.
 (pdftex.def)             Requested size: 402.87364pt x 222.12065pt.
 
-<Pozisyon-1-Duzeltilmis.png, id=1675, 1587.9325pt x 869.2475pt>
+<Pozisyon-1-Duzeltilmis.png, id=1680, 1587.9325pt x 869.2475pt>
 File: Pozisyon-1-Duzeltilmis.png Graphic file (type png)
 
 <use Pozisyon-1-Duzeltilmis.png>
-Package pdftex.def Info: Pozisyon-1-Duzeltilmis.png used on input line 118.
-(pdftex.def)             Requested size: 412.85272pt x 225.99901pt.
+Package pdftex.def Info: Pozisyon-1-Duzeltilmis.png used on input line 116.
+(pdftex.def)             Requested size: 396.98215pt x 217.31134pt.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [98 <./Pozisyon_1_Hatali.png>] <Lost-2-2.png, id=1686, 1619.04875pt x 877.2775
+ [98 <./Pozisyon_1_Hatali.png>] <Lost-2-2.png, id=1691, 1619.04875pt x 877.2775
 pt>
 File: Lost-2-2.png Graphic file (type png)
 
 <use Lost-2-2.png>
-Package pdftex.def Info: Lost-2-2.png used on input line 126.
-(pdftex.def)             Requested size: 420.94275pt x 228.08676pt.
+Package pdftex.def Info: Lost-2-2.png used on input line 124.
+(pdftex.def)             Requested size: 404.7612pt x 219.31883pt.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [99 <./Pozisyon-1-Duzeltilmis.png>] <Lost-2-3.png, id=1692, 1604.99625pt x 879
+ [99 <./Pozisyon-1-Duzeltilmis.png>] <Lost-2-3.png, id=1697, 1604.99625pt x 879
 .285pt>
 File: Lost-2-3.png Graphic file (type png)
 
 <use Lost-2-3.png>
-Package pdftex.def Info: Lost-2-3.png used on input line 132.
-(pdftex.def)             Requested size: 417.28918pt x 228.6087pt.
+Package pdftex.def Info: Lost-2-3.png used on input line 130.
+(pdftex.def)             Requested size: 401.24808pt x 219.82071pt.
+
+Underfull \vbox (badness 2478) has occurred while \output is active []
+
  [100 <./Lost-2-2.png> <./Lost-2-3.png>]
-<Artificial_Forces_Mesh_1.png, id=1701, 592.46344pt x 215.30438pt>
+<Artificial_Forces_Mesh_1.png, id=1706, 592.46344pt x 215.30438pt>
 File: Artificial_Forces_Mesh_1.png Graphic file (type png)
 
 <use Artificial_Forces_Mesh_1.png>
-Package pdftex.def Info: Artificial_Forces_Mesh_1.png used on input line 143.
+Package pdftex.def Info: Artificial_Forces_Mesh_1.png used on input line 141.
 (pdftex.def)             Requested size: 414.72157pt x 150.71204pt.
 
-<Artificial_Forces_Mesh_2.png, id=1702, 679.03688pt x 192.72pt>
+<Artificial_Forces_Mesh_2.png, id=1707, 679.03688pt x 192.72pt>
 File: Artificial_Forces_Mesh_2.png Graphic file (type png)
 
 <use Artificial_Forces_Mesh_2.png>
-Package pdftex.def Info: Artificial_Forces_Mesh_2.png used on input line 148.
+Package pdftex.def Info: Artificial_Forces_Mesh_2.png used on input line 146.
 (pdftex.def)             Requested size: 441.36874pt x 125.2665pt.
 
-<Bubble_Packing_Mesh_1.png, id=1703, 679.03688pt x 192.72pt>
+<Bubble_Packing_Mesh_1.png, id=1708, 679.03688pt x 192.72pt>
 File: Bubble_Packing_Mesh_1.png Graphic file (type png)
 
 <use Bubble_Packing_Mesh_1.png>
-Package pdftex.def Info: Bubble_Packing_Mesh_1.png used on input line 153.
+Package pdftex.def Info: Bubble_Packing_Mesh_1.png used on input line 151.
 (pdftex.def)             Requested size: 475.32257pt x 134.90306pt.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [101 <./Artificial_Forces_Mesh_1.png> <./Artificial_Forces_Mesh_2.png>]
-<Bubble_Packing_Mesh_2.png, id=1710, 679.03688pt x 192.72pt>
+<Bubble_Packing_Mesh_2.png, id=1715, 679.03688pt x 192.72pt>
 File: Bubble_Packing_Mesh_2.png Graphic file (type png)
 
 <use Bubble_Packing_Mesh_2.png>
-Package pdftex.def Info: Bubble_Packing_Mesh_2.png used on input line 158.
+Package pdftex.def Info: Bubble_Packing_Mesh_2.png used on input line 156.
 (pdftex.def)             Requested size: 441.36874pt x 125.2665pt.
 
-<Randomized_Fractals_Mesh_1.png, id=1711, 679.03688pt x 192.72pt>
+<Randomized_Fractals_Mesh_1.png, id=1716, 679.03688pt x 192.72pt>
 File: Randomized_Fractals_Mesh_1.png Graphic file (type png)
 
 <use Randomized_Fractals_Mesh_1.png>
-Package pdftex.def Info: Randomized_Fractals_Mesh_1.png used on input line 163.
+Package pdftex.def Info: Randomized_Fractals_Mesh_1.png used on input line 161.
 
 (pdftex.def)             Requested size: 475.32257pt x 134.90306pt.
 
-<Randomized_Fractals_Mesh_2.png, id=1712, 679.03688pt x 192.72pt>
+<Randomized_Fractals_Mesh_2.png, id=1717, 679.03688pt x 192.72pt>
 File: Randomized_Fractals_Mesh_2.png Graphic file (type png)
 
 <use Randomized_Fractals_Mesh_2.png>
-Package pdftex.def Info: Randomized_Fractals_Mesh_2.png used on input line 168.
+Package pdftex.def Info: Randomized_Fractals_Mesh_2.png used on input line 166.
 
 (pdftex.def)             Requested size: 441.36874pt x 125.2665pt.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [102 <./Bubble_Packing_Mesh_1.png> <./Bubble_Packing_Mesh_2.png> <./Randomized
-_Fractals_Mesh_1.png>] <Topological_Irr_1.png, id=1724, 1446.15282pt x 707.6437
+_Fractals_Mesh_1.png>] <Topological_Irr_1.png, id=1729, 1446.15282pt x 707.6437
 5pt>
 File: Topological_Irr_1.png Graphic file (type png)
 
 <use Topological_Irr_1.png>
-Package pdftex.def Info: Topological_Irr_1.png used on input line 175.
+Package pdftex.def Info: Topological_Irr_1.png used on input line 173.
 (pdftex.def)             Requested size: 506.16107pt x 247.67902pt.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [103 <./Randomized_Fractals_Mesh_2.png>]
-<Geometrical_Irr_1.png, id=1731, 1446.15282pt x 707.64375pt>
+<Geometrical_Irr_1.png, id=1736, 1446.15282pt x 707.64375pt>
 File: Geometrical_Irr_1.png Graphic file (type png)
 
 <use Geometrical_Irr_1.png>
-Package pdftex.def Info: Geometrical_Irr_1.png used on input line 180.
+Package pdftex.def Info: Geometrical_Irr_1.png used on input line 178.
 (pdftex.def)             Requested size: 506.16107pt x 247.67902pt.
 
-<Topological_Irr_2.png, id=1732, 1446.15282pt x 707.64375pt>
+<Topological_Irr_2.png, id=1737, 1446.15282pt x 707.64375pt>
 File: Topological_Irr_2.png Graphic file (type png)
 
 <use Topological_Irr_2.png>
-Package pdftex.def Info: Topological_Irr_2.png used on input line 185.
+Package pdftex.def Info: Topological_Irr_2.png used on input line 183.
 (pdftex.def)             Requested size: 506.16107pt x 247.67902pt.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [104 <./Topological_Irr_1.png (PNG copy)> <./Geometrical_Irr_1.png (PNG copy)>
 ]
-<Geometrical_Irr_2.png, id=1737, 1446.15282pt x 707.64375pt>
+<Geometrical_Irr_2.png, id=1742, 1446.15282pt x 707.64375pt>
 File: Geometrical_Irr_2.png Graphic file (type png)
 
 <use Geometrical_Irr_2.png>
-Package pdftex.def Info: Geometrical_Irr_2.png used on input line 190.
+Package pdftex.def Info: Geometrical_Irr_2.png used on input line 188.
 (pdftex.def)             Requested size: 506.16107pt x 247.67902pt.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [105 <./Topological_Irr_2.png (PNG copy)> <./Geometrical_Irr_2.png (PNG copy)>
 ]
-Underfull \hbox (badness 10000) in paragraph at lines 197--198
+Underfull \hbox (badness 10000) in paragraph at lines 195--196
 
  []
 
-<Trajectories_Formation_Shape_1_2.png, id=1742, 1063.72406pt x 661.72218pt>
+<Trajectories_Formation_Shape_1_2.png, id=1747, 1063.72406pt x 661.72218pt>
 File: Trajectories_Formation_Shape_1_2.png Graphic file (type png)
 
 <use Trajectories_Formation_Shape_1_2.png>
 Package pdftex.def Info: Trajectories_Formation_Shape_1_2.png used on input lin
-e 201.
+e 199.
 (pdftex.def)             Requested size: 340.39865pt x 211.75542pt.
 
-<Trajectories_Formation_Shape_1_1.png, id=1743, 1223.32031pt x 712.91344pt>
+<Trajectories_Formation_Shape_1_1.png, id=1748, 1223.32031pt x 712.91344pt>
 File: Trajectories_Formation_Shape_1_1.png Graphic file (type png)
 
 <use Trajectories_Formation_Shape_1_1.png>
 Package pdftex.def Info: Trajectories_Formation_Shape_1_1.png used on input lin
-e 206.
+e 204.
 (pdftex.def)             Requested size: 391.4705pt x 228.13696pt.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [106 <./Trajectories_Formation_Shape_1_2.png>]
-<Aritificial_Trajecories_1.png, id=1749, 1541.76pt x 735.548pt>
+<Aritificial_Trajecories_1.png, id=1754, 1541.76pt x 735.548pt>
 File: Aritificial_Trajecories_1.png Graphic file (type png)
 
 <use Aritificial_Trajecories_1.png>
-Package pdftex.def Info: Aritificial_Trajecories_1.png used on input line 211.
+Package pdftex.def Info: Aritificial_Trajecories_1.png used on input line 209.
 (pdftex.def)             Requested size: 493.37328pt x 235.38016pt.
 
-<Bubble_Trajectories_1.png, id=1750, 1541.76pt x 735.548pt>
+<Bubble_Trajectories_1.png, id=1755, 1541.76pt x 735.548pt>
 File: Bubble_Trajectories_1.png Graphic file (type png)
 
 <use Bubble_Trajectories_1.png>
-Package pdftex.def Info: Bubble_Trajectories_1.png used on input line 216.
+Package pdftex.def Info: Bubble_Trajectories_1.png used on input line 214.
 (pdftex.def)             Requested size: 493.37328pt x 235.38016pt.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [107 <./Trajectories_Formation_Shape_1_1.png> <./Aritificial_Trajecories_1.png
- (PNG copy)>] <Randomized_Trajectories_1.png, id=1755, 1541.76pt x 735.548pt>
+ (PNG copy)>] <Randomized_Trajectories_1.png, id=1760, 1541.76pt x 735.548pt>
 File: Randomized_Trajectories_1.png Graphic file (type png)
 
 <use Randomized_Trajectories_1.png>
-Package pdftex.def Info: Randomized_Trajectories_1.png used on input line 221.
+Package pdftex.def Info: Randomized_Trajectories_1.png used on input line 219.
 (pdftex.def)             Requested size: 493.37328pt x 235.38016pt.
  [108 <./Bubble_Trajectories_1.png (PNG copy)> <./Randomized_Trajectories_1.png
  (PNG copy)>]
-<Total_Energy_Shape_1.png, id=1762, 1541.76pt x 735.548pt>
+<Total_Energy_Shape_1.png, id=1767, 1541.76pt x 735.548pt>
 File: Total_Energy_Shape_1.png Graphic file (type png)
 
 <use Total_Energy_Shape_1.png>
-Package pdftex.def Info: Total_Energy_Shape_1.png used on input line 230.
+Package pdftex.def Info: Total_Energy_Shape_1.png used on input line 228.
 (pdftex.def)             Requested size: 493.37328pt x 235.38016pt.
 
-<Trajectories_Formation_Shape_2_2.png, id=1763, 1045.65656pt x 658.71094pt>
+<Trajectories_Formation_Shape_2_2.png, id=1768, 1045.65656pt x 658.71094pt>
 File: Trajectories_Formation_Shape_2_2.png Graphic file (type png)
 
 <use Trajectories_Formation_Shape_2_2.png>
 Package pdftex.def Info: Trajectories_Formation_Shape_2_2.png used on input lin
-e 238.
+e 236.
 (pdftex.def)             Requested size: 334.61693pt x 210.7918pt.
  [109 <./Total_Energy_Shape_1.png (PNG copy)>]
-<Trajectories_Formation_Shape_2_1.png, id=1769, 1215.79219pt x 708.39656pt>
+<Trajectories_Formation_Shape_2_1.png, id=1774, 1215.79219pt x 708.39656pt>
 File: Trajectories_Formation_Shape_2_1.png Graphic file (type png)
 
 <use Trajectories_Formation_Shape_2_1.png>
 Package pdftex.def Info: Trajectories_Formation_Shape_2_1.png used on input lin
-e 243.
+e 241.
 (pdftex.def)             Requested size: 389.06145pt x 226.69153pt.
 
-<Artificial_Trajectories_2.png, id=1770, 1541.76pt x 735.548pt>
+<Artificial_Trajectories_2.png, id=1775, 1541.76pt x 735.548pt>
 File: Artificial_Trajectories_2.png Graphic file (type png)
 
 <use Artificial_Trajectories_2.png>
-Package pdftex.def Info: Artificial_Trajectories_2.png used on input line 248.
+Package pdftex.def Info: Artificial_Trajectories_2.png used on input line 246.
 (pdftex.def)             Requested size: 493.37328pt x 235.38016pt.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [110 <./Trajectories_Formation_Shape_2_2.png> <./Trajectories_Formation_Shape_
 2_1.png>]
-<Bubble_Trajectories_2.png, id=1776, 1541.76pt x 735.548pt>
+<Bubble_Trajectories_2.png, id=1781, 1541.76pt x 735.548pt>
 File: Bubble_Trajectories_2.png Graphic file (type png)
 
 <use Bubble_Trajectories_2.png>
-Package pdftex.def Info: Bubble_Trajectories_2.png used on input line 253.
+Package pdftex.def Info: Bubble_Trajectories_2.png used on input line 251.
 (pdftex.def)             Requested size: 493.37328pt x 235.38016pt.
 
-<Randomized_Trajectories_2.png, id=1777, 1541.76pt x 735.548pt>
+<Randomized_Trajectories_2.png, id=1782, 1541.76pt x 735.548pt>
 File: Randomized_Trajectories_2.png Graphic file (type png)
 
 <use Randomized_Trajectories_2.png>
-Package pdftex.def Info: Randomized_Trajectories_2.png used on input line 258.
+Package pdftex.def Info: Randomized_Trajectories_2.png used on input line 256.
 (pdftex.def)             Requested size: 493.37328pt x 235.38016pt.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [111 <./Artificial_Trajectories_2.png (PNG copy)> <./Bubble_Trajectories_2.png
- (PNG copy)>] <Total_Energy_Shape_2.png, id=1783, 1541.76pt x 735.548pt>
+ (PNG copy)>] <Total_Energy_Shape_2.png, id=1788, 1541.76pt x 735.548pt>
 File: Total_Energy_Shape_2.png Graphic file (type png)
 
 <use Total_Energy_Shape_2.png>
-Package pdftex.def Info: Total_Energy_Shape_2.png used on input line 265.
+Package pdftex.def Info: Total_Energy_Shape_2.png used on input line 263.
 (pdftex.def)             Requested size: 493.37328pt x 235.38016pt.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [112 <./Randomized_Trajectories_2.png (PNG copy)> <./Total_Energy_Shape_2.png 
-(PNG copy)>] <Total_Time_Shape_1.png, id=1791, 1541.76pt x 735.548pt>
+(PNG copy)>] <Total_Time_Shape_1.png, id=1796, 1541.76pt x 735.548pt>
 File: Total_Time_Shape_1.png Graphic file (type png)
 
 <use Total_Time_Shape_1.png>
-Package pdftex.def Info: Total_Time_Shape_1.png used on input line 279.
+Package pdftex.def Info: Total_Time_Shape_1.png used on input line 277.
 (pdftex.def)             Requested size: 493.37328pt x 235.38016pt.
 
-<Total_Time_Shape_2.png, id=1792, 1541.76pt x 735.548pt>
+<Total_Time_Shape_2.png, id=1797, 1541.76pt x 735.548pt>
 File: Total_Time_Shape_2.png Graphic file (type png)
 
 <use Total_Time_Shape_2.png>
-Package pdftex.def Info: Total_Time_Shape_2.png used on input line 284.
+Package pdftex.def Info: Total_Time_Shape_2.png used on input line 282.
 (pdftex.def)             Requested size: 493.37328pt x 235.38016pt.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [113 <./Total_Time_Shape_1.png (PNG copy)>] [114 <./Total_Time_Shape_2.png (PN
 G copy)>]
-<multiple1.png, id=1803, 2698.08pt x 3077.4975pt>
+<multiple1.png, id=1808, 2698.08pt x 3077.4975pt>
 File: multiple1.png Graphic file (type png)
  <use multiple1.png>
-Package pdftex.def Info: multiple1.png used on input line 292.
+Package pdftex.def Info: multiple1.png used on input line 290.
 (pdftex.def)             Requested size: 431.70163pt x 492.40967pt.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [115 <./multiple1.png>] <multiple2.png, id=1810, 2692.0575pt x 2240.37pt>
+ [115 <./multiple1.png>] <multiple2.png, id=1815, 2692.0575pt x 2240.37pt>
 File: multiple2.png Graphic file (type png)
 
 <use multiple2.png>
-Package pdftex.def Info: multiple2.png used on input line 299.
+Package pdftex.def Info: multiple2.png used on input line 297.
 (pdftex.def)             Requested size: 430.738pt x 358.46652pt.
- <combo1.png, id=1812, 1541.76pt x 735.548pt>
+ <combo1.png, id=1817, 1541.76pt x 735.548pt>
 File: combo1.png Graphic file (type png)
 
 <use combo1.png>
-Package pdftex.def Info: combo1.png used on input line 306.
+Package pdftex.def Info: combo1.png used on input line 304.
 (pdftex.def)             Requested size: 493.37328pt x 235.38016pt.
  [116 <./multiple2.png>]
-<combo2.png, id=1817, 1541.76pt x 735.548pt>
+<combo2.png, id=1822, 1541.76pt x 735.548pt>
 File: combo2.png Graphic file (type png)
  <use combo2.png>
-Package pdftex.def Info: combo2.png used on input line 311.
+Package pdftex.def Info: combo2.png used on input line 309.
 (pdftex.def)             Requested size: 493.37328pt x 235.38016pt.
 
-<combo3.png, id=1818, 1541.76pt x 735.548pt>
+<combo3.png, id=1823, 1541.76pt x 735.548pt>
 File: combo3.png Graphic file (type png)
  <use combo3.png>
-Package pdftex.def Info: combo3.png used on input line 316.
+Package pdftex.def Info: combo3.png used on input line 314.
 (pdftex.def)             Requested size: 493.37328pt x 235.38016pt.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
@@ -2400,77 +2396,77 @@ PNG copy)>]
 Underfull \vbox (badness 6380) has occurred while \output is active []
 
  [119]
-<1_Gazebo.png, id=1837, 1215.79219pt x 706.89093pt>
+<1_Gazebo.png, id=1842, 1215.79219pt x 706.89093pt>
 File: 1_Gazebo.png Graphic file (type png)
  <use 1_Gazebo.png>
-Package pdftex.def Info: 1_Gazebo.png used on input line 347.
+Package pdftex.def Info: 1_Gazebo.png used on input line 345.
 (pdftex.def)             Requested size: 389.06145pt x 226.20972pt.
 
-<1.png, id=1838, 1541.76pt x 735.548pt>
+<1.png, id=1843, 1541.76pt x 735.548pt>
 File: 1.png Graphic file (type png)
  <use 1.png>
-Package pdftex.def Info: 1.png used on input line 352.
+Package pdftex.def Info: 1.png used on input line 350.
 (pdftex.def)             Requested size: 493.37328pt x 235.38016pt.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [120 <./1_Gazebo.png>]
-Overfull \hbox (2.2577pt too wide) in paragraph at lines 357--365
+Overfull \hbox (2.2577pt too wide) in paragraph at lines 355--363
  [] 
  []
 
-<2_Gazebo.png, id=1843, 1214.28656pt x 703.87968pt>
+<2_Gazebo.png, id=1848, 1214.28656pt x 703.87968pt>
 File: 2_Gazebo.png Graphic file (type png)
  <use 2_Gazebo.png>
-Package pdftex.def Info: 2_Gazebo.png used on input line 369.
+Package pdftex.def Info: 2_Gazebo.png used on input line 367.
 (pdftex.def)             Requested size: 388.57964pt x 225.2461pt.
 File: 2.png Graphic file (type png)
 
 <use 2.png>
-Package pdftex.def Info: 2.png used on input line 374.
+Package pdftex.def Info: 2.png used on input line 372.
 (pdftex.def)             Requested size: 493.37328pt x 235.38016pt.
  [121 <./1.png (PNG copy)> <./2_Gazebo.png>]
-Overfull \hbox (2.2577pt too wide) in paragraph at lines 379--387
+Overfull \hbox (2.2577pt too wide) in paragraph at lines 377--385
  [] 
  []
 
-<3_Gazebo.png, id=1849, 1217.2978pt x 706.89093pt>
+<3_Gazebo.png, id=1854, 1217.2978pt x 706.89093pt>
 File: 3_Gazebo.png Graphic file (type png)
  <use 3_Gazebo.png>
-Package pdftex.def Info: 3_Gazebo.png used on input line 391.
+Package pdftex.def Info: 3_Gazebo.png used on input line 389.
 (pdftex.def)             Requested size: 389.54326pt x 226.20972pt.
 
-<3.png, id=1850, 1541.76pt x 735.548pt>
+<3.png, id=1855, 1541.76pt x 735.548pt>
 File: 3.png Graphic file (type png)
  <use 3.png>
-Package pdftex.def Info: 3.png used on input line 396.
+Package pdftex.def Info: 3.png used on input line 394.
 (pdftex.def)             Requested size: 493.37328pt x 235.38016pt.
  [122 <./3_Gazebo.png>]
-Overfull \hbox (2.2577pt too wide) in paragraph at lines 401--408
+Overfull \hbox (2.2577pt too wide) in paragraph at lines 399--406
  [] 
  []
 
-<4_Gazebo.png, id=1855, 1211.27531pt x 706.89093pt>
+<4_Gazebo.png, id=1860, 1211.27531pt x 706.89093pt>
 File: 4_Gazebo.png Graphic file (type png)
  <use 4_Gazebo.png>
-Package pdftex.def Info: 4_Gazebo.png used on input line 412.
+Package pdftex.def Info: 4_Gazebo.png used on input line 410.
 (pdftex.def)             Requested size: 387.61603pt x 226.20972pt.
 
-<4.png, id=1856, 1541.76pt x 735.548pt>
+<4.png, id=1861, 1541.76pt x 735.548pt>
 File: 4.png Graphic file (type png)
  <use 4.png>
-Package pdftex.def Info: 4.png used on input line 417.
+Package pdftex.def Info: 4.png used on input line 415.
 (pdftex.def)             Requested size: 493.37328pt x 235.38016pt.
  [123 <./3.png (PNG copy)> <./4_Gazebo.png>]
-Overfull \hbox (2.2577pt too wide) in paragraph at lines 422--429
+Overfull \hbox (2.2577pt too wide) in paragraph at lines 420--427
  [] 
  []
 
-<multiple_formation.png, id=1862, 1446.15282pt x 707.64375pt>
+<multiple_formation.png, id=1867, 1446.15282pt x 707.64375pt>
 File: multiple_formation.png Graphic file (type png)
 
 <use multiple_formation.png>
-Package pdftex.def Info: multiple_formation.png used on input line 435.
+Package pdftex.def Info: multiple_formation.png used on input line 433.
 (pdftex.def)             Requested size: 477.2319pt x 233.52316pt.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
@@ -2523,7 +2519,7 @@ No file chapter6.aux
 LABELS NOT IMPORTED.
  on input line 12.
 
-<hardware.png, id=1878, 762.59906pt x 518.6878pt>
+<hardware.png, id=1883, 762.59906pt x 518.6878pt>
 File: hardware.png Graphic file (type png)
  <use hardware.png>
 Package pdftex.def Info: hardware.png used on input line 22.
@@ -2534,13 +2530,13 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
  [127]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [128 <./hardware.png>] <Kapaklar.png, id=1890, 3363.56625pt x 2047.65pt>
+ [128 <./hardware.png>] <Kapaklar.png, id=1895, 3363.56625pt x 2047.65pt>
 File: Kapaklar.png Graphic file (type png)
 
 <use Kapaklar.png>
 Package pdftex.def Info: Kapaklar.png used on input line 31.
 (pdftex.def)             Requested size: 336.37633pt x 204.777pt.
- <Image_Processing.jpg, id=1892, 496.85625pt x 446.41782pt>
+ <Image_Processing.jpg, id=1897, 496.85625pt x 446.41782pt>
 File: Image_Processing.jpg Graphic file (type jpg)
 
 <use Image_Processing.jpg>
@@ -2549,21 +2545,21 @@ Package pdftex.def Info: Image_Processing.jpg used on input line 38.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [129 <./Kapaklar.png>] <Bearing_Angle.png, id=1898, 1187.18532pt x 1111.90407p
+ [129 <./Kapaklar.png>] <Bearing_Angle.png, id=1903, 1187.18532pt x 1111.90407p
 t>
 File: Bearing_Angle.png Graphic file (type png)
 
 <use Bearing_Angle.png>
 Package pdftex.def Info: Bearing_Angle.png used on input line 45.
 (pdftex.def)             Requested size: 237.43285pt x 222.37688pt.
- <agent.png, id=1900, 569.12625pt x 417.81094pt>
+ <agent.png, id=1905, 569.12625pt x 417.81094pt>
 File: agent.png Graphic file (type png)
 
 <use agent.png>
 Package pdftex.def Info: agent.png used on input line 52.
 (pdftex.def)             Requested size: 398.38567pt x 292.46567pt.
  [130 <./Image_Processing.jpg> <./Bearing_Angle.png>]
-<ccmb.png, id=1907, 567.62062pt x 634.62094pt>
+<ccmb.png, id=1912, 567.62062pt x 634.62094pt>
 File: ccmb.png Graphic file (type png)
  <use ccmb.png>
 Package pdftex.def Info: ccmb.png used on input line 59.
@@ -2574,13 +2570,13 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
  [131 <./agent.png>]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [132 <./ccmb.png>] <sematik.png, id=1920, 988.44281pt x 694.84593pt>
+ [132 <./ccmb.png>] <sematik.png, id=1925, 988.44281pt x 694.84593pt>
 File: sematik.png Graphic file (type png)
  <use sematik.png>
 Package pdftex.def Info: sematik.png used on input line 76.
 (pdftex.def)             Requested size: 395.37012pt x 277.93344pt.
 
-<sematik-layout.png, id=1921, 420.6114pt x 463.9734pt>
+<sematik-layout.png, id=1926, 420.6114pt x 463.9734pt>
 File: sematik-layout.png Graphic file (type png)
 
 <use sematik-layout.png>
@@ -2589,7 +2585,7 @@ Package pdftex.def Info: sematik-layout.png used on input line 81.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [133 <./sematik.png>] <hardware1.png, id=1929, 271.0125pt x 472.76625pt>
+ [133 <./sematik.png>] <hardware1.png, id=1934, 271.0125pt x 472.76625pt>
 File: hardware1.png Graphic file (type png)
 
 <use hardware1.png>
@@ -2598,7 +2594,7 @@ Package pdftex.def Info: hardware1.png used on input line 88.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [134 <./sematik-layout.png>] <hardware2.png, id=1935, 413.29407pt x 359.84438p
+ [134 <./sematik-layout.png>] <hardware2.png, id=1940, 413.29407pt x 359.84438p
 t>
 File: hardware2.png Graphic file (type png)
 
@@ -2611,47 +2607,47 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
  [135 <./hardware1.png>]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [136 <./hardware2.png>] <2_hardware.png, id=1945, 1446.15282pt x 707.64375pt>
+ [136 <./hardware2.png>] <2_hardware.png, id=1950, 1446.15282pt x 707.64375pt>
 File: 2_hardware.png Graphic file (type png)
 
 <use 2_hardware.png>
 Package pdftex.def Info: 2_hardware.png used on input line 116.
 (pdftex.def)             Requested size: 462.77835pt x 226.45062pt.
- <2_real_hardware.png, id=1946, 867.99281pt x 502.12593pt>
+ <2_real_hardware.png, id=1951, 867.99281pt x 502.12593pt>
 File: 2_real_hardware.png Graphic file (type png)
 
 <use 2_real_hardware.png>
 Package pdftex.def Info: 2_real_hardware.png used on input line 121.
 (pdftex.def)             Requested size: 303.80203pt x 175.7467pt.
  [137 <./2_hardware.png (PNG copy)> <./2_real_hardware.png>] <4_hardware.png, i
-d=1951, 1446.15282pt x 707.64375pt>
+d=1956, 1446.15282pt x 707.64375pt>
 File: 4_hardware.png Graphic file (type png)
 
 <use 4_hardware.png>
 Package pdftex.def Info: 4_hardware.png used on input line 137.
 (pdftex.def)             Requested size: 462.77835pt x 226.45062pt.
- <4_real_hardware.png, id=1952, 688.82344pt x 560.0925pt>
+ <4_real_hardware.png, id=1957, 688.82344pt x 560.0925pt>
 File: 4_real_hardware.png Graphic file (type png)
 
 <use 4_real_hardware.png>
 Package pdftex.def Info: 4_real_hardware.png used on input line 142.
 (pdftex.def)             Requested size: 241.09181pt x 196.03531pt.
 
-<5_hardware.png, id=1953, 1446.15282pt x 707.64375pt>
+<5_hardware.png, id=1958, 1446.15282pt x 707.64375pt>
 File: 5_hardware.png Graphic file (type png)
  <use 5_hardware.png>
 Package pdftex.def Info: 5_hardware.png used on input line 158.
 (pdftex.def)             Requested size: 462.77835pt x 226.45062pt.
 
 [138 <./4_hardware.png (PNG copy)> <./4_real_hardware.png>]
-<5_real_hardware.png, id=1958, 648.17157pt x 573.64313pt>
+<5_real_hardware.png, id=1963, 648.17157pt x 573.64313pt>
 File: 5_real_hardware.png Graphic file (type png)
 
 <use 5_real_hardware.png>
 Package pdftex.def Info: 5_real_hardware.png used on input line 163.
 (pdftex.def)             Requested size: 226.86345pt x 200.77809pt.
 
-<6_hardware.png, id=1959, 1446.15282pt x 707.64375pt>
+<6_hardware.png, id=1964, 1446.15282pt x 707.64375pt>
 File: 6_hardware.png Graphic file (type png)
  <use 6_hardware.png>
 Package pdftex.def Info: 6_hardware.png used on input line 179.
@@ -2660,14 +2656,14 @@ Package pdftex.def Info: 6_hardware.png used on input line 179.
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [139 <./5_hardware.png (PNG copy)> <./5_real_hardware.png>]
-<6_real_hardware.png, id=1965, 821.31844pt x 520.94624pt>
+<6_real_hardware.png, id=1970, 821.31844pt x 520.94624pt>
 File: 6_real_hardware.png Graphic file (type png)
 
 <use 6_real_hardware.png>
 Package pdftex.def Info: 6_real_hardware.png used on input line 184.
 (pdftex.def)             Requested size: 287.46576pt x 182.33391pt.
 
-<9_hardware.png, id=1966, 1446.15282pt x 707.64375pt>
+<9_hardware.png, id=1971, 1446.15282pt x 707.64375pt>
 File: 9_hardware.png Graphic file (type png)
  <use 9_hardware.png>
 Package pdftex.def Info: 9_hardware.png used on input line 200.
@@ -2676,7 +2672,7 @@ Package pdftex.def Info: 9_hardware.png used on input line 200.
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [140 <./6_hardware.png (PNG copy)> <./6_real_hardware.png>]
-<9_real_hardware.png, id=1971, 866.48718pt x 624.08156pt>
+<9_real_hardware.png, id=1976, 866.48718pt x 624.08156pt>
 File: 9_real_hardware.png Graphic file (type png)
 
 <use 9_real_hardware.png>
@@ -2744,7 +2740,13 @@ Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
 
 [149
 
-] [150])
+]
+Underfull \hbox (badness 6110) in paragraph at lines 108--112
+[]\T1/ptm/m/n/12 Takayuki Itoh.  Rough quadri-lat-er-ala-tion for sur-face re-c
+on-struc-tion.
+ []
+
+[150])
 
 Package hyperref Warning: bookmark level for unknown nodots defaults to 0.
 
@@ -2782,10 +2784,10 @@ LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 23970 strings out of 494424
- 391558 string characters out of 6165346
- 541610 words of memory out of 5000000
- 26018 multiletter control sequences out of 15000+600000
+ 23975 strings out of 494424
+ 391626 string characters out of 6165346
+ 541775 words of memory out of 5000000
+ 26020 multiletter control sequences out of 15000+600000
  56221 words of font info for 111 fonts, out of 8000000 for 9000
  372 hyphenation exceptions out of 8191
  63i,17n,75p,2698b,872s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -2800,10 +2802,10 @@ r.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/symbol/usyr.pfb></usr/shar
 e/texlive/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/share/texlive/texmf
 -dist/fonts/type1/urw/times/utmr8a.pfb></usr/share/texlive/texmf-dist/fonts/typ
 e1/urw/times/utmri8a.pfb>
-Output written on thesis.pdf (180 pages, 43251423 bytes).
+Output written on thesis.pdf (180 pages, 43286135 bytes).
 PDF statistics:
- 2210 PDF objects out of 2487 (max. 8388607)
- 1820 compressed objects within 19 object streams
- 578 named destinations out of 1000 (max. 500000)
+ 2215 PDF objects out of 2487 (max. 8388607)
+ 1823 compressed objects within 19 object streams
+ 581 named destinations out of 1000 (max. 500000)
  1259 words of extra memory for PDF output out of 10000 (max. 10000000)
 

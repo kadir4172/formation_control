@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2016.2.27)  15 APR 2016 18:57
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2016.2.27)  16 APR 2016 11:01
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -963,8 +963,21 @@ Missing character: There is no e in font nullfont!
 Missing character: There is no a in font nullfont!
 Missing character: There is no s in font nullfont!
 Missing character: There is no [ in font nullfont!
-Missing character: There is no 1 in font nullfont!
-Missing character: There is no 9 in font nullfont!
+\citation{19}
+! Undefined control sequence.
+<write> ...: Citation `\@citeb ' on page \thepage 
+                                                  \space undefined\on@line .
+l.18 ...environments such as urban areas \cite{19}
+                                                  .  A local positioning sys...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+
+LaTeX Warning: Citation `19' on page  undefined on input line 18.
+
 Missing character: There is no ] in font nullfont!
 Missing character: There is no . in font nullfont!
 Missing character: There is no A in font nullfont!
@@ -1133,6 +1146,11 @@ Overfull \hbox (7.7778pt too wide) in paragraph at lines 17--19
  []
 
 
+Overfull \hbox (5.43053pt too wide) in paragraph at lines 17--19
+[]
+ []
+
+
 ! LaTeX Error: Environment figure undefined.
 
 See the LaTeX manual or LaTeX Companion for explanation.
@@ -1168,7 +1186,7 @@ Type  H <return>  for immediate help.
  ...                                              
                                                   
 l.24 	\caption
-              {Accuracy Statistics of Different Positioning Sources[20]} \la...
+              {Accuracy Statistics of Different Positioning Sources \cite{20...
 
 You're in trouble here.  Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
@@ -1221,8 +1239,21 @@ Missing character: There is no c in font nullfont!
 Missing character: There is no e in font nullfont!
 Missing character: There is no s in font nullfont!
 Missing character: There is no [ in font nullfont!
-Missing character: There is no 2 in font nullfont!
-Missing character: There is no 0 in font nullfont!
+\citation{20}
+! Undefined control sequence.
+<write> ...: Citation `\@citeb ' on page \thepage 
+                                                  \space undefined\on@line .
+l.24 ...of Different Positioning Sources \cite{20}
+                                                  } \label{overview_position}
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+
+LaTeX Warning: Citation `20' on page  undefined on input line 24.
+
 Missing character: There is no ] in font nullfont!
 ! Undefined control sequence.
 l.26 	\includegraphics
@@ -1262,6 +1293,11 @@ or  <return>  to continue without it.
 
 
 Overfull \hbox (20.0pt too wide) in paragraph at lines 23--28
+[]
+ []
+
+
+Overfull \hbox (5.43053pt too wide) in paragraph at lines 23--28
 []
  []
 
@@ -2031,7 +2067,7 @@ Type  H <return>  for immediate help.
  ...                                              
                                                   
 l.36 \caption
-              {Local Posititioning Systems with Different System Topologies[...
+              {Local Posititioning Systems with Different System Topologies ...
 
 You're in trouble here.  Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
@@ -2091,8 +2127,21 @@ Missing character: There is no i in font nullfont!
 Missing character: There is no e in font nullfont!
 Missing character: There is no s in font nullfont!
 Missing character: There is no [ in font nullfont!
-Missing character: There is no 2 in font nullfont!
-Missing character: There is no 0 in font nullfont!
+\citation{20}
+! Undefined control sequence.
+<write> ...: Citation `\@citeb ' on page \thepage 
+                                                  \space undefined\on@line .
+l.36 ...with Different System Topologies \cite{20}
+                                                  } \label{different_top}
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+
+LaTeX Warning: Citation `20' on page  undefined on input line 36.
+
 Missing character: There is no ] in font nullfont!
 Missing character: There is no C in font nullfont!
 Missing character: There is no o in font nullfont!
@@ -2434,6 +2483,11 @@ Missing character: There is no n in font nullfont!
 Missing character: There is no i in font nullfont!
 Missing character: There is no t in font nullfont!
 
+Overfull \hbox (5.43053pt too wide) in paragraph at lines 36--50
+ [] 
+ []
+
+
 ! LaTeX Error: \begin{document} ended by \end{table}.
 
 See the LaTeX manual or LaTeX Companion for explanation.
@@ -2509,8 +2563,21 @@ Missing character: There is no e in font nullfont!
 Missing character: There is no m in font nullfont!
 Missing character: There is no s in font nullfont!
 Missing character: There is no [ in font nullfont!
-Missing character: There is no 2 in font nullfont!
-Missing character: There is no 0 in font nullfont!
+\citation{20}
+! Undefined control sequence.
+<write> ...: Citation `\@citeb ' on page \thepage 
+                                                  \space undefined\on@line .
+l.53 ...g and remote positioning systems \cite{20}
+                                                  .  In self positioning sys...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+
+LaTeX Warning: Citation `20' on page  undefined on input line 53.
+
 Missing character: There is no ] in font nullfont!
 Missing character: There is no . in font nullfont!
 Missing character: There is no I in font nullfont!
@@ -2756,8 +2823,21 @@ Missing character: There is no i in font nullfont!
 Missing character: There is no o in font nullfont!
 Missing character: There is no n in font nullfont!
 Missing character: There is no [ in font nullfont!
-Missing character: There is no 1 in font nullfont!
-Missing character: There is no 9 in font nullfont!
+\citation{19}
+! Undefined control sequence.
+<write> ...: Citation `\@citeb ' on page \thepage 
+                                                  \space undefined\on@line .
+l.53 ...with respect to its own position \cite{19}
+                                                  .   These two type of topo...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+
+LaTeX Warning: Citation `19' on page  undefined on input line 53.
+
 Missing character: There is no ] in font nullfont!
 Missing character: There is no . in font nullfont!
 Missing character: There is no T in font nullfont!
@@ -3002,6 +3082,16 @@ Overfull \hbox (20.0pt too wide) in paragraph at lines 53--54
 []
  []
 
+
+Overfull \hbox (5.43053pt too wide) in paragraph at lines 53--54
+[]
+ []
+
+
+Overfull \hbox (5.43053pt too wide) in paragraph at lines 53--54
+[]
+ []
+
 ! Undefined control sequence.
 l.58 \subsection
                 {Measurement Principles} \label{sssec:num1}
@@ -3226,7 +3316,7 @@ Type  H <return>  for immediate help.
  ...                                              
                                                   
 l.63 	\caption
-              {Different Measurement Principles[20]}
+              {Different Measurement Principles \cite{20}}
 You're in trouble here.  Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
@@ -3261,8 +3351,21 @@ Missing character: There is no l in font nullfont!
 Missing character: There is no e in font nullfont!
 Missing character: There is no s in font nullfont!
 Missing character: There is no [ in font nullfont!
-Missing character: There is no 2 in font nullfont!
-Missing character: There is no 0 in font nullfont!
+\citation{20}
+! Undefined control sequence.
+<write> ...: Citation `\@citeb ' on page \thepage 
+                                                  \space undefined\on@line .
+l.63 ...Different Measurement Principles \cite{20}
+                                                  }
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+
+LaTeX Warning: Citation `20' on page  undefined on input line 63.
+
 Missing character: There is no ] in font nullfont!
 ! Undefined control sequence.
 l.65 	\includegraphics
@@ -3310,6 +3413,11 @@ or  <return>  to continue without it.
 
 
 Overfull \hbox (20.0pt too wide) in paragraph at lines 62--67
+[]
+ []
+
+
+Overfull \hbox (5.43053pt too wide) in paragraph at lines 62--67
 []
  []
 
@@ -3867,13 +3975,31 @@ Missing character: There is no c in font nullfont!
 Missing character: There is no t in font nullfont!
 Missing character: There is no s in font nullfont!
 Missing character: There is no [ in font nullfont!
-Missing character: There is no 2 in font nullfont!
-Missing character: There is no 1 in font nullfont!
+\citation{21}
+! Undefined control sequence.
+<write> ...: Citation `\@citeb ' on page \thepage 
+                                                  \space undefined\on@line .
+l.70 ...ath fading and shadowing effects \cite{21}
+                                                  .
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+
+LaTeX Warning: Citation `21' on page  undefined on input line 70.
+
 Missing character: There is no ] in font nullfont!
 Missing character: There is no . in font nullfont!
 
 Overfull \hbox (20.0pt too wide) in paragraph at lines 70--71
 []
+ []
+
+
+Overfull \hbox (5.43053pt too wide) in paragraph at lines 70--71
+[] 
  []
 
 Missing character: There is no T in font nullfont!
@@ -4109,13 +4235,31 @@ Missing character: There is no i in font nullfont!
 Missing character: There is no t in font nullfont!
 Missing character: There is no s in font nullfont!
 Missing character: There is no [ in font nullfont!
-Missing character: There is no 2 in font nullfont!
-Missing character: There is no 0 in font nullfont!
+\citation{20}
+! Undefined control sequence.
+<write> ...: Citation `\@citeb ' on page \thepage 
+                                                  \space undefined\on@line .
+l.72 ... the mobile and stationary units \cite{20}
+                                                  .
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+
+LaTeX Warning: Citation `20' on page  undefined on input line 72.
+
 Missing character: There is no ] in font nullfont!
 Missing character: There is no . in font nullfont!
 
 Overfull \hbox (20.0pt too wide) in paragraph at lines 72--73
 []
+ []
+
+
+Overfull \hbox (5.43053pt too wide) in paragraph at lines 72--73
+[] 
  []
 
 Missing character: There is no I in font nullfont!
@@ -4684,8 +4828,21 @@ Missing character: There is no o in font nullfont!
 Missing character: There is no n in font nullfont!
 Missing character: There is no s in font nullfont!
 Missing character: There is no [ in font nullfont!
-Missing character: There is no 2 in font nullfont!
-Missing character: There is no 2 in font nullfont!
+\citation{22}
+! Undefined control sequence.
+<write> ...: Citation `\@citeb ' on page \thepage 
+                                                  \space undefined\on@line .
+l.79 ...e measurement to known positions \cite{22}
+                                                  .  It is widely used in wi...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+
+LaTeX Warning: Citation `22' on page  undefined on input line 79.
+
 Missing character: There is no ] in font nullfont!
 Missing character: There is no . in font nullfont!
 Missing character: There is no I in font nullfont!
@@ -5476,6 +5633,11 @@ Overfull \hbox (20.0pt too wide) in paragraph at lines 79--80
  []
 
 
+Overfull \hbox (5.43053pt too wide) in paragraph at lines 79--80
+[]
+ []
+
+
 Overfull \hbox (10.86105pt too wide) in paragraph at lines 79--80
 []
  []
@@ -5504,7 +5666,7 @@ Type  H <return>  for immediate help.
  ...                                              
                                                   
 l.83 	\caption
-              {Trilateration Process[101]} \label{trilateration_ref}
+              {Trilateration Process \cite{101}} \label{trilateration_ref}
 You're in trouble here.  Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
@@ -5529,9 +5691,21 @@ Missing character: There is no e in font nullfont!
 Missing character: There is no s in font nullfont!
 Missing character: There is no s in font nullfont!
 Missing character: There is no [ in font nullfont!
-Missing character: There is no 1 in font nullfont!
-Missing character: There is no 0 in font nullfont!
-Missing character: There is no 1 in font nullfont!
+\citation{101}
+! Undefined control sequence.
+<write> ...: Citation `\@citeb ' on page \thepage 
+                                                  \space undefined\on@line .
+l.83 	\caption{Trilateration Process \cite{101}
+                                               } \label{trilateration_ref}
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+
+LaTeX Warning: Citation `101' on page  undefined on input line 83.
+
 Missing character: There is no ] in font nullfont!
 ! Undefined control sequence.
 l.85 	\includegraphics
@@ -5579,6 +5753,11 @@ or  <return>  to continue without it.
 
 
 Overfull \hbox (20.0pt too wide) in paragraph at lines 82--87
+[]
+ []
+
+
+Overfull \hbox (5.43053pt too wide) in paragraph at lines 82--87
 []
  []
 
@@ -5744,8 +5923,21 @@ Missing character: There is no i in font nullfont!
 Missing character: There is no n in font nullfont!
 Missing character: There is no g in font nullfont!
 Missing character: There is no [ in font nullfont!
-Missing character: There is no 1 in font nullfont!
-Missing character: There is no 2 in font nullfont!
+\citation{12}
+! Undefined control sequence.
+<write> ...: Citation `\@citeb ' on page \thepage 
+                                                  \space undefined\on@line .
+l.91 ...selection and formation tracking \cite{12}
+                                                  .
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+
+LaTeX Warning: Citation `12' on page  undefined on input line 91.
+
 Missing character: There is no ] in font nullfont!
 Missing character: There is no . in font nullfont!
 Missing character: There is no I in font nullfont!
@@ -5883,8 +6075,21 @@ Missing character: There is no o in font nullfont!
 Missing character: There is no n in font nullfont!
 Missing character: There is no s in font nullfont!
 Missing character: There is no [ in font nullfont!
-Missing character: There is no 1 in font nullfont!
-Missing character: There is no 6 in font nullfont!
+\citation{16}
+! Undefined control sequence.
+<write> ...: Citation `\@citeb ' on page \thepage 
+                                                  \space undefined\on@line .
+l.92 ...athematical constraint functions \cite{16}
+                                                  .  One general approach is...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+
+LaTeX Warning: Citation `16' on page  undefined on input line 92.
+
 Missing character: There is no ] in font nullfont!
 Missing character: There is no . in font nullfont!
 Missing character: There is no O in font nullfont!
@@ -6278,8 +6483,21 @@ Missing character: There is no o in font nullfont!
 Missing character: There is no n in font nullfont!
 Missing character: There is no s in font nullfont!
 Missing character: There is no [ in font nullfont!
-Missing character: There is no 1 in font nullfont!
-Missing character: There is no 7 in font nullfont!
+\citation{17}
+! Undefined control sequence.
+<write> ...: Citation `\@citeb ' on page \thepage 
+                                                  \space undefined\on@line .
+l.92 ... help of Lyapunov like functions \cite{17}
+                                                  .
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+
+LaTeX Warning: Citation `17' on page  undefined on input line 92.
+
 Missing character: There is no ] in font nullfont!
 Missing character: There is no . in font nullfont!
 
@@ -6290,6 +6508,21 @@ Overfull \hbox (20.0pt too wide) in paragraph at lines 90--93
 
 Overfull \hbox (7.7778pt too wide) in paragraph at lines 90--93
 \OT1/cmr/m/n/10 &$
+ []
+
+
+Overfull \hbox (5.43053pt too wide) in paragraph at lines 90--93
+[]
+ []
+
+
+Overfull \hbox (5.43053pt too wide) in paragraph at lines 90--93
+[]
+ []
+
+
+Overfull \hbox (5.43053pt too wide) in paragraph at lines 90--93
+[] 
  []
 
 
@@ -6316,7 +6549,7 @@ Type  H <return>  for immediate help.
  ...                                              
                                                   
 l.95 	\caption
-              {Motions and Formation of the Agents in Presence of Obstacles[...
+              {Motions and Formation of the Agents in Presence of Obstacles ...
 
 You're in trouble here.  Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
@@ -6373,8 +6606,21 @@ Missing character: There is no l in font nullfont!
 Missing character: There is no e in font nullfont!
 Missing character: There is no s in font nullfont!
 Missing character: There is no [ in font nullfont!
-Missing character: There is no 1 in font nullfont!
-Missing character: There is no 7 in font nullfont!
+\citation{17}
+! Undefined control sequence.
+<write> ...: Citation `\@citeb ' on page \thepage 
+                                                  \space undefined\on@line .
+l.95 ... Agents in Presence of Obstacles \cite{17}
+                                                  }
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+
+LaTeX Warning: Citation `17' on page  undefined on input line 95.
+
 Missing character: There is no ] in font nullfont!
 ! Undefined control sequence.
 l.97 	\includegraphics
@@ -6418,6 +6664,11 @@ or  <return>  to continue without it.
 
 
 Overfull \hbox (20.0pt too wide) in paragraph at lines 94--99
+[]
+ []
+
+
+Overfull \hbox (5.43053pt too wide) in paragraph at lines 94--99
 []
  []
 
@@ -7387,8 +7638,21 @@ Missing character: There is no h in font nullfont!
 Missing character: There is no e in font nullfont!
 Missing character: There is no s in font nullfont!
 Missing character: There is no [ in font nullfont!
-Missing character: There is no 1 in font nullfont!
-Missing character: There is no 2 in font nullfont!
+\citation{12}
+! Undefined control sequence.
+<write> ...: Citation `\@citeb ' on page \thepage 
+                                                  \space undefined\on@line .
+l.108 ...ion and graph theory approaches \cite{12}
+                                                  . Kumar, Fierro and Das pr...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+
+LaTeX Warning: Citation `12' on page  undefined on input line 108.
+
 Missing character: There is no ] in font nullfont!
 Missing character: There is no . in font nullfont!
 Missing character: There is no K in font nullfont!
@@ -7512,13 +7776,36 @@ Missing character: There is no u in font nullfont!
 Missing character: There is no n in font nullfont!
 Missing character: There is no d in font nullfont!
 Missing character: There is no [ in font nullfont!
-Missing character: There is no 1 in font nullfont!
-Missing character: There is no 8 in font nullfont!
+\citation{18}
+! Undefined control sequence.
+<write> ...: Citation `\@citeb ' on page \thepage 
+                                                  \space undefined\on@line .
+l.108 ...s a leader following background \cite{18}
+                                                  .
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+
+LaTeX Warning: Citation `18' on page  undefined on input line 108.
+
 Missing character: There is no ] in font nullfont!
 Missing character: There is no . in font nullfont!
 
 Overfull \hbox (20.0pt too wide) in paragraph at lines 108--109
 []
+ []
+
+
+Overfull \hbox (5.43053pt too wide) in paragraph at lines 108--109
+[]
+ []
+
+
+Overfull \hbox (5.43053pt too wide) in paragraph at lines 108--109
+[] 
  []
 
 
@@ -7545,7 +7832,7 @@ Type  H <return>  for immediate help.
  ...                                              
                                                   
 l.111 	\caption
-               {Five Robot Formation With Trajectory Tracking [18]}
+               {Five Robot Formation With Trajectory Tracking \cite{18}}
 You're in trouble here.  Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
@@ -7590,8 +7877,21 @@ Missing character: There is no i in font nullfont!
 Missing character: There is no n in font nullfont!
 Missing character: There is no g in font nullfont!
 Missing character: There is no [ in font nullfont!
-Missing character: There is no 1 in font nullfont!
-Missing character: There is no 8 in font nullfont!
+\citation{18}
+! Undefined control sequence.
+<write> ...: Citation `\@citeb ' on page \thepage 
+                                                  \space undefined\on@line .
+l.111 ...mation With Trajectory Tracking \cite{18}
+                                                  }
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+
+LaTeX Warning: Citation `18' on page  undefined on input line 111.
+
 Missing character: There is no ] in font nullfont!
 ! Undefined control sequence.
 l.113 	\includegraphics
@@ -7634,6 +7934,11 @@ or  <return>  to continue without it.
 
 
 Overfull \hbox (20.0pt too wide) in paragraph at lines 110--115
+[]
+ []
+
+
+Overfull \hbox (5.43053pt too wide) in paragraph at lines 110--115
 []
  []
 
@@ -7783,8 +8088,21 @@ Missing character: There is no h in font nullfont!
 Missing character: There is no e in font nullfont!
 Missing character: There is no s in font nullfont!
 Missing character: There is no [ in font nullfont!
-Missing character: There is no 1 in font nullfont!
-Missing character: There is no 2 in font nullfont!
+\citation{12}
+! Undefined control sequence.
+<write> ...: Citation `\@citeb ' on page \thepage 
+                                                  \space undefined\on@line .
+l.116 ... and behaviour based approaches \cite{12}
+                                                  .  In leader following str...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+
+LaTeX Warning: Citation `12' on page  undefined on input line 116.
+
 Missing character: There is no ] in font nullfont!
 Missing character: There is no . in font nullfont!
 Missing character: There is no I in font nullfont!
@@ -8209,8 +8527,21 @@ Missing character: There is no s in font nullfont!
 Missing character: There is no a in font nullfont!
 Missing character: There is no t in font nullfont!
 Missing character: There is no [ in font nullfont!
-Missing character: There is no 1 in font nullfont!
-Missing character: There is no 8 in font nullfont!
+\citation{18}
+! Undefined control sequence.
+<write> ...: Citation `\@citeb ' on page \thepage 
+                                                  \space undefined\on@line .
+l.116 ...mbers. Kumar, Fierro and Das at \cite{18}
+                                                   proposed a control framew...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+
+LaTeX Warning: Citation `18' on page  undefined on input line 116.
+
 Missing character: There is no ] in font nullfont!
 Missing character: There is no p in font nullfont!
 Missing character: There is no r in font nullfont!
@@ -8471,6 +8802,16 @@ Overfull \hbox (20.0pt too wide) in paragraph at lines 116--117
  []
 
 
+Overfull \hbox (5.43053pt too wide) in paragraph at lines 116--117
+[]
+ []
+
+
+Overfull \hbox (5.43053pt too wide) in paragraph at lines 116--117
+[]
+ []
+
+
 Overfull \hbox (10.02664pt too wide) in paragraph at lines 116--117
 \OML/cmm/m/it/10 l[]$
  []
@@ -8509,7 +8850,7 @@ Type  H <return>  for immediate help.
  ...                                              
                                                   
 l.119 	\caption
-               {Leader-Follower Systems[18]} \label{leader_follower_ref}
+               {Leader-Follower Systems \cite{18}} \label{leader_follower_ref}
 You're in trouble here.  Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
@@ -8536,8 +8877,21 @@ Missing character: There is no e in font nullfont!
 Missing character: There is no m in font nullfont!
 Missing character: There is no s in font nullfont!
 Missing character: There is no [ in font nullfont!
-Missing character: There is no 1 in font nullfont!
-Missing character: There is no 8 in font nullfont!
+\citation{18}
+! Undefined control sequence.
+<write> ...: Citation `\@citeb ' on page \thepage 
+                                                  \space undefined\on@line .
+l.119 	\caption{Leader-Follower Systems \cite{18}
+                                                 } \label{leader_follower_ref}
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+
+LaTeX Warning: Citation `18' on page  undefined on input line 119.
+
 Missing character: There is no ] in font nullfont!
 ! Undefined control sequence.
 l.121 	\includegraphics
@@ -8580,6 +8934,11 @@ or  <return>  to continue without it.
 
 
 Overfull \hbox (20.0pt too wide) in paragraph at lines 118--123
+[]
+ []
+
+
+Overfull \hbox (5.43053pt too wide) in paragraph at lines 118--123
 []
  []
 
@@ -9054,8 +9413,21 @@ Missing character: There is no o in font nullfont!
 Missing character: There is no n in font nullfont!
 Missing character: There is no s in font nullfont!
 Missing character: There is no [ in font nullfont!
-Missing character: There is no 1 in font nullfont!
-Missing character: There is no 2 in font nullfont!
+\citation{12}
+! Undefined control sequence.
+<write> ...: Citation `\@citeb ' on page \thepage 
+                                                  \space undefined\on@line .
+l.128 ... with inverse dynamic solutions \cite{12}
+                                                  .  Lewis and Tan proposed ...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+
+LaTeX Warning: Citation `12' on page  undefined on input line 128.
+
 Missing character: There is no ] in font nullfont!
 Missing character: There is no . in font nullfont!
 Missing character: There is no L in font nullfont!
@@ -9127,8 +9499,21 @@ Missing character: There is no l in font nullfont!
 Missing character: There is no i in font nullfont!
 Missing character: There is no n in font nullfont!
 Missing character: There is no [ in font nullfont!
-Missing character: There is no 2 in font nullfont!
-Missing character: There is no 3 in font nullfont!
+\citation{23}
+! Undefined control sequence.
+<write> ...: Citation `\@citeb ' on page \thepage 
+                                                  \space undefined\on@line .
+l.128 ...method for formation control in \cite{23}
+                                                   with a bidirectional flow...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+
+LaTeX Warning: Citation `23' on page  undefined on input line 128.
+
 Missing character: There is no ] in font nullfont!
 Missing character: There is no w in font nullfont!
 Missing character: There is no i in font nullfont!
@@ -9344,6 +9729,16 @@ Overfull \hbox (20.0pt too wide) in paragraph at lines 128--129
  []
 
 
+Overfull \hbox (5.43053pt too wide) in paragraph at lines 128--129
+[]
+ []
+
+
+Overfull \hbox (5.43053pt too wide) in paragraph at lines 128--129
+[]
+ []
+
+
 ! LaTeX Error: Environment figure undefined.
 
 See the LaTeX manual or LaTeX Companion for explanation.
@@ -9426,7 +9821,7 @@ Missing character: There is no r in font nullfont!
 Missing character: There is no e in font nullfont!
 ! Undefined control sequence.
 l.133 	\includegraphics
-                       [scale = 1]{virtual_structure}
+                       [scale = 0.95]{virtual_structure}
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
 misspelled it (e.g., `\hobx'), type `I' and the correct
@@ -9440,7 +9835,10 @@ Missing character: There is no a in font nullfont!
 Missing character: There is no l in font nullfont!
 Missing character: There is no e in font nullfont!
 Missing character: There is no = in font nullfont!
-Missing character: There is no 1 in font nullfont!
+Missing character: There is no 0 in font nullfont!
+Missing character: There is no . in font nullfont!
+Missing character: There is no 9 in font nullfont!
+Missing character: There is no 5 in font nullfont!
 Missing character: There is no ] in font nullfont!
 Missing character: There is no v in font nullfont!
 Missing character: There is no i in font nullfont!
@@ -9452,13 +9850,13 @@ Missing character: There is no l in font nullfont!
 ! Missing $ inserted.
 <inserted text> 
                 $
-l.133 	\includegraphics[scale = 1]{virtual_
-                                           structure}
+l.133 	\includegraphics[scale = 0.95]{virtual_
+                                              structure}
 I've inserted a begin-math/end-math symbol since I think
 you left one out. Proceed, with fingers crossed.
 
 ! Extra }, or forgotten $.
-l.133 ...udegraphics[scale = 1]{virtual_structure}
+l.133 ...graphics[scale = 0.95]{virtual_structure}
                                                   
 I've deleted a group-closing symbol because it seems to be
 spurious, as in `$x}$'. But perhaps the } is legitimate and
@@ -10260,8 +10658,21 @@ Missing character: There is no r in font nullfont!
 Missing character: There is no m in font nullfont!
 Missing character: There is no s in font nullfont!
 Missing character: There is no [ in font nullfont!
-Missing character: There is no 2 in font nullfont!
-Missing character: There is no 4 in font nullfont!
+\citation{24}
+! Undefined control sequence.
+<write> ...: Citation `\@citeb ' on page \thepage 
+                                                  \space undefined\on@line .
+l.139 ...ation control method for swarms \cite{24}
+                                                  . In this approach, indivi...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+
+LaTeX Warning: Citation `24' on page  undefined on input line 139.
+
 Missing character: There is no ] in font nullfont!
 Missing character: There is no . in font nullfont!
 Missing character: There is no I in font nullfont!
@@ -11235,6 +11646,11 @@ Overfull \hbox (20.0pt too wide) in paragraph at lines 139--140
  []
 
 
+Overfull \hbox (5.43053pt too wide) in paragraph at lines 139--140
+[]
+ []
+
+
 ! LaTeX Error: Environment figure undefined.
 
 See the LaTeX manual or LaTeX Companion for explanation.
@@ -11258,7 +11674,7 @@ Type  H <return>  for immediate help.
  ...                                              
                                                   
 l.142 	\caption
-               {Formation Control with Artificial Forces[24]}
+               {Formation Control with Artificial Forces \cite{24}}
 You're in trouble here.  Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
@@ -11299,8 +11715,21 @@ Missing character: There is no c in font nullfont!
 Missing character: There is no e in font nullfont!
 Missing character: There is no s in font nullfont!
 Missing character: There is no [ in font nullfont!
-Missing character: There is no 2 in font nullfont!
-Missing character: There is no 4 in font nullfont!
+\citation{24}
+! Undefined control sequence.
+<write> ...: Citation `\@citeb ' on page \thepage 
+                                                  \space undefined\on@line .
+l.142 ... Control with Artificial Forces \cite{24}
+                                                  }
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+
+LaTeX Warning: Citation `24' on page  undefined on input line 142.
+
 Missing character: There is no ] in font nullfont!
 ! Undefined control sequence.
 l.144 	\includegraphics
@@ -11346,6 +11775,11 @@ or  <return>  to continue without it.
 
 
 Overfull \hbox (20.0pt too wide) in paragraph at lines 141--146
+[]
+ []
+
+
+Overfull \hbox (5.43053pt too wide) in paragraph at lines 141--146
 []
  []
 
@@ -12232,7 +12666,7 @@ Type  H <return>  for immediate help.
  ...                                              
                                                   
 l.153 	\caption
-               {Formation Control with Objective Functions[25]}
+               {Formation Control with Objective Functions \cite{25}}
 You're in trouble here.  Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
@@ -12275,8 +12709,21 @@ Missing character: There is no o in font nullfont!
 Missing character: There is no n in font nullfont!
 Missing character: There is no s in font nullfont!
 Missing character: There is no [ in font nullfont!
-Missing character: There is no 2 in font nullfont!
-Missing character: There is no 5 in font nullfont!
+\citation{25}
+! Undefined control sequence.
+<write> ...: Citation `\@citeb ' on page \thepage 
+                                                  \space undefined\on@line .
+l.153 ...ontrol with Objective Functions \cite{25}
+                                                  }
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+
+LaTeX Warning: Citation `25' on page  undefined on input line 153.
+
 Missing character: There is no ] in font nullfont!
 ! Undefined control sequence.
 l.155 	\includegraphics
@@ -12321,6 +12768,11 @@ or  <return>  to continue without it.
 
 
 Overfull \hbox (20.0pt too wide) in paragraph at lines 152--157
+[]
+ []
+
+
+Overfull \hbox (5.43053pt too wide) in paragraph at lines 152--157
 []
  []
 
@@ -12887,8 +13339,21 @@ Missing character: There is no r in font nullfont!
 Missing character: There is no k in font nullfont!
 Missing character: There is no e in font nullfont!
 Missing character: There is no [ in font nullfont!
-Missing character: There is no 2 in font nullfont!
-Missing character: There is no 6 in font nullfont!
+\citation{26}
+! Undefined control sequence.
+<write> ...: Citation `\@citeb ' on page \thepage 
+                                                  \space undefined\on@line .
+l.165 ...ace problems.  Shier and Bourke \cite{26}
+                                                   have introduced a randomi...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+
+LaTeX Warning: Citation `26' on page  undefined on input line 165.
+
 Missing character: There is no ] in font nullfont!
 Missing character: There is no h in font nullfont!
 Missing character: There is no a in font nullfont!
@@ -13108,6 +13573,11 @@ Missing character: There is no s in font nullfont!
 Missing character: There is no . in font nullfont!
 
 Overfull \hbox (20.0pt too wide) in paragraph at lines 165--166
+[]
+ []
+
+
+Overfull \hbox (5.43053pt too wide) in paragraph at lines 165--166
 []
  []
 
@@ -13464,7 +13934,7 @@ Type  H <return>  for immediate help.
  ...                                              
                                                   
 l.187 	\caption
-               {Space Filling Examples with Randomized Fractals[26]} \label{...
+               {Space Filling Examples with Randomized Fractals \cite{26}} \...
 
 You're in trouble here.  Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
@@ -13512,8 +13982,21 @@ Missing character: There is no a in font nullfont!
 Missing character: There is no l in font nullfont!
 Missing character: There is no s in font nullfont!
 Missing character: There is no [ in font nullfont!
-Missing character: There is no 2 in font nullfont!
-Missing character: There is no 6 in font nullfont!
+\citation{26}
+! Undefined control sequence.
+<write> ...: Citation `\@citeb ' on page \thepage 
+                                                  \space undefined\on@line .
+l.187 ...amples with Randomized Fractals \cite{26}
+                                                  } \label{space_filling}
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+
+LaTeX Warning: Citation `26' on page  undefined on input line 187.
+
 Missing character: There is no ] in font nullfont!
 ! Undefined control sequence.
 l.189 	\includegraphics
@@ -13559,6 +14042,11 @@ or  <return>  to continue without it.
 
 
 Overfull \hbox (20.0pt too wide) in paragraph at lines 186--191
+[]
+ []
+
+
+Overfull \hbox (5.43053pt too wide) in paragraph at lines 186--191
 []
  []
 
@@ -13865,13 +14353,31 @@ Missing character: There is no l in font nullfont!
 Missing character: There is no e in font nullfont!
 Missing character: There is no s in font nullfont!
 Missing character: There is no [ in font nullfont!
-Missing character: There is no 2 in font nullfont!
-Missing character: There is no 7 in font nullfont!
+\citation{27}
+! Undefined control sequence.
+<write> ...: Citation `\@citeb ' on page \thepage 
+                                                  \space undefined\on@line .
+l.193 ... avoiding small included angles \cite{27}
+                                                  .
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+
+LaTeX Warning: Citation `27' on page  undefined on input line 193.
+
 Missing character: There is no ] in font nullfont!
 Missing character: There is no . in font nullfont!
 
 Overfull \hbox (27.7778pt too wide) in paragraph at lines 193--194
 []$\OT1/cmr/m/n/10 &$
+ []
+
+
+Overfull \hbox (5.43053pt too wide) in paragraph at lines 193--194
+[] 
  []
 
 
@@ -13898,7 +14404,7 @@ Type  H <return>  for immediate help.
  ...                                              
                                                   
 l.197 	\caption
-               {Uniform and Non-Uniform Node Spacing[27]}
+               {Uniform and Non-Uniform Node Spacing \cite{27}}
 You're in trouble here.  Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
@@ -13935,8 +14441,21 @@ Missing character: There is no i in font nullfont!
 Missing character: There is no n in font nullfont!
 Missing character: There is no g in font nullfont!
 Missing character: There is no [ in font nullfont!
-Missing character: There is no 2 in font nullfont!
-Missing character: There is no 7 in font nullfont!
+\citation{27}
+! Undefined control sequence.
+<write> ...: Citation `\@citeb ' on page \thepage 
+                                                  \space undefined\on@line .
+l.197 ...rm and Non-Uniform Node Spacing \cite{27}
+                                                  }
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+
+LaTeX Warning: Citation `27' on page  undefined on input line 197.
+
 Missing character: There is no ] in font nullfont!
 ! Undefined control sequence.
 l.199 	\includegraphics
@@ -13985,6 +14504,11 @@ or  <return>  to continue without it.
 
 
 Overfull \hbox (20.0pt too wide) in paragraph at lines 196--201
+[]
+ []
+
+
+Overfull \hbox (5.43053pt too wide) in paragraph at lines 196--201
 []
  []
 
@@ -14291,7 +14815,7 @@ Type  H <return>  for immediate help.
  ...                                              
                                                   
 l.205 	\caption
-               {Interbubble Forces[27]} \label{interbubble_ref}
+               {Interbubble Forces \cite{27}} \label{interbubble_ref}
 You're in trouble here.  Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
@@ -14313,8 +14837,21 @@ Missing character: There is no c in font nullfont!
 Missing character: There is no e in font nullfont!
 Missing character: There is no s in font nullfont!
 Missing character: There is no [ in font nullfont!
-Missing character: There is no 2 in font nullfont!
-Missing character: There is no 7 in font nullfont!
+\citation{27}
+! Undefined control sequence.
+<write> ...: Citation `\@citeb ' on page \thepage 
+                                                  \space undefined\on@line .
+l.205 	\caption{Interbubble Forces \cite{27}
+                                            } \label{interbubble_ref}
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+
+LaTeX Warning: Citation `27' on page  undefined on input line 205.
+
 Missing character: There is no ] in font nullfont!
 ! Undefined control sequence.
 l.207 	\includegraphics
@@ -14362,6 +14899,11 @@ or  <return>  to continue without it.
 
 
 Overfull \hbox (20.0pt too wide) in paragraph at lines 204--209
+[]
+ []
+
+
+Overfull \hbox (5.43053pt too wide) in paragraph at lines 204--209
 []
  []
 
@@ -14612,7 +15154,7 @@ Type  H <return>  for immediate help.
  ...                                              
                                                   
 l.215 	\caption
-               {Mesh Generation with Interbubble Forces[27]} \label{mesh_gen...
+               {Mesh Generation with Interbubble Forces \cite{27}} \label{me...
 
 You're in trouble here.  Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
@@ -14653,8 +15195,21 @@ Missing character: There is no c in font nullfont!
 Missing character: There is no e in font nullfont!
 Missing character: There is no s in font nullfont!
 Missing character: There is no [ in font nullfont!
-Missing character: There is no 2 in font nullfont!
-Missing character: There is no 7 in font nullfont!
+\citation{27}
+! Undefined control sequence.
+<write> ...: Citation `\@citeb ' on page \thepage 
+                                                  \space undefined\on@line .
+l.215 ...eration with Interbubble Forces \cite{27}
+                                                  } \label{mesh_genearation_...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+
+LaTeX Warning: Citation `27' on page  undefined on input line 215.
+
 Missing character: There is no ] in font nullfont!
 ! Undefined control sequence.
 l.217 	\includegraphics
@@ -14703,6 +15258,11 @@ or  <return>  to continue without it.
 
 
 Overfull \hbox (20.0pt too wide) in paragraph at lines 214--219
+[]
+ []
+
+
+Overfull \hbox (5.43053pt too wide) in paragraph at lines 214--219
 []
  []
 
@@ -15415,11 +15975,11 @@ or  <return>  to continue without it.
 
  
 Here is how much of TeX's memory you used:
- 23 strings out of 494424
- 353 string characters out of 6165346
- 54363 words of memory out of 5000000
- 3373 multiletter control sequences out of 15000+600000
+ 37 strings out of 494424
+ 410 string characters out of 6165346
+ 55363 words of memory out of 5000000
+ 3387 multiletter control sequences out of 15000+600000
  3948 words of font info for 15 fonts, out of 8000000 for 9000
  372 hyphenation exceptions out of 8191
- 18i,9n,21p,1755b,180s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 18i,9n,21p,1776b,180s stack positions out of 5000i,500n,10000p,200000b,80000s
 !  ==> Fatal error occurred, no output PDF file produced!

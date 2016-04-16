@@ -610,10 +610,18 @@ n(C,z_i)  = \frac{1}{2\pi i} \left[\int_{a}^{b} \left(u\frac{dx}{dt} - v\frac{dy
 Discrete contour integral representation of this equation is
 		
 \begin{equation}
-n(C,z_i)  = \frac{1}{2\pi i} \left[\sum_{k=1}^{K} \left(u(x_{k+1} - x_k ) - v(y_{k+1} -yx_k )\right) + i\sum_{k=1}^{K}\left(u(y_{k+1} - y_k ) + v(x_{k+1} - x_k )\right)\right]
+n(C,z_i)  = \frac{1}{2\pi i} {\left[\sum_{k=1}^{K} {A_k} + i\sum_{k=1}^{K} {B_k}\right]}
 \end{equation}
 
 where
+\begin{equation}
+A_k = u(x_{k+1} - x_k ) - v(y_{k+1} -y_k )
+\end{equation}
+
+\begin{equation}
+B_k = u(y_{k+1} - y_k ) + v(x_{k+1} - x_k)
+\end{equation}
+
 
 \begin{equation}
 \norm{z_k - z_{k-1}} = \norm{z_{k+1} - z_k}, \hspace{0.2cm}  \forall k ;  \hspace{0.2cm} when  \hspace{0.2cm} K \to\infty
@@ -621,10 +629,12 @@ where
 
 The assumption of $K \to\infty$ makes it possible to calculate the integral of Cauchy winding number with a small error with large number of $K$ which can be achieved by partitioning the desired formation shape  into small pieces with equal  distances. This approach is used to provide representations of the contour integrals in discrete domain. 
 
+Figure \ref{iceride_disarida_refe} shows the test results for the grid map of an environment with a formation shape, where green dots represents the inner points of formation shape and red dots represents the outer points of the formation shape.
+
 \begin{figure}[H]
 \centering
 \captionsetup{format=hang,justification=centerfirst}
-\caption{Formation Shape in an Environment\\ (Green Dots: Inside of the Shape - Red Dots: Outside of the Shape)}
+\caption{Formation Shape in an Environment} \label{iceride_disarida_refe}
 \includegraphics[scale = 0.28]{iceride_disarida}
 \end{figure}
 

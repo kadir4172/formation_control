@@ -98,13 +98,12 @@ The state propogation period is determined as 2Hz which is equal to the main sys
 		
 It is clear that the total error norm on position datas are decreased dramatically with the localization period which equals to 6 iterations for 3 seconds period, 10 iterations for 5 seconds and 16 iterations for 8 seconds period. The peak values on the error norms are always observed at the iterations just before the localization process. It can be concluded that the peak values on the error norms are greatly related with the localization period and they have greater values with the increasing number of this period. The maximum error norm is below 3 meters with localization period of 3 seconds, below 10 meters with localization period of 5 seconds and below 12 meters with localization period of 8 seconds. In this work, it is assumed that the error norm of 3 meters is the maximum tolerable value for the formation control system to satisfy a successful collision avoidance for the agents since we have a coverage circle radius of 0.5m for the biggest agent in the swarm. Thus, the localization period for the trilateration process is determined as 3 seconds. 
 
-The performance of the LPS design is tested in simulations with different conditions in which swarm is propogating to a desired formation shape or agents are keeping their positions in dynamically changing formation shapes.  In both cases, it is observed that the position datas of the agents are drifted with an increasing error between two  sequential localization process. A sample case for this situation is illustrated in Figure \ref{hatali_pos_ref} and Figure \ref{duzgun_pos_ref}
+The performance of the LPS design is tested in simulations with different conditions in which swarm is propogating to a desired formation shape or agents are keeping their positions in dynamically changing formation shapes.  In both cases, it is observed that the position datas of the agents are drifted with an increasing error between two  sequential localization process. A sample case for this situation is illustrated in Figure \ref{hatali_pos_ref} and Figure \ref{duzgun_pos_ref}. In these figures, red circles are representing the estimated positions of the agents where blue circles are representing the real positions. 
 
 \begin{figure}[H]
 \centering
 \captionsetup{format=hang,justification=centerfirst}
-\caption{Positions of the Agents Before Localization Process \\
-(Red Circles: Estimated Positions ; Blue Circles: Real Positions)} \label{hatali_pos_ref}
+\caption{Positions of the Agents Before Localization Process} \label{hatali_pos_ref}
 \centerline{
 \includegraphics[scale = 0.35]{Pozisyon_1_Hatali}}
 \label{fig:lps}
@@ -113,9 +112,8 @@ The performance of the LPS design is tested in simulations with different condit
 \begin{figure}[H]
 \centering
 \captionsetup{format=hang,justification=centerfirst}
-\caption{Positions of the Agents After Localization Process \\
-(Red Circles: Estimated Positions ; Blue Circles: Real Positions)} \label{duzgun_pos_ref}
-\centerline{\includegraphics[scale = 0.26]{Pozisyon-1-Duzeltilmis}}
+\caption{Positions of the Agents After Localization Process} \label{duzgun_pos_ref}
+\centerline{\includegraphics[scale = 0.25]{Pozisyon-1-Duzeltilmis}}
 \end{figure} 
 		
 Handling procedures of the lost agents are presented in Section \ref{LostAgents}. Agents which do not have at least three neighbors around itselves will get into the 'Lost' mode, and if  they miss three localization process they will get into 'Come Home' mode. When an agent is in 'Come Home' mode, it will try to reach the center of formation to increase the possibility to meet some neighbors to localize itself as discussed in Section \ref{LostAgents}. A simulation result in which two agents cannot have three neighbors around themselves and get into 'Lost' mode and 'Come Home' modes  is presented in Figure \ref{lost_ref} and Figure \ref{come_home_ref} respectively.
@@ -123,13 +121,13 @@ Handling procedures of the lost agents are presented in Section \ref{LostAgents}
 \begin{figure}[H]
 \caption{Agents will be in 'Lost' Mode When They Do Not Have 3 Neighbors} \label{lost_ref}
 \centering
-\centerline{\includegraphics[scale = 0.26]{Lost-2-2}}
+\centerline{\includegraphics[scale = 0.25]{Lost-2-2}}
 \end{figure} 
 
 \begin{figure}[H]
 \captionsetup{format=hang,justification=centerfirst}
 \caption{Agents will be in 'Come Home' Mode After Being Lost for 3 Times} \label{come_home_ref}
-\centerline{\includegraphics[scale = 0.26]{Lost-2-3}}
+\centerline{\includegraphics[scale = 0.25]{Lost-2-3}}
 \end{figure} 		
 		
 \section{FORMATION CONTROL SYSTEM}
@@ -139,32 +137,32 @@ Three different approaches of which the details are presented in Section \ref{fo
 Mesh quality is a measure of how the agents homogenously distributed while covering the desired formation shape. Basically, two different types of quality measurements defined in Section \ref{mesh_quality_ref} are used to evaluate the performance of the formation control methods, topological mesh irregularity $\epsilon_t$ and geometrical mesh irregularity $\epsilon_g$ . Monte Carlo simulations with 1000 iterations are handled for the same formation shapes with different initial conditions of the agents in the environment. Sample outputs for three different types of formation control algorithms are illustrated in the following figures
   
 \begin{figure}[H]
-\caption{Formation Shape 1 with Artificial Forces Methods:$\epsilon_t = 2.1$ and $\epsilon_g = 0.32$}
+\caption{Shape 1 with Artificial Forces Methods:$\epsilon_t = 2.1$ and $\epsilon_g = 0.32$}
 \centerline{\includegraphics[scale = 0.70]{Artificial_Forces_Mesh_1}}
 \end{figure} 		
 		
 \begin{figure}[H]
-\caption{Formation Shape 2 with Artificial Forces Methods:$\epsilon_t = 2.6$ and $\epsilon_g = 0.4$}
+\caption{Shape 2 with Artificial Forces Methods:$\epsilon_t = 2.6$ and $\epsilon_g = 0.4$}
 \centerline{\includegraphics[scale = 0.65]{Artificial_Forces_Mesh_2}}
 \end{figure} 		
 		
 \begin{figure}[H]
-\caption{Formation Shape 1 with Bubble Packing Method:$\epsilon_t = 2.1$ and $\epsilon_g = 0.24$}
+\caption{Shape 1 with Bubble Packing Method:$\epsilon_t = 2.1$ and $\epsilon_g = 0.24$}
 \centerline{\includegraphics[scale = 0.70]{Bubble_Packing_Mesh_1}}
 \end{figure} 	
 				
 \begin{figure}[H]
-\caption{Formation Shape 2 with Bubble Packing Method:$\epsilon_t = 2.3$ and $\epsilon_g = 0.28$}
+\caption{Shape 2 with Bubble Packing Method:$\epsilon_t = 2.3$ and $\epsilon_g = 0.28$}
 \centerline{\includegraphics[scale = 0.65]{Bubble_Packing_Mesh_2}}
 \end{figure} 			
 						
 \begin{figure}[H]
-\caption{Formation Shape 1 with Randomized Fractals Method:$\epsilon_t = 2.7$ and $\epsilon_g = 0.65$}
+\caption{Shape 1 with Randomized Fractals Method:$\epsilon_t = 2.6$ and $\epsilon_g = 0.63$}
 \centerline{\includegraphics[scale = 0.70]{Randomized_Fractals_Mesh_1}}
 \end{figure} 	
 
 \begin{figure}[H]
-\caption{Formation Shape 2 with Randomized Fractals Method:$\epsilon_t = 3.1$ and $\epsilon_g = 0.62$}
+\caption{Shape 2 with Randomized Fractal Method:$\epsilon_t = 3.1$ and $\epsilon_g = 0.61$}
 \centerline{\includegraphics[scale = 0.65]{Randomized_Fractals_Mesh_2}}
 \end{figure} 	
 
@@ -303,17 +301,17 @@ Figure \ref{multiple2_ref} illustrates a simulation result of Artificial Forces 
 
 \begin{figure}[H]
 \caption{Latency in Bubble Packing Method-1} \label{combo1_ref}
-\centerline{\includegraphics[scale = 0.32]{combo1}}
+\centerline{\includegraphics[scale = 0.30]{combo1}}
 \end{figure} 
 
 \begin{figure}[H]
 \caption{Latency in Bubble Packing Method-2} \label{combo2_ref}
-\centerline{\includegraphics[scale = 0.32]{combo2}}
+\centerline{\includegraphics[scale = 0.30]{combo2}}
 \end{figure} 
 
 \begin{figure}[H]
 \caption{Latency in Bubble Packing Method-3} \label{combo3_ref}
-\centerline{\includegraphics[scale = 0.32]{combo3}}
+\centerline{\includegraphics[scale = 0.30]{combo3}}
 \end{figure} 
 
 Figure \ref{combo1_ref}, \ref{combo2_ref} and \ref{combo3_ref} compares the responses of these two algorithms to dynamically changing formation shapes. Bubble Packing and Artificial Force algorithms are executed with the same dynamical formation shapes and same initial positions of the agents. In these figures, red circles are representing the agents' positions with Bubble Packing method and green circles are representing the agents' positions with Artificial Forces method at the same time from the beginning of the simulations. Formation shape with blue line illustrates the current formation shape. It is obvious that the green agents are adapted to the current formation shape better than the red ones. The shape with dotted red line, represents the estimatated coverage area of red agents in the environment and this shape differs from the current formation shape locally at some boundary regions. This shows that agents response to the dynamically changing formation shape fasters with Artifical Forces method. 

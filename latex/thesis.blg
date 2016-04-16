@@ -7,45 +7,45 @@ Warning--empty journal in 94
 Warning--empty journal in 22
 Warning--empty journal in 12
 Warning--empty journal in 15
-You've used 34 entries,
+You've used 35 entries,
             2118 wiz_defined-function locations,
-            662 strings with 9159 characters,
-and the built_in function-call counts, 10745 in all, are:
-= -- 985
-> -- 597
+            666 strings with 9308 characters,
+and the built_in function-call counts, 10949 in all, are:
+= -- 1004
+> -- 604
 < -- 0
-+ -- 239
-- -- 200
-* -- 701
-:= -- 1843
-add.period$ -- 102
-call.type$ -- 34
-change.case$ -- 201
++ -- 242
+- -- 202
+* -- 706
+:= -- 1877
+add.period$ -- 105
+call.type$ -- 35
+change.case$ -- 205
 chr.to.int$ -- 0
-cite$ -- 38
-duplicate$ -- 409
-empty$ -- 871
-format.name$ -- 200
-if$ -- 2194
+cite$ -- 39
+duplicate$ -- 416
+empty$ -- 893
+format.name$ -- 202
+if$ -- 2239
 int.to.chr$ -- 0
-int.to.str$ -- 34
+int.to.str$ -- 35
 missing$ -- 33
-newline$ -- 173
-num.names$ -- 68
-pop$ -- 256
+newline$ -- 178
+num.names$ -- 70
+pop$ -- 264
 preamble$ -- 1
-purify$ -- 168
+purify$ -- 171
 quote$ -- 0
-skip$ -- 251
+skip$ -- 259
 stack$ -- 0
-substring$ -- 485
-swap$ -- 45
+substring$ -- 490
+swap$ -- 46
 text.length$ -- 0
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 134
+type$ -- 138
 warning$ -- 4
-while$ -- 94
-width$ -- 36
-write$ -- 349
+while$ -- 96
+width$ -- 37
+write$ -- 358
 (There were 4 warnings)
