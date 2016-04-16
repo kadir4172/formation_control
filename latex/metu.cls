@@ -238,7 +238,7 @@ metinde orjinal olmayan tüm materyal alıntı olarak belirtilmiş ve gerekli re
 \def\@approvaltext{submitted by {\bf \MakeUppercase{\@author}} in partial fulfillment of the
 requirements for the degree of {\bf \@degree~ in \@department~ Department, Middle East
 Technical University} by,}
-\def\@directoraff{Dean, Graduate School of {\bf Natural and Applied Sciences}}
+\def\@directoraff{Director, Graduate School of {\bf Natural and Applied Sciences}}
 \def\@chairlabel{Head of Department}
 \def\@supervisorlabel{Supervisor}
 \def\@cosupervisorlabel{Co-supervisor}

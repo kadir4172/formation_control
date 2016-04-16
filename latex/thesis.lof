@@ -112,7 +112,7 @@
 \contentsline {figure}{\numberline {4.40}{\ignorespaces Latency in Bubble Packing Method-2\relax }}{117}{figure.4.40}
 \contentsline {figure}{\numberline {4.41}{\ignorespaces Latency in Bubble Packing Method-3\relax }}{118}{figure.4.41}
 \contentsline {figure}{\numberline {4.42}{\ignorespaces Formation Shape - 1 in Gazebo Environment\relax }}{120}{figure.4.42}
-\contentsline {figure}{\numberline {4.43}{\ignorespaces Formation Shape - 1 in MATLAB Environment\relax }}{121}{figure.4.43}
+\contentsline {figure}{\numberline {4.43}{\ignorespaces Formation Shape - 1 in MATLAB Environment\relax }}{120}{figure.4.43}
 \contentsline {figure}{\numberline {4.44}{\ignorespaces Formation Shape - 2 in Gazebo Environment\relax }}{121}{figure.4.44}
 \contentsline {figure}{\numberline {4.45}{\ignorespaces Formation Shape - 2 in MATLAB Environment\relax }}{122}{figure.4.45}
 \contentsline {figure}{\numberline {4.46}{\ignorespaces Formation Shape - 3 in Gazebo Environment\relax }}{122}{figure.4.46}
@@ -129,8 +129,8 @@
 \contentsline {figure}{\numberline {5.6}{\ignorespaces Command Mixture of Step Motors\relax }}{132}{figure.5.6}
 \contentsline {figure}{\numberline {5.7}{\ignorespaces Schematic of the Circuit on the Board\relax }}{133}{figure.5.7}
 \contentsline {figure}{\numberline {5.8}{\ignorespaces 3D Visualization of the Layout\relax }}{134}{figure.5.8}
-\contentsline {figure}{\numberline {5.9}{\ignorespaces Harware of an Agent - Top View\relax }}{135}{figure.5.9}
-\contentsline {figure}{\numberline {5.10}{\ignorespaces Harware of an Agent - Bottom View\relax }}{136}{figure.5.10}
+\contentsline {figure}{\numberline {5.9}{\ignorespaces Hardware of an Agent - Top View\relax }}{135}{figure.5.9}
+\contentsline {figure}{\numberline {5.10}{\ignorespaces Hardware of an Agent - Bottom View\relax }}{136}{figure.5.10}
 \contentsline {figure}{\numberline {5.11}{\ignorespaces Formation Shape 1- Matlab Environment\relax }}{137}{figure.5.11}
 \contentsline {figure}{\numberline {5.12}{\ignorespaces Formation Shape 1- Test Environment\relax }}{137}{figure.5.12}
 \contentsline {figure}{\numberline {5.13}{\ignorespaces Formation Shape 2- Matlab Environment\relax }}{138}{figure.5.13}
@@ -141,5 +141,4 @@
 \contentsline {figure}{\numberline {5.18}{\ignorespaces Formation Shape 4- Test Environment\relax }}{140}{figure.5.18}
 \contentsline {figure}{\numberline {5.19}{\ignorespaces Formation Shape 5- Matlab Environment\relax }}{141}{figure.5.19}
 \contentsline {figure}{\numberline {5.20}{\ignorespaces Formation Shape 5- Test Environment\relax }}{141}{figure.5.20}
-\addvspace {10pt}
 \addvspace {10pt}
