@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2016.2.27)  15 APR 2016 22:58
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2016.2.27)  16 APR 2016 10:00
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -2754,7 +2754,7 @@ Package hyperref Warning: bookmark level for unknown nodots defaults to 0.
 APPENDIX A.
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `\uppercase' on input line 113.
+(hyperref)                removing `\uppercase' on input line 115.
 
 (./vita.tex [153] [154
 
@@ -2764,16 +2764,16 @@ Underfull \hbox (badness 10000) in paragraph at lines 6--12
  []
 
 )
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 120.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 122.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [155]
 [156]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 120.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 122.
  (./thesis.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 120.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 120.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 122.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 122.
 Package rerunfilecheck Info: File `thesis.out' has not changed.
 (rerunfilecheck)             Checksum: 5D53C8C2378B6B354B8099A0697C00F5;5621.
 
@@ -2800,7 +2800,7 @@ r.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/symbol/usyr.pfb></usr/shar
 e/texlive/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/share/texlive/texmf
 -dist/fonts/type1/urw/times/utmr8a.pfb></usr/share/texlive/texmf-dist/fonts/typ
 e1/urw/times/utmri8a.pfb>
-Output written on thesis.pdf (180 pages, 43251419 bytes).
+Output written on thesis.pdf (180 pages, 43251423 bytes).
 PDF statistics:
  2210 PDF objects out of 2487 (max. 8388607)
  1820 compressed objects within 19 object streams
