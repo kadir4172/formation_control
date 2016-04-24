@@ -1,51 +1,51 @@
 This is BibTeX, Version 0.99d (TeX Live 2013/Debian)
 Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
 The top-level auxiliary file: thesis.aux
-The style file: plain.bst
+The style file: unsrt.bst
 Database file #1: thesis_references.bib
-Warning--empty journal in 94
-Warning--empty journal in 22
 Warning--empty journal in 12
 Warning--empty journal in 15
+Warning--empty journal in 94
+Warning--empty journal in 22
 You've used 35 entries,
-            2118 wiz_defined-function locations,
-            666 strings with 9308 characters,
-and the built_in function-call counts, 10949 in all, are:
-= -- 1004
-> -- 604
+            1791 wiz_defined-function locations,
+            615 strings with 8834 characters,
+and the built_in function-call counts, 7120 in all, are:
+= -- 559
+> -- 367
 < -- 0
-+ -- 242
-- -- 202
-* -- 706
-:= -- 1877
++ -- 136
+- -- 101
+* -- 399
+:= -- 1154
 add.period$ -- 105
 call.type$ -- 35
-change.case$ -- 205
+change.case$ -- 34
 chr.to.int$ -- 0
 cite$ -- 39
-duplicate$ -- 416
-empty$ -- 893
-format.name$ -- 202
-if$ -- 2239
+duplicate$ -- 346
+empty$ -- 785
+format.name$ -- 101
+if$ -- 1582
 int.to.chr$ -- 0
 int.to.str$ -- 35
 missing$ -- 33
 newline$ -- 178
-num.names$ -- 70
-pop$ -- 264
+num.names$ -- 35
+pop$ -- 157
 preamble$ -- 1
-purify$ -- 171
+purify$ -- 0
 quote$ -- 0
-skip$ -- 259
+skip$ -- 122
 stack$ -- 0
-substring$ -- 490
+substring$ -- 310
 swap$ -- 46
 text.length$ -- 0
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 138
+type$ -- 0
 warning$ -- 4
-while$ -- 96
+while$ -- 61
 width$ -- 37
 write$ -- 358
 (There were 4 warnings)

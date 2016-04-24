@@ -1,56 +1,32 @@
 \begin{thebibliography}{10}
 
-\bibitem{96}
-Farshad Arvin, John Murray, Licheng Shi, Chun Zhang, and Shigang Yue.
-\newblock Development of an autonomous micro robot for swarm robotics.
-\newblock In {\em IEEE International Conference on Mechatronics and
-  Automation}, 2014.
-
 \bibitem{4}
 Jan Barca and Ahmet Sekercioglu.
 \newblock Swarm robotics reviewed.
 \newblock {\em Robotica}, 31:345--359, 2013.
 
-\bibitem{25}
-Calin Belta and Vijay Kumar.
-\newblock Abstraction and control for groups of robots.
-\newblock {\em IEEE Transactions on Robotics and Automation}, 20:865--875,
-  2004.
+\bibitem{2}
+Simon Garnier, Jacques Gautrais, and Guy Theraulaz.
+\newblock The biological principles of swarm intelligence.
+\newblock {\em Swarm Intelligence}, 1:3--31, 2007.
 
 \bibitem{1}
 Gerardo Beni.
 \newblock From swarm intelligence to swarm robotics.
 \newblock In {\em International Conference on Swarm Robotics}, 2004.
 
-\bibitem{92}
-Mark Berg, Otfried Cheong, Kreveld. Marc, and Marc Overmars.
-\newblock {\em Computational Geometry}.
-\newblock Springer, 1998.
+\bibitem{6}
+Yogeswaran Mohan and S.G. Ponnambalam.
+\newblock An extensive review of research in swarm robotics.
+\newblock In {\em World Congress on Nature $\&$ Biologically Inspired
+  Computing, NaBIC}, 2009.
 
-\bibitem{10}
-Luiz Chaimowicz, Mario Campos, and Vijay Kumar.
-\newblock Dynamic role assignment for cooperative robots.
-\newblock In {\em International Conference on Robotics and Automation}, 2002.
-
-\bibitem{13}
-YangQuan Chen and Zhongmin Wang.
-\newblock Formation control: A review and a new consideration.
-\newblock In {\em International Conference on Intelligent Robots and Systems},
-  2005.
-
-\bibitem{24}
-Jimming Cheng, Winston Cheng, and Radhika Nagpal.
-\newblock Robust and self-repairing formation control for swarms of mobile
-  agents.
-\newblock In {\em AAAI 20th National Conference on Artificial Intelligence},
-  2005.
-
-\bibitem{18}
-Aveek Das, Rafael Fierro, Vijay Kumar, James Ostrowski, John Spletzer, and
-  Camilla Taylor.
-\newblock A vision-based formation control framework.
-\newblock {\em IEEE Transactions on Robotics and Automation}, 18:813--825,
-  2002.
+\bibitem{5}
+Aleksis Liekna and Janis Grundspenkis.
+\newblock Towards practical application of swarm robotics: Overviewed of swarm
+  tasks.
+\newblock In {\em 13th International Scientific Conference - Engineering for
+  Rural Development}, 2014.
 
 \bibitem{7}
 Marco Dorigo, Vito Trianni, Erol Sahin, Roderich Grof, Thomas Labella, Gianluca
@@ -58,6 +34,111 @@ Marco Dorigo, Vito Trianni, Erol Sahin, Roderich Grof, Thomas Labella, Gianluca
   Floreano.
 \newblock Evolving self-organizing behaviors for a swarm-bot.
 \newblock {\em Autonomous Robots}, 17:223--245, 2004.
+
+\bibitem{8}
+S.P. Hou, C.C. Cheah, and J.J.E. Slotine.
+\newblock Dynamic region following formation control for a swarm of robots.
+\newblock In {\em ICRA}, 2009.
+
+\bibitem{9}
+Ganesh Venayagamoorthy, Lisa Grant, and Sheetal Doctor.
+\newblock Collective robotic search using hybrid techniques: Fuzzy logic and
+  swarm intelligence inspired by nature.
+\newblock {\em Engineering Applications of Artificial Intelligence},
+  22:431--441, 2009.
+
+\bibitem{10}
+Luiz Chaimowicz, Mario Campos, and Vijay Kumar.
+\newblock Dynamic role assignment for cooperative robots.
+\newblock In {\em International Conference on Robotics and Automation}, 2002.
+
+\bibitem{19}
+Seyed Zekavat, Hui Tong, and Jindong Tan.
+\newblock A novel wireless local positioning system for airport (indoor)
+  security.
+\newblock In {\em SPIE}, 2004.
+
+\bibitem{12}
+Kiattisin Kanjanawanishkul.
+\newblock Formation control of mobile robots: Survey.
+\newblock n.d.
+
+\bibitem{99}
+Dorigo et~al.
+\newblock Swarmanoid: A novel concept for the study of heterogeneous robotic
+  swarms.
+\newblock {\em IEEE Robotics $\&$ Automation Magazine}, 20:60--71, 2013.
+
+\bibitem{15}
+Maurice Martin and Steve Kilberg.
+\newblock Techsat 21 and revolutionizing space missions using microsatellites.
+\newblock 2001.
+
+\bibitem{13}
+YangQuan Chen and Zhongmin Wang.
+\newblock Formation control: A review and a new consideration.
+\newblock In {\em International Conference on Intelligent Robots and Systems},
+  2005.
+
+\bibitem{98}
+Michael Rubenstein, Adrian Cabrera, Justin Werfel, Golnaz Habibi, James
+  Mclurkin, and Radhika Nagpal.
+\newblock Collective transport of complex objects by simple robots: Theory and
+  experiments.
+\newblock In {\em nternational Conference on Autonomous Agents and Multi-Agent
+  Systems}, 2013.
+
+\bibitem{97}
+S~Kornienki, O.~Kornienko, and Levi. P.
+\newblock Minimalistic approach towards communication and perception in
+  microrobotic swarms.
+\newblock In {\em IEEE International Conference on Intelligent Robots and
+  Systems}, 2005.
+
+\bibitem{96}
+Farshad Arvin, John Murray, Licheng Shi, Chun Zhang, and Shigang Yue.
+\newblock Development of an autonomous micro robot for swarm robotics.
+\newblock In {\em IEEE International Conference on Mechatronics and
+  Automation}, 2014.
+
+\bibitem{95}
+Touraj Soleymani, Vito Trianni, Michael Bonani, Francesco Mondada, and Marco
+  Dorigo.
+\newblock Bio-inspired construction with mobile robots and compliant pockets.
+\newblock {\em Robotics and Autonomus Systems}, 74:340--350, 2015.
+
+\bibitem{94}
+Roderich Grof, Michael Bonani, Mondada Francesco, and Marco Dorigo.
+\newblock Autonomous self-assembly in a swarm-bot.
+\newblock 22:1115--1130, 2006.
+
+\bibitem{93}
+Reza Haghighi and Chien~Chern Cheah.
+\newblock Asynchronous dynamic multi-group formation for swarm robots.
+\newblock In {\em 50th IEEE Conference on Decision and Control and European
+  Control Conference}, 2011.
+
+\bibitem{20}
+Martin Vossiek, Peter Gulden, Jan Wieghardt, and Clemens Hoffman.
+\newblock Wireless local positioning - concepts, solutions, applications.
+\newblock In {\em RAWCON}, 2003.
+
+\bibitem{21}
+Juha Latvala, Jari Syrjarinne, Hannu Ikonen, and Jarkko Niittylahti.
+\newblock Evaluation of rssi-based human tracking.
+\newblock In {\em Signal Processing Conference}, 2000.
+
+\bibitem{22}
+Willy Hereman and William Murphy.
+\newblock Determination of a position in three dimensions using trilateration
+  and approximate distances.
+\newblock 1995.
+
+\bibitem{101}
+IOP-Institute of~Physics.
+\newblock How does gps work?
+\newblock http://www.physics.org/article-questions.asp?id=55, last visited on
+  April 2016.
 
 \bibitem{16}
 Magnus Egerstedt and Xiaoming Hu.
@@ -71,61 +152,12 @@ Samitha Ekanayake and Pubudu Pathirana.
 \newblock {\em International Journal of Advanced Robotic Systems}, 7:173--190,
   2010.
 
-\bibitem{99}
-Dorigo et~al.
-\newblock Swarmanoid: A novel concept for the study of heterogeneous robotic
-  swarms.
-\newblock {\em IEEE Robotics $\&$ Automation Magazine}, 20:60--71, 2013.
-
-\bibitem{2}
-Simon Garnier, Jacques Gautrais, and Guy Theraulaz.
-\newblock The biological principles of swarm intelligence.
-\newblock {\em Swarm Intelligence}, 1:3--31, 2007.
-
-\bibitem{94}
-Roderich Grof, Michael Bonani, Mondada Francesco, and Marco Dorigo.
-\newblock Autonomous self-assembly in a swarm-bot.
-\newblock 22:1115--1130, 2006.
-
-\bibitem{93}
-Reza Haghighi and Chien~Chern Cheah.
-\newblock Asynchronous dynamic multi-group formation for swarm robots.
-\newblock In {\em 50th IEEE Conference on Decision and Control and European
-  Control Conference}, 2011.
-
-\bibitem{22}
-Willy Hereman and William Murphy.
-\newblock Determination of a position in three dimensions using trilateration
-  and approximate distances.
-\newblock 1995.
-
-\bibitem{8}
-S.P. Hou, C.C. Cheah, and J.J.E. Slotine.
-\newblock Dynamic region following formation control for a swarm of robots.
-\newblock In {\em ICRA}, 2009.
-
-\bibitem{103}
-Takayuki Itoh.
-\newblock Rough quadrilateralation for surface reconstruction.
-\newblock http://itolab.is.ocha.ac.jp/~itot/mytopics/roughq.html, last visited
-  on April 2016.
-
-\bibitem{12}
-Kiattisin Kanjanawanishkul.
-\newblock Formation control of mobile robots: Survey.
-\newblock n.d.
-
-\bibitem{97}
-S~Kornienki, O.~Kornienko, and Levi. P.
-\newblock Minimalistic approach towards communication and perception in
-  microrobotic swarms.
-\newblock In {\em IEEE International Conference on Intelligent Robots and
-  Systems}, 2005.
-
-\bibitem{21}
-Juha Latvala, Jari Syrjarinne, Hannu Ikonen, and Jarkko Niittylahti.
-\newblock Evaluation of rssi-based human tracking.
-\newblock In {\em Signal Processing Conference}, 2000.
+\bibitem{18}
+Aveek Das, Rafael Fierro, Vijay Kumar, James Ostrowski, John Spletzer, and
+  Camilla Taylor.
+\newblock A vision-based formation control framework.
+\newblock {\em IEEE Transactions on Robotics and Automation}, 18:813--825,
+  2002.
 
 \bibitem{23}
 Anthony Lewis and Kar-Han Tan.
@@ -133,37 +165,18 @@ Anthony Lewis and Kar-Han Tan.
   structures.
 \newblock {\em Autonomous Robots}, 4:387--403, 1997.
 
-\bibitem{5}
-Aleksis Liekna and Janis Grundspenkis.
-\newblock Towards practical application of swarm robotics: Overviewed of swarm
-  tasks.
-\newblock In {\em 13th International Scientific Conference - Engineering for
-  Rural Development}, 2014.
+\bibitem{24}
+Jimming Cheng, Winston Cheng, and Radhika Nagpal.
+\newblock Robust and self-repairing formation control for swarms of mobile
+  agents.
+\newblock In {\em AAAI 20th National Conference on Artificial Intelligence},
+  2005.
 
-\bibitem{15}
-Maurice Martin and Steve Kilberg.
-\newblock Techsat 21 and revolutionizing space missions using microsatellites.
-\newblock 2001.
-
-\bibitem{6}
-Yogeswaran Mohan and S.G. Ponnambalam.
-\newblock An extensive review of research in swarm robotics.
-\newblock In {\em World Congress on Nature $\&$ Biologically Inspired
-  Computing, NaBIC}, 2009.
-
-\bibitem{101}
-IOP-Institute of~Physics.
-\newblock How does gps work?
-\newblock http://www.physics.org/article-questions.asp?id=55, last visited on
-  April 2016.
-
-\bibitem{98}
-Michael Rubenstein, Adrian Cabrera, Justin Werfel, Golnaz Habibi, James
-  Mclurkin, and Radhika Nagpal.
-\newblock Collective transport of complex objects by simple robots: Theory and
-  experiments.
-\newblock In {\em nternational Conference on Autonomous Agents and Multi-Agent
-  Systems}, 2013.
+\bibitem{25}
+Calin Belta and Vijay Kumar.
+\newblock Abstraction and control for groups of robots.
+\newblock {\em IEEE Transactions on Robotics and Automation}, 20:865--875,
+  2004.
 
 \bibitem{26}
 John Shier and Paul Bourke.
@@ -176,34 +189,21 @@ Kenji Shimada and David Gossard.
   sphere packing.
 \newblock In {\em ACM Symposium on Solid Modeling and Applications}, 1995.
 
+\bibitem{103}
+Takayuki Itoh.
+\newblock Rough quadrilateralation for surface reconstruction.
+\newblock http://itolab.is.ocha.ac.jp/~itot/mytopics/roughq.html, last visited
+  on April 2016.
+
+\bibitem{92}
+Mark Berg, Otfried Cheong, Kreveld. Marc, and Marc Overmars.
+\newblock {\em Computational Geometry}.
+\newblock Springer, 1998.
+
 \bibitem{102}
 Jop~Frederik Sibeyn.
 \newblock Graph algorithms.
 \newblock https://www8.cs.umu.se/~jopsi/dinf504/chap14.shtml, last visited on
   April 2016.
-
-\bibitem{95}
-Touraj Soleymani, Vito Trianni, Michael Bonani, Francesco Mondada, and Marco
-  Dorigo.
-\newblock Bio-inspired construction with mobile robots and compliant pockets.
-\newblock {\em Robotics and Autonomus Systems}, 74:340--350, 2015.
-
-\bibitem{9}
-Ganesh Venayagamoorthy, Lisa Grant, and Sheetal Doctor.
-\newblock Collective robotic search using hybrid techniques: Fuzzy logic and
-  swarm intelligence inspired by nature.
-\newblock {\em Engineering Applications of Artificial Intelligence},
-  22:431--441, 2009.
-
-\bibitem{20}
-Martin Vossiek, Peter Gulden, Jan Wieghardt, and Clemens Hoffman.
-\newblock Wireless local positioning - concepts, solutions, applications.
-\newblock In {\em RAWCON}, 2003.
-
-\bibitem{19}
-Seyed Zekavat, Hui Tong, and Jindong Tan.
-\newblock A novel wireless local positioning system for airport (indoor)
-  security.
-\newblock In {\em SPIE}, 2004.
 
 \end{thebibliography}
