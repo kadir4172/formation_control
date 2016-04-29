@@ -6,37 +6,38 @@ Database file #1: thesis_references.bib
 Warning--empty journal in 12
 Warning--empty journal in 15
 Warning--empty journal in 94
+Warning--empty journal in 29
 Warning--empty journal in 22
-You've used 35 entries,
+You've used 36 entries,
             1791 wiz_defined-function locations,
-            615 strings with 8834 characters,
-and the built_in function-call counts, 7120 in all, are:
-= -- 559
-> -- 367
+            618 strings with 8991 characters,
+and the built_in function-call counts, 7292 in all, are:
+= -- 570
+> -- 381
 < -- 0
-+ -- 136
-- -- 101
-* -- 399
-:= -- 1154
-add.period$ -- 105
-call.type$ -- 35
-change.case$ -- 34
++ -- 141
+- -- 105
+* -- 409
+:= -- 1186
+add.period$ -- 108
+call.type$ -- 36
+change.case$ -- 35
 chr.to.int$ -- 0
-cite$ -- 39
-duplicate$ -- 346
-empty$ -- 785
-format.name$ -- 101
-if$ -- 1582
+cite$ -- 41
+duplicate$ -- 354
+empty$ -- 799
+format.name$ -- 105
+if$ -- 1617
 int.to.chr$ -- 0
-int.to.str$ -- 35
-missing$ -- 33
-newline$ -- 178
-num.names$ -- 35
-pop$ -- 157
+int.to.str$ -- 36
+missing$ -- 34
+newline$ -- 183
+num.names$ -- 36
+pop$ -- 162
 preamble$ -- 1
 purify$ -- 0
 quote$ -- 0
-skip$ -- 122
+skip$ -- 125
 stack$ -- 0
 substring$ -- 310
 swap$ -- 46
@@ -44,8 +45,8 @@ text.length$ -- 0
 text.prefix$ -- 0
 top$ -- 0
 type$ -- 0
-warning$ -- 4
-while$ -- 61
-width$ -- 37
-write$ -- 358
-(There were 4 warnings)
+warning$ -- 5
+while$ -- 62
+width$ -- 38
+write$ -- 367
+(There were 5 warnings)
