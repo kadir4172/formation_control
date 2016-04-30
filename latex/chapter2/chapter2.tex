@@ -136,21 +136,22 @@ In virtual structure approach, the formation is composed with a virtual rigid bo
 In virtual structure strategy it is easy to achieve a coordinated behavior for the group to maintain the formation during a trajectory tracking or a maneuvering, but it is not a suitable strategy to apply a formation control to achieve certain geometrical shape with the swarm agents. 
 
 
-Behavior based strategies model every agents' behaviors to achieve specific tasks with swarm. These behaviours may be very simple like randomly walk and avoidance of  obstacles in the environment or they may be defined in a very complicated manner in order to achieve complex formation shapes with the entire swarm while for example optimizing the overall energy consumption depending  upon the implementation of the controller structures.  One of the main usage of this strategy is artificial potential field based implementations . Cheng and Nagpal have introduced a robust and self repairing formation control method for swarms \cite{24}. In this approach, individual control laws for the agents are equipped with the artificial forces defined between agents themselves (to avoid collisions) and between the desired formation shape and agents. This solution provides robustness to the agent losses in the swarm during formation control and the rest of the swarm has the ability to refiil their absence in real time without changing the dynamics and the parameters of the formation controller. Because individual control laws are not dependent on the other member of the swarm. Each agent can calculate its own control input at an instant time with current formation shape and current members of the swarm and the whole swarm converge another equilibrium with current members \cite{24}.  One of the main disadvantage of the artificial potential based approaches is that , the control forces applied to individual agents are determined instantaneously in accordance with that agent's and the other agents' positions and they cannot guarantee the optimization of the total distance travelled by the agents. Another drawback, related with this type of solution is that, there is a possibility to have local minimas in the solution where an agent reaches an undesired configuration point under the equilibrium of different types of artificial force components. In this strategy the solution may converge slowly to the steady state due to absence of generalized goal states for individual agents in the final state of formation. Because, there is no specific goal state for the individual agents to reach at the final configuration and they are expected to get a global equilibrium with the help of different artificial force components. 
+Behavior based strategies model every agents' behaviors to achieve specific tasks with swarm. These behaviours may be very simple like randomly walk and avoidance of  obstacles in the environment or they may be defined in a very complicated manner in order to achieve complex formation shapes with the entire swarm while for example optimizing the overall energy consumption depending  upon the implementation of the controller structures.  One of the main usage of this strategy is artificial potential field based implementations . Cheng and Nagpal have introduced a robust and self repairing formation control method for swarms \cite{24}. In this approach, individual control laws for the agents are equipped with the artificial forces defined between agents themselves (to avoid collisions) and between the desired formation shape and agents. This solution provides robustness to the agent losses in the swarm during formation control and the rest of the swarm has the ability to refiil their absence in real time without changing the dynamics and the parameters of the formation controller. Because individual control laws are not dependent on the other member of the swarm. Each agent can calculate its own control input at an instant time with current formation shape and current members of the swarm and the whole swarm converge another equilibrium with current members \cite{24}. Figure \ref{izgara_ref} shows a simulation output of their work. Some of the agents from the right bottom corner of the desired formation shape are removed away from the swarm and the rest of the agents refill their absence during runtime. One of the main disadvantage of the artificial potential based approaches is that , the control forces applied to individual agents are determined instantaneously in accordance with that agent's and the other agents' positions and they cannot guarantee the optimization of the total distance travelled by the agents. Another drawback, related with this type of solution is that, there is a possibility to have local minimas in the solution where an agent reaches an undesired configuration point under the equilibrium of different types of artificial force components. In that case the total control input acting on the agent will be zero because of canceling force vectors which has opposite directions to each other generated by formation shape and obstacles etc. this strategy the solution may converge slowly to the steady state due to absence of generalized goal states for individual agents in the final state of formation. Because, there is no specific goal state for the individual agents to reach at the final configuration and they are expected to get a global equilibrium with the help of different artificial force components. 
 
 \begin{figure}[H]
-	\caption{Formation Control with Artificial Forces \cite{24}}
+	\caption{Formation Control with Artificial Forces \cite{24}} \label{izgara_ref}
 	\centering
 	\includegraphics[scale = 0.4]{potential}
 \end{figure}
 
 
-Another approach is to define mathematical constraints and objective functions to achieve a specific formation shape and controlling the swarm to follow a trajectory while keeping the formation.  Kumar and Belta presented an abstraction method of configuration space to a manifold defined as $A  = G x S$ where $G$ is a Lie group representing the position and the orientation of the swarm  and S represents the shape of the manifold.  They provide individual control laws which can be seperately handled to manipulate the lie group $G$ to achieve formation tracking and orientation control and to manipulate the shape $S$ to achieve different geometrical shapes. Cheah and Slotine proposed a similar method based on objective functions \cite{8}.  Common drawback for these researches, they can only implement a limited number of simple geometrical shapes because the desired formation shapes must be identified analytically to compose the related objective functions or shape manifolds. 
+Another approach is to define mathematical constraints and objective functions to achieve a specific formation shape by controlling the shape of the swarm colony while followinfg a trajectory.  Kumar and Belta \cite{25} presented an abstraction method of configuration space to a manifold defined as $A  = G x S$ where $G$ is a Lie group representing the position and the orientation of the swarm  and S represents the shape of the manifold.  They provide individual control laws which can be separately handled to manipulate the lie group $G$ to achieve formation tracking and orientation control and to manipulate the shape $S$ to achieve different geometrical shapes.Their method define the desired formation shape with shape manifold equations and control the orientation and the scale of this shape with lie group. Figure \ref{kumar_belta}
+shows a simulation output in which the shape is defined as a rectangular area. The orientation and the scaling of the formation shape is dynamically changed to adapt the swarm different environmental conditions.Cheah and Slotine \cite{8} proposed a method based on objective functions . Common drawback for these researches, they can only implement a limited number of simple geometrical shapes because the desired formation shapes must be analytically identified on order to compose the related objective functions or shape manifolds. Even if it is possible to define a simple geometrical shape and to control the rotation and the scaling of this shape dynamically, there may be need for more complex and dynamically changing formation shapes rather than scaling and rotation maneuvers in real time applications. 
 
 
 
 \begin{figure}[H]
-	\caption{Formation Control with Objective Functions \cite{25}}
+	\caption{Formation Control with Objective Functions \cite{25}} \label{kumar_belta}
 	\centering
 	\includegraphics[scale = 0.8]{manifold}
 \end{figure}
@@ -159,27 +160,25 @@ Another approach is to define mathematical constraints and objective functions t
 
 \section{Partitioning Complex Geometrical Shapes}
 
+In this thesis work, one of the proposed solutions for the formation control problem is to partition the desired complex shapes into subsets of goal states for each type of agent in the swarm. Main idea is to dynamically assign the agents to these goal states on runtime to minimize the overall displacement of the swarm. Shape partitioning process is used to determine the goal states of the agents within the formation to cover the desired complex geometrical shape. There are some different solutions in the literature including fractal filling of space algorithms, bubble$\&$circle packing algorithms and advancing front algorithms. 
 
-This process is used to determine the goal states of the agents in the formation to cover the desired complex geometrical shape. There are some different solutions in the literature including fractal filling of space algorithms, bubble$\&$circle packing algorithms and advancing front algorithms. 
+Fractals are self similar  patterns in all scales of themselves. They are defined with simple rules and they can cover any complex shape in the nature by progressing this simple rules iteratively. This approach is widely used in mesh generating algorithms and filling space problems.  Shier and Bourke \cite{26} have introduced a randomized fractal filling of space algorithm. They proposed a fractal based method to cover a given geometrical shape with the desired shapes and they provide the proof of their algorithm is space-filling with the following equations. Let $A$ be the total area to be filled. In our case, $A$ will be the area of the desired formation shape. If we choose the area of the fractals sequentially (i.e. bubbles which are representing the coverage area of the agents)  while filling the desired formation shape as $A_i$ with the following equation
 
-Fractals are self similar  patterns in all scales of themselves. They are defined with simple rules and they can cover any complex shape in the nature by progressing this simple rules iteratively. This approach is widely used in mesh generating algorithms and filling space problems.  Shier and Bourke \cite{26} have introduced a randomized fractal filling of space algorithm. They proposed a fractal based method to cover a given geometrical shape with the desired shapes and they provide the proof of their algorithm is space-filling with the following statements. 
-
-	\begin{equation} % eq 1
+	\begin{equation} \label{A_i_func}
 	A_i = {\frac{A}{{\zeta(c,N)(i+N)^c}}}
 	\end{equation}	
 	
 	where ${\zeta(c,N)}$ is the Hurwitz zeta function defined by 
-	\begin{equation}
+	\begin{equation} \label{hurwitz}
 	\zeta(c,N) = \sum_{i=0}^{\infty}\left(\frac{1}{(i+N)^c}\right)
 	\end{equation}
-	This known to converge for $c>1$ and $N>0$. In view of equation 2.2 one can write
-	\begin{equation}
-	\sum_{i=0}^{\infty}A_i = \sum_{i = 0}^{\infty}\left(\frac{A}{\zeta(c,N)(i+N)^c}\right)
+	This Hurwitz zeta function will converge to zero while $i\to\infty$  with selection of $c>1$ and $N>0$. In view of Equation \ref{A_i_func} one can write by replacing the Hurwitz zeta function with the definition given in Equation \ref{hurwitz}
+	\begin{equation} \label{A_i_equation}
+	\sum_{i=0}^{\infty}A_i = \sum_{i = 0}^{\infty}\left(\frac{A}{\zeta(c,N)(i+N)^c}\right) = A
 	\end{equation}
 
 
-such that the sum of all areas $A_i$ is the total area $A$ to be filled, that is, if the algorithm does not halt then it is space-filling. 
-Some of the outputs of their algorithm is given at Figure \ref{space_filling}
+such that the sum of all areas $A_i$ is the total area $A$ to be filled, that is, if the algorithm does not halt then it is space-filling. Thus, it is possible to fill the desired shape with fractals chosen with areas defined in Equation \ref{A_i_equation}. Some of the outputs of their algorithm is given at Figure \ref{space_filling}. The desired shapes are filled with rectangular and star shaped fractals by selecting the areas as described in Equation \ref{A_i_equation}.
 
 
 
@@ -190,16 +189,7 @@ Some of the outputs of their algorithm is given at Figure \ref{space_filling}
 \end{figure}
 
 
-Bubble$\&$Circle packing algorithms are widely used for mesh generation problems in finite element method. The main idea is that the close packing of bubbles mimics a pattern of Voroni tessellation. Corresponding to well shaped Delaunay triangles or tetrahedras which select the best topological connection for a set of nodes by avoiding small included angles \cite{27}.
-
-
-\begin{figure}[H]
-	\caption{Uniform and Non-Uniform Node Spacing \cite{27}}
-	\centering
-	\includegraphics[scale = 0.35]{nodespacing}
-\end{figure}
-
-Shimada and Gossard proposed a method based on interbubble forces to provide close packaging of bubbles in desired geometrical shape. This approach is very similar with the one used in formation control of swarms to achieve geometrical shapes. The related interbubble forces are described at Figure \ref{interbubble_ref}.
+Bubble$\&$Circle packing algorithms are widely used for mesh generation problems in finite element method. Shimada and Gossard \cite{27} proposed a method based on interbubble forces to provide close packaging of bubbles in desired geometrical shape. They define artificial interbubble forces to avoid collisions between bubbles and shape forces to keep the bubbles at the interior region of the desired shape. This idea is similar to the potential field based approaches in formation control problem since they both define artificial force components on individuals to cover a desired shape homogenously. The related interbubble forces are described at Figure \ref{interbubble_ref}. These forces have a nonlinear function of distance between the center of each bubbles and if this distance is larger than $l_o$, the interbubble forces are negative which means they attract each bubble towards the other ones. Interbubble forces increase while the distance between bubbles are decreasing to provide collision avoidance between bubbles. $l_o$ is the stable distance in which there is no interbubble force acting on bubble and it reaches an equilibrium point in the workspace.
 
 \begin{figure}[H]
 	\caption{Interbubble Forces \cite{27}} \label{interbubble_ref}
@@ -207,8 +197,15 @@ Shimada and Gossard proposed a method based on interbubble forces to provide clo
 	\includegraphics[scale = 0.3]{interbubble}
 \end{figure}
 
+The main idea is provide a close packing of bubbles which mimics a pattern of Voroni tessellation, corresponding to well shaped Delaunay triangles or tetrahedras.Figure \ref{tetrahedra} shows the corresponding voronoi polygons and delaunay triangles of a set of packed bubbles. The center of the cells in voronoi polygons are selected as the centers of the bubbles. Delaunay triangles corresponding to the set of uniformly packed of bubbles are well-shaped triangles \cite{27}. 
 
-With the help of adaptive population control by removing the excess bubble which significantly overlap their neighbors, they provide an adaptive bubble packing algorithm for mesh generation. A result with a 2D shape is given at Figure \ref{mesh_genearation_ref}
+\begin{figure}[H]
+	\caption{Uniform and Non-Uniform Node Spacing \cite{27}} \label{tetrahedra}
+	\centering
+	\includegraphics[scale = 0.35]{nodespacing}
+\end{figure}
+
+With the help of these interbubble forces, they provide an adaptive bubble packing algorithm for mesh generation. A result with a 2D shape is given at Figure \ref{mesh_genearation_ref}. At the end of 50 iterations, bubbles cover the desired shape with uniform spacing with the help of interbubble forces and the resultant delaunay triangulation corresponding to the set of packed bubbles are well-shaped triangles. 
 
 
 \begin{figure}[H]
@@ -217,7 +214,7 @@ With the help of adaptive population control by removing the excess bubble which
 	\includegraphics[scale = 0.4]{interbubble2}
 \end{figure}
 
-This approach can easily be augmented for different types and number of shapes to partition a complex geometrical shape with regular sets. Basically the resultant solution will be similar to the one used in artificial potential field approach in formation control. 
+This approach can easily be augmented for different types and number of shapes to partition a complex geometrical shape with regular sets. It is possible to generate a mesh with different shapes which represents different types of agents in the swarm, rather than using bubbles with same radius. With this adaptation on the proposed method, it is possible to partition the desired shape into goal states which are subsets of different types of agents in the swarm with the help of interbubble forces. 
 
 Advancing front methods are one of the alternatives used in mesh generation in literature.  In a two dimensional advancing front method, new triangles are added into the domain from the initial front boundary and the front is propogated iteratively between the meshed and the unmeshed region. The initial front is created by the desired outer boundary of the shape and the procedure continues until the given domain is fully meshed. 
 
