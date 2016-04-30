@@ -11,79 +11,6 @@
 \externaldocument{chapter5}
 
 Formation control requires local positioning, detection of the general shape, task allocation to individual agents and task dispatching. The literature has related works in these different fields but lacks the dynamically formation control to dynamically changing shapes. This chapter is intended to motivate the need for the topic of this thesis by underlying the gap it filled by reviewing existing works in related fields. 
-\section{Local Positioning Systems} \label{LPS_systems_ref}
-
-Positioning systems are used to provide the required position data$\&$feedback to the systems where it is desired to control the location of the mobile agent in the workspace. 
-These systems fall in to two main branches, global positioning systems and local positioning systems. Global positioning systems(GPS) has become increasingly popular for a couple of last decades for tracking location. In outdoor formation control applications this solution is used for positioning \cite{29}. It is a precise system depends on satellite based positioning mainly developed for direction finding and navigation.  Some of the problems encountered with the usage of GPS systems: (1) the signal from the satellites cannot penetrate to the indoor space so it doesn't perform in such areas, (2) it looses its precision in rich scattering environments such as urban areas \cite{19}.  A local positioning system can provide a position information where GPS systems are unavaliable,with the usage of signaling beacons which are placed at the exactly known locations. In indoor formation control applications this kind of approach is used for positioning \cite{96}. 
-
-
-
-
-\begin{figure}[H]
-	\caption{Accuracy Statistics of Different Positioning Sources \cite{20}} \label{overview_position}
-	\centering
-	\includegraphics[scale = 0.4]{gps}
-\end{figure} 
-
-Figure \ref{overview_position} represents an overview of current positioning systems \cite{20}. Global positioning systems are widely used nowadays and they provide accuracies in the range of 3-30 meters. They further can operate in outdoor environments requiring radio signals from satellites. Differential GPS systems decrease these accuracy range below 3 meters with the help of additional local static beacons. GSM based solutions have the worst accuracy performance because they localize the nodes in the network by checking the relative signal strengths from different beacons, but they can perform in indoor environments partially \cite{20}.  Local positioning systems have the capability of working indoor environments because they use the signaling beacons which are placed at the exactly known locations \cite{20}. 
-
-Local positioning systems has different system topologies illustrated in the Table \ref{different_top}20].
-
-\begin {table}[H]
-\begin{center}
-\newcommand{\wrap}[1]{\parbox{.40\linewidth}{\vspace{1.5mm}#1\vspace{1mm}}}
-\caption {Local Posititioning Systems with Different System Topologies \cite{20}} \label{different_top} 
-\begin{tabular}{ |c|c| } 
-\hline
-\wrap{Concept} &\wrap{Concept	Definition} \\
-\hline
-\wrap{Remote Positioning} &\wrap{Measurement from remote site to mobile device}\\
-\hline
-\wrap{Self Positioning}&\wrap{Measurement from mobile unit to usually fixed transponders(landmarks)} \\
-\hline
-\wrap{Indirect remote positioning}&\wrap{Self positioning system with data transfer of measuring result to remote site } \\
-\hline
-\wrap{Indirect self positioning}&\wrap{Remote positioning system with data transfer of measuring result to mobile unit} \\			
- \hline
-\end{tabular}
-\end{center}
-\end{table}
-
-Two main topologies are self positioning and remote positioning systems \cite{20}.  In self positioning system a mobile device finds its own position with the help of a predetermined reference such as a starting point or a beacon node with exactly known positions. On the other hand, in remote positioning systems a mobile node locates other objects positions relative to its own position \cite{19}.   These two type of topologies can be converted to each other with the help of a communications structures integrated on the devices to share the result of position measurement and thus indirect remote positioning and indirect self positioning system topologies can be implemented. Self positioning systems can be implemented to provide position data to the individual agents in formation control problems. The approach is to distribute the position data to the individual agents from a beacon node with exactly known positions. The individual agents which do not have a positioning sensor on their boards, measure their distance to these beacons and correct their position data with these external measurements. Beacons are assumed to have a GPS sensor on their boards for outdoor applications. They are assumed to have a special tag to locate them in an indoor environment with the help of external devices such as E/O camera.
-
-
-
-
-\subsection{Measurement Principles} \label{sssec:num1}
-Local positioning systems are most relevant to formation control using robot networks. These systems differ mainly based on their measurement approaches which are the angle of arrival (AOA), received signal strength(RSS) and propogation-time based systems are commonly used as three different measurement techniques used in local positioning systems. 
-
-\begin{figure}[H]
-	\caption{Different Measurement Principles \cite{20}}
-	\centering
-	\includegraphics[scale = 0.4]{measurement}
-\end{figure} 
-
-In Angle-of-arrival (AOA) systems use directional antennas to measure the bearing and the angle to the points located at known positions are measured. The position value of device can be calculated with the intersection of several measurement, but the accuarcy is limited by shadowing and multipath reflections of radio signals \cite{20}. 
-
-Received signal strength(RSS) systems calculate the distance value by taking the difference of the received signal power from the transmitted power. Some advanced propagation models are required to calculate the distance from the transmission loss in the air to eliminate the multipath fading and shadowing effects \cite{21}. 
-
-Time based systems calculates the distance between measuring unit and signal transmitter with the help of propagation time like used in the global positioning systems generally. This process requires a perfect time synchronization between the mobile and stationary units \cite{20}.
-
-In this thesis work, we implement a self positioning system in which every agent localize itself with the help of position beacons in the swarm with exactly known positions. The distance from the agents to these beacons in the swarm are assumed to be calculated with the help of a time of arrival(TOA) solution in which a node can calculate its distance to the transmitter beacon by measuring the difference between the timestamps of transmission and reception of the signal. 
-
-
-\subsection{Trilateration Process} \label{Trilateration_Process_ref}
-
-Trilateration process is used to determine the three dimensional position of unknown locations with the help of distance measurement to known positions \cite{22}. In self positioning systems, the main approach is to calculate the position of mobile agents with the help of distance measurements to the beacons with exactly known positions. This position calculations are handled with trilateration process. It is widely used in wireless sensor network topologies and local positioning systems.  In theory, it is needed to have at least four beacon nodes to calculte an unknown position in 3D, and at least three beacon nodes to calculate an unknown position in 2D environment. But these worst case numbers are generally not sufficient to estimate an unknown position with a good accuracy due to errors on range calculations and synchronization problems. Figure \ref{trilateration_ref} demonstrates a simple trilateration procees in 2D environment with the help of  three position beacons. Suppose a mobile device which tries to estimate its position with the help of local positioning system is at the red point in the figure. If it can measure its distance to the beacons named A,B and C with exactly known positions, it will be possible to estimate the unknown position of this mobile device with the same approach used in global positioning systems. 
-
-
-\begin{figure}[H]
-	\caption{Trilateration Process \cite{101}} \label{trilateration_ref}
-	\centering
-	\includegraphics[scale = 1]{trilateration}
-\end{figure}
-
-
 
 \section{Formation Control Systems}
 Formation control problem have different subproblems like formation shape generation, formation reconfiguration$\&$selection and formation tracking \cite{12}.  
@@ -216,11 +143,75 @@ With the help of these interbubble forces, they provide an adaptive bubble packi
 
 This approach can easily be augmented for different types and number of shapes to partition a complex geometrical shape with regular sets. It is possible to generate a mesh with different shapes which represents different types of agents in the swarm, rather than using bubbles with same radius. With this adaptation on the proposed method, it is possible to partition the desired shape into goal states which are subsets of different types of agents in the swarm with the help of interbubble forces. 
 
-Advancing front methods are one of the alternatives used in mesh generation in literature.  In a two dimensional advancing front method, new triangles are added into the domain from the initial front boundary and the front is propogated iteratively between the meshed and the unmeshed region. The initial front is created by the desired outer boundary of the shape and the procedure continues until the given domain is fully meshed. 
+\section{Local Positioning Systems} \label{LPS_systems_ref}
+
+Positioning systems are used to provide the required position data$\&$feedback to the systems where it is desired to control the location of the mobile agent in the workspace. 
+These systems fall in to two main branches, global positioning systems and local positioning systems. Global positioning systems(GPS) has become increasingly popular for a couple of last decades for tracking location. In outdoor formation control applications this solution is used for positioning \cite{29}. It is a precise system depends on satellite based positioning mainly developed for direction finding and navigation.  Some of the problems encountered with the usage of GPS systems: (1) the signal from the satellites cannot penetrate to the indoor space so it doesn't perform in such areas, (2) it looses its precision in rich scattering environments such as urban areas \cite{19}.  A local positioning system can provide a position information where GPS systems are unavaliable,with the usage of signaling beacons which are placed at the exactly known locations. In indoor formation control applications this kind of approach is used for positioning \cite{96}. 
+
+
 
 
 \begin{figure}[H]
-	\caption{Triangulation with Advancing Front Method \cite{103}}
+	\caption{Accuracy Statistics of Different Positioning Sources \cite{20}} \label{overview_position}
 	\centering
-	\includegraphics[scale = 0.65]{advancing}
+	\includegraphics[scale = 0.4]{gps}
+\end{figure} 
+
+Figure \ref{overview_position} represents an overview of current positioning systems \cite{20}. Global positioning systems are widely used nowadays and they provide accuracies in the range of 3-30 meters. They further can operate in outdoor environments requiring radio signals from satellites. Differential GPS systems decrease these accuracy range below 3 meters with the help of additional local static beacons. GSM based solutions have the worst accuracy performance because they localize the nodes in the network by checking the relative signal strengths from different beacons, but they can perform in indoor environments partially \cite{20}.  Local positioning systems have the capability of working indoor environments because they use the signaling beacons which are placed at the exactly known locations \cite{20}. 
+
+Local positioning systems has different system topologies illustrated in the Table \ref{different_top}20].
+
+\begin {table}[H]
+\begin{center}
+\newcommand{\wrap}[1]{\parbox{.40\linewidth}{\vspace{1.5mm}#1\vspace{1mm}}}
+\caption {Local Posititioning Systems with Different System Topologies \cite{20}} \label{different_top} 
+\begin{tabular}{ |c|c| } 
+\hline
+\wrap{Concept} &\wrap{Concept	Definition} \\
+\hline
+\wrap{Remote Positioning} &\wrap{Measurement from remote site to mobile device}\\
+\hline
+\wrap{Self Positioning}&\wrap{Measurement from mobile unit to usually fixed transponders(landmarks)} \\
+\hline
+\wrap{Indirect remote positioning}&\wrap{Self positioning system with data transfer of measuring result to remote site } \\
+\hline
+\wrap{Indirect self positioning}&\wrap{Remote positioning system with data transfer of measuring result to mobile unit} \\			
+ \hline
+\end{tabular}
+\end{center}
+\end{table}
+
+Two main topologies are self positioning and remote positioning systems \cite{20}.  In self positioning system a mobile device finds its own position with the help of a predetermined reference such as a starting point or a beacon node with exactly known positions. On the other hand, in remote positioning systems a mobile node locates other objects positions relative to its own position \cite{19}.   These two type of topologies can be converted to each other with the help of a communications structures integrated on the devices to share the result of position measurement and thus indirect remote positioning and indirect self positioning system topologies can be implemented. Self positioning systems can be implemented to provide position data to the individual agents in formation control problems. The approach is to distribute the position data to the individual agents from a beacon node with exactly known positions. The individual agents which do not have a positioning sensor on their boards, measure their distance to these beacons and correct their position data with these external measurements. Beacons are assumed to have a GPS sensor on their boards for outdoor applications. They are assumed to have a special tag to locate them in an indoor environment with the help of external devices such as E/O camera.
+
+
+
+
+\subsection{Measurement Principles} \label{sssec:num1}
+Local positioning systems are most relevant to formation control using robot networks. These systems differ mainly based on their measurement approaches which are the angle of arrival (AOA), received signal strength(RSS) and propogation-time based systems are commonly used as three different measurement techniques used in local positioning systems. 
+
+\begin{figure}[H]
+	\caption{Different Measurement Principles \cite{20}}
+	\centering
+	\includegraphics[scale = 0.4]{measurement}
+\end{figure} 
+
+In Angle-of-arrival (AOA) systems use directional antennas to measure the bearing and the angle to the points located at known positions are measured. The position value of device can be calculated with the intersection of several measurement, but the accuarcy is limited by shadowing and multipath reflections of radio signals \cite{20}. 
+
+Received signal strength(RSS) systems calculate the distance value by taking the difference of the received signal power from the transmitted power. Some advanced propagation models are required to calculate the distance from the transmission loss in the air to eliminate the multipath fading and shadowing effects \cite{21}. 
+
+Time based systems calculates the distance between measuring unit and signal transmitter with the help of propagation time like used in the global positioning systems generally. This process requires a perfect time synchronization between the mobile and stationary units \cite{20}.
+
+In this thesis work, we implement a self positioning system in which every agent localize itself with the help of position beacons in the swarm with exactly known positions. The distance from the agents to these beacons in the swarm are assumed to be calculated with the help of a time of arrival(TOA) solution in which a node can calculate its distance to the transmitter beacon by measuring the difference between the timestamps of transmission and reception of the signal. 
+
+
+\subsection{Trilateration Process} \label{Trilateration_Process_ref}
+
+Trilateration process is used to determine the three dimensional position of unknown locations with the help of distance measurement to known positions \cite{22}. In self positioning systems, the main approach is to calculate the position of mobile agents with the help of distance measurements to the beacons with exactly known positions. This position calculations are handled with trilateration process. It is widely used in wireless sensor network topologies and local positioning systems.  In theory, it is needed to have at least four beacon nodes to calculte an unknown position in 3D, and at least three beacon nodes to calculate an unknown position in 2D environment. But these worst case numbers are generally not sufficient to estimate an unknown position with a good accuracy due to errors on range calculations and synchronization problems. Figure \ref{trilateration_ref} demonstrates a simple trilateration procees in 2D environment with the help of  three position beacons. Suppose a mobile device which tries to estimate its position with the help of local positioning system is at the red point in the figure. If it can measure its distance to the beacons named A,B and C with exactly known positions, it will be possible to estimate the unknown position of this mobile device with the same approach used in global positioning systems. 
+
+
+\begin{figure}[H]
+	\caption{Trilateration Process \cite{101}} \label{trilateration_ref}
+	\centering
+	\includegraphics[scale = 1]{trilateration}
 \end{figure}
+
