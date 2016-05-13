@@ -118,34 +118,6 @@ Reza Haghighi and Chien~Chern Cheah.
 \newblock In {\em 50th IEEE Conference on Decision and Control and European
   Control Conference}, 2011.
 
-\bibitem{29}
-Ioannis Rekleitis, Philippe Babin, Sourav Das, and Olivier Falardeau.
-\newblock Experiments in quadrotor formation flying using on-board relative
-  localization.
-\newblock n.d.
-
-\bibitem{20}
-Martin Vossiek, Peter Gulden, Jan Wieghardt, and Clemens Hoffman.
-\newblock Wireless local positioning - concepts, solutions, applications.
-\newblock In {\em RAWCON}, 2003.
-
-\bibitem{21}
-Juha Latvala, Jari Syrjarinne, Hannu Ikonen, and Jarkko Niittylahti.
-\newblock Evaluation of rssi-based human tracking.
-\newblock In {\em Signal Processing Conference}, 2000.
-
-\bibitem{22}
-Willy Hereman and William Murphy.
-\newblock Determination of a position in three dimensions using trilateration
-  and approximate distances.
-\newblock 1995.
-
-\bibitem{101}
-IOP-Institute of~Physics.
-\newblock How does gps work?
-\newblock http://www.physics.org/article-questions.asp?id=55, last visited on
-  April 2016.
-
 \bibitem{16}
 Magnus Egerstedt and Xiaoming Hu.
 \newblock Formation constrained multi-agent control.
@@ -194,6 +166,34 @@ Kenji Shimada and David Gossard.
 \newblock Bubble mesh: Automated triangular meshing of non-manifold geometry by
   sphere packing.
 \newblock In {\em ACM Symposium on Solid Modeling and Applications}, 1995.
+
+\bibitem{29}
+Ioannis Rekleitis, Philippe Babin, Sourav Das, and Olivier Falardeau.
+\newblock Experiments in quadrotor formation flying using on-board relative
+  localization.
+\newblock n.d.
+
+\bibitem{20}
+Martin Vossiek, Peter Gulden, Jan Wieghardt, and Clemens Hoffman.
+\newblock Wireless local positioning - concepts, solutions, applications.
+\newblock In {\em RAWCON}, 2003.
+
+\bibitem{21}
+Juha Latvala, Jari Syrjarinne, Hannu Ikonen, and Jarkko Niittylahti.
+\newblock Evaluation of rssi-based human tracking.
+\newblock In {\em Signal Processing Conference}, 2000.
+
+\bibitem{22}
+Willy Hereman and William Murphy.
+\newblock Determination of a position in three dimensions using trilateration
+  and approximate distances.
+\newblock 1995.
+
+\bibitem{101}
+IOP-Institute of~Physics.
+\newblock How does gps work?
+\newblock http://www.physics.org/article-questions.asp?id=55, last visited on
+  April 2016.
 
 \bibitem{92}
 Mark Berg, Otfried Cheong, Kreveld. Marc, and Marc Overmars.
