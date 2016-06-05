@@ -8,45 +8,45 @@ Warning--empty journal in 15
 Warning--empty journal in 94
 Warning--empty journal in 29
 Warning--empty journal in 22
-You've used 35 entries,
+You've used 37 entries,
             1791 wiz_defined-function locations,
-            614 strings with 8842 characters,
-and the built_in function-call counts, 7167 in all, are:
-= -- 560
-> -- 377
+            623 strings with 9044 characters,
+and the built_in function-call counts, 7414 in all, are:
+= -- 578
+> -- 385
 < -- 0
-+ -- 139
-- -- 104
-* -- 409
-:= -- 1167
-add.period$ -- 105
-call.type$ -- 35
-change.case$ -- 34
++ -- 143
+- -- 106
+* -- 413
+:= -- 1203
+add.period$ -- 110
+call.type$ -- 37
+change.case$ -- 36
 chr.to.int$ -- 0
-cite$ -- 40
-duplicate$ -- 349
-empty$ -- 781
-format.name$ -- 104
-if$ -- 1587
+cite$ -- 42
+duplicate$ -- 359
+empty$ -- 817
+format.name$ -- 106
+if$ -- 1645
 int.to.chr$ -- 0
-int.to.str$ -- 35
+int.to.str$ -- 37
 missing$ -- 34
-newline$ -- 178
-num.names$ -- 35
-pop$ -- 157
+newline$ -- 187
+num.names$ -- 37
+pop$ -- 171
 preamble$ -- 1
 purify$ -- 0
 quote$ -- 0
-skip$ -- 120
+skip$ -- 127
 stack$ -- 0
 substring$ -- 310
-swap$ -- 45
+swap$ -- 47
 text.length$ -- 0
 text.prefix$ -- 0
 top$ -- 0
 type$ -- 0
 warning$ -- 5
-while$ -- 61
-width$ -- 37
-write$ -- 358
+while$ -- 63
+width$ -- 39
+write$ -- 376
 (There were 5 warnings)

@@ -29,7 +29,7 @@
 \BOOKMARK [2][-]{subsection.3.1.1}{Trilateration Process}{section.3.1}% 29
 \BOOKMARK [2][-]{subsection.3.1.2}{ Route Table Determination and DSDV Algorithm}{section.3.1}% 30
 \BOOKMARK [3][-]{subsubsection.3.1.2.1}{Routing Algorithm- Bellman Ford}{subsection.3.1.2}% 31
-\BOOKMARK [3][-]{subsubsection.3.1.2.2}{Usage on Bellman Ford algorithm and DSDV}{subsection.3.1.2}% 32
+\BOOKMARK [3][-]{subsubsection.3.1.2.2}{Usage of Bellman Ford algorithm and DSDV}{subsection.3.1.2}% 32
 \BOOKMARK [3][-]{subsubsection.3.1.2.3}{DSDV Link addition}{subsection.3.1.2}% 33
 \BOOKMARK [3][-]{subsubsection.3.1.2.4}{DSDV link breaks}{subsection.3.1.2}% 34
 \BOOKMARK [2][-]{subsection.3.1.3}{Clusters}{section.3.1}% 35
@@ -38,7 +38,7 @@
 \BOOKMARK [1][-]{section.3.2}{FORMATION CONTROL}{chapter.3}% 38
 \BOOKMARK [2][-]{subsection.3.2.1}{Potential Field Based Approach}{section.3.2}% 39
 \BOOKMARK [3][-]{subsubsection.3.2.1.1}{Artificial Forces Method}{subsection.3.2.1}% 40
-\BOOKMARK [4][-]{section*.9}{Utitilty Functions}{subsubsection.3.2.1.1}% 41
+\BOOKMARK [4][-]{section*.9}{Utility Functions}{subsubsection.3.2.1.1}% 41
 \BOOKMARK [4][-]{section*.10}{Artificial Forces}{subsubsection.3.2.1.1}% 42
 \BOOKMARK [4][-]{section*.11}{Buffer Zone Implementation}{subsubsection.3.2.1.1}% 43
 \BOOKMARK [4][-]{section*.12}{XSwarm Theory}{subsubsection.3.2.1.1}% 44
@@ -46,10 +46,10 @@
 \BOOKMARK [2][-]{subsection.3.2.2}{Shape Partitioning Methods}{section.3.2}% 46
 \BOOKMARK [3][-]{subsubsection.3.2.2.1}{Determining the Potential Goal States}{subsection.3.2.2}% 47
 \BOOKMARK [4][-]{section*.14}{Bubble Packing Method}{subsubsection.3.2.2.1}% 48
-\BOOKMARK [5][-]{section*.15}{Randomized Fractals Method}{section*.14}% 49
+\BOOKMARK [4][-]{section*.15}{Randomized Fractals Method}{subsubsection.3.2.2.1}% 49
 \BOOKMARK [3][-]{subsubsection.3.2.2.2}{Decision Process on Goal States}{subsection.3.2.2}% 50
 \BOOKMARK [4][-]{section*.16}{Free Configuration Space}{subsubsection.3.2.2.2}% 51
-\BOOKMARK [4][-]{section*.17}{Visibility Graphs and Dijkstra's Algorihtm}{subsubsection.3.2.2.2}% 52
+\BOOKMARK [4][-]{section*.17}{Visibility Graphs and Dijkstra's Algorithm}{subsubsection.3.2.2.2}% 52
 \BOOKMARK [4][-]{section*.18}{Collaborative Decision Process of Final Goal States}{subsubsection.3.2.2.2}% 53
 \BOOKMARK [2][-]{subsection.3.2.3}{Mesh Quality Measurement}{section.3.2}% 54
 \BOOKMARK [2][-]{subsection.3.2.4}{Control System Design for Individual Agents}{section.3.2}% 55
