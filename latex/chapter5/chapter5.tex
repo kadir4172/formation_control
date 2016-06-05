@@ -24,7 +24,7 @@ The schematic of the hardware implementation environment is illustrated in Figur
    
 Each agent and the mission computer has a radio link to create a mesh network in which every node can transfer messages between each other directly or with the help of their neighbors. Also they can broadcast messages to the rest of the nodes in the network.  On the other hand each agent has their individual CPU to execute the goal state decision process and to control the actuators to reach the desired goal states. These processors also executes the control system which is described in Section \ref{lqr_design} and they manage the messaging operations within the mesh network.  This architecture supports the idea of partially decentralized formation control with Bubble Packing method in which each agent is responsible to take decisions and reach to a global consensus with the rest of the swarm on the potential goal states.  These potential goal states are determined by the mission computer which takes the desired formation shape from the operator and executes shape partitioning algorithms. The data of the potential goal states is broadcasted to all of the agents in the environment with the help of mesh network. 
 
-Since the environment is an indoor area, it is impossible to use a GNSS system to provide position and velocity measurements to the agents. To provide this external measurements, a visual feedback system is used with the help of a E/O camera and image processing algorithms.  The image processing algorithms used in this work depends on the color classfication of different cover planes placed on the top of the mobile robots. These covers are illustrated in Figure \ref{kapaklar_ref}
+Since the environment is an indoor area, it is impossible to use a GNSS system to provide position and velocity measurements to the agents. To provide this external measurements, a visual feedback system is used with the help of a E/O camera and image processing algorithms.  The image processing algorithms used in this work depends on the color classification of different cover planes placed on the top of the mobile robots. These covers are illustrated in Figure \ref{kapaklar_ref}
 
 \begin{figure}[H]
 \caption{Covers for Different Types of Agents} \label{kapaklar_ref}
@@ -52,7 +52,7 @@ Each agent have their individual processor unit and radio link on their boards. 
 \centerline{\includegraphics[scale = 0.70]{agent}}
 \end{figure} 
 		
-Microchip's Pic16f690 Microcontroller is responsible of controlling the mobile robot and data communication with the environment. This microcontroller runs the formation control algorithms which is described in Section \ref{shapepartition_ref} and drives the 3 step motor control units, ULN2003APG, via GPIO peripherals. The instant velocity setpoints for the stepper motors  are determined with the command mixture algorihtm illustrated in Figure \ref{ccmb_ref}.
+Microchip's Pic16f690 Microcontroller is responsible of controlling the mobile robot and data communication with the environment. This microcontroller runs the formation control algorithms which is described in Section \ref{shapepartition_ref} and drives the 3 step motor control units, ULN2003APG, via GPIO peripherals. The instant velocity setpoints for the stepper motors  are determined with the command mixture algorithm illustrated in Figure \ref{ccmb_ref}.
 		
 \begin{figure}[H]
 \caption{Command Mixture of Step Motors} \label{ccmb_ref}
