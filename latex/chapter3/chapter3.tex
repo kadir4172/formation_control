@@ -308,7 +308,7 @@ As mentioned in the Section \ref{Objectives} of the thesis work, agents are assu
 
 The algorithm to calculate the shortest paths for node `S` terminates at the end of 7 iterations. At the beginning of the process, the weights for each edges are determined including the negative ones and each distance to the paths are filled with infinitive. Then the shortest paths to the each node in the given directed graph are determined iteratively with the help of the Bellman-Ford algorithm
 
-\subsubsection{Usage on Bellman Ford algorithm and DSDV}
+\subsubsection{Usage of Bellman Ford algorithm and DSDV}
 Bellman Ford algorithm have a drawback related with the routing loop problem which occurs in an event of one or more nodes in the graph are lost during the process. Figure \ref{routing_problem2} illustrates a simple routing loop problem.
 
 \begin{figure}[H] 
@@ -1125,7 +1125,7 @@ The bubbles are distributed homogeneously under the influence of these two force
 \includegraphics[scale = 0.62]{bubble_packing2}
 \end{figure}
 
-\subparagraph{Randomized Fractals Method}\hspace{0pt} \\
+\paragraph{Randomized Fractals Method}\hspace{0pt} \\
 Randomized fractals methods are used to cover surfaces or volumes randomly with fractals. The main idea is to fill the fractals with the areas determined by the rule of \cite{26} :
 
 \begin{equation} \label{fractals}
@@ -1276,7 +1276,7 @@ Previous[v] :=u\;
 }
 }
 return Previous[v]; \newline
-\caption{DIJKSTRA'S ALGORITHM}
+\caption{DIJKSTRA$\_$ALGORITHM}
 \end{algorithm}
 
 In algorithm above $Distance[x]$ function call, calculates the total cost from the $source$\_$ node$ to the $x$ vertex, and $Previous[x]$ function call, returns the previous node in optimal path from $source$\_$ node$ .
@@ -1315,7 +1315,7 @@ From elements remaining in flagged rows and unflagged rows, determine the elemen
      
 Label6 \;
 Goto Label3 until full solution has been achieved. \newline    
-\caption{HUNGARIAN ALGORITHM}
+\caption{HUNGARIAN$\_$ALGORITHM}
 \end{algorithm}
 
 \subsection{Mesh Quality Measurement}\hspace{0pt} \label{mesh_quality_ref}  \\
