@@ -74,11 +74,11 @@
 \contentsline {subsection}{\numberline {4.3.3}Settling Time}{113}{subsection.4.3.3}
 \contentsline {subsection}{\numberline {4.3.4}Dynamically Changing Formations}{114}{subsection.4.3.4}
 \contentsline {subsection}{\numberline {4.3.5}Evaluation}{118}{subsection.4.3.5}
-\contentsline {chapter}{\numberline {5}\MakeUppercase {HARDWARE IMPLEMENTATION $\&$ RESULTS}}{127}{chapter.5}
-\contentsline {section}{\numberline {5.1}Hardware Demonstration Environment}{127}{section.5.1}
-\contentsline {section}{\numberline {5.2}Performance Analysis}{136}{section.5.2}
-\contentsline {chapter}{\numberline {6}\MakeUppercase {CONCLUSION AND FUTURE WORKS}}{143}{chapter.6}
-\contentsline {section}{\numberline {6.1}Conclusion}{143}{section.6.1}
-\contentsline {section}{\numberline {6.2}Future Works}{147}{section.6.2}
-\contentsline {leads}{\numberline {}\uppercase {REFERENCES}}{149}{chapter*.19}
-\contentsline {leads}{\numberline {}CURRICULUM VITAE}{153}{chapter*.20}
+\contentsline {chapter}{\numberline {5}\MakeUppercase {HARDWARE IMPLEMENTATION $\&$ RESULTS}}{125}{chapter.5}
+\contentsline {section}{\numberline {5.1}Hardware Demonstration Environment}{125}{section.5.1}
+\contentsline {section}{\numberline {5.2}Performance Analysis}{134}{section.5.2}
+\contentsline {chapter}{\numberline {6}\MakeUppercase {CONCLUSION AND FUTURE WORKS}}{141}{chapter.6}
+\contentsline {section}{\numberline {6.1}Conclusion}{141}{section.6.1}
+\contentsline {section}{\numberline {6.2}Future Works}{145}{section.6.2}
+\contentsline {leads}{\numberline {}\uppercase {REFERENCES}}{147}{chapter*.19}
+\contentsline {leads}{\numberline {}CURRICULUM VITAE}{151}{chapter*.20}
