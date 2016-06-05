@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2016.2.27)  5 JUN 2016 08:24
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2016.2.27)  5 JUN 2016 08:31
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1837,13 +1837,7 @@ File: bubble_packing.png Graphic file (type png)
 <use bubble_packing.png>
 Package pdftex.def Info: bubble_packing.png used on input line 1079.
 (pdftex.def)             Requested size: 313.92204pt x 67.75294pt.
-
-Overfull \hbox (0.8342pt too wide) in paragraph at lines 1082--1084
-\T1/ptm/m/n/12 The bub-bles are dis-tributed ho-moge-nously with this pro-cess 
-un-der two kinds of forces,
- []
-
-[75 <./bubble_packing.png>]
+ [75 <./bubble_packing.png>]
 <interbubble_forces.png, id=1492, 396.7322pt x 240.14719pt>
 File: interbubble_forces.png Graphic file (type png)
 
@@ -1858,7 +1852,7 @@ File: bubble_packing2.png Graphic file (type png)
 Package pdftex.def Info: bubble_packing2.png used on input line 1125.
 (pdftex.def)             Requested size: 399.06178pt x 84.01299pt.
  [77 <./bubble_packing2.png>]
-<randomized.png, id=1514, 348.55219pt x 332.74312pt>
+<randomized.png, id=1513, 348.55219pt x 332.74312pt>
 File: randomized.png Graphic file (type png)
  <use randomized.png>
 Package pdftex.def Info: randomized.png used on input line 1152.
@@ -2728,9 +2722,15 @@ Package atveryend Info: Empty hook `AfterLastShipout' on input line 130.
  (./thesis.aux)
 Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 130.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 130.
-Package rerunfilecheck Info: File `thesis.out' has not changed.
-(rerunfilecheck)             Checksum: 63B056C92AE4546B09002E814EEEA945;5463.
 
+
+Package rerunfilecheck Warning: File `thesis.out' has changed.
+(rerunfilecheck)                Rerun to get outlines right
+(rerunfilecheck)                or use package `bookmark'.
+
+Package rerunfilecheck Info: Checksums for `thesis.out':
+(rerunfilecheck)             Before: 63B056C92AE4546B09002E814EEEA945;5463
+(rerunfilecheck)             After:  008E3FE0B589A5A35679B8D9F414280D;5462.
 
 LaTeX Warning: There were multiply-defined labels.
 
@@ -2754,7 +2754,7 @@ r.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/symbol/usyr.pfb></usr/shar
 e/texlive/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/share/texlive/texmf
 -dist/fonts/type1/urw/times/utmr8a.pfb></usr/share/texlive/texmf-dist/fonts/typ
 e1/urw/times/utmri8a.pfb>
-Output written on thesis.pdf (175 pages, 43257868 bytes).
+Output written on thesis.pdf (175 pages, 43258044 bytes).
 PDF statistics:
  2186 PDF objects out of 2487 (max. 8388607)
  1802 compressed objects within 19 object streams

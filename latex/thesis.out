@@ -38,7 +38,7 @@
 \BOOKMARK [1][-]{section.3.2}{FORMATION CONTROL}{chapter.3}% 38
 \BOOKMARK [2][-]{subsection.3.2.1}{Potential Field Based Approach}{section.3.2}% 39
 \BOOKMARK [3][-]{subsubsection.3.2.1.1}{Artificial Forces Method}{subsection.3.2.1}% 40
-\BOOKMARK [4][-]{section*.9}{Utitilty Functions}{subsubsection.3.2.1.1}% 41
+\BOOKMARK [4][-]{section*.9}{Utility Functions}{subsubsection.3.2.1.1}% 41
 \BOOKMARK [4][-]{section*.10}{Artificial Forces}{subsubsection.3.2.1.1}% 42
 \BOOKMARK [4][-]{section*.11}{Buffer Zone Implementation}{subsubsection.3.2.1.1}% 43
 \BOOKMARK [4][-]{section*.12}{XSwarm Theory}{subsubsection.3.2.1.1}% 44
@@ -49,7 +49,7 @@
 \BOOKMARK [5][-]{section*.15}{Randomized Fractals Method}{section*.14}% 49
 \BOOKMARK [3][-]{subsubsection.3.2.2.2}{Decision Process on Goal States}{subsection.3.2.2}% 50
 \BOOKMARK [4][-]{section*.16}{Free Configuration Space}{subsubsection.3.2.2.2}% 51
-\BOOKMARK [4][-]{section*.17}{Visibility Graphs and Dijkstra's Algorihtm}{subsubsection.3.2.2.2}% 52
+\BOOKMARK [4][-]{section*.17}{Visibility Graphs and Dijkstra's Algorithm}{subsubsection.3.2.2.2}% 52
 \BOOKMARK [4][-]{section*.18}{Collaborative Decision Process of Final Goal States}{subsubsection.3.2.2.2}% 53
 \BOOKMARK [2][-]{subsection.3.2.3}{Mesh Quality Measurement}{section.3.2}% 54
 \BOOKMARK [2][-]{subsection.3.2.4}{Control System Design for Individual Agents}{section.3.2}% 55
