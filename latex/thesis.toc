@@ -27,13 +27,13 @@
 \contentsline {section}{\numberline {1.4}Requirements}{13}{section.1.4}
 \contentsline {section}{\numberline {1.5}Methodology}{14}{section.1.5}
 \contentsline {section}{\numberline {1.6}Contribution of Thesis}{15}{section.1.6}
-\contentsline {section}{\numberline {1.7}Outline of the Thesis}{16}{section.1.7}
+\contentsline {section}{\numberline {1.7}Outline of the Thesis}{15}{section.1.7}
 \contentsline {chapter}{\numberline {2}\MakeUppercase {LITERATURE SURVEY}}{17}{chapter.2}
 \contentsline {section}{\numberline {2.1}Formation Control Systems}{17}{section.2.1}
-\contentsline {section}{\numberline {2.2}Partitioning Complex Geometrical Shapes}{26}{section.2.2}
-\contentsline {section}{\numberline {2.3}Local Positioning Systems}{30}{section.2.3}
-\contentsline {subsection}{\numberline {2.3.1}Measurement Principles}{32}{subsection.2.3.1}
-\contentsline {subsection}{\numberline {2.3.2}Trilateration Process}{33}{subsection.2.3.2}
+\contentsline {section}{\numberline {2.2}Partitioning Complex Geometrical Shapes}{24}{section.2.2}
+\contentsline {section}{\numberline {2.3}Local Positioning Systems}{28}{section.2.3}
+\contentsline {subsection}{\numberline {2.3.1}Measurement Principles}{31}{subsection.2.3.1}
+\contentsline {subsection}{\numberline {2.3.2}Trilateration Process}{32}{subsection.2.3.2}
 \contentsline {chapter}{\numberline {3}\MakeUppercase {METHODOLOGY}}{35}{chapter.3}
 \contentsline {section}{\numberline {3.1}LOCAL POSITIONING SYSTEMS}{36}{section.3.1}
 \contentsline {subsection}{\numberline {3.1.1}Trilateration Process}{37}{subsection.3.1.1}
@@ -41,30 +41,30 @@
 \contentsline {subsubsection}{\numberline {3.1.2.1}Routing Algorithm- Bellman Ford}{45}{subsubsection.3.1.2.1}
 \contentsline {subsubsection}{\numberline {3.1.2.2}Usage of Bellman Ford algorithm and DSDV}{46}{subsubsection.3.1.2.2}
 \contentsline {subsubsection}{\numberline {3.1.2.3}DSDV Link addition}{48}{subsubsection.3.1.2.3}
-\contentsline {subsubsection}{\numberline {3.1.2.4}DSDV link breaks}{49}{subsubsection.3.1.2.4}
-\contentsline {subsection}{\numberline {3.1.3}Clusters}{50}{subsection.3.1.3}
-\contentsline {subsection}{\numberline {3.1.4}Handling Lost Agents}{52}{subsection.3.1.4}
-\contentsline {subsection}{\numberline {3.1.5}State Estimation Procedure}{53}{subsection.3.1.5}
-\contentsline {section}{\numberline {3.2}FORMATION CONTROL}{56}{section.3.2}
-\contentsline {subsection}{\numberline {3.2.1}Potential Field Based Approach}{57}{subsection.3.2.1}
-\contentsline {subsubsection}{\numberline {3.2.1.1}Artificial Forces Method}{57}{subsubsection.3.2.1.1}
-\contentsline {paragraph}{Utility Functions}{59}{section*.9}
-\contentsline {paragraph}{Artificial Forces}{63}{section*.10}
-\contentsline {paragraph}{Buffer Zone Implementation}{70}{section*.11}
-\contentsline {paragraph}{XSwarm Theory}{70}{section*.12}
-\contentsline {paragraph}{Implementation of X-Swarm Theory}{72}{section*.13}
-\contentsline {subsection}{\numberline {3.2.2}Shape Partitioning Methods}{73}{subsection.3.2.2}
-\contentsline {subsubsection}{\numberline {3.2.2.1}Determining the Potential Goal States}{74}{subsubsection.3.2.2.1}
-\contentsline {paragraph}{Bubble Packing Method}{74}{section*.14}
-\contentsline {paragraph}{Randomized Fractals Method}{77}{section*.15}
-\contentsline {subsubsection}{\numberline {3.2.2.2}Decision Process on Goal States}{79}{subsubsection.3.2.2.2}
-\contentsline {paragraph}{Free Configuration Space}{80}{section*.16}
-\contentsline {paragraph}{Visibility Graphs and Dijkstra$'$s Algorithm}{81}{section*.17}
-\contentsline {paragraph}{Collaborative Decision Process of Final Goal States}{84}{section*.18}
-\contentsline {subsection}{\numberline {3.2.3}Mesh Quality Measurement}{86}{subsection.3.2.3}
-\contentsline {subsection}{\numberline {3.2.4}Control System Design for Individual Agents}{87}{subsection.3.2.4}
+\contentsline {subsubsection}{\numberline {3.1.2.4}DSDV link breaks}{48}{subsubsection.3.1.2.4}
+\contentsline {subsection}{\numberline {3.1.3}Clusters}{49}{subsection.3.1.3}
+\contentsline {subsection}{\numberline {3.1.4}Handling Lost Agents}{51}{subsection.3.1.4}
+\contentsline {subsection}{\numberline {3.1.5}State Estimation Procedure}{52}{subsection.3.1.5}
+\contentsline {section}{\numberline {3.2}FORMATION CONTROL}{55}{section.3.2}
+\contentsline {subsection}{\numberline {3.2.1}Potential Field Based Approach}{56}{subsection.3.2.1}
+\contentsline {subsubsection}{\numberline {3.2.1.1}Artificial Forces Method}{56}{subsubsection.3.2.1.1}
+\contentsline {paragraph}{Utility Functions}{58}{section*.9}
+\contentsline {paragraph}{Artificial Forces}{62}{section*.10}
+\contentsline {paragraph}{Buffer Zone Implementation}{69}{section*.11}
+\contentsline {paragraph}{XSwarm Theory}{69}{section*.12}
+\contentsline {paragraph}{Implementation of X-Swarm Theory}{71}{section*.13}
+\contentsline {subsection}{\numberline {3.2.2}Shape Partitioning Methods}{72}{subsection.3.2.2}
+\contentsline {subsubsection}{\numberline {3.2.2.1}Determining the Potential Goal States}{73}{subsubsection.3.2.2.1}
+\contentsline {paragraph}{Bubble Packing Method}{73}{section*.14}
+\contentsline {paragraph}{Randomized Fractals Method}{76}{section*.15}
+\contentsline {subsubsection}{\numberline {3.2.2.2}Decision Process on Goal States}{78}{subsubsection.3.2.2.2}
+\contentsline {paragraph}{Free Configuration Space}{78}{section*.16}
+\contentsline {paragraph}{Visibility Graphs and Dijkstra$'$s Algorithm}{79}{section*.17}
+\contentsline {paragraph}{Collaborative Decision Process of Final Goal States}{82}{section*.18}
+\contentsline {subsection}{\numberline {3.2.3}Mesh Quality Measurement}{84}{subsection.3.2.3}
+\contentsline {subsection}{\numberline {3.2.4}Control System Design for Individual Agents}{86}{subsection.3.2.4}
 \contentsline {chapter}{\numberline {4}\MakeUppercase {SIMULATION ENVIRONMENT $\&$ RESULTS}}{91}{chapter.4}
-\contentsline {section}{\numberline {4.1}Simulation Environment}{91}{section.4.1}
+\contentsline {section}{\numberline {4.1}Simulation Environment}{92}{section.4.1}
 \contentsline {section}{\numberline {4.2}Local Positioning System}{94}{section.4.2}
 \contentsline {section}{\numberline {4.3}FORMATION CONTROL SYSTEM}{100}{section.4.3}
 \contentsline {subsection}{\numberline {4.3.1}Mesh Qualities}{101}{subsection.4.3.1}
@@ -76,9 +76,9 @@
 \contentsline {subsection}{\numberline {4.3.5}Evaluation}{118}{subsection.4.3.5}
 \contentsline {chapter}{\numberline {5}\MakeUppercase {HARDWARE IMPLEMENTATION $\&$ RESULTS}}{125}{chapter.5}
 \contentsline {section}{\numberline {5.1}Hardware Demonstration Environment}{125}{section.5.1}
-\contentsline {section}{\numberline {5.2}Performance Analysis}{134}{section.5.2}
-\contentsline {chapter}{\numberline {6}\MakeUppercase {CONCLUSION AND FUTURE WORKS}}{141}{chapter.6}
-\contentsline {section}{\numberline {6.1}Conclusion}{141}{section.6.1}
-\contentsline {section}{\numberline {6.2}Future Works}{145}{section.6.2}
-\contentsline {leads}{\numberline {}\uppercase {REFERENCES}}{147}{chapter*.19}
-\contentsline {leads}{\numberline {}CURRICULUM VITAE}{151}{chapter*.20}
+\contentsline {section}{\numberline {5.2}Performance Analysis}{133}{section.5.2}
+\contentsline {chapter}{\numberline {6}\MakeUppercase {CONCLUSION AND FUTURE WORKS}}{139}{chapter.6}
+\contentsline {section}{\numberline {6.1}Conclusion}{139}{section.6.1}
+\contentsline {section}{\numberline {6.2}Future Works}{143}{section.6.2}
+\contentsline {leads}{\numberline {}\uppercase {REFERENCES}}{145}{chapter*.19}
+\contentsline {leads}{\numberline {}CURRICULUM VITAE}{149}{chapter*.20}

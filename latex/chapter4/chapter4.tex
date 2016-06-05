@@ -18,6 +18,7 @@
 
 In this section, the simulation environment is illustrated and the results are analyzed and discussed in detail for the local positioning system design and formation control system design. Three different methods of formation control system which are presented in Section \ref{chp:Methodology} are evaluated and compared with each other. Simulations are handled in the environment of Gazebo simulator with a swarm of 50 agents which includes three different types of robots. The main system frequency in which each agent propagates its state vector, calculates artificial forces and makes goal state assignments is determined as 2Hz due to the response characteristics of the inner loop velocity controllers which is discussed in Section \ref{lqr_design}. 
 
+\newpage
 \section{Simulation Environment}
 Block diagram of the simulation environment is illustrated in Figure \ref{simulation_env_ref}.
 
@@ -42,7 +43,7 @@ In this simulation environment, each agent is designed with collision surfaces c
 cylindrical links binding these spherical contact points. The mass and friction coefficients for different types of agents are given in Table \ref{agent_props}. Here there are two different types of frictions, $\mu_1$ represents the Coulomb friction coefficient for the first friction direction and the $\mu_2$ is the friction coefficient for the second friction direction (perpendicular to the first friction direction)
 
 \begin{center}
-\captionof{table}{Mass,Friction Coefficient and Coverage Circle Radius for Different Types of Agents} \label{agent_props} 
+\captionof{table}{Parameters for Different Types of Agents} \label{agent_props} 
 \begin{tabular}{||c| c| c |c |c||}
 				
 \hline
