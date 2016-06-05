@@ -297,15 +297,15 @@ As illustrated on the Figure \ref{position_beacon} , suppose that the red agents
 It is needed to have an algorithm to organize the order of the local trilateration process and to determine the beacon agents for each member of the swarm. Basically this algorithm will assign each agent a rank which represents the number of sequence in the localization process, and will determine at least three local neighbors of each agent to get in trilateration. Agents which do no have at least three neighbors are assumed to be lost agents and the handling of these type of agents are illustrated in Section \ref{LostAgents}.
 	
 \subsubsection{Routing Algorithm- Bellman Ford}
-As mentioned in the Section \ref{Objectives} of the thesis, agents are assumed to have a limited communication range and bandwidth and the communication topology in the swarm must be implemented with a wireless mesh network. In this type of topology, each node is a relay in the network and the data is transferred to the related destination with the help of route tables. This makes it possible to have the capability of transferring low bandwidth data through the network with multiple hops.  In this work, we have implemented this topology with a table driven routing scheme known as DSDV(Destination-Sequenced Distance Vector Routing Protocol) algorithm based on Bellman Ford algorithm. Bellman-Ford is an algorithm that computes the shortest path in a weighted graph. It is an algorithm based on relaxation and the correct distance to the vertices in the graph are updated iteratively from the initial estimations until converging to the optimal solution. This algorithm is slower than the Djikstra's algorithm which has similar functionalities but negative edge weights can be implemented in the related graph to report the negative cycles which means there is no cheapest path to the related destination vertex. On the other hand, it is possible to augment this algorithm with DSDV implementation to handle the routing loop problem when there is one or more vertices are no more exists in the network. The probability of the case with the non-existence of some vertices during the algorithm is processed is very high since the agents in the swarm have low sensor capabilities and small range of communication and they have a great possibility to get lost in the workspace. A simple demonstration of the Bellman-Ford algorithm with a simple network is illustrated in the Figure \ref{bellman_ref}
+As mentioned in the Section \ref{Objectives} of the thesis, agents are assumed to have a limited communication range and bandwidth and the communication topology in the swarm must be implemented with a wireless mesh network. In this type of topology, each node is a relay in the network and the data is transferred to the related destination with the help of route tables. This makes it possible to have the capability of transferring low bandwidth data through the network with multiple hops.  In this work, we have implemented this topology with a table driven routing scheme known as DSDV(Destination-Sequenced Distance Vector Routing Protocol) algorithm based on Bellman Ford algorithm. Bellman-Ford is an algorithm that computes the shortest path in a weighted graph. It is an algorithm based on relaxation and the correct distance to the vertices in the graph are updated iteratively from the initial estimations until converging to the optimal solution. This algorithm is slower than the Djikstra's algorithm which has similar functionalities but negative edge weights can be implemented in the related graph to report the negative cycles which means there is no cheapest path to the related destination vertex. On the other hand, it is possible to augment this algorithm with DSDV implementation to handle the routing loop problem when there is one or more vertices are no more exists in the network. The probability of the case with the non-existence of some vertices during the algorithm is processed is very high since the agents in the swarm have low sensor capabilities and small range of communication and they have a great possibility to get lost in the workspace.
 	
 \begin{figure}[H]
 \caption{Costs for Shortest Paths to Each Nodes from Node 'S'} \label{bellman_ref}
 \centering
-\includegraphics[scale = 0.60]{bellman}
+\includegraphics[scale = 0.50]{bellman}
 \end{figure}
 
-The algorithm to calculate the shortest paths for node `S` terminates at the end of 7 iterations. At the beginning of the process, the weights for each edges are determined including the negative ones and each distance to the paths are filled with infinitive. Then the shortest paths to the each node in the given directed graph are determined iteratively with the help of the Bellman-Ford algorithm
+A simple demonstration of the Bellman-Ford algorithm with a simple network is illustrated in the Figure \ref{bellman_ref}. The algorithm to calculate the shortest paths for node `S` terminates at the end of 7 iterations. At the beginning of the process, the weights for each edges are determined including the negative ones and each distance to the paths are filled with infinitive. Then the shortest paths to the each node in the given directed graph are determined iteratively with the help of the Bellman-Ford algorithm
 
 \subsubsection{Usage of Bellman Ford algorithm and DSDV}
 Bellman Ford algorithm have a drawback related with the routing loop problem which occurs in an event of one or more nodes in the graph are lost during the process. Figure \ref{routing_problem2} illustrates a simple routing loop problem.
@@ -327,29 +327,31 @@ Suppose that the node D have lost its contact with the network due to some malfu
 In the DSDV algorithm, each node have a sequence number and counts for hops (rank) for each route in its route table and periodically transmits the updates including its own sequence number and routing tables updates. In the network, when two routes to the same destination received from two different neighbors, the nodes will observe the following rules;\newline
 	- Choose the one with the larger destination sequence number \newline
 	- If the sequence numbers are equal, then choose the route with minimum number of hops and update the route table.
-	
-\subsubsection{DSDV Link addition}\hspace{0pt} \\
+
+\newpage	
+\subsubsection{DSDV Link addition}
+
+Figure \ref{linkk_addition} shows a sample link addition condition to the network. When a new node A joins the network, it transmits of its own route table including the destination to itself $<A,A,0,101>$. Then the following procedure will be handled during iterations; \newline
+	-Node B receives the the transmission of A and inserts a new line into its route table with $<A,A,1,101>$ and propagates this new node to its neighbors \newline
+	-Node C and Node D receives this transmission and inserts the new route to their route tables with $<A,B,2,101>$
+
 \begin{figure}[H]
 \caption{An Example for Route Table} \label{linkk_addition}
 \centering
 \includegraphics[scale = 0.65]{link_add}
 \end{figure}	
-
-Figure \ref{linkk_addition} shows a sample link addition condition to the network. When a new node A joins the network, it transmits of its own route table including the destination to itself $<A,A,0,101>$. Then the following procedure will be handled during iterations; \newline
-	-Node B receives the the transmission of A and inserts a new line into its route table with $<A,A,1,101>$ and propagates this new node to its neighbors \newline
-	-Node C and Node D receives this transmission and inserts the new route to their route tables with $<A,B,2,101>$
 		
-\subsubsection{DSDV link breaks}\hspace{0pt} \\
-	
+\subsubsection{DSDV link breaks}
+
+Figure \ref{linkk_brake} shows a sample link brake condition to the network. When the link between B and D breaks, node B gets no transmission from the D and notices the link breaks, then the following procedure will be handled; \newline
+	- Node B update the hop count for node D and E to the infinity and increments the sequence numbers to these routes \newline
+	- Node B propagates the updates to its neighbors and node A and node C updates the lines of the routes to the D and E, since the message from B includes higher sequence numbers for those routes.
+		
 \begin{figure}[H]
 \caption{An Example for Route Table} \label{linkk_brake}
 \centering
 \includegraphics[scale = 0.65]{link_break}
 \end{figure}
-
-Figure \ref{linkk_brake} shows a sample link brake condition to the network. When the link between B and D breaks, node B gets no transmission from the D and notices the link breaks, then the following procedure will be handled; \newline
-	- Node B update the hop count for node D and E to the infinity and increments the sequence numbers to these routes \newline
-	- Node B propagates the updates to its neighbors and node A and node C updates the lines of the routes to the D and E, since the message from B includes higher sequence numbers for those routes.
 	
 DSDV is implementing an algorithm to find the shortest paths between the internal nodes of a given directed graph. The costs for each shortest path are calculated with the help of the weight of edges in the graph. Since our aim is to find the closest position beacon which has the minimum number of hops, the weight for each edge in the graph must be represented with the same unit size and the directions of the edges are negligible. 
 
@@ -560,7 +562,7 @@ To simplify this equation, one can write $f(z) = u(x,y) + iv(x,y)$ and $dz = dx 
 This simplified form of the contour integrals will be used in utility functions in the following section. 		
 		
 \paragraph{Utility Functions}\hspace{0pt} \\
-As it is mentioned in the Section \ref{Objectives} part, the formation shapes will be simple closed contours which cannot be identified analytically, but the definition for the artificial forces and utility functions are expressed in continuous contour integrals which requires the analytical expression of the curve on which the integral will be taken. To provide a solution to  these type of calculations, it is required to redefine these statements in discrete domain to achieve calculations with closed curves without analytical expressions.  \\ \newline
+As it is mentioned in the Section \ref{Objectives} part, the formation shapes will be simple closed contours which cannot be identified analytically, but the definition for the artificial forces and utility functions are expressed in continuous contour integrals which requires the analytical expression of the curve on which the integral will be taken. To provide a solution to  these type of calculations, it is required to redefine these statements in discrete domain to achieve calculations with closed curves without analytical expressions.  \\
 
 \textit{ 		1- Cauchy Winding Number:} \\ 
 Cauchy winding number of a curve in the plane around a given point is the number of times that curve travels counter-clockwise around the point. This number is used to switch on/off some of the artificial forces while the agent is inside or outside of the formation shape. Suppose $C$ is the closed curve which is a set of points $z=(x,y)$ in the complex plane  and $z_i$ is a point to check whether it is inside of the curve, then the Cauchy winding number is \cite{17} :
@@ -739,7 +741,8 @@ where
 &B = \frac{1}{m} diag\left(\hat{B}\right)_{nxn}
 \end{split}
 \end{align}
-			
+
+\newpage		
 with
 
 \begin{equation}
@@ -859,8 +862,8 @@ where $d_o$ is the total distance between the center of coverage circles of agen
 
 \begin{equation}
  d_o = d_{c_i} + d_{c_j}
-\end{equation}
-			
+\end{equation}			
+
 The force components in x,y coordinates respectively,
 
 \begin{align}
@@ -1148,7 +1151,7 @@ which tells us the sum of the all areas $A_i$ is the total area of $A$ and the a
 \begin{figure}[H]
 \caption{Randomized Fractals \cite{26}}
 \centering
-\includegraphics[scale = 0.70]{randomized}
+\includegraphics[scale = 0.60]{randomized}
 \end{figure}
 	
 Since the areas and the number of the agents, which will be represented with their coverage circles, are predetermined in our work, it is possible to adopt this algorithm as follows:
@@ -1200,7 +1203,7 @@ where $p+q$ denotes the vector sum of the vectors $p$ and $q$.
 \begin{figure}[H]
 \caption{Forbidden Space Caused by an Obstacle \cite{92}} \label{yasakli_bolge}
 \centering
-\includegraphics[scale = 0.6]{Forbidden}
+\includegraphics[scale = 0.75]{Forbidden}
 \end{figure}
 	
 Forbidden space for agent $i$, $C_{forb}(R_i, S)$, is the sum of the forbidden spaces calculated for each obstacle in the environment \cite{92}. Figure \ref{yasakli_bolge} shows a forbidden space related with an obstacle.
@@ -1221,7 +1224,7 @@ Consider set of obstacles in the environment is augmented with the Minkowski Sum
 \begin{figure}[H]
 \caption{Shorthest Path from an initial state to a goal state \cite{92}} \label{dijksttae_visibility}
 \centering
-\includegraphics[scale = 0.6]{shortest}
+\includegraphics[scale = 0.9]{shortest}
 \end{figure} 
 
 Algorithm to calculate the visibility graph of $S^*$,
@@ -1236,7 +1239,7 @@ W = VISIBLE$\_$VERTICES($v$,S)\;}\
 \caption{VISIBILITY$\_$GRAPH}
 \end{algorithm}
 
-where $VISIBLE$\_$VERTICES(v,S)$ algorithm checks whether line segments drawn from $v$ to all vertices in $S$ is intersecting an interior area of any obstacle in the environment. With the help of this $VISIBILITY$\_$GRAPH$ algorithm $SHORTEST$\_$PATH$ algorithm can be defined as follows.
+where $VISIBLE$\_$VERTICES(v,S)$ algorithm checks whether line segments drawn from $v$ to all vertices in $S$ is intersecting an interior area of any obstacle in the environment. With the help of this $VISIBILITY$\_$GRAPH$ algorithm $SHORTEST$\_$PATH$ algorithm can be defined as follows. \newline
 	
 \begin{algorithm}[H]
 \KwData{A set $S$ of disjoint polygonal obstacles, and two points $p_{start}$ and $p_{goal}$ in the free space.}
@@ -1246,9 +1249,11 @@ where $VISIBLE$\_$VERTICES(v,S)$ algorithm checks whether line segments drawn fr
 * Use Dijkstra's algorithm to compute a shortest path between $p_{start}$ and $p_{goal}$ in $\gamma_{vis}$ \newline
 \caption{SHORTEST$\_$PATH}
 \end{algorithm}
-	
+  
+\vspace{2cm}
 Figure \ref{dijksttae_visibility} shows an example visibility graph and a shortest path from $p_{start}$ to $p_{goal}$. Dijkstra$'$s algorithm computes the shortest path between two nodes in
 graph with $k$ arcs, each having a non-negative weight. It is a tree search algorithm and  used to calculate the shortest paths between nodes in a graphs, with the help of weighted edges between nodes. The time complexity of the original algorithm is $O(n^2)$ where $n$ is the number of the nodes in the graph. With the usage self balancing binary search tree, the algorithm requires $O(k+nlogn)$ time in the worst case. The algorithm for the Dijkstra's is given as follows \cite{92}:
+\newpage
 	
 \begin{algorithm}[H]
 \KwData{$\gamma_{vis}$ , $source$\_$ node$ }
@@ -1368,7 +1373,7 @@ and $m$ represents the number of nodes, $r_i$ is the radii of inscribed circle o
 Shape partitioning methods will provide the goal states for a desired formation shape and agents will be assigned to those goal states to minimize the total displacements of the agents in the swarm. A control system which will guide the agents to reach these goal states must be designed for each agent individually. Since the environment is dynamically changing with lots of  mobile agents, it is very probable to have different assignments to these goal states at each iteration of formation control. On the other hand, the collision with the obstacles and the other agents at the environment must be prevented due the requirements presented in Section \ref{Objectives}. The control system must react to these dynamic requests. For these purposes, a velocity controller with a large bandwidth is designed at the inner loop of the control system and the outer loop is composed with a velocity setpoint generator. The block diagram for the proposed controller structure is presented in Figure \ref{Controller_ref}.
 
 \begin{figure}[H]
-\caption{General Scheme of the Contol System} \label{Controller_ref}
+\caption{General Scheme of the Control System} \label{Controller_ref}
 \centering
 \includegraphics[scale = 0.45]{controller}
 \end{figure}
