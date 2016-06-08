@@ -37,11 +37,10 @@
 \contentsline {chapter}{\numberline {3}\MakeUppercase {METHODOLOGY}}{35}{chapter.3}
 \contentsline {section}{\numberline {3.1}LOCAL POSITIONING SYSTEMS}{36}{section.3.1}
 \contentsline {subsection}{\numberline {3.1.1}Trilateration Process}{38}{subsection.3.1.1}
-\contentsline {subsection}{\numberline {3.1.2} Route Table Determination and DSDV Algorithm}{45}{subsection.3.1.2}
+\contentsline {subsection}{\numberline {3.1.2}Route Table Determination}{45}{subsection.3.1.2}
 \contentsline {subsubsection}{\numberline {3.1.2.1}Routing Algorithm- Bellman Ford}{46}{subsubsection.3.1.2.1}
-\contentsline {subsubsection}{\numberline {3.1.2.2}Usage of Bellman Ford algorithm and DSDV}{47}{subsubsection.3.1.2.2}
-\contentsline {subsubsection}{\numberline {3.1.2.3}DSDV Link addition}{50}{subsubsection.3.1.2.3}
-\contentsline {subsubsection}{\numberline {3.1.2.4}DSDV link breaks}{50}{subsubsection.3.1.2.4}
+\contentsline {subsubsection}{\numberline {3.1.2.2}DSDV Link addition}{50}{subsubsection.3.1.2.2}
+\contentsline {subsubsection}{\numberline {3.1.2.3}DSDV link breaks}{50}{subsubsection.3.1.2.3}
 \contentsline {subsection}{\numberline {3.1.3}Clusters}{51}{subsection.3.1.3}
 \contentsline {subsection}{\numberline {3.1.4}Handling Lost Agents}{53}{subsection.3.1.4}
 \contentsline {subsection}{\numberline {3.1.5}State Estimation Procedure}{54}{subsection.3.1.5}

@@ -41,52 +41,52 @@ A sample swarm with 8 agents is illustrated in Figure \ref{sample_mesh}. The mes
 \end{figure}
 
 \subsection{Trilateration Process}
-Trilateration process helps the agents to localize themselves with the help of their direct neighbors.  Trilateration calculations use distance measurements to the nodes with known positions, to determine the coordinates of unknown positions \cite{22}. These measurements are assumed to be done with the help of time of arrival methods discussed in Section \ref{sssec:num1}. The agents which has position sensors on their boards are called position beacons. Figure \ref{beacons_ref} illustrates a sample environment which consist of $i$ beacons and an agent which tries to localize itself with the help of distance measurements $r_i$ and the position data $B_i$ of the beacon nodes.
+Trilateration process helps the agents to localize themselves with the help of position beacons which are their direct neighbors.  Trilateration calculations use distance measurements to the nodes with known positions, to determine the coordinates of unknown positions \cite{22}. These measurements are assumed to be done with the help of time of arrival(TOA) methods discussed in Section \ref{sssec:num1}. In a TOA solution, an agent is able to measure the distance of itself to a position beacon only if it is a direct neighbor of that position beacon. Figure \ref{beacons_ref} illustrates a portion of our sample network which consist of 4 position beacons which are direct neighbors of agent $C$ . Here agent $C$ tries to localize itself with the help of distance measurements $r_i$ and the position data $B_i$ of the position beacons.
 
 \begin{figure}[H] 
-\caption{Environment for Trilateration Process}
+\caption{Environment for Trilateration Process} \label{tri_late}
 \centering
 \includegraphics[scale = 0.65]{beacons}
 \label{beacons_ref}
 \end{figure}
 
-The distance function $\hat{r_i}$ can be written as follows;
+For the sample network illustrated in Figure \ref{tri_late} we have 4 position beacons which are direct neighbors of agent $C$. The distance function to any position beacon can be written as follows \cite{22};
 
 \begin{equation} % eq 2
 \hat{r_i} = \sqrt{(x-x_i)^2 + (y-y_i)^2+ (z-z_i)^2}    \hspace{0.3cm}   (i=1,2,...,n)
 \end{equation}
 
-where $i$ denotes the beacon number and $n$ is the total number of beacons. We have $n$ number of constraints in the solution of the localization problem. In our work, we have implemented a two dimensional localization solution with the assumption of each agent in the swarm have the same vertical position in Earth centered coordinate system. With this assumption, the problem for the localization process can be reduced down to a $A\vec{x} =\vec{b} $ type linear system problem and the constraints will be circle functions rather than spherical ones, presented with
+where $i$ denotes the beacon number and $n$ is the total number of position beacons which is equal to 4 in our case.  In general, we have $n$ number of constraints in the solution of the localization problem. These constraints are defined as spherical functions for a localization problem in 3 dimensional workspace \cite{22}. In our work, we have implemented a two dimensional localization solution with the assumption of each agent of the swarm conserve the vertical position within the Earth centered coordinate system. With this assumption, the problem for the localization process has constraints with circle functions rather than spherical ones, presented with
 
 \begin{equation}
 (x-x_i)^2 + (y - y_i)^2 = {r_i}^2
 \end{equation}
 
-Lets assume $\theta = (x,y)$ is representing the coordinates of an agent which is trying to localize itself, and $B_1 = (x_1,y_1) ; B_2 = (x_2,y_2) ; B_3 = (x_3,y_3) ; ...  ; B_i = (x_i,y_i)$ are the agents with exactly known positions.
+It is possible to use $n$ circular constraints to calculate the unknown position of the agent $C$. For this purpose, lets assume $\theta = (x,y)$ is representing the coordinates of agent $C$ and $B_1 = (x_1,y_1) ; B_2 = (x_2,y_2) ; B_3 = (x_3,y_3) ; ...  ; B_i = (x_i,y_i)$ are the measured positions of the position beacons.
 
 If any of the beacons is considered as the reference beacon and named with an index of $r$, the distance equations can be provided as following
 
-The distance between the target agent and any beacon $i$
+The distance between the agent $C$ and any beacon $i$ represented as
 
 \begin{equation} \label{3.3}
 d_i(\theta) = \sqrt{\left((x - x_i)^2 + (y - y_i)^2\right)}
 \end{equation}
 
-The distance between the reference beacon and the other beacons
+The distance between the reference beacon which is located at $B_r = (x_r,y_r)$ and the other beacons is evaluated as
 
 \begin{equation}
 d_{ir}(\theta) = \sqrt{\left((x_i - x_r)^2 + (y_i - y_r)^2\right)}
 \end{equation}
 
-The distance between the target agent and the reference beacon
+The distance between the agent $C$ and the reference beacon is obtained as
 
 \begin{equation}
 d_r(\theta) = \sqrt{\left((x - x_r)^2 + (y - y_r)^2\right)}
 \end{equation}
 
-Adding and subtracting $x_j, y_j$ and $z_j$ in equation \ref{3.3} gives
+Adding and subtracting $x_r, y_r$ and $z_r$ in equation \ref{3.3} gives
 
-\begin{align}
+\begin{align} \label{tri_expressi}
 \begin{split}
 d_i^2(\theta) = & (x - x_r + x_r - x_i)^2 + (y - y_r + y_r - y_i)^2 \\ 
               = & (x - x_r)^2 + 2(x_r - x_i)(x - x_r) + (x_r-x_i)^2 \\
@@ -94,13 +94,13 @@ d_i^2(\theta) = & (x - x_r + x_r - x_i)^2 + (y - y_r + y_r - y_i)^2 \\
 \end{split}
 \end{align}
 
-This equation yields to
+Replacing the expressions in equation \ref{tri_expressi} by $d_{ir}$ and $d_r$, the equation can be written as:
 
 \begin{equation}
  2((x_i - x_r)(x - x_r) + (y_i - y_r)(y - y_r)) = d_r^2(\theta) + d_{ir}^2 - d_i^2(\theta)
 \end{equation}
 
-this general statement is valid for each beacon with
+this general expression is valid for each beacon with $i$ changing from $2$ to $n$
 
 \begin{align}
 \begin{split}
@@ -144,24 +144,24 @@ b_{n1}\\
 \end{bmatrix}
 \end{equation}
 
-With the help of these mathematical manipulations, localization problem is reduced down to a $A\vec{x} = \vec{b}$ type problem.
+where $A$ is a $(n-1)\ x\ 2$ matrix and $b$ is a $(n-1)\ x\ 1$ vector.
 
 There are some possible solutions to this type of equation regarding with the structure of matrix $A$ and vector $b$.\\
 
 \underline {\textit{Solution to $A\vec{x} = \vec{b}$ Problem}}\\
-In a localization problem handled in two dimensional world, the $A$ matrix has $(n-1)$ rows and $2$ columns, where $n$ is the number of neighbor beacons. It is obvious that there is no solution when the number of neighbors lower than $3$, since the $A$ matrix will have one or less number of lines. When the number of neighbor beacons are equal or greater than $3$ we have three different solutions according to the structure of the linearized equations.
+In a localization problem handled in two dimensional world, the $A$ matrix has $(n-1)$ rows and $2$ columns, where $n$ is the number of neighboring beacons to an agent. It is obvious that there is no solution when the number of neighbors lower than $3$ (i.e. $n<3$), since the $A$ matrix will have one or less number of lines. When the number of neighbor beacons are equal or greater than $3$ we have three different solutions according to the structure of the linearized equations.
 
 \textit{1) Unique Solution:}\\
- If A matrix has the dimensions of $2\ x\ 2$ and the rank of A matrix$(rank(A))$ is equal to $2$, then the solution of $\vec{x}$ is unique with \cite{linear_ders_notu}
+ If A is a $2\ x\ 2$ matrix (i.e. $n=2$) and the its rank is $2$, then the solution of $\vec{x}$ is unique with \cite{linear_ders_notu}
 
 \begin{equation}
-\hat{x} = A^{-1}\vec{b}
+\vec{x} = A^{-1}\vec{b}
 \end{equation}
 
-where $\hat{x}$ is the unique solution. \\
+where $\vec{x}$ is the unique solution. \\
   
 \textit{ 2) Minimum Norm Solution With Pseudo Inverse:} \\  
-If $A$ matrix has the dimensions of $(n-1)\ x\ 2$ where $n>3$ ,which means the number of neighbor beacons greater than $3$, and if columns of $A$ matrix form a linearly independent set (full column rank matrix) then the solution can be found with the projection of $\vec{b}$ over range space of $A$, $Proj_{R(A)}\vec{b}$ where \cite{linear_ders_notu}
+If $A$ is a $(n-1)\ x\ 2$ dimensional matrix where $n>3$ ,which means the number of neighboring beacons greater than $3$, and if columns of $A$ matrix form a linearly independent set (full column rank matrix) then the solution can be found with the projection of $\vec{b}$ over range space of $A$, $Proj_{R(A)}\vec{b}$ where \cite{linear_ders_notu}
 
 \begin{equation}
 Proj_{R(A)}\vec{b} = A (A^TA)^{-1}A^T\vec{b}
@@ -169,12 +169,12 @@ Proj_{R(A)}\vec{b} = A (A^TA)^{-1}A^T\vec{b}
 
 \begin{align}
 \begin{split}
-& A\vec{x} = Proj_{R(A)}\vec{b}\\
-& \vec{A}\hat{x} = A(A^TA)^{-1}A^T\vec{b}
+& A\hat{x} = Proj_{R(A)}\vec{b}\\
+& A\hat{x} = A(A^TA)^{-1}A^T\vec{b}
 \end{split}
 \end{align}
  
-with the help of the above equation
+We can justify this expression by passing the righthand side term to the left
 
 \begin{equation}
  A(\hat{x} - (A^TA)^{-1}A^T\vec{b}) = 0
@@ -186,7 +186,7 @@ then
 \hat{x} = (A^TA)^{-1}A^T\vec{b}
 \end{equation}
   
-since $A$ matrix is full column rank matrix,
+$(A^TA)$ is invertible since $A$ matrix is full column rank matrix, so 
 
 \begin{align}
 \begin{split}
@@ -200,11 +200,11 @@ then
 Proj_{ \mathcal{N}(\mathbf{A})^\perp}\hat{x} = \hat{x}
 \end{equation}
   
-this concludes that $\hat{x}$ is the unique minimum norm solution to the $A\hat{x} = \vec{b}$ problem\\
+this concludes that $\hat{x}$ is the unique minimum norm solution to the $A\vec{x} = \vec{b}$ problem\\
 	
 	
 \textit{3) Minimum Norm Solution With Nonlinear Least Squares Method}\\	
-If matrix $A$ has the dimensions of $2\ x\ 2$ or $(n-1)\ x\ 2$ with $n>3$ and if rank of $A$ matrix is equal to $1$,$(rank(A) = 1)$, then the solution to the $A\hat{x} = \vec{b}$ problem can be found iteratively with the help of nonlinear least squares method. Lets define the cost function to be minimized 	as the sum of the squares of the errors on the distances \cite{22}
+If matrix $A$ has the dimensions of $2\ x\ 2$ or $(n-1)\ x\ 2$ with $n>3$ and if rank of $A$ matrix is equal to $1$ then the solution to the $A\hat{x} = \vec{b}$ problem can be found iteratively with the help of nonlinear least squares method that minimizes the sum of squares of the distance errors such as \cite{22}
 	
 \begin{equation}
 F(\theta) = \sum_{i=1}^{n} \left(f_i^2(x,y)\right)
@@ -216,7 +216,23 @@ with
 f_i(x,y) = \sqrt{(x-x_i)^2 + (y - y_i)^2} - r_i = f_i(\theta) 
 \end{equation}
 
-There are various algorithms to minimize the sum of the square errors in literature, Newton iteration is used to find the optimal solution in this work.  Taking the partial derivatives of the cost function with respect to $x$ and $y$ gives 
+where $r_i$ is the measured distance to a position beacon $i$ and $(x_i, y_i)$ is the iteratively calculated position data of agent $C$.
+
+There are various algorithms to minimize the sum of the square errors in the literature. We have used Newton iteration to find the optimal solution in this thesis work. Because convergence of this method is quadratic in general and the performance of the algorithm is extremely increased by choosing proper initial conditions \cite{wiki_newton}. We have used the propagated position data as an initial condition for the optimization process and the algorithm terminates very fast with correct results. Algorithm is implemented as follows:
+
+Considering  $f(\theta)$ as
+
+\begin{equation}
+f(\theta) = \begin{bmatrix}
+f_1(\theta) \\
+f_2(\theta) \\
+...         \\
+f_n(\theta)
+\end{bmatrix}
+\end{equation}
+
+
+Taking the partial derivatives of the cost function with respect to $x$ and $y$ gives 
 
 \begin{align}
 \begin{split}
@@ -235,12 +251,12 @@ f_1\frac{\partial{f_1(\theta)}}{\partial{y}} + f_2\frac{\partial{f_2(\theta)}}{\
 \end{bmatrix}
 \end{equation}	
 	
-Components of this partial derivative matrix converges to zero while the cost function iteratively optimized to a minimum point. 
-\begin{equation}
+Components of this partial derivative matrix converges to zero while the cost function iteratively optimized to a minimum point. The gradient $\bigtriangledown{F(\theta)}$ is written as
+\begin{equation} \label{minimize_mi}
 \bigtriangledown{F(\theta)} = 2J(\theta)^Tf(\theta) = 0
 \end{equation}
 
-where
+where $J(\theta)$ is the Jacobien matrix defined with
 
 \begin{equation}
 J(\theta) = \begin{bmatrix}
@@ -251,20 +267,11 @@ J(\theta) = \begin{bmatrix}
 \end{bmatrix}
 \end{equation}
 
-and 
-\begin{equation}
-f(\theta) = \begin{bmatrix}
-f_1(\theta) \\
-f_2(\theta) \\
-...         \\
-f_n(\theta)
-\end{bmatrix}
-\end{equation}
 	
-Using the vector $\vec{R}$	
+Suppose we are trying to find the position of an agent defined with the vector of $\vec{R}$	
 \begin{equation}
  \vec{R} = \left(\begin{matrix}
-  x \\ y \\ z
+  x \\ y 
  \end{matrix}\right)
 \end{equation}
 
@@ -274,7 +281,7 @@ To optimize the cost function, Newton iteration is implemented as follows;
  \vec{R}_{\{k+1\}} =  \vec{R}_{\{k\}} - (J^T_{\{k\}}J_{\{k\}})^{-1}J^T_{\{k\}}\vec{f}_{\{k\}}
 \end{equation}	
 
-where $\vec{R}_{\{k\}}$ denotes the approximate solution at $k^{th}$ iteration. The explicit form of the equations can be derived  by implementing our constraint functions to the generic statements, as follows;
+where $\vec{R}_{\{k\}}$ denotes the approximate solution at $k^{th}$ iteration. Here $(J^T_{\{k\}}J_{\{k\}})^{-1}$ is the gradient gain which is larger when the iteration is far away from the solution and $J^T_{\{k\}}\vec{f}_{\{k\}}$ is the gradient to be minimized which is defined in Equation \ref{minimize_mi} \cite{22}. The explicit form of the equations can be derived  by implementing our constraint functions to the generic statements, as follows;
 	
 \begin{equation}
 J^TJ = \left(\begin{matrix}
@@ -293,32 +300,24 @@ J^T\vec{f} = \left(\begin{matrix}
 \end{equation}
 	
 	
-\subsection{ Route Table Determination and  DSDV Algorithm}
-It is obvious that the possibility of having a large error on position and velocity data for the agents which do not have an external position measurement sensors,then it will be appropriate to get the agents into local trilateration process with the agents which have position sensors as much as possible. It is assumed that the positions of the beacon agents in the trilateration process are well-known with a little error, ideally with no errors, so getting in the trilateration process with the agents which are already have errors on their position data and range measurements with errors will include some error components on the calculated datas. On the other hand due to the restrictions $\&$ requirements defined in the Section \ref{Objectives}, it will not be possible to interact with the agents with position sensors directly due to the small communication ranges of the agents and line of sight issues. In this case, it will be a good choice to handle this trilaterion process starting with the agents which are closer to the position agents in an increasing order of distance.
+\subsection{Route Table Determination}
+We have implemented a localization solution in which each agent is getting in trilateration process with the position beacons in the swarm. It is needed to be direct neighbors of the position beacons to get in trilateration process as we have introduced previously. Route tables are used to provide information to the agents about the position beacons which are their direct neighbors. On the other hand they are used to create a mesh network in the swarm to create a communication backbone. With this mesh network it is possible to send any data globally over the network to any destination by using all of agents as relays to transmit the data.
+In our implementation, each agent had its own route table in the network. These route tables include the information about the next nodes and shortest paths to any destination in the network. Next nodes are representing the node which the data will be transferred next for that destination and shortest paths are representing the minimum number of hops (i.e. number of relay agents on the path) for that destination. We have used the shortest path information for the position beacon destinations to check whether the agent is direct neighbor of that position beacon or not. In other words, the shortest path to a position beacon is equal to 1, if that agent is the direct neighbor of the position beacon
 
-\begin{figure}[H] 
-\caption{A Cluster of Agents Around a Position Beacon} \label{position_beacon}
-\centering
-\includegraphics[scale = 0.65]{position_beacon}
-\end{figure}
 
-As illustrated on the Figure \ref{position_beacon} , suppose that the red agents which are closest ones to the position beacon in the swarm and they are the only ones which have the capability of interacting with the position beacon. Since the only source for true position measurement is the position beacon, this data must be distributed to these red agents first, then trilateration process must be propagated through the orange agents and then the yellow agents last, since they can only interact with an upper layer in the swarm due to the line of sight and communication range issues.
-
-It is needed to have an algorithm to organize the order of the local trilateration process and to determine the beacon agents for each member of the swarm. Basically this algorithm will assign each agent a rank which represents the number of sequence in the localization process, and will determine at least three local neighbors of each agent to get in trilateration. Agents which do no have at least three neighbors are assumed to be lost agents and the handling of these type of agents are illustrated in Section \ref{LostAgents}.
 	
 \subsubsection{Routing Algorithm- Bellman Ford}
-As mentioned in the Section \ref{Objectives} of the thesis, agents are assumed to have a limited communication range and bandwidth and the communication topology in the swarm must be implemented with a wireless mesh network. In this type of topology, each node is a relay in the network and the data is transferred to the related destination with the help of route tables. This makes it possible to have the capability of transferring low bandwidth data through the network with multiple hops.  In this work, we have implemented this topology with a table driven routing scheme known as DSDV(Destination-Sequenced Distance Vector Routing Protocol) algorithm based on Bellman Ford algorithm. Bellman-Ford is an algorithm that computes the shortest path in a weighted graph. It is an algorithm based on relaxation and the correct distance to the vertices in the graph are updated iteratively from the initial estimations until converging to the optimal solution. This algorithm is slower than the Djikstra's algorithm which has similar functionalities but negative edge weights can be implemented in the related graph to report the negative cycles which means there is no cheapest path to the related destination vertex. On the other hand, it is possible to augment this algorithm with DSDV implementation to handle the routing loop problem when there is one or more vertices are no more exists in the network. The probability of the case with the non-existence of some vertices during the algorithm is processed is very high since the agents in the swarm have low sensor capabilities and small range of communication and they have a great possibility to get lost in the workspace.
+As mentioned in the Section \ref{Objectives} of the thesis, agents are assumed to have a limited communication range and bandwidth and the communication topology in the swarm must be implemented with a wireless mesh network. In this type of topology, each node is a relay in the network and the data is transferred to the related destination with the help of route tables. This makes it possible to have the capability of transferring low bandwidth data through the network with multiple hops.  In this work, we have implemented this topology with a table driven routing scheme known as Destination-Sequenced Distance Vector Routing Protocol(DSDV) algorithm based on Bellman Ford algorithm. Bellman Ford is an algorithm that computes the shortest path in a weighted graph \cite{wiki_bellman}. This algorithm is slower than the Djikstra's algorithm which has similar functionalities but it is possible to augment this algorithm with DSDV implementation to handle the routing loop problem due to vanishing vertices in the network\cite{wiki_bellman}. The probability of vanishing vertices during the execution of the algorithm is very high since the agents in the swarm have low sensor capabilities and small range of communication and have a great possibility to get lost in the workspace.
 	
 \begin{figure}[H]
-\caption{Costs for Shortest Paths to Each Nodes from Node 'S'} \label{bellman_ref}
+\caption{Costs for Shortest Paths to Each Nodes from Agent 'B'} \label{bellman_ref}
 \centering
 \includegraphics[scale = 0.50]{bellman}
 \end{figure}
 
-A simple demonstration of the Bellman-Ford algorithm with a simple network is illustrated in the Figure \ref{bellman_ref}. The algorithm to calculate the shortest paths for node `S` terminates at the end of 7 iterations. At the beginning of the process, the weights for each edges are determined including the negative ones and each distance to the paths are filled with infinitive. Then the shortest paths to the each node in the given directed graph are determined iteratively with the help of the Bellman-Ford algorithm
+A simple demonstration of the Bellman-Ford algorithm with a simple robot network in our problem is given in the Figure \ref{bellman_ref}. The algorithm to calculate the shortest paths from node `B` to each destination on network, terminates at the end of 3 iterations. At the beginning of the process, the weights for each edges are determined as infinitive. Then the shortest paths to the each node in the given bidirectional graph are determined iteratively with the help of the Bellman-Ford algorithm. Since we have defined the shortest paths as the number of hops to each destination, we have used unit weight for each edge in the graph representing our cost to reach every agent in the network. 
 
-\subsubsection{Usage of Bellman Ford algorithm and DSDV}
-Bellman Ford algorithm have a drawback related with the routing loop problem which occurs in an event of one or more nodes in the graph are lost during the process. Figure \ref{routing_problem2} illustrates a simple routing loop problem.
+Bellman Ford algorithm has a drawback related with the routing loop problem which occurs in an event of one or more nodes in the graph are lost during the process. For this reason we have used an extension of the Bellman Ford algorithm known as Destination-Sequenced Distance Vector Routing Protocol(DSDV) algorithm. Figure \ref{routing_problem2} illustrates a simple routing loop problem.
 
 \begin{figure}[H] 
 \caption{Routing Problem Engaged by a Lost of a Node in Network} \label{routing_problem2}
@@ -326,22 +325,23 @@ Bellman Ford algorithm have a drawback related with the routing loop problem whi
 \includegraphics[scale = 0.65]{routing_problem}
 \end{figure}
 
-Suppose that the node D have lost its contact with the network due to some malfunction or being lost by getting outside of the communication range to the closest neighbor of itself. Before this event, node C have a unit distance to the node D and consequently node B have a 2 unit distance to node D , node A have a 3 unit distance to node D. In case of a failure of node D, on the next iteration C will update its route table with the 3 unit distance to node D by taking reference the node B. Then node B will update its route table with the shortest distance of 4 units to the node D\ by referencing the node C and this process will diverge to infinity on the shortest paths with the increasing number of iterations. To provide a solution for these type of problems, DSDV algorithm has implemented the sequence numbers and counts for hops into the route tables of the nodes. A simple route table for a vertex in a network is given in Figure \ref{dest_seq_ref}
+Suppose that node D has lost its contact with the network due to some malfunction or by being lost wandering outside of the communication range of its closest neighbor. Before this event, node C had a unit distance to node D and consequently node B had a 2 unit distance to node D , node A had a 3 unit distance to node D. In the case of a failure of node D, on the next iteration, C updates its route table with 3 unit distance to node D by taking as reference the node B. Then node B updates its route table with the shortest distance of 4 units to node D\ referencing to node C. This process diverges to infinity on the shortest paths with the increasing number of iterations. To provide a solution for this routing loop problem, DSDV algorithm implements the sequence numbers into the route tables of the nodes. A simple route table for a node in a robot network is given in Figure \ref{dest_seq_ref}
 
 \begin{figure}[H]
-\caption{An Example for Route Table} \label{dest_seq_ref}
+\caption{Route Table for Agent B in Robot Network} \label{dest_seq_ref}
 \centering
 \includegraphics[scale = 0.75]{dest_seq}
 \end{figure}
 
-In the DSDV algorithm, each node have a sequence number and counts for hops (rank) for each route in its route table and periodically transmits the updates including its own sequence number and routing tables updates. In the network, when two routes to the same destination received from two different neighbors, the nodes will observe the following rules;\newline
-	- Choose the one with the larger destination sequence number \newline
+In the DSDV algorithm, each node transmits the updates in its own sequence number and routing table. In the network, when two routes to the same destination are received from two different neighbors, the algorithm observes the following rules;\newline
+	- Choose the node with the larger destination sequence number \newline
 	- If the sequence numbers are equal, then choose the route with minimum number of hops and update the route table.
 
+In Figure \ref{dest_seq_ref}, node B has destination sequence numbers to each destination in its route table. These numbers are used to update the network with the rules defined above, in the case of link addition and link brakes defined in followig sections.
 \newpage	
 \subsubsection{DSDV Link addition}
 
-Figure \ref{linkk_addition} shows a sample link addition condition to the network. When a new node A joins the network, it transmits of its own route table including the destination to itself $<A,A,0,101>$. Then the following procedure will be handled during iterations; \newline
+Figure \ref{linkk_addition} shows a sample link addition condition to the robot network. When a new node A joins the network, it transmits of its own route table including the destination to itself $<A,A,0,101>$. Then the following procedure will be handled during iterations; \newline
 	-Node B receives the the transmission of A and inserts a new line into its route table with $<A,A,1,101>$ and propagates this new node to its neighbors \newline
 	-Node C and Node D receives this transmission and inserts the new route to their route tables with $<A,B,2,101>$
 
@@ -353,7 +353,7 @@ Figure \ref{linkk_addition} shows a sample link addition condition to the networ
 		
 \subsubsection{DSDV link breaks}
 
-Figure \ref{linkk_brake} shows a sample link brake condition to the network. When the link between B and D breaks, node B gets no transmission from the D and notices the link breaks, then the following procedure will be handled; \newline
+Figure \ref{linkk_brake} shows a sample link brake condition to the robot network. When the link between B and D breaks, node B gets no transmission from the D and notices the link breaks, then the following procedure will be handled; \newline
 	- Node B update the hop count for node D and E to the infinity and increments the sequence numbers to these routes \newline
 	- Node B propagates the updates to its neighbors and node A and node C updates the lines of the routes to the D and E, since the message from B includes higher sequence numbers for those routes.
 		

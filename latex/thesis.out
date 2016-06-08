@@ -27,48 +27,47 @@
 \BOOKMARK [0][-]{chapter.3}{METHODOLOGY}{}% 27
 \BOOKMARK [1][-]{section.3.1}{LOCAL POSITIONING SYSTEMS}{chapter.3}% 28
 \BOOKMARK [2][-]{subsection.3.1.1}{Trilateration Process}{section.3.1}% 29
-\BOOKMARK [2][-]{subsection.3.1.2}{ Route Table Determination and DSDV Algorithm}{section.3.1}% 30
+\BOOKMARK [2][-]{subsection.3.1.2}{Route Table Determination}{section.3.1}% 30
 \BOOKMARK [3][-]{subsubsection.3.1.2.1}{Routing Algorithm- Bellman Ford}{subsection.3.1.2}% 31
-\BOOKMARK [3][-]{subsubsection.3.1.2.2}{Usage of Bellman Ford algorithm and DSDV}{subsection.3.1.2}% 32
-\BOOKMARK [3][-]{subsubsection.3.1.2.3}{DSDV Link addition}{subsection.3.1.2}% 33
-\BOOKMARK [3][-]{subsubsection.3.1.2.4}{DSDV link breaks}{subsection.3.1.2}% 34
-\BOOKMARK [2][-]{subsection.3.1.3}{Clusters}{section.3.1}% 35
-\BOOKMARK [2][-]{subsection.3.1.4}{Handling Lost Agents}{section.3.1}% 36
-\BOOKMARK [2][-]{subsection.3.1.5}{State Estimation Procedure}{section.3.1}% 37
-\BOOKMARK [1][-]{section.3.2}{FORMATION CONTROL}{chapter.3}% 38
-\BOOKMARK [2][-]{subsection.3.2.1}{Potential Field Based Approach}{section.3.2}% 39
-\BOOKMARK [3][-]{subsubsection.3.2.1.1}{Artificial Forces Method}{subsection.3.2.1}% 40
-\BOOKMARK [4][-]{section*.9}{Utility Functions}{subsubsection.3.2.1.1}% 41
-\BOOKMARK [4][-]{section*.10}{Artificial Forces}{subsubsection.3.2.1.1}% 42
-\BOOKMARK [4][-]{section*.11}{Buffer Zone Implementation}{subsubsection.3.2.1.1}% 43
-\BOOKMARK [4][-]{section*.12}{XSwarm Theory}{subsubsection.3.2.1.1}% 44
-\BOOKMARK [4][-]{section*.13}{Implementation of X-Swarm Theory}{subsubsection.3.2.1.1}% 45
-\BOOKMARK [2][-]{subsection.3.2.2}{Shape Partitioning Methods}{section.3.2}% 46
-\BOOKMARK [3][-]{subsubsection.3.2.2.1}{Determining the Potential Goal States}{subsection.3.2.2}% 47
-\BOOKMARK [4][-]{section*.14}{Bubble Packing Method}{subsubsection.3.2.2.1}% 48
-\BOOKMARK [4][-]{section*.15}{Randomized Fractals Method}{subsubsection.3.2.2.1}% 49
-\BOOKMARK [3][-]{subsubsection.3.2.2.2}{Decision Process on Goal States}{subsection.3.2.2}% 50
-\BOOKMARK [4][-]{section*.16}{Free Configuration Space}{subsubsection.3.2.2.2}% 51
-\BOOKMARK [4][-]{section*.17}{Visibility Graphs and Dijkstra's Algorithm}{subsubsection.3.2.2.2}% 52
-\BOOKMARK [4][-]{section*.18}{Collaborative Decision Process of Final Goal States}{subsubsection.3.2.2.2}% 53
-\BOOKMARK [2][-]{subsection.3.2.3}{Mesh Quality Measurement}{section.3.2}% 54
-\BOOKMARK [2][-]{subsection.3.2.4}{Control System Design for Individual Agents}{section.3.2}% 55
-\BOOKMARK [0][-]{chapter.4}{SIMULATION ENVIRONMENT \046 RESULTS}{}% 56
-\BOOKMARK [1][-]{section.4.1}{Simulation Environment}{chapter.4}% 57
-\BOOKMARK [1][-]{section.4.2}{Local Positioning System}{chapter.4}% 58
-\BOOKMARK [1][-]{section.4.3}{FORMATION CONTROL SYSTEM}{chapter.4}% 59
-\BOOKMARK [2][-]{subsection.4.3.1}{Mesh Qualities}{section.4.3}% 60
-\BOOKMARK [2][-]{subsection.4.3.2}{Total Displacement of the Agents}{section.4.3}% 61
-\BOOKMARK [3][-]{subsubsection.4.3.2.1}{Shape 1}{subsection.4.3.2}% 62
-\BOOKMARK [3][-]{subsubsection.4.3.2.2}{Shape 2}{subsection.4.3.2}% 63
-\BOOKMARK [2][-]{subsection.4.3.3}{Settling Time}{section.4.3}% 64
-\BOOKMARK [2][-]{subsection.4.3.4}{Dynamically Changing Formations}{section.4.3}% 65
-\BOOKMARK [2][-]{subsection.4.3.5}{Evaluation}{section.4.3}% 66
-\BOOKMARK [0][-]{chapter.5}{HARDWARE IMPLEMENTATION \046 RESULTS}{}% 67
-\BOOKMARK [1][-]{section.5.1}{Hardware Demonstration Environment}{chapter.5}% 68
-\BOOKMARK [1][-]{section.5.2}{Performance Analysis}{chapter.5}% 69
-\BOOKMARK [0][-]{chapter.6}{CONCLUSION AND FUTURE WORKS}{}% 70
-\BOOKMARK [1][-]{section.6.1}{Conclusion}{chapter.6}% 71
-\BOOKMARK [1][-]{section.6.2}{Future Works}{chapter.6}% 72
-\BOOKMARK [0][-]{chapter*.19}{REFERENCES}{}% 73
-\BOOKMARK [0][-]{chapter*.20}{CURRICULUM VITAE}{}% 74
+\BOOKMARK [3][-]{subsubsection.3.1.2.2}{DSDV Link addition}{subsection.3.1.2}% 32
+\BOOKMARK [3][-]{subsubsection.3.1.2.3}{DSDV link breaks}{subsection.3.1.2}% 33
+\BOOKMARK [2][-]{subsection.3.1.3}{Clusters}{section.3.1}% 34
+\BOOKMARK [2][-]{subsection.3.1.4}{Handling Lost Agents}{section.3.1}% 35
+\BOOKMARK [2][-]{subsection.3.1.5}{State Estimation Procedure}{section.3.1}% 36
+\BOOKMARK [1][-]{section.3.2}{FORMATION CONTROL}{chapter.3}% 37
+\BOOKMARK [2][-]{subsection.3.2.1}{Potential Field Based Approach}{section.3.2}% 38
+\BOOKMARK [3][-]{subsubsection.3.2.1.1}{Artificial Forces Method}{subsection.3.2.1}% 39
+\BOOKMARK [4][-]{section*.9}{Utility Functions}{subsubsection.3.2.1.1}% 40
+\BOOKMARK [4][-]{section*.10}{Artificial Forces}{subsubsection.3.2.1.1}% 41
+\BOOKMARK [4][-]{section*.11}{Buffer Zone Implementation}{subsubsection.3.2.1.1}% 42
+\BOOKMARK [4][-]{section*.12}{XSwarm Theory}{subsubsection.3.2.1.1}% 43
+\BOOKMARK [4][-]{section*.13}{Implementation of X-Swarm Theory}{subsubsection.3.2.1.1}% 44
+\BOOKMARK [2][-]{subsection.3.2.2}{Shape Partitioning Methods}{section.3.2}% 45
+\BOOKMARK [3][-]{subsubsection.3.2.2.1}{Determining the Potential Goal States}{subsection.3.2.2}% 46
+\BOOKMARK [4][-]{section*.14}{Bubble Packing Method}{subsubsection.3.2.2.1}% 47
+\BOOKMARK [4][-]{section*.15}{Randomized Fractals Method}{subsubsection.3.2.2.1}% 48
+\BOOKMARK [3][-]{subsubsection.3.2.2.2}{Decision Process on Goal States}{subsection.3.2.2}% 49
+\BOOKMARK [4][-]{section*.16}{Free Configuration Space}{subsubsection.3.2.2.2}% 50
+\BOOKMARK [4][-]{section*.17}{Visibility Graphs and Dijkstra's Algorithm}{subsubsection.3.2.2.2}% 51
+\BOOKMARK [4][-]{section*.18}{Collaborative Decision Process of Final Goal States}{subsubsection.3.2.2.2}% 52
+\BOOKMARK [2][-]{subsection.3.2.3}{Mesh Quality Measurement}{section.3.2}% 53
+\BOOKMARK [2][-]{subsection.3.2.4}{Control System Design for Individual Agents}{section.3.2}% 54
+\BOOKMARK [0][-]{chapter.4}{SIMULATION ENVIRONMENT \046 RESULTS}{}% 55
+\BOOKMARK [1][-]{section.4.1}{Simulation Environment}{chapter.4}% 56
+\BOOKMARK [1][-]{section.4.2}{Local Positioning System}{chapter.4}% 57
+\BOOKMARK [1][-]{section.4.3}{FORMATION CONTROL SYSTEM}{chapter.4}% 58
+\BOOKMARK [2][-]{subsection.4.3.1}{Mesh Qualities}{section.4.3}% 59
+\BOOKMARK [2][-]{subsection.4.3.2}{Total Displacement of the Agents}{section.4.3}% 60
+\BOOKMARK [3][-]{subsubsection.4.3.2.1}{Shape 1}{subsection.4.3.2}% 61
+\BOOKMARK [3][-]{subsubsection.4.3.2.2}{Shape 2}{subsection.4.3.2}% 62
+\BOOKMARK [2][-]{subsection.4.3.3}{Settling Time}{section.4.3}% 63
+\BOOKMARK [2][-]{subsection.4.3.4}{Dynamically Changing Formations}{section.4.3}% 64
+\BOOKMARK [2][-]{subsection.4.3.5}{Evaluation}{section.4.3}% 65
+\BOOKMARK [0][-]{chapter.5}{HARDWARE IMPLEMENTATION \046 RESULTS}{}% 66
+\BOOKMARK [1][-]{section.5.1}{Hardware Demonstration Environment}{chapter.5}% 67
+\BOOKMARK [1][-]{section.5.2}{Performance Analysis}{chapter.5}% 68
+\BOOKMARK [0][-]{chapter.6}{CONCLUSION AND FUTURE WORKS}{}% 69
+\BOOKMARK [1][-]{section.6.1}{Conclusion}{chapter.6}% 70
+\BOOKMARK [1][-]{section.6.2}{Future Works}{chapter.6}% 71
+\BOOKMARK [0][-]{chapter*.19}{REFERENCES}{}% 72
+\BOOKMARK [0][-]{chapter*.20}{CURRICULUM VITAE}{}% 73
