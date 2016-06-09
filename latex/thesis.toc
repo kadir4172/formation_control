@@ -41,22 +41,21 @@
 \contentsline {subsubsection}{\numberline {3.1.2.1}Routing Algorithm- Bellman Ford}{46}{subsubsection.3.1.2.1}
 \contentsline {subsubsection}{\numberline {3.1.2.2}DSDV Link addition}{50}{subsubsection.3.1.2.2}
 \contentsline {subsubsection}{\numberline {3.1.2.3}DSDV link breaks}{50}{subsubsection.3.1.2.3}
-\contentsline {subsection}{\numberline {3.1.3}Clusters}{51}{subsection.3.1.3}
-\contentsline {subsection}{\numberline {3.1.4}Handling Lost Agents}{53}{subsection.3.1.4}
-\contentsline {subsection}{\numberline {3.1.5}State Estimation Procedure}{54}{subsection.3.1.5}
-\contentsline {section}{\numberline {3.2}FORMATION CONTROL}{57}{section.3.2}
-\contentsline {subsection}{\numberline {3.2.1}Potential Field Based Approach}{58}{subsection.3.2.1}
-\contentsline {subsubsection}{\numberline {3.2.1.1}Artificial Forces Method}{58}{subsubsection.3.2.1.1}
-\contentsline {paragraph}{Utility Functions}{60}{section*.9}
-\contentsline {paragraph}{Artificial Forces}{64}{section*.10}
-\contentsline {paragraph}{Buffer Zone Implementation}{71}{section*.11}
-\contentsline {paragraph}{XSwarm Theory}{71}{section*.12}
-\contentsline {paragraph}{Implementation of X-Swarm Theory}{73}{section*.13}
-\contentsline {subsection}{\numberline {3.2.2}Shape Partitioning Methods}{74}{subsection.3.2.2}
-\contentsline {subsubsection}{\numberline {3.2.2.1}Determining the Potential Goal States}{75}{subsubsection.3.2.2.1}
-\contentsline {paragraph}{Bubble Packing Method}{75}{section*.14}
-\contentsline {paragraph}{Randomized Fractals Method}{78}{section*.15}
-\contentsline {subsubsection}{\numberline {3.2.2.2}Decision Process on Goal States}{80}{subsubsection.3.2.2.2}
+\contentsline {subsection}{\numberline {3.1.3}Handling Lost Agents}{51}{subsection.3.1.3}
+\contentsline {subsection}{\numberline {3.1.4}State Estimation Procedure}{52}{subsection.3.1.4}
+\contentsline {section}{\numberline {3.2}FORMATION CONTROL}{55}{section.3.2}
+\contentsline {subsection}{\numberline {3.2.1}Potential Field Based Approach}{56}{subsection.3.2.1}
+\contentsline {subsubsection}{\numberline {3.2.1.1}Artificial Forces Method}{56}{subsubsection.3.2.1.1}
+\contentsline {paragraph}{Utility Functions}{58}{section*.9}
+\contentsline {paragraph}{Artificial Forces}{62}{section*.10}
+\contentsline {paragraph}{Buffer Zone Implementation}{69}{section*.11}
+\contentsline {paragraph}{XSwarm Theory}{70}{section*.12}
+\contentsline {paragraph}{Implementation of X-Swarm Theory}{72}{section*.13}
+\contentsline {subsection}{\numberline {3.2.2}Shape Partitioning Methods}{73}{subsection.3.2.2}
+\contentsline {subsubsection}{\numberline {3.2.2.1}Determining the Potential Goal States}{74}{subsubsection.3.2.2.1}
+\contentsline {paragraph}{Bubble Packing Method}{74}{section*.14}
+\contentsline {paragraph}{Randomized Fractals Method}{77}{section*.15}
+\contentsline {subsubsection}{\numberline {3.2.2.2}Decision Process on Goal States}{79}{subsubsection.3.2.2.2}
 \contentsline {paragraph}{Free Configuration Space}{80}{section*.16}
 \contentsline {paragraph}{Visibility Graphs and Dijkstra$'$s Algorithm}{81}{section*.17}
 \contentsline {paragraph}{Collaborative Decision Process of Final Goal States}{84}{section*.18}

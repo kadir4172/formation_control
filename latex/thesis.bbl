@@ -216,6 +216,11 @@ Wikipedia.
   encyclopedia, 2016.
 \newblock [Online; accessed 10-February-2016].
 
+\bibitem{calculus}
+James Stewart.
+\newblock {\em Calculus: Early Transcendentals}.
+\newblock Cengage Learning, 2007.
+
 \bibitem{92}
 Mark Berg, Otfried Cheong, Kreveld. Marc, and Marc Overmars.
 \newblock {\em Computational Geometry}.
