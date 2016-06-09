@@ -1037,18 +1037,18 @@ if the calculated  $\gamma$ and $\delta$ are both positive, than the X-swarm con
 On the other hand, the theorem related with the convergence of member agents of an X-Swarm to the $z_{cm}$ is satisfied under the condition of $\frac{k_a}{k_m} > \frac{N-1}{\gamma^3  l(C)}$ . Our algorithm also increases the $k_a$ gain on runtime to make the related inequality be satisfied to force the agents which are outside of the desired shape to the center mass of the formation geometry. 
 					
 \subsection{Shape Partitioning Methods} \label{shapepartition_ref}
-In shape partitioning methods we have reduced down the formation control problem into two subproblems. The first part of the solution is to partition the desired formation shape into potential goal states according to the agent types to cover the desired formation shape homogeneously. We have proposed two different solutions to the shape partitioning problem in this thesis work, bubble packing method and randomized fractals method. The second part of the solution is the decision process to assign the agents to these goal states continuously to minimize the total displacement of swarm while achieving the desired formation shape. During this decision process, the cost of reaching different goal states will be the main criteria for each agent. It is obvious that each agent will try to choose a goal state with minimum cost according to its position and the orientation in the environment. But the cases in which two or more agents are willing to reach the same goal point must be handled to optimize the overall utility of the swarm. 
+In shape partitioning methods we have reduced down the formation control problem into two subproblems. The first part of the solution is to partition the desired formation shape into potential goal states according to the agent types to cover the desired formation shape homogeneously. We have proposed two different solutions to the shape partitioning problem in this thesis work, Bubble packing method and Randomized Fractals method. The second part of the solution is the decision process to assign the agents to these goal states continuously to minimize the total displacement of swarm while achieving the desired formation shape. During this decision process, the cost of reaching different goal states will be the main criteria for each agent. It is obvious that each agent will try to choose a goal state with minimum cost according to its position and the orientation in the environment. In our algorithm, the cases in which two or more agents are willing to reach the same goal point is handled to optimize the overall utility of the swarm. 
 
-Shape partitioning methods have an approach to direct the agents to the goal states in which they have assigned instantly to minimize the total displacement, but it is important to keep the agents together in the swarm while moving on a trajectory towards the formation shape, to reduce the lost agent events described in Section \ref{LostAgents}. On the other hand, it is required to provide a collision avoidance between the agents and the obstacles while reaching the desired goal states. For these purposes, attractive force components which directs the agents to the center of the formation shape under X-swarm consideration and inter-member force components which avoids collisions between agents are added to the agents' velocity setpoints as additive terms. 
+Shape partitioning methods have an approach to direct the agents to the goal states in which they have assigned instantly to minimize the total displacement. In this approach it is still needed to have collision avoidance algorithms to prevent the agents to collide with each other and workspace obstacles while travelling towards the desired goal states. For this purpose we add obstacles and inter-member forces to the individual control laws defined in shape partitioning approaches.
 			
 \subsubsection{Determining the Potential Goal States} \label{Partitioning_ref}
 \paragraph{Bubble Packing Method} \hspace{0pt} \\				
 Bubble packing method is widely used in mesh generation problems. It basically depends on covering a curve, surface or a volume with a proper number of bubbles by packing them tightly which mimic a Voronoi diagram, from which a set of well-shaped Delaunay triangles and tetrahedra which can be created by connecting the centers of the bubbles \cite{27}.  The algorithm places the bubbles with their initial conditions in the environment and apply them interbubble forces which imitates the Van der Waals forces between the molecular bonds  to distribute the bubbles homogeneously. Here, the main idea is to generate a mesh for a surface with identical bubbles to mimic a regular Voronoi diagram with the vertices represented by the centers of these bubbles. On the other hand, adaptive population control  methods are developed to increase the number of bubbles to fill the gaps in the shape and to remove the excess bubbles which are overlapping with each other and the shape boundaries. 
 
-Since the numbers and the the radius of coverage circles which is defined at Section \ref{Artificial Forces Ref} are predetermined in our formation control problem, the general bubble meshing algorithm have to be adopted to meet the requirements for shape partitioning in formation control.  The basic approach is to represent the agents in the swarm as bubbles with the radius of  their coverage circles and create a mesh by using these bubbles. \newline
+Since the numbers and the the radius of coverage circles which is defined at Section \ref{Artificial Forces Ref} are predetermined in our formation control problem, the general bubble meshing algorithm have to be adopted to meet the requirements for shape partitioning in formation control.  In our project we have adapted this algorithm to represent the agents in the swarm as bubbles with the radius of their coverage circles and create a mesh by using these bubbles. The details of the implementation are given in following sections.\newline
 			
 \textit{			I - Initial Placements of the Bubbles} \\ 
-The initial bubble placements are important because it will greatly reduce the convergence time of the partitioning process. In this work, the bubbles are initiated close to the center of the formation shape randomly. The algorithm for initial bubble placements is provided as follows:
+The initial bubble placements are important because it will greatly reduce the convergence time of the partitioning process. In this work, we have initiated the bubbles close to the center of the formation shape randomly. The implemented algorithm for initial bubble placements is provided as follows:
 			
 \begin{algorithm}[H]
 \KwData{Set of Bubbles, Desired Formation Shape }
@@ -1091,11 +1091,11 @@ where $l$ is the distance between the centers of the related bubbles and $a,b,c,
 	
 The shape repulsive forces have the same characteristics with the repulsive artificial forces discussed in Section \ref{Artificial Forces Ref}. The representation of shape repulsive forces for the desired formation shape $C$ with the points of  $z_k = (x_k,y_k)$ the complex plane::
 	
-\begin{equation}
+\begin{equation} \label{buble_repulsive}
 f_r(X_i) := \oint_C \left[\frac{\alpha X_i - z}{\norm{\alpha X_i - z}^3}\right] \norm{dz}
 \end{equation}
 
-where $k_r$ is the variable gain for the shape repulsive forces. The representation of the shape repulsive forces on agent $i$ on $z_i = (x_i, y_i)$ with the points of  $z_k = (x_k,y_k)$ of formation shape in the complex plane:
+where $k_r$ is the variable gain for the shape repulsive forces. We have defined the shape repulsive forces on agent $i$ in discrete domain with the points of  $z_k = (x_k,y_k)$ on formation shape in the complex plane:
 
 \begin{equation}
 f_r(X_i) = \sum_{k=1}^{K} \frac{\alpha X_i - Z_k}{\norm{\alpha X_i - z_k}^3}
@@ -1109,7 +1109,7 @@ where
 						
 
 	
-The bubbles are distributed homogeneously under the influence of these two forces when they get an equilibrium state in which the total net forces acting on individual bubbles reaches zero. The final equilibrium states of the bubbles determine the potential goal states of the agents in the swarm to cover the formation shape. 
+The bubbles are distributed homogeneously under the influence of these two forces when they get an equilibrium state in which the total net forces acting on individual bubbles reaches zero. The final equilibrium states of the bubbles determine the potential goal states $g_i \in G$  of the agents in the swarm to cover the formation shape. 
 
 \begin{figure}[H]
 \caption{Bubble Packing Algorithm}
@@ -1118,7 +1118,7 @@ The bubbles are distributed homogeneously under the influence of these two force
 \end{figure}
 
 \paragraph{Randomized Fractals Method}\hspace{0pt} \\
-Randomized fractals methods are used to cover surfaces or volumes randomly with fractals. The main idea is to fill the fractals with the areas determined by the rule of \cite{26} :
+Randomized fractals methods are used to cover surfaces or volumes randomly with fractals. The main idea is to fill the shapes with fractals which has the areas determined by the rule of \cite{26} :
 
 \begin{equation} \label{fractals}
 A_i = \frac{A}{\zeta(c,N)(i+N)^c}
@@ -1144,7 +1144,7 @@ which tells us the sum of the all areas $A_i$ is the total area of $A$ and the a
 \includegraphics[scale = 0.60]{randomized}
 \end{figure}
 	
-Since the areas and the number of the agents, which will be represented with their coverage circles, are predetermined in our work, it is possible to adopt this algorithm as follows:
+Types and the number of the agents, which will be represented with their coverage circles, are predetermined in our work. By using this information, we have adopted the randomized fractals algorithm as follows:
 		
 \begin{algorithm}[H]
 \KwData{Set of Coverage Circles, Desired Formation Shape }
@@ -1163,12 +1163,12 @@ Initialize free configuration space $C_{free}$ as the desired formation shape \n
 \caption{RANDOMIZED$\_$FRACTALS$\_$ALGORITHM} 
 \end{algorithm}
 		
-
+The algorithm iteratively checks the free configuration space that if there is enough space. If so, it inserts a coverage circle which is representing the current agent in the swarm, randomly in the desired formation shape. At the end of each insertion, it updates the free configuration space and jumps to next iteration. At the end of the algorithm, the positions of the coverage circles which are randomly placed in desired formation shape gives us the goal states $g_i \in G$  of the agents. 
 	
 \subsubsection{Decision Process on Goal States}\hspace{0pt} \label{DecisionProcess Ref} \\
-In Section \ref{Partitioning_ref}, the formation control problem is reduced down to a problem in which every agent is expected to decide where to position in a given set of possible goal states $g_i \in G$ .  During this decision process, the cost of reaching different goal states will be the main criteria for each agent. Given goal states and cost values to these goal states, each agent must decide where to position in the formation. This process must be held to optimize the utility of every agent with a collaboration. It is obvious that some of the agents may want to choose the same goal point to reach, so the swarm must reach a global consensus on target points and cases including conflictions must be handled. The main approach to provide a solution for this problem is to make each agent to calculate the costs of its own to the goal states and then create a global consensus with the other agents to minimize the overall displacements of the swarm while achieving a desired formation shape. 
+In Section \ref{Partitioning_ref}, we have reduced down the formation control problem in which every agent is expected to decide where to position in a given set of possible goal states $g_i \in G$ .  During this decision process, the cost of reaching different goal states will be the main criteria for each agent. Given goal states and cost values to these goal states, each agent must decide where to position in the formation. This process must be held to optimize the utility of every agent with a collaboration. It is obvious that some of the agents may want to choose the same goal point to reach, so the swarm must reach a global consensus on target points and cases including conflictions must be handled. Our main approach to provide a solution for this problem is to make each agent to calculate the costs of its own to the goal states and then create a global consensus with the other agents to minimize the overall displacements of the swarm while achieving a desired formation shape. 
 
-In this work, the cost of reaching a goal state is defined with the minimum shortest path in the environment. A visibility graph based approach is used to calculate the shortest possible path to a goal state by taking into account the obstacles in the environment. The assignment process of the agents to the goal states which will be minimize the overall displacement, is handled with the help of Munkres (Hungarian)  algorithm.
+The algorithm which handles the decision process of the agents to the goal states is implemented in four stages. At the first stage, each agent calculates its own free configuration space. Secondly, agents calculate their visibility graphs by using their free configuration space. At the third stage,  agents calculate and report their costs to reach each of the goal states $g_i \in G$ with the help of Dijkstra's algorithm .  Finally, agents are assigned to the goal states with the help of Hungarian algorithm which uses the cost values reported by the agents. Hungarian algorithm handles the assignment process to minimize the overall cost(i.e. total displacement) of the swarm.
 	
 \paragraph{Free Configuration Space}\hspace{0pt} \\
 Since the shortest path is defined in the free configuration space, each agent must calculate its free configuration space by taking the obstacles in the environment into the account \cite{92}. 
