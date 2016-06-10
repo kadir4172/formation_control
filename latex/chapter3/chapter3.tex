@@ -1323,7 +1323,7 @@ Goto Label3 until full solution has been achieved. \newline
 
 Hungarian algorithm returns a vector of $nx1$ and each row in this vector represents the goal state that the related agent is assigned. With this assignment, the total cost (i.e. total displacement) of the swarm is minimized. 
 \subsection{Mesh Quality Measurement}\hspace{0pt} \label{mesh_quality_ref}  \\
-Since we have two different solutions to the shape partitioning problem, it is useful to define a method to compare the performances of these algorithms. One of the criterias of mesh diagrams is topological mesh irregularity [27-29]. This parameter is defined by : 
+We have provided two different solutions to the shape partitioning problem. Bubble Packing method partitions the desired formation shape into goal states by distributing the bubbles which are representing our agents in the swarm. On the other hand, Randomized Fractals method randomly places the fractals in the desired shape and these fractals are representing our agents in the swarm. In this project one of our aims is to distribute the agents in the formation shape homogeneously. So it is useful to define a metric to compare the performances of these algorithms, i.e. a metric which represents how these methods homogeneously distribute the agents in the formation shape. One of the criterias we have used is topological mesh irregularity \cite{27} which is commonly used by mesh generation problems. To measure the topological mesh irregularity in our swarm, first we have constructed a Voronoi diagram with the nodes which are the center positions of the agents' coverage circles. With the help of this Voronoi diagram, the topological mesh irregularity is defined by:
 
 \begin{equation}
 \epsilon _t = \frac{1}{n} \sum_{i = 0}^{n} |\gamma _i - D|
@@ -1338,7 +1338,7 @@ D = \left\{ \begin{array}{rl}
 \end{array} \right.
 \end{equation}
 	
-and $\gamma _i$ represents the degree, or the number of neighboring nodes connected to the $i^{th}$ interior node, and $n$ represents the total number of interior nodes, i.e. the number of bubbles or fractals. It is obvious that the topological mesh irregularity vanishes when all nodes have $D$ neighbors, but it is almost not possible in practical applications. Figure \ref{6komusulunode} shows a node with 6 neighbors in an example Voronoi diagram.
+and $\gamma _i$ represents the degree, or the number of neighboring nodes connected to the $i^{th}$ interior node, and $n$ represents the total number of interior nodes, i.e. the number of bubbles or fractals. In this implementation, topological mesh irregularity vanishes when all nodes have $D$ neighbors, but this ideal case is almost not possible in practical applications. Figure \ref{6komusulunode} shows a node with 6 neighbors in an example Voronoi diagram.
 	
 \begin{figure}[H]
 \caption{A Node with 6 Neighbors} \label{6komusulunode}
@@ -1346,7 +1346,8 @@ and $\gamma _i$ represents the degree, or the number of neighboring nodes connec
 \includegraphics[scale = 0.70]{voronoi}
 \end{figure}
 
-Another metric to evaluate the quality or the performance of the mesh is the geometric irregularity defined as \cite{27}:
+Another metric we have used is geometrical mesh irregularity \cite{27}
+With the help of the Voronoi diagram generated for the final state of the swarm, this irregularity is defined as \cite{27}:
 
 \begin{equation}
 \epsilon _g = \frac{1}{m} \sum_{i = 0}^{m} (A-\frac{r_i}{R_i})
@@ -1368,9 +1369,10 @@ and $m$ represents the number of nodes, $r_i$ is the radii of inscribed circle o
 \centering
 \includegraphics[scale = 0.70]{voronoi2}
 \end{figure}
-	
+
+These irregularities show that how homogeneously the agents cover the desired formation shape in their final states. We expect to have lower values of irregularities for more homogeneous distributions. 
 \subsection{Control System Design for Individual Agents}\hspace{0pt}\label{lqr_design}  \\ 
-Shape partitioning methods will provide the goal states for a desired formation shape and agents will be assigned to those goal states to minimize the total displacements of the agents in the swarm. A control system which will guide the agents to reach these goal states must be designed for each agent individually. Since the environment is dynamically changing with lots of  mobile agents, it is very probable to have different assignments to these goal states at each iteration of formation control. On the other hand, the collision with the obstacles and the other agents at the environment must be prevented due the requirements presented in Section \ref{Objectives}. The control system must react to these dynamic requests. For these purposes, a velocity controller with a large bandwidth is designed at the inner loop of the control system and the outer loop is composed with a velocity setpoint generator. The block diagram for the proposed controller structure is presented in Figure \ref{Controller_ref}.
+In shape partitioning methods we have implemented algorithms to calculate the potential goal states in desired formation shape. Then we have defined the assignment procedure of the agents to these goal states to minimize the total displacement of the agents in previous chapters. At this point, it is needed to implement navigation control laws for individual agents to make them reached to the goal states they have assigned. Since the environment is dynamically changing with lots of  mobile agents, it is very probable to have different assignments to these goal states at each execution step of formation control algorithm. Control system must react to these dynamically changing setpoints. For these purposes, we have designed a velocity controller with a large bandwidth as the inner loop of the control system and the outer loop is composed with a velocity setpoint generator. The block diagram for the proposed controller structure is presented in Figure \ref{Controller_ref}.
 
 \begin{figure}[H]
 \caption{General Scheme of the Control System} \label{Controller_ref}
@@ -1378,7 +1380,7 @@ Shape partitioning methods will provide the goal states for a desired formation 
 \includegraphics[scale = 0.45]{controller}
 \end{figure}
 
-Velocity setpoint generator provides instant setpoints for the inner loop based on the current position of the agent and the desired goal state position.  This loop calculates the amplitude of the velocity setpoint proportional with the euclidian distance of agent to the desired goal state. The direction of this velocity setpoint vector has a bearing angle of the line segment drawn from the agent to the goal state. This generator saturates the amplitude of the setpoint vector with 0.5 [m/sec] to prevent the agents' travelling in the environment so fast. Figure \ref{velocity_sp_generation} shows the amplitude and the bearing angle to the destination goal state used by the velocity setpoint generator.
+In our implementation, velocity setpoint generator provides instant setpoints for the inner loop based on the current position of the agent and the desired goal state position.  This loop calculates the amplitude of the velocity setpoint proportional with the euclidian distance of agent to the desired goal state. The direction of this velocity setpoint vector has a bearing angle of the line segment drawn from the agent to the goal state. This generator saturates the amplitude of the setpoint vector with 0.5 [m/sec] to prevent the agents' travelling in the environment so fast. Figure \ref{velocity_sp_generation} shows the amplitude and the bearing angle to the destination goal state used by the velocity setpoint generator.
 
 \begin{figure}[H]
 \caption{Velocity Setpoint Generation} \label{velocity_sp_generation}

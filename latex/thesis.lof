@@ -61,12 +61,12 @@
 \contentsline {figure}{\numberline {3.24}{\ignorespaces Forbidden Space Caused by an Obstacle \cite {92}\relax }}{81}{figure.3.24}
 \contentsline {figure}{\numberline {3.25}{\ignorespaces Shorthest Path from $p_{start}$ and $p_{goal}$ in a Visibility Graph \cite {92}\relax }}{83}{figure.3.25}
 \contentsline {figure}{\numberline {3.26}{\ignorespaces Sample Bipartite Graph Used in Assignment Problem \cite {102}\relax }}{85}{figure.3.26}
-\contentsline {figure}{\numberline {3.27}{\ignorespaces A Node with 6 Neighbors\relax }}{87}{figure.3.27}
-\contentsline {figure}{\numberline {3.28}{\ignorespaces Inscribing and Circumscribing Circle of a Voronoi Cell of Node i\relax }}{88}{figure.3.28}
-\contentsline {figure}{\numberline {3.29}{\ignorespaces General Scheme of the Control System\relax }}{89}{figure.3.29}
-\contentsline {figure}{\numberline {3.30}{\ignorespaces Velocity Setpoint Generation\relax }}{89}{figure.3.30}
-\contentsline {figure}{\numberline {3.31}{\ignorespaces Inner Loop Structure\relax }}{91}{figure.3.31}
-\contentsline {figure}{\numberline {3.32}{\ignorespaces Step Response of the Closed Loop\relax }}{91}{figure.3.32}
+\contentsline {figure}{\numberline {3.27}{\ignorespaces A Node with 6 Neighbors\relax }}{88}{figure.3.27}
+\contentsline {figure}{\numberline {3.28}{\ignorespaces Inscribing and Circumscribing Circle of a Voronoi Cell of Node i\relax }}{89}{figure.3.28}
+\contentsline {figure}{\numberline {3.29}{\ignorespaces General Scheme of the Control System\relax }}{90}{figure.3.29}
+\contentsline {figure}{\numberline {3.30}{\ignorespaces Velocity Setpoint Generation\relax }}{90}{figure.3.30}
+\contentsline {figure}{\numberline {3.31}{\ignorespaces Inner Loop Structure\relax }}{92}{figure.3.31}
+\contentsline {figure}{\numberline {3.32}{\ignorespaces Step Response of the Closed Loop\relax }}{92}{figure.3.32}
 \addvspace {10pt}
 \contentsline {figure}{\numberline {4.1}{\ignorespaces Simulation Environment\relax }}{94}{figure.4.1}
 \contentsline {figure}{\numberline {4.2}{\ignorespaces Simulation Environment in Gazebo\relax }}{95}{figure.4.2}

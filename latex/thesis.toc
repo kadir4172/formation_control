@@ -60,7 +60,7 @@
 \contentsline {paragraph}{Visibility Graphs and Dijkstra$'$s Algorithm}{81}{section*.17}
 \contentsline {paragraph}{Collaborative Decision Process of Final Goal States}{84}{section*.18}
 \contentsline {subsection}{\numberline {3.2.3}Mesh Quality Measurement}{87}{subsection.3.2.3}
-\contentsline {subsection}{\numberline {3.2.4}Control System Design for Individual Agents}{88}{subsection.3.2.4}
+\contentsline {subsection}{\numberline {3.2.4}Control System Design for Individual Agents}{89}{subsection.3.2.4}
 \contentsline {chapter}{\numberline {4}\MakeUppercase {SIMULATION ENVIRONMENT $\&$ RESULTS}}{93}{chapter.4}
 \contentsline {section}{\numberline {4.1}Simulation Environment}{94}{section.4.1}
 \contentsline {section}{\numberline {4.2}Local Positioning System}{96}{section.4.2}
