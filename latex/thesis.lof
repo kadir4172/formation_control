@@ -59,7 +59,7 @@
 \contentsline {figure}{\numberline {3.22}{\ignorespaces Bubble Packing Algorithm\relax }}{77}{figure.3.22}
 \contentsline {figure}{\numberline {3.23}{\ignorespaces Randomized Fractals \cite {26}\relax }}{78}{figure.3.23}
 \contentsline {figure}{\numberline {3.24}{\ignorespaces Forbidden Space Caused by an Obstacle \cite {92}\relax }}{81}{figure.3.24}
-\contentsline {figure}{\numberline {3.25}{\ignorespaces Shorthest Path from an initial state to a goal state \cite {92}\relax }}{82}{figure.3.25}
+\contentsline {figure}{\numberline {3.25}{\ignorespaces Shorthest Path from $p_{start}$ and $p_{goal}$ in a Visibility Graph \cite {92}\relax }}{83}{figure.3.25}
 \contentsline {figure}{\numberline {3.26}{\ignorespaces Sample Bipartite Graph Used in Assignment Problem \cite {102}\relax }}{85}{figure.3.26}
 \contentsline {figure}{\numberline {3.27}{\ignorespaces A Node with 6 Neighbors\relax }}{87}{figure.3.27}
 \contentsline {figure}{\numberline {3.28}{\ignorespaces Inscribing and Circumscribing Circle of a Voronoi Cell of Node i\relax }}{88}{figure.3.28}

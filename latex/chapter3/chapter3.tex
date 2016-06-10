@@ -1171,16 +1171,18 @@ In Section \ref{Partitioning_ref}, we have reduced down the formation control pr
 The algorithm which handles the decision process of the agents to the goal states is implemented in four stages. At the first stage, each agent calculates its own free configuration space. Secondly, agents calculate their visibility graphs by using their free configuration space. At the third stage,  agents calculate and report their costs to reach each of the goal states $g_i \in G$ with the help of Dijkstra's algorithm .  Finally, agents are assigned to the goal states with the help of Hungarian algorithm which uses the cost values reported by the agents. Hungarian algorithm handles the assignment process to minimize the overall cost(i.e. total displacement) of the swarm.
 	
 \paragraph{Free Configuration Space}\hspace{0pt} \\
-Since the shortest path is defined in the free configuration space, each agent must calculate its free configuration space by taking the obstacles in the environment into the account \cite{92}. 
+We have defined the shortest paths to the goal states of $g_i \in G$ in the free configuration space to avoid collisions with the workspace obstacles \cite{92}. In our implementation, each agent calculates its free configuration space by extracting the forbidden space from the configuration space itself. Forbidden space is calculated by augmenting the workspace obstacles with the help of Minkowski sums and we have implemented this process as follows.
 
 Assume an environment with set of obstacles $S = \begin{Bmatrix}
-P_1, P_2, .. P_t \end{Bmatrix}$. Configuration for agent $i$ can be described with the position of the center of its coverage circle with $R=\begin{Bmatrix}x_i, y_i\end{Bmatrix}$. Configuration space of $i$ th agent is the environment itself and represented by $C(R_i)$. This configuration space is composed of two subspaces; free configuration space and forbidden configuration space of agent $i$.
+P_1, P_2, .. P_t \end{Bmatrix}$. Configuration for agent $i$ can be described with the position of the center of its coverage circle with $R=\begin{Bmatrix}x_i, y_i\end{Bmatrix}$. Configuration space of $i^{th}$ agent is the workspace itself and represented by $C(R_i)$. This configuration space is composed of two subspaces; free configuration space and forbidden configuration space of agent $i$ \cite{92}.
 
 \begin{equation}
 C(R_i) = C_{free}(R_i,S) + C_{forb}(R_i,S)
 \end{equation}
 
-If the forbidden space is calculated with the help of Minkowski Sum method, free configuration space can be derived simply by extracting the forbidden space from the environment itself. Let a single obstacle is described with a point set of $S_1$ and the agent is described with a point set of $S_2$. The Minkowski sum of these two sets $S_1 \subset R^2$ and $S_2 \subset R^2$ can be calculated with the following \cite{92},
+In our implementation each agent calculates its forbidden space by augmenting the workspace obstacles with the help of Minkowski sum method. Minkowski sum method is implemented as follows:
+
+Let a single obstacle is described with a point set of $S_1$ and the agent is described with a point set of $S_2$. The Minkowski sum of these two sets $S_1 \subset R^2$ and $S_2 \subset R^2$ can be calculated with the following \cite{92},
 	
 \begin{equation}
 S_1 \oplus S_2 := \begin{Bmatrix}
@@ -1196,10 +1198,10 @@ where $p+q$ denotes the vector sum of the vectors $p$ and $q$.
 \includegraphics[scale = 0.75]{Forbidden}
 \end{figure}
 	
-Forbidden space for agent $i$, $C_{forb}(R_i, S)$, is the sum of the forbidden spaces calculated for each obstacle in the environment \cite{92}. Figure \ref{yasakli_bolge} shows a forbidden space related with an obstacle.
+Figure \ref{yasakli_bolge} shows a forbidden space related with an obstacle. Forbidden space for agent $i$, $C_{forb}(R_i, S)$, is the sum of the forbidden spaces calculated for each obstacle in the environment \cite{92}. Agents extract their forbidden space $C_{forb}(R_i, S)$ from the configuration space itself to calculate their free configuration spaces.
 	
 \paragraph{Visibility Graphs and Dijkstra$'$s Algorithm}\hspace{0pt} \\
-It is obvious that the shortest path between two points in the environment must lie on the free configuration space, $C_{free}$, for each agent to avoid collisions with the obstacles . A constraint for the shortest path is given as follows \cite{92}: 
+We have provided collision avoidance while travelling towards to the goal states $g_i \in G$ by defining the shortest paths in the free configuration spaces of the agents. In \cite{92}, an additional constraint for the shortest path is defined as follows : 
 
 \begin{displayquote}
 The shortest path between $p_{start}$ and $p_{goal}$ among a set $S$ of augmented polygonal obstacles consists of the arcs of the visibility graph $\gamma_{vis}(S^*)$ where $S^* := S \cup \begin{Bmatrix}
@@ -1207,17 +1209,15 @@ p_{start}, p_{goal}
 \end{Bmatrix}$
 \end{displayquote}
 
-A visibility graph,$\gamma_{vis}(S^*)$ , is a graph which is set of interior nodes representing the vertices of the set of obstacles, $S$, in the environment and edges which represents visible (which are not crossing and interior region of an obstacle) connections between these nodes \cite{92}. 
+A visibility graph, $\gamma_{vis}(S^*)$, is a graph which is set of interior nodes representing the vertices of the set of obstacles, $S$, in the environment and edges which represents visible (which are not crossing and interior region of an obstacle) connections between these nodes \cite{92}.
 
-Consider set of obstacles in the environment is augmented with the Minkowski Sums. Let these set of augmented polygonal obstacles represented with $S_i \subset S$. 
+In this project we have adopted this constraint in our algorithm. In the implementation phase, we have used the obstacles which are augmented with the Minkowski Sums to calculate the free configuration space. Let these set of augmented polygonal obstacles represented with $S_i \subset S$. 
 
-\begin{figure}[H]
-\caption{Shorthest Path from an initial state to a goal state \cite{92}} \label{dijksttae_visibility}
-\centering
-\includegraphics[scale = 0.9]{shortest}
-\end{figure} 
 
-Algorithm to calculate the visibility graph of $S^*$,
+
+Algorithm to calculate the visibility graph of  $S^* := S \cup \begin{Bmatrix}
+p_{start}, p_{goal}
+\end{Bmatrix}$
 	
 \begin{algorithm}[H]
 \KwData{Set of Vertices Included in $S^*$ }
@@ -1241,8 +1241,15 @@ where $VISIBLE$\_$VERTICES(v,S)$ algorithm checks whether line segments drawn fr
 \end{algorithm}
   
 \vspace{2cm}
-Figure \ref{dijksttae_visibility} shows an example visibility graph and a shortest path from $p_{start}$ to $p_{goal}$. Dijkstra$'$s algorithm computes the shortest path between two nodes in
-graph with $k$ arcs, each having a non-negative weight. It is a tree search algorithm and  used to calculate the shortest paths between nodes in a graphs, with the help of weighted edges between nodes. The time complexity of the original algorithm is $O(n^2)$ where $n$ is the number of the nodes in the graph. With the usage self balancing binary search tree, the algorithm requires $O(k+nlogn)$ time in the worst case. The algorithm for the Dijkstra's is given as follows \cite{92}:
+
+\begin{figure}[H]
+\caption{Shorthest Path from $p_{start}$ and $p_{goal}$ in a Visibility Graph \cite{92}} \label{dijksttae_visibility}
+\centering
+\includegraphics[scale = 0.9]{shortest}
+\end{figure} 
+
+Figure \ref{dijksttae_visibility} shows an example visibility graph and a shortest path from $p_{start}$ to $p_{goal}$ in that graph. We have used Dijkstra algorithm to compute the shortest path between two nodes in graph with multiple edges, each having a non-negative weight. In our work, the weights of the edges in $\gamma_{vis}$ , are calculated with the Euler distance between nodes in the workspace.
+Dijkstra algorithm is a tree search algorithm and time complexity of the original algorithm is $O(n^2)$ where $n$ is the number of the nodes in the graph. With the usage self balancing binary search tree, the algorithm requires $O(k+nlogn)$ time in the worst case where $k$ is the number of edges in the graph. The algorithm for the Dijkstra's is implemented as follows \cite{92}:
 \newpage
 	
 \begin{algorithm}[H]
@@ -1275,10 +1282,12 @@ return Previous[v]; \newline
 
 In algorithm above $Distance[x]$ function call, calculates the total cost from the $source$\_$ node$ to the $x$ vertex, and $Previous[x]$ function call, returns the previous node in optimal path from $source$\_$ node$ .
 
-In our work, the weights of the edges in $\gamma_{vis}$ , are calculated with the Euler distance between nodes in the environment.  
+  
 
 \paragraph{Collaborative Decision Process of Final Goal States}\hspace{0pt} \\
-Possible routes and costs to the goal states are calculated with the help of Visibility Graphs and Dijkstra's algorithm  for each agent. It is obvious that each agent will try to choose a goal state with minimum cost according to its position and the orientation in the environment. But the cases in which two or more agents are willing to reach the same goal point must be handled by optimizing the overall utility of the swarm. To minimize to overall cost of whole swarm while achieving a formation shape, Hungarian algorithm which is a combinational optimization algorithm that solves this assignment problem is used. To implement this algorithm, a complete bipartite graph $G=(S,T,E)$ with $n \in S$ agents and $t \in T$ goal points is constructed.In this graph, each agent have a cost which is defined by the shortest path to the destination in the environment for different goal points. 
+We have provided an algorithm to calculate the costs to the goal states $g_i \in G$ with the help of Visibility Graphs and Dijkstra's algorithm in previous sections. These costs are defined as displacements on the shortest paths to the goal states in the visibility graphs for each agent. In this project, our aim is to minimize the total displacement of the individuals while achieving the desired formation shape. For this purpose we have implemented an algorithm to minimize the overall displacement of whole swarm while achieving a formation shape. The problem related with this process can be defined as follows:
+
+We have $n$ number of agents in our swarm and $n$ number of goal states $g_i \in G$ placed in desired formation shape. Each agent has reported their costs (i.e. minimum displacements) to reach each of these goal states and we have to implement an algorithm to assign the agents to these goal states while minimizing the total displacement of the swarm. This is a generalized assignment problem and we have used Hungarian algorithm which is a combinational optimization algorithm that solves this assignment problem. To implement this algorithm, a complete bipartite graph $G=(S,T,E)$ with $n \in S$ agents and $g_i \in T$ goal states is constructed.In this graph, each agent has a cost which is defined by the shortest path to the destination in the workspace for different goal points. 
 
 \begin{figure}[H]
 \centering
@@ -1286,7 +1295,7 @@ Possible routes and costs to the goal states are calculated with the help of Vis
 \caption{Sample Bipartite Graph Used in Assignment Problem \cite{102}}
 \end{figure}
 
-A cost matrix  $C$ is defined to implement the Hungarian algorithm .  The dimensions of the cost matrix is $nxm$ in which each element represents the cost of assigning the goal state $m$ to the agent $n$.  Since we have equal number of agents and goal states, the cost matrix will be a square matrix with $nxn$ or $mxm$.  The algorithm for the assignment process as follows:
+We have defiend a cost matrix  $C$ to implement the Hungarian algorithm. The dimensions of the cost matrix is $nxm$ in which each element represents the cost of assigning the goal state $m$ to the agent $n$.  Since we have equal number of agents and goal states, the cost matrix will be a square $nxn$ matrix.  The algorithm for the assignment process as follows:
 	
 \begin{algorithm}[H]
 \KwData{Cost Matrix , $C$ }
@@ -1312,6 +1321,7 @@ Goto Label3 until full solution has been achieved. \newline
 \caption{HUNGARIAN$\_$ALGORITHM}
 \end{algorithm}
 
+Hungarian algorithm returns a vector of $nx1$ and each row in this vector represents the goal state that the related agent is assigned. With this assignment, the total cost (i.e. total displacement) of the swarm is minimized. 
 \subsection{Mesh Quality Measurement}\hspace{0pt} \label{mesh_quality_ref}  \\
 Since we have two different solutions to the shape partitioning problem, it is useful to define a method to compare the performances of these algorithms. One of the criterias of mesh diagrams is topological mesh irregularity [27-29]. This parameter is defined by : 
 
