@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.15 (TeX Live 2015/dev/Debian) (preloaded format=pdflatex 2016.6.10)  10 JUN 2016 16:50
+This is pdfTeX, Version 3.14159265-2.6-1.40.15 (TeX Live 2015/dev/Debian) (preloaded format=pdflatex 2016.6.10)  10 JUN 2016 19:18
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1646,10 +1646,7 @@ Package pdftex.def Info: beacons.png used on input line 49.
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [38]
-[39 <./beacons.png>]
-Underfull \vbox (badness 1354) has occurred while \output is active []
-
- [40]
+[39 <./beacons.png>] [40]
 Underfull \hbox (badness 10000) in paragraph at lines 149--150
 
  []
@@ -2709,7 +2706,7 @@ LaTeX Warning: There were multiply-defined labels.
 Here is how much of TeX's memory you used:
  25538 strings out of 494409
  436799 string characters out of 6164777
- 576635 words of memory out of 5000000
+ 577635 words of memory out of 5000000
  27584 multiletter control sequences out of 15000+600000
  56221 words of font info for 111 fonts, out of 8000000 for 9000
  372 hyphenation exceptions out of 8191
@@ -2725,7 +2722,7 @@ r.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/symbol/usyr.pfb></usr/shar
 e/texlive/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/share/texlive/texmf
 -dist/fonts/type1/urw/times/utmr8a.pfb></usr/share/texlive/texmf-dist/fonts/typ
 e1/urw/times/utmri8a.pfb>
-Output written on thesis.pdf (173 pages, 43406367 bytes).
+Output written on thesis.pdf (173 pages, 43406570 bytes).
 PDF statistics:
  2202 PDF objects out of 2487 (max. 8388607)
  1819 compressed objects within 19 object streams

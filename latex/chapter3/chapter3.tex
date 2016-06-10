@@ -21,7 +21,7 @@ A block diagram of the system design is illustrated in Figure \ref{general_syste
 \end{figure}
 
 \section{LOCAL POSITIONING SYSTEMS} \label{LOCAL POSITIONING SYSTEMS_ref}
-Local positioning system is a subsystem to provide a complete solution to the localization of the second type agents in the environment. As discussed in Section \ref{Objectives}, agents are expected to have low sensor capabilities and only a limited number of them have external position measurement sensors on their boards and we call these agents position beacons in our project. The rest of the swarm which is composed of second type agents, has to maintain their position$\&$velocity data with the help of their inertial measurements and local trilateration process. Propagation of the states with these type of measurements are always inclined to drift problems due to the error$\&$noise and bias problems of the sensors. As a result of this problem, state vectors composed with the translational positions and velocities have to be corrected with an external measurement. A complete solution for this type of problem is proposed in Figure \ref{figure_lps}.
+Local positioning system is a subsystem to provide a complete solution to the localization of the second type agents in the environment. As discussed in Section \ref{Objectives}, agents are expected to have low sensor capabilities and only a limited number of them have external position measurement sensors on their boards and we call these agents position beacons in our project. The rest of the swarm which is composed of second type agents, has to maintain their position$\&$velocity data with the help of their inertial measurements and local trilateration process. Propagation of the states with these type of measurements are always inclined to drift problems due to the error$\&$noise and bias problems of the sensors. As a result of this problem, state vectors composed with the translational positions and velocities have to be corrected with an external measurement. We have proposed a complete solution for this subsystem as illustrated in Figure \ref{figure_lps}.
 
 \begin{figure}[H]
 \caption{Local Positioning System} \label{figure_lps}
@@ -29,9 +29,9 @@ Local positioning system is a subsystem to provide a complete solution to the lo
 \includegraphics[scale = 0.65]{lps}
 \end{figure}
 
-As illustrated in Figure \ref{figure_lps}, agents are expected to propagate their states with the help of acceleration, gyroscope and magnetometer sensors. Trilateration and route table determination processes require iterative and time consuming algorithms and their implementation details are given in the following section. On the other hand, state propagation process is executed with high speed data provided by the inertial sensors. It is not possible to execute the trilateration and route table determination algorithms with the same sampling frequency of state propagation process. Because of this reason, a localization timer to provide the minimum required time for the route table determination and trilateration process is implemented to the solution. Agents will correct their state vectors with the localization period by measuring their positions with trilateration process and execute the update procedure in their state estimator algorithms. The requirement about the maximum value of the localization period is determined with the help of Monte Carlo simulations discussed in Section \ref{lps_ref} by defining a maximum allowable error on the position data since the error on the state vectors are drifting with increasing time.
+As illustrated in Figure \ref{figure_lps}, agents propagate their states with the help of acceleration, gyroscope and magnetometer sensors. This state propagation process is executed with high speed data provided by the inertial sensors. On the other hand, trilateration and route table determination processes require iterative and time consuming algorithms and their implementation details are given in the following sections. It is not possible to execute the trilateration and route table determination algorithms with the same sampling frequency of state propagation process. Because of this reason, a localization timer to provide the minimum required time for the route table determination and trilateration process is implemented to the solution. Agents will correct their state vectors with the localization period by measuring their positions with trilateration process and execute the update procedure in their state estimator algorithms. The requirement about the maximum value of the localization period is determined with the help of Monte Carlo simulations discussed in Section \ref{lps_ref} by defining a maximum allowable error on the position data since the error on the state vectors are drifting with increasing time.
 
-A sample swarm with 8 agents is illustrated in Figure \ref{sample_mesh}. The mesh network between agents are composed with a bidirectional graph in which each agent can communicate with its direct neighbors. We have assigned an edge between two nodes if there is a radio link between them. This line of sight(LOS) radio link is the main criteria for the agents to become direct neighbors in the network. Thus, having a physical Euclidian distance to an agent within the communication range is not enough to be the direct neighbor with that agent, i.e. even if two agents are very close to each other in the workspace, they are not direct neighbors if there is no radio link between them because of an obstacle preventing the line of sight. This sample swarm is used to illustrate the implementation details of the local positioning system in following sections.
+We have implemented a mesh network between agents which is composed with a bidirectional graph in which each agent can communicate with its direct neighbors. We have assigned an edge between two nodes if there is a radio link between them. This line of sight(LOS) radio link is the main criteria for the agents to become direct neighbors in the network. Thus, having a physical Euclidian distance to an agent within the communication range is not enough to be the direct neighbor with that agent, i.e. even if two agents are very close to each other in the workspace, they are not direct neighbors if there is no radio link between them because of an obstacle preventing the line of sight. A sample swarm with 8 agents is illustrated in Figure \ref{sample_mesh}. This sample swarm is used to illustrate the implementation details of our local positioning system in following sections.
 
 \begin{figure}[H] 
 \caption{A Sample Swarm with 8 agents} \label{sample_mesh}
@@ -41,7 +41,7 @@ A sample swarm with 8 agents is illustrated in Figure \ref{sample_mesh}. The mes
 \end{figure}
 
 \subsection{Trilateration Process}
-Trilateration process helps the agents to localize themselves with the help of position beacons which are their direct neighbors.  Trilateration calculations use distance measurements to the nodes with known positions, to determine the coordinates of unknown positions \cite{22}. These measurements are assumed to be done with the help of time of arrival(TOA) methods discussed in Section \ref{sssec:num1}. In a TOA solution, an agent is able to measure the distance of itself to a position beacon only if it is a direct neighbor of that position beacon. Figure \ref{beacons_ref} illustrates a portion of our sample network which consist of 4 position beacons which are direct neighbors of agent $C$ . Here agent $C$ tries to localize itself with the help of distance measurements $r_i$ and the position data $B_i$ of the position beacons.
+Trilateration process helps the second type agents to localize themselves with the help of position beacons which are their direct neighbors.  Trilateration calculations use distance measurements to the nodes with known positions, to determine the coordinates of unknown positions \cite{22}. These measurements are assumed to be done with the help of time of arrival(TOA) methods discussed in Section \ref{sssec:num1}. In a TOA solution, an agent is able to measure the distance of itself to a position beacon only if it is a direct neighbor of that position beacon. Figure \ref{beacons_ref} illustrates a portion of our sample network which consist of 4 position beacons which are direct neighbors of agent $C$ . Here agent $C$ tries to localize itself with the help of distance measurements $r_i$ and the position data $B_i$ of the position beacons.
 
 \begin{figure}[H] 
 \caption{Environment for Trilateration Process} \label{tri_late}
@@ -53,18 +53,18 @@ Trilateration process helps the agents to localize themselves with the help of p
 For the sample network illustrated in Figure \ref{tri_late} we have 4 position beacons which are direct neighbors of agent $C$. The distance function to any position beacon can be written as follows \cite{22};
 
 \begin{equation} % eq 2
-\hat{r_i} = \sqrt{(x-x_i)^2 + (y-y_i)^2+ (z-z_i)^2}    \hspace{0.3cm}   (i=1,2,...,n)
+{r_i} = \sqrt{(x-x_i)^2 + (y-y_i)^2+ (z-z_i)^2}    \hspace{0.3cm}   (i=1,2,...,n)
 \end{equation}
 
-where $i$ denotes the beacon number and $n$ is the total number of position beacons which is equal to 4 in our case.  In general, we have $n$ number of constraints in the solution of the localization problem. These constraints are defined as spherical functions for a localization problem in 3 dimensional workspace \cite{22}. In our work, we have implemented a two dimensional localization solution with the assumption of each agent of the swarm conserve the vertical position within the Earth centered coordinate system. With this assumption, the problem for the localization process has constraints with circle functions rather than spherical ones, presented with
+where $i$ denotes the beacon number and $n$ is the total number of position beacons which is equal to 4 in our case.  In general, we have $n$ number of constraints in the solution of the localization problem. These constraints are defined as spherical functions for a localization problem in 3 dimensional workspace \cite{22}. In our work, we have implemented a two dimensional localization solution with the assumption of each agent of the swarm conserve the same vertical position within the Earth centered coordinate system. With this assumption, the problem for the localization process has constraints with circle functions rather than spherical ones, presented with
 
 \begin{equation}
-(x-x_i)^2 + (y - y_i)^2 = {r_i}^2
+(x-x_i)^2 + (y - y_i)^2 = {r_i}^2 \hspace{0.3cm}   (i=1,2,...,n)
 \end{equation}
 
 It is possible to use $n$ circular constraints to calculate the unknown position of the agent $C$. For this purpose, lets assume $\theta = (x,y)$ is representing the coordinates of agent $C$ and $B_1 = (x_1,y_1) ; B_2 = (x_2,y_2) ; B_3 = (x_3,y_3) ; ...  ; B_i = (x_i,y_i)$ are the measured positions of the position beacons.
 
-If any of the beacons is considered as the reference beacon and named with an index of $r$, the distance equations can be provided as following
+If any of the beacons is considered as the reference beacon and named with an index of $r$, the distance equations can be provided as following:
 
 The distance between the agent $C$ and any beacon $i$ represented as
 
@@ -100,14 +100,14 @@ Replacing the expressions in equation \ref{tri_expressi} by $d_{ir}$ and $d_r$, 
  2((x_i - x_r)(x - x_r) + (y_i - y_r)(y - y_r)) = d_r^2(\theta) + d_{ir}^2 - d_i^2(\theta)
 \end{equation}
 
-this general expression is valid for each beacon with $i$ changing from $2$ to $n$
+this general expression is valid for each beacon with $i$ changing from $2$ to $n$ (by assuming that we have chosen the first position beacon with $"r=1"$ as reference beacon)
 
 \begin{align}
 \begin{split}
-& (x_2 - x_1)(x - x_1) + (y_2 - y_1)(y - y_1) = \frac{1}{2} [d_r^2(\theta) + d_{2r}^2 - d_2^2(\theta)] \\
-& (x_3 - x_1)(x - x_1) + (y_3 - y_1)(y - y_1) = \frac{1}{2} [d_r^2(\theta) + d_{3r}^2 - d_3^2(\theta)] \\
+& (x_2 - x_1)(x - x_1) + (y_2 - y_1)(y - y_1) = \frac{1}{2} [d_1^2(\theta) + d_{21}^2 - d_2^2(\theta)] \\
+& (x_3 - x_1)(x - x_1) + (y_3 - y_1)(y - y_1) = \frac{1}{2} [d_1^2(\theta) + d_{31}^2 - d_3^2(\theta)] \\
 & ... \\
-& (x_n - x_1)(x - x_1) + (y_n - y_1)(y - y_1) = \frac{1}{2} [d_r^2(\theta) + d_{nr}^2 - d_n^2(\theta)]
+& (x_n - x_1)(x - x_1) + (y_n - y_1)(y - y_1) = \frac{1}{2} [d_1^2(\theta) + d_{n1}^2 - d_n^2(\theta)]
 \end{split}
 \end{align}
 
@@ -121,17 +121,17 @@ then the linearized system equations can be represented with $A\vec{x} = \vec{b}
 
 \begin{equation}
 A = \begin{bmatrix}
-x_2 - x_r & y_2 - y_r\\
-x_3 - x_r & y_3 - y_r\\
+x_2 - x_1 & y_2 - y_1\\
+x_3 - x_1 & y_3 - y_1\\
 ...       & ...      \\
-x_n - x_r & y_n - y_r\\
+x_n - x_1 & y_n - y_1\\
 \end{bmatrix}				
 \end{equation}
 
 \begin{equation}
 x = \begin{bmatrix}
-x - x_r\\
-y - y_r\\
+x - x_1\\
+y - y_1\\
 \end{bmatrix}
 \end{equation}
 
@@ -149,7 +149,7 @@ where $A$ is a $(n-1)\ x\ 2$ matrix and $b$ is a $(n-1)\ x\ 1$ vector.
 There are some possible solutions to this type of equation regarding with the structure of matrix $A$ and vector $b$.\\
 
 \underline {\textit{Solution to $A\vec{x} = \vec{b}$ Problem}}\\
-In a localization problem handled in two dimensional world, the $A$ matrix has $(n-1)$ rows and $2$ columns, where $n$ is the number of neighboring beacons to an agent. It is obvious that there is no solution when the number of neighbors lower than $3$ (i.e. $n<3$), since the $A$ matrix will have one or less number of lines. When the number of neighbor beacons are equal or greater than $3$ we have three different solutions according to the structure of the linearized equations.
+In a localization problem handled in two dimensional world, the $A$ matrix has $(n-1)$ rows and $2$ columns, where $n$ is the number of position beacons which are direct neighbors of an agent. It is obvious that there is no solution when the number of neighbors lower than $3$ (i.e. $n<3$), since the $A$ matrix will have one or less number of lines. When the number of neighbor position beacons are equal or greater than $3$ we have three different solutions according to the structure of the linearized equations.
 
 \textit{1) Unique Solution:}\\
  If A is a $2\ x\ 2$ matrix (i.e. $n=2$) and the its rank is $2$, then the solution of $\vec{x}$ is unique with \cite{linear_ders_notu}
@@ -161,7 +161,7 @@ In a localization problem handled in two dimensional world, the $A$ matrix has $
 where $\vec{x}$ is the unique solution. \\
   
 \textit{ 2) Minimum Norm Solution With Pseudo Inverse:} \\  
-If $A$ is a $(n-1)\ x\ 2$ dimensional matrix where $n>3$ ,which means the number of neighboring beacons greater than $3$, and if columns of $A$ matrix form a linearly independent set (full column rank matrix) then the solution can be found with the projection of $\vec{b}$ over range space of $A$, $Proj_{R(A)}\vec{b}$ where \cite{linear_ders_notu}
+If $A$ is a $(n-1)\ x\ 2$ dimensional matrix where $n>3$ ,which means the number of neighboring position beacons greater than $3$, and if columns of $A$ matrix form a linearly independent set (full column rank matrix) then the solution can be found with the projection of $\vec{b}$ over range space of $A$, $Proj_{R(A)}\vec{b}$ where \cite{linear_ders_notu}
 
 \begin{equation}
 Proj_{R(A)}\vec{b} = A (A^TA)^{-1}A^T\vec{b}
@@ -204,7 +204,7 @@ this concludes that $\hat{x}$ is the unique minimum norm solution to the $A\vec{
 	
 	
 \textit{3) Minimum Norm Solution With Nonlinear Least Squares Method}\\	
-If matrix $A$ has the dimensions of $2\ x\ 2$ or $(n-1)\ x\ 2$ with $n>3$ and if rank of $A$ matrix is equal to $1$ then the solution to the $A\hat{x} = \vec{b}$ problem can be found iteratively with the help of nonlinear least squares method that minimizes the sum of squares of the distance errors such as \cite{22}
+If matrix $A$ has the dimensions of $2\ x\ 2$ or $(n-1)\ x\ 2$ with $n>3$ and if rank of $A$ matrix is equal to $1$ then the solution to the $A\hat{x} = \vec{b}$ problem can be found iteratively with the help of nonlinear least squares method that minimizes the cost function which is defined as sum of squares of the distance errors \cite{22} :
 	
 \begin{equation}
 F(\theta) = \sum_{i=1}^{n} \left(f_i^2(x,y)\right)
@@ -216,9 +216,9 @@ with
 f_i(x,y) = \sqrt{(x-x_i)^2 + (y - y_i)^2} - r_i = f_i(\theta) 
 \end{equation}
 
-where $r_i$ is the measured distance to a position beacon $i$ and $(x_i, y_i)$ is the iteratively calculated position data of agent $C$.
+where $r_i$ is the measured distance to a position beacon $i$ and $(x_i, y_i)$ is calculated position data of agent $C$ iteratively.
 
-There are various algorithms to minimize the sum of the square errors in the literature. We have used Newton iteration to find the optimal solution in this thesis work. Because convergence of this method is quadratic in general and the performance of the algorithm is extremely increased by choosing proper initial conditions \cite{wiki_newton}. We have used the propagated position data as an initial condition for the optimization process and the algorithm terminates very fast with correct results. Algorithm is implemented as follows:
+There are various algorithms to minimize the sum of the square errors in the literature. We have used Newton iteration to find the optimal solution in this thesis work. Because convergence of this method is quadratic in general and the performance of the algorithm is extremely increased by choosing proper initial conditions \cite{wiki_newton}. We have used the propagated position data as an initial condition for the optimization process to make the algorithm terminated very fast with correct results. Algorithm is implemented as follows:
 
 Considering  $f(\theta)$ as
 
@@ -232,7 +232,7 @@ f_n(\theta)
 \end{equation}
 
 
-Taking the partial derivatives of the cost function with respect to $x$ and $y$ gives 
+Lets take the partial derivatives of the cost function with respect to $x$ and $y$ gives 
 
 \begin{align}
 \begin{split}
