@@ -11,9 +11,9 @@
 \externaldocument{chapter4}
 \externaldocument{chapter5}
 
-In this thesis work, the problem of dynamical formation control of heterogeneous mobile robots is reduced down to two subproblems such as local positioning and formation control.  In our implementation there are two main types of agents in the swarm. First type agents have external position measurement sensors on their boards. We call these agents position beacons. Second type agents do not have position sensors on their boards. Local positioning subsystem proposes a solution for the localization of agents in the environment for second type of agents.   In this chapter, details of the solutions for these subproblems are presented in details.
+In this thesis work, the problem of dynamical formation control of heterogeneous mobile robots is reduced down to two subproblems such as local positioning and formation control.  In our implementation there are two main types of agents in the swarm. First type agents have external position measurement sensors on their boards. We call these agents position beacons. Second type agents do not have position sensors on their boards. Local positioning subsystem proposes a solution for the localization of agents in the environment for second type of agents. Formation control subsystem implements algorithms to cover the desired formation shape homogeneously with the agents in the swarm. In this chapter, details of the solutions for these subproblems are presented in details.
 
-A block diagram of the system design is illustrated in Figure \ref{general_system}. Local positioning system provides a basis for the formation control problem with agents' state vectors composed of translational positions and velocities. Formation control subsystem proposes a solution to achieve desired complex shapes with heterogeneous agents in the swarm. Formation control system gets the requested formation shape externally and creates individual control laws for agents to cover the desired shape homogenously. The implementation details of these subsystems are given in the following sections. 
+A block diagram of the system design is illustrated in Figure \ref{general_system}. Local positioning system provides a basis for the formation control problem with agents' state vectors composed of translational positions and velocities. Basically, this subsystem provides position and velocity data to the second type of agents in the swarm. Formation control subsystem proposes a solution to achieve desired complex shapes with heterogeneous agents in the swarm. Formation control system gets the requested formation shape externally and creates individual control laws for agents to cover the desired shape homogenously. The implementation details of these subsystems are given in the following sections. 
 \begin{figure}[H]
 \caption{Flowchart of the Provided Solution} \label{general_system}
 \centering
@@ -21,7 +21,7 @@ A block diagram of the system design is illustrated in Figure \ref{general_syste
 \end{figure}
 
 \section{LOCAL POSITIONING SYSTEMS} \label{LOCAL POSITIONING SYSTEMS_ref}
-Local positioning system is a subsystem to provide a complete solution to the localization of the agents in the environment. As discussed in Section \ref{Objectives}, agents are expected to have low sensor capabilities and only a limited number of them have external position measurement sensors on their boards. The rest of the swarm have to maintain their position$\&$velocity data with the help of their inertial measurements. Propagation of the states with these type of measurements are always inclined to drift problems due to the error$\&$noise and bias problems of the sensors. As a result of this problem, state vectors composed with the translational positions and velocities have to be corrected with an external measurement. A complete solution for this type of problem is proposed in Figure \ref{figure_lps}.
+Local positioning system is a subsystem to provide a complete solution to the localization of the second type agents in the environment. As discussed in Section \ref{Objectives}, agents are expected to have low sensor capabilities and only a limited number of them have external position measurement sensors on their boards and we call these agents position beacons in our project. The rest of the swarm which is composed of second type agents, has to maintain their position$\&$velocity data with the help of their inertial measurements and local trilateration process. Propagation of the states with these type of measurements are always inclined to drift problems due to the error$\&$noise and bias problems of the sensors. As a result of this problem, state vectors composed with the translational positions and velocities have to be corrected with an external measurement. A complete solution for this type of problem is proposed in Figure \ref{figure_lps}.
 
 \begin{figure}[H]
 \caption{Local Positioning System} \label{figure_lps}
@@ -1380,7 +1380,7 @@ In shape partitioning methods we have implemented algorithms to calculate the po
 \includegraphics[scale = 0.45]{controller}
 \end{figure}
 
-In our implementation, velocity setpoint generator provides instant setpoints for the inner loop based on the current position of the agent and the desired goal state position.  This loop calculates the amplitude of the velocity setpoint proportional with the euclidian distance of agent to the desired goal state. The direction of this velocity setpoint vector has a bearing angle of the line segment drawn from the agent to the goal state. This generator saturates the amplitude of the setpoint vector with 0.5 [m/sec] to prevent the agents' travelling in the environment so fast. Figure \ref{velocity_sp_generation} shows the amplitude and the bearing angle to the destination goal state used by the velocity setpoint generator.
+In our implementation, velocity setpoint generator provides instant setpoints for the inner loop based on the current position of the agent and the desired goal state position.  This loop calculates the amplitude of the velocity setpoint proportional with the euclidian distance of agent to the desired goal state. The direction of this velocity setpoint vector has a bearing angle of the line segment drawn from the agent to the goal state. The additional terms discussed in Section \ref{shapepartition_ref} related with collision avoidance is added to this velocity setpoint. This generator saturates the amplitude of the setpoint vector with 0.5 [m/sec] to prevent the agents' travelling in the environment so fast. Figure \ref{velocity_sp_generation} shows the amplitude and the bearing angle to the destination goal state used by the velocity setpoint generator.
 
 \begin{figure}[H]
 \caption{Velocity Setpoint Generation} \label{velocity_sp_generation}
@@ -1388,7 +1388,7 @@ In our implementation, velocity setpoint generator provides instant setpoints fo
 \includegraphics[scale = 0.50]{bearing}
 \end{figure}
 
-The inner loop is designed to track the velocity setpoint provided by the generator and additive terms and it has a state feedback structure. The gains for the feedback states are calculated with an LQR controller. A simple mass, damper type second order linear system is used to provide a model for the controller. The translational friction force is assumed to be linear with the velocity of each agent. Different mass and friction coefficients for heterogeneous mobile robots are used in control system design. To track the desired velocity setpoint, the model of the system is augmented with an artificial error state $e$,
+The inner loop is designed to track the velocity setpoint provided by the generator and it has a state feedback structure. The gains for the feedback states are calculated with LQR methodology. A simple mass, damper type second order linear system is used to provide a linear model for the controller design. The translational friction force is assumed to be linear with the velocity of each agent. Different mass and friction coefficients for heterogeneous mobile robots are used in control system design. To track the desired velocity setpoint, the model of the system is augmented with an artificial error state $e$,
 
 \begin{equation} \label{dynamic_system}
 \begin{bmatrix}
@@ -1440,7 +1440,7 @@ q_2 = \frac{1}{t_2 (x_{2max})^2}; \hspace{0.1cm} and \hspace{0.1cm}
 r_1 = \frac{1}{ (u_{1max})^2}; \hspace{0.1cm}
 \end{equation}
 
-Here $t_i$  is the desired settling time for $x_i$ which is determined as 1.5 seconds for the velocity and 0.001 seconds for the integral state. The statement of $x_{imax}$ represents the expected maximum value of the state $i$ , which is defined 1 [m/sec] for the velocity state and 4 [m] for the error state. $u_{1max}$ represent the maximum allowable input signal which is defined as 3 [N]. The structure of the inner loop is illustrated in Figure \ref{innerloopref}
+Here $t_i$  is the desired settling time for $x_i$ which is determined as 1.5 seconds for the velocity and 0.01 seconds for the integral state. The statement of $x_{imax}$ represents the expected maximum value of the state $i$ , which is defined 1 [m/sec] for the velocity state and 4 [m] for the error state. $u_{1max}$ represent the maximum allowable input signal which is defined as 3 [N]. The structure of the inner loop is illustrated in Figure \ref{innerloopref}
 
 \begin{figure}[H]
 \caption{Inner Loop Structure} \label{innerloopref}
