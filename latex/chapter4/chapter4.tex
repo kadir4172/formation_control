@@ -56,6 +56,22 @@ Agent 3& 1.5 &  0.21 & 0.13 & 0.5\\
 \end{tabular}
 \end{center}
 
+As illustrated in Section \ref{lqr_design}, full state feedback gains for the agents are calculated with the help of LQR methodology by using the linear system definitions of different types of agents. Calculated feedback gains are given in Table \ref{feedback_gains}.
+
+\begin{center}
+\captionof{table}{State Feedback Gains for Different Types of Agents} \label{feedback_gains} 
+\begin{tabular}{||c| c |c||}
+				
+\hline
+\textbf{Agent Type} & \textbf{$K_e$}  & \textbf{$K_v$} \\ 
+\hline
+Agent 1& 237 & 96\\
+Agent 2& 263 & 112\\
+Agent 3& 297 & 121\\
+\hline
+\end{tabular}
+\end{center}
+
 Figure \ref{Matlab_env} illustrates the Matlab environment used in simulations. Red circles which are the same size with coverage circles defined in Section \ref{Artificial_forces_ref}, are representing the different types of agents in the environment. The shape defined with blue line is the desired formation shape and the obstacles are represented with green lines in the environment. 
 
 \begin{figure}[H]
