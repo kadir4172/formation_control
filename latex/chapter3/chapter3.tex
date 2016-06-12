@@ -13,15 +13,15 @@
 
 In this thesis work, the problem of dynamical formation control of heterogeneous mobile robots is reduced down to two subproblems such as local positioning and formation control.  In our implementation there are two main types of agents in the swarm. First type agents have position measurement sensors on their boards. We call these agents position beacons. Second type agents do not have position sensors on their boards. Local positioning subsystem proposes a solution for the localization of agents in the workspace for second type of agents. On the other hand, formation control subsystem implements algorithms to cover the desired formation shape homogeneously with the agents in the swarm. In this chapter, our solutions for these subproblems are presented in details.
 
-A general block diagram of the system design is illustrated in Figure \ref{general_system}. Local positioning system provides a basis for the formation control problem with agents' state vectors composed of translational positions and velocities. Basically, this subsystem provides position and velocity data to the second type of agents in the swarm. Formation control subsystem proposes a solution to achieve desired complex shapes with heterogeneous agents in the swarm. Formation control system gets the requested formation shape externally and creates individual control laws for agents to cover the desired shape homogenously. The implementation details of these subsystems are given in the following sections. 
+A general block diagram of the system design is illustrated in Figure \ref{general_system}. According to this diagram, local positioning system provides a basis for the formation control problem with agents' state vectors composed of translational positions and velocities. Basically, this subsystem provides position and velocity data to the second type of agents in the swarm. Formation control subsystem proposes a solution to achieve desired complex shapes with heterogeneous agents in the swarm. Formation control system gets the requested formation shape externally and creates individual control laws for agents to cover the desired shape homogenously. The implementation details of these subsystems are given in the following sections. 
 \begin{figure}[H]
-\caption{Flowchart of the Provided Solution} \label{general_system}
+\caption{General Block Diagram of the Provided Solution} \label{general_system}
 \centering
 \includegraphics[scale = 0.58]{general_scheme}
 \end{figure}
 
 \section{LOCAL POSITIONING SYSTEMS} \label{LOCAL POSITIONING SYSTEMS_ref}
-Local positioning system is a subsystem to provide a complete solution to the localization of the second type agents in the workspace. As discussed in Section \ref{Objectives}, agents are expected to have low sensor capabilities and only a limited number of them have external position measurement sensors on their boards and we call these agents position beacons in our project. The rest of the swarm which is composed of second type agents, has to maintain their position$\&$velocity data with the help of their inertial measurements and local trilateration process. Propagation of the states with these inertial measurements are always inclined to drift problems due to the error$\&$noise and bias problems of the sensors. Because of this problem, state vectors composed with the translational positions and velocities have to be corrected with an external measurement. We have proposed a complete solution for this subsystem as illustrated in Figure \ref{figure_lps}.
+Local positioning system is a subsystem to provide a complete solution to the localization of the second type agents in the workspace. As discussed in Section \ref{Objectives}, agents are expected to have low sensor capabilities and only a limited number of them have external position measurement sensors on their boards and we call these agents position beacons in our project. The rest of the swarm which is composed of second type agents, has to maintain their position$\&$velocity data with the help of their inertial measurements and local trilateration process. Propagation of the states with these inertial measurements are always inclined to drift problems due to the error$\&$noise and bias problems of the sensors \cite{91}. Because of this problem, we have corrected these state vectors with an external measurement provided by local trilateration process. We have proposed a complete solution for this subsystem as illustrated in Figure \ref{figure_lps}.
 
 \begin{figure}[H]
 \caption{Local Positioning System} \label{figure_lps}
@@ -29,28 +29,27 @@ Local positioning system is a subsystem to provide a complete solution to the lo
 \includegraphics[scale = 0.65]{lps}
 \end{figure}
 
-As illustrated in Figure \ref{figure_lps}, agents propagate their states with the help of acceleration, gyroscope and magnetometer sensors. This state propagation process is executed with high speed data provided by the inertial sensors. On the other hand, trilateration and route table determination processes require iterative and time consuming algorithms and their implementation details are given in the following sections. It is not possible to execute the trilateration and route table determination algorithms with the same execution frequency of state propagation process. Because of this reason, a localization timer to provide the minimum required time for the route table determination and trilateration process is implemented to the solution. Agents will correct their state vectors with the localization period by measuring their positions with trilateration process and execute the update procedure in their state estimator algorithms. The requirement about the maximum value of the localization period is determined with the help of Monte Carlo simulations discussed in Section \ref{lps_ref} by defining a maximum allowable error on the position data.
+As illustrated in Figure \ref{figure_lps}, agents propagate their states with the help of inertial measurements. This state propagation process is executed with high speed data provided by the inertial sensors. On the other hand, trilateration and route table determination processes require iterative and time consuming algorithms and their implementation details are given in the following sections. It is not possible to execute the trilateration and route table determination algorithms with the same execution frequency of state propagation process. Because of this reason, a localization timer to provide the minimum required time for the route table determination and trilateration process is implemented to the solution. Agents will correct their state vectors with the localization period by measuring their positions with trilateration process and execute the update procedure in their state estimator algorithms. The requirement about the maximum value of the localization period is determined with the help of Monte Carlo simulations discussed in Section \ref{lps_ref} by defining a maximum allowable error on the position data. 
 
-We have implemented a mesh network between agents which is composed with a bidirectional graph in which each agent can communicate with its direct neighbors. We have assigned an edge between two nodes if there is a radio link between them. This line of sight(LOS) radio link is the main criteria for the agents to become direct neighbors in the network. Thus, having a physical Euclidian distance to an agent within the communication range is not enough to be the direct neighbor with that agent, i.e. even if two agents are very close to each other in the workspace, they are not direct neighbors if there is no radio link between them because of an obstacle preventing the line of sight. A sample swarm with 8 agents is illustrated in Figure \ref{sample_mesh}. This sample swarm is used to illustrate the implementation details of our local positioning system in following sections.
+Local trilateration process requires distance measurements to the position beacons which are direct neighbors of an agent. Route table algorithms are used to provide information to the agents about the position beacons whether they are direct neighbors or not. On the other hand, route tables also implement a mesh network between agents. This network is used to transport data globally over the network. It is composed with a bidirectional graph in which each agent can communicate with its direct neighbors. We have assigned an edge between two nodes if there is a radio link between them. This line of sight(LOS) radio link is the main criteria for the agents to become direct neighbors in the network. Thus, having a physical Euclidian distance to an agent within the communication range is not enough to be the direct neighbor with that agent, i.e. even if two agents are very close to each other in the workspace, they are not direct neighbors if there is no radio link between them because of an obstacle preventing the line of sight. Figure \ref{sample_mesh} shows an example of a mesh network created with 8 agents in the environment.
 
-\begin{figure}[H] 
-\caption{A Sample Swarm with 8 agents} \label{sample_mesh}
+\begin{figure}[H]
+\caption{A Sample Mesh Network Created with 8 Agents} \label{sample_mesh}
 \centering
-\includegraphics[scale = 0.65]{mesh}
-\label{beacons_ref}
+\includegraphics[scale = 0.58]{mesh}
 \end{figure}
-
-\subsection{Trilateration Process}
-Trilateration process helps the second type agents to localize themselves with the help of position beacons which are their direct neighbors.  Trilateration calculations use distance measurements to the position beacons with known positions, to determine the coordinates of second type agents \cite{22}. These measurements are assumed to be done with the help of time of arrival(TOA) methods discussed in Section \ref{sssec:num1}. In a TOA solution, an agent is able to measure the distance from itself to a position beacon only if it is a direct neighbor of that position beacon. Figure \ref{beacons_ref} illustrates a portion of our sample network which consist of 4 position beacons which are direct neighbors of agent $C$ . Here agent $C$ tries to localize itself with the help of distance measurements $r_i$ and the position data $B_i$ of the position beacons.
+ 
+\subsection{Local Trilateration Process}
+Trilateration process helps the second type agents to localize themselves with the help of position beacons which are their direct neighbors.  Trilateration calculations use distance measurements to the position beacons with known positions, to determine the coordinates of second type agents \cite{22}. These measurements are assumed to be done with the help of time of arrival(TOA) methods discussed in Section \ref{sssec:num1}. In a TOA solution, an agent is able to measure the distance from itself to a position beacon only if it is a direct neighbor of that position beacon. Figure \ref{beacons_ref} illustrates simulation environment of a swarm which consist of 5 position beacons. Here agent $C$ tries to localize itself with the help of distance measurements $r_i$ and the position data $B_i$ of the position beacons. It has 4 position beacons as direct neighbors in the network and this information is provided by the route table of agent $C$ as defined in Section \ref{route_route}.
 
 \begin{figure}[H] 
 \caption{Environment for Trilateration Process} \label{tri_late}
 \centering
-\includegraphics[scale = 0.65]{beacons}
+\includegraphics[scale = 0.55]{beacons}
 \label{beacons_ref}
 \end{figure}
 
-For the sample network illustrated in Figure \ref{tri_late} we have 4 position beacons which are direct neighbors of agent $C$. The distance function to any position beacon can be written as follows \cite{22};
+For the simulation environment illustrated in Figure \ref{tri_late}, the distance function to any position beacon can be written as follows \cite{22};
 
 \begin{equation} % eq 2
 {r_i} = \sqrt{(x-x_i)^2 + (y-y_i)^2+ (z-z_i)^2}    \hspace{0.3cm}   (i=1,2,...,n)
@@ -149,7 +148,7 @@ with $A$ is a $(n-1)\ x\ 2$ matrix and $b$ is a $(n-1)\ x\ 1$ vector.
 There are some possible solutions to this type of equation regarding with the structure of matrix $A$ and vector $b$.\\
 
 \underline {\textit{Solution to $A\vec{x} = \vec{b}$ Problem}}\\
-In a localization problem handled in two dimensional world, the $A$ matrix has $(n-1)$ rows and $2$ columns, where $n$ is the number of position beacons which are direct neighbors of an agent. It is obvious that there is no solution when the number of neighbors lower than $3$ (i.e. $n<3$), since the $A$ matrix will have one or less number of lines. When the number of neighbor position beacons are equal or greater than $3$ we have three different solutions according to the structure of the linearized equations.
+In a localization problem handled in two dimensional space, the $A$ matrix has $(n-1)$ rows and $2$ columns, where $n$ is the number of position beacons which are direct neighbors of an agent. There is no solution when the number of neighbors lower than $3$ (i.e. $n<3$) \cite{22}. When the number of neighbor position beacons are equal or greater than $3$ we have three different solutions according to the structure of the linearized equations.
 
 \textit{1) Unique Solution:}\\
  If A is a $2\ x\ 2$ matrix (i.e. $n=3$) and the its rank is $2$, then the solution of $\vec{x}$ is unique with \cite{linear_ders_notu}
@@ -276,7 +275,7 @@ J^T\vec{f} = \left(\begin{matrix}
 \end{equation}
 	
 	
-\subsection{Route Table Determination}
+\subsection{Route Table Determination} \label{route_route}
 We have implemented a localization solution in which each second type agent is getting in trilateration process with the position beacons in the swarm as we have introduced previously. It is needed to be direct neighbors of the position beacons to get in trilateration process. In our project, route tables are used to provide information to the agents about the position beacons whether they are direct neighbors. On the other hand they are used to create a mesh network in the swarm to create a communication backbone. With this mesh network it is possible to send any data globally over the network to any destination by using agents as relays to transmit the data. In our implementation, each agent had its own route table in the network. These route tables include the information about the next nodes and costs to any destination in the network. Next nodes are representing the node which the data will be transferred next for that destination and costs are representing the minimum number of hops (i.e. number of relay agents on the path) for that destination. We have used the cost information for the position beacon destinations to check whether the agent is direct neighbor of that position beacon or not. In other words, the cost to a position beacon is equal to 1, if that agent is the direct neighbor of the position beacon
 
 
@@ -1033,6 +1032,15 @@ Initialize free configuration space $C_{free}$ as the desired formation shape \n
 \end{algorithm}
 		
 The algorithm iteratively checks the free configuration space that if there is enough space. If so, it inserts a coverage circle which is representing the current agent in the swarm, randomly in the desired formation shape. At the end of each insertion, it updates the free configuration space and jumps to next iteration. At the end of the algorithm, the positions of the coverage circles which are randomly placed in desired formation shape gives us the goal states $g_i \in G$  of the agents. 
+
+\begin{figure}[H]
+\caption{Simulation Output of the Algorithm} \label{randomized_ornek}
+\centering
+\includegraphics[scale = 0.60]{randomized_ornek}
+\end{figure}
+
+Figure \ref{randomized_ornek} shows a simulation output of the Randomized Fractals algorithm. In this figure, coverage circles are representing the members of a swarm which consist of 11 heterogeneous agents from 3 different sizes. These coverage circles are randomly distributed in the desired formation shape with the help of Randomized Fractals algorithm. Positions of the coverage circles define the goal states $g_i \in G$  of the agents in the workspace. 
+
 	
 \subsubsection{Decision Process on Goal States}\hspace{0pt} \label{DecisionProcess Ref} \\
 In Section \ref{Partitioning_ref}, we have reduced down the formation control problem in which every agent is expected to decide where to position in a given set of possible goal states $g_i \in G$ .  During this decision process, the cost of reaching different goal states will be the main criteria for each agent. Given goal states and cost values to these goal states, each agent must decide where to position in the formation. This process must be held to optimize the utility of every agent with a collaboration. It is obvious that some of the agents may want to choose the same goal point to reach, so the swarm must reach a global consensus on target points and cases including conflictions must be handled. Our main approach to provide a solution for this problem is to make each agent to calculate the costs of its own to reach the goal states $g_i \in G$ and then reach a global consensus with the other agents to minimize the overall displacements of the swarm. 
@@ -1118,13 +1126,12 @@ where $VISIBLE$\_$VERTICES(v,S)$ algorithm checks whether line segments drawn fr
 \vspace{2cm}
 
 \begin{figure}[H]
-\caption{Shorthest Path from $p_{start}$ and $p_{goal}$ in a Visibility Graph \cite{92}} \label{dijksttae_visibility}
+\caption{Shorthest Paths to Goal States $g_i \in G$ in a Visibility Graph} \label{dijksttae_visibility}
 \centering
-\includegraphics[scale = 0.9]{shortest}
+\includegraphics[scale = 0.40]{visgraph2}
 \end{figure} 
 
-Figure \ref{dijksttae_visibility} shows an example visibility graph and a shortest path from $p_{start}$ to $p_{goal}$ in that graph. We have used Dijkstra algorithm to compute the shortest path between two nodes in graph with multiple edges, each having a non-negative weight. In our work, the weights of the edges in $\gamma_{vis}$ , are calculated with the Euler distance between nodes in the workspace.
-Dijkstra algorithm is a tree search algorithm and time complexity of the original algorithm is $O(n^2)$ where $n$ is the number of the nodes in the graph. With the usage self balancing binary search tree, the algorithm requires $O(k+nlogn)$ time in the worst case where $k$ is the number of edges in the graph. The algorithm for the Dijkstra's is implemented as follows \cite{92}:
+Figure \ref{dijksttae_visibility} shows a simulation output executed with 5 workspace obstacles and 6 goal states in desired formation shape. In this algorithm, agent first calculates its own visibility graph by adding goal states $g_i \in G$ in graph as nodes. The visibility graph is illustrated with red edges in the figure. Then it calculates the shorthest paths to the goal states, which are given with green edges in the figure. We have used Dijkstra algorithm to compute the shortest path between two nodes in graph with multiple edges, each having a non-negative weight. In our work, the weights of the edges in $\gamma_{vis}$ , are calculated with the Euler distance between nodes in the workspace. Dijkstra algorithm is a tree search algorithm and time complexity of the original algorithm is $O(n^2)$ where $n$ is the number of the nodes in the graph. With the usage self balancing binary search tree, the algorithm requires $O(k+nlogn)$ time in the worst case where $k$ is the number of edges in the graph. The algorithm for the Dijkstra's is implemented as follows \cite{92}:
 \newpage
 	
 \begin{algorithm}[H]
@@ -1196,7 +1203,15 @@ Goto Label3 until full solution has been achieved. \newline
 
 Hungarian algorithm returns a vector of $nx1$ and each row in this vector represents the goal state that the related agent is assigned. With this assignment, the total cost (i.e. total displacement) of the swarm is minimized. 
 \subsection{Mesh Quality Measurement}\hspace{0pt} \label{mesh_quality_ref}  \\
-We have provided two different solutions to the shape partitioning problem. Bubble Packing method partitions the desired formation shape into goal states by distributing the bubbles which are representing our agents in the swarm. On the other hand, Randomized Fractals method randomly places the fractals in the desired shape and these fractals are representing our agents in the swarm. In this project one of our aims is to distribute the agents in the formation shape homogeneously. So it is useful to define a metric to compare the performances of these algorithms, i.e. a metric which represents how these methods homogeneously distribute the agents in the formation shape. One of the criterias we have used is topological mesh irregularity \cite{27} which is commonly used by mesh generation problems. To measure the topological mesh irregularity in our swarm, first we have constructed a Voronoi diagram with the nodes which are the center positions of the agents' coverage circles. With the help of this Voronoi diagram, the topological mesh irregularity is defined by:
+We have provided two different solutions to the shape partitioning problem. Bubble Packing method partitions the desired formation shape into goal states by distributing the bubbles which are representing our agents in the swarm. On the other hand, Randomized Fractals method randomly places the fractals in the desired shape and these fractals are representing our agents in the swarm. In this project one of our aims is to distribute the agents in the formation shape homogeneously. So it is useful to define a metric to compare the performances of these algorithms, i.e. a metric which represents how these methods homogeneously distribute the agents in the formation shape. One of the criterias we have used is topological mesh irregularity \cite{27} which is commonly used by mesh generation problems. To measure the topological mesh irregularity in our swarm, first we have constructed a Voronoi diagram with the nodes which are the center positions of the agents' coverage circles. Figure \ref{voronoi_voronoi} shows a simulation output about the final states of the agents in the desired formation shape. Centers of these coverage circles are used as nodes while constructing the Voronoi diagram as illustrated in the right hand side of the figure.
+
+\begin{figure}[H]
+\caption{Voronoi Diagram Constructed with Final Positions of Agents} \label{voronoi_voronoi}
+\centering
+\includegraphics[scale = 0.70]{Artificial_Forces_Mesh_1}
+\end{figure}
+
+With the help of this Voronoi diagram, the topological mesh irregularity is defined by:
 
 \begin{equation}
 \epsilon _t = \frac{1}{n} \sum_{i = 0}^{n} |\gamma _i - D|
@@ -1337,4 +1352,4 @@ According to the Figure \ref{Stepresp}, the settling time for the inner loop is 
 \includegraphics[scale = 0.30]{closed_loop}
 \end{figure}
 
-Figure \ref{ClosedLoop} shows the bode plot for the closed loop system. According to this figure inner loop which control the desired velocity setpoint has a bandwidth nearly 10 rad/sec.
+Figure \ref{ClosedLoop} shows the bode plot for the closed loop of the velocity controller. According to this figure inner loop which control the desired velocity setpoint has a bandwidth nearly 10 rad/sec.

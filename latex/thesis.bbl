@@ -195,6 +195,12 @@ IOP-Institute of~Physics.
 \newblock http://www.physics.org/article-questions.asp?id=55, last visited on
   April 2016.
 
+\bibitem{91}
+Karatsinides Spiro.
+\newblock Enhancing filter robustness in cascaded gps-ins integrations.
+\newblock {\em IEEE Transactions on Aerospace and Electronic Systems}, 30,
+  1994.
+
 \bibitem{linear_ders_notu}
 Umut Orguner.
 \newblock Lecture notes in linear system theory 1, February 2013.

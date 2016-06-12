@@ -7,9 +7,9 @@
 \select@language {english}
 \contentsline {leads}{\numberline {}ACKNOWLEDGMENTS}{x}{chapter*.3}
 \contentsline {leads}{\numberline {}TABLE OF CONTENTS}{xi}{chapter*.4}
-\contentsline {leads}{\numberline {}LIST OF TABLES}{xii}{chapter*.5}
-\contentsline {leads}{\numberline {}LIST OF FIGURES}{xiii}{chapter*.6}
-\contentsline {leads}{\numberline {}LIST OF ALGORITHMS}{xiv}{chapter*.7}
+\contentsline {leads}{\numberline {}LIST OF TABLES}{xv}{chapter*.5}
+\contentsline {leads}{\numberline {}LIST OF FIGURES}{xvi}{chapter*.6}
+\contentsline {leads}{\numberline {}LIST OF ALGORITHMS}{xxii}{chapter*.7}
 \numberline {}CHAPTERS
 \select@language {turkish}
 \select@language {english}
@@ -36,7 +36,7 @@
 \contentsline {subsection}{\numberline {2.3.2}Trilateration Process}{32}{subsection.2.3.2}
 \contentsline {chapter}{\numberline {3}\MakeUppercase {METHODOLOGY}}{35}{chapter.3}
 \contentsline {section}{\numberline {3.1}LOCAL POSITIONING SYSTEMS}{36}{section.3.1}
-\contentsline {subsection}{\numberline {3.1.1}Trilateration Process}{38}{subsection.3.1.1}
+\contentsline {subsection}{\numberline {3.1.1}Local Trilateration Process}{38}{subsection.3.1.1}
 \contentsline {subsection}{\numberline {3.1.2}Route Table Determination}{45}{subsection.3.1.2}
 \contentsline {subsubsection}{\numberline {3.1.2.1}Routing Algorithm- Bellman Ford}{45}{subsubsection.3.1.2.1}
 \contentsline {subsubsection}{\numberline {3.1.2.2}DSDV Link addition}{49}{subsubsection.3.1.2.2}
@@ -54,7 +54,7 @@
 \contentsline {paragraph}{Bubble Packing Method}{70}{section*.12}
 \contentsline {paragraph}{Randomized Fractals Method}{73}{section*.13}
 \contentsline {subsubsection}{\numberline {3.2.2.2}Decision Process on Goal States}{75}{subsubsection.3.2.2.2}
-\contentsline {paragraph}{Free Configuration Space}{75}{section*.14}
+\contentsline {paragraph}{Free Configuration Space}{76}{section*.14}
 \contentsline {paragraph}{Visibility Graphs and Dijkstra$'$s Algorithm}{77}{section*.15}
 \contentsline {paragraph}{Collaborative Decision Process of Final Goal States}{80}{section*.16}
 \contentsline {subsection}{\numberline {3.2.3}Mesh Quality Measurement}{83}{subsection.3.2.3}
