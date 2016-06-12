@@ -276,12 +276,12 @@ J^T\vec{f} = \left(\begin{matrix}
 	
 	
 \subsection{Route Table Determination} \label{route_route}
-We have implemented a localization solution in which each second type agent is getting in trilateration process with the position beacons in the swarm as we have introduced previously. It is needed to be direct neighbors of the position beacons to get in trilateration process. In our project, route tables are used to provide information to the agents about the position beacons whether they are direct neighbors. On the other hand they are used to create a mesh network in the swarm to create a communication backbone. With this mesh network it is possible to send any data globally over the network to any destination by using agents as relays to transmit the data. In our implementation, each agent had its own route table in the network. These route tables include the information about the next nodes and costs to any destination in the network. Next nodes are representing the node which the data will be transferred next for that destination and costs are representing the minimum number of hops (i.e. number of relay agents on the path) for that destination. We have used the cost information for the position beacon destinations to check whether the agent is direct neighbor of that position beacon or not. In other words, the cost to a position beacon is equal to 1, if that agent is the direct neighbor of the position beacon
+We have implemented a localization solution in which each second type agent is getting in trilateration process with the position beacons in the swarm as we have introduced previously. It is needed to be direct neighbors of the position beacons to get in trilateration process. In our project, route tables are used to provide information to the agents about the position beacons whether they are direct neighbors or not. On the other hand, they are used to create a mesh network in the swarm to provide a communication backbone. With this mesh network it is possible to send any data globally over the network to any destination by using agents as relays to transmit the data. In our implementation, each agent had its own route table in the network. These route tables include the information about the next nodes and costs to any destination in the network. Next nodes are representing the node which the data will be transferred next for that destination and costs are representing the minimum number of hops (i.e. number of relay agents on the path) for that destination. We have used the cost information for the position beacon destinations to check whether the agent is direct neighbor of that position beacon or not. In other words, the cost to a position beacon is equal to 1 in the route table, if that agent is the direct neighbor of the position beacon
 
 
 	
 \subsubsection{Routing Algorithm- Bellman Ford}
-As mentioned in the Section \ref{Objectives}, agents are assumed to have a limited communication range and bandwidth and the communication topology in the swarm must be implemented with a wireless mesh network. In this type of topology, each agent is a relay in the network and the data is transferred to the related destination with the help of route tables. This makes it possible to have the capability of transferring low bandwidth data through the network with multiple hops.  In this work, we have implemented this topology with a table driven routing scheme known as Bellman Ford algorithm. Bellman Ford is an algorithm that computes the shortest path in a weighted graph \cite{wiki_bellman}. It has a drawback related with the routing loop problem which occurs in an event of one or more nodes in the graph are lost during the process. The probability of vanishing vertices during the execution of the algorithm is very high since the agents in the swarm have a small range of communication and have a great possibility to lose their connection with the rest of the swarm. For this reason we have implemented an extension of the Bellman Ford algorithm known as Destination-Sequenced Distance Vector Routing Protocol(DSDV) algorithm.  
+As mentioned in the Section \ref{Objectives}, agents are assumed to have a limited communication range and bandwidth and the communication topology in the swarm must be implemented with a wireless mesh network. In this type of topology, each agent is a relay in the network and the data is transferred to the related destination with the help of route tables. This makes it possible to have the capability of transferring low bandwidth data through the network with multiple hops.  In this work, we have implemented this topology with a table driven routing scheme known as Bellman Ford algorithm. Bellman Ford is an algorithm that computes the shortest paths between any two node in a weighted graph \cite{wiki_bellman}. It has a drawback related with the routing loop problem which occurs in an event of one or more nodes in the graph are lost during the process. The probability of vanishing vertices during the execution of the algorithm is very high since the agents in the swarm have a small range of communication and have a great possibility to lose their connection with the rest of the swarm. For this reason we have implemented an extension of the Bellman Ford algorithm known as Destination-Sequenced Distance Vector Routing Protocol(DSDV) algorithm.  
 	
 \begin{figure}[H]
 \caption{Costs for Shortest Paths to Each Nodes from Agent 'B'} \label{bellman_ref}
@@ -289,9 +289,9 @@ As mentioned in the Section \ref{Objectives}, agents are assumed to have a limit
 \includegraphics[scale = 0.50]{bellman}
 \end{figure}
 
-A demonstration of the DSDV algorithm with a simple robot network in our problem is given in the Figure \ref{bellman_ref}. The algorithm to calculate the shortest paths from agent `B` to each destination on network, terminates at the end of 3 iterations. At the beginning of the process, the costs for each destinations are determined as infinitive. Then the shortest paths to the each agent in the given bidirectional graph are determined iteratively with the help of the DSDV algorithm. Since we have defined the shortest paths with the number of hops to each destination, we have used unit weight for each edge in the graph representing the cost of each hop while getting the related destination in the network is equal to 1. 
+A simulation of the DSDV algorithm with a simple robot network in our problem is given in the Figure \ref{bellman_ref}. The algorithm to calculate the shortest paths from agent `B` to each destination on network, terminates at the end of 3 iterations. At the beginning of the process, the costs for each destinations are determined as infinitive. Then the shortest paths to the each agent in the given bidirectional graph are determined iteratively with the help of the DSDV algorithm. Since we have defined the shortest paths with the number of hops to each destination, we have used unit weight for each edge in the graph representing the cost of each hop while getting the related destination in the network is equal to 1. 
 
-We have implemented DSDV algorithm to solve the routing problem in the mesh network. Figure \ref{routing_problem2} illustrates an example routing loop problem.
+We have implemented DSDV algorithm to solve the routing problem in the mesh network. Figure \ref{routing_problem2} shows a simulation output illustrating routing loop problem.
 
 \begin{figure}[H] 
 \caption{Routing Problem Engaged by a Lost of a Node in Network} \label{routing_problem2}
@@ -299,7 +299,7 @@ We have implemented DSDV algorithm to solve the routing problem in the mesh netw
 \includegraphics[scale = 0.65]{routing_problem}
 \end{figure}
 
-Suppose that agent D has lost its contact with the network due to some malfunction or by being lost wandering outside of the communication range of its closest neighbor. Before this event, agent C had a unit distance to agent D and consequently agent B had a 2 unit distance to agent D , agent A had a 3 unit distance to agent D. In the case of a failure of agent D, on the next iteration, C updates its route table with 3 unit distance to agent D by taking as reference the agent B. Then agent B updates its route table with the shortest distance of 4 units to agent D\ referencing to agent C. This process diverges to infinity on the shortest paths with the increasing number of iterations. To provide a solution for this routing loop problem, DSDV algorithm implements the sequence numbers into the route tables of the nodes. A simple route table for a node in a robot network is given in Figure \ref{dest_seq_ref}
+Suppose that agent D has lost its contact with the network due to some malfunction or by being lost wandering outside of the communication range of its closest neighbor. Before this event, agent C had a unit distance to agent D and consequently agent B had a 2 unit distance to agent D , agent A had a 3 unit distance to agent D. In the case of a failure of agent D, on the next iteration, C updates its route table with 3 unit distance to agent D by taking as reference the agent B. Then agent B updates its route table with the shortest distance of 4 units to agent D\ referencing to agent C. This process diverges to infinity on the shortest paths with the increasing number of iterations. To provide a solution for this routing loop problem, DSDV algorithm implements the destination sequence numbers into the route tables of the nodes. A simulation output showing the route table for a node in a robot network is given in Figure \ref{dest_seq_ref}
 
 \begin{figure}[H]
 \caption{Route Table for Agent B in Robot Network} \label{dest_seq_ref}
@@ -311,7 +311,7 @@ In the DSDV algorithm, each node transmits the updates in its own sequence numbe
 	- Choose the node with the larger destination sequence number \newline
 	- If the sequence numbers are equal, then choose the route with minimum number of hops and update the route table.
 
-In Figure \ref{dest_seq_ref}, node B has destination sequence numbers to each destination in its route table. These numbers are used to update the network with the rules defined above, in the case of link addition and link brakes defined in followig sections.
+In Figure \ref{dest_seq_ref}, node B has destination sequence numbers to each destination in its route table. These numbers are used to update the network with the rules defined above, in the case of link addition and link brakes defined in following sections.
 \newpage	
 \subsubsection{DSDV Link addition}
 
@@ -355,7 +355,7 @@ The idea behind the 'Return to Home' mode is basically to increase the possibili
 The lost agent aims to reach to the center of the formation and due to the errors on its position$\&$velocity data, it is expected to arrive to the red point illustrated in the figure. With this maneuver, the lost agent still have a chance to meet some position beacons in the swarm even if it directs itself to an incorrect goal state.
 	
 \subsection{State Estimation Procedure} \label{StateEstimationref}
-In local positioning subsystem, second type agents are expected to execute a state estimator algorithm in which they propagate their state vectors composed of translational position and velocities with the help of inertial measurements. As discussed at the introduction of Section \ref{LOCAL POSITIONING SYSTEMS_ref} agents will update and correct their positions with the measurements provided by the trilateration process execeuted with the localization timer period. A Kalman estimator algorithm which uses the trilateration outputs as external measurements and the sensor measurements as inputs, is designed to fuse the sensor measurements with the trilateration calculations. The model for this observer system is defined as follows:
+In local positioning subsystem, second type agents are expected to execute a state estimator algorithm in which they propagate their state vectors composed of translational position and velocities with the help of inertial measurements. As discussed at the introduction of Section \ref{LOCAL POSITIONING SYSTEMS_ref} agents will update and correct their positions with the measurements provided by the trilateration process execeuted with the localization timer period. A Kalman estimator algorithm which uses the trilateration outputs as external measurements and the inertial measurements as inputs, is designed to fuse the sensor measurements with the trilateration calculations. The model for this observer system is defined as follows:
 	
 The state vector for each agent is defined as:
 
@@ -412,7 +412,7 @@ The noise models for the process and the measurement are modelled with:
 v_k = \mathcal{N}(\mathbf{0,R_k})
 \end{equation}
 		
-where $w_k$ is the process noise with zero mean multivariate normal distribution with covariance of $Q_k$ and $v_k$ is the measurement noise with zero mean Gaussian distribution with a covariance of $R_k$
+where $w_k$ is the process noise with zero mean multivariate normal distribution with covariance of $Q_k$ and $v_k$ is the measurement noise with zero mean Gaussian distribution with a variance of $R_k$
 		
 The filter has two main subsections named propagate and update phases. The update phase of the filter is executed after each trilateration process. The filter equations are as follows:
 		
@@ -926,12 +926,12 @@ Initialize free configuration space $C_{free}$ as the desired formation shape \n
 {		
 *Calculate the free configuration space,$C_{free}$, for bubble $i$\;
 *Put the Bubble $i$ to the closest point to  formation center  $z_c$  in the free configuration space\;
-*Add the agent $i$ into the configuration space shape as an obstacle \;
+*Add the agent $i$ into the configuration space as an obstacle \;
 }\		
-\caption{INITIALIZE$\_$BUBBLE$\_$POSITIONS}
+\caption{INITIALIZE$\_$BUBBLE$\_$POSITIONS} \label{intial_buble}
 \end{algorithm}
 		
-The term free configuration space $C_{free}$ will be analyzed in detail in Section \ref{DecisionProcess Ref}. An execution of the Algorithm 1 is illustrated in Figure \ref{algorithm1_ref} below.
+The term free configuration space $C_{free}$ will be analyzed in detail in Section \ref{DecisionProcess Ref}. A simulation output, with a sample formation shape and 11 coverage circles which are representing a heterogeneous swarm composed of agents from 3 different size is illustrated in Figure \ref{algorithm1_ref} below.
 		
 \begin{figure}[H]
 \caption{Initialization of the Bubble Packing Algorithm} \label{algorithm1_ref}
@@ -977,10 +977,10 @@ where
 						
 
 	
-The bubbles are distributed homogeneously under the influence of these two forces and they get an equilibrium state in which the total net forces acting on individual bubbles reaches zero. The final equilibrium states of the bubbles determine the potential goal states $g_i \in G$  of the agents in the swarm to cover the formation shape. 
+The bubbles are distributed homogeneously under the influence of these two forces and they get an equilibrium state in which the total net forces acting on individual bubbles reaches zero. Figure \ref{buble_ornek} shows a simulation output of Bubble Packing algoithm which is initialized with coverage circles derived from the output of the INITIALIZE$\_$BUBBLE$\_$POSITIONS algorithm. The coverage circles are homogeneously distributed in the formation shape with the help of inter-bubble and shape repulsive forces. The final equilibrium states of the bubbles determine the potential goal states $g_i \in G$  of the agents in the swarm to cover the formation shape.
 
 \begin{figure}[H]
-\caption{Bubble Packing Algorithm}
+\caption{Bubble Packing Algorithm} \label{buble_ornek}
 \centering
 \includegraphics[scale = 0.62]{bubble_packing2}
 \end{figure}
@@ -1031,7 +1031,7 @@ Initialize free configuration space $C_{free}$ as the desired formation shape \n
 \caption{RANDOMIZED$\_$FRACTALS$\_$ALGORITHM} 
 \end{algorithm}
 		
-The algorithm iteratively checks the free configuration space that if there is enough space. If so, it inserts a coverage circle which is representing the current agent in the swarm, randomly in the desired formation shape. At the end of each insertion, it updates the free configuration space and jumps to next iteration. At the end of the algorithm, the positions of the coverage circles which are randomly placed in desired formation shape gives us the goal states $g_i \in G$  of the agents. 
+The algorithm iteratively checks the free configuration space that if there is enough space. If so, it inserts a coverage circle which is representing the current agent in the swarm, randomly in the desired formation shape. At the end of each insertion, it updates the free configuration space and jumps to next iteration. When algorithm terminates, the positions of the coverage circles which are randomly placed in desired formation shape gives us the goal states $g_i \in G$  of the agents. 
 
 \begin{figure}[H]
 \caption{Simulation Output of the Algorithm} \label{randomized_ornek}
@@ -1039,7 +1039,7 @@ The algorithm iteratively checks the free configuration space that if there is e
 \includegraphics[scale = 0.60]{randomized_ornek}
 \end{figure}
 
-Figure \ref{randomized_ornek} shows a simulation output of the Randomized Fractals algorithm. In this figure, coverage circles are representing the members of a swarm which consist of 11 heterogeneous agents from 3 different sizes. These coverage circles are randomly distributed in the desired formation shape with the help of Randomized Fractals algorithm. Positions of the coverage circles define the goal states $g_i \in G$  of the agents in the workspace. 
+Figure \ref{randomized_ornek} shows a simulation output of the Randomized Fractals algorithm. In this figure, coverage circles are representing the members of a swarm which consist of 11 heterogeneous agents from 3 different sizes. These coverage circles are randomly distributed in the desired formation shape with the help of Randomized Fractals algorithm. Positions of the coverage circles define the goal states $g_i \in G$  of the agents in the formation shape. 
 
 	
 \subsubsection{Decision Process on Goal States}\hspace{0pt} \label{DecisionProcess Ref} \\
@@ -1203,7 +1203,7 @@ Goto Label3 until full solution has been achieved. \newline
 
 Hungarian algorithm returns a vector of $nx1$ and each row in this vector represents the goal state that the related agent is assigned. With this assignment, the total cost (i.e. total displacement) of the swarm is minimized. 
 \subsection{Mesh Quality Measurement}\hspace{0pt} \label{mesh_quality_ref}  \\
-We have provided two different solutions to the shape partitioning problem. Bubble Packing method partitions the desired formation shape into goal states by distributing the bubbles which are representing our agents in the swarm. On the other hand, Randomized Fractals method randomly places the fractals in the desired shape and these fractals are representing our agents in the swarm. In this project one of our aims is to distribute the agents in the formation shape homogeneously. So it is useful to define a metric to compare the performances of these algorithms, i.e. a metric which represents how these methods homogeneously distribute the agents in the formation shape. One of the criterias we have used is topological mesh irregularity \cite{27} which is commonly used by mesh generation problems. To measure the topological mesh irregularity in our swarm, first we have constructed a Voronoi diagram with the nodes which are the center positions of the agents' coverage circles. Figure \ref{voronoi_voronoi} shows a simulation output about the final states of the agents in the desired formation shape. Centers of these coverage circles are used as nodes while constructing the Voronoi diagram as illustrated in the right hand side of the figure.
+We have provided two different solutions to the shape partitioning problem. Bubble Packing method partitions the desired formation shape into goal states by distributing the bubbles which are representing our agents in the swarm. On the other hand, Randomized Fractals method randomly places the fractals in the desired shape and these fractals are representing our agents in the swarm. In this project one of our aims is to distribute the agents in the formation shape homogeneously. So it is useful to define a metric to compare the performances of these algorithms, i.e. a metric which represents how these methods homogeneously distribute the agents in the formation shape. One of the criterias we have used is topological mesh irregularity \cite{27} which is commonly used by mesh generation problems. To measure the topological mesh irregularity in our swarm, first we have constructed a Voronoi diagram with the nodes which are the center positions of the agents' coverage circles. Figure \ref{voronoi_voronoi} shows a simulation output about the final states of the agents in the desired formation shape. Centers of these coverage circles are used as positions of nodes while constructing the Voronoi diagram as illustrated in the right hand side of the figure.
 
 \begin{figure}[H]
 \caption{Voronoi Diagram Constructed with Final Positions of Agents} \label{voronoi_voronoi}
