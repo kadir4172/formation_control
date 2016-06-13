@@ -12,7 +12,7 @@
 \externaldocument{chapter6}
 
 
-A hardware demonstration is done with five mobile robots with different sizes, to achieve a proof of concept related with the topics searched in this thesis work. The agents are designed as mobile robots with three omni-wheels which allows them to navigate in the workspace to every direction without the need for changing their attitudes (i.e. headings). Since the demonstration is held at indoor environment, the position information for each agent is provided with image processing algorithms. Local positioning system is not implemented for hardware demonstration part because it may not be possible for an agent to find enough neighbors to localize itself in a swarm with five agents. Formation control algorithms are implemented with Bubble Packing method which has the best performance on different metrics described in \ref{evaluation_ref}
+In this project, we have done a hardware demonstration with five mobile robots from different sizes, to achieve a proof of concept related with the topics we have focused on. In this implementation, agents are designed as mobile robots with three omni-wheels which allows them to navigate in the workspace to every direction without the need for changing their headings. We have designed both hardware and software systems of the mobile robots. Since the demonstration is held at indoor environment, we have implemented image processing algorithms to provide  position information for each agent with the help of an E/O camera. Local positioning system is not implemented for this hardware demonstration because it may not be possible for an agent to find enough position beacons to localize itself in a swarm with five agents. Formation control algorithms are implemented with Bubble Packing method which has the best performance on different metrics described in \ref{evaluation_ref}
 
 \section{Hardware Demonstration Environment}
 The schematic of the hardware implementation environment is illustrated in Figure \ref{harware_ref}
@@ -22,28 +22,31 @@ The schematic of the hardware implementation environment is illustrated in Figur
 \centerline{\includegraphics[scale = 0.55]{hardware}}
 \end{figure} 
    
-Each agent and the mission computer has a radio link to create a mesh network in which every node can transfer messages between each other directly or with the help of their neighbors. Also they can broadcast messages to the rest of the nodes in the network.  On the other hand each agent has their individual CPU to execute the goal state decision process and to control the actuators to reach the desired goal states. These processors also executes the control system which is described in Section \ref{lqr_design} and they manage the messaging operations within the mesh network.  This architecture supports the idea of partially decentralized formation control with Bubble Packing method in which each agent is responsible to take decisions and reach to a global consensus with the rest of the swarm on the potential goal states.  These potential goal states are determined by the mission computer which takes the desired formation shape from the operator and executes shape partitioning algorithms. The data including the potential goal states is broadcasted to all of the agents in the environment with the help of mesh network. 
+As illustrated in Figure \ref{harware_ref}, each agent and the mission computer has a radio link to create a mesh network in which every node can transfer messages between each other directly or with the help of their neighbors. Also they can broadcast messages to the rest of the nodes in the network.  On the other hand each agent has their individual CPU. This processor unit is used to execute goal state decision process and to control the actuators of the agents. These processors also executes the control system which is described in Section \ref{lqr_design} and they manage the messaging operations within the mesh network.  This architecture supports the idea of decentralized formation control with Bubble Packing method in which each agent is responsible to take decisions and reach to a global consensus with the rest of the swarm on the potential goal states.  These potential goal states are determined by the mission computer which takes the desired formation shape from the operator and executes shape partitioning algorithms. The data including the potential goal states is broadcasted to all of the agents in the environment with the help of mesh network. 
 
-Since the workspace is an indoor environment, it is impossible to use a GNSS system to provide position and velocity measurements to the agents. To provide this external measurements, a visual feedback system is designed with the help of an E/O camera and image processing algorithms.  The image processing algorithms used in this work depends on the color classification of different cover planes placed on the top of the mobile robots. These covers are illustrated in Figure \ref{kapaklar_ref}
+Since the workspace is an indoor environment, it is impossible to use a GNSS system to provide position measurements to the agents. To provide this external measurements, a visual feedback system is designed with the help of an E/O camera and image processing algorithms. We have implemented image processing algorithms depending on the color classification of different cover planes placed on the top of the mobile robots. These covers are illustrated in Figure \ref{kapaklar_ref}
 
 \begin{figure}[H]
 \caption{Covers for Different Types of Agents} \label{kapaklar_ref}
 \centerline{\includegraphics[scale = 0.10]{Kapaklar}}
 \end{figure} 
 		
-Covers have different sizes which represents the coverage circles of the agents in 2D environment. Each cover have two different size of circles with the same color. The colors of the circles are used to classify the agent ids and the positions of the circles are used to determine both position and attitude (i.e. heading) angles of the mobile robots in the environment. The orientation of the agent in the environment is used in the command mixing algorithms of omni - wheels which will be described in details in this section. The video of the environment is transmitted to the mission computer in nearly real time. Mission computer executes the image processing algorithms which filters the desired colors and detects the positions of the colored circles and broadcasts the position and orientation datas of the agents. A sample output of the image processing algorithm is illustrated in Figure \ref{imageprocess_ref}. 
+Covers have different sizes to represent the coverage circles of the agents in 2D environment. These covers are used to create a swarm with heterogeneous agents partially. In our implementation, each cover has two different size of circles with the same color. Colors of these circles are used to classify the agent with the help of color classification algorithms. We have used different sized circles placed on the same cover, to calculate the heading angle of the agent with the help of circle detection algorithms. These algorithms can detect the positions and the radius of the circles in an image. In our project, heading angle of an agent is determined with the clockwise bearing angle of the vector from the center of the large circle to the center of the small circle. Figure \ref{bearing_ref} illustrates this calculation.
+		
+\begin{figure}[H]
+\caption{Orientation of an Agent in the Environment} \label{bearing_ref}
+\centerline{\includegraphics[scale = 0.20]{Bearing_Angle}}
+\end{figure} 
+
+
+The video of the environment is transmitted to the mission computer in nearly real time with the help of an E/O camera. Mission computer executes the image processing algorithms which filters the desired colors and detects the positions of the colored circles and broadcasts the position and heading angle datas of the agents. A sample output of the image processing algorithm is illustrated in Figure \ref{imageprocess_ref}. 
 		
 \begin{figure}[H]
 \caption{Sample Output of the Image Processing Algorithm} \label{imageprocess_ref}
 \centerline{\includegraphics[scale = 0.50]{Image_Processing}}
 \end{figure} 
 		
-The orientation of an agent is determined with the clockwise bearing angle of the vector from the center of the large circle to the center of the small circle. Figure \ref{bearing_ref} illustrates this calculation.
-		
-\begin{figure}[H]
-\caption{Orientation of an Agent in the Environment} \label{bearing_ref}
-\centerline{\includegraphics[scale = 0.20]{Bearing_Angle}}
-\end{figure} 
+
 		
 Each agent has its individual processor unit and radio link on its board. A block diagram of an individual agent's hardware is illustrated in Figure \ref{indhardware_ref}
 		
@@ -52,14 +55,14 @@ Each agent has its individual processor unit and radio link on its board. A bloc
 \centerline{\includegraphics[scale = 0.70]{agent}}
 \end{figure} 
 		
-Microchip's Pic16f690 Microcontroller is responsible of controlling the mobile robot and data communication with the mesh network. This microcontroller runs the formation control algorithms which is described in Section \ref{shapepartition_ref} and drives the 3 step motor control units, ULN2003APG, via GPIO peripherals. The instant velocity setpoints for the stepper motors  are determined with the command mixture algorithm illustrated in Figure \ref{ccmb_ref}.
+We use Microchip's Pic16f690 microcontroller as processor unit and write the related embedded software to drive the other peripherals on the board. This unit executes the decision process on formation control and the navigation control system defined in \ref{lqr_design} and drives the 3 step motor control units, ULN2003APG, via GPIO peripherals. In our embedded software, instant rotational velocity setpoints for the stepper motors  are determined with the command mixture algorithm illustrated in Figure \ref{ccmb_ref}.
 		
 \begin{figure}[H]
 \caption{Command Mixture of Step Motors} \label{ccmb_ref}
 \centerline{\includegraphics[scale = 0.65]{ccmb}}
 \end{figure} 
 
-The desired velocity vector for the agent is  distributed to the stepper motors in accordance with the orientation of the agent . Let $\norm{Vel}$ be the amplitude of the desired velocity and $\alpha$ is the angle representing the desired direction of the movement with respect to mobile robot's body frame.  The velocities for the stepper motors is determined with following equations,
+The desired velocity vector for the agent is  distributed to the stepper motors in accordance with the heading of the agent . Let $\norm{Vel}$ be the amplitude of the desired velocity and $\alpha$ is the angle representing the desired direction of the movement in clockwise direction with respect to mobile robot's body frame.  The velocities for the stepper motors is determined with following equations,
 		
 \begin{align*}
 & V_A = \norm{Vel} cos(150-\alpha) \\
@@ -216,4 +219,10 @@ Pink & 3 & 8 \\
 \end{tabular}
 \end{center}
 
-Desired formations are simple geometrical shapes since it will not be possible to cover more complicated shapes with five agents. It is obvious that the different types of agents reaches the related goal states to minimize the total displacements. Blue and green agents (i.e. Type-2 agents) have always reached to the goal states determined for Type-2 agents by minimizing the total displacements as expected. Similarly pink and yellow agents (i.e. Type-3 agents) reached to goal states determined for Type-3 agents with total minimum displacements. 
+We have defined the settling time as delta time $"t_{final} - t_{start}"$ ,where $t_{start}$ is the initial time and $t_{final}$ is the time that the all of the agents are inside of the desired formation shape and the norm of the velocity vector for each agent $\norm{v_i}$ is
+
+\begin{equation}
+\norm{v_i(t)} < 0.01 \hspace{1.0cm} [m/sec] \hspace{0.3cm}\forall\hspace{0.05cm} t>t_{final}
+\end{equation}
+
+Desired formations are simple geometrical shapes since it will not be possible to cover more complicated shapes with five agents. In Bubble Packing algorithm, goal states $g_i \in G$ are determined with the help of shape partitioning algorithm. This algorithm partitions the desired formation shape into goal states which are classified according to different agent types as we have discussed previously. In this demonstration we have implemented 3 different types of agents, so we have 3 different type goal states after each shape partitioning process. Red agent is the only type '1' agent in our system. So it always tries to reach the goal state which is dedicated to itself in different formation shapes given above. On the other hand, shape partitioning algorithm provides 2 goal states for type '2' agents which are blue and green ones. Decision process on the goal states, assign these to agents to these 2 goal states to minimize the total displacement of the agents. Since we have 2 goal states, the assignment process has only two options in our case. It is possible to see that if the assignment of type '2' agents is switched (i.e. blue and green agents reach the other goal points rather than the current ones), total displacement will increase. This shows us the decision process works successfully in the assignment of the agents to minimize the total displacement. Similarly, we have 2 type '3' agents which are yellow and pink ones. It is possible to ibserve the same results for type '3' agents as we have discussed on type '2' agents.

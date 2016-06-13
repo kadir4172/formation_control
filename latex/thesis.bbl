@@ -216,6 +216,17 @@ Wikipedia.
   2016.
 \newblock [Online; accessed 28-February-2016].
 
+\bibitem{bias}
+XSens Technologies.
+\newblock Datasheet mti-1 series, 2016.
+\newblock [Online; accessed 28-February-2016].
+
+\bibitem{noise}
+Rahni et~al.
+\newblock 2d translation from a 6-dof mems imu’s orientation for freehand 3d
+  ultrasound scanning.
+\newblock {\em IFMBE Proceedings}, 21:699--702, 2008.
+
 \bibitem{wiki_contour}
 Wikipedia.
 \newblock Methods of contour integration --- {W}ikipedia{,} the free

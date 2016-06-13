@@ -389,7 +389,9 @@ d_t
 \end{bmatrix}
 \end{equation}
 
-where $d_t$ is the propagation period and $u_k$ is the translational acceleration measured with the help of inertial sensors. The observation(external measurement) which will be calculated with the trilateration process :
+where $d_t$ is the propagation period and $u_k$ is the translational acceleration measured with the help of inertial sensors. We add a random bias on the acceleration measurements on each agents acceleration input with maximum value of 0.1 mg \cite{bias}. Also, we add a white noise to the acceleration values with zero mean and 0.01 $[m/s^2]$ standart deviation \cite{noise}. The values of bias and noise terms are added to the measurements consistent with the specifications of industry grade inertial measurement units presented by the manufacturers.
+
+The observation(external measurement) which will be calculated with the trilateration process :
 
 \begin{equation}
 z_k = H_kx_k + v_k
