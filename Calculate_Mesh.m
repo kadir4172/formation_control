@@ -47,7 +47,7 @@ sampling = 100;
 i = 1/sampling : 1/sampling : iteration_count/sampling;
 
 %shape 1 
-a_f_t = amplitude * sin(2*pi*f1*i) + amplitude * sin(2*pi*fr*i) + amplitude*4 * sin(2*pi*fy*i);
+a_f_t = amplitude * sin(2*pi*f1*i) + amplitude * sin(2*pi*fr*i) + amplitude*1 * sin(2*pi*fy*i);
 b_f_t = amplitude * sin(2*pi*f2*i) + amplitude * sin(2*pi*(fr+0.02)*i);
 r_f_t = amplitude * sin(2*pi*f3*i) + amplitude * sin(2*pi*(fr-0.02)*i);
 

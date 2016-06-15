@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2016.2.27)  15 JUN 2016 19:53
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2016.2.27)  15 JUN 2016 20:13
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -2109,36 +2109,36 @@ Package pdftex.def Info: Randomized_Fractals_Mesh_2.png used on input line 182.
 (pdftex.def)             Requested size: 441.36874pt x 125.2665pt.
  [104 <./Bubble_Packing_Mesh_2.png> <./Randomized_Fractals_Mesh_1.png> <./Rando
 mized_Fractals_Mesh_2.png>]
-<Topological_Irr_1.png, id=1747, 1446.15282pt x 707.64375pt>
+<Topological_Irr_1.png, id=1747, 1541.76pt x 735.548pt>
 File: Topological_Irr_1.png Graphic file (type png)
 
 <use Topological_Irr_1.png>
 Package pdftex.def Info: Topological_Irr_1.png used on input line 189.
-(pdftex.def)             Requested size: 506.16107pt x 247.67902pt.
+(pdftex.def)             Requested size: 539.62408pt x 257.44565pt.
 
-<Geometrical_Irr_1.png, id=1748, 1446.15282pt x 707.64375pt>
+<Geometrical_Irr_1.png, id=1748, 1541.76pt x 735.548pt>
 File: Geometrical_Irr_1.png Graphic file (type png)
 
 <use Geometrical_Irr_1.png>
 Package pdftex.def Info: Geometrical_Irr_1.png used on input line 194.
-(pdftex.def)             Requested size: 506.16107pt x 247.67902pt.
+(pdftex.def)             Requested size: 539.62408pt x 257.44565pt.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [105 <./Topological_Irr_1.png (PNG copy)>]
-<Topological_Irr_2.png, id=1754, 1446.15282pt x 707.64375pt>
+<Topological_Irr_2.png, id=1754, 1541.76pt x 735.548pt>
 File: Topological_Irr_2.png Graphic file (type png)
 
 <use Topological_Irr_2.png>
 Package pdftex.def Info: Topological_Irr_2.png used on input line 199.
-(pdftex.def)             Requested size: 506.16107pt x 247.67902pt.
+(pdftex.def)             Requested size: 539.62408pt x 257.44565pt.
 
-<Geometrical_Irr_2.png, id=1755, 1446.15282pt x 707.64375pt>
+<Geometrical_Irr_2.png, id=1755, 1541.76pt x 735.548pt>
 File: Geometrical_Irr_2.png Graphic file (type png)
 
 <use Geometrical_Irr_2.png>
 Package pdftex.def Info: Geometrical_Irr_2.png used on input line 204.
-(pdftex.def)             Requested size: 506.16107pt x 247.67902pt.
+(pdftex.def)             Requested size: 539.62408pt x 257.44565pt.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
@@ -2662,6 +2662,10 @@ Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 130.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 130.
 Package rerunfilecheck Info: File `thesis.out' has not changed.
 (rerunfilecheck)             Checksum: 2988E1436691AA0E7EF2B60E3A837C47;5129.
+
+
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
+
  ) 
 Here is how much of TeX's memory you used:
  23983 strings out of 494424
@@ -2682,7 +2686,7 @@ r.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/symbol/usyr.pfb></usr/shar
 e/texlive/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/share/texlive/texmf
 -dist/fonts/type1/urw/times/utmr8a.pfb></usr/share/texlive/texmf-dist/fonts/typ
 e1/urw/times/utmri8a.pfb>
-Output written on thesis.pdf (177 pages, 43210827 bytes).
+Output written on thesis.pdf (177 pages, 43174974 bytes).
 PDF statistics:
  2215 PDF objects out of 2487 (max. 8388607)
  1824 compressed objects within 19 object streams
