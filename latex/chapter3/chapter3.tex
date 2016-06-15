@@ -594,7 +594,7 @@ B_k = u(y_{k+1} - y_k ) + v(x_{k+1} - x_k)
 \norm{z_k - z_{k-1}} = \norm{z_{k+1} - z_k}, \hspace{0.2cm}  \forall k ;  \hspace{0.2cm} k=1,2,...,K \hspace{0.2cm} when  \hspace{0.2cm} K \to\infty
 \end{equation}
 
-The assumption of $K \to\infty$ makes it possible to calculate the integral of Cauchy winding number with a small error with large number of $K$ which can be achieved by partitioning the desired formation shape  into small pieces with equal $p2$ norms. We have used this approach to provide representations of the contour integrals in discrete domain. 
+The assumption of $K \to\infty$ makes it possible to calculate the integral of Cauchy winding number with a small error with large number of $K$ which can be achieved by partitioning the desired formation shape  into small pieces with equal $p2$ norms of $\Delta z$. We have used this approach to provide representations of the contour integrals in discrete domain. 
 
 Figure \ref{iceride_disarida_refe} shows the test results for the grid map of an environment with a formation shape, where green dots represents the inner points of formation shape and red dots represents the outer points of the formation shape. Inner points in the grid map have a Cauchy winding number of 1, and the outer points have a Cauchy winding number of 0 .
 
@@ -1205,7 +1205,7 @@ Goto Label3 until full solution has been achieved. \newline
 
 Hungarian algorithm returns a vector of $nx1$ and each row in this vector represents the goal state that the related agent is assigned. With this assignment, the total cost (i.e. total displacement) of the swarm is minimized. 
 \subsection{Mesh Quality Measurement}\hspace{0pt} \label{mesh_quality_ref}  \\
-We have provided two different solutions to the shape partitioning problem. Bubble Packing method partitions the desired formation shape into goal states by distributing the bubbles which are representing our agents in the swarm. On the other hand, Randomized Fractals method randomly places the fractals in the desired shape and these fractals are representing our agents in the swarm. In this project one of our aims is to distribute the agents in the formation shape homogeneously. So it is useful to define a metric to compare the performances of these algorithms, i.e. a metric which represents how these methods homogeneously distribute the agents in the formation shape. One of the criterias we have used is topological mesh irregularity \cite{27} which is commonly used by mesh generation problems. To measure the topological mesh irregularity in our swarm, first we have constructed a Voronoi diagram with the nodes which are the center positions of the agents' coverage circles. Figure \ref{voronoi_voronoi} shows a simulation output about the final states of the agents in the desired formation shape. Centers of these coverage circles are used as positions of nodes while constructing the Voronoi diagram as illustrated in the right hand side of the figure.
+We have provided two different solutions to the shape partitioning problem. Bubble Packing method partitions the desired formation shape into goal states by distributing the bubbles which are representing our agents in the swarm. On the other hand, Randomized Fractals method randomly places the fractals in the desired shape and these fractals are representing our agents in the swarm. In this project one of our aims is to distribute the agents in the formation shape homogeneously. So it is useful to define a metric to compare the performances of these algorithms, i.e. a metric which represents how these methods homogeneously distribute the agents in the formation shape. One of the criterias we have used is topological mesh irregularity \cite{27} which is commonly used by mesh generation problems. To measure the topological mesh irregularity in our swarm, first we have constructed a Voronoi diagram with the nodes which are the center positions of the agents' coverage circles. Figure \ref{voronoi_voronoi} shows a simulation output about the final states of the agents in the desired formation shape. Centers of these coverage circles are used as positions of nodes while constructing the Voronoi diagram as illustrated in the right hand side of the figure. We have created an equivalent Delaunay triangulation by connecting the centers of cells which are neighbors in the Voronoi diagram.
 
 \begin{figure}[H]
 \caption{Voronoi Diagram Constructed with Final Positions of Agents} \label{voronoi_voronoi}
@@ -1228,7 +1228,7 @@ D = \left\{ \begin{array}{rl}
 \end{array} \right.
 \end{equation}
 	
-and $\gamma _i$ represents the degree, or the number of neighboring nodes connected to the $i^{th}$ interior node, and $n$ represents the total number of interior nodes, i.e. the number of bubbles or fractals. In this implementation, topological mesh irregularity vanishes when all nodes have $D$ neighbors, but this ideal case is almost not possible in practical applications. Figure \ref{6komusulunode} shows a node with 6 neighbors in an example Voronoi diagram.
+and $\gamma _i$ represents the degree, or the number of neighboring nodes connected to the $i^{th}$ interior node, and $n$ represents the total number of interior nodes. In this implementation, topological mesh irregularity vanishes when all nodes have $D$ neighbors, but this ideal case is almost not possible in practical applications. $D$ number is determined as 6 since we have a Voronoi diagram and equivalent Delaunay triangulation defined in a two dimensional surface. Figure \ref{6komusulunode} shows a node with 6 neighbors in an example Voronoi diagram.
 	
 \begin{figure}[H]
 \caption{A Node with 6 Neighbors} \label{6komusulunode}
@@ -1252,7 +1252,7 @@ A = \left\{ \begin{array}{rl}
 \end{array} \right.
 \end{equation}
 		
-and $m$ represents the number of nodes, $r_i$ is the radii of inscribed circle of Voronoi cell belonging to node $i$ and $R_i$ is the radii of the circumscribing circle of Voronoi cell belonging to node $i$. Figure \ref{inscribe_circumscribe} shows inscribing and circumscribing circles of a Voronoi cell.
+and $m$ represents the number of nodes, $r_i$ is the radii of inscribed circle of Voronoi cell belonging to node $i$ and $R_i$ is the radii of the circumscribing circle of Voronoi cell belonging to node $i$. $A$ number is determined as 0.5 since we have a Voronoi diagram and equivalent Delaunay triangulation defined in a two dimensional surface. Figure \ref{inscribe_circumscribe} shows inscribing and circumscribing circles of a Voronoi cell.
 	
 \begin{figure}[H]
 \caption{Inscribing and Circumscribing Circle of a Voronoi Cell of Node i} \label{inscribe_circumscribe}

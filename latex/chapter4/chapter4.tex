@@ -16,7 +16,7 @@
 
 
 
-In this section, the simulation environment is illustrated and the results are analyzed and discussed in detail for the local positioning system design and formation control system design. Three different methods of formation control system which are presented in Section \ref{chp:Methodology} are evaluated and compared with each other. Simulations are handled in the environment of Gazebo simulator with a swarm of 50 agents which includes three different types of robots. We have determined the position beacon ratio as $\%$15, so we have 8 position beacons in our swarm. The main system frequency in which each agent propagates its state vector, calculates artificial forces and makes goal state assignments is determined as 2Hz. 
+In this section, the simulation environment is illustrated and the results are analyzed and discussed in detail for the local positioning system design and formation control system design. Three different methods of formation control system which are presented in Section \ref{chp:Methodology} are evaluated and compared with each other. Simulations are handled in the environment of Gazebo simulator with a swarm of 50 agents which includes three different types of robots. We have determined the position beacon ratio as $\%$15, so we have 8 position beacons in our swarm. The main system frequency in which each agent propagates its state vector, calculates artificial forces and executes goal state assignment process is determined as 2Hz. 
 \newpage
 \section{Simulation Environment}
 Block diagram of the simulation environment is illustrated in Figure \ref{simulation_env_ref}.
@@ -70,7 +70,7 @@ Agent 3& 297 & 121\\
 \end{tabular}
 \end{center}
 
-Figure \ref{Matlab_env} illustrates the visualization of the workspace in the Matlab environment. Red circles which are the same size with coverage circles defined in Section \ref{Artificial_forces_ref}, are representing the different types of agents in the environment. The shape defined with blue line is the desired formation shape and the obstacles are represented with green lines in the environment. 
+Figure \ref{Matlab_env} illustrates the visualization of the workspace in the Matlab environment. Red circles are the coverage circles representing the different types of agents in the environment. The shape defined with blue line is the desired formation shape and the obstacles are represented with green lines in the environment. 
 
 \begin{figure}[H]
 \caption{Visualization of Workspace in Matlab} \label{Matlab_env}
@@ -80,7 +80,7 @@ Figure \ref{Matlab_env} illustrates the visualization of the workspace in the Ma
 \section{Local Positioning System} \label{lps_ref}
 In the local positioning system, the main aim is to design an architecture in which every second type agent can localize itself with the help of the position beacons. In this architecture, second type agents need external position measurements for their state estimator systems to prevent a potential drift in their position data. In our implementation, the state propagation frequency is determined as 2Hz which is equal to the main system frequency since the new position datas for the formation control system are required to be determined with this rate. 	As discussed in Section \ref{LOCAL POSITIONING SYSTEMS_ref}, a localization timer is proposed to provide the required minimum time to the DSDV algorithm and trilateration process.
 
-We are expecting that the position data in the state vector will be drifting with the increasing time because of the errors and noise in inertial measurements unless they are not corrected with the external measurements \cite{91}. So it is possible to determine a minimum execution period of this trilateration process to satisfy a maximum error in the position data. For this purpose we have executed Monte Carlo simulations to observe the drift in the position data with state propagation process. In Figure \ref{3second_period}, \ref{5second_period} and \ref{8second_period}, the simulation outputs with different periods of localization timer are illustrated.
+We are expecting that the position data in the state vector will drift with the increasing time because of the errors and noise in inertial measurements unless they are not corrected with the external measurements \cite{91}. So it is possible to determine a minimum execution period of this trilateration process to satisfy a maximum error in the position data. For this purpose we have executed Monte Carlo simulations to observe the drift in the position data with state propagation process. Figure \ref{3second_period}, \ref{5second_period} and \ref{8second_period} illustrate the simulation outputs showing the error on the estimated position data for different agents with variable periods of localization timer.
 		
 \begin{figure}[H]
 \caption{Total Error with Localization Timer Period of 3 Seconds} \label{3second_period}
@@ -97,7 +97,7 @@ We are expecting that the position data in the state vector will be drifting wit
 \centerline{\includegraphics[scale = 0.4]{Error-0,5Prop-8Update}}
 \end{figure} 		
 		
-According to these figures, it is clear that the total error norm on position datas are decreased dramatically with the localization period which equals to 6 iterations for 3 seconds period, 10 iterations for 5 seconds and 16 iterations for 8 seconds period. The peak values on the error norms are always observed at the iterations just before the localization process. It can be concluded that the peak values on the error norms are greatly related with the localization period and they have greater values with the increasing number of this period. The maximum error norm is below 3 meters with localization period of 3 seconds, below 10 meters with localization period of 5 seconds and below 12 meters with localization period of 8 seconds. In this work, it is assumed that the error norm of 3 meters is the maximum tolerable value for the formation control system to satisfy a successful collision avoidance for the agents since we have a coverage circle radius of 0.5m for the biggest agent in the swarm. Thus, the localization period for the trilateration process is determined as 3 seconds in simulations. 
+According to these figures, it is clear that the total error norm on position datas are decreased dramatically with the localization period which equals to 6 iterations for 3 seconds period, 10 iterations for 5 seconds and 16 iterations for 8 seconds period. The peak values on the error norms are always observed at the iterations just before the localization process. It can be concluded that the peak values on the error norms are greatly related with the localization period and they have greater values with the increasing number of this period. The maximum error norm is below 3 meters with localization period of 3 seconds, below 10 meters with localization period of 5 seconds and below 12 meters with localization period of 8 seconds. In this work, it is assumed that the error norm of 3 meters is the maximum tolerable value for the formation control system to satisfy a successful collision avoidance for the agents. Thus, the localization period for the trilateration process is determined as 3 seconds in simulations. 
 
 The performance of the LPS design is tested in simulations with different conditions in which swarm is propagating to a desired formation shape or agents are keeping their positions in dynamically changing formation shapes.  In both cases, it is observed that the position datas of the agents are drifted with an increasing error between two  sequential localization process as we have discussed previously. A sample case for this situation is illustrated in Figure \ref{hatali_pos_ref} and Figure \ref{duzgun_pos_ref}. In these figures, red circles are representing the estimated positions of the agents where blue circles are representing the real positions. 
 
@@ -133,11 +133,24 @@ Handling procedures of the lost agents are presented in Section \ref{LostAgents}
 \end{figure} 		
 
 		
-\section{FORMATION CONTROL SYSTEM}
-In this section, three different methods of which the details are presented in Section \ref{formation_control_ref} are evaluated according to their settling times, mesh qualities and total displacements. 
+\section{Formation Control System}
+In this section, three different methods of which the details are presented in Section \ref{formation_control_ref} are evaluated according to their settling times, mesh qualities and total displacements. During the simulations, the variables which are described in Section \ref{chp:Methodology} are chosen as:
+\begin{align*}
+  k_a\;=\;250\;(Variable\;Gain\;for\;Attractive\;Forces)\\
+  k_r\;=\;150\;(Variable\;Gain\;for\;Repulsive\;Forces)\\
+  k_m\;=\;1500\;(Variable\;Gain\;for\;Intermember\;Forces)\\
+  k_t\;=\;1000\;(Variable\;Gain\;for\;Transition\;Forces)\\
+  k_o\;=\;5000\;(Variable\;Gain\;for\;Obstacle\;Forces)\\
+  \Delta z\;=\;0.01[m]\;(p2\;Norm\;used\;in\;Contour\;Integrals)\\
+  a\;=5\;(Parameter\;used\;in\;Interbubble\;Forces)\\
+  b\;=5\;(Parameter\;used\;in\;Interbubble\;Forces)\\ 
+  c\;=5\;(Parameter\;used\;in\;Interbubble\;Forces)\\ 
+  d\;=4\;(Parameter\;used\;in\;Interbubble\;Forces)\\
+  l_o\;=2.5[m]\;(Parameter\;used\;in\;Interbubble\;Forces)     
+\end{align*}
 
 \subsection{Mesh Qualities} 
-Mesh quality is a measure of how the agents homogeneously distributed while covering the desired formation shape. Basically, two different types of quality measurements defined in Section \ref{mesh_quality_ref} are used to evaluate the performance of the formation control methods, topological mesh irregularity $\epsilon_t$ and geometrical mesh irregularity $\epsilon_g$ . Monte Carlo simulations with 1000 iterations are handled for the same formation shapes with different initial conditions of the agents in the environment. Sample outputs for three different types of formation control algorithms are illustrated in the following figures. In these figures, red circles are representing the coverage circles of three different type of agents. Mesh irregularities are calculated by constructing the Voronoi diagrams with nodes located at the centers of these coverage circles.
+Mesh quality is a measure of how the agents homogeneously distributed while covering the desired formation shape. Basically, two different types of quality measurements defined in Section \ref{mesh_quality_ref} are used to evaluate the performance of the formation control methods, topological mesh irregularity $\epsilon_t$ and geometrical mesh irregularity $\epsilon_g$. Monte Carlo simulations with 1000 iterations are handled for the same formation shapes with different initial conditions of the agents in the environment. Sample outputs for three different types of formation control algorithms are illustrated in the following figures. In these figures, red circles are representing the coverage circles of three different type of agents. Mesh irregularities are calculated by constructing the Voronoi diagrams with nodes located at the centers of these coverage circles.
   
 \begin{figure}[H]
 \caption{Shape 1 with Artificial Forces Methods:$\epsilon_t = 2.1$ and $\epsilon_g = 0.32$}
@@ -222,9 +235,9 @@ In this project, we aim to minimize the overall displacement of the agents in th
 \centerline{\includegraphics[scale = 0.32]{Randomized_Trajectories_1}}
 \end{figure} 	
 			
-It can be seen that the trajectories of the agents are more chaotic and complex in the Artificial Forces method according to the other two solutions. Main cause for this situation, the agents are under the effect of a total force which is instantly changing both amplitude and direction with the local interactions with the environment in Artificial Forces method. The only force component which provides the distribution of the agents in the formation shape homogeneously is the intermember forces which is dynamically changing so much with the local instant neighbors of the agents in the environment. On the other hand, Bubble Packing and Randomized Fractal methods implement an algorithm in which every agent is directed to a goal state in which the total displacements in the environment is minimized. This approach prevents the chaotic appearance of the trajectories and minimizes the displacements of the agents. Because agent are trying to reach their goal states directly within these two methods. 
+It can be seen that the trajectories of the agents are more chaotic and complex in the Artificial Forces method according to the other two solutions. Main cause for this situation, the agents are under the effect of a total force which is instantly changing both amplitude and direction with the local interactions with the environment in Artificial Forces method. The only force component which provides the distribution of the agents in the formation shape homogeneously is the intermember forces which is dynamically changing so much with the local instant neighbors of the agents in the environment. On the other hand, Bubble Packing and Randomized Fractal methods implement an algorithm in which every agent is directed to a goal state where total displacements in the environment is minimized. This approach prevents the chaotic appearance of the trajectories and minimizes the displacements of the agents. Because agents are trying to reach their goal states directly within these two methods. 
 
-To compare the total displacements, we have done Monte Carlo simulations with 1000 iterations and the results are presented in Figure \ref{total_disp_1}. According to this figure, Artificial Forces method has a higher mean value of total travelled distance while achieving the same formation shape with same initial conditions. Performances of Bubble Packing and Randomized Fractals method seem similar, because the only difference between these two methods is their shape partitioning approaches. The assignment procedure of the agents to these goal states by minimizing the total displacement is implemented identically. 
+To compare the total displacements, we have done Monte Carlo simulations with 1000 iterations and the results are presented in Figure \ref{total_disp_1}. According to this figure, Artificial Forces method has a higher mean value of total travelled distance while achieving the same formation shape with same initial conditions. Performances of Bubble Packing and Randomized Fractals method seem similar, because the only difference between these two methods is their shape partitioning approaches. The assignment procedure of the agents to these goal states is implemented identically. 
 		
 \begin{figure}[H]
 \caption{Total Travelled Distances for Shape 1} \label{total_disp_1}
