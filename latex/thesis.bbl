@@ -118,6 +118,12 @@ Reza Haghighi and Chien~Chern Cheah.
 \newblock In {\em 50th IEEE Conference on Decision and Control and European
   Control Conference}, 2011.
 
+\bibitem{91}
+Karatsinides Spiro.
+\newblock Enhancing filter robustness in cascaded gps-ins integrations.
+\newblock {\em IEEE Transactions on Aerospace and Electronic Systems}, 30,
+  1994.
+
 \bibitem{16}
 Magnus Egerstedt and Xiaoming Hu.
 \newblock Formation constrained multi-agent control.
@@ -195,12 +201,6 @@ IOP-Institute of~Physics.
 \newblock http://www.physics.org/article-questions.asp?id=55, last visited on
   April 2016.
 
-\bibitem{91}
-Karatsinides Spiro.
-\newblock Enhancing filter robustness in cascaded gps-ins integrations.
-\newblock {\em IEEE Transactions on Aerospace and Electronic Systems}, 30,
-  1994.
-
 \bibitem{linear_ders_notu}
 Umut Orguner.
 \newblock Lecture notes in linear system theory 1, February 2013.
@@ -215,6 +215,11 @@ Wikipedia.
 \newblock Bellman-ford algorithm --- {W}ikipedia{,} the free encyclopedia,
   2016.
 \newblock [Online; accessed 28-February-2016].
+
+\bibitem{wiki_kalman}
+Wikipedia.
+\newblock Kalman filter, 2016.
+\newblock [Online; accessed 28-March-2016].
 
 \bibitem{bias}
 XSens Technologies.
