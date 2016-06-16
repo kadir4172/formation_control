@@ -13,20 +13,20 @@
 
 In this thesis work, the problem of dynamical formation control of heterogeneous mobile robots is reduced down to two subproblems such as local positioning and formation control.  In our implementation there are two main types of agents in the swarm. First type agents have position measurement sensors on their boards. We call these agents position beacons and only limited number of agents are position beacons in our swarm. Second type agents do not have position sensors on their boards. Local positioning subsystem proposes a solution for the localization of agents in the workspace for second type of agents. On the other hand, formation control subsystem implements algorithms to cover the desired formation shape homogeneously with the agents in the swarm. In this chapter, our solutions for these subproblems are presented in details.
 
-A general block diagram of the system design is illustrated in Figure \ref{general_system}. According to this diagram, local positioning system provides a basis for the formation control problem with agents' state vectors composed of translational positions and velocities. Basically, this subsystem provides position and velocity data to the second type of agents in the swarm. Formation control subsystem proposes a solution to achieve desired complex shapes with heterogeneous agents in the swarm. Formation control system gets the requested formation shape externally and creates individual control laws for agents to cover the desired shape homogenously. The implementation details of these subsystems are given in the following sections. 
+A general block diagram of the system design is illustrated in Figure \ref{general_system}. According to this diagram, local positioning system provides a basis for the formation control problem with agents' state vectors composed of translational positions and velocities. Basically, this subsystem provides position and velocity data to the second type of agents in the swarm. Formation control subsystem proposes a solution to achieve desired complex shapes with heterogeneous agents in the swarm. Formation control system gets the requested formation shape externally and creates individual control laws for agents to cover the desired shape homogeneously. The implementation details of these subsystems are given in the following sections. 
 \begin{figure}[H]
 \caption{General Block Diagram of the Provided Solution} \label{general_system}
 \centering
 \includegraphics[scale = 0.58]{general_scheme}
 \end{figure}
 
-\section{LOCAL POSITIONING SYSTEMS} \label{LOCAL POSITIONING SYSTEMS_ref}
+\section{LOCAL POSITIONING SYSTEM} \label{LOCAL POSITIONING SYSTEMS_ref}
 Local positioning system is a subsystem to provide a complete solution to the localization of the second type agents in the workspace. As discussed in Section \ref{Objectives}, agents are expected to have low sensor capabilities and only a limited number of them have external position measurement sensors on their boards and we call these agents position beacons in our project. The rest of the swarm which is composed of second type agents, has to maintain their position$\&$velocity data with the help of their inertial measurements and local trilateration process. Propagation of the states with these inertial measurements are always inclined to drift problems due to the error$\&$noise and bias problems of the sensors \cite{91}. Because of this problem, we have corrected these state vectors with an external measurement provided by local trilateration process. We have proposed a complete solution for this subsystem as illustrated in Figure \ref{figure_lps}.
 
 \begin{figure}[H]
 \caption{Local Positioning System} \label{figure_lps}
 \centering
-\includegraphics[scale = 0.65]{lps}
+\includegraphics[scale = 0.60]{lps}
 \end{figure}
 
 As illustrated in Figure \ref{figure_lps}, agents propagate their states with the help of inertial measurements. This state propagation process is executed with high speed data provided by the inertial sensors. On the other hand, trilateration and route table determination processes require iterative and time consuming algorithms and their implementation details are given in the following sections. It is not possible to execute the trilateration and route table determination algorithms with the same execution frequency of state propagation process. Because of this reason, a localization timer to provide the minimum required time for the route table determination and trilateration process is implemented to the solution. Agents will correct their state vectors with the localization period by measuring their positions with trilateration process and execute the update procedure in their state estimator algorithms. The requirement about the maximum value of the localization period is determined with the help of Monte Carlo simulations discussed in Section \ref{lps_ref} by defining a maximum allowable error on the position data. 
@@ -147,6 +147,7 @@ with $A$ is a $(n-1)\ x\ 2$ matrix and $b$ is a $(n-1)\ x\ 1$ vector.
 
 There are some possible solutions to this type of equation regarding with the structure of matrix $A$ and vector $b$.\\
 
+\newpage
 \underline {\textit{Solution to $A\vec{x} = \vec{b}$ Problem}}\\
 In a localization problem handled in two dimensional space, the $A$ matrix has $(n-1)$ rows and $2$ columns, where $n$ is the number of position beacons which are direct neighbors of an agent. There is no solution when the number of neighbors lower than $3$ (i.e. $n<3$) \cite{22}. When the number of neighbor position beacons are equal or greater than $3$ we have three different solutions according to the structure of the linearized equations.
 
@@ -231,7 +232,7 @@ f_n(\theta)
 \end{equation}
 
 
-We have defined the Jacobien matrix as follows:
+We have defined the Jacobian matrix as follows:
 
 \begin{equation}
 J(\theta) = \begin{bmatrix}
@@ -312,7 +313,7 @@ In the DSDV algorithm, each node transmits the updates in its own sequence numbe
 	- If the sequence numbers are equal, then choose the route with minimum number of hops and update the route table.
 
 In Figure \ref{dest_seq_ref}, node B has destination sequence numbers to each destination in its route table. These numbers are used to update the network with the rules defined above, in the case of link addition and link brakes defined in following sections.
-\newpage	
+	
 \subsubsection{DSDV Link addition}
 
 Figure \ref{linkk_addition} shows a sample link addition condition to the robot network. In this example, robot A joins the network by creating a radio link with robot B. When a new node A joins the network, it transmits of its own route table including the destination to itself $<A,A,0,101>$. Then the following procedure will be handled during iterations; \newline
@@ -338,19 +339,19 @@ Figure \ref{linkk_brake} shows a sample link brake condition to the robot networ
 \end{figure}
 	
 \subsection{Handling Lost Agents} \label{LostAgents}
-The minimum number of position beacons required for the trilateration process is three for a two dimensional localization problem as illustrated in Section \ref{Trilateration_Process_ref} . Since the agents are assumed to have a narrow communication range, it is possible to not to find three  position beacons as direct neighbors for any agent at an instant time. In this case, it will not be possible to relocate these agents with trilateration and the position$\&$velocity data will drift from the real values with the increasing time passed without trilaterions. It is important to have a solution for this problem to keep the swarm together and to increase the robustness of the system against different environmental conditions. In our algorithm, concept of `Lost` agents and the procedures for these type of agents are described as follows:
+The minimum number of position beacons required for the trilateration process is three for a two dimensional localization problem as illustrated in Section \ref{Trilateration_Process_ref} . Since the agents are assumed to have a narrow communication range, it is possible to not to find three  position beacons as direct neighbors for any agent at an instant time. In this case, it will not be possible to relocate these agents with trilateration and the position$\&$velocity data will drift from the real values with the increasing time passed without trilaterations. It is important to have a solution for this problem to keep the swarm together and to increase the robustness of the system against different environmental conditions. In our algorithm, concept of `Lost` agents and the procedures for these type of agents are described as follows:
 	
 	* An agent gets into 'Lost' mode, if it doesn't find at least three direct neighbors of position beacons at an instant time \newline
 	* If an agent is in 'Lost' mode and missed the localization process for three times, it will get into 'Return to Home' mode \newline
 	* If an agent is in 'Return to Home' mode, it will directly try to reach to the center of the desired formation shape.
 		
-The idea behind the 'Return to Home' mode is basically to increase the possibility of finding position beacons which are direct neighbors of the lost agent by directing it to the center of the swarm. A simple demonstration of this procedure is illustrated in Figure \ref{return_home_ref}
-	
 \begin{figure}[H]
 \caption{Return to Home Approach of a Lost Agent} \label{return_home_ref}
 \centering
 \includegraphics[scale = 0.60]{return_home}
 \end{figure}
+
+The idea behind the 'Return to Home' mode is basically to increase the possibility of finding position beacons which are direct neighbors of the lost agent by directing it to the center of the swarm. A simple demonstration of this procedure is illustrated in Figure \ref{return_home_ref}
 	
 The lost agent aims to reach to the center of the formation and due to the errors on its position$\&$velocity data, it is expected to arrive to the red point illustrated in the figure. With this maneuver, the lost agent still have a chance to meet some position beacons in the swarm even if it directs itself to an incorrect goal state.
 	
@@ -397,7 +398,7 @@ The observation(external measurement) which will be calculated with the trilater
 z_k = H_kx_k + v_k
 \end{equation}
 
-where $v_k$ is the measurement noise. We add a noise component to this external measurement modeled with a Gaussian distribution with zero mean and 2$[m]$ standart deviation. This noise simulates the errors on the distance measurements handled with TOA methods. Since the trilateration process will provide new position data to the agents:
+where $v_k$ is the measurement noise. We add a noise component to this external measurement modelled with a Gaussian distribution with zero mean and 2$[m]$ standart deviation. This noise simulates the errors on the distance measurements handled with TOA methods. Since the trilateration process will provide new position data to the agents:
 \begin{equation}
 H_k = \begin{bmatrix}
 1\\0
@@ -464,7 +465,7 @@ R_k = \sigma_{meas}
 		
 In the above equations $K_k$ represents the Kalman gain matrix and $S_k$ is the residual covariance of the system at time $k$. $\hat{x}_{k,k}$ is the posteriori state estimate updated with measurements at time $k$ ;  $\hat{x}_{k,k-1}$ is the priori estimate of the state vector predicted with inputs at time $k$; $P_{k,k}$ is the posteriori error covariance matrix updated with measurements at time $k$; $P_{k,k-1}$ is the priori estimate covariance predicted with the inputs at time $k$.
 			
-\section{FORMATION CONTROL} \label{formation_control_ref}
+\section{FORMATION CONTROL SYSTEM} \label{formation_control_ref}
 The details of different methodologies for dynamical formation control with heterogeneous mobile robots is presented in this subsection. We have implemented three different approaches as Artificial Forces method, Bubble Packing method and Randomized Fractals method. It is possible to classify these methods in two sub categories. Potential field based approaches implements artificial forces acting on agents to get inside and cover the desired formation shape homogeneously by avoiding collisions between the agents. The resultant positions of the agents in the formation shape is not certain, it dynamically changes with the instantaneous positions and interactions of the agents with each other and environment. Two other methods , shape partitioning based approaches which are Bubble Packing and Randomized Fractals methods, share a common structural basis. In these approaches the complex formation shape is partitioned into goal states to cover the shape homogeneously with the mobile robots. The assignment of the agents to these goal states is handled with special algorithms to optimize the total displacements of the agents in the environment. The difference between these two methods is the partitioning approach of the formation shape. Figure \ref{formation_controlin_figi} illustrates different methodologies implemented in this project.
 		
 \begin{figure}[H]
@@ -906,7 +907,7 @@ The attractive and transition forces are defined to be active when the agents ar
 \includegraphics[scale = 0.50]{buffer_zone}
 \end{figure}
 					
-\subsection{Shape Partitioning Methods} \label{shapepartition_ref}
+\subsection{Shape Partitioning Based Approaches} \label{shapepartition_ref}
 In shape partitioning methods we have reduced down the formation control problem into two subproblems. The first part of the solution is to partition the desired formation shape into potential goal states according to the agent types to cover the desired formation shape homogeneously. We have proposed two different solutions to the shape partitioning problem in this thesis work, Bubble Packing method and Randomized Fractals method. The second part of the solution is the decision process to assign the agents to these goal states continuously to minimize the total displacement of swarm while achieving the desired formation shape. During this decision process, the cost of reaching different goal states is defined with the displacement on the shortest path while reaching that goal state. Our algorithm tries to reduce down the total cost value by assigning each agent to proper goal states.
 
 Shape partitioning methods have an approach to direct the agents to the goal states in which they have assigned dynamically. In this approach it is still needed to have collision avoidance algorithms to prevent the agents to collide with each other and workspace obstacles while travelling towards these goal states. For this purpose we add obstacle and inter-member forces to the individual control laws defined in shape partitioning approaches.
@@ -979,12 +980,12 @@ where
 						
 
 	
-The bubbles are distributed homogeneously under the influence of these two forces and they get an equilibrium state in which the total net forces acting on individual bubbles reaches zero. Figure \ref{buble_ornek} shows a simulation output of Bubble Packing algoithm which is initialized with coverage circles derived from the output of the INITIALIZE$\_$BUBBLE$\_$POSITIONS algorithm. The coverage circles are homogeneously distributed in the formation shape with the help of inter-bubble and shape repulsive forces. The final equilibrium states of the bubbles determine the potential goal states $g_i \in G$  of the agents in the swarm to cover the formation shape.
+The bubbles are distributed homogeneously under the influence of these two forces and they get an equilibrium state in which the total net forces acting on individual bubbles reaches zero. Figure \ref{buble_ornek} shows a simulation output of Bubble Packing algorithm which is initialized with coverage circles derived from the output of the INITIALIZE$\_$BUBBLE$\_$POSITIONS algorithm. The coverage circles are homogeneously distributed in the formation shape with the help of inter-bubble and shape repulsive forces. The final equilibrium states of the bubbles determine the potential goal states $g_i \in G$  of the agents in the swarm to cover the formation shape.
 
 \begin{figure}[H]
 \caption{Bubble Packing Algorithm} \label{buble_ornek}
 \centering
-\includegraphics[scale = 0.62]{bubble_packing2}
+\includegraphics[scale = 0.50]{bubble_packing2}
 \end{figure}
 
 \paragraph{Randomized Fractals Method}\hspace{0pt} \\
@@ -1088,13 +1089,7 @@ p_{start}, p_{goal}
 \end{Bmatrix}$
 \end{displayquote}
 
-A visibility graph, $\gamma_{vis}(S^*)$, is a graph which is set of interior nodes representing the vertices of the set of obstacles, $S$, in the environment and edges which represents visible (which are not intersecting interior region of an obstacle) connections between these nodes \cite{92}.
-
-In this project we have updated this constraint in our algorithm. We have inserted all of the goal states $g_i \in G$ in the visibility graphs of each agent to calculate the shortest paths to all of these goal states rather than a specific $p_{start}$ and $p_{goal}$ points given in the definition. In the implementation phase, we have used the obstacles which are augmented with the Minkowski sums to calculate the free configuration space. Let these set of augmented polygonal obstacles represented with $S_i \subset S$. 
-
-
-
-Algorithm to calculate the visibility graph of  $S^* := S \cup \begin{Bmatrix}
+A visibility graph, $\gamma_{vis}(S^*)$, is a graph which is set of interior nodes representing the vertices of the set of obstacles, $S$, in the environment and edges which represents visible (which are not intersecting interior region of an obstacle) connections between these nodes \cite{92}. In this project we have updated this constraint in our algorithm. We have inserted all of the goal states $g_i \in G$ in the visibility graphs of each agent to calculate the shortest paths to all of these goal states rather than a specific $p_{start}$ and $p_{goal}$ points given in the definition. In the implementation phase, we have used the obstacles which are augmented with the Minkowski sums to calculate the free configuration space. Let these set of augmented polygonal obstacles represented with $S_i \subset S$. Algorithm to calculate the visibility graph of  $S^* := S \cup \begin{Bmatrix}
 g_i \in G
 \end{Bmatrix}$
 	
@@ -1111,7 +1106,9 @@ Add edges W to list E\;
 \caption{VISIBILITY$\_$GRAPH}
 \end{algorithm}
 
-where $VISIBLE$\_$VERTICES(v,S)$ algorithm checks whether line segments drawn from $v$ to all vertices in $S$ is intersecting an interior area of any obstacle in the environment and returns the non-intersecting edges.  By using this $VISIBILITY$\_$GRAPH$ algorithm, $SHORTEST$\_$PATH$ algorithm is defined as follows. \newline
+where $VISIBLE$\_$VERTICES(v,S)$ algorithm checks whether line segments drawn from $v$ to all vertices in $S$ is intersecting an interior area of any obstacle in the environment and returns the non-intersecting edges.  By using this $VISIBILITY$\_$GRAPH$ algorithm, $SHORTEST$\_$PATH$ algorithm is defined as follows:
+
+
 	
 \begin{algorithm}[H]
 \KwData{A set $S$ of disjoint polygonal obstacles, position of agent, $p_{start}$, and all goal states $g_i \in G$}
@@ -1133,7 +1130,7 @@ where $VISIBLE$\_$VERTICES(v,S)$ algorithm checks whether line segments drawn fr
 \includegraphics[scale = 0.40]{visgraph2}
 \end{figure} 
 
-Figure \ref{dijksttae_visibility} shows a simulation output executed with 5 workspace obstacles and 6 goal states in desired formation shape. In this algorithm, agent first calculates its own visibility graph by adding goal states $g_i \in G$ in graph as nodes. The visibility graph is illustrated with red edges in the figure. Then it calculates the shorthest paths to the goal states, which are given with green edges in the figure. We have used Dijkstra algorithm to compute the shortest path between two nodes in graph with multiple edges, each having a non-negative weight. In our work, the weights of the edges in $\gamma_{vis}$ , are calculated with the Euclidian distance between nodes in the workspace. Dijkstra algorithm is a tree search algorithm and time complexity of the original algorithm is $O(n^2)$ where $n$ is the number of the nodes in the graph. With the usage self balancing binary search tree, the algorithm requires $O(k+nlogn)$ time in the worst case where $k$ is the number of edges in the graph. The algorithm for the Dijkstra's is implemented as follows \cite{92}:
+Figure \ref{dijksttae_visibility} shows a simulation output executed with 5 workspace obstacles and 6 goal states in desired formation shape. In this algorithm, agent first calculates its own visibility graph by adding goal states $g_i \in G$ in graph as nodes. The visibility graph is illustrated with red edges in the figure. Then it calculates the shortest paths to the goal states, which are given with green edges in the figure. We have used Dijkstra algorithm to compute the shortest path between two nodes in graph with multiple edges, each having a non-negative weight. In our work, the weights of the edges in $\gamma_{vis}$ , are calculated with the Euclidian distance between nodes in the workspace. Dijkstra algorithm is a tree search algorithm and time complexity of the original algorithm is $O(n^2)$ where $n$ is the number of the nodes in the graph. With the usage self balancing binary search tree, the algorithm requires $O(k+nlogn)$ time in the worst case where $k$ is the number of edges in the graph. The algorithm for the Dijkstra's is implemented as follows \cite{92}:
 \newpage
 	
 \begin{algorithm}[H]
@@ -1177,7 +1174,7 @@ We have $n$ number of agents in our swarm and $n$ number of goal states $g_i \in
 \caption{Sample Bipartite Graph Used in Assignment Problem \cite{102}}
 \end{figure}
 
-We have defiend a cost matrix  $C$ to implement the Hungarian algorithm. The dimensions of the cost matrix is $nxm$ in which each element represents the cost of assigning the goal state $m$ to the agent $n$.  Since we have equal number of agents and goal states, the cost matrix will be a square $nxn$ matrix.  The algorithm for the assignment process as follows:
+We have defined a cost matrix  $C$ to implement the Hungarian algorithm. The dimensions of the cost matrix is $nxm$ in which each element represents the cost of assigning the goal state $m$ to the agent $n$.  Since we have equal number of agents and goal states, the cost matrix will be a square $nxn$ matrix.  The algorithm for the assignment process as follows:
 	
 \begin{algorithm}[H]
 \KwData{Cost Matrix , $C$ }
@@ -1270,7 +1267,7 @@ In shape partitioning methods we have implemented algorithms to calculate the po
 \includegraphics[scale = 0.45]{controller}
 \end{figure}
 
-In our implementation, velocity setpoint generator provides instant setpoints for the inner loop based on the current position of the agent and the desired goal state position.  This loop calculates the amplitude of the velocity setpoint proportional with the euclidian distance of agent to the desired goal state. The direction of this velocity setpoint vector has a bearing angle of the line segment drawn from the agent to the goal state. The additional terms discussed in Section \ref{shapepartition_ref} related with collision avoidance is added to this velocity setpoint. This generator saturates the amplitude of the setpoint vector with 0.5 [m/sec] to prevent the agents' travelling in the environment so fast. Figure \ref{velocity_sp_generation} shows the amplitude and the bearing angle to the destination goal state used by the velocity setpoint generator.
+In our implementation, velocity setpoint generator provides instant setpoints for the inner loop based on the current position of the agent and the desired goal state position.  This loop calculates the amplitude of the velocity setpoint proportional with the Euclidian distance of agent to the desired goal state. The direction of this velocity setpoint vector has a bearing angle of the line segment drawn from the agent to the goal state. The additional terms discussed in Section \ref{shapepartition_ref} related with collision avoidance is added to this velocity setpoint. This generator saturates the amplitude of the setpoint vector with 0.5 [m/sec] to prevent the agents' travelling in the environment so fast. Figure \ref{velocity_sp_generation} shows the amplitude and the bearing angle to the destination goal state used by the velocity setpoint generator.
 
 \begin{figure}[H]
 \caption{Velocity Setpoint Generation} \label{velocity_sp_generation}

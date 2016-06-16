@@ -17,6 +17,7 @@
 
 
 In this section, the simulation environment is illustrated and the results are analyzed and discussed in detail for the local positioning system design and formation control system design. Three different methods of formation control system which are presented in Section \ref{chp:Methodology} are evaluated and compared with each other. Simulations are handled in the environment of Gazebo simulator with a swarm of 50 agents which includes three different types of robots. We have determined the position beacon ratio as $\%$15, so we have 8 position beacons in our swarm. The main system frequency in which each agent propagates its state vector, calculates artificial forces and executes goal state assignment process is determined as 2Hz. 
+
 \newpage
 \section{Simulation Environment}
 Block diagram of the simulation environment is illustrated in Figure \ref{simulation_env_ref}.
@@ -186,28 +187,29 @@ It can be concluded that Randomized Fractals method has the worst mesh performan
 		
 \begin{figure}[H]
 \caption{Formation Shape 1 Topological Mesh Irregularities} \label{topologic_ref_1}
-\centerline{\includegraphics[scale = 0.35]{Topological_Irr_1}}
+\centerline{\includegraphics[scale = 0.32]{Topological_Irr_1}}
 \end{figure} 	
 		
 \begin{figure}[H]
 \caption{Formation Shape 1 Geometrical Mesh Irregularities} \label{geometric_ref_1}
-\centerline{\includegraphics[scale = 0.35]{Geometrical_Irr_1}}
+\centerline{\includegraphics[scale = 0.32]{Geometrical_Irr_1}}
 \end{figure} 	
 
 \begin{figure}[H]
 \caption{Formation Shape 2 Topological Mesh Irregularities} \label{topologic_ref_2}
-\centerline{\includegraphics[scale = 0.35]{Topological_Irr_2}}
+\centerline{\includegraphics[scale = 0.32]{Topological_Irr_2}}
 \end{figure} 	
 				
 \begin{figure}[H]
 \caption{Formation Shape 2 Geometrical Mesh Irregularities} \label{geometric_ref_2}
-\centerline{\includegraphics[scale = 0.35]{Geometrical_Irr_2}}
+\centerline{\includegraphics[scale = 0.32]{Geometrical_Irr_2}}
 \end{figure} 	
 		
 \subsection{Total Displacement of the Agents}  \label{total_dist_ref}
 		
 In this project, we aim to minimize the overall displacement of the agents in the swarm while getting the desired formation shape. Here the main approach is to reduce down the expected energy consumption of the swarm by decreasing the required displacements. To compare the total displacement of the swarm while getting the desired shape for three different methods, we have done Monte Carlo simulations with 1000 iterations. These simulations are handled for the same formation shapes with different initial conditions of the agents in the environment. Trajectories of the agents are recorded from the initial positions to the goal states for three different types of formation control systems. Sample outputs for three different types of formation control algorithms are illustrated in the following figures.
 		
+\newpage
 \subsubsection{Shape 1}\hspace{0pt} \\
 		
 \begin{figure}[H]
@@ -245,7 +247,7 @@ To compare the total displacements, we have done Monte Carlo simulations with 10
 \end{figure} 	
 				
 \subsubsection{Shape 2}\hspace{0pt} \\
-Second formation shape gives similar results with three different formation control methods, because of the reasons discussed for the Formation Shape 1. Artifical Forces method has the worst performance on total travelled distance metric. 
+Second formation shape gives similar results with three different formation control methods, because of the reasons discussed for the Formation Shape 1. Artificial Forces method has the worst performance on total travelled distance metric. 
 
 \begin{figure}[H]
 \caption{Formation Shape 2 in MATLAB environment}
@@ -330,7 +332,7 @@ Figure \ref{multiple2_ref} illustrates a simulation result of Artificial Forces 
 \centerline{\includegraphics[scale = 0.30]{combo3}}
 \end{figure} 
 
-Figure \ref{combo1_ref}, \ref{combo2_ref} and \ref{combo3_ref} compares the responses of these two algorithms to dynamically changing formation shapes. Bubble Packing and Artificial Force algorithms are executed with the same dynamical formation shapes and same initial positions of the agents. In these figures, red circles are representing the agents' positions with Bubble Packing method and green circles are representing the agents' positions with Artificial Forces method at the same time from the beginning of the simulations. Formation shape with blue line illustrates the current formation shape. It is obvious that the green agents are adapted to the current formation shape better than the red ones. The shape with dotted red line, represents the estimated coverage area of red agents in the environment and this shape differs from the current formation shape locally at some boundary regions. This shows that agents response to the dynamically changing formation shape faster with Artifical Forces method. 
+Figure \ref{combo1_ref}, \ref{combo2_ref} and \ref{combo3_ref} compares the responses of these two algorithms to dynamically changing formation shapes. Bubble Packing and Artificial Force algorithms are executed with the same dynamical formation shapes and same initial positions of the agents. In these figures, red circles are representing the agents' positions with Bubble Packing method and green circles are representing the agents' positions with Artificial Forces method at the same time from the beginning of the simulations. Formation shape with blue line illustrates the current formation shape. It is obvious that the green agents are adapted to the current formation shape better than the red ones. The shape with dotted red line, represents the estimated coverage area of red agents in the environment and this shape differs from the current formation shape locally at some boundary regions. This shows that agents response to the dynamically changing formation shape faster with Artificial Forces method. 
 
 \subsection{Evaluation} \label{evaluation_ref}
 Three different formation control approaches are evaluated with different kinds of metrics including the total displacement, settling time, mesh quality and dynamically changing formations. Artificial forces method has the worst performance in settling time and total displacement metrics due to the absence of predetermined goal states which is discussed in Section \ref{settling_ref} in details. On the other hand the Randomized Fractals method has the worst mesh quality performance because of its randomized nature of assignment the goal states in the desired formation shape. It is not possible to adapt the agents for dynamically changing formations with this method as discussed in Section \ref{dynamical_ref}. Artificial forces method has better response to the dynamically changing formations than the Bubble Packing method. The methods which have the worst performance at the related metrics are illustrated in Table \ref{worst_performance}
@@ -426,11 +428,9 @@ Artificial&  &  &  & \\
 \begin{figure}[H]
 \caption{Formation Shape - 3 in MATLAB Environment}
 \centerline{\includegraphics[scale = 0.32]{3}}
-\end{figure} 
-				 
+\end{figure} 			 
 
-			
-			
+\newpage				
 \begin{center}
 \captionof{table}{Performance Metrics for Shape - 3} \label{perf_shape3} 
 \begin{tabular}{|c|c|c|c|c|}

@@ -35,46 +35,46 @@
 \contentsline {subsection}{\numberline {2.3.1}Measurement Principles}{31}{subsection.2.3.1}
 \contentsline {subsection}{\numberline {2.3.2}Trilateration Process}{32}{subsection.2.3.2}
 \contentsline {chapter}{\numberline {3}\MakeUppercase {METHODOLOGY}}{35}{chapter.3}
-\contentsline {section}{\numberline {3.1}LOCAL POSITIONING SYSTEMS}{36}{section.3.1}
+\contentsline {section}{\numberline {3.1}LOCAL POSITIONING SYSTEM}{36}{section.3.1}
 \contentsline {subsection}{\numberline {3.1.1}Local Trilateration Process}{38}{subsection.3.1.1}
 \contentsline {subsection}{\numberline {3.1.2}Route Table Determination}{45}{subsection.3.1.2}
 \contentsline {subsubsection}{\numberline {3.1.2.1}Routing Algorithm- Bellman Ford}{45}{subsubsection.3.1.2.1}
-\contentsline {subsubsection}{\numberline {3.1.2.2}DSDV Link addition}{49}{subsubsection.3.1.2.2}
+\contentsline {subsubsection}{\numberline {3.1.2.2}DSDV Link addition}{48}{subsubsection.3.1.2.2}
 \contentsline {subsubsection}{\numberline {3.1.2.3}DSDV link breaks}{49}{subsubsection.3.1.2.3}
 \contentsline {subsection}{\numberline {3.1.3}Handling Lost Agents}{50}{subsection.3.1.3}
 \contentsline {subsection}{\numberline {3.1.4}State Estimation Procedure}{51}{subsection.3.1.4}
-\contentsline {section}{\numberline {3.2}FORMATION CONTROL}{54}{section.3.2}
+\contentsline {section}{\numberline {3.2}FORMATION CONTROL SYSTEM}{54}{section.3.2}
 \contentsline {subsection}{\numberline {3.2.1}Potential Field Based Approach}{55}{subsection.3.2.1}
 \contentsline {subsubsection}{\numberline {3.2.1.1}Artificial Forces Method}{55}{subsubsection.3.2.1.1}
 \contentsline {paragraph}{Utility Functions}{57}{section*.9}
-\contentsline {paragraph}{Artificial Forces}{62}{section*.10}
-\contentsline {paragraph}{Buffer Zone Implementation}{69}{section*.11}
-\contentsline {subsection}{\numberline {3.2.2}Shape Partitioning Methods}{70}{subsection.3.2.2}
-\contentsline {subsubsection}{\numberline {3.2.2.1}Determining the Potential Goal States}{71}{subsubsection.3.2.2.1}
-\contentsline {paragraph}{Bubble Packing Method}{71}{section*.12}
-\contentsline {paragraph}{Randomized Fractals Method}{74}{section*.13}
+\contentsline {paragraph}{Artificial Forces}{61}{section*.10}
+\contentsline {paragraph}{Buffer Zone Implementation}{68}{section*.11}
+\contentsline {subsection}{\numberline {3.2.2}Shape Partitioning Based Approaches}{69}{subsection.3.2.2}
+\contentsline {subsubsection}{\numberline {3.2.2.1}Determining the Potential Goal States}{70}{subsubsection.3.2.2.1}
+\contentsline {paragraph}{Bubble Packing Method}{70}{section*.12}
+\contentsline {paragraph}{Randomized Fractals Method}{73}{section*.13}
 \contentsline {subsubsection}{\numberline {3.2.2.2}Decision Process on Goal States}{76}{subsubsection.3.2.2.2}
-\contentsline {paragraph}{Free Configuration Space}{77}{section*.14}
+\contentsline {paragraph}{Free Configuration Space}{76}{section*.14}
 \contentsline {paragraph}{Visibility Graphs and Dijkstra$'$s Algorithm}{78}{section*.15}
-\contentsline {paragraph}{Collaborative Decision Process of Final Goal States}{82}{section*.16}
-\contentsline {subsection}{\numberline {3.2.3}Mesh Quality Measurement}{85}{subsection.3.2.3}
-\contentsline {subsection}{\numberline {3.2.4}Control System Design for Individual Agents}{87}{subsection.3.2.4}
-\contentsline {chapter}{\numberline {4}\MakeUppercase {SIMULATION ENVIRONMENT $\&$ RESULTS}}{93}{chapter.4}
-\contentsline {section}{\numberline {4.1}Simulation Environment}{94}{section.4.1}
-\contentsline {section}{\numberline {4.2}Local Positioning System}{97}{section.4.2}
-\contentsline {section}{\numberline {4.3}Formation Control System}{101}{section.4.3}
-\contentsline {subsection}{\numberline {4.3.1}Mesh Qualities}{102}{subsection.4.3.1}
-\contentsline {subsection}{\numberline {4.3.2}Total Displacement of the Agents}{107}{subsection.4.3.2}
-\contentsline {subsubsection}{\numberline {4.3.2.1}Shape 1}{107}{subsubsection.4.3.2.1}
-\contentsline {subsubsection}{\numberline {4.3.2.2}Shape 2}{111}{subsubsection.4.3.2.2}
-\contentsline {subsection}{\numberline {4.3.3}Settling Time}{115}{subsection.4.3.3}
-\contentsline {subsection}{\numberline {4.3.4}Dynamically Changing Formations}{116}{subsection.4.3.4}
-\contentsline {subsection}{\numberline {4.3.5}Evaluation}{120}{subsection.4.3.5}
-\contentsline {chapter}{\numberline {5}\MakeUppercase {HARDWARE IMPLEMENTATION $\&$ RESULTS}}{129}{chapter.5}
-\contentsline {section}{\numberline {5.1}Hardware Demonstration Environment}{129}{section.5.1}
-\contentsline {section}{\numberline {5.2}Performance Analysis}{137}{section.5.2}
-\contentsline {chapter}{\numberline {6}\MakeUppercase {CONCLUSION AND FUTURE WORKS}}{145}{chapter.6}
-\contentsline {section}{\numberline {6.1}Conclusion}{145}{section.6.1}
-\contentsline {section}{\numberline {6.2}Future Works}{148}{section.6.2}
-\contentsline {leads}{\numberline {}\uppercase {REFERENCES}}{151}{chapter*.17}
-\contentsline {leads}{\numberline {}CURRICULUM VITAE}{155}{chapter*.18}
+\contentsline {paragraph}{Collaborative Decision Process of Final Goal States}{81}{section*.16}
+\contentsline {subsection}{\numberline {3.2.3}Mesh Quality Measurement}{84}{subsection.3.2.3}
+\contentsline {subsection}{\numberline {3.2.4}Control System Design for Individual Agents}{86}{subsection.3.2.4}
+\contentsline {chapter}{\numberline {4}\MakeUppercase {SIMULATION ENVIRONMENT $\&$ RESULTS}}{91}{chapter.4}
+\contentsline {section}{\numberline {4.1}Simulation Environment}{92}{section.4.1}
+\contentsline {section}{\numberline {4.2}Local Positioning System}{95}{section.4.2}
+\contentsline {section}{\numberline {4.3}Formation Control System}{99}{section.4.3}
+\contentsline {subsection}{\numberline {4.3.1}Mesh Qualities}{100}{subsection.4.3.1}
+\contentsline {subsection}{\numberline {4.3.2}Total Displacement of the Agents}{105}{subsection.4.3.2}
+\contentsline {subsubsection}{\numberline {4.3.2.1}Shape 1}{106}{subsubsection.4.3.2.1}
+\contentsline {subsubsection}{\numberline {4.3.2.2}Shape 2}{109}{subsubsection.4.3.2.2}
+\contentsline {subsection}{\numberline {4.3.3}Settling Time}{113}{subsection.4.3.3}
+\contentsline {subsection}{\numberline {4.3.4}Dynamically Changing Formations}{114}{subsection.4.3.4}
+\contentsline {subsection}{\numberline {4.3.5}Evaluation}{118}{subsection.4.3.5}
+\contentsline {chapter}{\numberline {5}\MakeUppercase {HARDWARE IMPLEMENTATION $\&$ RESULTS}}{127}{chapter.5}
+\contentsline {section}{\numberline {5.1}Hardware Demonstration Environment}{128}{section.5.1}
+\contentsline {section}{\numberline {5.2}Performance Analysis}{135}{section.5.2}
+\contentsline {chapter}{\numberline {6}\MakeUppercase {CONCLUSION AND FUTURE WORKS}}{143}{chapter.6}
+\contentsline {section}{\numberline {6.1}Conclusion}{143}{section.6.1}
+\contentsline {section}{\numberline {6.2}Future Works}{146}{section.6.2}
+\contentsline {leads}{\numberline {}\uppercase {REFERENCES}}{149}{chapter*.17}
+\contentsline {leads}{\numberline {}CURRICULUM VITAE}{153}{chapter*.18}

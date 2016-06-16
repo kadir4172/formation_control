@@ -113,16 +113,16 @@ such that the sum of all areas $A_i$ is the total area $A$ to be filled, that is
 \begin{figure}[H]
 	\caption{Space Filling Examples with Randomized Fractals \cite{26}} \label{space_filling}
 	\centering
-	\includegraphics[scale = 0.8]{randomized1}
+	\includegraphics[scale = 0.7]{randomized1}
 \end{figure}
 
 
-Bubble$\&$Circle packing algorithms are widely used for mesh generation problems in finite element method. Shimada and Gossard \cite{27} proposed a method based on interbubble forces to provide close packaging of bubbles in desired geometrical shape. They define artificial interbubble forces to avoid collisions between bubbles and shape forces to keep the bubbles at the interior region of the desired shape. This idea is similar to the potential field based approaches in formation control problem since they both define artificial force components on individuals to cover a desired shape homogenously. The related interbubble forces are described at Figure \ref{interbubble_ref}. These forces have a nonlinear function of distance between the center of each bubbles and if this distance is larger than $l_o$, the interbubble forces are negative which means they attract each bubble towards each other. Interbubble forces increase while the distance between bubbles are decreasing to provide collision avoidance between bubbles. $l_o$ is the stable distance in which there is no interbubble force acting on bubble and it reaches an equilibrium point in the workspace.
+Bubble$\&$Circle packing algorithms are widely used for mesh generation problems in finite element method. Shimada and Gossard \cite{27} proposed a method based on interbubble forces to provide close packaging of bubbles in desired geometrical shape. They define artificial interbubble forces to avoid collisions between bubbles and shape forces to keep the bubbles at the interior region of the desired shape. This idea is similar to the potential field based approaches in formation control problem since they both define artificial force components on individuals to cover a desired shape homogeneously. The related interbubble forces are described at Figure \ref{interbubble_ref}. These forces have a nonlinear function of distance between the center of each bubbles and if this distance is larger than $l_o$, the interbubble forces are negative which means they attract each bubble towards each other. Interbubble forces increase while the distance between bubbles are decreasing to provide collision avoidance between bubbles. $l_o$ is the stable distance in which there is no interbubble force acting on bubble and it reaches an equilibrium point in the workspace.
 
 \begin{figure}[H]
 	\caption{Interbubble Forces \cite{27}} \label{interbubble_ref}
 	\centering
-	\includegraphics[scale = 0.25]{interbubble}
+	\includegraphics[scale = 0.22]{interbubble}
 \end{figure}
 
 The main idea is provide a close packing of bubbles which mimics a pattern of Voroni tessellation, corresponding to well shaped Delaunay triangles or tetrahedras.Figure \ref{tetrahedra} shows the corresponding voronoi polygons and delaunay triangles of a set of packed bubbles. The center of the cells in voronoi polygons are selected as the centers of the bubbles. Delaunay triangles corresponding to the set of uniformly packed of bubbles are well-shaped triangles \cite{27}. 
@@ -196,6 +196,7 @@ Local positioning systems can be used to provide position data in formation cont
 	\includegraphics[scale = 0.4]{measurement}
 \end{figure} 
 
+\newpage
 Angle-of-arrival (AOA) systems use directional antennas to measure the bearing angle to the points located at known positions are measured. The position value of device can be calculated with the intersection of several measurements, but the accuracy is limited by shadowing and multipath reflections of radio signals \cite{20}. 
 
 Received signal strength (RSS) systems calculate the distance value by taking the difference of the received signal power from the transmitted power. Some advanced propagation models are required to calculate the distance from the transmission loss in the air to eliminate the multipath fading and shadowing effects \cite{21}. 
