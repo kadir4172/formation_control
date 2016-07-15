@@ -213,7 +213,7 @@ According to these figures, it can be concluded that Randomized Fractals method 
 		
 \subsection{Total Displacement of the Agents}  \label{total_dist_ref}
 		
-In this project, we aim to minimize the overall displacement of the agents in the swarm while getting the desired formation shape. Here the main approach is to reduce down the expected energy consumption of the swarm by decreasing the required displacements. To compare the total displacement of the swarm while getting the desired shape for three different methods, we have done Monte Carlo simulations with 1000 iterations. These simulations are handled for the same formation shapes with different initial conditions of the agents in the environment. Trajectories of the agents are recorded from the initial positions to the goal states for three different types of formation control systems. Sample outputs for three different types of formation control algorithms are illustrated in the following figures.
+In this project, we aim to minimize the overall displacement of the agents in the swarm while getting the desired formation shape to achieve homogeneous coverage. The main consideration in this thesis is to reduce the expected energy consumption of the swarm by decreasing the required displacements of agents. To compare the total displacement of the swarm while getting the desired shape for three different methods, we have done Monte Carlo simulations with 1000 iterations. These simulations are handled for the same formation shapes with different initial conditions of the agents in the environment. Trajectories of the agents are recorded from the initial positions to the goal states for three different types of formation control systems. Sample outputs for three different types of formation control algorithms are illustrated in the following figures.
 		
 \newpage
 \subsubsection{Shape 1}\hspace{0pt} \\
@@ -229,21 +229,25 @@ In this project, we aim to minimize the overall displacement of the agents in th
 \end{figure} 	
 		
 \begin{figure}[H]
-\caption{Artificial Forces Method Trajectories for Shape 1}
+\caption{Artificial Forces Method Trajectories for Shape 1} \label{arto1}
 \centerline{\includegraphics[scale = 0.32]{Aritificial_Trajecories_1}}
 \end{figure} 	
 
+Trajectories of the agents towards to the desired shape in Artificial Forces method are shown at the Figure \ref{arto1}. It is possible to see that agents are not directed towards some predetermined goal states, they are randomly placed in the desired shape. This approach increased the total displacements and settling times of the agents. 
+
 \begin{figure}[H]
 \caption{Bubble Packing Method Trajectories for Shape 1}
-\centerline{\includegraphics[scale = 0.32]{Bubble_Trajectories_1}}
+\centerline{\includegraphics[scale = 0.32]{Bubble_Trajectories_1}} \label{bubble1}
 \end{figure} 	
 		
 \begin{figure}[H]
-\caption{Randomized Fractals Method Trajectories for Shape 1}
+\caption{Randomized Fractals Method Trajectories for Shape 1} \label{randomiz1}
 \centerline{\includegraphics[scale = 0.32]{Randomized_Trajectories_1}}
 \end{figure} 	
+
+Trajectories of the agents towards to the desired shape in Bubble Packing and Randomized Fractals methods are shown at the Figure \ref{bubble1} and \ref{randomiz1}. In these methods, each agent directly tries to reach its goal state. This approach reduces the total displacement and settling time.
 			
-It can be seen that the trajectories of the agents are more chaotic and complex in the Artificial Forces method according to the other two solutions. Main cause for this situation, the agents are under the effect of a total force which is instantly changing both amplitude and direction with the local interactions with the environment in Artificial Forces method. The only force component which provides the distribution of the agents in the formation shape homogeneously is the intermember forces which is dynamically changing so much with the local instant neighbors of the agents in the environment. On the other hand, Bubble Packing and Randomized Fractal methods implement an algorithm in which every agent is directed to a goal state where total displacements in the environment is minimized. This approach prevents the chaotic appearance of the trajectories and minimizes the displacements of the agents. Because agents are trying to reach their goal states directly within these two methods. 
+It can be seen that the trajectories of the agents are more chaotic and complex in the Artificial Forces method when compared to the other two solutions. Main cause for this situation, the agents are under the effect of a total force which is instantly changing both in amplitude and direction with the local interactions with the environment in Artificial Forces method. The only force component which provides the distribution of the agents in the formation shape homogeneously is the intermember forces which is dynamically changing so much with the local instant neighbors of the agents in the environment. On the other hand, Bubble Packing and Randomized Fractal methods implement an algorithm in which every agent is directed to a goal state where total displacements in the environment is minimized. This approach prevents the chaotic appearance of the trajectories and minimizes the displacements of the agents. Because agents are trying to reach their goal states directly within these two methods. 
 
 To compare the total displacements, we have done Monte Carlo simulations with 1000 iterations and the results are presented in Figure \ref{total_disp_1}. According to this figure, Artificial Forces method has a higher mean value of total travelled distance while achieving the same formation shape with same initial conditions. Performances of Bubble Packing and Randomized Fractals method seem similar, because the only difference between these two methods is their shape partitioning approaches. The assignment procedure of the agents to these goal states is implemented identically. 
 		
@@ -266,19 +270,24 @@ Second formation shape gives similar results with three different formation cont
 \end{figure} 	
 		   
 \begin{figure}[H]
-\caption{Artificial Forces Method Trajectories for Shape 2}
+\caption{Artificial Forces Method Trajectories for Shape 2} \label{arto2}
 \centerline{\includegraphics[scale = 0.32]{Artificial_Trajectories_2}}
 \end{figure} 	
+
+Trajectories of the agents towards to the desired shape in Artificial Forces method are shown at the Figure \ref{arto2}. It is possible to see that the movements of the agents in the workspace are chaotic and agents are placed in the desired shape randomly.
+
 		   
 \begin{figure}[H]
-\caption{Bubble Packing Method Trajectories for Shape 2}
+\caption{Bubble Packing Method Trajectories for Shape 2} \label{bubble2}
 \centerline{\includegraphics[scale = 0.32]{Bubble_Trajectories_2}}
 \end{figure} 	
 		   
 \begin{figure}[H]
-\caption{Randomized Fractals Method Trajectories for Shape 2}
+\caption{Randomized Fractals Method Trajectories for Shape 2} \label{randomiz2}
 \centerline{\includegraphics[scale = 0.32]{Randomized_Trajectories_2}}
 \end{figure} 	
+		   
+Trajectories of the agents towards to the desired shape in Bubble Packing and Randomized Fractals methods are shown at the Figure \ref{bubble2} and \ref{randomiz2}. In these methods, each agent directly tries to reach its goal state. This approach reduces the total displacement and settling time.
 		   
 The results of the Monte Carlo simulations with 1000 iterations are illustrated in Figure \ref{total_dist_2} . In this figure, Artificial Forces method has a higher mean value on total travelled distance for the same formation shape with same initial conditions. 
 
@@ -288,13 +297,13 @@ The results of the Monte Carlo simulations with 1000 iterations are illustrated 
 \end{figure} 	
 		   
 \subsection{Settling Time} \label{settling_ref}
-Settling time is defined as delta time $"t_{final} - t_{start}"$ ,where $t_{start}$ is the initial time and $t_{final}$ is the time that the all of the agents are inside of the desired formation shape and the norm of the velocity vector for each agent $\norm{v_i}$ is
+Settling time is defined as delta time $"t_{final} - t_{start}"$ ,where $t_{start}$ is the initial time and $t_{final}$ is the time when all agents are inside the desired formation shape and the norm of the velocity vector for each agent $\norm{v_i}$ is
 		
 \begin{equation}
 \norm{v_i(t)} < 0.01 \hspace{0.1cm} [m/sec] \hspace{0.3cm}\forall\hspace{0.05cm} t>t_{final}
 \end{equation}
 		
-To compare the settling time performances of three different methods, we have measured the settling times for the simulations held in Section \ref{total_dist_ref}. Artificial Forces method has the worst performance because agents are expected to need more time to reach the steady state under the effect of different artificial force components. Since there are no predetermined goal states for the agents in the desired formation shape, the settling of the agents in random places under the equilibrium of the artificial force components takes more time than the other two formation control methods. The agents have reached the steady state at their goal states with the Bubble Packing and Randomized Fractals methods faster than the Artificial Forces Methods. The results are illustrated in Figure \ref{settling_1} and \ref{settling_2}. According to these figures, Artificial Forces method has a higher mean value on settling time higher than the other two methods.
+To compare the settling time performances of three different methods, we have measured the settling times of three different methods for the same formation shapes and initial condition with the help of Monte Carlo simulations. The results are illustrated in Figure \ref{settling_1} and \ref{settling_2}. According to these figures, Artificial Forces method has a higher mean value on settling time higher than the other two methods.
 		
 \begin{figure}[H]
 \caption{Total Settling Time for Shape 1} \label{settling_1}
@@ -306,8 +315,10 @@ To compare the settling time performances of three different methods, we have me
 \centerline{\includegraphics[scale = 0.32]{Total_Time_Shape_2}}
 \end{figure} 
 
+According to the Figure \ref{settling_1} and \ref{settling_2}, Artificial Forces method demonstrates the worst performance because agents are expected to need more time to reach the steady state under the effect of different artificial force components. Since there are no predetermined goal states for the agents in the desired formation shape, the settling of the agents in random places under the equilibrium of the artificial force components takes more time than the other two formation control methods. The agents have reached the steady state at their goal states with the Bubble Packing and Randomized Fractals methods faster than the Artificial Forces Methods. 
+
 \subsection{Dynamically Changing Formations} \label{dynamical_ref}
-In dynamic formation control, desired formation shape is changed dynamically in a smooth fashion. Agents have to adapt themselves to this changing formation shape and cover the shape in a continuous manner. Since the formation shape is expected to have smooth changes in local regions, it is aimed to adapt the agents which are positioned at these local regions rather than replacing all agents simultaneously. To minimize the total displacement of the swarm, the general approach is to make the agents which are close to the changing regions take action and replace themselves while other ones which are far away from that region keeps their positions. Randomized fractals method doesn't have a solution for this type of problem since its nature of randomly assignment of agents in a given formation shape. These assignments made by the randomized fractals method will not have continuous transitions on goal states between sequential formation shapes changing with execution period of the algorithm. On the other hand, it is possible to adapt the Bubble Packing algorithm to provide a solution for the dynamically changing formations. Since Bubble Packing algorithm determines goal states in a formation shape by applying interbubble forces, it is possible to keep this shape partitioning process running in background and dynamically adapt the goal states to the changing formation shape. The assignments to these goal states with Hungarian algorithm will adapt the swarm to the dynamically changing formation shape. Artificial forces method calculates control inputs for the individuals according to the current environment conditions and the formation shape. There is no need to update the algorithm for dynamically changing formation shapes, it already supports dynamically changing formations. 
+In dynamic formation control, desired formation shape is changed dynamically in a smooth fashion. Agents have to adapt themselves to this changing formation shape and cover the shape in a smooth continuous manner. Since the formation shape is expected to have smooth changes in local regions, it is aimed to adapt the agents which are positioned at these local regions rather than replacing all agents simultaneously. To minimize the total displacement of the swarm, the general approach is to make the agents which are close to the changing regions take action and replace themselves while others which are far from that region remain in their positions. Randomized fractals method does not provide a solution for this type of problem since its nature of task assignment for agents is done randomly for a given formation shape. These assignments made by the randomized fractals method do not generate continuous transitions on goal states between sequential changes of formation shapes. On the other hand, it is possible to adapt the Bubble Packing algorithm to provide a solution for the dynamically changing formations. Since Bubble Packing algorithm determines goal states in a formation shape by applying interbubble forces, it is possible to keep this shape partitioning process running in the background to dynamically adapt the goal states to the changing formation shape. The assignments to these goal states are achieved with Hungarian algorithm in Bubble Packing method. This process will adapt the swarm to the dynamically changing formation shape. Artificial forces method calculates control inputs for the individuals according to the current environment conditions and the formation shape. There is no need to update the algorithm for dynamically changing formation shapes, it already supports dynamically changing formations. 
 		 
 \begin{figure}[H]
 \caption{Dynamic Formation Control with Bubble Packing Method} \label{multiple1_ref}
@@ -321,7 +332,7 @@ Figure \ref{multiple1_ref} shows a simulation result for dynamical formation con
 \centerline{\includegraphics[scale = 0.16]{multiple2}}
 \end{figure} 		 
 
-Figure \ref{multiple2_ref} illustrates a simulation result of Artificial Forces method. In this method agents reposition in the changing formation shape with the help of artificial force components calculated with current formation shape. Since, agents directly adapts themselves to the changing formations shape in Artificial Forces method, it is expected to have a faster response than the Bubble Packing method. In Bubble Packing method, goal states are adapted to the changing formation shape and agents try to reach these goal states in runtime. This kind of approach introduces an additional latency to the response of the swarm to dynamically changing formation shapes. 
+Figure \ref{multiple2_ref} illustrates a simulation result of Artificial Forces method. In this method agents reposition in the changing formation shape with the help of artificial force components calculated with current formation shape. Since, agents directly adapts themselves to the changing formations shape in Artificial Forces method, it is expected to have a faster response than the Bubble Packing method. In Bubble Packing method, goal states are adapted to the changing formation shape and agents try to reach these goal states in runtime. This kind of approach introduces an additional latency to the response of the swarm to dynamically changing formation shapes. This situation is illustrated in following Figure \ref{combo1_ref}, \ref{combo2_ref} and \ref{combo3_ref}.
 
 \begin{figure}[H]
 \caption{Latency in Bubble Packing Method-1} \label{combo1_ref}
@@ -338,7 +349,7 @@ Figure \ref{multiple2_ref} illustrates a simulation result of Artificial Forces 
 \centerline{\includegraphics[scale = 0.30]{combo3}}
 \end{figure} 
 
-Figure \ref{combo1_ref}, \ref{combo2_ref} and \ref{combo3_ref} compares the responses of these two algorithms to dynamically changing formation shapes. Bubble Packing and Artificial Force algorithms are executed with the same dynamical formation shapes and same initial positions of the agents. In these figures, red circles are representing the agents' positions with Bubble Packing method and green circles are representing the agents' positions with Artificial Forces method at the same time from the beginning of the simulations. Formation shape with blue line illustrates the current formation shape. It is obvious that the green agents are adapted to the current formation shape better than the red ones. The shape with dotted red line, represents the estimated coverage area of red agents in the environment and this shape differs from the current formation shape locally at some boundary regions. This shows that agents response to the dynamically changing formation shape faster with Artificial Forces method. 
+Figure \ref{combo1_ref}, \ref{combo2_ref} and \ref{combo3_ref} compares the responses of these two algorithms to dynamically changing formation shapes. We have executed Bubble Packing and Artificial Force algorithms with the same dynamical formation shapes and same initial positions of the agents. In these figures, red circles are representing the agents' positions with Bubble Packing method and green circles are representing the agents' positions with Artificial Forces method at the same time instance relative to the beginning of the simulations. Formation shape with blue line illustrates the current formation shape. It can be seen that the green agents are adapted to the current formation shape better than the red ones. The shape with dotted red line, represents the estimated coverage area of red agents in the environment and this shape differs from the current formation shape locally at some boundary regions. This shows that agents response to the dynamically changing formation shape faster with Artificial Forces method. Bubble Packing algorithm has a slower response to the dynamically changing shapes. It is appropriate to use Artificial Forces method in rapidly changing dynamical shapes if it is critical to adapt the swarm to the formation with low latency.
 
 \subsection{Evaluation} \label{evaluation_ref}
 Three different formation control approaches are evaluated with different kinds of metrics including the total displacement, settling time, mesh quality and dynamically changing formations. Artificial forces method has the worst performance in settling time and total displacement metrics due to the absence of predetermined goal states which is discussed in Section \ref{settling_ref} in details. On the other hand the Randomized Fractals method has the worst mesh quality performance because of its randomized nature of assignment the goal states in the desired formation shape. It is not possible to adapt the agents for dynamically changing formations with this method as discussed in Section \ref{dynamical_ref}. Artificial forces method has better response to the dynamically changing formations than the Bubble Packing method. The methods which have the worst performance at the related metrics are illustrated in Table \ref{worst_performance}
