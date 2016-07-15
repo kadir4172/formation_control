@@ -62,7 +62,7 @@
 \contentsline {chapter}{\numberline {4}\MakeUppercase {SIMULATION ENVIRONMENT $\&$ RESULTS}}{91}{chapter.4}
 \contentsline {section}{\numberline {4.1}Simulation Environment}{92}{section.4.1}
 \contentsline {section}{\numberline {4.2}Local Positioning System}{95}{section.4.2}
-\contentsline {section}{\numberline {4.3}Formation Control System}{99}{section.4.3}
+\contentsline {section}{\numberline {4.3}Formation Control System}{100}{section.4.3}
 \contentsline {subsection}{\numberline {4.3.1}Mesh Qualities}{100}{subsection.4.3.1}
 \contentsline {subsection}{\numberline {4.3.2}Total Displacement of the Agents}{105}{subsection.4.3.2}
 \contentsline {subsubsection}{\numberline {4.3.2.1}Shape 1}{106}{subsubsection.4.3.2.1}

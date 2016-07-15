@@ -16,7 +16,7 @@
 
 
 
-In this section, the simulation environment is illustrated and the results are analyzed and discussed in detail for the local positioning system design and formation control system design. Three different methods of formation control system which are presented in Section \ref{chp:Methodology} are evaluated and compared with each other. Simulations are handled in the environment of Gazebo simulator with a swarm of 50 agents which includes three different types of robots. We have determined the position beacon ratio as $\%$15, so we have 8 position beacons in our swarm. The main system frequency in which each agent propagates its state vector, calculates artificial forces and executes goal state assignment process is determined as 2Hz. 
+In this section, the simulation environment is detailed and the results are analyzed and extensively discussed in terms of local positioning and formation control. Three different methods of formation control system which were developed in Chapter \ref{chp:Methodology} are evaluated and compared with each other. Simulations are done on the Gazebo simulator using a swarm of 50 agents which includes three different types of robots. We have determined the position beacon ratio as $\%$15, so we have 8 position beacons in our swarm. The main system frequency in which each agent propagates its state vector, calculates artificial forces and executes goal state assignment process is determined as 2Hz. 
 
 \newpage
 \section{Simulation Environment}
@@ -28,7 +28,7 @@ Block diagram of the simulation environment is illustrated in Figure \ref{simula
 \includegraphics[scale = 0.45]{environment}
 \end{figure}
     
-Gazebo is an open source multi robot simulator developed by Open Source Robotics Foundation(OSRF). It has multiple physics engines; Open Dynamics Engine(ODE), Bullet, Dynamic Animation and Robotics Toolkit(DART) and Simbody. It can execute simulations with multiple agents in an environment that is fully created by the user. The dynamics and the physical properties of the robots are determined by the user. It can be integrated with Robot Operating System(ROS). We have used this simulator to run the dynamics of the agents with the help of ODE physics engine. We have created plugins dedicated on each agent to execute the algorithms in a decentralized topology as discussed in Section \ref{decent_decent}. Agents use these plugins to  listen goal states from Matlab environment, execute their decision process algorithms and calculate their artificial forces. These plugins also execute controller algorithms to make the agents reached to the goal states they have assigned.
+Gazebo is an open source multi robot simulator developed by Open Source Robotics Foundation(OSRF). It has multiple physics engines; Open Dynamics Engine(ODE), Bullet, Dynamic Animation and Robotics Toolkit(DART) and Simbody. Gazebo can execute simulations with multiple agents in an environment that is fully created by the user. The dynamics and the physical properties of the robots are determined by the user. It can be integrated with Robot Operating System(ROS). We have used this simulator to run the dynamics of the agents with the help of ODE physics engine. We have created plugins dedicated on each agent to execute the algorithms in a decentralized topology as discussed in Section \ref{decent_decent}. Agents use these plugins to  listen goal states from Matlab environment, execute their decision process algorithms and calculate their artificial forces. These plugins also execute controller algorithms to make the agents reached to the goal states they have assigned.
  
 Shape partitioning algorithms are executed in Matlab environment and goal states are published over a network socket. A plugin working in Gazebo environment, listens the packets sent by Matlab and parse the data for each agent type. The state vectors of the agents are published with a plugin from the Gazebo simulator and they are used to visualize the workpace in a Matlab plot. We have designed the workspace as a rough 3D territory and each agent have different interactions with the environment with different mass and friction characteristics. This workspace is defined with a square area with boundaries placed at +/-50 meters in x and y coordinates. We have assumed that the communication range of an agent is 25 meters. To simulate the radio link between any two agent, we use a line segment drawn between the centers of these agents' coverage circles. It is assumed that these two agents have a direct radio link (i.e. they are direct neighbors in the mesh network) if the $p_2$ norm of this vector is smaller than the communication range and this line segment doesn't intersect any workspace obstacles.
 
@@ -39,7 +39,7 @@ Figure \ref{Gazebo} illustrates the Gazebo simulation environment.
 \centerline{\includegraphics[scale = 0.22]{gazebo_env}}
 \end{figure} 
 
-In this simulation environment, each agent is designed with collision surfaces composed by four spheres which are assumed to have point interaction with the environment. Agents have cylindrical links binding these spherical contact points. The mass and friction coefficients for different types of agents are given in Table \ref{agent_props}. Here there are two different types of frictions, $\mu_1$ represents the dry friction coefficient and the $\mu_2$ is the fluid friction coefficient.
+In this simulation environment, each agent is designed with collision surfaces composed of four spheres, assumed to have point interaction with the environment. Agents have cylindrical links binding these spherical contact points. The mass and friction coefficients for different types of agents are given in Table \ref{agent_props}. Here there are two different types of frictions, $\mu_1$ represents the dry friction coefficient and the $\mu_2$ is the fluid friction coefficient.
 
 \begin{center}
 \captionof{table}{Parameters for Different Types of Agents} \label{agent_props} 
@@ -98,9 +98,9 @@ We are expecting that the position data in the state vector will drift with the 
 \centerline{\includegraphics[scale = 0.4]{Error-0,5Prop-8Update}}
 \end{figure} 		
 		
-According to these figures, it is clear that the total error norm on position datas are decreased dramatically with the localization period which equals to 6 iterations for 3 seconds period, 10 iterations for 5 seconds and 16 iterations for 8 seconds period. The peak values on the error norms are always observed at the iterations just before the localization process. It can be concluded that the peak values on the error norms are greatly related with the localization period and they have greater values with the increasing number of this period. The maximum error norm is below 3 meters with localization period of 3 seconds, below 10 meters with localization period of 5 seconds and below 12 meters with localization period of 8 seconds. In this work, it is assumed that the error norm of 3 meters is the maximum tolerable value for the formation control system to satisfy a successful collision avoidance for the agents. Thus, the localization period for the trilateration process is determined as 3 seconds in simulations. 
+According to these figures, it is clear that the total error norm on position datas are decreased dramatically with the localization period which includes 6 iterations in 3 seconds period, 10 iterations in 5 seconds and 16 iterations in 8 seconds period. The peak values on the error norms are always observed at the iterations just before the localization process. It can be concluded that the peak values on the error norms are greatly related with the localization period and they have higher values according to the increasing number of this period. The maximum error norm is below 3 meters with localization period of 3 seconds, below 10 meters with localization period of 5 seconds and below 12 meters with localization period of 8 seconds. In this work, it is assumed that the error norm of 3 meters is the maximum tolerable value for the formation control system in order to satisfy a successful collision avoidance by the agents. Thus, the localization period for the trilateration process is determined as 3 seconds in simulations. 
 
-The performance of the LPS design is tested in simulations with different conditions in which swarm is propagating to a desired formation shape or agents are keeping their positions in dynamically changing formation shapes.  In both cases, it is observed that the position datas of the agents are drifted with an increasing error between two  sequential localization process as we have discussed previously. A sample case for this situation is illustrated in Figure \ref{hatali_pos_ref} and Figure \ref{duzgun_pos_ref}. In these figures, red circles are representing the estimated positions of the agents where blue circles are representing the real positions. 
+The performance of the LPS design is tested in simulations with different conditions in which the swarm propagates to a desired formation shape while agents are self dispatched to new positions according to the changing needs of the formation or preserves their previous positions. In both cases in which agents are moving or stationary, it is observed that the position datas of the agents are drifted with an increasing error between two  sequential localization process as we have discussed previously. A sample case for this situation is illustrated in Figure \ref{hatali_pos_ref} and Figure \ref{duzgun_pos_ref}. In these figures, red circles are representing the estimated positions of the agents where blue circles are representing the real positions. 
 
 \begin{figure}[H]
 \centering
@@ -119,7 +119,7 @@ The performance of the LPS design is tested in simulations with different condit
 \end{figure} 
 In Figure \ref{hatali_pos_ref}, blue and red circles do not coincide with each other. This shows us, there are errors on the estimated positions which are represented with red circles before the localization process. Figure \ref{duzgun_pos_ref} shows the workspace just after a localization process and it is possible to see that blue and red circles are getting close to each other with this process. This concludes that the error on the estimated position datas are reduced with the help of this process.
 		
-Handling procedures of the lost agents are presented in Section \ref{LostAgents}. Agents which do not have at least three position beacons which are direct neighbors around itselves will get into the 'Lost' mode, and if  they miss three localization process they will get into 'Come Home' mode. When an agent is in 'Come Home' mode, it will try to reach to the center of formation shape to increase the possibility of meeting some position beacons to localize itself. A simulation result in which two agents do not have three position beacons as direct neighbors around themselves is illustrated in following figures. They get into 'Lost' mode first, when they cannot find three position beacons as direct neighbors. After they miss three localization process, they get into 'Come Home' mode in which they are trying to reach to the center of formation shape.
+In our project, an agent gets in 'Lost' mode if it cannot find at least three position beacons as its direct neighbor. This requirement is related with local trilateration process and the details of handling procedures of the lost agents are presented in Section \ref{LostAgents}. According to these procedures, if any agent which is in 'Lost' mode, misses three localization process it will get into 'Come Home' mode. When an agent is in 'Come Home' mode, it tries to reach the center of the formation shape in order to increase the possibility of meeting some position beacons to localize itself. A simulation result in which two agents do not have three position beacons as direct neighbors around themselves is illustrated in following figures. They get into 'Lost' mode first, when they cannot find three position beacons as direct neighbors. After they miss three localization process, they get into 'Come Home' mode in which they are trying to reach to the center of formation shape.
 		
 \begin{figure}[H]
 \caption{Agents will be in 'Lost' Mode When They Do Not Have 3 Neighbors} \label{lost_ref}
@@ -129,13 +129,14 @@ Handling procedures of the lost agents are presented in Section \ref{LostAgents}
 
 \begin{figure}[H]
 \captionsetup{format=hang,justification=centerfirst}
-\caption{Agents will be in 'Come Home' Mode After 3 Localization Period} \label{come_home_ref}
+\caption{Agents will be in 'Come Home' Mode After 3 Localization Period} \label{lost_ref2} \label{come_home_ref}
 \centerline{\includegraphics[scale = 0.25]{Lost-2-3}}
 \end{figure} 		
 
+Simulation outputs related with lost agents are illustrated in Figures \ref{lost_ref} and Figure \ref{lost_ref2}. According to these figures, two of the agents which are far away from the formation center get in 'Lost' mode first, then they get in 'Come Home' mode after three localization period. 
 		
 \section{Formation Control System}
-In this section, three different methods of which the details are presented in Section \ref{formation_control_ref} are evaluated according to their settling times, mesh qualities and total displacements. During the simulations, the variables which are described in Section \ref{chp:Methodology} are chosen as:
+We have implemented three different methods; Artificial Forces, Bubble Packing and Randomized Fractals in formation control systems. In this section, these different methods are evaluated according to their settling times, mesh qualities and total displacements. During the simulations, the variables which are described in Section \ref{chp:Methodology} are chosen as:
 \begin{align*}
   k_a\;=\;250\;(Variable\;Gain\;for\;Attractive\;Forces)\\
   k_r\;=\;150\;(Variable\;Gain\;for\;Repulsive\;Forces)\\
@@ -151,39 +152,44 @@ In this section, three different methods of which the details are presented in S
 \end{align*}
 
 \subsection{Mesh Qualities} 
-Mesh quality is a measure of how the agents homogeneously distributed while covering the desired formation shape. Basically, two different types of quality measurements defined in Section \ref{mesh_quality_ref} are used to evaluate the performance of the formation control methods, topological mesh irregularity $\epsilon_t$ and geometrical mesh irregularity $\epsilon_g$. Monte Carlo simulations with 1000 iterations are handled for the same formation shapes with different initial conditions of the agents in the environment. Sample outputs for three different types of formation control algorithms are illustrated in the following figures. In these figures, red circles are representing the coverage circles of three different type of agents. Mesh irregularities are calculated by constructing the Voronoi diagrams with nodes located at the centers of these coverage circles.
+Mesh quality is a measure of how the agents are homogeneously distributed while covering the desired formation shape. In this project, two different types of quality measurements  are used to evaluate the performance of the formation control methods, topological mesh irregularity $\epsilon_t$ and geometrical mesh irregularity $\epsilon_g$. To compare the performances of formation control systems based on these two parameters, we use Monte Carlo simulations with 1000 iterations handling the same formation shapes with different initial conditions for the agents in the environment. Sample outputs for three different types of formation control algorithms are illustrated in the following Figures \ref{fififi1}, \ref{fififi2}, \ref{fififi3}, \ref{fififi4}, \ref{fififi5}, \ref{fififi6}. In these figures, red circles are representing the coverage circles of three different type of agents. Mesh irregularities are calculated by constructing the Voronoi diagrams with nodes located at the centers of these coverage circles.
   
 \begin{figure}[H]
-\caption{Shape 1 with Artificial Forces Methods:$\epsilon_t = 2.1$ and $\epsilon_g = 0.32$}
+\caption{Shape 1 with Artificial Forces Methods:$\epsilon_t = 2.1$ and $\epsilon_g = 0.32$} \label{fififi1}
 \centerline{\includegraphics[scale = 0.70]{Artificial_Forces_Mesh_1}}
 \end{figure} 		
 		
 \begin{figure}[H]
 \caption{Shape 2 with Artificial Forces Methods:$\epsilon_t = 2.6$ and $\epsilon_g = 0.4$}
+\label{fififi2}
 \centerline{\includegraphics[scale = 0.65]{Artificial_Forces_Mesh_2}}
 \end{figure} 		
 		
 \begin{figure}[H]
 \caption{Shape 1 with Bubble Packing Method:$\epsilon_t = 2.1$ and $\epsilon_g = 0.24$}
+\label{fififi3}
 \centerline{\includegraphics[scale = 0.70]{Bubble_Packing_Mesh_1}}
 \end{figure} 	
 				
 \begin{figure}[H]
 \caption{Shape 2 with Bubble Packing Method:$\epsilon_t = 2.3$ and $\epsilon_g = 0.28$}
+\label{fififi4}
 \centerline{\includegraphics[scale = 0.65]{Bubble_Packing_Mesh_2}}
 \end{figure} 			
 						
 \begin{figure}[H]
 \caption{Shape 1 with Randomized Fractals Method:$\epsilon_t = 2.6$ and $\epsilon_g = 0.63$}
+\label{fififi5}
 \centerline{\includegraphics[scale = 0.70]{Randomized_Fractals_Mesh_1}}
 \end{figure} 	
 
 \begin{figure}[H]
 \caption{Shape 2 with Randomized Fractal Method:$\epsilon_t = 3.1$ and $\epsilon_g = 0.61$}
+\label{fififi6}
 \centerline{\includegraphics[scale = 0.65]{Randomized_Fractals_Mesh_2}}
 \end{figure} 	
 
-It can be concluded that Randomized Fractals method has the worst mesh performance. It is because of the randomized assignment of goal states into the formation shape in this methodology. Bubble Packing and Artificial Forces methods give similar results since they have an analogy in their approaches of implementing inter member/bubble forces which makes the agents/bubbles distributed in the formation shape more homogeneously. Artificial force method applies this intermember forces directly to the agents in formation control while Bubble Packing method use this force on artificial bubbles to partition the shape into goal states. Monte Carlo simulations with 1000 iterations for both formation shapes with different initial conditions are handled and the results are illustrated in Figure \ref{topologic_ref_1}; \ref{geometric_ref_1}; \ref{topologic_ref_2}; \ref{geometric_ref_2} . Randomized Fractals method have greater mean values for both topological and geometrical mesh irregularities as expected.  Bubble Packing and Artificial Forces methods have similar performances on mesh quality.
+According to these figures, it can be concluded that Randomized Fractals method has the worst mesh performance. It is because of the randomized assignment of goal states into the formation shape in this methodology. Bubble Packing and Artificial Forces methods give similar results since they both have analogous in their implementations of inter member/bubble forces which distributes the agents/bubbles within the formation shape more homogeneously. Artificial force method applies this intermember forces directly to the agents in formation control while Bubble Packing method uses this force on artificial bubbles to partition the shape into goal states. Monte Carlo simulations with 1000 iterations for both formation shapes with different initial conditions are handled and the results are illustrated in Figure \ref{topologic_ref_1}, \ref{geometric_ref_1}, \ref{topologic_ref_2} and \ref{geometric_ref_2} . In Figures \ref{topologic_ref_1} and \ref{geometric_ref_1}, Randomized Fractals method has greater mean values for both topological and geometrical mesh irregularities as expected.  Bubble Packing and Artificial Forces methods have similar performances on mesh quality. This shows us the Randomized Fractals method has the worst mesh quality performance. Similarly in Figure \ref{topologic_ref_2} and \ref{geometric_ref_2}, Randomized Fractals method has the highest mean value on both geometrical and topological irregularities.
 		
 \begin{figure}[H]
 \caption{Formation Shape 1 Topological Mesh Irregularities} \label{topologic_ref_1}
