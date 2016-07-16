@@ -203,7 +203,7 @@ Proj_{ \mathcal{N}(\mathbf{A})^\perp}\hat{x} = \hat{x}
 this concludes that $\hat{x}$ is the unique minimum norm solution to the $A\vec{x} = \vec{b}$ problem\\
 	
 	
-\textit{3) Minimum Norm Solution with Newton Iteration Method}\\	
+\textit{3) Minimum Error Solution with Newton Iteration Method}\\	
 If matrix $A$ has the dimensions of $2\ x\ 2$ or $(n-1)\ x\ 2$ with $n>3$ and if rank of $A$ matrix is equal to $1$ then the solution to the $A\hat{x} = \vec{b}$ problem can be found iteratively with the help of nonlinear least squares method that minimizes the cost function which is defined as sum of squares of the distance errors \cite{22} :
 	
 \begin{equation} \label{cost_func_tri}
@@ -361,68 +361,75 @@ In local positioning subsystem, second type agents are expected to execute a sta
 The state vector for each agent is defined as:
 
 \begin{equation}
-x_k = \begin{bmatrix}
+\vec{x_k} = \begin{bmatrix}
 X_k \\
 \dot{X}_k\\
+Y_k \\
+\dot{Y}_k\\
 \end{bmatrix}
 \end{equation}
 	
-where $X_k$ is the position and $\dot{X}_k$ is the velocity of the agents in x coordinates in two dimensional environment. All of the following procedures will be handled exactly the same for the state vector defined in y coordinates.
+where $X_k$ and $Y_k$ are the positions; $\dot{X}_k$ and $\dot{Y}_k$ are the velocities of the agents in two dimensional workspace.
 
 The discrete linear model is defined with the state equation of \cite{wiki_kalman}:
 
 \begin{equation}
-x_{k+1} = F_k     x_{k} + B_ku_k + w_k
+{\vec{x}}_{k+1} = F_k {\vec{x}}_{k} + B_k {\vec{u}}_k +  {\vec{w}}_k
 \end{equation}
 	
-where $w_k$ is the process noise and 
+where ${\vec{w}}_k$ is the process noise and 
 \begin{equation}
 F = \begin{bmatrix}
-1 & d_t\\
-0 & 1
+1 & d_t & 0 & 0 \\
+0 & 1 & 0 & 0 \\
+0 & 0 & 1 & d_t \\
+0 & 0 & 0 & 1 \\
 \end{bmatrix}   
 \end{equation}
 	
 \begin{equation}
 B = \begin{bmatrix}
-\frac{{d_t}^2}{2} \\
-d_t
+\frac{{d_t}^2}{2} & 0 \\
+d_t  & 0 \\
+0  & \frac{{d_t}^2}{2} \\
+   0 & d_t \\
 \end{bmatrix}
 \end{equation}
 
-where $d_t$ is the propagation period and $u_k$ is the translational acceleration measured with the help of inertial sensors. We add a random bias on the acceleration measurements on each agents acceleration input with maximum value of 0.1 mg \cite{bias}. Also, we add a white noise to the acceleration values with zero mean and 0.01 $[m/s^2]$ standart deviation \cite{noise}. The values of bias and noise terms are added to the measurements consistent with the specifications of industry grade inertial measurement units presented by the manufacturers.
+where $d_t$ is the propagation period and ${\vec{u}}_k$ is the translational accelerations measured with the help of inertial sensors. During simulations, a random bias and a white noise with zero mean and $\sigma_{acc}$ standart deviation is added on the correct acceleration measurements. 
 
 The observation(external measurement) which will be calculated with the trilateration process :
 
 \begin{equation}
-z_k = H_kx_k + v_k
+{\vec{z}}_k = H_k {\vec{x}}_k + {\vec{v}}_k
 \end{equation}
 
-where $v_k$ is the measurement noise. We add a noise component to this external measurement modelled with a Gaussian distribution with zero mean and 2$[m]$ standart deviation. This noise simulates the errors on the distance measurements handled with TOA methods. Since the trilateration process will provide new position data to the agents:
+where ${\vec{v}}_k$ is the measurement noise. We add a noise component to the correct position measurement modelled with a Gaussian distribution with zero mean and $\sigma_{meas}$ standart deviation during simulations. This noise simulates the errors on the distance measurements handled with TOA methods. Since the trilateration process will provide new position data to the agents:
 \begin{equation}
 H_k = \begin{bmatrix}
-1\\0
+1 & 0 & 0 & 0\\
+0 & 0 & 1 & 0
 \end{bmatrix}
 \end{equation}
 	
 The noise models for the process and the measurement are modelled with:
 
 \begin{equation}
- w_k = \mathcal{N}(\mathbf{0,Q_k})
+{\vec{w}}_k = \mathcal{N}(\mathbf{0,Q_k})
 \end{equation}
 	
 \begin{equation}
-v_k = \mathcal{N}(\mathbf{0,R_k})
+{\vec{v}}_k = \mathcal{N}(\mathbf{0,R_k})
 \end{equation}
 		
-where $w_k$ is the process noise with zero mean multivariate normal distribution with covariance of $Q_k$ and $v_k$ is the measurement noise with zero mean Gaussian distribution with a variance of $R_k$
+where ${\vec{w}}_k$ is the process noise with zero mean multivariate normal distribution with covariance of $Q_k$ and ${\vec{v}}_k$ is the measurement noise with zero mean multivariate normal distribution with covariance of $R_k$.
 		
 The filter has two main subsections named propagate and update phases. The update phase of the filter is executed after each trilateration process. The filter equations are as follows:
 		
 Propagation phase:
 
 \begin{equation}
-\hat{x}_{k,k-1} = F_k\hat{x}_{k-1,k-1} + B_ku_k
+\hat{x}_{k,k-1} = F_k\hat{x}_{k-1,k-1} + B_k{\vec{u}}_k
 \end{equation}
 		
 \begin{equation}
@@ -431,7 +438,7 @@ Propagation phase:
 		
 Update Phase:
 \begin{equation}
-\tilde{y}_k = z_k - H_k  \hat{x}_{k,k-1} 
+\tilde{y}_k = {\vec{z}}_k - H_k  \hat{x}_{k,k-1} 
 \end{equation}
 
 \begin{equation}
@@ -450,23 +457,28 @@ K_k =  P_{k,k-1} H^T_kS_k^{-1}
 P_{k,k} = (I - K_kH_k)P_{k,k-1}
 \end{equation}
 		
-where $Q_k$ is the process covariance matrix and $R_k$ is the measurement covariance. These variables are calculated as follows (by taking $\sigma_{acc} = 0.01[m/s^2]$ , $\sigma_{meas} = 2[m]$ and $d_t = 0.5 seconds$)
+where $Q_k$ is the process covariance matrix and $R_k$ is the measurement covariance matrix. These variables are calculated as follows
 
 \begin{equation}
 Q_k = \begin{bmatrix}
-\sigma_{acc} * \frac{d^2_t}{2} & 0 \\
-0 & \sigma_{acc} * d_t
+(\sigma_{acc})^2 * \frac{d^2_t}{2} & 0  &0 &0\\
+0 & (\sigma_{acc})^2 * d_t &0 &0 \\
+0 &0 &(\sigma_{acc})^2 * \frac{d^2_t}{2} & 0\\
+ 0 &0 &0 & (\sigma_{acc})^2 * d_t
 \end{bmatrix}
 \end{equation}
 		
 \begin{equation}
-R_k = \sigma_{meas}
+R_k = \begin{bmatrix}
+(\sigma_{meas})^2 & 0 \\
+ 0 & (\sigma_{meas})^2 
+\end{bmatrix}
 \end{equation}
 		
 In the above equations $K_k$ represents the Kalman gain matrix and $S_k$ is the residual covariance of the system at time $k$. $\hat{x}_{k,k}$ is the posteriori state estimate updated with measurements at time $k$ ;  $\hat{x}_{k,k-1}$ is the priori estimate of the state vector predicted with inputs at time $k$; $P_{k,k}$ is the posteriori error covariance matrix updated with measurements at time $k$; $P_{k,k-1}$ is the priori estimate covariance predicted with the inputs at time $k$.
 			
 \section{FORMATION CONTROL SYSTEM} \label{formation_control_ref}
-The details of different methodologies for dynamical formation control with heterogeneous mobile robots is presented in this subsection. We have implemented three different approaches as Artificial Forces method, Bubble Packing method and Randomized Fractals method. It is possible to classify these methods in two sub categories. Potential field based approaches implements artificial forces acting on agents to get inside and cover the desired formation shape homogeneously by avoiding collisions between the agents. The resultant positions of the agents in the formation shape is not certain, it dynamically changes with the instantaneous positions and interactions of the agents with each other and environment. Two other methods , shape partitioning based approaches which are Bubble Packing and Randomized Fractals methods, share a common structural basis. In these approaches the complex formation shape is partitioned into goal states to cover the shape homogeneously with the mobile robots. The assignment of the agents to these goal states is handled with special algorithms to optimize the total displacements of the agents in the environment. The difference between these two methods is the partitioning approach of the formation shape. Figure \ref{formation_controlin_figi} illustrates different methodologies implemented in this project.
+The details of different methodologies for dynamical formation control with heterogeneous mobile robots is presented in this subsection. We have implemented three different approaches as Artificial Forces method, Bubble Packing method and Randomized Fractals method. It is possible to classify these methods in two sub categories. Potential field based approaches implements artificial forces acting on agents to get inside and cover the desired formation shape homogeneously by avoiding collisions between the agents. The resultant positions of the agents in the formation shape is not certain, it dynamically changes with the instantaneous positions and interactions of the agents with each other and environment. Two other methods , shape partitioning based approaches which are Bubble Packing and Randomized Fractals methods, share a common structural basis. In these approaches the complex formation shape is partitioned into goal states to cover the shape homogeneously with the mobile robots. The assignment of the agents to these goal states is handled with special algorithms to optimize the total displacements of the agents in the environment. The difference between these two methods is the partitioning approach of the formation shape. Artificial Forces method is fully decentralized, each agent calculates its own control inputs based upon instant conditions of workspace and formation shape. On the other hand, Bubble Packing and Randomized Fractals methods are partially decentralized, the shape partitioning process is executed on a central server and each agent contributes on the assignment procedure to the goal states. Figure \ref{formation_controlin_figi} illustrates different methodologies implemented in this project.
 		
 \begin{figure}[H]
 \caption{Formation Control Topologies} \label{formation_controlin_figi}
@@ -1161,7 +1173,7 @@ return Distance[ ], Previous[ ]; \newline
 \caption{DIJKSTRA$\_$ALGORITHM}
 \end{algorithm}
 
-In algorithm above $Distance[x]$ function call, calculates the total cost from the $source$\_$ node$ to the $x$ vertex, and $Previous[x]$ function call, returns the previous node in optimal path from $source$\_$ node$ . This algorithm calculates the shortest paths from the position of an agent to all available goal states. These cost values are used to assign the agents to the goal states by minimizing the total displacement.  
+In algorithm above $Distance[x]$ function call, calculates the total cost from the $source$\_$ node$ to the $x$ vertex, and $Previous[x]$ function call, returns the previous node in optimal path from $source$\_$ node$ . This algorithm calculates the shortest paths from the position of an agent to all available goal states. If there is a line segment between the position of an agent and a goal state(i.e. agent can reach that goal state directly without colliding with any workspace obstacle), cost of reaching that goal state is the length of that line segment. These cost values are used to assign the agents to the goal states by minimizing the total displacement.  
 
 \paragraph{Collaborative Decision Process of Final Goal States}\hspace{0pt} \\
 We have provided an algorithm to calculate the costs to the goal states $g_i \in G$ with the help of Visibility Graphs and Dijkstra's algorithm in previous sections. These costs are defined as displacements on the shortest paths to the goal states in the visibility graphs for each agent. In this project, our aim is to minimize the total displacement of the individuals while achieving the desired formation shape. For this purpose we have implemented an algorithm to minimize the overall displacement of whole swarm while achieving a formation shape. The problem related with this process can be defined as follows:

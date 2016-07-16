@@ -48,7 +48,7 @@
 \contentsline {subsubsection}{\numberline {3.2.1.1}Artificial Forces Method}{55}{subsubsection.3.2.1.1}
 \contentsline {paragraph}{Utility Functions}{57}{section*.9}
 \contentsline {paragraph}{Artificial Forces}{61}{section*.10}
-\contentsline {paragraph}{Buffer Zone Implementation}{68}{section*.11}
+\contentsline {paragraph}{Buffer Zone Implementation}{69}{section*.11}
 \contentsline {subsection}{\numberline {3.2.2}Shape Partitioning Based Approaches}{69}{subsection.3.2.2}
 \contentsline {subsubsection}{\numberline {3.2.2.1}Determining the Potential Goal States}{70}{subsubsection.3.2.2.1}
 \contentsline {paragraph}{Bubble Packing Method}{70}{section*.12}
@@ -63,19 +63,19 @@
 \contentsline {section}{\numberline {4.1}Simulation Environment}{92}{section.4.1}
 \contentsline {section}{\numberline {4.2}Local Positioning System}{95}{section.4.2}
 \contentsline {section}{\numberline {4.3}Formation Control System}{100}{section.4.3}
-\contentsline {subsection}{\numberline {4.3.1}Mesh Qualities}{100}{subsection.4.3.1}
-\contentsline {subsection}{\numberline {4.3.2}Total Displacement of the Agents}{105}{subsection.4.3.2}
-\contentsline {subsubsection}{\numberline {4.3.2.1}Shape 1}{106}{subsubsection.4.3.2.1}
-\contentsline {subsubsection}{\numberline {4.3.2.2}Shape 2}{109}{subsubsection.4.3.2.2}
-\contentsline {subsection}{\numberline {4.3.3}Settling Time}{113}{subsection.4.3.3}
-\contentsline {subsection}{\numberline {4.3.4}Dynamically Changing Formations}{115}{subsection.4.3.4}
-\contentsline {subsection}{\numberline {4.3.5}Sensitivity on Mesh Irregularities}{120}{subsection.4.3.5}
-\contentsline {subsection}{\numberline {4.3.6}Evaluation}{121}{subsection.4.3.6}
+\contentsline {subsection}{\numberline {4.3.1}Mesh Qualities}{101}{subsection.4.3.1}
+\contentsline {subsection}{\numberline {4.3.2}Total Displacement of the Agents}{106}{subsection.4.3.2}
+\contentsline {subsubsection}{\numberline {4.3.2.1}Shape 1}{107}{subsubsection.4.3.2.1}
+\contentsline {subsubsection}{\numberline {4.3.2.2}Shape 2}{110}{subsubsection.4.3.2.2}
+\contentsline {subsection}{\numberline {4.3.3}Settling Time}{114}{subsection.4.3.3}
+\contentsline {subsection}{\numberline {4.3.4}Dynamically Changing Formations}{116}{subsection.4.3.4}
+\contentsline {subsection}{\numberline {4.3.5}Sensitivity on Mesh Irregularities}{121}{subsection.4.3.5}
+\contentsline {subsection}{\numberline {4.3.6}Evaluation}{122}{subsection.4.3.6}
 \contentsline {chapter}{\numberline {5}\MakeUppercase {HARDWARE IMPLEMENTATION $\&$ RESULTS}}{131}{chapter.5}
 \contentsline {section}{\numberline {5.1}Hardware Demonstration Environment}{132}{section.5.1}
 \contentsline {section}{\numberline {5.2}Performance Analysis}{139}{section.5.2}
 \contentsline {chapter}{\numberline {6}\MakeUppercase {CONCLUSION AND FUTURE WORKS}}{147}{chapter.6}
 \contentsline {section}{\numberline {6.1}Conclusion}{147}{section.6.1}
-\contentsline {section}{\numberline {6.2}Future Works}{150}{section.6.2}
+\contentsline {section}{\numberline {6.2}Future Works}{151}{section.6.2}
 \contentsline {leads}{\numberline {}\uppercase {REFERENCES}}{153}{chapter*.17}
 \contentsline {leads}{\numberline {}CURRICULUM VITAE}{157}{chapter*.18}
