@@ -110,34 +110,35 @@
 \contentsline {figure}{\numberline {4.37}{\ignorespaces Latency in Bubble Packing Method-1\relax }}{118}{figure.4.37}
 \contentsline {figure}{\numberline {4.38}{\ignorespaces Latency in Bubble Packing Method-2\relax }}{118}{figure.4.38}
 \contentsline {figure}{\numberline {4.39}{\ignorespaces Latency in Bubble Packing Method-3\relax }}{119}{figure.4.39}
-\contentsline {figure}{\numberline {4.40}{\ignorespaces Formation Shape - 1 in Gazebo Environment\relax }}{121}{figure.4.40}
-\contentsline {figure}{\numberline {4.41}{\ignorespaces Formation Shape - 1 in MATLAB Environment\relax }}{122}{figure.4.41}
-\contentsline {figure}{\numberline {4.42}{\ignorespaces Formation Shape - 2 in Gazebo Environment\relax }}{123}{figure.4.42}
-\contentsline {figure}{\numberline {4.43}{\ignorespaces Formation Shape - 2 in MATLAB Environment\relax }}{123}{figure.4.43}
-\contentsline {figure}{\numberline {4.44}{\ignorespaces Formation Shape - 3 in Gazebo Environment\relax }}{124}{figure.4.44}
-\contentsline {figure}{\numberline {4.45}{\ignorespaces Formation Shape - 3 in MATLAB Environment\relax }}{125}{figure.4.45}
-\contentsline {figure}{\numberline {4.46}{\ignorespaces Formation Shape - 4 in Gazebo Environment\relax }}{126}{figure.4.46}
-\contentsline {figure}{\numberline {4.47}{\ignorespaces Formation Shape - 4 in MATLAB Environment\relax }}{127}{figure.4.47}
-\contentsline {figure}{\numberline {4.48}{\ignorespaces Multiple Formations\relax }}{128}{figure.4.48}
+\contentsline {figure}{\numberline {4.40}{\ignorespaces Sensitivity Analysis with Dynamically Changing Formation\relax }}{120}{figure.4.40}
+\contentsline {figure}{\numberline {4.41}{\ignorespaces Formation Shape - 1 in Gazebo Environment\relax }}{123}{figure.4.41}
+\contentsline {figure}{\numberline {4.42}{\ignorespaces Formation Shape - 1 in MATLAB Environment\relax }}{123}{figure.4.42}
+\contentsline {figure}{\numberline {4.43}{\ignorespaces Formation Shape - 2 in Gazebo Environment\relax }}{124}{figure.4.43}
+\contentsline {figure}{\numberline {4.44}{\ignorespaces Formation Shape - 2 in MATLAB Environment\relax }}{125}{figure.4.44}
+\contentsline {figure}{\numberline {4.45}{\ignorespaces Formation Shape - 3 in Gazebo Environment\relax }}{126}{figure.4.45}
+\contentsline {figure}{\numberline {4.46}{\ignorespaces Formation Shape - 3 in MATLAB Environment\relax }}{126}{figure.4.46}
+\contentsline {figure}{\numberline {4.47}{\ignorespaces Formation Shape - 4 in Gazebo Environment\relax }}{127}{figure.4.47}
+\contentsline {figure}{\numberline {4.48}{\ignorespaces Formation Shape - 4 in MATLAB Environment\relax }}{128}{figure.4.48}
+\contentsline {figure}{\numberline {4.49}{\ignorespaces Multiple Formations\relax }}{129}{figure.4.49}
 \addvspace {10pt}
-\contentsline {figure}{\numberline {5.1}{\ignorespaces Implementation Environment\relax }}{130}{figure.5.1}
-\contentsline {figure}{\numberline {5.2}{\ignorespaces Covers for Different Types of Agents\relax }}{131}{figure.5.2}
-\contentsline {figure}{\numberline {5.3}{\ignorespaces Orientation of an Agent in the Environment\relax }}{132}{figure.5.3}
-\contentsline {figure}{\numberline {5.4}{\ignorespaces Sample Output of the Image Processing Algorithm\relax }}{132}{figure.5.4}
-\contentsline {figure}{\numberline {5.5}{\ignorespaces Hardware of an Agent\relax }}{133}{figure.5.5}
-\contentsline {figure}{\numberline {5.6}{\ignorespaces Command Mixture of Step Motors\relax }}{134}{figure.5.6}
-\contentsline {figure}{\numberline {5.7}{\ignorespaces Schematic of the Circuit on the Board\relax }}{135}{figure.5.7}
-\contentsline {figure}{\numberline {5.8}{\ignorespaces 3D Visualization of the Layout\relax }}{135}{figure.5.8}
-\contentsline {figure}{\numberline {5.9}{\ignorespaces Hardware of an Agent - Top View\relax }}{136}{figure.5.9}
-\contentsline {figure}{\numberline {5.10}{\ignorespaces Hardware of an Agent - Bottom View\relax }}{136}{figure.5.10}
-\contentsline {figure}{\numberline {5.11}{\ignorespaces Formation Shape 1- Matlab Environment\relax }}{137}{figure.5.11}
-\contentsline {figure}{\numberline {5.12}{\ignorespaces Formation Shape 1- Test Environment\relax }}{138}{figure.5.12}
-\contentsline {figure}{\numberline {5.13}{\ignorespaces Formation Shape 2- Matlab Environment\relax }}{138}{figure.5.13}
-\contentsline {figure}{\numberline {5.14}{\ignorespaces Formation Shape 2- Test Environment\relax }}{139}{figure.5.14}
-\contentsline {figure}{\numberline {5.15}{\ignorespaces Formation Shape 3- Matlab Environment\relax }}{139}{figure.5.15}
-\contentsline {figure}{\numberline {5.16}{\ignorespaces Formation Shape 3- Test Environment\relax }}{140}{figure.5.16}
-\contentsline {figure}{\numberline {5.17}{\ignorespaces Formation Shape 4- Matlab Environment\relax }}{140}{figure.5.17}
-\contentsline {figure}{\numberline {5.18}{\ignorespaces Formation Shape 4- Test Environment\relax }}{141}{figure.5.18}
-\contentsline {figure}{\numberline {5.19}{\ignorespaces Formation Shape 5- Matlab Environment\relax }}{141}{figure.5.19}
-\contentsline {figure}{\numberline {5.20}{\ignorespaces Formation Shape 5- Test Environment\relax }}{142}{figure.5.20}
+\contentsline {figure}{\numberline {5.1}{\ignorespaces Implementation Environment\relax }}{132}{figure.5.1}
+\contentsline {figure}{\numberline {5.2}{\ignorespaces Covers for Different Types of Agents\relax }}{133}{figure.5.2}
+\contentsline {figure}{\numberline {5.3}{\ignorespaces Orientation of an Agent in the Environment\relax }}{134}{figure.5.3}
+\contentsline {figure}{\numberline {5.4}{\ignorespaces Sample Output of the Image Processing Algorithm\relax }}{134}{figure.5.4}
+\contentsline {figure}{\numberline {5.5}{\ignorespaces Hardware of an Agent\relax }}{135}{figure.5.5}
+\contentsline {figure}{\numberline {5.6}{\ignorespaces Command Mixture of Step Motors\relax }}{136}{figure.5.6}
+\contentsline {figure}{\numberline {5.7}{\ignorespaces Schematic of the Circuit on the Board\relax }}{137}{figure.5.7}
+\contentsline {figure}{\numberline {5.8}{\ignorespaces 3D Visualization of the Layout\relax }}{137}{figure.5.8}
+\contentsline {figure}{\numberline {5.9}{\ignorespaces Hardware of an Agent - Top View\relax }}{138}{figure.5.9}
+\contentsline {figure}{\numberline {5.10}{\ignorespaces Hardware of an Agent - Bottom View\relax }}{138}{figure.5.10}
+\contentsline {figure}{\numberline {5.11}{\ignorespaces Formation Shape 1- Matlab Environment\relax }}{139}{figure.5.11}
+\contentsline {figure}{\numberline {5.12}{\ignorespaces Formation Shape 1- Test Environment\relax }}{140}{figure.5.12}
+\contentsline {figure}{\numberline {5.13}{\ignorespaces Formation Shape 2- Matlab Environment\relax }}{140}{figure.5.13}
+\contentsline {figure}{\numberline {5.14}{\ignorespaces Formation Shape 2- Test Environment\relax }}{141}{figure.5.14}
+\contentsline {figure}{\numberline {5.15}{\ignorespaces Formation Shape 3- Matlab Environment\relax }}{141}{figure.5.15}
+\contentsline {figure}{\numberline {5.16}{\ignorespaces Formation Shape 3- Test Environment\relax }}{142}{figure.5.16}
+\contentsline {figure}{\numberline {5.17}{\ignorespaces Formation Shape 4- Matlab Environment\relax }}{142}{figure.5.17}
+\contentsline {figure}{\numberline {5.18}{\ignorespaces Formation Shape 4- Test Environment\relax }}{143}{figure.5.18}
+\contentsline {figure}{\numberline {5.19}{\ignorespaces Formation Shape 5- Matlab Environment\relax }}{143}{figure.5.19}
+\contentsline {figure}{\numberline {5.20}{\ignorespaces Formation Shape 5- Test Environment\relax }}{144}{figure.5.20}
 \addvspace {10pt}

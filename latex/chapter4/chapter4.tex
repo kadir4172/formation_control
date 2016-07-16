@@ -351,6 +351,33 @@ Figure \ref{multiple2_ref} illustrates a simulation result of Artificial Forces 
 
 Figure \ref{combo1_ref}, \ref{combo2_ref} and \ref{combo3_ref} compares the responses of these two algorithms to dynamically changing formation shapes. We have executed Bubble Packing and Artificial Force algorithms with the same dynamical formation shapes and same initial positions of the agents. In these figures, red circles are representing the agents' positions with Bubble Packing method and green circles are representing the agents' positions with Artificial Forces method at the same time instance relative to the beginning of the simulations. Formation shape with blue line illustrates the current formation shape. It can be seen that the green agents are adapted to the current formation shape better than the red ones. The shape with dotted red line, represents the estimated coverage area of red agents in the environment and this shape differs from the current formation shape locally at some boundary regions. This shows that agents response to the dynamically changing formation shape faster with Artificial Forces method. Bubble Packing algorithm has a slower response to the dynamically changing shapes. It is appropriate to use Artificial Forces method in rapidly changing dynamical shapes if it is critical to adapt the swarm to the formation with low latency.
 
+\subsection{Sensitivity on Mesh Irregularities} \label{sensitiviy_ref}
+In this project, we have made sensitivity analysis on mesh irregularities to check how this metric is affected by the parameters of formation control system. Mesh irregularities are expected to be increasing at boundary layers due to discontinuties and singularities \cite{sensitivity}. This is a known fact in mesh generation problems and there are some solutions which dynamically adapts the density of the mesh(i.e. size of mesh elements) in boundary layers to decrease irregularities.  In our implementation, it is not possible to implement this kind of solution because the number and size of mesh elements(i.e. different types of agents in our problem) are known and fixed. To check the effect of increasing length of boundary layers, we have defined a dynamically changing formation shape by keeping the interior area constant. All of the parameters related with the formation control system are kept fixed except for the total boundary length with this approach.
+
+\begin{figure}[H]
+\caption{Sensitivity Analysis with Dynamically Changing Formation} \label{sens_ref}
+\centerline{\includegraphics[scale = 0.50]{sensitivity}}
+\end{figure} 
+  
+Figure \ref{sens_ref} shows some snapshots from a dynamically changing formation shape trial. We have initiated the desired formation as a circular shape and then we have changed it into rectangular shapes dynamically. Final shape is a complex contour without an analytical expression. Blue lines represents the related Voronoi diagrams composed with the agents in a particular moment of dynamical formation control. These Voronoi diagrams are used to calculate the topological mesh irregularity. 
+
+\begin{center}
+\captionof{table}{Sensitivity Analysis on Topological Mesh Irregularity} \label{sens_sens} 
+\begin{tabular}{||c| c| c | c||}
+				
+\hline
+\textbf{Shape} & \textbf{Area}  & \textbf{Total Boundary} & \textbf{Topological Mesh}\\ 
+ \textbf{}  & \textbf{} & \textbf{Length} & \textbf{Irregularity}\\
+\hline
+1 & 314$[m^2]$ & 62.8$m$ & 2.46 \\
+2 & 314$[m^2]$ & 82.8$m$ & 2.96 \\
+3 & 314$[m^2]$ & 116.82$m$ & 3.45 \\
+4 & 314$[m^2]$ & 128.36$m$ & 3.95 \\
+\hline
+\end{tabular}
+\end{center}
+
+Table \ref{sens_sens} shows the topological mesh irregularity calculations of the formation shape at four different moments. Topological mesh irregularity is increasing with the increasing number of perimeter length as expected. This is because of we have increased the total length of boundary layer at which the irregularities has the highest value while keeping the interior area, agent number$\&$size and other parametric variables of formation control system. 
 \subsection{Evaluation} \label{evaluation_ref}
 Three different formation control approaches are evaluated with different kinds of metrics including the total displacement, settling time, mesh quality and dynamically changing formations. Artificial forces method has the worst performance in settling time and total displacement metrics due to the absence of predetermined goal states. On the other hand the Randomized Fractals method has the worst mesh quality performance because of its randomized nature of assignment the goal states in the desired formation shape. It is not possible to adapt the agents for dynamically changing formations with this method. Artificial forces method has better response to the dynamically changing formations than the Bubble Packing method, because it directly applies individual control laws based upon the instant conditions of the workspace. Table \ref{worst_performance} summarizes the worst performances of three methods in the related metrics.
 		

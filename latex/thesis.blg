@@ -1,4 +1,4 @@
-This is BibTeX, Version 0.99d (TeX Live 2015/dev/Debian)
+This is BibTeX, Version 0.99d (TeX Live 2013/Debian)
 Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
 The top-level auxiliary file: thesis.aux
 The style file: unsrt.bst
@@ -8,45 +8,45 @@ Warning--empty journal in 15
 Warning--empty journal in 94
 Warning--empty journal in 29
 Warning--empty journal in 22
-You've used 44 entries,
+You've used 45 entries,
             1791 wiz_defined-function locations,
-            651 strings with 9697 characters,
-and the built_in function-call counts, 8418 in all, are:
-= -- 665
-> -- 413
+            656 strings with 9805 characters,
+and the built_in function-call counts, 8582 in all, are:
+= -- 678
+> -- 421
 < -- 0
-+ -- 157
-- -- 113
-* -- 438
-:= -- 1361
-add.period$ -- 131
-call.type$ -- 44
++ -- 160
+- -- 115
+* -- 443
+:= -- 1387
+add.period$ -- 134
+call.type$ -- 45
 change.case$ -- 42
 chr.to.int$ -- 0
-cite$ -- 49
-duplicate$ -- 406
-empty$ -- 945
-format.name$ -- 113
-if$ -- 1876
+cite$ -- 50
+duplicate$ -- 416
+empty$ -- 964
+format.name$ -- 115
+if$ -- 1915
 int.to.chr$ -- 0
-int.to.str$ -- 44
-missing$ -- 38
-newline$ -- 222
-num.names$ -- 44
-pop$ -- 208
+int.to.str$ -- 45
+missing$ -- 40
+newline$ -- 227
+num.names$ -- 45
+pop$ -- 215
 preamble$ -- 1
 purify$ -- 0
 quote$ -- 0
-skip$ -- 148
+skip$ -- 151
 stack$ -- 0
 substring$ -- 335
-swap$ -- 54
+swap$ -- 55
 text.length$ -- 0
 text.prefix$ -- 0
 top$ -- 0
 type$ -- 0
 warning$ -- 5
-while$ -- 72
-width$ -- 46
-write$ -- 448
+while$ -- 73
+width$ -- 47
+write$ -- 458
 (There were 5 warnings)

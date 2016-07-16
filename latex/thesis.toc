@@ -69,12 +69,13 @@
 \contentsline {subsubsection}{\numberline {4.3.2.2}Shape 2}{109}{subsubsection.4.3.2.2}
 \contentsline {subsection}{\numberline {4.3.3}Settling Time}{113}{subsection.4.3.3}
 \contentsline {subsection}{\numberline {4.3.4}Dynamically Changing Formations}{115}{subsection.4.3.4}
-\contentsline {subsection}{\numberline {4.3.5}Evaluation}{120}{subsection.4.3.5}
-\contentsline {chapter}{\numberline {5}\MakeUppercase {HARDWARE IMPLEMENTATION $\&$ RESULTS}}{129}{chapter.5}
-\contentsline {section}{\numberline {5.1}Hardware Demonstration Environment}{130}{section.5.1}
-\contentsline {section}{\numberline {5.2}Performance Analysis}{137}{section.5.2}
-\contentsline {chapter}{\numberline {6}\MakeUppercase {CONCLUSION AND FUTURE WORKS}}{145}{chapter.6}
-\contentsline {section}{\numberline {6.1}Conclusion}{145}{section.6.1}
-\contentsline {section}{\numberline {6.2}Future Works}{148}{section.6.2}
-\contentsline {leads}{\numberline {}\uppercase {REFERENCES}}{151}{chapter*.17}
-\contentsline {leads}{\numberline {}CURRICULUM VITAE}{155}{chapter*.18}
+\contentsline {subsection}{\numberline {4.3.5}Sensitivity on Mesh Irregularities}{120}{subsection.4.3.5}
+\contentsline {subsection}{\numberline {4.3.6}Evaluation}{121}{subsection.4.3.6}
+\contentsline {chapter}{\numberline {5}\MakeUppercase {HARDWARE IMPLEMENTATION $\&$ RESULTS}}{131}{chapter.5}
+\contentsline {section}{\numberline {5.1}Hardware Demonstration Environment}{132}{section.5.1}
+\contentsline {section}{\numberline {5.2}Performance Analysis}{139}{section.5.2}
+\contentsline {chapter}{\numberline {6}\MakeUppercase {CONCLUSION AND FUTURE WORKS}}{147}{chapter.6}
+\contentsline {section}{\numberline {6.1}Conclusion}{147}{section.6.1}
+\contentsline {section}{\numberline {6.2}Future Works}{150}{section.6.2}
+\contentsline {leads}{\numberline {}\uppercase {REFERENCES}}{153}{chapter*.17}
+\contentsline {leads}{\numberline {}CURRICULUM VITAE}{157}{chapter*.18}
