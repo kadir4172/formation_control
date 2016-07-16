@@ -23,13 +23,13 @@ A general block diagram of the system design is illustrated in Figure \ref{gener
 \section{LOCAL POSITIONING SYSTEM} \label{LOCAL POSITIONING SYSTEMS_ref}
 Local positioning system is a subsystem to provide a complete solution to the localization of the second type agents in the workspace. As discussed in Section \ref{Objectives}, agents are expected to have low sensor capabilities and only a limited number of them have external position measurement sensors on their boards and we call these agents position beacons in our project. The rest of the swarm which is composed of second type agents, has to maintain their position$\&$velocity data with the help of their inertial measurements and local trilateration process. Propagation of the states with these inertial measurements are always inclined to drift problems due to the error$\&$noise and bias problems of the sensors \cite{91}. Because of this problem, we have corrected these state vectors with an external measurement provided by local trilateration process. We have proposed a complete solution for this subsystem as illustrated in Figure \ref{figure_lps}.
 
+As illustrated in Figure \ref{figure_lps}, agents propagate their states with the help of inertial measurements. This state propagation process is executed with high speed data provided by the inertial sensors. On the other hand, trilateration and route table determination processes require iterative and time consuming algorithms and their implementation details are given in the following sections. It is not possible to execute the trilateration and route table determination algorithms with the same execution frequency of state propagation process. Because of this reason, a localization timer to provide the minimum required time for the route table determination and trilateration process is implemented to the solution. Agents will correct their state vectors with the localization period by measuring their positions with trilateration process and execute the update procedure in their state estimator algorithms. The requirement about the maximum value of the localization period is determined with the help of Monte Carlo simulations discussed in Section \ref{lps_ref} by defining a maximum allowable error on the position data. 
+
 \begin{figure}[H]
 \caption{Local Positioning System} \label{figure_lps}
 \centering
 \includegraphics[scale = 0.60]{lps}
 \end{figure}
-
-As illustrated in Figure \ref{figure_lps}, agents propagate their states with the help of inertial measurements. This state propagation process is executed with high speed data provided by the inertial sensors. On the other hand, trilateration and route table determination processes require iterative and time consuming algorithms and their implementation details are given in the following sections. It is not possible to execute the trilateration and route table determination algorithms with the same execution frequency of state propagation process. Because of this reason, a localization timer to provide the minimum required time for the route table determination and trilateration process is implemented to the solution. Agents will correct their state vectors with the localization period by measuring their positions with trilateration process and execute the update procedure in their state estimator algorithms. The requirement about the maximum value of the localization period is determined with the help of Monte Carlo simulations discussed in Section \ref{lps_ref} by defining a maximum allowable error on the position data. 
 
 Local trilateration process requires distance measurements to the position beacons which are direct neighbors of an agent. Route table algorithms are used to provide information to the agents about the position beacons whether they are direct neighbors or not. On the other hand, route tables also implement a mesh network between agents. This network is used to transport data globally over the network. It is composed with a bidirectional graph in which each agent can communicate with its direct neighbors. In this graph, we have assigned an edge between two nodes if there is a radio link between them. This line of sight(LOS) radio link is the main criteria for the agents to become direct neighbors in the network. Thus, having a physical Euclidian distance to an agent within the communication range is not enough to be the direct neighbor with that agent, i.e. even if two agents are very close to each other in the workspace, they are not direct neighbors if there is no radio link between them because of an obstacle preventing the line of sight. Figure \ref{sample_mesh} shows an example of a mesh network created with 8 agents in the environment.
 
@@ -40,7 +40,7 @@ Local trilateration process requires distance measurements to the position beaco
 \end{figure}
  
 \subsection{Local Trilateration Process}
-Trilateration process helps the second type agents to localize themselves with the help of position beacons which are their direct neighbors.  Trilateration calculations use distance measurements to the position beacons with known positions, to determine the coordinates of second type agents \cite{22}. These measurements are assumed to be done with the help of time of arrival(TOA) methods as discussed in Section \ref{sssec:num1}. In a TOA solution, an agent is able to measure the distance from itself to a position beacon only if it is a direct neighbor of that position beacon. Figure \ref{beacons_ref} illustrates simulation environment of a swarm which includes 5 position beacons. Here agent $C$ tries to localize itself with the help of distance measurements $r_i$ and the position data $B_i$ of the position beacons. It has 4 position beacons as direct neighbors in the network and this information is provided by the route table of agent $C$ as defined in Section \ref{route_route}.
+Trilateration process helps the second type agents to localize themselves with the help of position beacons which are their direct neighbors.  Trilateration calculations use distance measurements to the position beacons with known positions, to determine the coordinates of second type agents \cite{22}. These measurements are assumed to be done with the help of time of arrival(TOA) methods as discussed in Section \ref{sssec:num1}. In a TOA solution, an agent is able to measure the distance from itself to a position beacon only if it is a direct neighbor of that position beacon. 
 
 \begin{figure}[H] 
 \caption{Environment for Trilateration Process} \label{tri_late}
@@ -49,7 +49,7 @@ Trilateration process helps the second type agents to localize themselves with t
 \label{beacons_ref}
 \end{figure}
 
-For the simulation environment illustrated in Figure \ref{tri_late}, the distance function to any position beacon can be written as follows \cite{22};
+Figure \ref{beacons_ref} illustrates simulation environment of a swarm. Here agent $C$ tries to localize itself with the help of distance measurements $r_i$ and the position data $B_i$ of the position beacons. It has 4 position beacons as direct neighbors in the network and this information is provided by the route table of agent $C$ as defined in Section \ref{route_route}. For the simulation environment illustrated in Figure \ref{tri_late}, the distance function to any position beacon can be written as follows \cite{22};
 
 \begin{equation} % eq 2
 {r_i} = \sqrt{(x-x_i)^2 + (y-y_i)^2+ (z-z_i)^2}    \hspace{0.3cm}   (i=1,2,...,n)
@@ -147,7 +147,7 @@ with $A$ is a $(n-1)\ x\ 2$ matrix and $b$ is a $(n-1)\ x\ 1$ vector.
 
 There are some possible solutions to this type of equation regarding with the structure of matrix $A$ and vector $b$.\\
 
-\newpage
+
 \underline {\textit{Solution to $A\vec{x} = \vec{b}$ Problem}}\\
 In a localization problem handled in two dimensional space, the $A$ matrix has $(n-1)$ rows and $2$ columns, where $n$ is the number of position beacons which are direct neighbors of an agent. There is no solution when the number of neighbors lower than $3$ (i.e. $n<3$) \cite{22}. When the number of neighbor position beacons are equal or greater than $3$ we have three different solutions according to the structure of the linearized equations.
 
@@ -297,18 +297,18 @@ We have implemented DSDV algorithm to solve the routing problem in the mesh netw
 \begin{figure}[H] 
 \caption{Routing Problem Engaged by a Lost of a Node in Network} \label{routing_problem2}
 \centering
-\includegraphics[scale = 0.65]{routing_problem}
+\includegraphics[scale = 0.60]{routing_problem}
 \end{figure}
 
-Suppose that agent D has lost its contact with the network due to some malfunction or by being lost wandering outside of the communication range of its closest neighbor. Before this event, agent C had a unit distance to agent D and consequently agent B had a 2 unit distance to agent D , agent A had a 3 unit distance to agent D. In case of a failure of agent D, on the next iteration, C updates its route table with 3 unit distance to agent D by taking as reference the agent B. Then agent B updates its route table with the shortest distance of 4 units to agent D\ referencing to agent C. This process diverges to infinity on the shortest paths with the increasing number of iterations. To provide a solution for this routing loop problem, DSDV algorithm implements the destination sequence numbers into the route tables of the nodes. A simulation output showing the route table for a node in a robot network is given in Figure \ref{dest_seq_ref}
+Suppose that agent D has lost its contact with the network due to some malfunction or by being lost wandering outside of the communication range of its closest neighbor. Before this event, agent C had a unit distance to agent D and consequently agent B had a 2 unit distance to agent D , agent A had a 3 unit distance to agent D. In case of a failure of agent D, on the next iteration, C updates its route table with 3 unit distance to agent D by taking as reference the agent B. Then agent B updates its route table with the shortest distance of 4 units to agent D\ referencing to agent C. This process diverges to infinity on the shortest paths with the increasing number of iterations. 
 
 \begin{figure}[H]
 \caption{Route Table for Agent B in Robot Network} \label{dest_seq_ref}
 \centering
-\includegraphics[scale = 0.75]{dest_seq}
+\includegraphics[scale = 0.70]{dest_seq}
 \end{figure}
 
-In the DSDV algorithm, each node transmits the updates in its own sequence number and routing table. In the network, when two routes to the same destination are received from two different neighbors, the algorithm executes the following rules;\newline
+To provide a solution for this routing loop problem, DSDV algorithm implements the destination sequence numbers into the route tables of the nodes. A simulation output showing the route table for a node in a robot network is given in Figure \ref{dest_seq_ref}. In the DSDV algorithm, each node transmits the updates in its own sequence number and routing table. In the network, when two routes to the same destination are received from two different neighbors, the algorithm executes the following rules;\newline
 	- Choose the node with the larger destination sequence number \newline
 	- If the sequence numbers are equal, then choose the route with minimum number of hops and update the route table.
 
@@ -478,13 +478,15 @@ R_k = \begin{bmatrix}
 In the above equations $K_k$ represents the Kalman gain matrix and $S_k$ is the residual covariance of the system at time $k$. $\hat{x}_{k,k}$ is the posteriori state estimate updated with measurements at time $k$ ;  $\hat{x}_{k,k-1}$ is the priori estimate of the state vector predicted with inputs at time $k$; $P_{k,k}$ is the posteriori error covariance matrix updated with measurements at time $k$; $P_{k,k-1}$ is the priori estimate covariance predicted with the inputs at time $k$.
 			
 \section{FORMATION CONTROL SYSTEM} \label{formation_control_ref}
-The details of different methodologies for dynamical formation control with heterogeneous mobile robots is presented in this subsection. We have implemented three different approaches as Artificial Forces method, Bubble Packing method and Randomized Fractals method. It is possible to classify these methods in two sub categories. Potential field based approaches implements artificial forces acting on agents to get inside and cover the desired formation shape homogeneously by avoiding collisions between the agents. The resultant positions of the agents in the formation shape is not certain, it dynamically changes with the instantaneous positions and interactions of the agents with each other and environment. Two other methods , shape partitioning based approaches which are Bubble Packing and Randomized Fractals methods, share a common structural basis. In these approaches the complex formation shape is partitioned into goal states to cover the shape homogeneously with the mobile robots. The assignment of the agents to these goal states is handled with special algorithms to optimize the total displacements of the agents in the environment. The difference between these two methods is the partitioning approach of the formation shape. Artificial Forces method is fully decentralized, each agent calculates its own control inputs based upon instant conditions of workspace and formation shape. On the other hand, Bubble Packing and Randomized Fractals methods are partially decentralized, the shape partitioning process is executed on a central server and each agent contributes on the assignment procedure to the goal states. Figure \ref{formation_controlin_figi} illustrates different methodologies implemented in this project.
+The details of different methodologies for dynamical formation control with heterogeneous mobile robots is presented in this subsection. We have implemented three different approaches as Artificial Forces method, Bubble Packing method and Randomized Fractals method. It is possible to classify these methods in two sub categories. Potential field based approaches implements artificial forces acting on agents to get inside and cover the desired formation shape homogeneously by avoiding collisions between the agents. The resultant positions of the agents in the formation shape is not certain, it dynamically changes with the instantaneous positions and interactions of the agents with each other and environment. Two other methods , shape partitioning based approaches which are Bubble Packing and Randomized Fractals methods, share a common structural basis. In these approaches the complex formation shape is partitioned into goal states to cover the shape homogeneously with the mobile robots. The assignment of the agents to these goal states is handled with special algorithms to optimize the total displacements of the agents in the environment. The difference between these two methods is the partitioning approach of the formation shape. Artificial Forces method is fully decentralized, each agent calculates its own control inputs based upon instant conditions of workspace and formation shape. On the other hand, Bubble Packing and Randomized Fractals methods are partially decentralized, the shape partitioning process is executed on a central server and each agent contributes on the assignment procedure to the goal states. 
 		
 \begin{figure}[H]
 \caption{Formation Control Topologies} \label{formation_controlin_figi}
 \centering
 \includegraphics[scale = 0.60]{methods}
-\end{figure}		
+\end{figure}	
+
+Figure \ref{formation_controlin_figi} illustrates different methodologies implemented in this project.	
 		
 \subsection{Potential Field Based Approach}
 
@@ -931,7 +933,7 @@ Bubble Packing method is widely used in mesh generation problems. It basically d
 Since the numbers and the the radius of coverage circles defined at Section \ref{Artificial Forces Ref} are predetermined in our formation control problem, the general bubble meshing algorithm have to be adapted to meet the requirements for shape partitioning in formation control.  In our project we have adapted this algorithm to represent the agents in the swarm as bubbles with the radius of their coverage circles and create a mesh by using these bubbles. The details of the implementation are given in following sections.\newline
 			
 \textit{			I - Initial Placements of the Bubbles} \\ 
-The initial bubble placements are important because it will greatly reduce the convergence time of the partitioning process. In this work, we have initiated the bubbles close to the center of the formation shape randomly. The algorithm for initial bubble placements is implemented as follows:
+The initial bubble placements are important because it will greatly reduce the convergence time of the partitioning process. In this work, we have initiated the bubbles close to the center of the formation shape randomly. The algorithm for initial bubble placements is implemented as follows: \newline
 			
 \begin{algorithm}[H]
 \KwData{Set of Bubbles, Desired Formation Shape }

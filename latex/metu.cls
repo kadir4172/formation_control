@@ -745,7 +745,7 @@ to\hsize{\hfil\box\@tempboxa\hfil}
 \vskip1.5cm plus0pt minus2mm \nointerlineskip
  \vbox{\parbox{14.25cm}{\bf
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\@datelabel:
- \hfill \rule{3cm}{1pt}}}
+ \hfill \rule{0.5cm}{1pt}27.06.2016 \rule{0.5cm}{1pt} } }
 \end{approvalpage}
 \gdef\@director{}\let\director\relax
 \gdef\@headofdept{}\let\headofdept\relax

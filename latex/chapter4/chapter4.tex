@@ -18,17 +18,15 @@
 
 In this section, the simulation environment is detailed and the results are analyzed and extensively discussed in terms of local positioning and formation control. Three different methods of formation control system which were developed in Chapter \ref{chp:Methodology} are evaluated and compared with each other. Simulations are done on the Gazebo simulator using a swarm of 50 agents which includes three different types of robots. We have determined the position beacon ratio as $\%$15, so we have 8 position beacons in our swarm. The main system frequency in which each agent propagates its state vector, calculates artificial forces and executes goal state assignment process is determined as 2Hz. 
 
-\newpage
 \section{Simulation Environment}
-Block diagram of the simulation environment is illustrated in Figure \ref{simulation_env_ref}.
+Block diagram of the simulation environment is illustrated in Figure \ref{simulation_env_ref}. Gazebo is an open source multi robot simulator developed by Open Source Robotics Foundation(OSRF). It has multiple physics engines; Open Dynamics Engine(ODE), Bullet, Dynamic Animation and Robotics Toolkit(DART) and Simbody. Gazebo can execute simulations with multiple agents in an environment that is fully created by the user. The dynamics and the physical properties of the robots are determined by the user. It can be integrated with Robot Operating System(ROS). We have used this simulator to run the dynamics of the agents with the help of ODE physics engine. We have created plugins dedicated on each agent to execute the algorithms in a decentralized topology. Agents use these plugins to  listen goal states from Matlab environment, execute their decision process algorithms and calculate their artificial forces. These plugins also execute controller algorithms to make the agents reached to the goal states they have assigned.
 
 \begin{figure}[H]
 \caption{Simulation Environment} \label{simulation_env_ref}
 \centering
 \includegraphics[scale = 0.45]{environment}
-\end{figure}
-    
-Gazebo is an open source multi robot simulator developed by Open Source Robotics Foundation(OSRF). It has multiple physics engines; Open Dynamics Engine(ODE), Bullet, Dynamic Animation and Robotics Toolkit(DART) and Simbody. Gazebo can execute simulations with multiple agents in an environment that is fully created by the user. The dynamics and the physical properties of the robots are determined by the user. It can be integrated with Robot Operating System(ROS). We have used this simulator to run the dynamics of the agents with the help of ODE physics engine. We have created plugins dedicated on each agent to execute the algorithms in a decentralized topology as discussed in Section \ref{decent_decent}. Agents use these plugins to  listen goal states from Matlab environment, execute their decision process algorithms and calculate their artificial forces. These plugins also execute controller algorithms to make the agents reached to the goal states they have assigned.
+\end{figure}    
+
  
 Shape partitioning algorithms are executed in Matlab environment and goal states are published over a network socket. A plugin working in Gazebo environment, listens the packets sent by Matlab and parse the data for each agent type. The state vectors of the agents are published with a plugin from the Gazebo simulator and they are used to visualize the workpace in a Matlab plot. We have designed the workspace as a rough 3D territory and each agent have different interactions with the environment with different mass and friction characteristics. This workspace is defined with a square area with boundaries placed at +/-50 meters in x and y coordinates. We have assumed that the communication range of an agent is 25 meters. To simulate the radio link between any two agent, we use a line segment drawn between the centers of these agents' coverage circles. It is assumed that these two agents have a direct radio link (i.e. they are direct neighbors in the mesh network) if the $p_2$ norm of this vector is smaller than the communication range and this line segment doesn't intersect any workspace obstacles.
 
@@ -36,7 +34,7 @@ Figure \ref{Gazebo} illustrates the Gazebo simulation environment.
 
 \begin{figure}[H]
 \caption{Simulation Environment in Gazebo} \label{Gazebo}
-\centerline{\includegraphics[scale = 0.22]{gazebo_env}}
+\centerline{\includegraphics[scale = 0.20]{gazebo_env}}
 \end{figure} 
 
 In this simulation environment, each agent is designed with collision surfaces composed of four spheres, assumed to have point interaction with the environment. Agents have cylindrical links binding these spherical contact points. The collision surfaces and physical dimensions of these links are variable according to the different agent types to create heterogeneous swarm. The mass and friction coefficients for different types of agents are given in Table \ref{agent_props}. Here there are two different types of frictions, $\mu_1$ represents the dry friction coefficient and the $\mu_2$ is the fluid friction coefficient. These different friction coefficients and collision surfaces of agents are used to create agents with different physical and dynamical properties.
@@ -46,7 +44,7 @@ In this simulation environment, each agent is designed with collision surfaces c
 \begin{tabular}{||c| c| c |c |c||}
 				
 \hline
-\textbf{Agent Type} & \textbf{Mass[kg]}  & \textbf{$\mu_1$} & \textbf{$\mu_2$} & \textbf{Coverage Circle Radius[m]} \\ 
+Agent Type & Mass[kg]  & \textbf{$\mu_1$} & \textbf{$\mu_2$} & Coverage Circle Radius[m] \\ 
 \hline
 Agent 1& 0.8 & 0.21  & 0.13 & 0.15\\
 Agent 2& 1   &  0.18 & 0.18 & 0.3\\	
@@ -62,7 +60,7 @@ As illustrated in Section \ref{lqr_design}, full state feedback gains for the ag
 \begin{tabular}{||c| c |c||}
 				
 \hline
-\textbf{Agent Type} & \textbf{$K_e$}  & \textbf{$K_v$} \\ 
+Agent Type & \textbf{$K_e$}  & \textbf{$K_v$} \\ 
 \hline
 Agent 1& 237 & 96\\
 Agent 2& 263 & 112\\
@@ -102,6 +100,8 @@ According to these figures, it is clear that the total error norm on position da
 
 The performance of the LPS design is tested in simulations with different conditions in which the swarm propagates to a desired formation shape while agents are self dispatched to new positions according to the changing needs of the formation or preserves their previous positions. In both cases in which agents are moving or stationary, it is observed that the position datas of the agents are drifted with an increasing error between two  sequential localization process as we have discussed previously. A sample case for this situation is illustrated in Figure \ref{hatali_pos_ref} and Figure \ref{duzgun_pos_ref}. In these figures, red circles are representing the estimated positions of the agents where blue circles are representing the real positions. 
 
+In Figure \ref{hatali_pos_ref}, blue and red circles do not coincide with each other. This shows us, there are errors on the estimated positions which are represented with red circles before the localization process. Figure \ref{duzgun_pos_ref} shows the workspace just after a localization process and it is possible to see that blue and red circles are getting close to each other with this process. This concludes that the error on the estimated position datas are reduced with the help of this process.		
+
 \begin{figure}[H]
 \centering
 \captionsetup{format=hang,justification=centerfirst}
@@ -117,9 +117,10 @@ The performance of the LPS design is tested in simulations with different condit
 \caption{Positions of the Agents After Localization Process} \label{duzgun_pos_ref}
 \centerline{\includegraphics[scale = 0.25]{Pozisyon-1-Duzeltilmis}}
 \end{figure} 
-In Figure \ref{hatali_pos_ref}, blue and red circles do not coincide with each other. This shows us, there are errors on the estimated positions which are represented with red circles before the localization process. Figure \ref{duzgun_pos_ref} shows the workspace just after a localization process and it is possible to see that blue and red circles are getting close to each other with this process. This concludes that the error on the estimated position datas are reduced with the help of this process.
-		
+
 In our project, an agent gets in 'Lost' mode if it cannot find at least three position beacons as its direct neighbor. This requirement is related with local trilateration process and the details of handling procedures of the lost agents are presented in Section \ref{LostAgents}. According to these procedures, if any agent which is in 'Lost' mode, misses three localization process it will get into 'Come Home' mode. When an agent is in 'Come Home' mode, it tries to reach the center of the formation shape in order to increase the possibility of meeting some position beacons to localize itself. A simulation result in which two agents do not have three position beacons as direct neighbors around themselves is illustrated in following figures. They get into 'Lost' mode first, when they cannot find three position beacons as direct neighbors. After they miss three localization process, they get into 'Come Home' mode in which they are trying to reach to the center of formation shape.
+
+Simulation outputs related with lost agents are illustrated in Figures \ref{lost_ref} and Figure \ref{lost_ref2}. According to these figures, two of the agents which are far away from the formation center get in 'Lost' mode first, then they get in 'Come Home' mode after three localization period. 
 		
 \begin{figure}[H]
 \caption{Agents will be in 'Lost' Mode When They Do Not Have 3 Neighbors} \label{lost_ref}
@@ -132,8 +133,6 @@ In our project, an agent gets in 'Lost' mode if it cannot find at least three po
 \caption{Agents will be in 'Come Home' Mode After 3 Localization Period} \label{lost_ref2} \label{come_home_ref}
 \centerline{\includegraphics[scale = 0.25]{Lost-2-3}}
 \end{figure} 		
-
-Simulation outputs related with lost agents are illustrated in Figures \ref{lost_ref} and Figure \ref{lost_ref2}. According to these figures, two of the agents which are far away from the formation center get in 'Lost' mode first, then they get in 'Come Home' mode after three localization period. 
 		
 \section{Formation Control System}
 We have implemented three different methods; Artificial Forces, Bubble Packing and Randomized Fractals in formation control systems. In this section, these different methods are evaluated according to their settling times, mesh qualities and total displacements. During the simulations, the variables which are described in Section \ref{chp:Methodology} are chosen as:
@@ -189,7 +188,7 @@ Mesh quality is a measure of how the agents are homogeneously distributed while 
 \centerline{\includegraphics[scale = 0.65]{Randomized_Fractals_Mesh_2}}
 \end{figure} 	
 
-According to these figures, it can be concluded that Randomized Fractals method has the worst mesh performance. It is because of the randomized assignment of goal states into the formation shape in this methodology. Bubble Packing and Artificial Forces methods give similar results since they both have analogous in their implementations of inter member/bubble forces which distributes the agents/bubbles within the formation shape more homogeneously. Artificial force method applies this intermember forces directly to the agents in formation control while Bubble Packing method uses this force on artificial bubbles to partition the shape into goal states. Monte Carlo simulations with 1000 iterations for both formation shapes with different initial conditions are handled and the results are illustrated in Figure \ref{topologic_ref_1}, \ref{geometric_ref_1}, \ref{topologic_ref_2} and \ref{geometric_ref_2} . In Figures \ref{topologic_ref_1} and \ref{geometric_ref_1}, Randomized Fractals method has greater mean values for both topological and geometrical mesh irregularities as expected.  Bubble Packing and Artificial Forces methods have similar performances on mesh quality. This shows us the Randomized Fractals method has the worst mesh quality performance. Similarly in Figure \ref{topologic_ref_2} and \ref{geometric_ref_2}, Randomized Fractals method has the highest mean value on both geometrical and topological irregularities.
+According to these figures, it can be concluded that Randomized Fractals method has the worst mesh performance. It is because of the randomized assignment of goal states into the formation shape in this methodology. Bubble Packing and Artificial Forces methods give similar results since they both have analogous in their implementations of inter member/bubble forces which distributes the agents/bubbles within the formation shape more homogeneously. Artificial force method applies this intermember forces directly to the agents in formation control while Bubble Packing method uses this force on artificial bubbles to partition the shape into goal states. 
 		
 \begin{figure}[H]
 \caption{Formation Shape 1 Topological Mesh Irregularities} \label{topologic_ref_1}
@@ -210,17 +209,18 @@ According to these figures, it can be concluded that Randomized Fractals method 
 \caption{Formation Shape 2 Geometrical Mesh Irregularities} \label{geometric_ref_2}
 \centerline{\includegraphics[scale = 0.32]{Geometrical_Irr_2}}
 \end{figure} 	
+
+Monte Carlo simulations with 1000 iterations for both formation shapes with different initial conditions are handled and the results are illustrated in Figure \ref{topologic_ref_1}, \ref{geometric_ref_1}, \ref{topologic_ref_2} and \ref{geometric_ref_2} . In Figures \ref{topologic_ref_1} and \ref{geometric_ref_1}, Randomized Fractals method has greater mean values for both topological and geometrical mesh irregularities as expected.  Bubble Packing and Artificial Forces methods have similar performances on mesh quality. This shows us the Randomized Fractals method has the worst mesh quality performance. Similarly in Figure \ref{topologic_ref_2} and \ref{geometric_ref_2}, Randomized Fractals method has the highest mean value on both geometrical and topological irregularities.
 		
 \subsection{Total Displacement of the Agents}  \label{total_dist_ref}
 		
-In this project, we aim to minimize the overall displacement of the agents in the swarm while getting the desired formation shape to achieve homogeneous coverage. The main consideration in this thesis is to reduce the expected energy consumption of the swarm by decreasing the required displacements of agents. To compare the total displacement of the swarm while getting the desired shape for three different methods, we have done Monte Carlo simulations with 1000 iterations. These simulations are handled for the same formation shapes with different initial conditions of the agents in the environment. Trajectories of the agents are recorded from the initial positions to the goal states for three different types of formation control systems. Sample outputs for three different types of formation control algorithms are illustrated in the following figures.
-		
-\newpage
-\subsubsection{Shape 1}\hspace{0pt} \\
+In this project, we aim to minimize the overall displacement of the agents in the swarm while getting the desired formation shape to achieve homogeneous coverage. The main consideration in this thesis is to reduce the expected energy consumption of the swarm by decreasing the required displacements of agents. To compare the total displacement of the swarm while getting the desired shape for three different methods, we have done Monte Carlo simulations with 1000 iterations. These simulations are handled for the same formation shapes with different initial conditions of the agents in the environment. Trajectories of the agents are recorded from the initial positions to the goal states for three different types of formation control systems. Sample outputs for three different types of formation control algorithms are illustrated in the following figures.		
+
+\subsubsection{Shape 1}\hspace{0pt}
 		
 \begin{figure}[H]
 \caption{Formation Shape 1 in MATLAB environment}
-\centerline{\includegraphics[scale = 0.32]{Trajectories_Formation_Shape_1_2}}
+\centerline{\includegraphics[scale = 0.27]{Trajectories_Formation_Shape_1_2}}
 \end{figure} 	
 			
 \begin{figure}[H]
@@ -253,7 +253,7 @@ To compare the total displacements, we have done Monte Carlo simulations with 10
 		
 \begin{figure}[H]
 \caption{Total Travelled Distances for Shape 1} \label{total_disp_1}
-\centerline{\includegraphics[scale = 0.32]{Total_Energy_Shape_1}}
+\centerline{\includegraphics[scale = 0.28]{Total_Energy_Shape_1}}
 \end{figure} 	
 				
 \subsubsection{Shape 2}\hspace{0pt} \\
@@ -261,7 +261,7 @@ Second formation shape gives similar results with three different formation cont
 
 \begin{figure}[H]
 \caption{Formation Shape 2 in MATLAB environment}
-\centerline{\includegraphics[scale = 0.32]{Trajectories_Formation_Shape_2_2}}
+\centerline{\includegraphics[scale = 0.27]{Trajectories_Formation_Shape_2_2}}
 \end{figure} 	
 		   
 \begin{figure}[H]
@@ -289,12 +289,12 @@ Trajectories of the agents towards to the desired shape in Artificial Forces met
 		   
 Trajectories of the agents towards to the desired shape in Bubble Packing and Randomized Fractals methods are shown at the Figure \ref{bubble2} and \ref{randomiz2}. In these methods, each agent directly tries to reach its goal state. This approach reduces the total displacement and settling time.
 		   
-The results of the Monte Carlo simulations with 1000 iterations are illustrated in Figure \ref{total_dist_2} . In this figure, Artificial Forces method has a higher mean value on total travelled distance for the same formation shape with same initial conditions. 
-
 \begin{figure}[H]
 \caption{Total Travelled Distance for Shape 2} \label{total_dist_2}
-\centerline{\includegraphics[scale = 0.32]{Total_Energy_Shape_2}} 
+\centerline{\includegraphics[scale = 0.28]{Total_Energy_Shape_2}} 
 \end{figure} 	
+
+The results of the Monte Carlo simulations with 1000 iterations are illustrated in Figure \ref{total_dist_2} . In this figure, Artificial Forces method has a higher mean value on total travelled distance for the same formation shape with same initial conditions.
 		   
 \subsection{Settling Time} \label{settling_ref}
 Settling time is defined as delta time $"t_{final} - t_{start}"$ ,where $t_{start}$ is the initial time and $t_{final}$ is the time when all agents are inside the desired formation shape and the norm of the velocity vector for each agent $\norm{v_i}$ is
@@ -319,20 +319,22 @@ According to the Figure \ref{settling_1} and \ref{settling_2}, Artificial Forces
 
 \subsection{Dynamically Changing Formations} \label{dynamical_ref}
 In dynamic formation control, desired formation shape is changed dynamically in a smooth fashion. Agents have to adapt themselves to this changing formation shape and cover the shape in a smooth continuous manner. Since the formation shape is expected to have smooth changes in local regions, it is aimed to adapt the agents which are positioned at these local regions rather than replacing all agents simultaneously. To minimize the total displacement of the swarm, the general approach is to make the agents which are close to the changing regions take action and replace themselves while others which are far from that region remain in their positions. Randomized fractals method does not provide a solution for this type of problem since its nature of task assignment for agents is done randomly for a given formation shape. These assignments made by the randomized fractals method do not generate continuous transitions on goal states between sequential changes of formation shapes. On the other hand, it is possible to adapt the Bubble Packing algorithm to provide a solution for the dynamically changing formations. Since Bubble Packing algorithm determines goal states in a formation shape by applying interbubble forces, it is possible to keep this shape partitioning process running in the background to dynamically adapt the goal states to the changing formation shape. The assignments to these goal states are achieved with Hungarian algorithm in Bubble Packing method. This process will adapt the swarm to the dynamically changing formation shape. Artificial forces method calculates control inputs for the individuals according to the current environment conditions and the formation shape. There is no need to update the algorithm for dynamically changing formation shapes, it already supports dynamically changing formations. 
+
+Figure \ref{multiple1_ref} shows a simulation result for dynamical formation control implemented with Bubble Packing Method. Agents adapt themselves to the dynamically changing formation shape by assigning new positions of the goal states at each iterations. The positions of these goal states are determined with shape partitioning process implemented with Bubble Packing algorithm. 
 		 
 \begin{figure}[H]
 \caption{Dynamic Formation Control with Bubble Packing Method} \label{multiple1_ref}
 \centerline{\includegraphics[scale = 0.16]{multiple1}}
 \end{figure} 
 
-Figure \ref{multiple1_ref} shows a simulation result for dynamical formation control implemented with Bubble Packing Method. Agents adapt themselves to the dynamically changing formation shape by assigning new positions of the goal states at each iterations. The positions of these goal states are determined with shape partitioning process implemented with Bubble Packing algorithm. 
+Figure \ref{multiple2_ref} illustrates a simulation result of Artificial Forces method. In this method agents reposition in the changing formation shape with the help of artificial force components calculated with current formation shape. Since, agents directly adapts themselves to the changing formations shape in Artificial Forces method, it is expected to have a faster response than the Bubble Packing method. In Bubble Packing method, goal states are adapted to the changing formation shape and agents try to reach these goal states in runtime. This kind of approach introduces an additional latency to the response of the swarm to dynamically changing formation shapes. This situation is illustrated in following Figure \ref{combo1_ref}, \ref{combo2_ref} and \ref{combo3_ref}.
 
 \begin{figure}[H]
 \caption{Dynamic Formation Control with Artificial Forces Method} \label{multiple2_ref}
 \centerline{\includegraphics[scale = 0.16]{multiple2}}
-\end{figure} 		 
+\end{figure} 
 
-Figure \ref{multiple2_ref} illustrates a simulation result of Artificial Forces method. In this method agents reposition in the changing formation shape with the help of artificial force components calculated with current formation shape. Since, agents directly adapts themselves to the changing formations shape in Artificial Forces method, it is expected to have a faster response than the Bubble Packing method. In Bubble Packing method, goal states are adapted to the changing formation shape and agents try to reach these goal states in runtime. This kind of approach introduces an additional latency to the response of the swarm to dynamically changing formation shapes. This situation is illustrated in following Figure \ref{combo1_ref}, \ref{combo2_ref} and \ref{combo3_ref}.
+Figure \ref{combo1_ref}, \ref{combo2_ref} and \ref{combo3_ref} compares the responses of these two algorithms to dynamically changing formation shapes. We have executed Bubble Packing and Artificial Force algorithms with the same dynamical formation shapes and same initial positions of the agents. In these figures, red circles are representing the agents' positions with Bubble Packing method and green circles are representing the agents' positions with Artificial Forces method at the same time instance relative to the beginning of the simulations. Formation shape with blue line illustrates the current formation shape. It can be seen that the green agents are adapted to the current formation shape better than the red ones. The shape with dotted red line, represents the estimated coverage area of red agents in the environment and this shape differs from the current formation shape locally at some boundary regions. This shows that agents response to the dynamically changing formation shape faster with Artificial Forces method. Bubble Packing algorithm has a slower response to the dynamically changing shapes. It is appropriate to use Artificial Forces method in rapidly changing dynamical shapes if it is critical to adapt the swarm to the formation with low latency.		 
 
 \begin{figure}[H]
 \caption{Latency in Bubble Packing Method-1} \label{combo1_ref}
@@ -349,8 +351,6 @@ Figure \ref{multiple2_ref} illustrates a simulation result of Artificial Forces 
 \centerline{\includegraphics[scale = 0.30]{combo3}}
 \end{figure} 
 
-Figure \ref{combo1_ref}, \ref{combo2_ref} and \ref{combo3_ref} compares the responses of these two algorithms to dynamically changing formation shapes. We have executed Bubble Packing and Artificial Force algorithms with the same dynamical formation shapes and same initial positions of the agents. In these figures, red circles are representing the agents' positions with Bubble Packing method and green circles are representing the agents' positions with Artificial Forces method at the same time instance relative to the beginning of the simulations. Formation shape with blue line illustrates the current formation shape. It can be seen that the green agents are adapted to the current formation shape better than the red ones. The shape with dotted red line, represents the estimated coverage area of red agents in the environment and this shape differs from the current formation shape locally at some boundary regions. This shows that agents response to the dynamically changing formation shape faster with Artificial Forces method. Bubble Packing algorithm has a slower response to the dynamically changing shapes. It is appropriate to use Artificial Forces method in rapidly changing dynamical shapes if it is critical to adapt the swarm to the formation with low latency.
-
 \subsection{Sensitivity on Mesh Irregularities} \label{sensitiviy_ref}
 In this project, we have made sensitivity analysis on mesh irregularities to check how this metric is affected by the parameters of formation control system. Mesh irregularities are expected to be increasing at boundary layers due to discontinuties and singularities \cite{sensitivity}. This is a known fact in mesh generation problems and there are some solutions which dynamically adapts the density of the mesh(i.e. size of mesh elements) in boundary layers to decrease irregularities.  In our implementation, it is not possible to implement this kind of solution because the number and size of mesh elements(i.e. different types of agents in our problem) are known and fixed. To check the effect of increasing length of boundary layers, we have defined a dynamically changing formation shape by keeping the interior area constant. All of the parameters related with the formation control system are kept fixed except for the total boundary length with this approach.
 
@@ -366,8 +366,8 @@ Figure \ref{sens_ref} shows some snapshots from a dynamically changing formation
 \begin{tabular}{||c| c| c | c||}
 				
 \hline
-\textbf{Shape} & \textbf{Area}  & \textbf{Total Boundary} & \textbf{Topological Mesh}\\ 
- \textbf{}  & \textbf{} & \textbf{Length} & \textbf{Irregularity}\\
+Shape & Area  & Total Boundary & Topological Mesh\\ 
+   &  & Length & Irregularity\\
 \hline
 1 & 314$[m^2]$ & 62.8$m$ & 2.46 \\
 2 & 314$[m^2]$ & 82.8$m$ & 2.96 \\
@@ -386,8 +386,8 @@ Three different formation control approaches are evaluated with different kinds 
 \begin{tabular}{||c| c| c | c | c||}
 				
 \hline
-\textbf{Method/Metric} & \textbf{Total}  & \textbf{Settling} & \textbf{Mesh} & \textbf{Dynamical}\\ 
-                       & \textbf{Displacement}  & \textbf{Time} & \textbf{Quality} & \textbf{Formation}\\
+Method/Metric & Total  &Settling & Mesh & Dynamical\\ 
+                       & Displacement  & Time & Quality & Formation\\
 \hline
 Artificial Force & X & X & & \\
 Bubble Packing & &  & & X\\	
@@ -417,7 +417,7 @@ We have made some different formation shape trials by using these different meth
 \begin{tabular}{|c|c|c|c|c|}
 					
 \hline
-\textbf{} & \textbf{Total}  & \textbf{Total Settling} & \textbf{} & \textbf{} \\ \textbf{Method} & \textbf{Displacement[m]} & \textbf{Time[sec]}& \textbf{$\epsilon_t$} & \textbf{$\epsilon_g$} \\
+ & Total  & Total Settling & &  \\ Method & Displacement[m] & Time[sec]& \textbf{$\epsilon_t$} & \textbf{$\epsilon_g$} \\
 \hline
 Artificial&  &  &  & \\
  Forces & 1889 & 164& 2.54 & 0.62\\
@@ -442,13 +442,13 @@ Table \ref{perf_shape1} illustrates different performance metrics related with t
 \end{figure} 
 		 
 
-		 
+\newpage		 
 \begin{center}
 \captionof{table}{Performance Metrics for Shape - 2} \label{perf_shape2} 
 \begin{tabular}{|c|c|c|c|c|}
 					
 \hline
-\textbf{} & \textbf{Total}  & \textbf{Total Settling} & \textbf{} & \textbf{} \\ \textbf{Method} & \textbf{Displacement[m]} & \textbf{Time[sec]}& \textbf{$\epsilon_t$} & \textbf{$\epsilon_g$} \\
+& Total  & Total Settling &  &\\ Method & Displacement[m] & Time[sec]& \textbf{$\epsilon_t$} & \textbf{$\epsilon_g$} \\
 \hline
 Artificial&  &  &  & \\
  Forces & 1611 & 153& 2.95 & 0.73\\
@@ -473,14 +473,13 @@ Table \ref{perf_shape2} illustrates different performance metrics related with t
 \caption{Formation Shape - 3 in MATLAB Environment}
 \centerline{\includegraphics[scale = 0.32]{3}}
 \end{figure} 			 
-
-\newpage				
+			
 \begin{center}
 \captionof{table}{Performance Metrics for Shape - 3} \label{perf_shape3} 
 \begin{tabular}{|c|c|c|c|c|}
 					
 \hline
-\textbf{} & \textbf{Total}  & \textbf{Total Settling} & \textbf{} & \textbf{} \\ \textbf{Method} & \textbf{Displacement[m]} & \textbf{Time[sec]}& \textbf{$\epsilon_t$} & \textbf{$\epsilon_g$} \\
+& Total  & Total Settling &  &\\ Method & Displacement[m] & Time[sec]& \textbf{$\epsilon_t$} & \textbf{$\epsilon_g$} \\
 \hline
 Artificial&  &  &  & \\
  Forces & 1432 & 126& 2.23 & 0.45\\
@@ -505,13 +504,13 @@ Similarly, Table \ref{perf_shape3} illustrates different performance metrics rel
 \centerline{\includegraphics[scale = 0.32]{4}}
 \end{figure} 
 			
-	
+\newpage	
 \begin{center}
 \captionof{table}{Performance Metrics for Shape - 4} \label{perf_shape4} 
 \begin{tabular}{|c|c|c|c|c|}
 					
 \hline
-\textbf{} & \textbf{Total}  & \textbf{Total Settling} & \textbf{} & \textbf{} \\ \textbf{Method} & \textbf{Displacement[m]} & \textbf{Time[sec]}& \textbf{$\epsilon_t$} & \textbf{$\epsilon_g$} \\
+ &Total  & Total Settling & & \\ Method & Displacement[m] & Time[sec]& \textbf{$\epsilon_t$} & \textbf{$\epsilon_g$} \\
 \hline
 Artificial&  &  &  & \\
  Forces & 1578 & 142& 2.15 & 0.56\\
@@ -537,7 +536,7 @@ Table \ref{perf_shape4} illustrates different performance metrics related with t
 \begin{tabular}{|c|c|c|c|c|}
 					
 \hline
-\textbf{} & \textbf{Total}  & \textbf{Total Settling} & \textbf{$\epsilon_t$} & \textbf{$\epsilon_g$} \\ \textbf{Method} & \textbf{Displacement[m]} & \textbf{Time[sec]}& \textbf{Mean} & \textbf{Mean} \\
+ & Total  & Total Settling & \textbf{$\epsilon_t$} & \textbf{$\epsilon_g$} \\ Method & Displacement[m] & Time[sec]& Mean & Mean \\
 \hline
 Artificial&  &  &  & \\
  Forces & 4216 & 435& 2.21 & 0.68\\
