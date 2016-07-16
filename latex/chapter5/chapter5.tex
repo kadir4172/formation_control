@@ -12,7 +12,7 @@
 \externaldocument{chapter6}
 
 
-In this project, we have done a hardware demonstration with five mobile robots from different sizes, to achieve a proof of concept related with the topics we have focused on. In this implementation, agents are designed as mobile robots with three omni-wheels which allows them to navigate in the workspace to every direction without the need for changing their headings. We have designed both hardware and software systems of the mobile robots. Since the demonstration is held at indoor environment, we have implemented image processing algorithms to provide  position information for each agent with the help of an E/O camera. Local positioning system is not implemented for this hardware demonstration because it may not be possible for an agent to find enough position beacons to localize itself in a swarm with five agents. Formation control algorithms are implemented with Bubble Packing method which has the best performance on different metrics described in \ref{evaluation_ref}
+In this project, we have done a hardware demonstration with five mobile robots from different sizes, to achieve a proof of concept related with the topics we have focused on. In this implementation, agents are mobile robots equipped with three omni-wheels which allows navigation to every direction without the need for changing their headings. We have designed both hardware and software systems of the mobile robots. Since the demonstration is held at indoor environment, we have implemented image processing algorithms to provide  position information for each agent with the help of an E/O camera. These image processing algorithms are executed on a mission computer. This mission computer is also responsible of execution of shape partitioning algorithms. Local positioning system is not implemented for this hardware demonstration because it may not be possible for an agent to find enough position beacons to localize itself in a swarm with five agents. Formation control algorithms are implemented with Bubble Packing method which has the best performance on different metrics described in \ref{evaluation_ref}
 
 \newpage
 \section{Hardware Demonstration Environment}
@@ -23,7 +23,7 @@ The schematic of the hardware implementation environment is illustrated in Figur
 \centerline{\includegraphics[scale = 0.55]{hardware}}
 \end{figure} 
    
-As illustrated in Figure \ref{harware_ref}, each agent and the mission computer has a radio link to create a mesh network in which every node can transfer messages between each other directly or with the help of their neighbors. Also they can broadcast messages to the rest of the nodes in the network.  On the other hand each agent has their individual CPU. This processor unit is used to execute goal state decision process and to control the actuators of the agents. These processors also executes the control system which is described in Section \ref{lqr_design} and they manage the messaging operations within the mesh network.  This architecture supports the idea of decentralized formation control with Bubble Packing method in which each agent is responsible to take decisions and reach to a global consensus with the rest of the swarm on the potential goal states.  These potential goal states are determined by the mission computer which takes the desired formation shape from the operator and executes shape partitioning algorithms. The data including the potential goal states is broadcasted to all of the agents in the environment with the help of mesh network. 
+As illustrated in Figure \ref{harware_ref}, each agent and the mission computer has a radio link to create a mesh network in which every node can transfer messages between each other directly or with the help of their neighbors. Moreover, each agent has its individual CPU. This processor unit is used to execute goal state decision process and to control the actuators of the agents. These processors also execute the control system which is used to navigate the agent to their target goal states and manage the messaging operations within the mesh network.  This architecture supports the idea of decentralized formation control with Bubble Packing method in which each agent is responsible to take decisions and reach to a global consensus with the rest of the swarm on the potential goal states.  These potential goal states are determined by the mission computer which takes the desired formation shape from the operator and executes shape partitioning algorithms. The data including the potential goal states is broadcasted to all of the agents in the environment with the help of mesh network. 
 
 Since the workspace is an indoor environment, it is impossible to use a GNSS system to provide position measurements to the agents. To provide this external measurements, a visual feedback system is designed with the help of an E/O camera and image processing algorithms. We have implemented image processing algorithms depending on the color classification of different cover planes placed on the top of the mobile robots. These covers are illustrated in Figure \ref{kapaklar_ref}
 
@@ -32,7 +32,7 @@ Since the workspace is an indoor environment, it is impossible to use a GNSS sys
 \centerline{\includegraphics[scale = 0.10]{Kapaklar}}
 \end{figure} 
 		
-Covers have different sizes to represent the coverage circles of the agents in 2D environment. These covers are used to create a swarm with heterogeneous agents partially. In our implementation, each cover has two different size of circles with the same color. Colors of these circles are used to classify the agent with the help of color classification algorithms. We have used different sized circles placed on the same cover, to calculate the heading angle of the agent with the help of circle detection algorithms. These algorithms can detect the positions and the radius of the circles in an image. In our project, heading angle of an agent is determined with the clockwise bearing angle of the vector from the center of the large circle to the center of the small circle. Figure \ref{bearing_ref} illustrates this calculation.
+Covers have different sizes to represent the coverage circles of the agents in 2D environment. These covers are used to create a swarm with heterogeneous agents partially. In our implementation, each cover has two different size of circles with the same color. Colors of these circles are used to classify the agent with the help of color classification algorithms. We have used different sized circles placed on the same cover, to calculate the heading angle of the agent with the help of circle detection algorithms. These algorithms can detect the positions and the radius of the circles in an image. In our project, heading angle of an agent is determined with the clockwise bearing angle of the vector from the center of the large circle to the center of the small circle. Figure \ref{bearing_ref} illustrates a sample bearing angle calculation for an agent.
 		
 \begin{figure}[H]
 \caption{Orientation of an Agent in the Environment} \label{bearing_ref}
@@ -49,21 +49,21 @@ The video of the environment is transmitted to the mission computer in nearly re
 		
 
 		
-Each agent has its individual processor unit and radio link on its board. A block diagram of an individual agent's hardware is illustrated in Figure \ref{indhardware_ref}
+
 		
 \begin{figure}[H]
 \caption{Hardware of an Agent} \label{indhardware_ref}
 \centerline{\includegraphics[scale = 0.70]{agent}}
 \end{figure} 
 		
-We use Microchip's Pic16f690 microcontroller as processor unit and write the related embedded software to drive the other peripherals on the board. This unit executes the decision process on formation control and the navigation control system defined in \ref{lqr_design} and drives the 3 step motor control units, ULN2003APG, via GPIO peripherals. In our embedded software, instant rotational velocity setpoints for the stepper motors  are determined with the command mixture algorithm illustrated in Figure \ref{ccmb_ref}.
+A block diagram of an individual agent's hardware is illustrated in Figure \ref{indhardware_ref}. Each agent has its individual processor unit and radio link onboard. We use Microchip's Pic16f690 microcontroller as processor unit and write the related embedded software to drive the other peripherals on the board. This unit executes the decision process on formation control and the navigation control system and drives the 3 step motor control units, ULN2003APG, via GPIO peripherals.
 		
 \begin{figure}[H]
 \caption{Command Mixture of Step Motors} \label{ccmb_ref}
 \centerline{\includegraphics[scale = 0.65]{ccmb}}
 \end{figure} 
 
-The desired velocity vector for the agent is  distributed to the stepper motors in accordance with the heading of the agent . Let $\norm{Vel}$ be the amplitude of the desired velocity and $\alpha$ is the angle representing the desired direction of the movement in clockwise direction with respect to mobile robot's body frame.  The velocities for the stepper motors is determined with following equations,
+In our embedded software, instant rotational velocity setpoints for the stepper motors  are determined with the command mixture algorithm illustrated in Figure \ref{ccmb_ref}. The desired velocity vector for the agent is  distributed to the stepper motors in accordance with the heading of the agent . Let $\norm{Vel}$ be the amplitude of the desired velocity and $\alpha$ is the angle representing the desired direction of the movement in clockwise direction with respect to mobile robot's body frame.  The velocities for the stepper motors is determined with following equations,
 		
 \begin{align*}
 & V_A = \norm{Vel} cos(150-\alpha) \\
@@ -73,7 +73,7 @@ The desired velocity vector for the agent is  distributed to the stepper motors 
 
 where $V_A, V_B, V_C$ represents the desired rotational velocities of  stepper motor A,B and C respectively.
 		
-Microcontroller also drives the radio link via UART peripheral and manages the communication of the agent with the mesh network. All of the units on the board are supplied with a 5VDC regulator, 7805. The schematic of the circuit which controls the agent is illustrated in Figure \ref{sematik_ref} and \ref{layout_ref}.
+Microcontroller also drives the radio link via UART peripheral and manages the communication of the agent with the mesh network. All of the units onboard are supplied with a 5VDC regulator, 7805. The schematic of the circuit which controls the agent is illustrated in Figure \ref{sematik_ref} and \ref{layout_ref}.
 		
 \begin{figure}[H]
 \caption{Schematic of the Circuit on the Board} \label{sematik_ref}
@@ -85,20 +85,20 @@ Microcontroller also drives the radio link via UART peripheral and manages the c
 \centerline{\includegraphics[scale = 0.45]{sematik-layout}}
 \end{figure} 
 
-Figure \ref{topview_ref} and Figure \ref{bottomview_ref} describes the hardware parts used on a mobile robot.
+Figure \ref{topview_ref} and Figure \ref{bottomview_ref} shows the hardware parts used on a mobile robot. Each mobile unit has its own control board, battery and radio links onboard. Also each of them has three stepper motor control units to drive omni-wheels.
 
 \begin{figure}[H]
 \caption{Hardware of an Agent - Top View} \label{topview_ref}
-\centerline{\includegraphics[scale = 0.65]{hardware1}}
+\centerline{\includegraphics[scale = 0.60]{hardware1}}
 \end{figure} 
 
 \begin{figure}[H]
 \caption{Hardware of an Agent - Bottom View} \label{bottomview_ref}
-\centerline{\includegraphics[scale = 0.65]{hardware2}}
+\centerline{\includegraphics[scale = 0.60]{hardware2}}
 \end{figure} 
 		
 \section{Performance Analysis}
-The system is tested with several formation shapes and results are analyzed with total displacements of the agents and the settling time metrics. Sample formation shapes are covered  and the algorithm proposed for Bubble Packing method is tested in real time successfully.  Traces of the agents are plotted with the continuous blue lines from their initial positions to the goal states in the following figures. The desired formation shape is plotted with black circles. The environment is a square area which has 2x2 meter size and there are three different types of agents which have different coverage circles represented in Table \ref{agentsize_ref}
+The system is tested with several formation shapes and results are analyzed with total displacements of the agents and the settling time metrics. Sample formation shapes are covered  and the algorithm proposed for Bubble Packing method is tested in real time.  Traces of agents are plotted with continuous blue lines from their initial positions to the goal states in the following figures. The desired formation shape is plotted with black circles. The environment is a square area which has 2x2 meter size and there are three different types of agents which have different coverage circles represented in Table \ref{agentsize_ref}
 
 \begin{center}
 \captionof{table}{Three Different Agent Configuration} \label{agentsize_ref} 
@@ -116,7 +116,7 @@ Pink & 3 & 8 \\
 \end{center}
 		
 \begin{figure}[H]
-\caption{Formation Shape 1- Matlab Environment}
+\caption{Formation Shape 1- Matlab Environment} \label{hardhard1}
 \centerline{\includegraphics[scale = 0.32]{2_hardware}}
 \end{figure} 
 			
@@ -135,9 +135,10 @@ Pink & 3 & 8 \\
 \hline
 \end{tabular}
 \end{center}
-		
+
+As illustrated in Figure \ref{hardhard1}, agents cover trapezoidal shape formation from their initial positions. Their trajectories in the workspace are plotted with blue lines. The total displacement for this trial is 1.75m and the settling time of the agents is 23 seconds.		
 \begin{figure}[H]
-\caption{Formation Shape 2- Matlab Environment}
+\caption{Formation Shape 2- Matlab Environment} \label{hardhard2}
 \centerline{\includegraphics[scale = 0.32]{4_hardware}}
 \end{figure} 
 					
@@ -156,9 +157,11 @@ Pink & 3 & 8 \\
 \hline
 \end{tabular}
 \end{center}
+
+As illustrated in Figure \ref{hardhard2}, agents cover square shape formation from their initial positions. Their trajectories in the workspace are plotted with blue lines. The total displacement for this trial is 1.63m and the settling time of the agents is 19 seconds.	
 				
 \begin{figure}[H]
-\caption{Formation Shape 3- Matlab Environment}
+\caption{Formation Shape 3- Matlab Environment} \label{hardhard3}
 \centerline{\includegraphics[scale = 0.32]{5_hardware}}
 \end{figure} 
 					
@@ -177,9 +180,11 @@ Pink & 3 & 8 \\
 \hline
 \end{tabular}
 \end{center}
+	
+As illustrated in Figure \ref{hardhard3}, agents cover pentagonal shape formation from their initial positions. Their trajectories in the workspace are plotted with blue lines. The total displacement for this trial is 1.95m and the settling time of the agents is 26 seconds.	
 		
 \begin{figure}[H]
-\caption{Formation Shape 4- Matlab Environment}
+\caption{Formation Shape 4- Matlab Environment} \label{hardhard4}
 \centerline{\includegraphics[scale = 0.32]{6_hardware}}
 \end{figure} 
 					
@@ -198,9 +203,11 @@ Pink & 3 & 8 \\
 \hline
 \end{tabular}
 \end{center}
+
+As illustrated in Figure \ref{hardhard4}, agents cover arrow like shape formation from their initial positions. Their trajectories in the workspace are plotted with blue lines. The total displacement for this trial is 2.16m and the settling time of the agents is 29 seconds.	
 		
 \begin{figure}[H]
-\caption{Formation Shape 5- Matlab Environment}
+\caption{Formation Shape 5- Matlab Environment} \label{hardhard5}
 \centerline{\includegraphics[scale = 0.32]{9_hardware}}
 \end{figure} 
 					
@@ -219,6 +226,8 @@ Pink & 3 & 8 \\
 \hline
 \end{tabular}
 \end{center}
+
+As illustrated in Figure \ref{hardhard5}, agents cover line shape formation from their initial positions. Their trajectories in the workspace are plotted with blue lines. The total displacement for this trial is 1.80m and the settling time of the agents is 25 seconds.	
 
 We have defined the settling time as delta time $"t_{final} - t_{start}"$ ,where $t_{start}$ is the initial time and $t_{final}$ is the time that the all of the agents are inside of the desired formation shape and the norm of the velocity vector for each agent $\norm{v_i}$ is
 
