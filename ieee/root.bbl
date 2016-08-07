@@ -1,0 +1,63 @@
+\begin{thebibliography}{10}
+
+\bibitem{12}
+Kiattisin Kanjanawanishkul.
+\newblock Formation control of mobile robots: Survey.
+\newblock n.d.
+
+\bibitem{16}
+Magnus Egerstedt and Xiaoming Hu.
+\newblock Formation constrained multi-agent control.
+\newblock {\em IEEE Transactions On Robotics And Automation}, 17:947--951,
+  2001.
+
+\bibitem{17}
+Samitha Ekanayake and Pubudu Pathirana.
+\newblock Formations of robotic swarm: An artificial force based approach.
+\newblock {\em International Journal of Advanced Robotic Systems}, 7:173--190,
+  2010.
+
+\bibitem{8}
+S.P. Hou, C.C. Cheah, and J.J.E. Slotine.
+\newblock Dynamic region following formation control for a swarm of robots.
+\newblock In {\em ICRA}, 2009.
+
+\bibitem{18}
+Aveek Das, Rafael Fierro, Vijay Kumar, James Ostrowski, John Spletzer, and
+  Camilla Taylor.
+\newblock A vision-based formation control framework.
+\newblock {\em IEEE Transactions on Robotics and Automation}, 18:813--825,
+  2002.
+
+\bibitem{23}
+Anthony Lewis and Kar-Han Tan.
+\newblock High precision formation control of mobile robots using virtual
+  structures.
+\newblock {\em Autonomous Robots}, 4:387--403, 1997.
+
+\bibitem{24}
+Jimming Cheng, Winston Cheng, and Radhika Nagpal.
+\newblock Robust and self-repairing formation control for swarms of mobile
+  agents.
+\newblock In {\em AAAI 20th National Conference on Artificial Intelligence},
+  2005.
+
+\bibitem{25}
+Calin Belta and Vijay Kumar.
+\newblock Abstraction and control for groups of robots.
+\newblock {\em IEEE Transactions on Robotics and Automation}, 20:865--875,
+  2004.
+
+\bibitem{99}
+Dorigo et~al.
+\newblock Swarmanoid: A novel concept for the study of heterogeneous robotic
+  swarms.
+\newblock {\em IEEE Robotics $\&$ Automation Magazine}, 20:60--71, 2013.
+
+\bibitem{wiki_contour}
+Wikipedia.
+\newblock Methods of contour integration --- {W}ikipedia{,} the free
+  encyclopedia, 2016.
+\newblock [Online; accessed 10-February-2016].
+
+\end{thebibliography}
