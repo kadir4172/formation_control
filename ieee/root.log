@@ -1,0 +1,365 @@
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2016.2.27)  7 AUG 2016 14:18
+entering extended mode
+ restricted \write18 enabled.
+ %&-line parsing enabled.
+**root.tex
+(./root.tex
+LaTeX2e <2011/06/27>
+Babel <3.9h> and hyphenation patterns for 28 languages loaded.
+(./ieeeconf.cls
+Document Class: ieeeconf 2016/4/23 revision V1.6b by Pradeep Misra
+\@IEEEtrantmpdimenA=\dimen102
+\@IEEEtrantmpdimenB=\dimen103
+\@IEEEtrantmpcountA=\count79
+\@IEEEtrantmpcountB=\count80
+\@IEEEtrantmptoksA=\toks14
+LaTeX Font Info:    Try loading font information for OT1+ptm on input line 794.
+
+(/usr/share/texlive/texmf-dist/tex/latex/psnfss/ot1ptm.fd
+File: ot1ptm.fd 2001/06/04 font definitions for OT1/ptm.
+)
+\@IEEEnormalsizefontbaselineskip=\skip41
+
+-- This is a 10 point document.
+\normalsizebaselineskip=\skip42
+\normaljot=\skip43
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <5> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 1113.
+LaTeX Font Info:    Font shape `OT1/ptm/bx/it' in size <5> not available
+(Font)              Font shape `OT1/ptm/b/it' tried instead on input line 1113.
+
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <7> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 1113.
+LaTeX Font Info:    Font shape `OT1/ptm/bx/it' in size <7> not available
+(Font)              Font shape `OT1/ptm/b/it' tried instead on input line 1113.
+
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <8> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 1113.
+LaTeX Font Info:    Font shape `OT1/ptm/bx/it' in size <8> not available
+(Font)              Font shape `OT1/ptm/b/it' tried instead on input line 1113.
+
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <9> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 1113.
+LaTeX Font Info:    Font shape `OT1/ptm/bx/it' in size <9> not available
+(Font)              Font shape `OT1/ptm/b/it' tried instead on input line 1113.
+
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <10> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 1113.
+LaTeX Font Info:    Font shape `OT1/ptm/bx/it' in size <10> not available
+(Font)              Font shape `OT1/ptm/b/it' tried instead on input line 1113.
+
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <11> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 1113.
+LaTeX Font Info:    Font shape `OT1/ptm/bx/it' in size <11> not available
+(Font)              Font shape `OT1/ptm/b/it' tried instead on input line 1113.
+
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <12> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 1113.
+LaTeX Font Info:    Font shape `OT1/ptm/bx/it' in size <12> not available
+(Font)              Font shape `OT1/ptm/b/it' tried instead on input line 1113.
+
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <16> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 1113.
+LaTeX Font Info:    Font shape `OT1/ptm/bx/it' in size <16> not available
+(Font)              Font shape `OT1/ptm/b/it' tried instead on input line 1113.
+
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <20> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 1113.
+LaTeX Font Info:    Font shape `OT1/ptm/bx/it' in size <20> not available
+(Font)              Font shape `OT1/ptm/b/it' tried instead on input line 1113.
+
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <24> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 1113.
+LaTeX Font Info:    Font shape `OT1/ptm/bx/it' in size <24> not available
+(Font)              Font shape `OT1/ptm/b/it' tried instead on input line 1113.
+
+\IEEEilabelindentA=\dimen104
+\IEEEilabelindentB=\dimen105
+\IEEEilabelindent=\dimen106
+\IEEEelabelindent=\dimen107
+\IEEEdlabelindent=\dimen108
+\labelindent=\dimen109
+\IEEEiednormlabelsep=\dimen110
+\IEEEiedmathlabelsep=\dimen111
+\IEEEiedtopsep=\skip44
+\c@section=\count81
+\c@subsection=\count82
+\c@subsubsection=\count83
+\c@paragraph=\count84
+\c@IEEEsubequation=\count85
+\abovecaptionskip=\skip45
+\belowcaptionskip=\skip46
+\c@figure=\count86
+\c@table=\count87
+\@IEEEeqnnumcols=\count88
+\@IEEEeqncolcnt=\count89
+\@IEEEtmpitemindent=\dimen112
+\c@biography=\count90
+\@IEEEtranrubishbin=\box26
+)
+** ATTENTION: Overriding command lockouts (line 9).
+** ATTENTION: Overriding IEEE standard margins (line 12).
+(./root.aux)
+\openout1 = `root.aux'.
+
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 41.
+LaTeX Font Info:    ... okay on input line 41.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 41.
+LaTeX Font Info:    ... okay on input line 41.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 41.
+LaTeX Font Info:    ... okay on input line 41.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 41.
+LaTeX Font Info:    ... okay on input line 41.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 41.
+LaTeX Font Info:    ... okay on input line 41.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 41.
+LaTeX Font Info:    ... okay on input line 41.
+LaTeX Font Info:    Calculating math sizes for size <11> on input line 45.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <11> on input line 45.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <7.69997> on input line 45.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <5.5> on input line 45.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <8> on input line 45.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <6> on input line 45.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <5> on input line 45.
+LaTeX Font Info:    Try loading font information for OT1+pcr on input line 45.
+ (/usr/share/texlive/texmf-dist/tex/latex/psnfss/ot1pcr.fd
+File: ot1pcr.fd 2001/06/04 font definitions for OT1/pcr.
+)
+Underfull \hbox (badness 10000) in paragraph at lines 45--45
+[][][]$[]$\OT1/ptm/m/n/8 Bernard D. Re-searcheris with the De-part-ment of Elec
+-tri-cal
+ []
+
+
+Underfull \hbox (badness 8075) in paragraph at lines 45--45
+\OT1/ptm/m/n/8 En-gi-neer-ing, Wright State Uni-ver-sity, Day-ton, OH 45435, US
+A
+ []
+
+Missing character: There is no Ò in font ptmb7t!
+Missing character: There is no Ó in font ptmb7t!
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <7> on input line 85.
+Missing character: There is no Ò in font ptmr7t!
+Missing character: There is no Ó in font ptmr7t!
+Missing character: There is no Ò in font ptmr7t!
+Missing character: There is no Ó in font ptmr7t!
+Missing character: There is no Ò in font ptmr7t!
+Missing character: There is no Ó in font ptmr7t!
+Missing character: There is no Ò in font ptmr7t!
+Missing character: There is no Ó in font ptmr7t!
+Missing character: There is no Ò in font ptmr7t!
+Missing character: There is no Ó in font ptmr7t!
+Missing character: There is no Ò in font ptmr7t!
+Missing character: There is no Ó in font ptmr7t!
+Missing character: There is no Ò in font ptmr7t!
+Missing character: There is no Ó in font ptmr7t!
+Missing character: There is no Ò in font ptmr7t!
+Missing character: There is no Ó in font ptmr7t!
+Missing character: There is no Ò in font ptmr7t!
+Missing character: There is no Ó in font ptmr7t!
+Missing character: There is no Ò in font ptmr7t!
+Missing character: There is no Ó in font ptmr7t!
+[1{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}
+
+
+]
+Missing character: There is no Ò in font ptmr7t!
+Missing character: There is no Ó in font ptmr7t!
+Missing character: There is no Ò in font ptmr7t!
+Missing character: There is no Ó in font ptmr7t!
+Missing character: There is no Ò in font ptmr7t!
+Missing character: There is no Ó in font ptmr7t!
+Missing character: There is no Ò in font ptmr7t!
+Missing character: There is no Ó in font ptmr7t!
+Missing character: There is no Ò in font ptmr7t!
+Missing character: There is no Ó in font ptmr7t!
+Missing character: There is no Ò in font ptmr7t!
+Missing character: There is no Ó in font ptmr7t!
+Missing character: There is no Ò in font ptmr7t!
+Missing character: There is no Ó in font ptmr7t!
+Missing character: There is no Ò in font ptmr7t!
+Missing character: There is no Ó in font ptmr7t!
+Missing character: There is no Ò in font ptmr7t!
+Missing character: There is no Ó in font ptmr7t!
+Missing character: There is no Ò in font ptmr7t!
+Missing character: There is no Ó in font ptmr7t!
+Missing character: There is no Ò in font ptmr7t!
+Missing character: There is no Ó in font ptmr7t!
+Missing character: There is no Ò in font ptmr7t!
+Missing character: There is no Ó in font ptmr7t!
+Missing character: There is no Ò in font ptmr7t!
+Missing character: There is no Ó in font ptmr7t!
+Missing character: There is no Ò in font ptmr7t!
+Missing character: There is no Ó in font ptmr7t!
+Missing character: There is no Ò in font ptmr7t!
+Missing character: There is no Ó in font ptmr7t!
+Missing character: There is no Ò in font ptmr7t!
+Missing character: There is no Ó in font ptmr7t!
+Missing character: There is no Ò in font ptmr7t!
+Missing character: There is no Ó in font ptmr7t!
+Missing character: There is no Ò in font ptmr7t!
+Missing character: There is no Ó in font ptmr7t!
+Missing character: There is no Ò in font ptmr7t!
+Missing character: There is no Ó in font ptmr7t!
+Missing character: There is no Ò in font ptmr7t!
+Missing character: There is no Ó in font ptmr7t!
+Missing character: There is no Ò in font ptmr7t!
+Missing character: There is no Ó in font ptmr7t!
+Missing character: There is no Ò in font ptmr7t!
+Missing character: There is no Ó in font ptmr7t!
+Missing character: There is no Ò in font ptmr7t!
+Missing character: There is no Ó in font ptmr7t!
+Missing character: There is no Ò in font ptmr7t!
+Missing character: There is no Ó in font ptmr7t!
+Missing character: There is no Ò in font ptmr7t!
+Missing character: There is no Ó in font ptmr7t!
+Missing character: There is no Ò in font ptmr7t!
+Missing character: There is no Ó in font ptmr7t!
+Missing character: There is no Ò in font ptmr7t!
+Missing character: There is no Ó in font ptmr7t!
+Missing character: There is no Ò in font ptmr7t!
+Missing character: There is no Ó in font ptmr7t!
+Missing character: There is no Ò in font ptmr7t!
+Missing character: There is no Ó in font ptmr7t!
+Missing character: There is no Ò in font ptmr7t!
+Missing character: There is no Ó in font ptmr7t!
+Missing character: There is no Ò in font ptmr7t!
+Missing character: There is no Ó in font ptmr7t!
+Missing character: There is no Ò in font ptmr7t!
+Missing character: There is no Ó in font ptmr7t!
+Missing character: There is no Ò in font ptmr7t!
+Missing character: There is no Ó in font ptmr7t!
+Missing character: There is no Ò in font ptmr7t!
+Missing character: There is no Ó in font ptmr7t!
+Missing character: There is no Ò in font ptmr7t!
+Missing character: There is no Ó in font ptmr7t!
+Missing character: There is no Ò in font ptmr7t!
+Missing character: There is no Ó in font ptmr7t!
+Missing character: There is no Ò in font ptmr7t!
+Missing character: There is no Ó in font ptmr7t!
+Missing character: There is no Ò in font ptmr7t!
+Missing character: There is no Ó in font ptmr7t!
+Missing character: There is no Ò in font ptmr7t!
+Missing character: There is no Ó in font ptmr7t!
+Missing character: There is no Ò in font ptmr7t!
+Missing character: There is no Ó in font ptmr7t!
+Missing character: There is no Ò in font ptmr7t!
+Missing character: There is no Ó in font ptmr7t!
+Missing character: There is no Ò in font ptmr7t!
+Missing character: There is no Ó in font ptmr7t!
+Missing character: There is no Ò in font ptmr7t!
+Missing character: There is no Ó in font ptmr7t!
+Missing character: There is no Ò in font ptmr7t!
+Missing character: There is no Ó in font ptmr7t!
+Missing character: There is no Ò in font ptmr7t!
+Missing character: There is no Ó in font ptmr7t!
+
+Underfull \hbox (badness 10000) in paragraph at lines 170--178
+
+ []
+
+[2]
+Underfull \hbox (badness 10000) in paragraph at lines 179--186
+
+ []
+
+Missing character: There is no Ò in font ptmr7t!
+Missing character: There is no Ó in font ptmr7t!
+Missing character: There is no Ò in font ptmr7t!
+Missing character: There is no Ó in font ptmr7t!
+Missing character: There is no Ò in font ptmr7t!
+Missing character: There is no Ó in font ptmr7t!
+Missing character: There is no Ò in font ptmr7t!
+Missing character: There is no Ó in font ptmr7t!
+Missing character: There is no Ò in font ptmr7t!
+Missing character: There is no Ó in font ptmr7t!
+Missing character: There is no Ò in font ptmr7t!
+Missing character: There is no Ó in font ptmr7t!
+Missing character: There is no Ð in font ptmr7t!
+Missing character: There is no Ð in font ptmr7t!
+Missing character: There is no Ò in font ptmr7t!
+Missing character: There is no Ó in font ptmr7t!
+Missing character: There is no Ò in font ptmr7t!
+Missing character: There is no Ñ in font ptmr7t!
+Missing character: There is no Ó in font ptmr7t!
+Missing character: There is no Ò in font ptmr7t!
+Missing character: There is no Ñ in font ptmr7t!
+Missing character: There is no Ó in font ptmr7t!
+Missing character: There is no Ò in font ptmr7t!
+Missing character: There is no Ó in font ptmr7t!
+Missing character: There is no Ð in font ptmr7t!
+Missing character: There is no Ò in font ptmr7t!
+Missing character: There is no Ñ in font ptmr7t!
+Missing character: There is no Ó in font ptmr7t!
+Missing character: There is no Ð in font ptmr7t!
+Missing character: There is no Ò in font ptmr7t!
+Missing character: There is no Ó in font ptmr7t!
+Missing character: There is no Ð in font ptmr7t!
+Missing character: There is no Ò in font ptmr7t!
+Missing character: There is no Ó in font ptmr7t!
+Missing character: There is no Ð in font ptmr7t!
+Missing character: There is no Ò in font ptmr7t!
+Missing character: There is no Ó in font ptmr7t!
+Missing character: There is no Ð in font ptmr7t!
+Missing character: There is no Ò in font ptmr7t!
+Missing character: There is no Ó in font ptmr7t!
+Missing character: There is no Ð in font ptmr7t!
+Missing character: There is no Ò in font ptmr7t!
+Missing character: There is no Ó in font ptmr7t!
+Missing character: There is no Ð in font ptmr7t!
+Missing character: There is no Ò in font ptmr7t!
+Missing character: There is no Ó in font ptmr7t!
+Missing character: There is no Ð in font ptmr7t!
+Missing character: There is no Ò in font ptmr7t!
+Missing character: There is no Ó in font ptmr7t!
+Missing character: There is no Ò in font ptmr7t!
+Missing character: There is no Ó in font ptmr7t!
+Missing character: There is no Ò in font ptmr7t!
+Missing character: There is no Ó in font ptmr7t!
+Missing character: There is no Ò in font ptmr7t!
+Missing character: There is no Ó in font ptmr7t!
+
+** Conference Paper **
+Before submitting the final camera ready copy, remember to:
+
+ 1. Manually equalize the lengths of two columns on the last page
+ of your paper;
+
+ 2. Ensure that any PostScript and/or PDF output post-processing
+ uses only Type 1 fonts and that every step in the generation
+ process uses the US letter (8.5in X 11in) paper size.
+
+[3] (./root.aux) ) 
+Here is how much of TeX's memory you used:
+ 882 strings out of 494424
+ 14218 string characters out of 6165346
+ 71822 words of memory out of 5000000
+ 4195 multiletter control sequences out of 15000+600000
+ 39844 words of font info for 78 fonts, out of 8000000 for 9000
+ 372 hyphenation exceptions out of 8191
+ 26i,9n,20p,913b,283s stack positions out of 5000i,500n,10000p,200000b,80000s
+{/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc}</
+usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/sh
+are/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/tex
+live/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/share/texlive/tex
+mf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/share/texlive/texmf-dist/
+fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/
+type1/public/amsfonts/cm/cmsy7.pfb></usr/share/texlive/texmf-dist/fonts/type1/u
+rw/courier/ucrr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmb
+8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmbi8a.pfb></usr/s
+hare/texlive/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/share/texlive/te
+xmf-dist/fonts/type1/urw/times/utmri8a.pfb>
+Output written on root.pdf (3 pages, 119588 bytes).
+PDF statistics:
+ 59 PDF objects out of 1000 (max. 8388607)
+ 42 compressed objects within 1 object stream
+ 0 named destinations out of 1000 (max. 500000)
+ 1 words of extra memory for PDF output out of 10000 (max. 10000000)
+
