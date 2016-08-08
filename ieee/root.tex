@@ -11,6 +11,8 @@
 \newcommand{\norm}[1]{\left\lVert#1\right\rVert}
 \overrideIEEEmargins                                      % Needed to meet printer requirements.
 \usepackage{mathtools}
+\usepackage[]{algorithm2e}
+\usepackage{csquotes}
 % See the \addtolength command later in the file to balance the column lengths
 % on the last page of the document
 
@@ -158,7 +160,17 @@ Three & Four\\
        magnetic core versus DC bias magnetic field}
       \label{figurelabel}
    \end{figure}
-   
+      \begin{figure}[thpb]
+      \centering
+      \framebox{\parbox{3in}{.
+}}
+      \includegraphics[scale = 0.07]{interbubble_forces}
+      \caption{Inductance of oscillation winding on amorphous
+       magnetic core versus DC bias magnetic field}
+      \label{figurelabel}
+   \end{figure}
+ 	
+
 
 Figure Labels: Use 8 point Times New Roman for Figure labels. Use words rather than symbols or abbreviations when writing Figure axis labels to avoid confusing the reader. As an example, write the quantity ÒMagnetizationÓ, or ÒMagnetization, MÓ, not just ÒMÓ. If including units in the label, present them within parentheses. Do not label axes only with units. In the example, write ÒMagnetization (A/m)Ó or ÒMagnetization {A[m(1)]}Ó, not just ÒA/mÓ. Do not label axes with a ratio of quantities and units. For example, write ÒTemperature (K)Ó, not ÒTemperature/K.Ó
 
@@ -251,6 +263,7 @@ B = \sum_{k=1}^{K} {u(x_k, y_k)(y_{k+1} - y_k) - v(x_k, y_k)(x_{k+1} - x_k) }
 \end{split}
 \end{align}
 
+where
 \begin{equation}
 \begin{split}
 \norm{z_k - z_{k-1}} = \norm{z_{k+1} - z_k}, \hspace{0.2cm}\\ 
@@ -258,7 +271,206 @@ B = \sum_{k=1}^{K} {u(x_k, y_k)(y_{k+1} - y_k) - v(x_k, y_k)(x_{k+1} - x_k) }
 \end{split}
 \end{equation}
 
-The assumption of $K \to\infty$ makes it possible to calculate the integral of Cauchy winding number with a small error with large number of $K$ which can be achieved by partitioning the desired formation shape  into small pieces with equal $p2$ norms of $\Delta z$. 
+The assumption of $K \to\infty$ makes it possible to calculate the integral of Cauchy winding number with a small error with large number of $K$ which can be achieved by partitioning the desired formation shape  into small pieces with equal $p2$ norms of $\Delta z$. We have used this approach to provide discrete domain representations of the contour integrals given in potential field equations in \cite{17}.
+
+
+\section{Bubble Packing Method}
+In Bubble Packing method, we have reduced down the formation control problem into two subproblems. The first part of the solution is to partition the desired formation shape into potential goal states according to the agent types to cover the desired formation shape homogeneously. The second part of the solution is the decision process to assign the agents to these goal states continuously to minimize the total displacement of swarm while achieving the desired formation shape. During this decision process, the cost of reaching different goal states is defined with the displacement on the shortest path while reaching that goal state. Our algorithm tries to reduce down the total cost value by assigning each agent to proper goal states.
+			
+\subsection{Partitioning Formation Shape Into Goal States} \label{Partitioning_ref}		
+This process basically depends on covering the formation shape surface with a proper number of bubbles by packing them tightly. \cite{27}.  The algorithm places the bubbles with their initial conditions in the environment and apply them interbubble forces which imitates the Van der Waals forces between the molecular bonds  to distribute the bubbles homogeneously inside the shape. Here, the main idea is to generate a mesh for a surface with identical bubbles to mimic a regular Voronoi diagram with the vertices represented by the centers of these bubbles. We have defined coverage circles as circles with minimum radius which cover the whole collision surface of an agent in 2D workspace. We have implemented the algorithm by representing the agents in the swarm as bubbles with the radius of their coverage circles and create a mesh by using these bubbles. 
+			
+The bubbles are distributed homogeneously with this process under two kinds of forces, interbubble forces and shape repulsive forces. The interbubble forces are proximity-based forces so that a system of bubbles is in equilibrium when bubbles are distributed over the whole formation shape. The implemented force equation is given
+		
+\begin{equation}
+f_i(l) = \left\{ \begin{array}{rl}
+al^3 + bl^2 + cl + d &\mbox{ when 0 $\leq$ l $\leq$ $l_0$} \\
+0                               &\mbox{ l $>$ $l_0$}
+\end{array} \right.
+\end{equation}
+
+where $l$ is the distance between the centers of the related bubbles and $a,b,c,d$ and $l_0$ are the variables to tune the force acting on the bubbles. 
+
+    \begin{figure}[thpb]
+      \centering     
+      \includegraphics[scale = 0.4]{interbubble_forces}
+     \caption{Interbubble Forces}
+   \end{figure}   
+   	
+The shape repulsive forces have the same characteristics with the repulsive artificial forces in \cite{17}.
+	
+The bubbles are distributed homogeneously under the influence of these two forces and they get an equilibrium state in which the total net forces acting on individual bubbles reaches zero. Figure \ref{buble_ornek} shows a simulation output of Bubble Packing algorithm. The coverage circles are homogeneously distributed in the formation shape with the help of inter-bubble and shape repulsive forces. The final equilibrium states of the bubbles determine the potential goal states $g_i \in G$  of the agents in the swarm to cover the formation shape.
+
+
+
+\begin{figure}[thpb]
+      \centering     
+      \includegraphics[scale = 0.3]{bubble_packing2}
+    \caption{Bubble Packing Algorithm} \label{buble_ornek}
+   \end{figure} 
+
+	
+\subsection{Decision Process on Goal States}\hspace{0pt} \label{DecisionProcess Ref} \\
+In Section \ref{Partitioning_ref}, we have reduced down the formation control problem in which every agent is expected to decide where to position in a given set of possible goal states $g_i \in G$ .  During this decision process, the cost of reaching different goal states will be the main criteria for each agent. Given goal states and cost values to these goal states, each agent must decide where to position in the formation. This process must be held to optimize the utility of swarm with a collaboration. It is obvious that some of the agents may want to choose the same goal point to reach, so the swarm must reach a global consensus on target points and cases including conflictions must be handled. Our main approach to provide a solution for this problem is to make each agent to calculate the costs of its own to reach the goal states $g_i \in G$ and then reach a global consensus with the other agents to minimize the overall displacements of the swarm. 
+
+The algorithm which handles the assignment process of the agents to the goal states, is implemented in four stages. At the first stage, each agent calculates its own free configuration space. Secondly, agents calculate their visibility graphs by using their free configuration space. At the third stage,  agents calculate and report their costs to reach each of the goal states $g_i \in G$ with the help of Dijkstra's algorithm. These cost values are defined as the displacements to reach a goal state on shortest path.  Finally, agents are assigned to the goal states with the help of Hungarian algorithm which uses the cost values reported by the agents. Hungarian algorithm handles the assignment process to minimize the overall cost(i.e. total displacement) of the swarm.
+	
+\subsubsection{Configuration Space}\hspace{0pt} \\
+We have defined the shortest paths to the goal states of $g_i \in G$ in the free configuration space to avoid collisions with the workspace obstacles \cite{92}. In our implementation, each agent calculates its free configuration space by extracting their forbidden spaces from the configuration space itself. Forbidden space is calculated by augmenting the workspace obstacles with the help of Minkowski sums and we have implemented this process as follows.
+
+Assume an environment with set of obstacles $S = \begin{Bmatrix}
+P_1, P_2, .. P_t \end{Bmatrix}$. Configuration for agent $i$ can be described with the position of the center of its coverage circle with $R=\begin{Bmatrix}x_i, y_i\end{Bmatrix}$. Configuration space of $i^{th}$ agent is the workspace itself and represented by $C(R_i)$. This configuration space is composed of two subspaces; free configuration space and forbidden configuration space of agent $i$ \cite{92}.
+
+\begin{equation}
+C(R_i) = C_{free}(R_i,S) + C_{forb}(R_i,S)
+\end{equation}
+
+In our implementation each agent calculates its forbidden space by augmenting the workspace obstacles with the help of Minkowski sum method. Minkowski sum method is implemented as follows:
+
+Let a single obstacle is described with a point set of $S_1$ and the agent is described with a point set of $S_2$. The Minkowski sum of these two sets $S_1 \subset R^2$ and $S_2 \subset R^2$ can be calculated with the following \cite{92},
+	
+\begin{equation}
+S_1 \oplus S_2 := \begin{Bmatrix}
+p+q : p \subset S_1, q \subset S_2
+\end{Bmatrix} 
+\end{equation}
+
+where $p+q$ denotes the vector sum of the vectors $p$ and $q$.
+
+
+\begin{figure}[thpb]
+     \centering
+\includegraphics[scale = 0.45]{Forbidden}
+  \caption{Forbidden Space Caused by an Obstacle \cite{92}} \label{yasakli_bolge}
+   \end{figure} 
+   		
+
+	
+Figure \ref{yasakli_bolge} shows a forbidden space related with an obstacle. Forbidden space for agent $i$, $C_{forb}(R_i, S)$, is the sum of the forbidden spaces calculated for each obstacle in the environment \cite{92}. Agents extract their forbidden space $C_{forb}(R_i, S)$ from the configuration space itself to calculate their free configuration spaces.
+	
+\subsubsection{Visibility Graphs and Dijkstra$'$s Algorithm}\hspace{0pt} \\
+We have provided collision avoidance while travelling towards to the goal states $g_i \in G$ by defining the shortest paths in the free configuration spaces of the agents. In \cite{92}, an additional constraint for the shortest path is defined as follows : 
+
+\begin{displayquote}
+The shortest path between $p_{start}$ and $p_{goal}$ among a set $S$ of augmented polygonal obstacles consists of the arcs of the visibility graph $\gamma_{vis}(S^*)$ where $S^* := S \cup \begin{Bmatrix}
+p_{start}, p_{goal}
+\end{Bmatrix}$
+\end{displayquote}
+
+A visibility graph, $\gamma_{vis}(S^*)$, is a graph which is set of interior nodes representing the vertices of the set of obstacles, $S$, in the environment and edges which represents visible (which are not intersecting interior region of an obstacle) connections between these nodes \cite{92}. In this project we have updated this constraint in our algorithm. We have inserted all of the goal states $g_i \in G$ in the visibility graphs of each agent to calculate the shortest paths to all of these goal states rather than a specific $p_{start}$ and $p_{goal}$ points given in the definition. In the implementation phase, we have used the obstacles which are augmented with the Minkowski sums to calculate the free configuration space. Let these set of augmented polygonal obstacles represented with $S_i \subset S$. Algorithm to calculate the visibility graph of  $S^* := S \cup \begin{Bmatrix}
+g_i \in G
+\end{Bmatrix}$
+	
+\begin{algorithm}
+\KwData{Set of Vertices Included in $S^*$ }
+\KwResult{Visibility Graph of $S^*$ }
+Initialize a graph $\gamma = (V,E)$ where $V$ is the set of all vertices in $S^*$ and $E = \oslash$  \\
+\For{<all vertices $v \subset V$>}
+{		
+W = VISIBLE$\_$VERTICES($v$,S)\;
+Add edges W to list E\;
+}\
+
+\caption{VISIBILITY$\_$GRAPH}
+\end{algorithm}
+
+where $VISIBLE$\_$VERTICES(v,S)$ algorithm checks whether line segments drawn from $v$ to all vertices in $S$ is intersecting an interior area of any obstacle in the environment and returns the non-intersecting edges.  By using this $VISIBILITY$\_$GRAPH$ algorithm, $SHORTEST$\_$PATH$ algorithm is defined as follows:
+
+
+	
+\begin{algorithm}
+\KwData{A set $S$ of disjoint polygonal obstacles, position of agent, $p_{start}$, and all goal states $g_i \in G$}
+\KwResult{The shortest collision-free paths from $p_{start}$ to all goal states $g_i \in G$}
+* Assign $\gamma$ = VISIBILITY$\_$GRAPH$(S^*)$ \newline
+* Assign each arc $(v,w)$ in $\gamma_{vis}$ a weight, which is the Euclidian length of line segment drawn from $v$ to $w$ \newline
+\For{<Each goal state $g_i \in G$>}
+{
+* Use Dijkstra's algorithm to compute a shortest path between $p_{start}$ and $g_i \in G$ in $\gamma_{vis}$
+}
+\caption{SHORTEST$\_$PATH}
+\end{algorithm}
+  
+\begin{figure}[thpb]
+\centering
+\includegraphics[scale = 0.25]{visgraph2}
+\caption{Shorthest Paths to Goal States $g_i \in G$ in a Visibility Graph} \label{dijksttae_visibility}
+   \end{figure} 
+
+
+
+Figure \ref{dijksttae_visibility} shows a simulation output executed with 5 workspace obstacles and 6 goal states in desired formation shape. In this algorithm, agent first calculates its own visibility graph by adding goal states $g_i \in G$ in graph as nodes. The visibility graph is illustrated with red edges in the figure. Then it calculates the shortest paths to the goal states, which are given with green edges in the figure. We have used Dijkstra algorithm to compute the shortest path between two nodes in graph with multiple edges, each having a non-negative weight. In our work, the weights of the edges in $\gamma_{vis}$ , are calculated with the Euclidian distance between nodes in the workspace. Dijkstra algorithm is a tree search algorithm and time complexity of the original algorithm is $O(n^2)$ where $n$ is the number of the nodes in the graph. With the usage self balancing binary search tree, the algorithm requires $O(k+nlogn)$ time in the worst case where $k$ is the number of edges in the graph. The algorithm for the Dijkstra's is implemented as follows \cite{92}:
+
+	
+\begin{algorithm}
+\KwData{$\gamma_{vis}$ , Position of the agent "$source$\_$ node$"}
+\KwResult{Shortest Distance to goal states  $g_i \in G$ from the $source$\_$ node$ in $\gamma_{vis}$}
+\For{<Each Vertex $v \subset \gamma_{vis}$>}
+{		
+Distance[v] := $\infty$ \;
+Previous[v] := $undefined$ \;
+}
+Distance[$source$\_$ node$] :=0  \;
+Q:= The set of all vertices $g_i \subset \gamma_{vis}$ \;
+\While{<Q $\neq$ null>}
+{
+u:= Node in Q with smallest distance to $source$\_$ node$\;
+remove u from Q\;
+\For{<Each Neighbor v of u>}
+{
+alt:= Distance[u] + Cost Between u and v nodes\;
+\If{alt<Distance[v]}
+{
+Distance[v] :=alt\;
+Previous[v] :=u\;
+}
+}
+}
+return Distance[ ], Previous[ ]; \newline
+\caption{DIJKSTRA$\_$ALGORITHM}
+\end{algorithm}
+
+In algorithm above $Distance[x]$ function call, calculates the total cost from the \\ $source$\_$ node$ to the $x$ vertex, and $Previous[x]$ function call, returns the previous node in optimal path from $source$\_$ node$. This algorithm calculates the shortest paths from the position of an agent to all available goal states. If there is a line segment between the position of an agent and a goal state(i.e. agent can reach that goal state directly without colliding with any workspace obstacle), cost of reaching that goal state is the length of that line segment. These cost values are used to assign the agents to the goal states by minimizing the total displacement.  
+
+\subsubsection{Decision Process of Final Goal States}\hspace{0pt} \\
+We have provided an algorithm to calculate the costs to the goal states $g_i \in G$ with the help of Visibility Graphs and Dijkstra's algorithm in previous sections. These costs are defined as displacements on the shortest paths to the goal states in the visibility graphs for each agent. In this project, our aim is to minimize the total displacement of the individuals while achieving the desired formation shape. For this purpose we have implemented an algorithm to minimize the overall displacement of whole swarm while achieving a formation shape. The problem related with this process can be defined as follows:
+
+We have $n$ number of agents in our swarm and $n$ number of goal states $g_i \in G$ placed in desired formation shape. Each agent has reported their costs (i.e. minimum displacements) to reach each of these goal states and we have to implement an algorithm to assign the agents to these goal states by minimizing the total displacement of the swarm. This is a generalized assignment problem and we have used Hungarian algorithm which is a combinational optimization algorithm that solves this assignment problem. To implement this algorithm, a complete bipartite graph $G=(S,T,E)$ with $n \in S$ agents and $g_i \in T$ goal states is constructed.In this graph, each agent has a cost which is defined by the shortest path to the destination in the workspace for different goal points. 
+
+\begin{figure}[thpb]
+\centering
+\includegraphics[width=.25\textwidth]{bipartite}
+\caption{Sample Bipartite Graph Used in Assignment Problem \cite{102}}
+   \end{figure} 
+   
+
+
+We have defined a cost matrix  $C$ to implement the Hungarian algorithm. The dimensions of the cost matrix is $nxm$ in which each element represents the cost of assigning the goal state $m$ to the agent $n$.  Since we have equal number of agents and goal states, the cost matrix will be a square $nxn$ matrix.  The algorithm for the assignment process as follows:
+	
+\begin{algorithm}
+\KwData{Cost Matrix , $C$ }
+\KwResult{Assignment Array of Agents to Goal States}
+Label1  \;
+\For{Each Row, $R$, in $C$ }{
+Find the smallest element and subtract it from every element
+}
+Label 2  \; 
+\If{A column,$K$, contains more than one zero}
+{Repeat Label1 for each column, $K$}
+Label 3  \; 
+
+Select element in columns for which a distinct minimum weight has been determined and add to solution \newline
+Label 4 \;
+If it is not possible to reach the full solution, flag rows without solutions. Flag all columns in flagged rows that contain a zero. Flag all rows with a previously determined solution in previously flagged columns.
+     
+Label 5 \;
+From elements remaining in flagged rows and unflagged rows, determine the element which has smallest value and assign this value to $\gamma$. Subtract $\gamma$  from every unflagged element and add  $\gamma$ to every element that has been flagged twice.
+     
+Label6 \;
+Goto Label3 until full solution has been achieved. \newline    
+\caption{HUNGARIAN$\_$ALGORITHM}
+\end{algorithm}
+
+Hungarian algorithm returns a vector of $nx1$ and each row in this vector represents the goal state that the related agent is assigned. With this assignment, the total cost (i.e. total displacement) of the swarm is minimized. 
 
 \addtolength{\textheight}{-12cm}   % This command serves to balance the column lengths
                                   % on the last page of the document manually. It shortens

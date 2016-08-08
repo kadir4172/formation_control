@@ -60,4 +60,21 @@ Wikipedia.
   encyclopedia, 2016.
 \newblock [Online; accessed 10-February-2016].
 
+\bibitem{27}
+Kenji Shimada and David Gossard.
+\newblock Bubble mesh: Automated triangular meshing of non-manifold geometry by
+  sphere packing.
+\newblock In {\em ACM Symposium on Solid Modeling and Applications}, 1995.
+
+\bibitem{92}
+Mark Berg, Otfried Cheong, Kreveld. Marc, and Marc Overmars.
+\newblock {\em Computational Geometry}.
+\newblock Springer, 1998.
+
+\bibitem{102}
+Jop~Frederik Sibeyn.
+\newblock Graph algorithms.
+\newblock https://www8.cs.umu.se/~jopsi/dinf504/chap14.shtml, last visited on
+  April 2016.
+
 \end{thebibliography}
