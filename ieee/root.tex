@@ -205,7 +205,7 @@ In this paper, we propose a solution named Bubble Packing method, to achieve the
 
 
 \section{Artificial Forces Method}
-In Artificial Forces method we have implemented potential fields over each agent arised from the interactions between agents, formation shape and environment. The final positions of the agents at the formation shape  are determined with local equilibrium of the swarm in which every agent is at balance under the total force acting from the environment. Basically we have implemented three different kinds of artificial forces named; intermember forces representing the forces created by the other agents in the swarm to achieve collision avoidance, the attractive forces representing the forces created by the desired formation shape to attract the agent into the shape and repulsive forces created by the formation shape to keep agents inside the desired formation shape, obstacle forces to provide collision avoidance with workspace obstacles. We have updated the contour integral equations for these potential fields \cite{17} to be calculated on complex formations shapes and obstacles which do not have analytical expressions as following.
+In Artificial Forces method we have implemented potential fields over each agent arised from the interactions between agents, formation shape and environment. The final positions of the agents at the formation shape  are determined with local equilibrium of the swarm in which every agent is at balance under the total force acting from the environment. Basically we have implemented three different kinds of artificial forces named; intermember forces representing the forces created by the other agents in the swarm to achieve collision avoidance; the attractive forces representing the forces created by the desired formation shape to attract the agent into the shape; repulsive forces created by the formation shape to keep agents inside the desired formation shape; obstacle forces to provide collision avoidance with workspace obstacles. We have updated the contour integral equations for these potential fields \cite{17} to be calculated on complex formations shapes and obstacles which do not have analytical expressions as following.
 
 Let $f(z)$ is a complex function in a domain $D$ in the complex plane and let $C$ be simple closed contour contained in $D$ with initial point $a$ and terminal point  $b$. It is possible to take the integral of $f(z)$ along the contour $C$ \cite{wiki_contour}
 		
@@ -305,7 +305,7 @@ P_1, P_2, .. P_t \end{Bmatrix}$. Configuration for agent $i$ can be described wi
 C(R_i) = C_{free}(R_i,S) + C_{forb}(R_i,S)
 \end{equation}
 
-In our implementation each agent calculates its forbidden space by augmenting the workspace obstacles with the help of Minkowski sum method \cite{92}. Figure \ref{yasakli_bolge} shows a forbidden space related with an obstacle. Forbidden space for agent $i$, $C_{forb}(R_i, S)$, is the sum of the forbidden spaces calculated for each obstacle in the environment. Agents extract their forbidden space ,$C_{forb}(R_i, S)$, from the configuration space itself to calculate their free configuration spaces \cite{92}.
+In our implementation each agent calculates its forbidden space by augmenting the workspace obstacles with the help of Minkowski sum method \cite{92}. Figure \ref{yasakli_bolge} shows a forbidden space related with an obstacle. Forbidden space for agent $i$, $C_{forb}(R_i, S)$, is the sum of the forbidden spaces calculated for each obstacle in the environment. Agents extract their forbidden space from the configuration space itself to calculate their free configuration spaces \cite{92}.
 
 
 \begin{figure}[thpb]
@@ -335,7 +335,7 @@ g_i \in G
 \KwData{Set of Vertices Included in $S^*$ }
 \KwResult{Visibility Graph of $S^*$ }
 Initialize a graph $\gamma = (V,E)$ where $V$ is the set of all vertices in $S^*$ and $E = \oslash$  \\
-\For{<all vertices $v \subset V$>}
+\For{$<$all vertices $v \subset V$$>$}
 {		
 W = VISIBLE$\_$VERTICES($v$,S)\;
 Add edges W to list E\;
@@ -353,7 +353,7 @@ where $VISIBLE$\_$VERTICES(v,S)$ algorithm checks whether line segments drawn fr
 \KwResult{The shortest collision-free paths from $p_{start}$ to all goal states $g_i \in G$}
 * Assign $\gamma$ = VISIBILITY$\_$GRAPH$(S^*)$ \newline
 * Assign each arc $(v,w)$ in $\gamma_{vis}$ a weight, which is the Euclidian length of line segment drawn from $v$ to $w$ \newline
-\For{<Each goal state $g_i \in G$>}
+\For{$<$Each goal state $g_i \in G$$>$}
 {
 * Use Dijkstra's algorithm to compute a shortest path between $p_{start}$ and $g_i \in G$ in $\gamma_{vis}$
 }
@@ -373,12 +373,12 @@ Figure \ref{dijksttae_visibility} shows a simulation output executed with 5 work
 \subsubsection{Decision Process of Final Goal States}\hspace{0pt} \\
 We have provided an algorithm to calculate the costs to the goal states $g_i \in G$ with the help of Visibility Graphs and Dijkstra's algorithm in previous sections. These costs are defined as displacements on the shortest paths to the goal states in the visibility graphs for each agent. In this project, our aim is to minimize the total displacement of the individuals while achieving the desired formation shape. For this purpose we have implemented an algorithm to minimize the overall displacement of whole swarm while achieving a formation shape. The problem related with this process can be defined as follows:
 
-We have $n$ number of agents in our swarm and $n$ number of goal states $g_i \in G$ placed in desired formation shape. Each agent has reported their costs (i.e. minimum displacements) to reach each of these goal states and we have to implement an algorithm to assign the agents to these goal states by minimizing the total displacement of the swarm. This is a generalized assignment problem and we have used Hungarian algorithm which is a combinational optimization algorithm that solves this assignment problem. To implement this algorithm, a complete bipartite graph $G=(S,T,E)$ with $n \in S$ agents and $g_i \in T$ goal states is constructed.In this graph, each agent has a cost which is defined by the shortest path to the destination in the workspace for different goal points. 
+We have $n$ number of agents in our swarm and $n$ number of goal states $g_i \in G$ placed in desired formation shape. Each agent has reported their costs (i.e. minimum displacements) to reach each of these goal states and we have to implement an algorithm to assign the agents to these goal states by minimizing the total displacement of the swarm. This is a generalized assignment problem and we have used Hungarian algorithm which is a combinational optimization algorithm that solves this assignment problem. To implement this algorithm, a complete bipartite graph $G=(S,T,E)$ with $n \in S$ agents and $g_i \in T$ goal states is constructed.In this graph, each agent has a cost which is defined by the shortest path to the destination in the workspace for different goal points. Figure \ref{biprrtti} shows an example Bipartite Graph with 5 agents.
 
 \begin{figure}[thpb]
 \centering
 \includegraphics[width=.25\textwidth]{bipartite}
-\caption{Sample Bipartite Graph Used in Assignment Problem \cite{102}}
+\caption{Sample Bipartite Graph Used in Assignment Problem \cite{102}} \label{biprrtti}
    \end{figure} 
    
 
@@ -388,30 +388,28 @@ We have defined a cost matrix  $C$ to implement the Hungarian algorithm. The dim
 \section{Evaluation} 
 \subsection{Total Displacement of the Agents}  \label{total_dist_ref}
 		
-With Bubble Packing method, we aim to minimize the overall displacement of the agents in the swarm while getting the desired formation shape. The main consideration in this thesis is to reduce the expected energy consumption of the swarm by decreasing the required displacements of agents. To compare the total displacement of the swarm while getting the desired shape for three different methods, we have done Monte Carlo simulations with 1000 iterations. These simulations are handled for the same formation shapes with different initial conditions of the agents in the workspace. Trajectories of the agents are recorded from the initial positions to the goal states for both Artificial Forces and Bubble Packing methods. Sample outputs are illustrated in the following figures.		
+With Bubble Packing method, we aim to minimize the overall displacement of the agents in the swarm while getting the desired formation shape. The main consideration in this project is to reduce the expected energy consumption of the swarm by decreasing the required displacements of agents. To compare the total displacement of the swarm while getting the desired shape for two different methods, we have done Monte Carlo simulations with 1000 iterations. These simulations are handled for the same formation shapes with different initial conditions of the agents in the workspace. Trajectories of the agents are recorded from the initial positions to the goal states for both Artificial Forces and Bubble Packing methods. Figure \ref{shape1_ref} shows a simulation output in MATLAB environment where red circles represent the coverage circle of agent and green shapes represent workspace obstacles.		
 
 \begin{figure}[thpb]
-\caption{Formation Shape in MATLAB environment}
+\caption{Formation Shape in MATLAB environment}\label{shape1_ref}
 \centerline{\includegraphics[scale = 0.17]{Trajectories_Formation_Shape_1_2}}
-\end{figure} 	
-			
+\end{figure} 
+
+Trajectories of the agents towards to the desired shape in Artificial Forces method are shown at the Figure \ref{arto1}. It is possible to see that agents are not directed towards predetermined goal states, they are randomly placed in the desired shape. This approach increased the total displacements and settling times of the agents.		
 
 \begin{figure}[thpb]
 \caption{Agent Trajectories with Artificial Forces Method} \label{arto1}
 \centerline{\includegraphics[scale = 0.15]{Aritificial_Trajecories_1}}
 \end{figure} 	
-
-Trajectories of the agents towards to the desired shape in Artificial Forces method are shown at the Figure \ref{arto1}. It is possible to see that agents are not directed towards predetermined goal states, they are randomly placed in the desired shape. This approach increased the total displacements and settling times of the agents. 
+ 
+ Trajectories of the agents towards to the desired shape in Bubble Packing method is shown at the Figure \ref{bubble1}. In this method, each agent directly tries to reach its goal state. This approach reduces the total displacement and settling time.
 
 \begin{figure}[thpb]
-\caption{Bubble Packing Method Trajectories for Shape 1}
+\caption{Agent Trajectories with Bubble Packing Method}
 \centerline{\includegraphics[scale = 0.15]{Bubble_Trajectories_1}} \label{bubble1}
-\end{figure} 	
-
-
-Trajectories of the agents towards to the desired shape in Bubble Packing method is shown at the Figure \ref{bubble1}. In this method, each agent directly tries to reach its goal state. This approach reduces the total displacement and settling time.
+\end{figure}
 			
-It can be seen that the trajectories of the agents are more chaotic and complex in the Artificial Forces method when compared to the Bubble Packing method. Main cause for this situation, the agents are under the effect of a total force which is instantly changing both in amplitude and direction with the local interactions with the environment in Artificial Forces method. The only force component which provides the distribution of the agents in the formation shape homogeneously is the intermember forces which is dynamically changing so much with the local instant neighbors of the agents in the environment. On the other hand, Bubble Packing methods implements an algorithm in which every agent is directed to a goal state where total displacements in the environment is minimized. This approach prevents the chaotic appearance of the trajectories and minimizes the displacements of the agents. Because agents are trying to reach their goal states directly within these two methods. 
+It can be seen that the trajectories of the agents are more chaotic and complex in the Artificial Forces method when compared to the Bubble Packing method. Main cause for this situation, the agents are under the effect of a total force which is instantly changing both in amplitude and direction with the local interactions with the environment in Artificial Forces method. The only force component which provides the distribution of the agents in the formation shape homogeneously is the intermember forces which is dynamically changing so much with the local instant neighbors of the agents in the environment. On the other hand, Bubble Packing method implements an algorithm in which every agent is directed to a goal state where total displacements in the environment is minimized. This approach prevents the chaotic appearance of the trajectories and minimizes the displacements of the agents. Because agents are trying to reach their goal states directly within these two methods. 
 
 To compare the total displacements, we have done Monte Carlo simulations with 1000 iterations and the results are presented in Figure \ref{total_disp_1}. According to this figure, Artificial Forces method has a higher mean value of total travelled distance while achieving the same formation shape with same initial conditions.
 		
@@ -422,7 +420,7 @@ To compare the total displacements, we have done Monte Carlo simulations with 10
 
 
 \subsection{Dynamically Changing Formations} \label{dynamical_ref}
-In dynamic formation control, desired formation shape is changed dynamically in a smooth fashion. Agents have to adapt themselves to this changing formation shape and cover the shape in a smooth continuous manner.  Our Bubble Packing method determines goal states in a formation shape by applying interbubble forces and it is possible to keep this shape partitioning process running in the background to dynamically adapt the goal states to the changing formation shape. This process will adapt the swarm to the dynamically changing formation shape. Artificial forces method calculates control inputs for the individuals according to the current environment conditions and the formation shape. There is no need to update the algorithm for dynamically changing formation shapes, it already supports dynamically changing formations. 
+In dynamic formation control, desired formation shape is changed dynamically in a smooth fashion. Agents have to adapt themselves to this changing formation shape and cover the shape in a smooth continuous manner.  Our Bubble Packing method determines goal states in a formation shape by applying interbubble forces and it is possible to keep this shape partitioning process running in the background to dynamically adapt the goal states to the changing formation shape. Artificial forces method calculates control inputs for the individuals according to the current environment conditions and the formation shape. There is no need to update the algorithm for dynamically changing formation shapes, it already supports dynamically changing formations. 
 
 
 Figure \ref{multiple2_ref} illustrates a simulation result of dynamically changing formation shape. In this figure, agents reposition in the changing formation shape dynamically. 
@@ -432,7 +430,7 @@ Figure \ref{multiple2_ref} illustrates a simulation result of dynamically changi
 \centerline{\includegraphics[scale = 0.08]{multiple2}}
 \end{figure} 
 
-Since, agents directly adapts themselves to the changing formations shape in Artificial Forces method, it is expected to have a faster response than the Bubble Packing method. In Bubble Packing method, goal states are adapted to the changing formation shape and agents try to reach these goal states in runtime. This kind of approach introduces an additional latency to the response of the swarm to dynamically changing formation shapes. This situation is illustrated in Figure \ref{combo3_ref}.We have compared the responses of these two algorithms to dynamically changing formation shapes. Bubble Packing and Artificial Force algorithms are executed with the same dynamical formation shapes and same initial positions of the agents. In these figures, red circles are representing the agents' positions with Bubble Packing method and green circles are representing the agents' positions with Artificial Forces method at the same time instance relative to the beginning of the simulations. Formation shape with blue line illustrates the current formation shape. It can be seen that the green agents are adapted to the current formation shape better than the red ones. The shape with dotted red line, represents the estimated coverage area of red agents in the environment and this shape differs from the current formation shape locally at some boundary regions. This shows that agents response to the dynamically changing formation shape faster with Artificial Forces method. Bubble Packing algorithm has a slower response to the dynamically changing shapes. It is appropriate to use Artificial Forces method in rapidly changing dynamical shapes if it is critical to adapt the swarm to the formation with low latency.		 
+Since, agents directly adapts themselves to the changing formations shape in Artificial Forces method, it is expected to have a faster response than the Bubble Packing method. In Bubble Packing method, goal states are adapted to the changing formation shape and agents try to reach these goal states in runtime. This kind of approach introduces an additional latency to the response of the swarm to dynamically changing formation shapes. This situation is illustrated in Figure \ref{combo3_ref}.We have compared the responses of these two algorithms to dynamically changing formation shapes. Bubble Packing and Artificial Force algorithms are executed with the same dynamical formation shapes and same initial positions of the agents. In these figures, red circles are representing the agents' positions with Bubble Packing method and green circles are representing the agents' positions with Artificial Forces method at the same time instance relative to the beginning of the simulations. Formation shape with blue line illustrates the current formation shape. It can be seen that the green agents are adapted to the current formation shape better than the red ones. The shape with dotted red line, represents the estimated coverage area of red agents in the environment and this shape differs from the current formation shape locally at some boundary regions. This shows that agents' response to the dynamically changing formation shape faster with Artificial Forces method. Bubble Packing algorithm has a slower response to the dynamically changing shapes. It is appropriate to use Artificial Forces method in rapidly changing dynamical shapes if it is critical to adapt the swarm to the formation with low latency.		 
 
 
 \begin{figure}[thpb]
@@ -441,6 +439,8 @@ Since, agents directly adapts themselves to the changing formations shape in Art
 \end{figure} 
 
 
+\section{Conclusion}
+In this project, we have implemented 2 different solutions, Bubble Packing and Artificial Forces methods, for dynamical formation control problem. Bubble Packing method has better performance in total displacement metric due to the absence of predetermined goal states in Artificial Forces method. On the other hand, Artificial Forces method has better response to the dynamically changing formations than the Bubble Packing method, because it directly applies individual control laws based upon the instant conditions of the workspace. 
 
 \addtolength{\textheight}{-12cm}   % This command serves to balance the column lengths
                                   % on the last page of the document manually. It shortens

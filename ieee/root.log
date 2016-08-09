@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.15 (TeX Live 2015/dev/Debian) (preloaded format=pdflatex 2016.6.10)  9 AUG 2016 11:43
+This is pdfTeX, Version 3.14159265-2.6-1.40.15 (TeX Live 2015/dev/Debian) (preloaded format=pdflatex 2016.6.10)  9 AUG 2016 14:49
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -565,8 +565,8 @@ File: bipartite.png Graphic file (type png)
  <use bipartite.png>
 Package pdftex.def Info: bipartite.png used on input line 380.
 (pdftex.def)             Requested size: 126.47249pt x 213.62411pt.
-
-<Trajectories_Formation_Shape_1_2.png, id=42, 1063.72406pt x 661.72218pt>
+ [7 <./visgraph2.png> <./bipartite.png>]
+<Trajectories_Formation_Shape_1_2.png, id=50, 1063.72406pt x 661.72218pt>
 File: Trajectories_Formation_Shape_1_2.png Graphic file (type png)
 
 <use Trajectories_Formation_Shape_1_2.png>
@@ -574,31 +574,31 @@ Package pdftex.def Info: Trajectories_Formation_Shape_1_2.png used on input lin
 e 395.
 (pdftex.def)             Requested size: 180.83069pt x 112.49127pt.
 
-<Aritificial_Trajecories_1.png, id=43, 1541.76pt x 735.548pt>
+<Aritificial_Trajecories_1.png, id=51, 1541.76pt x 735.548pt>
 File: Aritificial_Trajecories_1.png Graphic file (type png)
 
 <use Aritificial_Trajecories_1.png>
-Package pdftex.def Info: Aritificial_Trajecories_1.png used on input line 401.
+Package pdftex.def Info: Aritificial_Trajecories_1.png used on input line 402.
 (pdftex.def)             Requested size: 231.25401pt x 110.32744pt.
- [7 <./visgraph2.png> <./bipartite.png>]
+
 <Bubble_Trajectories_1.png, id=52, 1541.76pt x 735.548pt>
 File: Bubble_Trajectories_1.png Graphic file (type png)
 
 <use Bubble_Trajectories_1.png>
-Package pdftex.def Info: Bubble_Trajectories_1.png used on input line 408.
+Package pdftex.def Info: Bubble_Trajectories_1.png used on input line 409.
 (pdftex.def)             Requested size: 231.25401pt x 110.32744pt.
 
 <Total_Energy_Shape_1.png, id=53, 1541.76pt x 735.548pt>
 File: Total_Energy_Shape_1.png Graphic file (type png)
 
 <use Total_Energy_Shape_1.png>
-Package pdftex.def Info: Total_Energy_Shape_1.png used on input line 420.
+Package pdftex.def Info: Total_Energy_Shape_1.png used on input line 418.
 (pdftex.def)             Requested size: 277.50482pt x 132.39293pt.
  <multiple2.png, id=54, 2692.0575pt x 2240.37pt>
 File: multiple2.png Graphic file (type png)
 
 <use multiple2.png>
-Package pdftex.def Info: multiple2.png used on input line 432.
+Package pdftex.def Info: multiple2.png used on input line 430.
 (pdftex.def)             Requested size: 215.369pt x 179.23326pt.
  [8 <./Trajectories_Formation_Shape_1_2.png> <./Aritificial_Trajecories_1.png (
 PNG copy)> <./Bubble_Trajectories_1.png (PNG copy)> <./Total_Energy_Shape_1.png
@@ -606,7 +606,7 @@ PNG copy)> <./Bubble_Trajectories_1.png (PNG copy)> <./Total_Energy_Shape_1.png
 File: combo3.png Graphic file (type png)
 
 <use combo3.png>
-Package pdftex.def Info: combo3.png used on input line 440.
+Package pdftex.def Info: combo3.png used on input line 438.
 (pdftex.def)             Requested size: 231.25401pt x 110.32744pt.
 Missing character: There is no Ò in font ptmr7t!
 Missing character: There is no Ó in font ptmr7t!
@@ -642,6 +642,7 @@ Missing character: There is no Ó in font ptmr7t!
 Missing character: There is no Ò in font ptmr7t!
 Missing character: There is no Ñ in font ptmr7t!
 Missing character: There is no Ó in font ptmr7t!
+ [9 <./multiple2.png> <./combo3.png (PNG copy)>]
 Missing character: There is no Ò in font ptmr7t!
 Missing character: There is no Ó in font ptmr7t!
 Missing character: There is no Ð in font ptmr7t!
@@ -652,7 +653,6 @@ Missing character: There is no Ð in font ptmr7t!
 Missing character: There is no Ò in font ptmr7t!
 Missing character: There is no Ó in font ptmr7t!
 Missing character: There is no Ð in font ptmr7t!
- [9 <./multiple2.png> <./combo3.png (PNG copy)>]
 Missing character: There is no Ò in font ptmr7t!
 Missing character: There is no Ó in font ptmr7t!
 Missing character: There is no Ð in font ptmr7t!
@@ -688,34 +688,33 @@ Before submitting the final camera ready copy, remember to:
  uses only Type 1 fonts and that every step in the generation
  process uses the US letter (8.5in X 11in) paper size.
 
-[10
-
-] (./root.aux) ) 
+[10] (./root.aux) ) 
 Here is how much of TeX's memory you used:
- 5661 strings out of 494409
- 83128 string characters out of 6164777
- 189544 words of memory out of 5000000
- 8842 multiletter control sequences out of 15000+600000
+ 5663 strings out of 494409
+ 83150 string characters out of 6164777
+ 189560 words of memory out of 5000000
+ 8844 multiletter control sequences out of 15000+600000
  42562 words of font info for 86 fonts, out of 8000000 for 9000
  372 hyphenation exceptions out of 8191
  51i,16n,27p,2548b,368s stack positions out of 5000i,500n,10000p,200000b,80000s
-{/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc}</us
-r/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/shar
-e/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texl
-ive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></usr/share/texlive/tex
-mf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/share/texlive/texmf-dist
-/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/share/texlive/texmf-dist/fonts/
-type1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/p
-ublic/amsfonts/cm/cmr6.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/am
-sfonts/cm/cmr7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/c
-m/cmr8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10
-.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></
-usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/sha
-re/texlive/texmf-dist/fonts/type1/urw/courier/ucrr8a.pfb></usr/share/texlive/te
-xmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/share/texlive/texmf-dist/fonts/
-type1/urw/times/utmbi8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/time
-s/utmr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on root.pdf (10 pages, 710071 bytes).
+{/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc}<
+/usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/s
+hare/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/t
+exlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></usr/share/texlive/
+texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/share/texlive/texmf-d
+ist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/share/texlive/texmf-dist/fon
+ts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type
+1/public/amsfonts/cm/cmr6.pfb></usr/share/texlive/texmf-dist/fonts/type1/public
+/amsfonts/cm/cmr7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfont
+s/cm/cmr8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cms
+y10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb
+></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/
+share/texlive/texmf-dist/fonts/type1/urw/courier/ucrr8a.pfb></usr/share/texlive
+/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/share/texlive/texmf-dist/fon
+ts/type1/urw/times/utmbi8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/t
+imes/utmr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmri8a.pf
+b>
+Output written on root.pdf (10 pages, 710272 bytes).
 PDF statistics:
  121 PDF objects out of 1000 (max. 8388607)
  77 compressed objects within 1 object stream
