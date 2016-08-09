@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.15 (TeX Live 2015/dev/Debian) (preloaded format=pdflatex 2016.6.10)  8 AUG 2016 16:46
+This is pdfTeX, Version 3.14159265-2.6-1.40.15 (TeX Live 2015/dev/Debian) (preloaded format=pdflatex 2016.6.10)  9 AUG 2016 11:43
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -276,11 +276,7 @@ File: csquotes.cfg
 ))
 Package csquotes Info: Checking for multilingual support...
 Package csquotes Info: ... none found.
- (./root.aux
-
-LaTeX Warning: Label `figurelabel' multiply defined.
-
-)
+ (./root.aux)
 \openout1 = `root.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 43.
@@ -295,7 +291,8 @@ LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 43.
 LaTeX Font Info:    ... okay on input line 43.
 LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 43.
 LaTeX Font Info:    ... okay on input line 43.
- (/usr/share/texlive/texmf-dist/tex/latex/graphics/graphicx.sty
+
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/graphicx.sty
 Package: graphicx 2014/04/25 v1.0g Enhanced LaTeX Graphics (DPC,SPQR)
 
 (/usr/share/texlive/texmf-dist/tex/latex/graphics/graphics.sty
@@ -501,90 +498,116 @@ Missing character: There is no Ò in font ptmr7t!
 Missing character: There is no Ó in font ptmr7t!
 Missing character: There is no Ò in font ptmr7t!
 Missing character: There is no Ó in font ptmr7t!
+Missing character: There is no Ò in font ptmr7t!
+Missing character: There is no Ó in font ptmr7t!
+Missing character: There is no Ò in font ptmr7t!
+Missing character: There is no Ó in font ptmr7t!
+Missing character: There is no Ò in font ptmr7t!
+Missing character: There is no Ó in font ptmr7t!
+Missing character: There is no Ò in font ptmr7t!
+Missing character: There is no Ó in font ptmr7t!
+Missing character: There is no Ò in font ptmr7t!
+Missing character: There is no Ó in font ptmr7t!
+Missing character: There is no Ò in font ptmr7t!
+Missing character: There is no Ó in font ptmr7t!
+Missing character: There is no Ò in font ptmr7t!
+Missing character: There is no Ó in font ptmr7t!
+Missing character: There is no Ò in font ptmr7t!
+Missing character: There is no Ó in font ptmr7t!
 
-<interbubble_forces.png, id=14, 396.7322pt x 240.14719pt>
-File: interbubble_forces.png Graphic file (type png)
+Underfull \hbox (badness 10000) in paragraph at lines 162--170
 
-<use interbubble_forces.png>
-Package pdftex.def Info: interbubble_forces.png used on input line 167.
-(pdftex.def)             Requested size: 27.77408pt x 16.81201pt.
-Missing character: There is no Ò in font ptmr7t!
-Missing character: There is no Ó in font ptmr7t!
-Missing character: There is no Ò in font ptmr7t!
-Missing character: There is no Ó in font ptmr7t!
-Missing character: There is no Ò in font ptmr7t!
-Missing character: There is no Ó in font ptmr7t!
-Missing character: There is no Ò in font ptmr7t!
-Missing character: There is no Ó in font ptmr7t!
-Missing character: There is no Ò in font ptmr7t!
-Missing character: There is no Ó in font ptmr7t!
-Missing character: There is no Ò in font ptmr7t!
-Missing character: There is no Ó in font ptmr7t!
-Missing character: There is no Ò in font ptmr7t!
-Missing character: There is no Ó in font ptmr7t!
-Missing character: There is no Ò in font ptmr7t!
-Missing character: There is no Ó in font ptmr7t!
- [2 <./interbubble_forces.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 182--190
+ []
+
+[2]
+Underfull \hbox (badness 10000) in paragraph at lines 171--172
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 191--192
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 200--202
+Underfull \hbox (badness 10000) in paragraph at lines 180--182
 []\OT1/ptm/m/n/10 Formation con-trol prob-lem have dif-fer-ent
  []
 
 
-Underfull \hbox (badness 2922) in paragraph at lines 200--202
+Underfull \hbox (badness 2922) in paragraph at lines 180--182
 \OT1/ptm/m/n/10 Samitha and Pub-udu [[]] have pre-sented an ar-ti-fi-cial
  []
 
-[3] [4]
+[3] [4] <interbubble_forces.png, id=27, 396.7322pt x 240.14719pt>
 File: interbubble_forces.png Graphic file (type png)
- <use interbubble_forces.png>
-Package pdftex.def Info: interbubble_forces.png used on input line 296.
+
+<use interbubble_forces.png>
+Package pdftex.def Info: interbubble_forces.png used on input line 276.
 (pdftex.def)             Requested size: 158.69006pt x 96.05716pt.
- [5]
-<bubble_packing2.png, id=35, 709.90219pt x 152.06813pt>
+
+<bubble_packing2.png, id=29, 709.90219pt x 152.06813pt>
 File: bubble_packing2.png Graphic file (type png)
 
 <use bubble_packing2.png>
-Package pdftex.def Info: bubble_packing2.png used on input line 308.
+Package pdftex.def Info: bubble_packing2.png used on input line 288.
 (pdftex.def)             Requested size: 212.97229pt x 45.62079pt.
- <Forbidden.png, id=36, 222.8325pt x 249.93375pt>
+ [5 <./interbubble_forces.png>]
+<Forbidden.png, id=36, 222.8325pt x 249.93375pt>
 File: Forbidden.png Graphic file (type png)
-
-<use Forbidden.png>
-Package pdftex.def Info: Forbidden.png used on input line 343.
+ <use Forbidden.png>
+Package pdftex.def Info: Forbidden.png used on input line 313.
 (pdftex.def)             Requested size: 100.2737pt x 112.46915pt.
- [6 <./bubble_packing2.png> <./Forbidden.png>]
-Underfull \hbox (badness 2521) in paragraph at lines 377--378
-\OT1/ptm/m/n/10 whether line seg-ments drawn from $\OML/cmm/m/it/10 v$ \OT1/ptm
-/m/n/10 to all ver-tices
- []
 
-
-Underfull \hbox (badness 3407) in paragraph at lines 377--378
-\OT1/ptm/m/n/10 in $\OML/cmm/m/it/10 S$ \OT1/ptm/m/n/10 is in-ter-sect-ing an i
-n-te-rior area of any ob-sta-
- []
-
-<visgraph2.png, id=40, 946.28531pt x 638.385pt>
+<visgraph2.png, id=37, 946.28531pt x 638.385pt>
 File: visgraph2.png Graphic file (type png)
  <use visgraph2.png>
-Package pdftex.def Info: visgraph2.png used on input line 395.
+Package pdftex.def Info: visgraph2.png used on input line 365.
 (pdftex.def)             Requested size: 236.57074pt x 159.59586pt.
- [7 <./visgraph2.png>] <bipartite.png, id=49, 213.04594pt x 359.84438pt>
+ [6 <./bubble_packing2.png> <./Forbidden.png>]
+<bipartite.png, id=41, 213.04594pt x 359.84438pt>
 File: bipartite.png Graphic file (type png)
-
-<use bipartite.png>
-Package pdftex.def Info: bipartite.png used on input line 441.
+ <use bipartite.png>
+Package pdftex.def Info: bipartite.png used on input line 380.
 (pdftex.def)             Requested size: 126.47249pt x 213.62411pt.
+
+<Trajectories_Formation_Shape_1_2.png, id=42, 1063.72406pt x 661.72218pt>
+File: Trajectories_Formation_Shape_1_2.png Graphic file (type png)
+
+<use Trajectories_Formation_Shape_1_2.png>
+Package pdftex.def Info: Trajectories_Formation_Shape_1_2.png used on input lin
+e 395.
+(pdftex.def)             Requested size: 180.83069pt x 112.49127pt.
+
+<Aritificial_Trajecories_1.png, id=43, 1541.76pt x 735.548pt>
+File: Aritificial_Trajecories_1.png Graphic file (type png)
+
+<use Aritificial_Trajecories_1.png>
+Package pdftex.def Info: Aritificial_Trajecories_1.png used on input line 401.
+(pdftex.def)             Requested size: 231.25401pt x 110.32744pt.
+ [7 <./visgraph2.png> <./bipartite.png>]
+<Bubble_Trajectories_1.png, id=52, 1541.76pt x 735.548pt>
+File: Bubble_Trajectories_1.png Graphic file (type png)
+
+<use Bubble_Trajectories_1.png>
+Package pdftex.def Info: Bubble_Trajectories_1.png used on input line 408.
+(pdftex.def)             Requested size: 231.25401pt x 110.32744pt.
+
+<Total_Energy_Shape_1.png, id=53, 1541.76pt x 735.548pt>
+File: Total_Energy_Shape_1.png Graphic file (type png)
+
+<use Total_Energy_Shape_1.png>
+Package pdftex.def Info: Total_Energy_Shape_1.png used on input line 420.
+(pdftex.def)             Requested size: 277.50482pt x 132.39293pt.
+ <multiple2.png, id=54, 2692.0575pt x 2240.37pt>
+File: multiple2.png Graphic file (type png)
+
+<use multiple2.png>
+Package pdftex.def Info: multiple2.png used on input line 432.
+(pdftex.def)             Requested size: 215.369pt x 179.23326pt.
+ [8 <./Trajectories_Formation_Shape_1_2.png> <./Aritificial_Trajecories_1.png (
+PNG copy)> <./Bubble_Trajectories_1.png (PNG copy)> <./Total_Energy_Shape_1.png
+ (PNG copy)>] <combo3.png, id=59, 1541.76pt x 735.548pt>
+File: combo3.png Graphic file (type png)
+
+<use combo3.png>
+Package pdftex.def Info: combo3.png used on input line 440.
+(pdftex.def)             Requested size: 231.25401pt x 110.32744pt.
 Missing character: There is no Ò in font ptmr7t!
 Missing character: There is no Ó in font ptmr7t!
 Missing character: There is no Ò in font ptmr7t!
@@ -595,7 +618,7 @@ Missing character: There is no Ò in font ptmr7t!
 Missing character: There is no Ó in font ptmr7t!
 Missing character: There is no Ò in font ptmr7t!
 Missing character: There is no Ó in font ptmr7t!
- (./root.bbl [8 <./bipartite.png>]
+ (./root.bbl
 Underfull \hbox (badness 10000) in paragraph at lines 75--79
 []\OT1/ptm/m/n/8 Jop Fred-erik Sibeyn.  Graph al-go-rithms.
  []
@@ -629,6 +652,7 @@ Missing character: There is no Ð in font ptmr7t!
 Missing character: There is no Ò in font ptmr7t!
 Missing character: There is no Ó in font ptmr7t!
 Missing character: There is no Ð in font ptmr7t!
+ [9 <./multiple2.png> <./combo3.png (PNG copy)>]
 Missing character: There is no Ò in font ptmr7t!
 Missing character: There is no Ó in font ptmr7t!
 Missing character: There is no Ð in font ptmr7t!
@@ -648,7 +672,6 @@ Missing character: There is no Ò in font ptmr7t!
 Missing character: There is no Ó in font ptmr7t!
 Missing character: There is no Ò in font ptmr7t!
 Missing character: There is no Ó in font ptmr7t!
- [9]
 Missing character: There is no Ò in font ptmr7t!
 Missing character: There is no Ó in font ptmr7t!
 Missing character: There is no Ò in font ptmr7t!
@@ -667,39 +690,35 @@ Before submitting the final camera ready copy, remember to:
 
 [10
 
-] (./root.aux)
-
-LaTeX Warning: There were multiply-defined labels.
-
- ) 
+] (./root.aux) ) 
 Here is how much of TeX's memory you used:
- 5625 strings out of 494409
- 82254 string characters out of 6164777
- 189527 words of memory out of 5000000
- 8812 multiletter control sequences out of 15000+600000
+ 5661 strings out of 494409
+ 83128 string characters out of 6164777
+ 189544 words of memory out of 5000000
+ 8842 multiletter control sequences out of 15000+600000
  42562 words of font info for 86 fonts, out of 8000000 for 9000
  372 hyphenation exceptions out of 8191
- 51i,16n,27p,2548b,372s stack positions out of 5000i,500n,10000p,200000b,80000s
-{/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/share/texliv
-e/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texlive/texm
-f-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texmf-dist
-/fonts/type1/public/amsfonts/cm/cmmi6.pfb></usr/share/texlive/texmf-dist/fonts/
-type1/public/amsfonts/cm/cmmi7.pfb></usr/share/texlive/texmf-dist/fonts/type1/p
-ublic/amsfonts/cm/cmmi8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/a
-msfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts
-/cm/cmr6.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7
-.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></u
-sr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/sha
-re/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/share/texl
-ive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/share/texlive/tex
-mf-dist/fonts/type1/urw/courier/ucrr8a.pfb></usr/share/texlive/texmf-dist/fonts
-/type1/urw/times/utmb8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/time
-s/utmbi8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmr8a.pfb><
-/usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on root.pdf (10 pages, 339639 bytes).
+ 51i,16n,27p,2548b,368s stack positions out of 5000i,500n,10000p,200000b,80000s
+{/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc}</us
+r/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/shar
+e/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texl
+ive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></usr/share/texlive/tex
+mf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/share/texlive/texmf-dist
+/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/share/texlive/texmf-dist/fonts/
+type1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/p
+ublic/amsfonts/cm/cmr6.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/am
+sfonts/cm/cmr7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/c
+m/cmr8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10
+.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></
+usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/sha
+re/texlive/texmf-dist/fonts/type1/urw/courier/ucrr8a.pfb></usr/share/texlive/te
+xmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/share/texlive/texmf-dist/fonts/
+type1/urw/times/utmbi8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/time
+s/utmr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
+Output written on root.pdf (10 pages, 710071 bytes).
 PDF statistics:
- 114 PDF objects out of 1000 (max. 8388607)
+ 121 PDF objects out of 1000 (max. 8388607)
  77 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
- 26 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 56 words of extra memory for PDF output out of 10000 (max. 10000000)
 
