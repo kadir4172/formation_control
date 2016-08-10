@@ -1,80 +1,81 @@
 \begin{thebibliography}{10}
+\providecommand{\url}[1]{#1}
+\csname url@rmstyle\endcsname
+\providecommand{\newblock}{\relax}
+\providecommand{\bibinfo}[2]{#2}
+\providecommand\BIBentrySTDinterwordspacing{\spaceskip=0pt\relax}
+\providecommand\BIBentryALTinterwordstretchfactor{4}
+\providecommand\BIBentryALTinterwordspacing{\spaceskip=\fontdimen2\font plus
+\BIBentryALTinterwordstretchfactor\fontdimen3\font minus
+  \fontdimen4\font\relax}
+\providecommand\BIBforeignlanguage[2]{{%
+\expandafter\ifx\csname l@#1\endcsname\relax
+\typeout{** WARNING: IEEEtran.bst: No hyphenation pattern has been}%
+\typeout{** loaded for the language `#1'. Using the pattern for}%
+\typeout{** the default language instead.}%
+\else
+\language=\csname l@#1\endcsname
+\fi
+#2}}
 
 \bibitem{12}
-Kiattisin Kanjanawanishkul.
-\newblock Formation control of mobile robots: Survey.
-\newblock n.d.
+K.~Kanjanawanishkul, ``Coordinated path following control and formation control
+  of mobile robots,'' Ph.D. dissertation, Univ. of Tubingen, Tubingen, Germany,
+  2010.
 
 \bibitem{16}
-Magnus Egerstedt and Xiaoming Hu.
-\newblock Formation constrained multi-agent control.
-\newblock {\em IEEE Transactions On Robotics And Automation}, 17:947--951,
+M.~Egerstedt and X.~Hu, ``Formation constrained multi-agent control,''
+  \emph{IEEE Transactions On Robotics And Automation}, vol.~17, pp. 947--951,
   2001.
 
 \bibitem{17}
-Samitha Ekanayake and Pubudu Pathirana.
-\newblock Formations of robotic swarm: An artificial force based approach.
-\newblock {\em International Journal of Advanced Robotic Systems}, 7:173--190,
-  2010.
+S.~Ekanayake and P.~Pathirana, ``Formations of robotic swarm: An artificial
+  force based approach,'' \emph{International Journal of Advanced Robotic
+  Systems}, vol.~7, pp. 173--190, 2010.
 
 \bibitem{8}
-S.P. Hou, C.C. Cheah, and J.J.E. Slotine.
-\newblock Dynamic region following formation control for a swarm of robots.
-\newblock In {\em ICRA}, 2009.
+S.~Hou, C.~Cheah, and J.~Slotine, ``Dynamic region following formation control
+  for a swarm of robots,'' in \emph{ICRA}, 2009.
 
 \bibitem{18}
-Aveek Das, Rafael Fierro, Vijay Kumar, James Ostrowski, John Spletzer, and
-  Camilla Taylor.
-\newblock A vision-based formation control framework.
-\newblock {\em IEEE Transactions on Robotics and Automation}, 18:813--825,
-  2002.
+A.~Das, R.~Fierro, V.~Kumar, J.~Ostrowski, J.~Spletzer, and C.~Taylor, ``A
+  vision-based formation control framework,'' \emph{IEEE Transactions on
+  Robotics and Automation}, vol.~18, pp. 813--825, 2002.
 
 \bibitem{23}
-Anthony Lewis and Kar-Han Tan.
-\newblock High precision formation control of mobile robots using virtual
-  structures.
-\newblock {\em Autonomous Robots}, 4:387--403, 1997.
+A.~Lewis and K.~Tan, ``High precision formation control of mobile robots using
+  virtual structures,'' \emph{Autonomous Robots}, vol.~4, pp. 387--403, 1997.
 
 \bibitem{24}
-Jimming Cheng, Winston Cheng, and Radhika Nagpal.
-\newblock Robust and self-repairing formation control for swarms of mobile
-  agents.
-\newblock In {\em AAAI 20th National Conference on Artificial Intelligence},
-  2005.
+W.~C. J.~Cheng and R.~Nagpal, ``Robust and self-repairing formation control for
+  swarms of mobile agents,'' in \emph{AAAI 20th National Conference on
+  Artificial Intelligence}, 2005.
 
 \bibitem{25}
-Calin Belta and Vijay Kumar.
-\newblock Abstraction and control for groups of robots.
-\newblock {\em IEEE Transactions on Robotics and Automation}, 20:865--875,
+C.~Belta and V.~Kumar, ``Abstraction and control for groups of robots,''
+  \emph{IEEE Transactions on Robotics and Automation}, vol.~20, pp. 865--875,
   2004.
 
 \bibitem{99}
-Dorigo et~al.
-\newblock Swarmanoid: A novel concept for the study of heterogeneous robotic
-  swarms.
-\newblock {\em IEEE Robotics $\&$ Automation Magazine}, 20:60--71, 2013.
+M.~D. et~al., ``Swarmanoid: A novel concept for the study of heterogeneous
+  robotic swarms,'' \emph{IEEE Robotics $\&$ Automation Magazine}, vol.~20, pp.
+  60--71, 2013.
 
 \bibitem{wiki_contour}
-Wikipedia.
-\newblock Methods of contour integration --- {W}ikipedia{,} the free
-  encyclopedia, 2016.
-\newblock [Online; accessed 10-February-2016].
+M.~L. Rasulov, \emph{Methods of Contour Integration}, 3rd~ed., W.~T.~K.
+  H.~A.~Lauwerier, Ed.\hskip 1em plus 0.5em minus 0.4em\relax Elsevier, 2014.
 
 \bibitem{27}
-Kenji Shimada and David Gossard.
-\newblock Bubble mesh: Automated triangular meshing of non-manifold geometry by
-  sphere packing.
-\newblock In {\em ACM Symposium on Solid Modeling and Applications}, 1995.
+K.~Shimada and D.~Gossard, ``Bubble mesh: Automated triangular meshing of
+  non-manifold geometry by sphere packing,'' in \emph{ACM Symposium on Solid
+  Modeling and Applications}, 1995.
 
 \bibitem{92}
-Mark Berg, Otfried Cheong, Kreveld. Marc, and Marc Overmars.
-\newblock {\em Computational Geometry}.
-\newblock Springer, 1998.
+M.~Berg, O.~Cheong, M.~Kreveld, and M.~Overmars, \emph{Computational
+  Geometry}.\hskip 1em plus 0.5em minus 0.4em\relax Springer, 1998.
 
 \bibitem{102}
-Jop~Frederik Sibeyn.
-\newblock Graph algorithms.
-\newblock https://www8.cs.umu.se/~jopsi/dinf504/chap14.shtml, last visited on
-  April 2016.
+J.~Sibeyn, ``Graph algorithms,'' https://www8.cs.umu.se/~jopsi/dinf504/
+  chap14.shtml, last visited on April 2016.
 
 \end{thebibliography}
