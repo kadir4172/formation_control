@@ -1,4 +1,4 @@
-This is BibTeX, Version 0.99d (TeX Live 2015/dev/Debian)
+This is BibTeX, Version 0.99d (TeX Live 2013/Debian)
 Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
 The top-level auxiliary file: root.aux
 The style file: IEEEtran.bst
@@ -11,46 +11,51 @@ Database file #1: thesis_references.bib
 -- IEEEtran.bst version 1.11 (2003/04/02) by Michael Shell.
 -- http://www.ctan.org/tex-archive/macros/latex/contrib/supported/IEEEtran/
 -- See the "IEEEtran_bst_HOWTO.pdf" manual for usage information.
+Too many commas in name 1 of "Fang Liao, Rodney Teo, Jian Liang Wang, Xiangxu Dong, Feng Lin and Kemao Peng" for entry 504
+while executing---line 4725 of file IEEEtran.bst
+Too many commas in name 1 of "Fang Liao, Rodney Teo, Jian Liang Wang, Xiangxu Dong, Feng Lin and Kemao Peng" for entry 504
+while executing---line 4725 of file IEEEtran.bst
 
 Done.
-You've used 13 entries,
+You've used 14 entries,
             3975 wiz_defined-function locations,
-            870 strings with 8779 characters,
-and the built_in function-call counts, 7997 in all, are:
-= -- 635
-> -- 171
-< -- 54
-+ -- 93
-- -- 30
-* -- 362
-:= -- 1270
-add.period$ -- 26
-call.type$ -- 13
-change.case$ -- 15
-chr.to.int$ -- 126
-cite$ -- 13
-duplicate$ -- 600
-empty$ -- 697
-format.name$ -- 39
-if$ -- 1830
+            874 strings with 9142 characters,
+and the built_in function-call counts, 7583 in all, are:
+= -- 618
+> -- 136
+< -- 45
++ -- 73
+- -- 24
+* -- 333
+:= -- 1278
+add.period$ -- 28
+call.type$ -- 14
+change.case$ -- 16
+chr.to.int$ -- 99
+cite$ -- 14
+duplicate$ -- 593
+empty$ -- 673
+format.name$ -- 31
+if$ -- 1711
 int.to.chr$ -- 0
-int.to.str$ -- 13
-missing$ -- 103
-newline$ -- 59
-num.names$ -- 15
-pop$ -- 248
+int.to.str$ -- 14
+missing$ -- 99
+newline$ -- 62
+num.names$ -- 16
+pop$ -- 231
 preamble$ -- 1
 purify$ -- 0
 quote$ -- 2
-skip$ -- 648
+skip$ -- 622
 stack$ -- 0
-substring$ -- 296
-swap$ -- 439
+substring$ -- 234
+swap$ -- 410
 text.length$ -- 12
 text.prefix$ -- 0
 top$ -- 5
 type$ -- 0
 warning$ -- 0
-while$ -- 32
-width$ -- 15
-write$ -- 135
+while$ -- 30
+width$ -- 16
+write$ -- 143
+(There were 2 error messages)

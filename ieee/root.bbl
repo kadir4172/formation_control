@@ -33,28 +33,36 @@ S.~Ekanayake and P.~Pathirana, ``Formations of robotic swarm: An artificial
   force based approach,'' \emph{International Journal of Advanced Robotic
   Systems}, vol.~7, pp. 173--190, 2010.
 
-\bibitem{8}
-S.~Hou, C.~Cheah, and J.~Slotine, ``Dynamic region following formation control
-  for a swarm of robots,'' in \emph{ICRA}, 2009.
+\bibitem{502}
+C.~G.~C. Xinmiao~Sun, ``Optimal dynamic formation control of multi-agent
+  systems in constrained environments,'' \emph{Automatica}, vol.~73, pp.
+  169--179, 2016.
 
-\bibitem{18}
-A.~Das, R.~Fierro, V.~Kumar, J.~Ostrowski, J.~Spletzer, and C.~Taylor, ``A
-  vision-based formation control framework,'' \emph{IEEE Transactions on
-  Robotics and Automation}, vol.~18, pp. 813--825, 2002.
+\bibitem{503}
+C.~P.~C. Hanzhen~Xiao, Zhijun~Li, ``Formation control of leader–follower
+  mobile robots’ systems using model predictive control based on
+  neural-dynamic optimization,'' \emph{IEEE Transactions on Industrial
+  Electronics}, vol.~63, 2016.
 
-\bibitem{23}
-A.~Lewis and K.~Tan, ``High precision formation control of mobile robots using
-  virtual structures,'' \emph{Autonomous Robots}, vol.~4, pp. 387--403, 1997.
+\bibitem{504}
+J.~L. W. X. D. F.~L. Fang~Liao, Rodney~Teo and K.~Peng, ``Distributed formation
+  and reconfiguration control of vtol uavs,'' \emph{IEEE Transactions on
+  Control Systems Technology}, 2015.
 
-\bibitem{24}
-W.~C. J.~Cheng and R.~Nagpal, ``Robust and self-repairing formation control for
-  swarms of mobile agents,'' in \emph{AAAI 20th National Conference on
-  Artificial Intelligence}, 2005.
+\bibitem{505}
+K.~C.~Y. Xia and K.~Huang, ``Uav formation control design with obstacle
+  avoidance in dynamic three‑dimensional environment,'' \emph{Springer Plus},
+  vol.~5, 2016.
 
-\bibitem{25}
-C.~Belta and V.~Kumar, ``Abstraction and control for groups of robots,''
-  \emph{IEEE Transactions on Robotics and Automation}, vol.~20, pp. 865--875,
-  2004.
+\bibitem{501}
+L.~L. Xiao~Yu, ``Distributed circular formation control of ring-networked
+  nonholonomic vehicles,'' \emph{Automatica}, vol.~68, pp. 92--99, 2016.
+
+\bibitem{506}
+M.~S. Javier Alonso-Mora, Eduardo~Montijano and D.~Rus, ``Distributed
+  multi-robot formation control among obstacles: A geometric and optimization
+  approach with consensus,'' in \emph{International Conference on Robotics and
+  Automation}, 2016.
 
 \bibitem{99}
 M.~D. et~al., ``Swarmanoid: A novel concept for the study of heterogeneous

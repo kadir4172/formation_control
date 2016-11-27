@@ -1,11 +1,11 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.15 (TeX Live 2015/dev/Debian) (preloaded format=pdflatex 2016.6.10)  18 AUG 2016 16:56
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2016.2.27)  27 NOV 2016 18:26
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
 **root.tex
 (./root.tex
-LaTeX2e <2014/05/01>
-Babel <3.9l> and hyphenation patterns for 29 languages loaded.
+LaTeX2e <2011/06/27>
+Babel <3.9h> and hyphenation patterns for 28 languages loaded.
 (./ieeeconf.cls
 Document Class: ieeeconf 2016/4/23 revision V1.6b by Pradeep Misra
 \@IEEEtrantmpdimenA=\dimen102
@@ -99,27 +99,27 @@ LaTeX Font Info:    Font shape `OT1/ptm/bx/it' in size <24> not available
 )
 ** ATTENTION: Overriding command lockouts (line 9).
 ** ATTENTION: Overriding IEEE standard margins (line 12).
-(/usr/share/texlive/texmf-dist/tex/latex/mathtools/mathtools.sty
-Package: mathtools 2014/07/16 v1.15 mathematical typesetting tools
+(/usr/share/texlive/texmf-dist/tex/latex/mh/mathtools.sty
+Package: mathtools 2013/02/12 v1.13 mathematical typesetting tools
 
 (/usr/share/texlive/texmf-dist/tex/latex/graphics/keyval.sty
-Package: keyval 2014/05/08 v1.15 key=value parser (DPC)
+Package: keyval 1999/03/16 v1.13 key=value parser (DPC)
 \KV@toks@=\toks15
 )
 (/usr/share/texlive/texmf-dist/tex/latex/tools/calc.sty
-Package: calc 2014/10/28 v4.3 Infix arithmetic (KKT,FJ)
+Package: calc 2007/08/22 v4.3 Infix arithmetic (KKT,FJ)
 \calc@Acount=\count91
 \calc@Bcount=\count92
 \calc@Adimen=\dimen113
 \calc@Bdimen=\dimen114
 \calc@Askip=\skip47
 \calc@Bskip=\skip48
-LaTeX Info: Redefining \setlength on input line 75.
-LaTeX Info: Redefining \addtolength on input line 76.
+LaTeX Info: Redefining \setlength on input line 76.
+LaTeX Info: Redefining \addtolength on input line 77.
 \calc@Ccount=\count93
 \calc@Cskip=\skip49
 )
-(/usr/share/texlive/texmf-dist/tex/latex/mathtools/mhsetup.sty
+(/usr/share/texlive/texmf-dist/tex/latex/mh/mhsetup.sty
 Package: mhsetup 2010/01/21 v1.2a programming setup (MH)
 )
 (/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsmath.sty
@@ -197,10 +197,10 @@ Package: algorithm2e 2013/01/06 v5.00 algorithms environments
 \c@AlgoLine=\count107
 
 (/usr/share/texlive/texmf-dist/tex/latex/base/ifthen.sty
-Package: ifthen 2014/09/29 v1.1c Standard LaTeX ifthen package (DPC)
+Package: ifthen 2001/05/26 v1.1c Standard LaTeX ifthen package (DPC)
 )
 (/usr/share/texlive/texmf-dist/tex/latex/tools/xspace.sty
-Package: xspace 2014/10/28 v1.13 Space after command names (DPC,MH)
+Package: xspace 2009/10/20 v1.13 Space after command names (DPC,MH)
 )
 (/usr/share/texlive/texmf-dist/tex/latex/relsize/relsize.sty
 Package: relsize 2013/03/29 ver 4.1
@@ -279,21 +279,21 @@ Package csquotes Info: ... none found.
  (./root.aux)
 \openout1 = `root.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 37.
-LaTeX Font Info:    ... okay on input line 37.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 37.
-LaTeX Font Info:    ... okay on input line 37.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 37.
-LaTeX Font Info:    ... okay on input line 37.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 37.
-LaTeX Font Info:    ... okay on input line 37.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 37.
-LaTeX Font Info:    ... okay on input line 37.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 37.
-LaTeX Font Info:    ... okay on input line 37.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 36.
+LaTeX Font Info:    ... okay on input line 36.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 36.
+LaTeX Font Info:    ... okay on input line 36.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 36.
+LaTeX Font Info:    ... okay on input line 36.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 36.
+LaTeX Font Info:    ... okay on input line 36.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 36.
+LaTeX Font Info:    ... okay on input line 36.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 36.
+LaTeX Font Info:    ... okay on input line 36.
 
 (/usr/share/texlive/texmf-dist/tex/latex/graphics/graphicx.sty
-Package: graphicx 2014/04/25 v1.0g Enhanced LaTeX Graphics (DPC,SPQR)
+Package: graphicx 1999/02/16 v1.0f Enhanced LaTeX Graphics (DPC,SPQR)
 
 (/usr/share/texlive/texmf-dist/tex/latex/graphics/graphics.sty
 Package: graphics 2009/02/05 v1.0o Standard LaTeX Graphics (DPC,SPQR)
@@ -381,104 +381,113 @@ e
 \Gin@req@height=\dimen139
 \Gin@req@width=\dimen140
 )
-LaTeX Font Info:    Calculating math sizes for size <11> on input line 41.
+LaTeX Font Info:    Calculating math sizes for size <11> on input line 40.
 
-Underfull \hbox (badness 10000) in paragraph at lines 53--55
+Underfull \hbox (badness 10000) in paragraph at lines 52--54
 []\OT1/ptm/m/n/10 Formation con-trol prob-lem have dif-fer-ent
  []
 
 [1{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}
 
 
-] [2]
-Underfull \hbox (badness 2189) in paragraph at lines 132--132
+]
+Underfull \hbox (badness 2189) in paragraph at lines 126--126
  \OT1/ptm/m/it/10 A. PAR-TI-TION-ING FOR-MA-TION SHAPE INTO GOAL
  []
 
-<interbubble_forces.png, id=16, 270.25969pt x 218.31563pt>
+[2] <interbubble_forces.png, id=20, 270.25969pt x 218.31563pt>
 File: interbubble_forces.png Graphic file (type png)
 
 <use interbubble_forces.png>
-Package pdftex.def Info: interbubble_forces.png used on input line 148.
+Package pdftex.def Info: interbubble_forces.png used on input line 142.
 (pdftex.def)             Requested size: 121.61572pt x 98.2411pt.
 
-<bubble_packing2.png, id=17, 553.31718pt x 119.69719pt>
+<bubble_packing2.png, id=21, 553.31718pt x 119.69719pt>
 File: bubble_packing2.png Graphic file (type png)
 
 <use bubble_packing2.png>
-Package pdftex.def Info: bubble_packing2.png used on input line 158.
+Package pdftex.def Info: bubble_packing2.png used on input line 152.
 (pdftex.def)             Requested size: 193.66391pt x 41.89464pt.
- [3 <./interbubble_forces.png>]
-<Forbidden.png, id=26, 222.8325pt x 249.93375pt>
+ <Forbidden.png, id=22, 222.8325pt x 249.93375pt>
 File: Forbidden.png Graphic file (type png)
- <use Forbidden.png>
-Package pdftex.def Info: Forbidden.png used on input line 182.
+
+<use Forbidden.png>
+Package pdftex.def Info: Forbidden.png used on input line 176.
 (pdftex.def)             Requested size: 100.2737pt x 112.46915pt.
 
-Underfull \hbox (badness 3623) in paragraph at lines 186--188
+Underfull \hbox (badness 3623) in paragraph at lines 180--182
  \OT1/ptm/m/it/10 2) VIS-I-BIL-ITY GRAPHS AND DIJKSTRA'$\OML/cmm/m/it/10 S$ \OT
 1/ptm/m/it/10 AL-GO-
  []
 
+[3 <./interbubble_forces.png> <./bubble_packing2.png>]
 <visgraph_yedek.png, id=28, 1072.808pt x 735.548pt>
 File: visgraph_yedek.png Graphic file (type png)
  <use visgraph_yedek.png>
-Package pdftex.def Info: visgraph_yedek.png used on input line 228.
+Package pdftex.def Info: visgraph_yedek.png used on input line 222.
 (pdftex.def)             Requested size: 236.0185pt x 161.82106pt.
 
-[4 <./bubble_packing2.png> <./Forbidden.png>]
-<bipartite.png, id=33, 213.04594pt x 359.84438pt>
+[4 <./Forbidden.png> <./visgraph_yedek.png>]
+<bipartite.png, id=37, 213.04594pt x 359.84438pt>
 File: bipartite.png Graphic file (type png)
  <use bipartite.png>
-Package pdftex.def Info: bipartite.png used on input line 241.
+Package pdftex.def Info: bipartite.png used on input line 235.
 (pdftex.def)             Requested size: 126.47249pt x 213.62411pt.
- [5 <./visgraph_yedek.png> <./bipartite.png>]
-<Trajectories_Formation_Shape_1_2.png, id=41, 1446.15282pt x 707.64375pt>
+
+<Trajectories_Formation_Shape_1_2.png, id=38, 1446.15282pt x 707.64375pt>
 File: Trajectories_Formation_Shape_1_2.png Graphic file (type png)
 
 <use Trajectories_Formation_Shape_1_2.png>
 Package pdftex.def Info: Trajectories_Formation_Shape_1_2.png used on input lin
-e 254.
+e 248.
 (pdftex.def)             Requested size: 245.84273pt x 120.29784pt.
 
-<Aritificial_Trajecories_1.png, id=42, 1446.15282pt x 707.64375pt>
+<Aritificial_Trajecories_1.png, id=39, 1446.15282pt x 707.64375pt>
 File: Aritificial_Trajecories_1.png Graphic file (type png)
 
 <use Aritificial_Trajecories_1.png>
-Package pdftex.def Info: Aritificial_Trajecories_1.png used on input line 261.
+Package pdftex.def Info: Aritificial_Trajecories_1.png used on input line 255.
 (pdftex.def)             Requested size: 245.84273pt x 120.29784pt.
 
-<Bubble_Trajectories_1.png, id=43, 1446.15282pt x 707.64375pt>
+<Bubble_Trajectories_1.png, id=40, 1446.15282pt x 707.64375pt>
 File: Bubble_Trajectories_1.png Graphic file (type png)
 
 <use Bubble_Trajectories_1.png>
-Package pdftex.def Info: Bubble_Trajectories_1.png used on input line 268.
+Package pdftex.def Info: Bubble_Trajectories_1.png used on input line 262.
 (pdftex.def)             Requested size: 245.84273pt x 120.29784pt.
-
+ [5 <./bipartite.png> <./Trajectories_Formation_Shape_1_2.png (PNG copy)> <./Ar
+itificial_Trajecories_1.png (PNG copy)> <./Bubble_Trajectories_1.png (PNG copy)
+>]
 <Total_Energy_Shape_1.png, id=44, 1446.15282pt x 707.64375pt>
 File: Total_Energy_Shape_1.png Graphic file (type png)
 
 <use Total_Energy_Shape_1.png>
-Package pdftex.def Info: Total_Energy_Shape_1.png used on input line 277.
+Package pdftex.def Info: Total_Energy_Shape_1.png used on input line 271.
 (pdftex.def)             Requested size: 260.29628pt x 127.37038pt.
  <deneme.png, id=45, 2481.27pt x 1481.535pt>
 File: deneme.png Graphic file (type png)
 
 <use deneme.png>
-Package pdftex.def Info: deneme.png used on input line 287.
+Package pdftex.def Info: deneme.png used on input line 281.
 (pdftex.def)             Requested size: 248.14154pt x 148.16217pt.
- [6 <./Trajectories_Formation_Shape_1_2.png (PNG copy)> <./Aritificial_Trajecor
-ies_1.png (PNG copy)> <./Bubble_Trajectories_1.png (PNG copy)> <./Total_Energy_
-Shape_1.png (PNG copy)>]
-<combo3.png, id=49, 1541.76pt x 735.548pt>
+ <combo3.png, id=46, 1541.76pt x 735.548pt>
 File: combo3.png Graphic file (type png)
  <use combo3.png>
-Package pdftex.def Info: combo3.png used on input line 294.
+Package pdftex.def Info: combo3.png used on input line 288.
 (pdftex.def)             Requested size: 262.09573pt x 125.0415pt.
 
-Underfull \vbox (badness 6893) has occurred while \output is active []
-
- (./root.bbl)
+[6 <./Total_Energy_Shape_1.png (PNG copy)> <./deneme.png> <./combo3.png (PNG co
+py)>] (./root.bbl
+Missing character: There is no â in font ptmr7t!
+Missing character: There is no € in font ptmr7t!
+Missing character: There is no “ in font ptmr7t!
+Missing character: There is no â in font ptmr7t!
+Missing character: There is no € in font ptmr7t!
+Missing character: There is no ™ in font ptmr7t!
+Missing character: There is no â in font ptmr7t!
+Missing character: There is no € in font ptmr7t!
+Missing character: There is no ‘ in font ptmr7t!
+)
 
 ** Conference Paper **
 Before submitting the final camera ready copy, remember to:
@@ -490,31 +499,33 @@ Before submitting the final camera ready copy, remember to:
  uses only Type 1 fonts and that every step in the generation
  process uses the US letter (8.5in X 11in) paper size.
 
-[7 <./deneme.png> <./combo3.png (PNG copy)>] (./root.aux) ) 
+[7
+
+] (./root.aux) ) 
 Here is how much of TeX's memory you used:
- 5610 strings out of 494409
- 82643 string characters out of 6164777
- 189086 words of memory out of 5000000
- 8797 multiletter control sequences out of 15000+600000
- 40107 words of font info for 81 fonts, out of 8000000 for 9000
+ 5606 strings out of 494424
+ 82472 string characters out of 6165346
+ 189606 words of memory out of 5000000
+ 8787 multiletter control sequences out of 15000+600000
+ 39600 words of font info for 80 fonts, out of 8000000 for 9000
  372 hyphenation exceptions out of 8191
- 51i,16n,27p,2548b,368s stack positions out of 5000i,500n,10000p,200000b,80000s
-{/usr/share/texlive/
-texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/share/texlive/texmf-dist/fonts/typ
-e1/public/amsfonts/cm/cmex10.pfb></usr/share/texlive/texmf-dist/fonts/type1/pub
-lic/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/am
-sfonts/cm/cmmi6.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/
-cm/cmmi7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi
-8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb><
-/usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/sha
-re/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/share/texli
-ve/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/tex
-mf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/share/texlive/texmf-dist
-/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/share/texlive/texmf-dist/fonts/
-type1/urw/times/utmb8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times
-/utmbi8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></
-usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on root.pdf (7 pages, 895438 bytes).
+ 51i,16n,27p,1742b,368s stack positions out of 5000i,500n,10000p,200000b,80000s
+{/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc}</us
+r/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/shar
+e/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texl
+ive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></usr/share/texlive/tex
+mf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/share/texlive/texmf-dist
+/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/share/texlive/texmf-dist/fonts/
+type1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/p
+ublic/amsfonts/cm/cmr7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/am
+sfonts/cm/cmr8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/c
+m/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy
+7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb><
+/usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/share/texl
+ive/texmf-dist/fonts/type1/urw/times/utmbi8a.pfb></usr/share/texlive/texmf-dist
+/fonts/type1/urw/times/utmr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/ur
+w/times/utmri8a.pfb>
+Output written on root.pdf (7 pages, 892884 bytes).
 PDF statistics:
  104 PDF objects out of 1000 (max. 8388607)
  65 compressed objects within 1 object stream
