@@ -66,54 +66,20 @@ In this paper, we propose a solution named Bubble Packing method, to achieve the
 
 This paper is organized as follows. Section 2, describes the artificial forces methodology. Section 3, introduces the implementation details of our proposed Bubble Packing method. Section 4, compares the simulation results of Artificial Forces and Bubble Packing methods in total displacement and dynamically changing formations. Section 5 presents our conclusions.
 
+\section{METHODOLOGY}
+In our project, we have reduced down the problem of dynamical formation control of heterogeneous mobile robots into two subproblems such as local positioning and formation control. Local positioning subsystem proposes a solution for the localization of agents in the workspace. On the other hand, formation control subsystem implements algorithms to cover the desired formation shape homogeneously with the agents in the swarm. In this paper, we have focused on our solution to the formation control problem in details.
+
+\begin{figure}[thpb]
+\centering
+\includegraphics[scale = 0.35]{general_scheme}
+\caption{General Block Diagram of the Provided Solution} \label{general_system}
+\end{figure}
+
+A general block diagram of the system design is illustrated in Figure \ref{general_system}. According to this diagram, local positioning system provides a basis for the formation control problem with agents’ state vectors composed of translational positions and velocities. Basically, this subsystem provides position and velocity data to agents in the swarm. Formation control subsystem proposes a solution to achieve desired complex shapes with heterogeneous agents in the swarm. Formation control
+system gets the requested formation shape externally and creates individual control laws for agents to cover the desired shape homogeneously. 
+
 \section{ARTIFICIAL FORCES METHOD}
-In Artificial Forces method we have implemented potential fields over each agent arised from the interactions between agents, formation shape and environment. The final positions of the agents at the formation shape  are determined with local equilibrium of the swarm in which every agent is at balance under the total force acting from the environment. Basically we have implemented four different kinds of artificial forces named; intermember forces representing the forces created by other agents in the swarm to achieve collision avoidance; the attractive forces representing the forces created by desired formation shape to attract the agent into the shape; repulsive forces created by formation shape to keep agents inside the desired formation shape; obstacle forces to provide collision avoidance with obstacles. We have updated the contour integral equations for these potential fields \cite{17} to be calculated on complex formation shapes and obstacles which do not have analytical expressions as following.
-
-Let $f(z)$ is a complex function in a domain $D$ in the complex plane and let $C$ be simple closed contour contained in $D$ with initial point $a$ and terminal point  $b$. It is possible to take the integral of $f(z)$ along the contour $C$ \cite{wiki_contour}
-		
-\begin{equation}
-\oint_C f(z) dz = \int_{a}^{b} f(z(t))\frac{dz(t)}{dt} dt
-\end{equation}		
-
-where
-\begin{equation}
-\frac{dz(t)}{dt} = \frac{dx(t)}{dt} + i\frac{dy(t)}{dt},   \hspace{0.1cm} a\leq t\leq b
-\end{equation}
-		
-To simplify this equation, one can write $f(z) = u(x,y) + iv(x,y)$ and $dz = dx + idy$ into the statements,
-
-\begin{align} \label{contour_integral}
-\begin{split}
-\oint_C f(z)dz & = \oint_C u dx - v dy + i \oint_C u dy + v dx \\
-&= A + i B
-\end{split}
-\end{align}
-
-where
-\begin{align} \label{AandB}
-\begin{split}
-A = \int_{a}^{b}\left[u(x(t),y(t) )\frac{dx(t)}{dt} - v(x(t),y(t) )\frac{dy(t)}{dt}\right]dt \\
-B = \int_{a}^{b} \left[u(x(t),y(t) )\frac{dy(t)}{dt} + v(x(t),y(t) )\frac{dx(t)}{dt}\right]dt
-\end{split}
-\end{align}
-
-Discrete representation of the (\ref{AandB})
-\begin{align} \label{AandB_discrete}
-\begin{split}
-A = \sum_{k=1}^{K} {u(x_k, y_k)(x_{k+1} - x_k) - v(x_k, y_k)(y_{k+1} - y_k) }\\
-B = \sum_{k=1}^{K} {u(x_k, y_k)(y_{k+1} - y_k) - v(x_k, y_k)(x_{k+1} - x_k) }
-\end{split}
-\end{align}
-
-where
-\begin{equation}
-\begin{split}
-\norm{z_k - z_{k-1}} = \norm{z_{k+1} - z_k}, \hspace{0.2cm}\\ 
- \forall k,   \hspace{0.2cm} k=1,2,...,K \hspace{0.2cm} when  \hspace{0.2cm} K \to\infty
-\end{split}
-\end{equation}
-
-The assumption of $K \to\infty$ makes it possible to calculate the contour integral with a small error with large number of $K$. This can be achieved by partitioning the desired formation shape  into small pieces with equal $p2$ norms of $\Delta z$. We have used this approach to provide discrete domain representations of the contour integrals given in potential field equations in \cite{17}.
+In Artificial Forces method we have implemented potential fields over each agent arised from the interactions between agents, formation shape and environment. The final positions of the agents at the formation shape  are determined with local equilibrium of the swarm in which every agent is at balance under the total force acting from the environment. Basically we have implemented four different kinds of artificial forces named; intermember forces representing the forces created by other agents in the swarm to achieve collision avoidance; the attractive forces representing the forces created by desired formation shape to attract the agent into the shape; repulsive forces created by formation shape to keep agents inside the desired formation shape; obstacle forces to provide collision avoidance with obstacles.
 
 \section{BUBBLE PACKING METHOD}
 In Bubble Packing method, we have reduced down the formation control problem into two subproblems. The first part of the solution is to partition the desired formation shape into potential goal states to cover the desired formation shape homogeneously. The second part of the solution is the decision process to assign the agents to these goal states continuously to minimize the total displacement of swarm while achieving the desired formation shape. During this decision process, the cost of reaching different goal states is defined with the displacement on the shortest path while reaching that goal state. Our algorithm tries to reduce down the total cost value by assigning each agent to proper goal states.
@@ -183,29 +149,20 @@ g_i \in G
 \KwData{Set of Vertices Included in $S^*$ }
 \KwResult{Visibility Graph of $S^*$ }
 Initialize a graph $\gamma = (V,E)$ where $V$ is the set of all vertices in $S^*$ and $E = \oslash$  \\
-\For{$<$all vertices $v \subset V$$>$}
-{		
+
+\For{$<$all vertices $v \subset V$ $>$}
+{	
 W = VISIBLE$\_$VERTICES($v$,S)\;
 Add edges W to list E\;
 }\
 
 \caption{VISIBILITY$\_$GRAPH}
+
 \end{algorithm}
 
-where $VISIBLE$\_$VERTICES(v,S)$ algorithm checks whether line segments drawn from $v$ to all vertices in $S$ is intersecting interior area of any obstacle in the environment and returns the non-intersecting edges.  By using this $VISIBILITY$\_$GRAPH$ algorithm, we have defined $SHORTEST$\_$PATH$ algorithm.
+where $VISIBLE$\_$VERTICES(v,S)$ algorithm checks whether line segments drawn from $v$ to all vertices in $S$ is intersecting interior area of any obstacle in the environment and returns the non-intersecting edges.  By using this visibility graph, each agent calculates its own shortest path to reach all goal states $g_i \in G$ with the help of Dijkstra's algorithm by adding these goal states in visibility graph.
 	
-\begin{algorithm}
-\KwData{A set $S$ of disjoint polygonal obstacles, position of agent, $p_{start}$, and all goal states $g_i \in G$}
-\KwResult{The shortest collision-free paths from $p_{start}$ to all goal states $g_i \in G$}
-* Assign $\gamma$ = VISIBILITY$\_$GRAPH$(S^*)$ \newline
-* Assign each arc $(v,w)$ in $\gamma_{vis}$ a weight, which is the Euclidian length of line segment drawn from $v$ to $w$ \newline
-\For{$<$Each goal state $g_i \in G$$>$}
-{
-* Use Dijkstra's algorithm to compute a shortest path between $p_{start}$ and $g_i \in G$ in $\gamma_{vis}$
-}
-\caption{SHORTEST$\_$PATH}
-\end{algorithm}
-  
+ 
 \begin{figure}[thpb]
 \centering
 \includegraphics[scale = 0.22]{visgraph_yedek}

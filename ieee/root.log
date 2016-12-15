@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.15 (TeX Live 2015/dev/Debian) (preloaded format=pdflatex 2016.6.10)  29 NOV 2016 17:14
+This is pdfTeX, Version 3.14159265-2.6-1.40.15 (TeX Live 2015/dev/Debian) (preloaded format=pdflatex 2016.6.10)  15 DEC 2016 17:11
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -391,93 +391,100 @@ Underfull \hbox (badness 10000) in paragraph at lines 52--54
 
 
 ]
-Underfull \hbox (badness 2189) in paragraph at lines 121--121
+<general_scheme.png, id=13, 686.565pt x 319.94531pt>
+File: general_scheme.png Graphic file (type png)
+ <use general_scheme.png>
+Package pdftex.def Info: general_scheme.png used on input line 74.
+(pdftex.def)             Requested size: 240.30135pt x 111.98253pt.
+Missing character: There is no â in font ptmr7t!
+Missing character: There is no € in font ptmr7t!
+Missing character: There is no ™ in font ptmr7t!
+
+Underfull \hbox (badness 2189) in paragraph at lines 87--87
  \OT1/ptm/m/it/10 A. PAR-TI-TION-ING FOR-MA-TION SHAPE INTO GOAL
  []
 
-[2]
-Overfull \hbox (0.96457pt too wide) detected at line 131
+
+Overfull \hbox (0.96457pt too wide) detected at line 97
 \OML/cmm/m/it/10 f[]\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 l\OT1/cmr/m/n/10 ) = []
  []
 
-<bubble_packing2.png, id=21, 553.31718pt x 119.69719pt>
+[2 <./general_scheme.png>]
+<bubble_packing2.png, id=20, 553.31718pt x 119.69719pt>
 File: bubble_packing2.png Graphic file (type png)
 
 <use bubble_packing2.png>
-Package pdftex.def Info: bubble_packing2.png used on input line 141.
+Package pdftex.def Info: bubble_packing2.png used on input line 107.
 (pdftex.def)             Requested size: 193.66391pt x 41.89464pt.
- <Forbidden.png, id=22, 222.8325pt x 249.93375pt>
+ <Forbidden.png, id=21, 222.8325pt x 249.93375pt>
 File: Forbidden.png Graphic file (type png)
 
 <use Forbidden.png>
-Package pdftex.def Info: Forbidden.png used on input line 165.
+Package pdftex.def Info: Forbidden.png used on input line 131.
 (pdftex.def)             Requested size: 100.2737pt x 112.46915pt.
 
-Underfull \hbox (badness 3623) in paragraph at lines 169--171
+Underfull \hbox (badness 3623) in paragraph at lines 135--137
  \OT1/ptm/m/it/10 2) VIS-I-BIL-ITY GRAPHS AND DIJKSTRA'$\OML/cmm/m/it/10 S$ \OT
 1/ptm/m/it/10 AL-GO-
  []
 
 [3 <./bubble_packing2.png> <./Forbidden.png>]
-<visgraph_yedek.png, id=28, 1005.7575pt x 689.57625pt>
+<visgraph_yedek.png, id=30, 1005.7575pt x 689.57625pt>
 File: visgraph_yedek.png Graphic file (type png)
 
 <use visgraph_yedek.png>
-Package pdftex.def Info: visgraph_yedek.png used on input line 211.
+Package pdftex.def Info: visgraph_yedek.png used on input line 168.
 (pdftex.def)             Requested size: 221.26733pt x 151.70723pt.
- <bipartite.png, id=29, 213.04594pt x 359.84438pt>
+ <bipartite.png, id=31, 213.04594pt x 359.84438pt>
 File: bipartite.png Graphic file (type png)
 
 <use bipartite.png>
-Package pdftex.def Info: bipartite.png used on input line 224.
+Package pdftex.def Info: bipartite.png used on input line 181.
 (pdftex.def)             Requested size: 126.47249pt x 213.62411pt.
- [4 <./visgraph_yedek.png>]
-<Trajectories_Formation_Shape_1_2.png, id=37, 1446.15282pt x 707.64375pt>
+ [4 <./visgraph_yedek.png> <./bipartite.png>]
+<Trajectories_Formation_Shape_1_2.png, id=39, 1446.15282pt x 707.64375pt>
 File: Trajectories_Formation_Shape_1_2.png Graphic file (type png)
 
 <use Trajectories_Formation_Shape_1_2.png>
 Package pdftex.def Info: Trajectories_Formation_Shape_1_2.png used on input lin
-e 237.
+e 194.
 (pdftex.def)             Requested size: 245.84273pt x 120.29784pt.
 
-<Aritificial_Trajecories_1.png, id=38, 1446.15282pt x 707.64375pt>
+<Aritificial_Trajecories_1.png, id=40, 1446.15282pt x 707.64375pt>
 File: Aritificial_Trajecories_1.png Graphic file (type png)
 
 <use Aritificial_Trajecories_1.png>
-Package pdftex.def Info: Aritificial_Trajecories_1.png used on input line 244.
+Package pdftex.def Info: Aritificial_Trajecories_1.png used on input line 201.
 (pdftex.def)             Requested size: 245.84273pt x 120.29784pt.
 
-<Bubble_Trajectories_1.png, id=39, 1446.15282pt x 707.64375pt>
+<Bubble_Trajectories_1.png, id=41, 1446.15282pt x 707.64375pt>
 File: Bubble_Trajectories_1.png Graphic file (type png)
 
 <use Bubble_Trajectories_1.png>
-Package pdftex.def Info: Bubble_Trajectories_1.png used on input line 251.
+Package pdftex.def Info: Bubble_Trajectories_1.png used on input line 208.
 (pdftex.def)             Requested size: 245.84273pt x 120.29784pt.
 
-<Total_Energy_Shape_1.png, id=40, 1446.15282pt x 707.64375pt>
+<Total_Energy_Shape_1.png, id=42, 1446.15282pt x 707.64375pt>
 File: Total_Energy_Shape_1.png Graphic file (type png)
 
 <use Total_Energy_Shape_1.png>
-Package pdftex.def Info: Total_Energy_Shape_1.png used on input line 260.
+Package pdftex.def Info: Total_Energy_Shape_1.png used on input line 217.
 (pdftex.def)             Requested size: 260.29628pt x 127.37038pt.
-
-Underfull \vbox (badness 2460) has occurred while \output is active []
-
- [5 <./bipartite.png> <./Trajectories_Formation_Shape_1_2.png> <./Aritificial_T
-rajecories_1.png> <./Bubble_Trajectories_1.png> <./Total_Energy_Shape_1.png (PN
-G copy)>]
-<deneme.png, id=47, 2481.27pt x 1481.535pt>
+ <deneme.png, id=43, 2481.27pt x 2276.505pt>
 File: deneme.png Graphic file (type png)
- <use deneme.png>
-Package pdftex.def Info: deneme.png used on input line 270.
-(pdftex.def)             Requested size: 248.14154pt x 148.16217pt.
 
-<combo3.png, id=48, 1445.4pt x 689.57625pt>
+<use deneme.png>
+Package pdftex.def Info: deneme.png used on input line 227.
+(pdftex.def)             Requested size: 248.14154pt x 227.66383pt.
+ [5 <./Trajectories_Formation_Shape_1_2.png> <./Aritificial_Trajecories_1.png> 
+<./Bubble_Trajectories_1.png> <./Total_Energy_Shape_1.png (PNG copy)>] <combo3.
+png, id=50, 1445.4pt x 689.57625pt>
 File: combo3.png Graphic file (type png)
  <use combo3.png>
-Package pdftex.def Info: combo3.png used on input line 277.
+Package pdftex.def Info: combo3.png used on input line 234.
 (pdftex.def)             Requested size: 245.71475pt x 117.22641pt.
- (./root.bbl
+
+(./root.bbl
 Missing character: There is no â in font ptmr7t!
 Missing character: There is no € in font ptmr7t!
 Missing character: There is no “ in font ptmr7t!
@@ -487,8 +494,7 @@ Missing character: There is no ™ in font ptmr7t!
 Missing character: There is no â in font ptmr7t!
 Missing character: There is no € in font ptmr7t!
 Missing character: There is no ‘ in font ptmr7t!
-
-[6 <./deneme.png> <./combo3.png>])
+ [6 <./deneme.png> <./combo3.png>])
 
 ** Conference Paper **
 Before submitting the final camera ready copy, remember to:
@@ -504,13 +510,13 @@ Before submitting the final camera ready copy, remember to:
 
 ] (./root.aux) ) 
 Here is how much of TeX's memory you used:
- 5605 strings out of 494409
- 82512 string characters out of 6164777
- 189085 words of memory out of 5000000
- 8793 multiletter control sequences out of 15000+600000
+ 5608 strings out of 494409
+ 82596 string characters out of 6164777
+ 187066 words of memory out of 5000000
+ 8795 multiletter control sequences out of 15000+600000
  39600 words of font info for 80 fonts, out of 8000000 for 9000
  372 hyphenation exceptions out of 8191
- 51i,16n,27p,2618b,368s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 51i,13n,27p,2618b,368s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc}</us
 r/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/shar
 e/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texl
@@ -526,10 +532,10 @@ m/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy
 ive/texmf-dist/fonts/type1/urw/times/utmbi8a.pfb></usr/share/texlive/texmf-dist
 /fonts/type1/urw/times/utmr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/ur
 w/times/utmri8a.pfb>
-Output written on root.pdf (7 pages, 861458 bytes).
+Output written on root.pdf (7 pages, 1014184 bytes).
 PDF statistics:
- 107 PDF objects out of 1000 (max. 8388607)
+ 109 PDF objects out of 1000 (max. 8388607)
  65 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
- 51 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 56 words of extra memory for PDF output out of 10000 (max. 10000000)
 
