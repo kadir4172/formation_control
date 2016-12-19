@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.15 (TeX Live 2015/dev/Debian) (preloaded format=pdflatex 2016.6.10)  15 DEC 2016 17:11
+This is pdfTeX, Version 3.14159265-2.6-1.40.15 (TeX Live 2015/dev/Debian) (preloaded format=pdflatex 2016.6.10)  19 DEC 2016 13:16
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -405,7 +405,7 @@ Underfull \hbox (badness 2189) in paragraph at lines 87--87
  []
 
 
-Overfull \hbox (0.96457pt too wide) detected at line 97
+Overfull \hbox (9.83092pt too wide) detected at line 97
 \OML/cmm/m/it/10 f[]\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 l\OT1/cmr/m/n/10 ) = []
  []
 
@@ -428,29 +428,28 @@ Underfull \hbox (badness 3623) in paragraph at lines 135--137
 1/ptm/m/it/10 AL-GO-
  []
 
-[3 <./bubble_packing2.png> <./Forbidden.png>]
-<visgraph_yedek.png, id=30, 1005.7575pt x 689.57625pt>
+<visgraph_yedek.png, id=22, 1005.7575pt x 689.57625pt>
 File: visgraph_yedek.png Graphic file (type png)
 
 <use visgraph_yedek.png>
 Package pdftex.def Info: visgraph_yedek.png used on input line 168.
 (pdftex.def)             Requested size: 221.26733pt x 151.70723pt.
- <bipartite.png, id=31, 213.04594pt x 359.84438pt>
+ [3 <./bubble_packing2.png> <./Forbidden.png>]
+<bipartite.png, id=31, 213.04594pt x 359.84438pt>
 File: bipartite.png Graphic file (type png)
-
-<use bipartite.png>
+ <use bipartite.png>
 Package pdftex.def Info: bipartite.png used on input line 181.
 (pdftex.def)             Requested size: 126.47249pt x 213.62411pt.
- [4 <./visgraph_yedek.png> <./bipartite.png>]
-<Trajectories_Formation_Shape_1_2.png, id=39, 1446.15282pt x 707.64375pt>
+
+<Trajectories_Formation_Shape_1_2.png, id=32, 1446.15282pt x 707.64375pt>
 File: Trajectories_Formation_Shape_1_2.png Graphic file (type png)
 
 <use Trajectories_Formation_Shape_1_2.png>
 Package pdftex.def Info: Trajectories_Formation_Shape_1_2.png used on input lin
 e 194.
 (pdftex.def)             Requested size: 245.84273pt x 120.29784pt.
-
-<Aritificial_Trajecories_1.png, id=40, 1446.15282pt x 707.64375pt>
+ [4 <./visgraph_yedek.png> <./bipartite.png>] <Aritificial_Trajecories_1.png, i
+d=40, 1446.15282pt x 707.64375pt>
 File: Aritificial_Trajecories_1.png Graphic file (type png)
 
 <use Aritificial_Trajecories_1.png>
@@ -494,7 +493,7 @@ Missing character: There is no ™ in font ptmr7t!
 Missing character: There is no â in font ptmr7t!
 Missing character: There is no € in font ptmr7t!
 Missing character: There is no ‘ in font ptmr7t!
- [6 <./deneme.png> <./combo3.png>])
+)
 
 ** Conference Paper **
 Before submitting the final camera ready copy, remember to:
@@ -506,9 +505,7 @@ Before submitting the final camera ready copy, remember to:
  uses only Type 1 fonts and that every step in the generation
  process uses the US letter (8.5in X 11in) paper size.
 
-[7
-
-] (./root.aux) ) 
+[6 <./deneme.png> <./combo3.png>] (./root.aux) ) 
 Here is how much of TeX's memory you used:
  5608 strings out of 494409
  82596 string characters out of 6164777
@@ -516,26 +513,26 @@ Here is how much of TeX's memory you used:
  8795 multiletter control sequences out of 15000+600000
  39600 words of font info for 80 fonts, out of 8000000 for 9000
  372 hyphenation exceptions out of 8191
- 51i,13n,27p,2618b,368s stack positions out of 5000i,500n,10000p,200000b,80000s
-{/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc}</us
-r/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/shar
-e/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texl
-ive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></usr/share/texlive/tex
-mf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/share/texlive/texmf-dist
-/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/share/texlive/texmf-dist/fonts/
-type1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/p
-ublic/amsfonts/cm/cmr7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/am
-sfonts/cm/cmr8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/c
-m/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy
-7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb><
-/usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/share/texl
-ive/texmf-dist/fonts/type1/urw/times/utmbi8a.pfb></usr/share/texlive/texmf-dist
-/fonts/type1/urw/times/utmr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/ur
-w/times/utmri8a.pfb>
-Output written on root.pdf (7 pages, 1014184 bytes).
+ 51i,13n,27p,2610b,368s stack positions out of 5000i,500n,10000p,200000b,80000s
+{/usr/share/texlive/texmf-dist/
+fonts/enc/dvips/base/8r.enc}</usr/share/texlive/texmf-dist/fonts/type1/public/a
+msfonts/cm/cmex10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfont
+s/cm/cmmi10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/c
+mmi6.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pf
+b></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr
+/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/
+texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/share/texlive/
+texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/share/texlive/texmf-di
+st/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fon
+ts/type1/public/amsfonts/cm/cmsy7.pfb></usr/share/texlive/texmf-dist/fonts/type
+1/public/amsfonts/cm/cmsy8.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/t
+imes/utmb8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmbi8a.pf
+b></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/share/t
+exlive/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
+Output written on root.pdf (6 pages, 1014440 bytes).
 PDF statistics:
- 109 PDF objects out of 1000 (max. 8388607)
- 65 compressed objects within 1 object stream
+ 104 PDF objects out of 1000 (max. 8388607)
+ 61 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
  56 words of extra memory for PDF output out of 10000 (max. 10000000)
 
